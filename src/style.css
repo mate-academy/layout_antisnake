@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.blocks-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.block {
+  height: 300px;
+  font-size: 100px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.first {
+  background: rgb(255, 0, 0);
+}
+
+.second {
+  background: rgb(204, 0, 0);
+}
+
+.third {
+  background: rgb(153, 0, 0);
+}
+
+.fourth {
+  background: rgb(102, 0, 0);
+}
+
+.fifth {
+  background: rgb(51, 0, 0);
+}
+
+.sixth {
+  background: rgb(0, 0, 0);
+}
+
+@media (max-width: 899px) {
+  .blocks-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .blocks-box {
+    grid-template-columns: 1fr;
+  }
+}
