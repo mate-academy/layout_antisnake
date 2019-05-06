@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
+}
+
+div {
+  height: 300px;
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 300px;
+}
+
+.one {
+  background: #f00;
+}
+
+.two {
+  background: #c00;
+}
+
+.three {
+  background: #900;
+}
+
+.four {
+  background: #600;
+}
+
+.five {
+  background: #300;
+}
+
+.six {
+  background: #000;
+}
+
+@media screen and (max-width: 899px) {
+  body {
+    grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
+  }
+}
+
+  
+
+@media screen and (max-width: 599px) {
+  body {
+    grid-template: repeat(6, 1fr)/ repeat(1, 1fr);
+  }
+}
