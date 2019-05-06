@@ -1,6 +1,7 @@
 body {
   justify-items: center;
   margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -9,9 +10,11 @@ body {
   font-size: 100px;
   line-height: 100px;
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(3 , 300px);
+  justify-content: stretch;
+  grid-template-columns: repeat(3 , auto);
   grid-template-rows: repeat(2, 300px);
+  min-width: 300px;
+  
 }
 
 .container > div {
@@ -34,12 +37,10 @@ body {
 
 .block-4 {
   background: rgb(102, 0, 0);
-  order: 6;
 }
 
 .block-5 {
   background: rgb(51, 0, 0);
-  order: 5;
 }
 
 .block-6 {
@@ -48,8 +49,7 @@ body {
 
 @media (max-width: 899px) {
   .container {
-    justify-content: center;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, 300px);
   }
   .block-1 {
@@ -61,30 +61,25 @@ body {
   }
 
   .block-3 {
-    order: 4;
     background: rgb(153, 0, 0);
   }
 
   .block-4 {
     background: rgb(102, 0, 0);
-    order: 3;
   }
 
   .block-5 {
     background: rgb(51, 0, 0);
-    order: 5;
   }
 
   .block-6 {
     background: black;
-    order: 6;
   }
 }
 
 @media (max-width: 599px) {
   .container {
-    justify-content: center;
-    grid-template-columns: 300px;
+    grid-template-columns: auto;
     grid-template-rows: repeat(6, 300px);
   }
 
@@ -98,21 +93,17 @@ body {
 
   .block-3 {
     background: rgb(153, 0, 0);
-    order: 3;
   }
 
   .block-4 {
     background: rgb(102, 0, 0);
-    order: 4;
   }
 
   .block-5 {
     background: rgb(51, 0, 0);
-    order: 5;
   }
 
   .block-6 {
     background: black;
-    order: 6;
   }
 }
