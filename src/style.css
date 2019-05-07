@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template: repeat(2, 300px) / repeat(3, 1fr);
+}
+
+div {
+  height: 300px;
+  text-align: center;
+  padding: 100px 0;
+  font-size: 100px;
+  line-height: 100px;
+  color: white;
+}
+
+.first {
+  background: red;
+}
+
+.second {
+  background: rgb(204, 0, 0);
+}
+
+.third {
+  background: rgb(153, 0, 0);
+}
+
+.fourth {
+  background: rgb(102, 0, 0);
+}
+
+.fifth {
+  background: rgb(51, 0, 0);
+}
+
+.sixth {
+  background: black;
+}
+
+@media (max-width: 899px) {
+  .snake {
+    grid-template: repeat(auto-fit, 300px) / repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .snake {
+    display: block;
+  }
+}
