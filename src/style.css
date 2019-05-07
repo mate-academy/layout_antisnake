@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.wrapper {
+  display: grid;
+  grid-template: repeat(2, 300px) / repeat(3, 1fr);
+}
+
+.wrapper > div {
+  height: 300px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+.one {
+  background: rgb(255, 0, 0);
+}
+
+.two {
+  background: rgb(204, 0, 0);
+}
+
+.three {
+  background: rgb(153, 0, 0);
+}
+
+.four {
+  background: rgb(102, 0, 0);
+}
+
+.five {
+  background: rgb(51, 0, 0);
+}
+
+.six {
+  background: rgb(0, 0, 0);
+}
+
+@media (max-width: 899px) {
+  .wrapper {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 599px) {
+  .wrapper {
+    grid-template-columns: repeat(1, auto);
+  }
+}
