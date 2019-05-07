@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.main-container > div {
+  height: 300px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+.one {
+  background-color: #f00;
+}
+
+.two {
+  background-color: #c00;
+}
+
+.three {
+  background-color: #900;
+}
+
+.four {
+  background-color: #600;
+}
+
+.five {
+  background-color: #300;
+}
+
+.six {
+  background-color: #000;
+}
+
+@media (max-width: 899px) {
+  .main-container {
+    grid-template-columns: repeat(2, minmax(300px, 2fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .main-container {
+    grid-template-columns: none;
+  }
+}
