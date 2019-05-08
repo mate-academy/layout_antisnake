@@ -8,9 +8,7 @@ body {
   font-family: Arial, sans-serif;
   color: white;
   font-size: 100px;
-  line-height: 100px;
   display: grid;
-  justify-content: stretch;
   grid-template-columns: repeat(3 , auto);
   grid-template-rows: repeat(2, 300px);
   min-width: 300px;
@@ -52,58 +50,11 @@ body {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, 300px);
   }
-  .block-1 {
-    background: red;
-  }
-
-  .block-2 {
-    background: rgb(204, 0, 0);
-  }
-
-  .block-3 {
-    background: rgb(153, 0, 0);
-  }
-
-  .block-4 {
-    background: rgb(102, 0, 0);
-  }
-
-  .block-5 {
-    background: rgb(51, 0, 0);
-  }
-
-  .block-6 {
-    background: black;
-  }
 }
 
 @media (max-width: 599px) {
   .container {
     grid-template-columns: auto;
     grid-template-rows: repeat(6, 300px);
-  }
-
-  .block-1 {
-    background: red;
-  }
-
-  .block-2 {
-    background: rgb(204, 0, 0);
-  }
-
-  .block-3 {
-    background: rgb(153, 0, 0);
-  }
-
-  .block-4 {
-    background: rgb(102, 0, 0);
-  }
-
-  .block-5 {
-    background: rgb(51, 0, 0);
-  }
-
-  .block-6 {
-    background: black;
   }
 }
