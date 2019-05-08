@@ -47,37 +47,10 @@ div {
   .container {
     grid-template: repeat(3, minmax(300px, auto)) / repeat(2, 1fr);
   }
-  .third {
-    order: 4;
-  }
-
-  .fourth {
-    order: 3;
-  }
-
-  .fifth {
-    order: 5;
-  }
-
-  .sixth {
-    order: 6;
-  }
 }
 
 @media (min-width: 900px) {
   .container {
     grid-template: repeat(6, minmax(300px, auto)) / repeat(3, 1fr);
-  }
-
-  .fourth {
-    order: 6;
-  }
-
-  .fifth {
-    order: 5;
-  }
-
-  .sixth {
-    order: 4;
   }
 }
