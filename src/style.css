@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+}
+
+.container {
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
+  color: white;
+  display: grid;
+  grid-template: repeat(2, minmax(300px, auto)) / repeat(1,  1fr);
+}
+
+div {
+  height: 300px;
+  min-width: 300px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first {
+  background: red;
+}
+
+.second {
+  background: rgb(204, 0, 0);
+}
+
+.third {
+  background: rgb(153, 0, 0);
+}
+
+.fourth {
+  background: rgb(102, 0, 0);
+}
+
+.fifth {
+  background: rgb(51, 0, 0);
+}
+
+.sixth {
+  background: black;
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template: repeat(3, minmax(300px, auto)) / repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template: repeat(6, minmax(300px, auto)) / repeat(3, 1fr);
+  }
+}
