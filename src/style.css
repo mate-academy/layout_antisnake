@@ -5,6 +5,7 @@
 .grid_container {
   display: grid;
   width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .snake {
@@ -42,20 +43,8 @@
   background: hsl(0, 100%, 0%);
 }
 
-@media all and (min-width: 0) {
-  .grid_container {
-    grid-template: auto / 1fr;
-  }
-}
-
-@media all and (min-width: 600px) {
-  .grid_container {
-    grid-template: auto / 1fr 1fr;
-  }
-}
-
 @media all and (min-width: 900px) {
   .grid_container {
-    grid-template: auto / 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
