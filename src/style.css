@@ -41,13 +41,13 @@
   background-color: hsl(0, 100%, 0%);
 }
 
-@media screen and (max-width: 890px) {
+@media (max-width: 890px) {
   .snake-body {
     grid-template-columns: repeat(2, auto);
   }
 }
 
-@media screen and (max-width: 590px) {
+@media (max-width: 590px) {
   .snake-body {
     grid-template-columns: repeat(1, auto);
   }
