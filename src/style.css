@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1199px;
+}
+
+.container .block {
+  line-height: 300px;
+  text-align: center;
+  height: 300px;
+  min-width: 300px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  flex-grow: 1;
+}
+
+.container .one {
+  background-color: rgb(255, 0, 0);
+}
+
+.container .two {
+  background-color: rgb(204, 0, 0);
+}
+
+.container .three {
+  background-color: rgb(153, 0, 0);
+}
+
+.container .four {
+  background-color: rgb(102, 0, 0);
+}
+
+.container .five {
+  background-color: rgb(51, 0, 0);
+}
+
+.container .six {
+  background-color: rgb(0, 0, 0);
+}
