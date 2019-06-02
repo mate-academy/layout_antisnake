@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.antisnake {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.antisnake div {
+  height: 300px;
+}
+
+.antisnake__block-number {
+  line-height: 300px;
+  font-size: 100px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.antisnake__block1 {
+  background-color: #f00;
+}
+
+.antisnake__block2 {
+  background-color: #c00;
+}
+
+.antisnake__block3 {
+  background-color: #900;
+}
+
+.antisnake__block4 {
+  background-color: #600;
+}
+
+.antisnake__block5 {
+  background-color: #300;
+}
+
+.antisnake__block6 {
+  background-color: #000;
+}
+
+@media (max-width: 750px) {
+  .antisnake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .antisnake {
+    grid-template-columns: 1fr;
+  }
+}
