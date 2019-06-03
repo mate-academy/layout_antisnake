@@ -40,15 +40,14 @@
   background-color: #000;
 }
 
-@media (max-width: 899px) {
+@media(max-width: 899px) {
   .container {
     grid-template-columns: auto auto;
   }
 }
-@media (max-width: 599px) {
+
+@media(max-width: 599px) {
   .container {
     grid-template-columns: auto;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
