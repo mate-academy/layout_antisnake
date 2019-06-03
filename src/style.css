@@ -12,7 +12,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.snake > div {
+.snake__block {
   
   height: 300px;
   display: grid;
@@ -22,23 +22,23 @@ body {
   font-size: 100px;
 }
 
-.part_1 {
+.snake__block_1 {
   background: rgba(255,0,0,1);
 }
 
-.part_2 {
+.snake__block_2 {
   background: rgba(255,0,0,0.8);
 }
 
-.part_3 {
+.snake__block_3 {
   background: rgba(255,0,0,0.6);
 }
 
-.part_4 {
+.snake__block_4 {
   background: rgba(255,0,0,0.4);
 }
 
-.part_5 {
+.snake__block_5 {
   background: rgba(255,0,0,0.2);
 }
 
