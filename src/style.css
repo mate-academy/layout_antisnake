@@ -51,7 +51,7 @@ body {
 }
   
 @media (min-width: 600px) {
-  .container > div {
+  .container > .blocks {
     flex: 33.33%;
   }
 }
