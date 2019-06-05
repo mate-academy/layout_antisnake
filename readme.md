@@ -18,6 +18,8 @@ Please use `grid` this time around.
 [Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
 
 **Result**
+
 `SASS used` - please notice.
+
 - [DEMO LINK](https://sviatoslv.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://sviatoslv.github.io/layout_antisnake/report/html_report/)
