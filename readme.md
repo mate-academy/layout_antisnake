@@ -13,11 +13,12 @@ For better clarity, please refer to the reference [screenshots](reference) at 30
 Please use `grid` this time around.
 
 ---
+
 **Read the guideline before start**
 
 [Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://jka4.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://jka4.github.io/layout_antisnake/report/html_report/)
