@@ -10,9 +10,6 @@
 
 .antisnake div {
   height: 300px;
-}
-
-.antisnake__block-number {
   line-height: 300px;
   font-size: 100px;
   color: #fff;
