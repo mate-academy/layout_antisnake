@@ -7,7 +7,6 @@ body {
   display: grid;
   height: 300px;
   line-height: 300px;
-  width: 100%;
   font-size: 100px;
   text-align: center;
   font-family: Arial, serif;
@@ -40,14 +39,12 @@ body {
 
 @media (min-width: 900px) {
   .block-container {
-    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 600px) and (max-width: 899px) {
   .block-container {
-    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr ;
   }
 }
