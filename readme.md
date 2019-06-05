@@ -1,4 +1,4 @@
-# Antisnake
+  # Antisnake
 
 Display six colored blocks on the screen without any extra margins:
 
