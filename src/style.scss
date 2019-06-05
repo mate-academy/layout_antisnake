@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+//Blocks Wrapper Styles
+@import "./block_wrapper.scss";
+
+//Blocks styles
+@import "./block.scss";
+

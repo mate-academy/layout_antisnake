@@ -1,0 +1,30 @@
+.block {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__1 {
+    background-color: red;
+  }
+
+  &__2 {
+    background-color: rgb(191.25, 0, 0);
+  }
+
+  &__3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__6 {
+    background-color: black;
+  }
+}
