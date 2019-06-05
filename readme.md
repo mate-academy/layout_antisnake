@@ -20,4 +20,4 @@ Please use `grid` this time around.
 **Result**
 `SASS used` - please notice.
 - [DEMO LINK](https://sviatoslv.github.io/layout_antisnake/)
-- [UPDATE TEST REPORT LINK](https://sviatoslv.github.io/layout_antisnake/report/html_report/)
+- [TEST REPORT LINK](https://sviatoslv.github.io/layout_antisnake/report/html_report/)
