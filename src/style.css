@@ -32,11 +32,11 @@ body {
 }
 
 .block__1 {
-  background-color: red;
+  background-color: #f00;
 }
 
 .block__2 {
-  background-color: #bf0000;
+  background-color: #c00;
 }
 
 .block__3 {
@@ -52,7 +52,7 @@ body {
 }
 
 .block__6 {
-  background-color: black;
+  background-color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
