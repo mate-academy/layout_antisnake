@@ -4,19 +4,16 @@ body {
 }
 
 .package {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 300px;
-  flex-grow: 1;
-  flex-basis: 30%;
+  text-align: center;
   font: 100px Arial;
   color: white;
+  line-height: 300px;
 }
 
 .block1 {
@@ -44,13 +41,13 @@ body {
 }
 
 @media (max-width: 750px) {
-  .block {
-    flex-basis: 50%;
+  .package {
+    grid-template-columns: auto auto;
   }
 }
 
 @media (max-width:450px) {
-  .block {
-    flex-basis: 100%;
+  .package {
+    grid-template-columns: auto;
   }
 }
