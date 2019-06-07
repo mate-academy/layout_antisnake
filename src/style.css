@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.package {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.block {
+  height: 300px;
+  text-align: center;
+  font: 100px Arial;
+  color: white;
+  line-height: 300px;
+}
+
+.block1 {
+  background: #f00;
+}
+
+.block2 {
+  background: #cd0000;
+}
+
+.block3 {
+  background: #9a0000;
+}
+
+.block4 {
+  background: #600;
+}
+
+.block5 {
+  background: #300000;
+}
+
+.block6 {
+  background: #000;
+}
+
+@media (max-width: 750px) {
+  .package {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width:450px) {
+  .package {
+    grid-template-columns: auto;
+  }
+}
