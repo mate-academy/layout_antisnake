@@ -6,6 +6,7 @@
   display: grid;
   grid-auto-rows: 300px;
 }
+
 .antisnake__block {
   box-sizing: border-box;
   height: 300px;
@@ -17,23 +18,30 @@
   text-align: center;
   color: #fff;
 }
+
 .antisnake__block--1 {
-  background-color: red;
+  background-color: darken #f00, 0%;
 }
+
 .antisnake__block--2 {
-  background-color: #cc0000;
+  background-color: darken #f00, 20%;
 }
+
 .antisnake__block--3 {
-  background-color: #990000;
+  background-color: darken #f00, 40%;
 }
+
 .antisnake__block--4 {
-  background-color: #660000;
+  background-color: darken #f00, 60%;
 }
+
 .antisnake__block--5 {
-  background-color: #330000;
+  background-color: darken #f00, 80%;
 }
+
 .antisnake__block--6 {
-  background-color: black;
+  background-color: darken #f00, 100%;
+
 }
 
 @media (min-width: 600px) {
@@ -41,6 +49,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 900px) {
   .antisnake {
     grid-template-columns: repeat(3, 1fr);
