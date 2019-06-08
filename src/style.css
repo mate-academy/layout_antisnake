@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.block {
+  font-family: Arial;
+  font-size: 100px;
+  color: #fff;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#block1 {
+  background: #f00;
+}
+
+#block2 {
+  background: #c00;
+}
+
+#block3 {
+  background: #900;
+}
+
+#block4 {
+  background: #600;
+}
+
+#block5 {
+  background: #300;
+}
+
+#block6 {
+  background: #000;
+}
+
+@media (min-width: 1023px) {
+  body {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
