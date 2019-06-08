@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-auto-rows: 300px;
+
+  &__block {
+    box-sizing: border-box;
+    height: 300px;
+    min-width: 300px;
+    padding: 100px 0;
+    font-family: "Arial", sans-serif;
+    font-size: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+  }
+
+  $main-color: #f00;
+  @for $i from 0 to 6 {
+    &__block--#{$i+1} {
+      background-color: darken ($main-color, $i * 20%);
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .antisnake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
