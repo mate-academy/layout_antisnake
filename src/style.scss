@@ -1,3 +1,4 @@
+$height: 300px;
 /***********************************************************
                           GENERAL
 ***********************************************************/
@@ -6,12 +7,11 @@ body {
   display: grid;
   grid-template-columns: 100%;
 }
-
 /***********************************************************
                           MAIN
 ***********************************************************/
 .block {
-  height: 300px;
+  height: $height;
   font-family: Arial, sans-serif;
   font-size: 100px;
   display: grid;
@@ -49,10 +49,9 @@ body {
     grid-template-columns: 50% 50%;
   }
 }
+
 @media (min-width: 751px) {
   body {
     grid-template-columns: 33.33% 33.33% 33.33%;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
