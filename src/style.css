@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.antisnake__item {
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+.antisnake__first {
+  background-color: #f00;
+}
+.antisnake__second {
+  background-color: #c00;
+}
+.antisnake__third {
+  background-color: #900;
+}
+.antisnake__fourth {
+  background-color: #600;
+}
+.antisnake__fifth {
+  background-color: #300;
+}
+.antisnake__sixth {
+  background-color: #000;
+}
+
+@media (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
