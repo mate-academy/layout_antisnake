@@ -17,7 +17,7 @@ Please use `grid` this time around.
 
 [Guideline](https://github.com/mate-academy/layout_task-guideline/blob/master/README.md)
 
-**My Results**
+**Result**
 
 - [DEMO LINK](https://marivm.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://marivm.github.io/layout_antisnake/report/html_report/)
