@@ -1,4 +1,6 @@
 $height: 300px;
+$colors: #f00 #cd0000 #900 #600 #300 #000;
+$i: 1;
 /***********************************************************
                           GENERAL
 ***********************************************************/
@@ -7,6 +9,7 @@ body {
   display: grid;
   grid-template-columns: 100%;
 }
+
 /***********************************************************
                           MAIN
 ***********************************************************/
@@ -20,28 +23,11 @@ body {
   color: white;
 }
 
-.block_1 {
-  background: #f00;
-}
-
-.block_2 {
-  background: #cd0000;
-}
-
-.block_3 {
-  background: #900;
-}
-
-.block_4 {
-  background: #600;
-}
-
-.block_5 {
-  background: #300000;
-}
-
-.block_6 {
-  background: #000;
+@each $color in $colors {
+  .block_#{$i} {
+    background: $color;
+  }
+  $i: $i + 1;
 }
 
 @media (min-width: 451px) {
