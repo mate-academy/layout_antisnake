@@ -25,7 +25,7 @@ body {
   $redness-step: 255 / ($grid-columns + $grid-rows - 1);
 
   @for $i from 1 to ($grid-rows + $grid-columns + 2) {
-    &__chain#{$i} { background-color: rgb($redness 0 0); }
+    &__chain-blackness#{$i} { background-color: rgb($redness 0 0); }
     $redness: $redness - $redness_step;
   }
 

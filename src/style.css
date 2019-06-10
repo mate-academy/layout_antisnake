@@ -16,25 +16,25 @@ body {
   font-size: 100px;
   color: #fff;
 }
-.snake__chain1 {
+.snake__chain-blackness1 {
   background-color: red;
 }
-.snake__chain2 {
+.snake__chain-blackness2 {
   background-color: #cc0000;
 }
-.snake__chain3 {
+.snake__chain-blackness3 {
   background-color: #990000;
 }
-.snake__chain4 {
+.snake__chain-blackness4 {
   background-color: #660000;
 }
-.snake__chain5 {
+.snake__chain-blackness5 {
   background-color: #330000;
 }
-.snake__chain6 {
+.snake__chain-blackness6 {
   background-color: black;
 }
-.snake__chain7 {
+.snake__chain-blackness7 {
   background-color: black;
 }
 @media (max-width: 899px) {
