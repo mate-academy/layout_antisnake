@@ -19,5 +19,5 @@ Please use `grid` this time around.
 
 **My Results**
 
-- [DEMO LINK](https://marivm.github.io/layout_antisnake/).
-- [TEST REPORT LINK](https://marivm.github.io/layout_antisnake/report/html_report/).
+- [DEMO LINK](https://marivm.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://marivm.github.io/layout_antisnake/report/html_report/)
