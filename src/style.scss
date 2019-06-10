@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$block-color: #f00;
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__item {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+  }
+
+  @for $i from 0 through 5 {
+    &__item--#{$i}{
+      background: darken($block-color, $i * 10%);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
