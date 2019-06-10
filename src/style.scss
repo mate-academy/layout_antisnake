@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+$block-color: #f00;
+
 .antisnake {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -18,28 +20,10 @@
     font-size: 100px;
   }
 
-  &__first {
-    background-color: #f00;
-  }
-
-  &__second {
-    background-color: #c00;
-  }
-
-  &__third {
-    background-color: #900;
-  }
-
-  &__fourth {
-    background-color: #600;
-  }
-
-  &__fifth {
-    background-color: #300;
-  }
-
-  &__sixth {
-    background-color: #000;
+  @for $i from 0 through 5 {
+    &__item--#{$i}{
+      background: darken($block-color, $i * 10%);
+    }
   }
 }
 
