@@ -1,0 +1,38 @@
+* {
+  margin: 0; }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center; }
+  .container .block {
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white; }
+  .container .one {
+    background-color: #FF0000; }
+  .container .two {
+    background-color: #CC0000; }
+  .container .three {
+    background-color: #990000; }
+  .container .four {
+    background-color: #660000; }
+  .container .five {
+    background-color: #330000; }
+  .container .six {
+    background-color: #000000; }
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1201px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr); } }
+
+/*# sourceMappingURL=style.css.map */
