@@ -43,11 +43,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 900px) {
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
