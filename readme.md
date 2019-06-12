@@ -20,4 +20,4 @@ Please use `grid` this time around.
 **Result**
 
 - [DEMO LINK](https://scandal0us.github.io/layout_antisnake/)
-- [UPDATE TEST REPORT LINK](https://scandal0us.github.io/layout_antisnake/report/html_report/)
+- [TEST REPORT LINK](https://scandal0us.github.io/layout_antisnake/report/html_report/)
