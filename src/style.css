@@ -27,21 +27,20 @@ body {
 }
 
 .block-item {
-  display: inline-block;
+  display: grid;
+  align-self: center;
+  justify-self: center;
   height: 100px;
   margin: 0;
   color: #fff;
   font-family: "Arial", sans-serif;
   font-size: 100px;
-  text-align: center;
   line-height: 100px;
 }
 
 .block {
+  display: grid;
   min-height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
