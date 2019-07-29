@@ -19,5 +19,5 @@ Please use `grid` this time around.
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-- [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+- [DEMO LINK](https://kseniiamazan.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://kseniiamazan.github.io/layout_antisnake/report/html_report/)
