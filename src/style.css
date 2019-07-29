@@ -27,7 +27,6 @@ body {
 }
 
 .block-item {
-  display: grid;
   align-self: center;
   justify-self: center;
   height: 100px;
