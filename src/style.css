@@ -50,7 +50,7 @@
 
 @media (max-width: 599px) {
   .snake-container {
-    grid-template-rows: 300px 300px 300px 300px 300px 300px;
+    grid-template-rows: repeat(6, 300px);
     grid-template-columns: 1fr;
   }
 }
