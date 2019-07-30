@@ -19,5 +19,5 @@ Please use `grid` this time around.
 
 **Result**
 
-- [UPDATE DEMO LINK](https://igaryok.github.io/layout_antisnake/)
-- [UPDATE TEST REPORT LINK](https://igaryok.github.io/layout_antisnake/report/html_report/)
+- [DEMO LINK](https://igaryok.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://igaryok.github.io/layout_antisnake/report/html_report/)
