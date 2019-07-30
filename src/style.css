@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+}
+
+.snake-section {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 300px;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.snake-section-1 {
+  background-color: #f00;
+}
+
+.snake-section-2 {
+  background-color: #c00;
+}
+
+.snake-section-3 {
+  background-color: #900;
+}
+
+.snake-section-4 {
+  background-color: #600;
+}
+
+.snake-section-5 {
+  background-color: #300;
+}
+
+.snake-section-6 {
+  background-color: #000;
+}
+
+@media (min-width: 600px) {
+  .snake-body {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .snake-body {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  }
+}
