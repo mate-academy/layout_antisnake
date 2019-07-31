@@ -55,7 +55,6 @@ body {
   }
 
   .block {
-    /* display: grid; */
     min-height: 300px;
   }
 }
