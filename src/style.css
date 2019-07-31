@@ -44,7 +44,6 @@ body {
 }
 
 @media screen and (min-width: 300px) {
-
   .antisnake-container {
     display: block;
   }
@@ -52,21 +51,17 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-
   .antisnake-container {
     display: grid;
     grid-template-areas: "block_1 block_2"
       "block_3 block_4"
       "block_5 block_6";
   }
-
 }
 
 @media screen and (min-width: 900px) {
-
   .antisnake-container {
     grid-template-areas: "block_1 block_2 block_3"
       "block_4 block_5 block_6";
   }
-
 }
