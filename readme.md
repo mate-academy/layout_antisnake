@@ -21,3 +21,4 @@ Please use `grid` this time around.
 
 - [DEMO LINK](https://voronok16.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://voronok16.github.io/layout_antisnake/report/html_report/)
+- [PR](https://github.com/mate-academy/layout_antisnake/pull/97)
