@@ -40,13 +40,13 @@ body {
 @media (min-width: 600px) {
   .snake-body {
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   }
 }
 
 @media (min-width: 900px) {
   .snake-body {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
   }
 }
