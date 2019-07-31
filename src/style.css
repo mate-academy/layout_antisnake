@@ -39,7 +39,7 @@ body {
 
 .block {
   display: grid;
-  min-height: 300px;
+  height: 300px;
 }
 
 .container {
@@ -52,5 +52,10 @@ body {
 @media (min-width:1200px) {
   .container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .block {
+    /* display: grid; */
+    min-height: 300px;
   }
 }
