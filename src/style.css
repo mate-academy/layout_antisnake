@@ -53,7 +53,7 @@ body {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .grid-container {
     grid-template: repeat(6, 300px) / 1fr;
     grid-template-areas: "first_block"
