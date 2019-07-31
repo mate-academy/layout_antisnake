@@ -4,8 +4,8 @@ body {
 
 .snake-layout {
   display: grid;
-  grid-template-rows: 300px 300px 300px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 300px);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .color-box {
@@ -45,7 +45,7 @@ body {
 @media (min-width: 300px) {
   .snake-layout {
     display: grid;
-    grid-template-rows: 300px 300px 300px 300px 300px 300px;
+    grid-template-rows: repeat(6, 300px);
     grid-template-columns: 1fr;
   }
 }
@@ -53,15 +53,15 @@ body {
 @media (min-width: 600px) {
   .snake-layout {
     display: grid;
-    grid-template-rows: 300px 300px 300px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 900px) {
   .snake-layout {
     display: grid;
-    grid-template-rows: 300px 300px 300px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
