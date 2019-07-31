@@ -4,9 +4,13 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template: 300px 300px / 1fr 1fr 1fr;
-  grid-template-areas: "first_block second_block third_block"
-    "fourth_block fifth_block sixth_block";
+  grid-template: repeat(3, 300px) / minmax(300px, 100%);
+  grid-template-areas: "first_block"
+    "second_block"
+    "third_block"
+    "fourth_block"
+    "fifth_block"
+    "sixth_block";
   color: #fff;
   text-align: center;
   line-height: 300px;
@@ -44,23 +48,19 @@ body {
   background-color: #000;
 }
 
-@media (max-width: 750px) {
+@media (min-width: 600px) {
   .grid-container {
-    grid-template: 300px 300px 300px / 1fr 1fr;
+    grid-template: repeat(3, 300px) / repeat(2, minmax(300px, 100%));
     grid-template-areas: "first_block second_block"
       "third_block fourth_block"
       "fifth_block sixth_block";
   }
 }
 
-@media (max-width: 450px) {
+@media (min-width: 900px) {
   .grid-container {
-    grid-template: repeat(6, 300px) / 1fr;
-    grid-template-areas: "first_block"
-      "second_block"
-      "third_block"
-      "fourth_block"
-      "fifth_block"
-      "sixth_block";
+    grid-template: 300px 300px / repeat(3, minmax(300px, 100%));
+    grid-template-areas: "first_block second_block third_block"
+      "fourth_block fifth_block sixth_block";
   }
 }
