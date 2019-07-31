@@ -44,7 +44,7 @@ body {
   background-color: #000;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
   .grid-container {
     grid-template: 300px 300px 300px / 1fr 1fr;
     grid-template-areas: "first_block second_block"
