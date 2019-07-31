@@ -1,0 +1,73 @@
+.blocks {
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-auto-rows: 300px;
+}
+
+@media (max-width : 599px) {
+  .blocks {
+    grid-template-columns: 1fr ;
+    grid-template-areas: "level-1"
+      "level-2"
+      "level-3"
+      "level-4"
+      "level-5"
+      "level-6";
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .blocks {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "level-1 level-2"
+      "level-3 level-4"
+      "level-5 level-6";
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .blocks {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "level-1 level-2 level-3"
+      "level-4 level-5 level-6";
+  }
+}
+
+.block {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.block-1 {
+  grid-area: level-1;
+  background: red;
+}
+
+.block-2 {
+  grid-area: level-2;
+  background: #c00;
+}
+
+.block-3 {
+  grid-area: level-3;
+  background: #900;
+}
+
+.block-4 {
+  grid-area: level-4;
+  background: #600;
+}
+
+.block-5 {
+  grid-area: level-5;
+  background: #300;
+}
+
+.block-6 {
+  grid-area: level-6;
+  background: #000;
+}
