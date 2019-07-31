@@ -3,8 +3,8 @@
 }
 
 .snake {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: 300px;
 }
 
 .snake-part {
@@ -44,14 +44,20 @@
   background-color: #000;
 }
 
-@media only screen and (min-width: 601px) {
-  .snake-part {
-    flex-basis: 50%;
+@media only screen and (min-width: 300px) {
+  .snake {
+    grid-template-columns: 1fr;
   }
 }
 
-@media only screen and (min-width: 901px) {
-  .snake-part {
-    flex-basis: 33.33%;
+@media only screen and (min-width: 600px) {
+  .snake {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .snake {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
