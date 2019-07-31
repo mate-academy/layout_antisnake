@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+.block {
+  height: 300px;
+  font-size: 100px;
+  color: white;
+  font-family: Arial;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-1 {
+  background-color: #f00;
+}
+
+.block-2 {
+  background-color: #c00;
+}
+
+.block-3 {
+  background-color: #a60000;
+}
+
+.block-4 {
+  background-color: #6f0000;
+}
+
+.block-5 {
+  background-color: #380000;
+}
+
+.block-6 {
+  background-color: #000;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .block {
+    flex-basis: 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
