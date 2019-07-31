@@ -22,26 +22,26 @@ body {
   justify-content: center;
 }
 
-.first {
+.first-cell {
   background-color: rgb(255, 0, 0);
 }
 
-.second {
+.second-cell {
   background-color: rgb(204, 0, 0);
 }
 
-.third {
+.third-cell {
   background-color: rgb(153, 0, 0);
 }
 
-.forth {
+.forth-cell {
   background-color: rgb(102, 0, 0);
 }
 
-.fifth {
+.fifth-cell {
   background-color: rgb(51, 0, 0);
 }
 
-.sixth {
+.sixth-cell {
   background-color: rgb(0, 0, 0);
 }
