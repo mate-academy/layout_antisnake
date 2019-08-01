@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.cards--font-number {
+  font-family: Arial, serif;
+  font-size: 100px;
+  color: white;
+}
+
+.cards--first-color {
+  background: #f00;
+}
+
+.cards--second-color {
+  background: #cd0000;
+}
+
+.cards--third-color {
+  background: #9a0000;
+}
+
+.cards--fourth-color {
+  background: #600;
+}
+
+.cards--fifth-color {
+  background: #300;
+}
+
+.cards--sixth-color {
+  background: #000;
+}
+
+@media screen and (max-width: 750px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
