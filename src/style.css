@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(300px, auto);
+}
+
+.blocks {
+  display: grid;
+}
+
+.n {
+  font-family: Arial;
+  font-size: 100px;
+  color: white;
+  place-self: center center;
+}
+
+.b1 {
+  background-color: #f00;
+}
+
+.b2 {
+  background-color: #c00;
+}
+
+.b3 {
+  background-color: #900;
+}
+
+.b4 {
+  background-color: #600;
+}
+
+.b5 {
+  background-color: #300;
+}
+
+.b6 {
+  background-color: #000;
+}
