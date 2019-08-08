@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch;
+}
+
+.box {
+  display: grid;
+  font-family: Arial;
+  font-size: 100px;
+  color: white;
+  align-content: center;
+  justify-content: center;
+}
+
+.first {
+  background-color: rgb(255, 0, 0);
+}
+
+.second {
+  background-color: rgb(204, 0, 0);
+}
+
+.third {
+  background-color: rgb(153, 0, 0);
+}
+
+.fourth {
+  background-color: rgb(102, 0, 0);
+}
+
+.fifth {
+  background-color: rgb(51, 0, 0);
+}
+
+.sixth {
+  background-color: rgb(0, 0, 0);
+}
+
+@media (max-width: 599px) {
+  .container {
+    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
