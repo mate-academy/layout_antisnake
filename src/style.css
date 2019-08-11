@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.block {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block-one {
+  background-color: red;
+}
+
+.block-two {
+  background-color: #c00;
+}
+
+.block-three {
+  background-color: #900;
+}
+
+.block-four {
+  background-color: #600;
+}
+
+.block-five {
+  background-color: #300;
+}
+
+.block-six {
+  background-color: #000;
+}
+
+@media(min-width: 1200px) {
+  .page-content {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  }
+
+}
