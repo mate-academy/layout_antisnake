@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .block {
   min-width: 300px;
   font: 100px "Aria", sans-serif;
@@ -36,13 +40,13 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 750px) {
   .grid-block {
     grid-template-columns: repeat(2, 50%);
   }
 }
 
-@media screen and (max-width: 449px) {
+@media screen and (max-width: 450px) {
   .grid-block {
     grid-template-columns: 100%;
   }
