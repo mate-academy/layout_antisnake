@@ -49,14 +49,12 @@ body {
 /*============================================*/
 @media screen and (min-width: 900px) {
   .grid-container {
-    display: grid;
     grid-template-areas: "item-1 item-2 item-3" "item-4 item-5 item-6";
   }
 }
 
 @media screen and (max-width: 599px) {
   .grid-container {
-    display: flex;
-    flex-direction: column;
+    grid-template-areas: "item-1" "item-2" "item-3" "item-4" "item-5" "item-6";
   }
 }
