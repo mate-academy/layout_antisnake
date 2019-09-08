@@ -21,3 +21,7 @@ Please use `grid` this time around.
 
 - [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
 - [UPDATE TEST REPORT LINK](https://<your_account>.github.io/<repo_name>/report/html_report/)
+
+
+[DEMO LINK](https://kostya-flern.github.io/layout_antisnake/)
+[TEST REPORT LINK](https://kostya-flern.github.io/layout_antisnake/report/html_report/)
