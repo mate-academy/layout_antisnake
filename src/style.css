@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.container .box {
+  height: 300px;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #ffff;
+  text-align: center;
+  line-height: 300px;
+  /*min-width: 300px;*/
+}
+
+.box1 {
+  background-color: #f00;
+}
+
+.box2 {
+  background-color: #c00;
+}
+
+.box3 {
+  background-color: #900;
+}
+
+.box4 {
+  background-color: #600;
+}
+
+.box5 {
+  background-color: #300;
+}
+
+.box6 {
+  background-color: #000;
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+}
