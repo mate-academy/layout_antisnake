@@ -1,26 +1,19 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
 }
 
 .container {
   background-color: black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-items: stretch;
 }
 
-.block-1,
-.block-2,
-.block-3,
-.block-4,
-.block-5,
-.block-6 {
+.all-blocks {
   height: 300px;
   min-width: 300px;
-  font-family: Arial, sans-serif;
-  font-size: 100px;
   margin: 0;
-  justify-self: stretch;
   color: white;
   line-height: 300px;
   text-align: center;
