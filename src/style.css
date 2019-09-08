@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.div-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.col-box {
+  font-size: 100px;
+  color: white;
+  line-height: 100px;
+  height: 300px;
+  text-align: center;
+}
+
+.div1 {
+  background-color: #f00;
+}
+
+.div2 {
+  background-color: #c00;
+}
+
+.div3 {
+  background-color: #900;
+}
+
+.div4 {
+  background-color: #600;
+}
+
+.div5 {
+  background-color: #300;
+}
+
+.div6 {
+  background-color: #000;
+}
+
+@media screen and (max-width: 899px) {
+  .div-cont {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .div-cont {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
