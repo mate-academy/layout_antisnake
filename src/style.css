@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: "Arial";
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.block {
+  height: 300px;
+  font-size: 100px;
+  color: white;
+  line-height: 300px;
+  text-align: center;
+}
+
+.block-first {
+  background-color: rgb(255, 0, 0);
+}
+
+.block-second {
+  background-color: rgb(204, 0, 0);
+}
+
+.block-third {
+  background-color: rgb(153, 0, 0);
+}
+
+.block-fourth {
+  background-color: rgb(102, 0, 0);
+}
+
+.block-fifth {
+  background-color: rgb(51, 0, 0);
+}
+
+.block-sixth {
+  background-color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
