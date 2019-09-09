@@ -1,5 +1,6 @@
 body {
   margin: 0;
+
 }
 
 .container {
@@ -8,8 +9,9 @@ body {
 }
 
 .block {
-  min-width: 300px;
-  font: 100px "Arial", sans-serif;
+  height: 300px;
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
   color: #fff;
   text-align: center;
   line-height: 300px;
@@ -40,13 +42,13 @@ body {
 }
 
 @media screen and (max-width: 750px) {
-  .grid-block {
+  .container {
     grid-template-columns: repeat(2, 50%);
   }
 }
 
 @media screen and (max-width: 450px) {
-  .grid-block {
+  .container {
     grid-template-columns: 100%;
   }
 }
