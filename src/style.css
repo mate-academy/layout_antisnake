@@ -3,10 +3,9 @@ body {
   font-family: Arial;
 }
 
-main {
+.blocks-inside {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-content: center;
 }
 
 .color-block {
@@ -42,7 +41,7 @@ main {
 
 @media screen and (max-width: 899px) {
 
-  main {
+  .blocks-inside {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -50,7 +49,7 @@ main {
 
 @media screen and (max-width: 599px) {
 
-  main {
+  .blocks-inside {
     grid-template-columns: 1fr;
   }
 
