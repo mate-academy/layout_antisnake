@@ -7,9 +7,6 @@ body {
   grid-template-rows: repeat(2, 300px);
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
-}
-
-.container {
   font-family: Arial, sans-serif;
   font-size: 100px;
   color: #fff;
