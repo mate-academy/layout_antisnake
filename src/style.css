@@ -1,0 +1,60 @@
+body {
+  font-family: "Arial";
+  font-weight: 100px;
+  font-style: normal;
+  font-size: 100px;
+  margin: 0;
+}
+
+.conteiner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blockUpper {
+  min-width: 300px;
+  height: 300px;
+  color: white;
+  line-height: 100px;
+  font-size: 100px;
+  font-family: "Arial";
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.blockUpper1 {
+  background-color: #f00;
+}
+
+.blockUpper2 {
+  background-color: #c00;
+}
+
+.blockUpper3 {
+  background-color: #900;
+}
+
+.blockUpper4 {
+  background-color: #600;
+}
+
+.blockUpper5 {
+  background-color: #300;
+}
+
+.blockUpper6 {
+  background-color: #000;
+}
+
+@media screen and (max-width: 899px) {
+  .conteiner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .conteiner {
+    grid-template-columns: 1fr;
+  }
+}
