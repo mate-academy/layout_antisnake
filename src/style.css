@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -7,14 +8,12 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.commonStyles {
+.block {
   color: #fff;
   font-size: 100px;
-  font-family: Arial;
   line-height: 300px;
   text-align: center;
   height: 300px;
-  min-width: calc(100% / 3);
 }
 
 .block-1 {
