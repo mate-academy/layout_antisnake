@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.blocks-inside {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.color-block {
+  text-align: center;
+  line-height: 300px;
+  font-size: 100px;
+  color: #fff;
+}
+
+.first-block {
+  background: #f00;
+}
+
+.second-block {
+  background: #cd0000;
+}
+
+.third-block {
+  background: #9a0000;
+}
+
+.fourth-block {
+  background: #600;
+}
+
+.fifth-block {
+  background: #300;
+}
+
+.sixth-block {
+  background: #000;
+}
+
+@media screen and (max-width: 899px) {
+
+  .blocks-inside {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media screen and (max-width: 599px) {
+
+  .blocks-inside {
+    grid-template-columns: 1fr;
+  }
+
+}
