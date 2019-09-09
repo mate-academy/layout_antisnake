@@ -5,59 +5,43 @@ body {
 }
 
 .container {
-  width: 100%;
   display: grid;
-  grid-template-areas: "item-1 item-2" "item-3 item-4" "item-5 item-6";
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
 }
 
 .item {
-  height: 300px;
   color: #fff;
   text-align: center;
   line-height: 300px;
-  min-width: 30vw;
 }
 
 .item-1 {
   background-color: #f00;
-  grid-area: item-1;
 }
 
 .item-2 {
   background-color: #c00;
-  grid-area: item-2;
 }
 
 .item-3 {
   background-color: #900;
-  grid-area: item-3;
 }
 
 .item-4 {
   background-color: #600;
-  grid-area: item-4;
 }
 
 .item-5 {
   background-color: #300;
-  grid-area: item-5;
 }
 
 .item-6 {
   background-color: #000;
-  grid-area: item-6;
-}
-
-@media screen and (min-width: 900px) {
-  .container {
-    display: grid;
-    grid-template-areas: "item-1 item-2 item-3" "item-4 item-5 item-6";
-  }
 }
 
 @media screen and (max-width: 599px) {
   .container {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
