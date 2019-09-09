@@ -49,12 +49,12 @@ body {
 
 @media screen and (max-width: 899px) and (min-width: 600px) {
   .contaner {
-    grid-template-areas: "item_a item_b""item_d item_c""item_e item_f";
+    grid-template-areas: "item_a item_b""item_c item_d""item_e item_f";
   }
 }
 
 @media screen and (min-width: 900px) {
   .contaner {
-    grid-template-areas: "item_a item_b item_c""item_f item_e item_d";
+    grid-template-areas: "item_a item_b item_c""item_d item_e item_f";
   }
 }
