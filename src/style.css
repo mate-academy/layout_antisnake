@@ -5,7 +5,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-areas: "item_1 item_2" "item_3 item_4" "item_5 item_6";
+  grid-template-areas: "item_1 item_2 item_3" "item_4 item_5 item_6";
 }
 
 .grid {
@@ -47,9 +47,9 @@ body {
   grid-area: item_6;
 }
 /*============================================*/
-@media screen and (min-width: 900px) {
+@media screen and (max-width: 899px) {
   .container {
-    grid-template-areas: "item_1 item_2 item_3" "item_4 item_5 item_6";
+    grid-template-areas: "item_1 item_2" "item_3 item_4" "item_5 item_6";
   }
 }
 
