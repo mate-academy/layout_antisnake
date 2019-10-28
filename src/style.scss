@@ -1,0 +1,33 @@
+@import "variables";
+@import "resets";
+
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($width, 1fr));
+  &__block {
+    height: $height;
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: $height;
+  }
+}
+
+@each $block in $blocks {
+  .block--#{$block} {
+    background-color: rgb(($color), 0, 0);
+  }
+  $color: $color - $colorStep;
+}
+
+@media(max-width: 899px) {
+  .anti-snake {
+    grid-template-columns: repeat(2, minmax($width, 1fr));
+  }
+}
+
+@media(max-width: 599px) {
+  .anti-snake {
+    grid-template-columns: repeat(1, minmax($width, 1fr));
+  }
+}
