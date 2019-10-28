@@ -7,7 +7,7 @@ $boxColor:
   black;
 
 $boxHeight: 300px;
-$fontHeight: $boxHeight/3;
+$fontSize: $boxHeight/3;
 
 body {
   margin: 0;
@@ -22,7 +22,7 @@ body {
   height: $boxHeight;
   min-width: $boxHeight;
   font-family: Arial, sans-serif;
-  font-size: $fontHeight;
+  font-size: $fontSize;
   color: white;
   text-align: center;
   line-height: $boxHeight;
