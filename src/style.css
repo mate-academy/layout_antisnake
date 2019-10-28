@@ -4,15 +4,13 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 300px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .box {
   box-sizing: border-box;
   height: 300px;
   min-width: 300px;
-
   font-family: Arial;
   font-size: 100px;
   color: white;
@@ -46,7 +44,7 @@ body {
 
 @media screen and (max-width: 899px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
