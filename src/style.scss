@@ -1,3 +1,5 @@
+$blocks-color: #f00, #c00, #900, #600, #300, #000;
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -17,28 +19,10 @@ body {
   color: white;
 }
 
-.item:nth-child(1) {
-  background-color: #f00;
-}
-
-.item:nth-child(2) {
-  background-color: #c00;
-}
-
-.item:nth-child(3) {
-  background-color: #900;
-}
-
-.item:nth-child(4) {
-  background-color: #600;
-}
-
-.item:nth-child(5) {
-  background-color: #300;
-}
-
-.item:nth-child(6) {
-  background-color: #000;
+@for $i from 1 through 6 {
+  .item:nth-child(#{$i}) {
+    background-color: nth($blocks-color, $i);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -46,5 +30,3 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/*# sourceMappingURL=style.css.map */
