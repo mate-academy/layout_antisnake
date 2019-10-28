@@ -1,0 +1,55 @@
+html {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 100px;
+}
+
+body {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33.3%);
+  grid-template-rows: repeat(2, 300px);
+  line-height: 300px;
+  text-align: center;
+}
+
+.block-1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.block-2 {
+  background-color: rgb(204, 0, 0);
+}
+
+.block-3 {
+  background-color: rgb(153, 0, 0);
+}
+
+.block-4 {
+  background-color: rgb(102, 0, 0);
+}
+
+.block-5 {
+  background-color: rgb(51, 0, 0);
+}
+
+.block-6 {
+  background-color: black;
+}
+
+@media (max-width: 850px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 300px);
+  }
+}
+
+@media (max-width: 550px) {
+  .grid {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 300px);
+  }
+}
