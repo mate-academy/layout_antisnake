@@ -1,0 +1,47 @@
+$boxColor:
+  red,
+  #c00,
+  #900,
+  #600,
+  #300,
+  black;
+
+$boxHeight: 300px;
+$fontSize: $boxHeight/3;
+
+body {
+  margin: 0;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box__nested {
+  height: $boxHeight;
+  min-width: $boxHeight;
+  font-family: Arial, sans-serif;
+  font-size: $fontSize;
+  color: white;
+  text-align: center;
+  line-height: $boxHeight;
+}
+
+@for $i from 1 through 6 {
+  .box__nested:nth-child(#{$i}) {
+    background-color: nth($boxColor, $i);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .box {
+    grid-template-columns: 1fr;
+  }
+}
