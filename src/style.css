@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.antisnake > div {
+  min-width: 300px;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.antisnake__first {
+  background: rgb(255,0,0);
+}
+
+.antisnake__second {
+  background: rgb(204,0,0);
+}
+
+.antisnake__third {
+  background: rgb(153,0,0);
+}
+
+.antisnake__fourth {
+  background: rgb(102,0,0);
+}
+
+.antisnake__fifth {
+  background: rgb(51,0,0);
+}
+
+.antisnake__sixth {
+  background: rgb(0,0,0);
+}
+
+@media (max-width: 899px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
