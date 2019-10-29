@@ -1,0 +1,30 @@
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 0 through 5 {
+      &:nth-child(#{-$i + 6}) {
+        background-color: rgb(calc(255 * 0.2 * #{$i}), 0, 0);
+      }
+    }
+  }
+}

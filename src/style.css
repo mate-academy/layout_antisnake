@@ -1,0 +1,65 @@
+html {
+  font: 100px Arial;
+  color: white;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  visibility: hidden;
+  font-size: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.snake__block {
+  height: 300px;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snake__block:nth-child(6) {
+  background-color: rgb(calc(255 * 0.2 * 0), 0, 0);
+}
+
+.snake__block:nth-child(5) {
+  background-color: rgb(calc(255 * 0.2 * 1), 0, 0);
+}
+
+.snake__block:nth-child(4) {
+  background-color: rgb(calc(255 * 0.2 * 2), 0, 0);
+}
+
+.snake__block:nth-child(3) {
+  background-color: rgb(calc(255 * 0.2 * 3), 0, 0);
+}
+
+.snake__block:nth-child(2) {
+  background-color: rgb(calc(255 * 0.2 * 4), 0, 0);
+}
+
+.snake__block:nth-child(1) {
+  background-color: rgb(calc(255 * 0.2 * 5), 0, 0);
+}
+
+/*# sourceMappingURL=style.css.map */
