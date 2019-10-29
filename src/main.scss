@@ -1,3 +1,5 @@
+@import "variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,37 +11,36 @@
 }
 
 .block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  height: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: $content-color;
+font-family: $content-font-family;
+font-size: $content-font-size;
+height: $block-height;
 }
 
 .block1 {
-  background: red;
+  background: $block-1-bg;
 }
 
 .block2 {
-  background: #c00;
+  background: $block-2-bg;
 }
 
 .block3 {
-  background: #900;
+  background: $block-3-bg;
 }
-
 .block4 {
-  background: #600;
+  background: $block-4-bg;
 }
 
 .block5 {
-  background: #300;
+  background: $block-5-bg;
 }
 
 .block6 {
-  background: black;
+  background: $block-6-bg;
 }
 
 @media (min-width: 600px) {
@@ -47,10 +48,9 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (min-width: 900px) {
   .container {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
