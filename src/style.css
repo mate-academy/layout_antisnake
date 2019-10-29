@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+}
+
+h1 {
+  visibility: hidden;
+  font-size: 0;
+}
+
+.block {
+  display: flex;
+  height: 300px;
+  color: white;
+  font-size: 100px;
+  font-family: Arial;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr ));
+}
+
+.block_1 {
+  background-color: red;
+}
+
+.block_2 {
+  background-color: rgb(204,0,0);
+}
+
+.block_3 {
+  background-color: rgb(153,0,0);
+}
+
+.block_4 {
+  background-color: rgb(102,0,0);
+}
+
+.block_5 {
+  background-color: rgb(51,0,0);
+}
+
+.block_6 {
+  background-color: black;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
