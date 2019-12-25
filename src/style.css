@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.block {
+  font-family: Arial, serif;
+  font-size: 100px;
+  text-align: center;
+  height: 300px;
+  color: white;
+  line-height: 300px;
+}
+
+@media (min-width: 1200px) {
+  body {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.one {
+  background-color: rgb(255, 0, 0);
+}
+
+.two {
+  background-color: rgb(204, 0, 0);
+}
+
+.three {
+  background-color: rgb(153, 0, 0);
+}
+
+.four {
+  background-color: rgb(102, 0, 0);
+}
+
+.five {
+  background-color: rgb(51, 0, 0);
+}
+
+.six {
+  background-color: rgb(0, 0, 0);
+}
