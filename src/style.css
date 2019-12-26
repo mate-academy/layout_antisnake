@@ -1,3 +1,11 @@
+.block__item {
+  text-align: center;
+  font-size: 100px;
+  color: #fff;
+  line-height: 300px;
+  height: 300px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,14 +17,6 @@ body {
 
 .block {
   display: grid;
-}
-
-.block__item {
-  text-align: center;
-  font-size: 100px;
-  color: #fff;
-  line-height: 300px;
-  height: 300px;
 }
 
 .block__item-1 {
@@ -48,9 +48,10 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (min-width: 900px) {
   .block {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
