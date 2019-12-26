@@ -1,4 +1,4 @@
-$item-colors: 1 #f00, 2 #c00, 3 #900, 4 #600, 5 #300, 6 #000;
+$colors: #f00, #c00, #900, #600, #300, #000;
 
 body {
   margin: 0;
@@ -17,9 +17,15 @@ body {
     line-height: 300px;
   }
 
-  @each $number, $color in $item-colors {
-    div:nth-child(#{$number}) {
-      background-color: #{$color};
+  @for $i from 1 through 6 {
+    div:nth-child(#{$i}) {
+      background-color: #{nth($colors, $i)};
+    }
+
+    div:nth-child(#{$i}):after {
+      content: "#{$i}";
+      top: -50%;
+      left: -50%;
     }
   }
 
