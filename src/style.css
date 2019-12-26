@@ -6,8 +6,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
-.block {
+.container__item {
   font-family: Arial, serif;
   font-size: 100px;
   text-align: center;
@@ -15,31 +14,24 @@ body {
   color: white;
   line-height: 300px;
 }
-
-.one {
+.container div:nth-child(1) {
   background-color: #f00;
 }
-
-.two {
+.container div:nth-child(2) {
   background-color: #c00;
 }
-
-.three {
+.container div:nth-child(3) {
   background-color: #900;
 }
-
-.four {
+.container div:nth-child(4) {
   background-color: #600;
 }
-
-.five {
+.container div:nth-child(5) {
   background-color: #300;
 }
-
-.six {
+.container div:nth-child(6) {
   background-color: #000;
 }
-
 @media (min-width: 1200px) {
   .container {
     grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
