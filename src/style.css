@@ -17,50 +17,38 @@ body {
 .container div:nth-child(1) {
   background-color: #f00;
 }
-.container div:nth-child(1):after {
+.container div:nth-child(1)::before {
   content: "1";
-  top: -50%;
-  left: -50%;
 }
 .container div:nth-child(2) {
   background-color: #c00;
 }
-.container div:nth-child(2):after {
+.container div:nth-child(2)::before {
   content: "2";
-  top: -50%;
-  left: -50%;
 }
 .container div:nth-child(3) {
   background-color: #900;
 }
-.container div:nth-child(3):after {
+.container div:nth-child(3)::before {
   content: "3";
-  top: -50%;
-  left: -50%;
 }
 .container div:nth-child(4) {
   background-color: #600;
 }
-.container div:nth-child(4):after {
+.container div:nth-child(4)::before {
   content: "4";
-  top: -50%;
-  left: -50%;
 }
 .container div:nth-child(5) {
   background-color: #300;
 }
-.container div:nth-child(5):after {
+.container div:nth-child(5)::before {
   content: "5";
-  top: -50%;
-  left: -50%;
 }
 .container div:nth-child(6) {
   background-color: #000;
 }
-.container div:nth-child(6):after {
+.container div:nth-child(6)::before {
   content: "6";
-  top: -50%;
-  left: -50%;
 }
 @media (min-width: 1200px) {
   .container {
