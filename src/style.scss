@@ -1,0 +1,33 @@
+@import "block";
+$colors: #f00, #c00, #900, #600, #300 , #000;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.block {
+  display: grid;
+
+  @for $i from 1 through 6 {
+    &__item-#{$i} {
+      background-color: #{nth($colors, $i)};
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
