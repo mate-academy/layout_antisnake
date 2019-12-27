@@ -1,0 +1,24 @@
+@import "vars";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @for $i from 1 to 7 {
+    &__#{$i} {
+      background-color: #{nth($colors, $i)};
+      height: 300px;
+      line-height: 300px;
+      width: 100%;
+    }
+  }
+  @for $i from 1 to 7 {
+    &__#{$i}::after {
+      content: "#{$i}";
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, calc(100% / 3)));
+  }
+}
