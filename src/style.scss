@@ -1,0 +1,35 @@
+$colors: #f00, #c00, #900, #600, #300, #000;
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__item {
+    font-family: Arial, serif;
+    font-size: 100px;
+    text-align: center;
+    height: 300px;
+    color: white;
+    line-height: 300px;
+  }
+
+  @for $i from 1 through 6 {
+    div:nth-child(#{$i}) {
+      background-color: #{nth($colors, $i)};
+
+      &::before {
+        content: "#{$i}";
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+    }
+  }
+}
