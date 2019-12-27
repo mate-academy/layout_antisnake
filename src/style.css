@@ -1,0 +1,50 @@
+:root {
+  --block-width: 300px;
+}
+
+body {
+  color: white;
+  font-family: "Arial";
+  margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax( var(--block-width), 1fr));
+}
+
+.snake__item {
+  font-size: 100px;
+  line-height: var(--block-width);
+  text-align: center;
+}
+
+.snake__item--1 {
+  background-color: rgb(255,0,0);
+}
+
+.snake__item--2 {
+  background-color: rgb(204,0,0);
+}
+
+.snake__item--3 {
+  background-color: rgb(153,0,0);
+}
+
+.snake__item--4 {
+  background-color: rgb(102,0,0);
+}
+
+.snake__item--5 {
+  background-color: rgb(51,0,0);
+}
+
+.snake__item--6 {
+  background-color: rgb(0,0,0);
+}
+
+@media screen and (min-width: 1200px) {
+  .snake {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
