@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.snake__block {
+  min-height: 300px;
+  color: #fff;
+  font-size: 100px;
+  font-family: "Arial", "Helvetica", sans-serif;
+  position: relative;
+}
+
+.snake__block::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.snake__block:nth-child(1)::after {
+  content: "1";
+}
+
+.snake__block:nth-child(2)::after {
+  content: "2";
+}
+
+.snake__block:nth-child(3)::after {
+  content: "3";
+}
+
+.snake__block:nth-child(4)::after {
+  content: "4";
+}
+
+.snake__block:nth-child(5)::after {
+  content: "5";
+}
+
+.snake__block:nth-child(6)::after {
+  content: "6";
+}
+
+.snake__block-1 {
+  background-color: #f00;
+  grid-area: one;
+}
+
+.snake__block-2 {
+  background-color: #c00;
+  grid-area: two;
+}
+
+.snake__block-3 {
+  background-color: #900;
+  grid-area: three;
+}
+
+.snake__block-4 {
+  background-color: #600;
+  grid-area: four;
+}
+
+.snake__block-5 {
+  background-color: #300;
+  grid-area: five;
+}
+
+.snake__block-6 {
+  background-color: #000;
+  grid-area: six;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-areas: "one two three" "four five six";
+  transition: all 300ms ease;
+}
+
+@media screen and (max-width: 899px) {
+  .snake {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-areas: "one two" "three four" "five six";
+  }
+}
+@media screen and (max-width: 599px) {
+  .snake {
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-areas: "one" "two" "three" "four" "five" "six";
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

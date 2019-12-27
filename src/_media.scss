@@ -1,0 +1,22 @@
+@media screen and (max-width: 899px) {
+  .snake {
+    grid-template-columns: repeat(2, minmax(300px,1fr));
+    grid-template-areas:
+      "one two"
+      "three four"
+      "five six";
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .snake {
+    grid-template-columns: minmax(300px,1fr);
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six";
+  }
+}
