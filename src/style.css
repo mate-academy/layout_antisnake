@@ -1,0 +1,100 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.block__1 {
+  background-color: #f00;
+  height: 300px;
+  line-height: 300px;
+  width: 100%;
+}
+
+.block__2 {
+  background-color: #c00;
+  height: 300px;
+  line-height: 300px;
+  width: 100%;
+}
+
+.block__3 {
+  background-color: #900;
+  height: 300px;
+  line-height: 300px;
+  width: 100%;
+}
+
+.block__4 {
+  background-color: #600;
+  height: 300px;
+  line-height: 300px;
+  width: 100%;
+}
+
+.block__5 {
+  background-color: #300;
+  height: 300px;
+  line-height: 300px;
+  width: 100%;
+}
+
+.block__6 {
+  background-color: #000;
+  height: 300px;
+  line-height: 300px;
+  width: 100%;
+}
+
+.block__1::after {
+  content: "1";
+  display: flex;
+  justify-content: center;
+}
+
+.block__2::after {
+  content: "2";
+  display: flex;
+  justify-content: center;
+}
+
+.block__3::after {
+  content: "3";
+  display: flex;
+  justify-content: center;
+}
+
+.block__4::after {
+  content: "4";
+  display: flex;
+  justify-content: center;
+}
+
+.block__5::after {
+  content: "5";
+  display: flex;
+  justify-content: center;
+}
+
+.block__6::after {
+  content: "6";
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 1200px) {
+  .block {
+    grid-template-columns: repeat(auto-fill, minmax(300px, calc(100% / 3)));
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  margin: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
