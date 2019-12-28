@@ -3,13 +3,9 @@ body {
 }
 
 .box {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(6, 300px);
-  justify-content: center;
   color: #fff;
   font-size: 100px;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
 }
 
 .box__item {
@@ -43,14 +39,15 @@ body {
 
 @media (min-width: 600px) {
   .box {
+    display: grid;
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(3, 300px);
   }
 }
 
 @media (min-width: 900px) {
   .box {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 300px);
   }
 }
+
+/*# sourceMappingURL=style.css.map */
