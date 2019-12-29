@@ -1,0 +1,39 @@
+$colors: red, #c00, #900, #600, #300, #000;
+
+body {
+  margin: 0;
+  font-family: Arial, serif;
+  font-size: 100px;
+}
+
+.block {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(100%/3));
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+}
+
+@for $i from 1 through 6 {
+  .block-#{$i} {
+    background-color: #{nth($colors, $i)};
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .block {
+    grid-template-columns: repeat(auto-fill, calc(100%/2));
+
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .block {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+}
