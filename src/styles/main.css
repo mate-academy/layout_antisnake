@@ -7,15 +7,14 @@ body {
 .block {
   color: white;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 300px);
-
+  grid-template-columns: repeat(auto-fill, calc(100%/3));
 }
 
 .block__item {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 300px;
 }
 
 .block-1 {
@@ -44,15 +43,13 @@ body {
 
 @media screen and (max-width: 750px) {
   .block {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 300px);
-
+    grid-template-columns: repeat(auto-fill, calc(100%/2));
   }
 }
-
 @media screen and (max-width: 450px) {
   .block {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: repeat(auto-fill, 100%);
   }
 }
+
+/*# sourceMappingURL=main.css.map */
