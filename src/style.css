@@ -5,51 +5,51 @@ body {
   color: white;
 }
 
-.container > .item:nth-child(1)::before {
+.container__item:nth-child(1)::before {
   content: "1";
 }
 
-.container > .item:nth-child(1) {
+.container__item:nth-child(1) {
   background-color: #f00;
 }
 
-.container > .item:nth-child(2)::before {
+.container__item:nth-child(2)::before {
   content: "2";
 }
 
-.container > .item:nth-child(2) {
+.container__item:nth-child(2) {
   background-color: #c00;
 }
 
-.container > .item:nth-child(3)::before {
+.container__item:nth-child(3)::before {
   content: "3";
 }
 
-.container > .item:nth-child(3) {
+.container__item:nth-child(3) {
   background-color: #900;
 }
 
-.container > .item:nth-child(4)::before {
+.container__item:nth-child(4)::before {
   content: "4";
 }
 
-.container > .item:nth-child(4) {
+.container__item:nth-child(4) {
   background-color: #600;
 }
 
-.container > .item:nth-child(5)::before {
+.container__item:nth-child(5)::before {
   content: "5";
 }
 
-.container > .item:nth-child(5) {
+.container__item:nth-child(5) {
   background-color: #300;
 }
 
-.container > .item:nth-child(6)::before {
+.container__item:nth-child(6)::before {
   content: "6";
 }
 
-.container > .item:nth-child(6) {
+.container__item:nth-child(6) {
   background-color: #000;
 }
 
@@ -61,7 +61,7 @@ body {
   line-height: 300px;
 }
 
-.container > .item {
+.container__item {
   height: 300px;
   min-width: 300px;
 }

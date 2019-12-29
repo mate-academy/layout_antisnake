@@ -8,10 +8,10 @@ body {
 $colors: #f00, #c00, #900, #600, #300, #000;
 
 @for $i from 1 through 6 {
-  .container > .item:nth-child(#{$i})::before {
+  .container__item:nth-child(#{$i})::before {
     content: "#{$i}";
   }
-  .container > .item:nth-child(#{$i}) {
+  .container__item:nth-child(#{$i}) {
     background-color: nth($colors, $i);
   }
 }
@@ -22,11 +22,11 @@ $colors: #f00, #c00, #900, #600, #300, #000;
   justify-content: center;
   text-align: center;
   line-height: 300px;
-}
 
-.container > .item {
-  height: 300px;
-  min-width: 300px;
+  &__item {
+    height: 300px;
+    min-width: 300px;
+  }
 }
 
 @media screen and (max-width: 899px) {
