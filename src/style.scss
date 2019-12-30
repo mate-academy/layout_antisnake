@@ -1,4 +1,4 @@
-$colors: (1: #f00, 2: #c00, 3: #900, 4: #600, 5: #300, 6: #000);
+$colors: (#f00, #c00, #900, #600, #300, #000);
 
 body {
   margin: 0;
@@ -7,7 +7,7 @@ body {
 
 .snake {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 
   &__element {
     box-sizing: border-box;
@@ -19,16 +19,16 @@ body {
     min-width: 300px;
   }
 
-  @each $element, $color in $colors {
-    &__element--#{$element} {
-      background-color: #{$color}
+  @for $i from 1 through 6{
+    &__element--#{$i} {
+      background-color: nth($colors, $i);
     }
   }
 }
 
 @media (max-width: 899px) {
   .snake {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
