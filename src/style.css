@@ -83,17 +83,18 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.blocks {
+.block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+
 @media (min-width: 1200px) {
-  .blocks {
+  .block {
     grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
   }
 }
 
-.block {
+.block__item {
   text-align: center;
   font-size: 100px;
   color: #fff;
@@ -101,27 +102,27 @@ body {
   height: 300px;
 }
 
-.block-first {
+.block__item-first {
   background-color: #f00;
 }
 
-.block-second {
+.block__item-second {
   background-color: #c00;
 }
 
-.block-third {
+.block__item-third {
   background-color: #900;
 }
 
-.block-fourth {
+.block__item-fourth {
   background-color: #600;
 }
 
-.block-fifth {
+.block__item-fifth {
   background-color: #300;
 }
 
-.block-sixth {
+.block__item-sixth {
   background-color: #000;
 }
 
