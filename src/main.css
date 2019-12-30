@@ -46,53 +46,44 @@ body {
   content: "6";
 }
 
-.snake__block-1 {
+.snake__block_1 {
   background-color: #f00;
-  grid-area: one;
 }
 
-.snake__block-2 {
+.snake__block_2 {
   background-color: #c00;
-  grid-area: two;
 }
 
-.snake__block-3 {
+.snake__block_3 {
   background-color: #900;
-  grid-area: three;
 }
 
-.snake__block-4 {
+.snake__block_4 {
   background-color: #600;
-  grid-area: four;
 }
 
-.snake__block-5 {
+.snake__block_5 {
   background-color: #300;
-  grid-area: five;
 }
 
-.snake__block-6 {
+.snake__block_6 {
   background-color: #000;
-  grid-area: six;
 }
 
 .snake {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-areas: "one two three" "four five six";
   transition: all 300ms ease;
 }
 
 @media screen and (max-width: 899px) {
   .snake {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-template-areas: "one two" "three four" "five six";
   }
 }
 @media screen and (max-width: 599px) {
   .snake {
     grid-template-columns: minmax(300px, 1fr);
-    grid-template-areas: "one" "two" "three" "four" "five" "six";
   }
 }
 
