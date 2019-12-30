@@ -1,0 +1,39 @@
+$colors: (#f00, #c00, #900, #600, #300, #000);
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__element {
+    box-sizing: border-box;
+    height: 300px;
+    font-size: 100px;
+    color: white;
+    line-height: 300px;
+    text-align: center;
+    min-width: 300px;
+  }
+
+  @for $i from 1 through 6{
+    &__element--#{$i} {
+      background-color: nth($colors, $i);
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .snake {
+    grid-template-columns: 1fr;
+  }
+}
