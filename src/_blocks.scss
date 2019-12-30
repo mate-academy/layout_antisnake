@@ -1,0 +1,46 @@
+
+.snake__block {
+  min-height: 300px;
+  color: #fff;
+  font-size: 100px;
+  font-family: "Arial", "Helvetica", sans-serif;
+  position: relative;
+}
+
+.snake__block::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@for $i from 1 through 6 {
+  .snake__block:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+.snake__block_1 {
+  background-color: #f00;
+}
+
+.snake__block_2 {
+  background-color: #c00;
+}
+
+.snake__block_3 {
+  background-color: #900;
+}
+
+.snake__block_4 {
+  background-color: #600;
+}
+
+.snake__block_5 {
+  background-color: #300;
+}
+
+.snake__block_6 {
+  background-color: #000;
+}

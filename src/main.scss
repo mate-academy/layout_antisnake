@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import "_blocks";
+@import "_grid";
+@import "_media";
