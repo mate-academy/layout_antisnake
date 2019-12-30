@@ -6,30 +6,30 @@ body {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
 
-.block__first-block {
+  &__first-block {
   background-color: #f00;
-}
+  }
 
-.block__second-block {
+  &__second-block {
   background-color: #c00;
-}
+  }
 
-.block__third-block {
+  &__third-block {
   background-color: #900;
-}
+  }
 
-.block__fourth-block {
+  &__fourth-block {
   background-color: #600;
-}
+  }
 
-.block__fifth-block {
+  &__fifth-block {
   background-color: #300;
-}
+  }
 
-.block__sixth-block {
+  &__sixth-block {
   background-color: #000;
+  }
 }
 
 .text {
@@ -39,11 +39,9 @@ body {
   line-height: 100px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width:1200px) {
   .block {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
   }
 }
-
-/*# sourceMappingURL=style.css.map */
