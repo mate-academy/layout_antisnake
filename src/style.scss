@@ -1,0 +1,48 @@
+@import "_reset";
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+    }
+  }
+}
+
+.block {
+  text-align: center;
+  font-size: 100px;
+  color: #fff;
+  line-height: 300px;
+  height: 300px;
+}
+
+.block__first {
+  background-color: #f00;
+}
+
+.block__second {
+  background-color: #c00;
+}
+
+.block__third {
+  background-color: #900;
+}
+
+.block__fourth {
+  background-color: #600;
+}
+
+.block__fifth {
+  background-color: #300;
+}
+
+.block__sixth {
+  background-color: #000;
+}
