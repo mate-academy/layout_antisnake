@@ -1,0 +1,36 @@
+
+$colors: #f00, #c00, #900, #600, #300 , #000;
+
+body {
+  margin: 0;
+}
+
+.box {
+  color: #fff;
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+
+  &__item {
+    text-align: center;
+    line-height: 300px;
+  }
+
+  @for $i from 1 through 6 {
+    &__item--#{$i} {
+      background-color: #{nth($colors, $i)};
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
