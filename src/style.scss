@@ -1,0 +1,44 @@
+$box-color: #f00, #c00, #900, #600, #300, #000;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media screen and (min-width: 1050px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+
+    color: #fff;
+
+    height: 300px;
+  }
+}
+
+@for $i from 1 through 6 {
+  .container div:nth-child(#{$i})::before {
+    content: "#{$i}";
+  }
+
+  .container div:nth-child(#{$i}) {
+    background-color: #{nth($box-color, $i)};
+  }
+}
+
+
+
