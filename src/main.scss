@@ -1,0 +1,43 @@
+$colors: "#f00", "#c00", "#900", "#600", "#300", "#000";
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__blocks {
+    height: 300px;
+    min-width: 300px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    @for $i from 1 through 6 {
+      &_block#{$i}::after {
+        content: "#{$i}";
+      }
+
+      &_block#{$i} {
+        background-color: #{nth($colors, $i)};
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
