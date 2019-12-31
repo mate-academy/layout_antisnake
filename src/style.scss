@@ -15,7 +15,7 @@ body {
 
   @media screen and (min-width: 1050px) {
     & {
-      grid-template-columns: repeat(3, calc(100%/3));
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
