@@ -7,11 +7,10 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 300px 300px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.blocks {
+.container__blocks {
   height: 300px;
   min-width: 300px;
   display: grid;
@@ -19,57 +18,57 @@ body {
   justify-items: center;
 }
 
-.block1::after {
+.container__blocks_block1::after {
   content: "1";
 }
 
-.block1 {
+.container__blocks_block1 {
   background-color: #f00;
 }
 
-.block2::after {
+.container__blocks_block2::after {
   content: "2";
 }
 
-.block2 {
+.container__blocks_block2 {
   background-color: #c00;
 }
 
-.block3::after {
+.container__blocks_block3::after {
   content: "3";
 }
 
-.block3 {
+.container__blocks_block3 {
   background-color: #900;
 }
 
-.block4::after {
+.container__blocks_block4::after {
   content: "4";
 }
 
-.block4 {
+.container__blocks_block4 {
   background-color: #600;
 }
 
-.block5::after {
+.container__blocks_block5::after {
   content: "5";
 }
 
-.block5 {
+.container__blocks_block5 {
   background-color: #300;
 }
 
-.block6::after {
+.container__blocks_block6::after {
   content: "6";
 }
 
-.block6 {
+.container__blocks_block6 {
   background-color: #000;
 }
 
 @media screen and (max-width: 899px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 599px) {
