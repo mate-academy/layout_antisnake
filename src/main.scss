@@ -13,7 +13,7 @@ $colors: #f00, #c00, #900, #600, #300, #000;
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   
   &__item {
     height: 300px;
