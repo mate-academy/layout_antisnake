@@ -7,7 +7,7 @@ body {
   grid-template: repeat(2, 50%)/repeat(3, 1fr);
 }
 
-.container__block {
+.container__element {
   text-align: center;
   line-height: 300px;
   font-family: Arial, Helvetica, sans-serif;
@@ -15,27 +15,27 @@ body {
   color: rgb(255,255,255);
 }
 
-.block--1 {
+.element--1 {
   background-color: #f00;
 }
 
-.block--2 {
+.element--2 {
   background-color: rgb(204,0,0);
 }
 
-.block--3 {
+.element--3 {
   background-color: rgb(153,0,0);
 }
 
-.block--4 {
+.element--4 {
   background-color: rgb(102,0,0);
 }
 
-.block--5 {
+.element--5 {
   background-color: rgb(51,0,0);
 }
 
-.block--6 {
+.element--6 {
   background-color: #000;
 }
 
