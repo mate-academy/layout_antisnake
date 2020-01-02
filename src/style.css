@@ -1,0 +1,54 @@
+.body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 899px) {
+  .body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .body {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.block {
+  height: 300px;
+  min-width: 300px;
+  justify-items: center;
+  align-items: center;
+  font-size: 100px;
+  display: grid;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+.block--1 {
+  background: #f00;
+}
+
+.block--2 {
+  background: #c00;
+}
+
+.block--3 {
+  background: #900;
+}
+
+.block--4 {
+  background: #600;
+}
+
+.block--5 {
+  background: #300;
+}
+
+.block--6 {
+  background: #000;
+}
+
+/*# sourceMappingURL=style.css.map */
