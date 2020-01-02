@@ -1,0 +1,35 @@
+$colors: #f00, #c00, #900, #600, #300, #000;
+
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.container {
+  display: grid;
+
+  &__block {
+    color: white;
+    text-align: center;
+    line-height: 300px;
+
+    @for $i from 1 through 6 {
+      &--#{$i} {
+        background-color: #{nth($colors, $i)};
+      }
+    }
+  }
+}
+
+@media screen and (min-width:600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
