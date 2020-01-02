@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .blocks {
@@ -14,8 +15,6 @@ body {
 .blocks__four,
 .blocks__five,
 .blocks__six {
-  height: 300px;
-  font-family: Arial;
   line-height: 300px;
   min-width: 300px;
   font-size: 100px;
@@ -50,12 +49,12 @@ body {
 
 @media (max-width: 899px) {
   .blocks {
-    grid-template-columns: repeat(auto-fill, calc(100%/2));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 599px) {
   .blocks {
-    grid-template-columns: repeat(auto-fill, 100%);
+    grid-template-columns: 1fr;
   }
 }
