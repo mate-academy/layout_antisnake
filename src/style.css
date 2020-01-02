@@ -45,7 +45,7 @@ body {
 
 @media screen and (min-width: 300px) {
   .wrapper {
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: 1fr ;
   }
 }
 
