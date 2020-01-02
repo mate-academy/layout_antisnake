@@ -2,15 +2,14 @@ $colors: #f00, #c00, #900, #600, #300, #000;
 
 body {
   margin:0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
 }
 
 .container {
   display: grid;
 
   &__block {
-    height: 300px;
-    font-family: Arial, sans-serif;
-    font-size: 100px;
     color: white;
     text-align: center;
     line-height: 300px;
