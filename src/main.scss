@@ -1,17 +1,17 @@
 .body {
   margin: 0;
+  font-size: 100px;
+  color: #fff;
+  font-family: "Arial", sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
 
   @media (max-width: 899px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
   }
 
   @media (max-width: 599px) {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -20,10 +20,7 @@
   min-width: 300px;
   justify-items: center;
   align-items: center;
-  font-size: 100px;
   display: grid;
-  color: #fff;
-  font-family: "Arial", sans-serif;
 
   &--1 {
     background: #f00;
