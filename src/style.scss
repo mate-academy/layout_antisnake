@@ -5,8 +5,6 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-areas: "box1 box2 box3" "box4 box5 box6";
-  justify-content: center;
 }
 
 .item {
@@ -18,45 +16,31 @@ body {
 }
 
 .item-1 {
-  grid-area: box1;
   background-color: #f00;
 }
 
 .item-2 {
-  grid-area: box2;
   background-color: #c00;
 }
 
 .item-3 {
-  grid-area: box3;
   background-color: #900;
 }
 
 .item-4 {
-  grid-area: box4;
   background-color: #600;
 }
 
 .item-5 {
-  grid-area: box5;
   background-color: #300;
 }
 
 .item-6 {
-  grid-area: box6;
   background-color: #000;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 899px) {
   .container {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-template-areas: "box1 box2" "box3 box4" "box5 box6";
-  }
-}
-
-@media (max-width: 450px) {
-  .container {
-    grid-template-columns: minmax(300px, 1fr);
-    grid-template-areas: "box1" "box2" "box3" "box4" "box5" "box6";
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
