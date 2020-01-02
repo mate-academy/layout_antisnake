@@ -5,48 +5,36 @@ body {
   color: white;
 }
 
-.num {
-  justify-content: center;
-  margin: auto;
-}
-
 .container {
   display: grid;
-  grid-template-areas:
-    "box__0 box__1 box__2"
-    "box__3 box__4 box__5";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
 }
 
 .container__box {
   display: grid;
   justify-items: center;
+  align-items: center;
   height: 300px;
   min-width: 300px;
 }
 
 @for $i from 0 to 6 {
-  .box__#{$i} {
+  .box-#{$i} {
     background-color: rgb(51*$i, 0, 0);
   }
 }
 
 @media screen and (max-width: 899px) {
   .container{
-    grid-template-areas:
-    "box__0 box__1"
-    "box__2 box__3"
-    "box__4 box__5";
+    grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   }
 }
 
 @media screen and (max-width: 599px) {
   .container{
-    grid-template-areas:
-    "box__0"
-    "box__1"
-    "box__2"
-    "box__3"
-    "box__4"
-    "box__5";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 }

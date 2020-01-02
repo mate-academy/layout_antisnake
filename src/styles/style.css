@@ -5,55 +5,51 @@ body {
   color: white;
 }
 
-.num {
-  justify-content: center;
-  margin: auto;
-}
-
 .container {
   display: grid;
-  grid-template-areas: "box__0 box__1 box__2" "box__3 box__4 box__5";
+  grid-template-areas: "box-0 box-1 box-2" "box-3 box-4 box-5";
 }
 
 .container__box {
   display: grid;
   justify-items: center;
+  align-items: center;
   height: 300px;
   min-width: 300px;
 }
 
-.box__0 {
+.box-0 {
   background-color: black;
 }
 
-.box__1 {
+.box-1 {
   background-color: #300;
 }
 
-.box__2 {
+.box-2 {
   background-color: #600;
 }
 
-.box__3 {
+.box-3 {
   background-color: #900;
 }
 
-.box__4 {
+.box-4 {
   background-color: #c00;
 }
 
-.box__5 {
+.box-5 {
   background-color: red;
 }
 
 @media screen and (max-width: 899px) {
   .container {
-    grid-template-areas: "box__0 box__1" "box__2 box__3" "box__4 box__5";
+    grid-template-areas: "box-0 box-1" "box-2 box-3" "box-4 box-5";
   }
 }
 @media screen and (max-width: 599px) {
   .container {
-    grid-template-areas: "box__0" "box__1" "box__2" "box__3" "box__4" "box__5";
+    grid-template-areas: "box-0" "box-1" "box-2" "box-3" "box-4" "box-5";
   }
 }
 
