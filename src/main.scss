@@ -4,7 +4,7 @@ body {
 
 .container {
   display: grid;
-  grid-template: repeat(2, 50%)/repeat(3, 1fr);
+  grid-template: repeat(2, minmax(300px, 50%))/repeat(3, minmax(300px, 1fr));
 
   &__element {
     text-align: center;
@@ -21,14 +21,14 @@ body {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 599px) {
   .container {
-    grid-template: repeat(6, 300px)/minmax(300px, 450px);
+    grid-template: repeat(6, 300px)/minmax(300px, 1fr);
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 750px) {
+@media screen and (min-width: 600px) and (max-width: 899px) {
   .container {
-    grid-template: repeat(3, 33.3%)/repeat(2, 1fr);
+    grid-template: repeat(3, minmax(300px, 1fr))/repeat(2,  minmax(300px, 1fr));
   }
 }
