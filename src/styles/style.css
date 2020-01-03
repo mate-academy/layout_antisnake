@@ -1,13 +1,14 @@
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
-  color: white;
+  color: #fff;
 }
 
 .container {
   display: grid;
-  grid-template-areas: "box-0 box-1 box-2" "box-3 box-4 box-5";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
 }
 
 .container__box {
@@ -42,14 +43,14 @@ body {
   background-color: red;
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 900px) {
   .container {
-    grid-template-areas: "box-0 box-1" "box-2 box-3" "box-4 box-5";
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 599px) {
   .container {
-    grid-template-areas: "box-0" "box-1" "box-2" "box-3" "box-4" "box-5";
+    grid-template-columns: 1fr;
   }
 }
 
