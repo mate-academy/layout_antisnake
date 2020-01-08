@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template: repeat(2, minmax(300px, 50%))/repeat(3, minmax(300px, 1fr));
+
+  &__element {
+    text-align: center;
+    line-height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: rgb(255,255,255);
+  }
+}
+
+@for $i from 1 through 6 {
+  .container div:nth-child(#{$i}) {
+    background-color: rgb(calc(#{255} - #{$i*51} + 51),0 ,0);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template: repeat(6, 300px)/minmax(300px, 1fr);
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .container {
+    grid-template: repeat(3, minmax(300px, 1fr))/repeat(2,  minmax(300px, 1fr));
+  }
+}
