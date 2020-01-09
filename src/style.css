@@ -8,36 +8,34 @@ body {
   grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
 }
 
-.main__chaild-div {
-  height: 300px;
-  font-family: "Arial", sans-serif;
+.main__child-div {
   font-size: 100px;
   color: #fff;
   text-align: center;
   line-height: 300px;
 }
 
-.main__chaild-div_one {
+.main__child-div_one {
   background: #f00;
 }
 
-.main__chaild-div_two {
+.main__child-div_two {
   background: #c00;
 }
 
-.main__chaild-div_three {
+.main__child-div_three {
   background: #900;
 }
 
-.main__chaild-div_four {
+.main__child-div_four {
   background: #600;
 }
 
-.main__chaild-div_five {
+.main__child-div_five {
   background: #300;
 }
 
-.main__chaild-div_six {
+.main__child-div_six {
   background: #000;
 }
 
@@ -46,8 +44,6 @@ body {
     grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
   }
 }
-
-  
 
 @media (max-width: 599px) {
   .main {
