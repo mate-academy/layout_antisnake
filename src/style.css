@@ -3,50 +3,50 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.main {
+.block {
   display: grid;
   grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
 }
 
-.main__child-div {
+.block__item {
   font-size: 100px;
   color: #fff;
   text-align: center;
   line-height: 300px;
 }
 
-.main__child-div_one {
+.block__item_one {
   background: #f00;
 }
 
-.main__child-div_two {
+.block__item_two {
   background: #c00;
 }
 
-.main__child-div_three {
+.block__item_three {
   background: #900;
 }
 
-.main__child-div_four {
+.block__item_four {
   background: #600;
 }
 
-.main__child-div_five {
+.block__item_five {
   background: #300;
 }
 
-.main__child-div_six {
+.block__item_six {
   background: #000;
 }
 
 @media (max-width: 899px) {
-  .main {
+  .block {
     grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
   }
 }
 
 @media (max-width: 599px) {
-  .main {
+  .block {
     grid-template: repeat(6, 1fr)/ repeat(1, 1fr);
   }
 }
