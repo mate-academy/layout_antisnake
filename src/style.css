@@ -1,3 +1,7 @@
+:root {
+  --size: 300px;
+}
+
 body {
   margin: 0;
 }
@@ -8,7 +12,6 @@ body {
 }
 
 .antisnake__item {
-  --size: 300px;
   height: var(--size);
   min-width: var(--size);
   color: white;
