@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.snake_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  color: #fff;
+  height: 300px;
+  min-width: 300px;
+}
+
+.snake_color_1 {
+  background-color: #f00;
+}
+
+.snake_color_2 {
+  background-color: #c00;
+}
+
+.snake_color_3 {
+  background-color: #900;
+}
+
+.snake_color_4 {
+  background-color: #600;
+}
+
+.snake_color_5 {
+  background-color: #300;
+}
+
+.snake_color_6 {
+  background-color: #000;
+}
+
+@media (max-width: 750px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .snake {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
