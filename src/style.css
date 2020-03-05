@@ -4,8 +4,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-areas: "box1 box2 box3"
-    "box4 box5 box6";
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .flex {
@@ -15,55 +14,41 @@ body {
   text-align: center;
   height: 300px;
   line-height: 300px;
+  min-width: 300px;
 }
 
 .box_1 {
-  grid-area: box1;
   background-color: hsl(0,100%,50%);
 }
 
 .box_2 {
-  grid-area: box2;
   background-color: hsl(0,100%,40%);
 }
 
 .box_3 {
-  grid-area: box3;
   background-color: hsl(0,100%,30%);
 }
 
 .box_4 {
-  grid-area: box4;
   background-color: hsl(0,100%,20%);
 }
 
 .box_5 {
-  grid-area: box5;
   background-color: hsl(0,100%,10%);
 }
 
 .box_6 {
-  grid-area: box6;
   background-color: hsl(0,0%,0%);
 }
 
 @media screen and (max-width: 899px) {
   .container {
-    display: grid;
-    grid-template-areas: "box1 box2"
-      "box3 box4"
-      "box5 box6";
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 599px) {
   .container {
-    display: grid;
-    grid-template-areas: "box1"
-      "box2"
-      "box3"
-      "box4"
-      "box5"
-      "box6";
+    grid-template-columns: 1fr;
   }
 }
