@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-rows: repeat(3, 300px);
+  grid-template-areas: "block-1 block-2 block-3"
+    "block-4 block-5 block-6";
+}
+
+.block {
+  background-color: red;
+  color: white;
+  font-family: Arial, Helvetica, sans serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: 300px;
+}
+
+.block-2 {
+  background-color: rgb(calc(255*0.8), 0, 0);
+}
+
+.block-3 {
+  background-color: rgb(calc(255*0.6), 0, 0);
+}
+
+.block-4 {
+  background-color: rgb(calc(255*0.4), 0, 0);
+}
+
+.block-5 {
+  background-color: rgb(calc(255*0.2), 0, 0);
+}
+
+.block-6 {
+  background-color: black;
+}
+
+@media (min-width: 599px) and (max-width: 899px) {
+  .snake {
+    grid-template-areas: "block-1 block-2"
+      "block-3 block-4"
+      "block-5 block-6";
+  }
+}
+
+@media (max-width: 599px) {
+  .snake {
+    grid-template-areas: "block-1"
+      "block-2"
+      "block-3"
+      "block-4"
+      "block-5"
+      "block-6";
+  }
+}
