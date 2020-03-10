@@ -2,12 +2,12 @@ body {
   margin: 0;
 }
 
-.conteiner {
+.container {
   display: grid;
   grid-template-areas: "block1 block2 block3";
 }
 
-.conteiner > div {
+.block {
   text-align: center;
   line-height: 300px;
   height: 300px;
@@ -40,19 +40,19 @@ body {
   background-color: rgb(0, 0, 0);
 }
 
-@media screen and (max-width: 900px) {
-  .conteiner {
+@media screen and (max-width: 899px) {
+  .container {
     grid-template-areas: "block1 block2";
   }
 }
 
 @media screen and (max-width: 599px) {
-  .conteiner {
+  .container {
     grid-template-areas: "block1";
   }
 }
 @media screen and (max-width: 315px) {
-  .conteiner > div {
+  .block {
     width: 300px;
   }
 }
