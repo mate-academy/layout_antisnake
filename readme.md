@@ -2,7 +2,7 @@
 1. Replace `<your_account>` with your Github username in the links
     - [DEMO LINK](https://Andreas-Just.github.io/layout_antisnake/)
     - [TEST REPORT LINK](https://Andreas-Just.github.io/layout_antisnake/report/html_report/)
-    - [PULL REQUEST](https://github.com/mate-academy/layout_antisnake/pull/235)
+    - [PULL REQUEST](https://github.com/mate-academy/layout_antisnake/pull/242)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
 
