@@ -5,59 +5,55 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-
-  &__block {
-    height: 300px;
-    font-size: 100px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    line-height: 300px;
-    color: white;
-
-    &--1 {
-      background-color: rgba(255, 0, 0);
-    }
-
-    &--2 {
-      background-color: rgba(204, 0, 0);
-    }
-
-    &--3 {
-      background-color: rgba(153, 0, 0);
-    }
-
-    &--4 {
-      background-color: rgba(102, 0, 0);
-    }
-
-    &--5 {
-      background-color: rgba(51, 0, 0);
-    }
-
-    &--6 {
-      background-color: rgba(0, 0, 0);
-    }
-  }
+}
+.container__block {
+  height: 300px;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: 300px;
+  color: white;
+}
+.container__block--1 {
+  background-color: red;
+}
+.container__block--2 {
+  background-color: #cc0000;
+}
+.container__block--3 {
+  background-color: #990000;
+}
+.container__block--4 {
+  background-color: #660000;
+}
+.container__block--5 {
+  background-color: #330000;
+}
+.container__block--6 {
+  background-color: black;
 }
 
 @media (min-width: 600px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .container__block--3 {
     order: 2;
   }
+
   .container__block--4 {
     order: 3;
   }
+
   .container__block--5 {
     order: 4;
   }
+
   .container__block--6 {
     order: 5;
   }
 }
-
 @media (min-width: 900px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
@@ -66,7 +62,10 @@ body {
   .container__block--4 {
     order: 3;
   }
+
   .container__block--6 {
     order: 5;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
