@@ -1,3 +1,53 @@
 body {
   margin: 0;
+  font-family: Arial, serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+}
+
+.container__blocks {
+  height: 300px;
+  font-size: 100px;
+  color: white;
+  text-align: center;
+  line-height: 300px;
+}
+
+@for $i from 0 through 6 {
+  .container div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+.container div:nth-child(1) {
+  background-color: rgb(255, 0, 0);
+}
+
+.container div:nth-child(2) {
+  background-color: rgb(calc(255*0.8), 0, 0);
+}
+
+.container div:nth-child(3) {
+  background-color: rgb(calc(255*0.6), 0, 0);
+}
+
+.container div:nth-child(4) {
+  background-color: rgb(calc(255*0.4), 0, 0);
+}
+
+.container div:nth-child(5) {
+  background-color: rgb(calc(255*0.2), 0, 0);
+}
+
+.container div:nth-child(6) {
+  background-color: rgb(calc(255*0), 0, 0);
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
