@@ -4,7 +4,6 @@
     - [TEST REPORT LINK](https://OliinykKostya.github.io/layout_antisnake/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
-
 ## The task
 Display six colored blocks on the screen without any extra margins:
 

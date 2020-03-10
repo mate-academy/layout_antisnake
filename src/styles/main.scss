@@ -46,8 +46,13 @@ body {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 599px) {
   .conteiner {
     grid-template-areas: "block1";
+  }
+}
+@media screen and (max-width: 315px) {
+  .conteiner > div {
+    width: 300px;
   }
 }
