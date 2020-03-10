@@ -45,29 +45,10 @@ body {
   .snake {
     grid-template-columns: repeat(2, 1fr);
   }
-  .snake--third-box {
-    order: 2;
-  }
-  .snake--fourth-box {
-    order: 3;
-  }
-
-  .snake--fifth-box,
-  .snake--sixth-box {
-    order: 4;
-  }
 }
 
 @media (min-width: 900px) {
   .snake {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .snake--fourth-box {
-    order: 3;
-  }
-
-  .snake--sixth-box {
-    order: 5;
   }
 }
