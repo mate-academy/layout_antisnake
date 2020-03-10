@@ -4,9 +4,7 @@ body {
 
 .snake {
   display: grid;
-  grid-template-rows: repeat(3, 300px);
-  grid-template-areas: "block-1 block-2 block-3"
-    "block-4 block-5 block-6";
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .block {
@@ -40,19 +38,12 @@ body {
 
 @media (min-width: 599px) and (max-width: 899px) {
   .snake {
-    grid-template-areas: "block-1 block-2"
-      "block-3 block-4"
-      "block-5 block-6";
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 599px) {
   .snake {
-    grid-template-areas: "block-1"
-      "block-2"
-      "block-3"
-      "block-4"
-      "block-5"
-      "block-6";
+    grid-template-columns: 1fr;
   }
 }
