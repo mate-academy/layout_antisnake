@@ -14,6 +14,7 @@ body {
 
 .items {
   height: 300px;
+  min-width: 300px;
 }
 
 .snake_head {
@@ -40,7 +41,7 @@ body {
   background-color: #300;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 899px) {
 
   .snake {
     grid-template-columns: 1fr 1fr;
@@ -48,7 +49,7 @@ body {
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 599px) {
 
   .snake {
     grid-template-columns: 1fr;
