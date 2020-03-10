@@ -1,3 +1,63 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  //grid-template-areas: "first second third" "fourth fifth sixth";
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(6, 300px);
+  justify-content: left;
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+}
+
+.block {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  color: white;
+  align-self: center;
+  text-align: center;
+  line-height: 300px;
+  //height: 300px;
+  //width: 300px;
+}
+
+.one {
+  background-color: rgb(255, 0, 0);
+  //grid-area: first;
+
+}
+
+.two {
+  background-color: rgb(204, 0, 0);
+  //grid-area: second;
+}
+
+.three {
+  background-color: rgb(153, 0, 0);
+  //grid-area: third;
+
+}
+
+.four {
+  background-color: rgb(102, 0, 0);
+  //grid-area: fourth;
+}
+
+.five {
+  background-color: rgb(51, 0, 0);
+  //grid-area: fifth;
+}
+
+.six {
+  background-color: rgb(0, 0, 0);
+  //grid-area: sixth;
+}
