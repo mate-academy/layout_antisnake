@@ -1,10 +1,13 @@
+
+$blockSize: 300px;
+
 body {
   margin: 0;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
 }
 
 .container__sub {
@@ -14,7 +17,7 @@ body {
   font-size: 100px;
   color: #fff;
   font-family: Arial, sans-serif;
-  height: 300px;
+  height: $blockSize;
 }
 
 .container__sub:first-child {
