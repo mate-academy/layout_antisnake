@@ -1,3 +1,37 @@
+$colors: (1: #f00, 2: #c00, 3: #900, 4: #600, 5: #300, 6: #000);
+$text-color: #fff;
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  counter-reset: count;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cell {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+
+    &::before {
+      counter-increment: count;
+      content: counter(count);
+    }
+  }
+}
+
+@each $num, $color in $colors {
+  .antisnake__cell:nth-child(#{$num}) {
+    background-color: $color;
+  }
 }
