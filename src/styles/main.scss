@@ -8,22 +8,23 @@ body {
   display: grid;
   grid-template-columns: repeat((3), 1fr );
   justify-items: stretch;
-  div {
+  &__item {
     height: 300px;
+    font-size: 100px;
+    font-family: Arial;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 @for $i from 1 through 6 {
-  .container__item:nth-child(#{$i})::after {
-    content: "#{$i}";
-    font-size: 100px;
-    font-family: Arial;
-    color: $white-color;
+  .container__item:nth-child(#{$i}) {
     background: rgb((255 - 51*($i - 1)), 0, 0);
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    &::after {
+      content: "#{$i}";
+    }
   }
 }
 
@@ -35,6 +36,6 @@ body {
 
 @media screen and (max-width: 899px) and (min-width: 600px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat((2), 1fr );
   }
 }
