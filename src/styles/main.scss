@@ -1,3 +1,36 @@
 body {
   margin: 0;
+  font-family: Arial;
+  font-size: 100px;
+}
+
+$size: 300px;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($size,1fr));
+  color: #fff;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax($size+1, 1fr));
+  }
+}
+
+div {
+  height: $size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$colors: ("1": 50%, "2": 40%, "3": 30%, "4": 20%, "5": 10%, "6": 0%);
+
+.block {
+  @each $block-count, $color in $colors {
+    &__#{$block-count} {
+      background-color: hsl(0, 100%, $color);
+    }
+  }
 }
