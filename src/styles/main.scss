@@ -27,7 +27,6 @@ body {
       content: counter(count);
     }
   }
-  
 }
 
 @each $num, $color in $colors {
