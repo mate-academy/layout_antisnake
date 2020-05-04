@@ -1,3 +1,25 @@
-body {
-  margin: 0;
+@import "variables";
+@import "mixins";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($box-min-width, auto));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($box-min-width, auto));
+  }
+
+  &__box {
+    height: $box-height;
+    
+    @include font;
+    text-align: center;
+    line-height: $box-height;
+
+    @for $i from 1 to 7 {
+      &-col-#{$i} {
+        background-color: rgb((255 - 51*($i - 1)), 0, 0);
+      }
+    }
+  }
 }
