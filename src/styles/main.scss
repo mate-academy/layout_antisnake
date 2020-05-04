@@ -9,26 +9,26 @@ body {
   margin: 0;
 }
 
-.container {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 300px;
 }
 
-.box {
+.grid__cell {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @for $i  from 0 through 5 {
-  .box#{$i + 1} {
+  .grid__cell--#{$i + 1} {
     background-color: rgb(255/5*(5 - $i), 0, 0);
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
