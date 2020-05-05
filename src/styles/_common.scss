@@ -1,0 +1,36 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  display: grid;
+  @include cell-area(3, 2, $size-cell);
+
+  @media screen and (max-width: 899px) {
+    @include cell-area(2, 3, $size-cell);
+  }
+
+  @media screen and (max-width: 599px) {
+    @include cell-area(1, 6, $size-cell);
+  }
+
+  &__item {
+    position: relative;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb((255 - 51*($i - 1)), 0, 0);
+      }
+
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

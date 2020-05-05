@@ -1,3 +1,11 @@
+@import "mixins";
+@import "common";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  @include main-font;
 }
