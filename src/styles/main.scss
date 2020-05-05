@@ -1,3 +1,33 @@
+$cell-size: 300px;
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+
+  &__cell {
+    height: $cell-size;
+
+    color: white;
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    line-height: $cell-size;
+  }
+
+}
+
+@for $i from 1 through 6 {
+  .antisnake__cell:nth-child(#{$i}) {
+    background: rgb((100% - 20%*($i - 1)), 0, 0);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
