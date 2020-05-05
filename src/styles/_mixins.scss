@@ -2,3 +2,8 @@
   grid-template-columns: repeat($colomn-num, minmax($cell-size, 1fr));
   grid-template-rows: repeat($row-num, $cell-size);
 }
+
+@mixin main-font {
+  font: 100px Arial;
+  color: #fff;
+}

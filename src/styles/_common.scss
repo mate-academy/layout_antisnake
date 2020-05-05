@@ -16,9 +16,6 @@
   &__item {
     position: relative;
 
-    font: 100px Arial;
-    color: #fff;
-
     $color-num: 255;
     @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
