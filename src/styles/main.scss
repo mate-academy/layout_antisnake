@@ -19,28 +19,14 @@ body {
     text-align: center;
   }
 
-  &__box--1 {
-    background-color: rgb(255, 0, 0);
-  }
+  @for $i from 1 through 6 {
+    &__box:nth-child(#{$i})::after {
+      content: "#{$i}";
+    }
 
-  &__box--2 {
-    background-color: rgb(204, 0, 0);
-  }
-
-  &__box--3 {
-    background-color: rgb(153, 0, 0);
-  }
-
-  &__box--4 {
-    background-color: rgb(102, 0, 0);
-  }
-
-  &__box--5 {
-    background-color: rgb(51, 0, 0);
-  }
-
-  &__box--6 {
-    background-color: rgb(0, 0, 0);
+    &__box:nth-child(#{$i}) {
+      background-color: rgb(255 - 51 * ($i - 1), 0, 0);
+    }
   }
 }
 
