@@ -9,12 +9,6 @@ html {
   font-family: Arial;
 }
 
-// .container {
-//   max-width: 1200px;
-//   display: flex;
-//   flex-wrap: wrap;
-// }
-
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
