@@ -22,6 +22,6 @@ body {
 
 @for $i from 1 to 7 {
   .snake__item:nth-child(#{$i}) {
-    background-color: rgb(100% - 20% * ($i - 1), 0, 0);
+    background-color: rgb(255 - 51 * ($i - 1), 0, 0);
   }
 }
