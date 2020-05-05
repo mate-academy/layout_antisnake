@@ -1,42 +1,35 @@
 $value:255;
+$size: 300px;
 
 body {
   margin: 0;
 }
 
 html {
-  font-size: 100px;
-  font-family: Arial;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: stretch;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size,1fr));
+  justify-items: stretch;
+
   @for $i from 1 through 6 {
     & > div:nth-child(#{$i})::after {
       content: "#{$i}";
-      color: white;
-      justify-content: center;
+      height: $size;
       display: flex;
-      height: 300px;
-      line-height: 300px;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      color: white;
       background-color: rgb((255 - 51*($i - 1)), 0, 0);
     }
   }
 }
 
-@media all and (max-width: 800px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media all and (max-width: 599px) {
-  .container {
-    grid-template-columns: 1fr;
+@media only screen and (min-width: 1200px) {
+  .anti-snake {
+    grid-template-columns: repeat(3,1fr);
   }
 }
