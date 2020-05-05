@@ -1,7 +1,7 @@
 # Antisnake
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](wa7er14@gmail.com.github.io/layout_antisnake/)
-    - [TEST REPORT LINK](wa7er14@gmail.com.github.io/layout_antisnake/report/html_report/)
+    - [DEMO LINK](wa7er14.com.github.io/layout_antisnake/)
+    - [TEST REPORT LINK](wa7er14.github.io/layout_antisnake/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
 
