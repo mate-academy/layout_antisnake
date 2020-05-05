@@ -1,0 +1,41 @@
+@import "variables";
+@import "mixins";
+
+.container {
+  display: grid;
+  @include cell-area(3, 2, $size-cell);
+
+  @media screen and (max-width: 899px) {
+    @include cell-area(2, 3, $size-cell);
+  }
+
+  @media screen and (max-width: 599px) {
+    @include cell-area(1, 6, $size-cell);
+  }
+
+  &__item {
+    position: relative;
+
+    font: 100px Arial;
+    color: #fff;
+
+    $color-num: 255;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb($color-num, 0, 0);
+      }
+      $color-num: $color-num - 51;
+
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

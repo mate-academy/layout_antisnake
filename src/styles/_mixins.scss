@@ -1,0 +1,4 @@
+@mixin cell-area($colomn-num, $row-num, $cell-size) {
+  grid-template-columns: repeat($colomn-num, minmax($cell-size, 1fr));
+  grid-template-rows: repeat($row-num, $cell-size);
+}
