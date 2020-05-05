@@ -1,3 +1,27 @@
 body {
   margin: 0;
 }
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, auto));
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  }
+  &__item {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+  }
+}
+
+@for $i from 1 to 7 {
+  .snake__item:nth-child(#{$i}) {
+    background-color: rgb(100% - 20% * ($i - 1), 0, 0);
+  }
+}
