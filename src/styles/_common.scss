@@ -16,12 +16,10 @@
   &__item {
     position: relative;
 
-    $color-num: 255;
     @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
-        background-color: rgb($color-num, 0, 0);
+        background-color: rgb((255 - 51*($i - 1)), 0, 0);
       }
-      $color-num: $color-num - 51;
 
       &:nth-child(#{$i})::after {
         content: "#{$i}";
