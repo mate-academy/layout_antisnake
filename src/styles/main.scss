@@ -13,16 +13,18 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($size,1fr));
   justify-items: stretch;
+  > div:nth-child(-n+6)::after {
+    height: $size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+  }
 
   @for $i from 1 through 6 {
     & > div:nth-child(#{$i})::after {
       content: "#{$i}";
-      height: $size;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 100px;
-      color: white;
       background-color: rgb((255 - 51*($i - 1)), 0, 0);
     }
   }
