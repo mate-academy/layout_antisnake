@@ -25,3 +25,15 @@ body {
     font-size: 100px;
   }
 }
+
+@media screen and (min-width: 600px) {
+  .snake {
+    grid-template: repeat(3, 300px) / 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .snake {
+    grid-template: repeat(2, 300px) / 1fr 1fr 1fr;
+  }
+}
