@@ -5,20 +5,19 @@ body {
 }
 
 .container {
-  height: 100%;
-  width: 100%;
-
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-items: stretch;
   
   &__item {
     height: $item-size;
+
     font-family: Arial, sans-serif;
     font-size: 100px;
-    color: white;
     text-align: center;
     line-height: $item-size;
+
+    color: white;
     
     &:nth-child(1) {
       background-color: rgb(100%, 0, 0);
