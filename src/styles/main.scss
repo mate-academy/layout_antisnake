@@ -7,37 +7,41 @@ body {
   display: grid;
   grid-template-areas: "one two three"
     "four five six";
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  line-height: 300px;
+  color: #fff;
+}
 
-  &__first {
-    grid-area: one;
-    background-color: #f00;
-  }
+.container__item:first-child {
+  grid-area: one;
+  background-color: #f00;
+}
 
-  &__second {
-    grid-area: two;
-    background-color: #cd0000;
-  }
+.container__item:nth-child(2) {
+  grid-area: two;
+  background-color: #cd0000;
+}
 
-  &__third {
-    grid-area: three;
-    background-color: #9a0000;
-  }
+.container__item:nth-child(3) {
+  grid-area: three;
+  background-color: #9a0000;
+}
 
-  &__fourth {
-    grid-area: four;
-    background-color: #600;
-  }
+.container__item:nth-child(4) {
+  grid-area: four;
+  background-color: #600;
+}
 
-  &__fifth {
-    grid-area: five;
-    background-color: #300;
-  }
+.container__item:nth-child(5) {
+  grid-area: five;
+  background-color: #300;
+}
 
-  &__sixth {
-    grid-area: six;
-    background-color: #000;
-  }
-
+.container__item:last-child {
+  grid-area: six;
+  background-color: #000;
 }
 
 @media all and (max-width: 750px) {
@@ -57,12 +61,4 @@ body {
       "five"
       "six";
   }
-}
-
-.block {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  line-height: 300px;
-  color: #fff;
 }
