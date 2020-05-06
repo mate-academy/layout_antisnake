@@ -17,6 +17,16 @@ $snake-size: 300px;
     grid-template-columns: repeat(3, minmax($snake-size, auto));
   }
 
+  &__item {
+    display: flex;
+    justify-content: center;
+    line-height: $snake-size;
+
+    font-family: Arial;
+    font-size: 100px;
+    color: #fff;
+  }
+  
   @for $i from 1 through 6 {
 
     &__item:nth-child(#{$i}) {
@@ -25,13 +35,6 @@ $snake-size: 300px;
 
     &__item:nth-child(#{$i}):before {
       content: "#{$i}";
-      display: flex;
-      justify-content: center;
-      line-height: $snake-size;
-
-      font-family: Arial;
-      font-size: 100px;
-      color: #fff;
     }
   }
 }
