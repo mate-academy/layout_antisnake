@@ -1,3 +1,40 @@
 body {
   margin: 0;
 }
+
+$snake-size: 300px;
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($snake-size, auto));
+
+  &__item {
+    height: $snake-size;
+    min-width: $snake-size;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($snake-size, auto));
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    line-height: $snake-size;
+
+    font-family: Arial;
+    font-size: 100px;
+    color: #fff;
+  }
+  
+  @for $i from 1 through 6 {
+
+    &__item:nth-child(#{$i}) {
+      background-color: rgb((255 - 51*($i - 1)), 0, 0);
+    }
+
+    &__item:nth-child(#{$i}):before {
+      content: "#{$i}";
+    }
+  }
+}
