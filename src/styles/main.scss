@@ -1,3 +1,23 @@
+@import "extends";
+@import "husk-colors";
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.viper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.viper__husk {
+  @extend %husk-description;
+}
+
+@media (min-width: 899px) {
+  .viper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
