@@ -1,4 +1,6 @@
-﻿.container {
+﻿@import "../variables";
+
+.container {
   display: grid;
 
   grid-template-areas: "block-1"
@@ -10,10 +12,11 @@
 }
 
 .container__block {
-  min-width: 300px;
-  height: 300px;
+  min-width: $block-size;
+  height: $block-size;
 
   text-align: center;
+  line-height: $block-size;
 }
 
 @for $i from 0 through 5 {
