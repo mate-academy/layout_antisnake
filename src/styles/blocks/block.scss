@@ -1,0 +1,40 @@
+﻿.container {
+  display: grid;
+
+  grid-template-areas: "block-1"
+    "block-2"
+    "block-3"
+    "block-4"
+    "block-5"
+    "block-6";
+}
+
+.container__block {
+  min-width: 300px;
+  height: 300px;
+
+  text-align: center;
+}
+
+@for $i from 0 through 5 {
+  .container__block:nth-child(#{$i + 1}) {
+    grid-area: block-#{$i + 1};
+
+    background-color: rgb(255 - 51 * $i, 0, 0);
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-areas: "block-1 block-2"
+      "block-3 block-4"
+      "block-5 block-6";
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-areas: "block-1 block-2 block-3"
+      "block-4 block-5 block-6";
+  }
+}
