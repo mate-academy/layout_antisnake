@@ -1,3 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    color: #fff;
+    text-align: center;
+    line-height: 300px;
+  }
+
+  @for $i from 1 through 6 {
+    &__block:nth-child(#{$i}) {
+      background-color: rgb(100% - ($i - 1) * 20%, 0%, 0%);
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .antisnake {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
