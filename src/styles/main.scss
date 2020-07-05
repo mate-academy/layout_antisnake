@@ -1,3 +1,36 @@
 body {
   margin: 0;
+  font-family: "Arial", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  color: #fff;
+}
+
+.block {
+  height: 300px;
+  background-color: #f00;
+  font-size: 100px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+@for $i from 1 through 7 {
+  .block:nth-child(#{$i}) {
+    background-color: darken(red, ($i - 1) * 10%);
+  }
+}
+
+@media (max-width: 899px) {
+  body {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 599px) {
+  body {
+    display: block;
+  }
 }
