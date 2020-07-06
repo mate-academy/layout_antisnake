@@ -1,3 +1,44 @@
+$block_size: 300px;
+
+html {
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.box {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "1";
+}
+
+.box > * {
+  min-width: $block_size;
+  height: $block_size;
+  line-height: $block_size;
+  font-size: 100px;
+  color: white;
+  text-align: center;
+}
+
+@for $i from 1 through 6 {
+  .box :nth-child(#{$i}):before {
+    content: "#{$i}";
+    display: block;
+    background-color: rgb(255 - ($i - 1) * 51, 0, 0);
+  }
+}
+
+@media screen and (min-width: $block_size * 2) {
+  .box {
+    grid-template-areas: "1 2";
+  }
+}
+
+@media screen and (min-width: $block_size * 3) {
+  .box {
+    grid-template-areas: "1 2 3";
+  }
 }
