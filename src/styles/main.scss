@@ -15,6 +15,7 @@ body {
 }
 
 .box > * {
+  min-width: $block_size;
   height: $block_size;
   line-height: $block_size;
   font-size: 100px;
