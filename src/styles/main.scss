@@ -1,3 +1,47 @@
+$colors: (
+  hsl(0, 100%, 50%): 1,
+  hsl(0, 100%, 40%): 2,
+  hsl(0, 100%, 30%): 3,
+  hsl(0, 100%, 20%): 4,
+  hsl(0, 100%, 10%): 5,
+  hsl(0, 100%, 0%): 6);
+$block-side: 300px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "a a a";
+  &__item {
+    height: $block-side;
+    min-width: $block-side;
+    font-size: 100px;
+    text-align: center;
+    line-height: $block-side;
+    color: #fff;
+    @each $color, $order in $colors {
+      &:nth-child(#{$order}) {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media ( max-width: $block-side * 3 - 1 ) {
+  .container {
+    grid-template-areas: "b b";
+  }
+}
+
+@media ( max-width: $block-side * 2 - 1 ) {
+  .container {
+    grid-template-areas: "c";
+  }
 }
