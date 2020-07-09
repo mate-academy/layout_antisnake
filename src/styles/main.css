@@ -9,13 +9,13 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 899px) {
   .snake {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 599px) {
   .snake {
     grid-template-columns: 1fr;
   }
