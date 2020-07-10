@@ -6,7 +6,7 @@ body {
 
 .antisnake {
   display: grid;
-  grid-template-rows: repeat(6, 300px);
+  grid-template-rows: 300px;
   grid-template-columns: repeat(3, 33.33%);
   justify-content: center;
 }
