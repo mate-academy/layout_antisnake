@@ -1,3 +1,70 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "b1 b2 b3" "b4 b5 b6";
+  grid-template-rows: 300px 300px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  font-size: 100px;
+  line-height: 300px;
+  text-align: center;
+  color: white;
+}
+
+.item1 {
+  background-color: rgb(255, 0, 0);
+  grid-area: b1;
+}
+
+.item2 {
+  background-color: rgb(204, 0, 0);
+  grid-area: b2;
+}
+
+.item3 {
+  background-color: rgb(153, 0, 0);
+  grid-area: b3;
+}
+
+.item4 {
+  background-color: rgb(102, 0, 0);
+  grid-area: b4;
+}
+
+.item5 {
+  background-color: rgb(51, 0, 0);
+  grid-area: b5;
+}
+
+.item6 {
+  background-color: black;
+  grid-area: b6;
+}
+
+@media (max-width: 899px) {
+  .container {
+    display: grid;
+    grid-template-areas: "b1 b2" "b3 b4" "b5 b6";
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    display: grid;
+    grid-template-areas: "b1" "b2" "b3" "b4" "b5" "b6";
+    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: 1fr;
+  }
 }
