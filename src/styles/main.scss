@@ -24,7 +24,7 @@ body {
   }
 
   @media (max-width: 599px) {
-    grid-template: repeat(6, 1fr) / 1fr;
+    grid-template: repeat(6, 1fr) / minmax(300px, 1fr);
   }
 
   &__item {
