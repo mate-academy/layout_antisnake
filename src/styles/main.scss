@@ -1,3 +1,54 @@
-body {
-  margin: 0;
+@import "reset";
+@import "variables";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, $minwidth);
+  font-size: 100px;
+  color: white;
+  line-height: $minwidth;
+  text-align: center;
+
+  &__box1 {
+    background-color: rgb(255, 0, 0);
+  }
+
+  &__box2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__box3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__box4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__box5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__box6 {
+    background-color: rgb(0, 0, 0);
+  }
+
+  &__box {
+    min-width: $minwidth;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, $minwidth);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, $minwidth);
+  }
 }
