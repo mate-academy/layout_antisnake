@@ -1,3 +1,67 @@
+$sizeItem: 300px;
+$numbers:
+("first": 1, "second": 2, "third": 3, "fourth": 4, "fifth": 5, "sixth": 6);
+$fontSize: 100px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $fontSize;
+}
+
+.container-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  min-width: $sizeItem;
+  height: $sizeItem;
+  background-color: red;
+}
+
+@each $wordNum, $num in $numbers {
+  .#{$wordNum}-item:before {
+    display: block;
+    content: "#{$num}";
+    color: #fff;
+    text-align: center;
+    line-height: $sizeItem;
+  }
+}
+
+.first-item {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.second-item {
+  background-color: hsl(0, 100%, 40%);
+}
+
+.third-item {
+  background-color: hsl(0, 100%, 30%);
+}
+
+.fourth-item {
+  background-color: hsl(0, 100%, 20%);
+}
+
+.fifth-item {
+  background-color: hsl(0, 100%, 10%);
+}
+
+.sixth-item {
+  background-color: hsl(0, 100%, 0%);
+}
+
+@media (max-width: 899px) {
+  .container-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .container-items {
+    grid-template-columns: 1fr;
+  }
 }
