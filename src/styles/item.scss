@@ -1,0 +1,16 @@
+@import "vars";
+
+.item {
+  height: $itemSize;
+  min-width: $itemSize;
+  line-height: $itemSize;
+  text-align: center;
+  font-size: $fontSize;
+  color: $fontColor;
+
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      background-color: hsl(0, 100%, (50% - ($i - 1 ) * 10));
+    }
+  }
+}
