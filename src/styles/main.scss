@@ -1,3 +1,59 @@
+$box-sizes: 300px;
+$font-size: 100px;
+$font-color: white;
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: $font-size;
+  color: $font-color;
+
+  &__cell-1 {
+    background-color: rgb(255, 0, 0);
+  }
+
+  &__cell-2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__cell-3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__cell-4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__cell-5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__cell-6 {
+    background-color: rgb(0, 0, 0);
+  }
+
+  &-cell {
+    display: grid;
+    height: $box-sizes;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media screen and (max-width: 899px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
