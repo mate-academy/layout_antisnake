@@ -1,4 +1,4 @@
-$blockHeight: 300px;
+$blockSize: 300px;
 
 body {
   margin: 0;
@@ -8,18 +8,17 @@ body {
 
 .antisnake {
   display: grid;
-  grid-template-rows: $blockHeight;
   grid-template-columns: repeat(3, 33.33%);
   justify-content: center;
 
   @media (max-width: 899px) {
-    grid-template-columns: repeat(auto-fill, minmax($blockHeight, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
   }
 
   &__block {
     color: #fff;
     text-align: center;
-    line-height: $blockHeight;
+    line-height: $blockSize;
 
     @for $i from 1 through 6 {
       &--#{$i} {
