@@ -1,4 +1,4 @@
-$box-size: 300px;
+@import "container";
 
 html {
   font-family: Arial, sans-serif;
@@ -8,36 +8,4 @@ html {
 
 body {
   margin: 0;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-
-  @media (max-width: 899px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-
-  @media (max-width: 450px) {
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
-  }
-
-  @for $i from 1 through 6 {
-    div:nth-child(#{$i}):before {
-      content: "#{$i}";
-    }
-  }
-
-  @for $i from 1 through 6 {
-    div:nth-child(#{$i}) {
-      background: darken(red, ($i - 1) * 10%);
-    }
-  }
-}
-
-.block {
-  height: $box-size;
-  display: grid;
-  align-items: center;
-  justify-items: center;
 }
