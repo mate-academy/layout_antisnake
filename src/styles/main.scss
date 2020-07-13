@@ -7,6 +7,8 @@ $snakeItemColors: (
   #000: 6,
 );
 
+$blockHeight: 300px;
+
 html {
   font-family: Arial, sans-serif;
 }
@@ -24,14 +26,14 @@ body {
   }
 
   @media (max-width: 599px) {
-    grid-template: repeat(6, 1fr) / minmax(300px, 1fr);
+    grid-template: repeat(6, 1fr) / minmax($blockHeight, 1fr);
   }
 
   &__item {
     display: inherit;
     place-items: center center;
-    height: 300px;
-    font-size: 100px;
+    height: $blockHeight;
+    font-size: $blockHeight / 3;
     color: #fff;
 
     @each $color, $itemNumber in $snakeItemColors {
