@@ -9,21 +9,21 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-}
 
-.block {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: $size;
-  min-width: $size;
-  font-size: 100px;
-  color: #fff;
-}
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+    min-width: $size;
+    font-size: 100px;
+    color: #fff;
+  }
 
-@for $i from 1 through 6 {
-  .block:nth-child(#{$i}) {
-    background-color: rgb(255 - ($i - 1) * $redColorStep, 0, 0);
+  @for $i from 1 through 6 {
+    &__block:nth-child(#{$i}) {
+      background-color: rgb(255 - ($i - 1) * $redColorStep, 0, 0);
+    }
   }
 }
 
