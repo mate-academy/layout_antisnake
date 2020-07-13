@@ -1,3 +1,36 @@
+$redColorStep: 255 / 5;
+$blockSize: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $blockSize;
+    min-width: $blockSize;
+    font-size: 100px;
+    color: #fff;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(255 - ($i - 1) * $redColorStep, 0, 0);
+      }
+    }
+  }
 }
