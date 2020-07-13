@@ -1,5 +1,5 @@
 $redColorStep: 255 / 5;
-$size: 300px;
+$blockSize: 300px;
 
 body {
   margin: 0;
@@ -10,31 +10,31 @@ body {
   display: grid;
   grid-template-columns: 1fr;
 
+  @media screen and (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   &__block {
     display: grid;
     justify-content: center;
     align-items: center;
-    height: $size;
-    min-width: $size;
+    height: $blockSize;
+    min-width: $blockSize;
     font-size: 100px;
     color: #fff;
-  }
 
-  @for $i from 1 through 6 {
-    &__block:nth-child(#{$i}) {
-      background-color: rgb(255 - ($i - 1) * $redColorStep, 0, 0);
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(255 - ($i - 1) * $redColorStep, 0, 0);
+      }
     }
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .container {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 }
