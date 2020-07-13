@@ -1,3 +1,45 @@
+$snakeItemColors: (
+  #f00: 1,
+  #c00: 2,
+  #900: 3,
+  #600: 4,
+  #300: 5,
+  #000: 6,
+);
+
+$blockHeight: 300px;
+
+html {
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+
+  @media (max-width: 899px) {
+    grid-template: repeat(3 ,1fr) / repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template: repeat(6, 1fr) / minmax($blockHeight, 1fr);
+  }
+
+  &__item {
+    display: inherit;
+    place-items: center center;
+    height: $blockHeight;
+    font-size: $blockHeight / 3;
+    color: #fff;
+
+    @each $color, $itemNumber in $snakeItemColors {
+      &:nth-child(#{$itemNumber}) {
+        background-color: $color;
+      }
+    }
+  }
 }
