@@ -1,5 +1,6 @@
 .container {
   display: grid;
+  grid-template-columns: repeat(3, auto);
 
   &__item {
     display: grid;
@@ -22,21 +23,15 @@
     }
   }
 
-  @media (min-width: 300px) {
-    & {
-      grid-template-columns: auto;
-    }
-  }
-
-  @media (min-width: 600px) {
+  @media (max-width: 899px) {
     & {
       grid-template-columns: repeat(2, auto);
     }
   }
 
-  @media (min-width: 900px) {
+  @media (max-width: 599px) {
     & {
-      grid-template-columns: repeat(3, auto);
+      grid-template-columns: repeat(1, auto);
     }
   }
 }
