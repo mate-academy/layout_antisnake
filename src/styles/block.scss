@@ -1,12 +1,11 @@
 .block {
   display: grid;
-  grid-template-columns: repeat();
 
   &__item {
     height: $itemSide;
     min-width: $itemSide;
 
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 
