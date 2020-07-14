@@ -1,9 +1,6 @@
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, $boxHeigh);
-  color: white;
-  justify-content: stretch;
 
   &__box {
     height: $boxHeigh;
@@ -11,6 +8,7 @@
     display: grid;
     justify-content: center;
     align-content: center;
+    color: white;
   }
 
   @each $color, $step in $colorValues {
@@ -23,13 +21,11 @@
 @media (max-width:899px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, $boxHeigh);
   }
 }
 
 @media (max-width:599px) {
   .container {
-    grid-template-columns: auto;
-    grid-template-rows: repeat(6, $boxHeigh);
+    grid-template-columns: 1fr;
   }
 }
