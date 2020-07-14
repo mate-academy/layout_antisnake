@@ -1,0 +1,26 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  &__item {
+    height: $height;
+    text-align: center;
+    line-height: $height;
+    font-size: $sizeText;
+    color: $colorText;
+  }
+
+  @each $item, $bg-color-item in $bg-color-items {
+    &__item:nth-child(#{$item}) {
+      background-color: $bg-color-item;
+    }
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
