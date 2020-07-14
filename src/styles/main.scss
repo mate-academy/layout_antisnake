@@ -1,3 +1,44 @@
+$size: 300px;
+
 body {
   margin: 0;
+  color: #fff;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid {
+  
+  width: 100%;
+
+  display: grid;
+  align-content: stretch;
+  grid-template-columns: 1fr;
+  grid-template-rows: $size;
+  
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+    
+  &__cell {
+    
+    text-align: center;
+    line-height: $size;
+    
+    @for $blockNumber from 0 through 6 {
+      &_#{$blockNumber} {
+        $shadeOfRed: 255 - ( 51 * ( $blockNumber - 1 ));
+        background-color: rgb($shadeOfRed, 0 ,0);
+      }
+    }
+
+  }
 }
