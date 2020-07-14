@@ -50,8 +50,6 @@
 
 @each $wordNum, $num in $numbers {
   .container__item--#{$wordNum}:before {
-
     content: "#{$num}";
-
   }
 }
