@@ -1,0 +1,33 @@
+.square {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+  
+  &__item {
+    display: grid;
+    min-width: $squareSize;
+    height: $squareSize;
+  }
+
+  @for $i from 1 to 7 {
+    .square-#{$i}:after {
+      content: "#{$i}";
+      justify-self: center;
+      align-self: center;
+      color: white;
+    }
+  }
+
+  @each $color, $order in $squaresColors {
+    .square-#{$order} {
+      background-color: #{$color};
+    }
+  }
+}
