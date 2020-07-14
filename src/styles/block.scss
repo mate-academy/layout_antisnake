@@ -1,0 +1,15 @@
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $block-height;
+  min-width: $block-width;
+  background: red;
+}
+
+@for $i from 6 through 0 {
+  .block:nth-child(#{$i}) {
+    background: rgb($red-value + 51, 0, 0);
+    $red-value: $red-value + 51;
+  }
+}

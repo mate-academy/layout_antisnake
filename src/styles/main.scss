@@ -1,3 +1,31 @@
+@import "variables";
+@import "block";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 100px;
+}
+
+.container {
+  display: grid;
+}
+
+@media all and (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (max-width: 450px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
