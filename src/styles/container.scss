@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: stretch;
-  // max-width: $blockWidth * 3;
 
   @media screen and (max-width: 899px) {
     & {
