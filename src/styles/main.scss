@@ -29,8 +29,8 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
-    height: &$block-size;
-    min-width: &$block-size;
+    height: $block-size;
+    min-width: $block-size;
     color: white;
     font-size: $font-size;
     
