@@ -1,0 +1,33 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+
+  &__block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 300px;
+
+    @for $i from 1 through 5 {
+      &--#{6 - $i} {
+        background-color: hsl(0, 100%, $i * 10%);
+      }
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
