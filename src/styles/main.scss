@@ -1,3 +1,45 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+$size: 300px;
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  max-width: $size  * 3.99;
+  justify-content: center;
+  align-content: center;
+}
+
+.blocks__block {
+  height: $size;
+  display: flex;
+  flex: 1 0 $size;
+  justify-content: center;
+  align-items: center;
+}
+
+$colors: (
+  1 : #f00,
+  2 : #c00,
+  3 : #900,
+  4 : #600,
+  5 : #300,
+  6 : #000
+);
+
+@for $childNo from 1 through 6 {
+  .blocks > .blocks__block:nth-child(#{$childNo})::before {
+    content: "#{$childNo}";
+  }
+
+  @each $childNo, $color in $colors {
+    .blocks > .blocks__block:nth-child(#{$childNo}) {
+      background-color: $color;
+    }
+  }
 }
