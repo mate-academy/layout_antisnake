@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
 
-  & > * {
+  &__box {
     height: $block-height;
     min-width: $block-height;
     color: #fff;
@@ -11,11 +11,9 @@
     align-items: center;
   }
 
-  @for $blocksNum from 1 through 6 {
-    @for $i from 1 through $blocksNum {
-      &--#{$blocksNum} :nth-child(#{$i})::after {
-        content: "#{$i}";
-      }
+  @for $i from 1 through 6 {
+    & :nth-child(#{$i})::after {
+      content: "#{$i}";
     }
   }
 
