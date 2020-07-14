@@ -1,3 +1,50 @@
+$box-height: 300px;
+$min-width: 300px;
+$font-size: 100px;
+$font-color: white;
+
+$snakeColors: (
+  rgb(255, 0, 0): 1,
+  rgb(204, 0, 0): 2,
+  rgb(153, 0, 0): 3,
+  rgb(102, 0, 0): 4,
+  rgb(51, 0, 0): 5,
+  rgb(0, 0, 0): 6
+);
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: $font-size;
+  color: $font-color;
+
+  &__cell {
+    display: grid;
+    height: $box-height;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@each $cellColor, $order in $snakeColors {
+  .grid__cell:nth-child(#{$order}) {
+    background-color: $cellColor;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .grid {
+    grid-template-columns: minmax($min-width, 1fr);
+  }
 }
