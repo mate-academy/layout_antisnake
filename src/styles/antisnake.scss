@@ -3,34 +3,20 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
 
   &__block {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
     align-items: center;
     height: 300px;
-  }
 
-  &__block-1 {
-    background-color: hsl(0, 100%, 50%);
-  }
+    @for $i from 1 through 5 {
+      &--#{6 - $i} {
+        background-color: hsl(0, 100%, $i * 10%);
+      }
+    }
 
-  &__block-2 {
-    background-color: hsl(0, 100%, 40%);
-  }
-
-  &__block-3 {
-    background-color: hsl(0, 100%, 30%);
-  }
-
-  &__block-4 {
-    background-color: hsl(0, 100%, 20%);
-  }
-
-  &__block-5 {
-    background-color: hsl(0, 100%, 10%);
-  }
-
-  &__block-6 {
-    background-color: hsl(0, 0%, 0%);
+    &--6 {
+      background-color: black;
+    }
   }
 
   @media screen and (min-width: 600px) {
