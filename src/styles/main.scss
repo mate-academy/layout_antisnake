@@ -1,3 +1,35 @@
+@import "variables";
+
+html {
+  font-family: $font-family;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.snake__cell {
+  font-size: $font-size;
+  color: $font-color;
+  text-align: center;
+  line-height: $block-size;
+}
+
+@for $i from 1 through 6 {
+  .snake__cell:nth-child(n + #{$i}) {
+    background-color: rgb(($rgb-entire - ($i * $rgb-step)),0,0);
+  }
 }
