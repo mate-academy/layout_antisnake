@@ -9,7 +9,7 @@ html {
   font-size: 100px;
 }
 
-.block-container {
+.block {
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr;
@@ -31,7 +31,7 @@ html {
   text-align: center;
 
   @for $i from 1 through 6 {
-    &--#{$i} {
+    &:nth-child(#{$i}) {
       background-color: hsl(0, 100%, (50% - ($i - 1 ) * 10));
     }
  
