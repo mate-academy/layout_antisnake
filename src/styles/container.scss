@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-width: $sizeItem;
+    height: $sizeItem;
+    color: #fff;
+
+    &--first {
+      background-color: hsl(0, 100%, 50%);
+    }
+
+    &--second {
+      background-color: hsl(0, 100%, 40%);
+    }
+
+    &--third {
+      background-color: hsl(0, 100%, 30%);
+    }
+
+    &--fourth {
+      background-color: hsl(0, 100%, 20%);
+    }
+
+    &--fifth {
+      background-color: hsl(0, 100%, 10%);
+    }
+
+    &--sixth {
+      background-color: hsl(0, 100%, 0%);
+    }
+  }
+}
+
+@each $wordNum, $num in $numbers {
+  .container__item--#{$wordNum}:before {
+
+    content: "#{$num}";
+
+  }
+}
