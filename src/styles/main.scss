@@ -1,3 +1,39 @@
+$mainFontFamily: arial, helvetica, sans-serif;
+$mainFontSize: 100px;
+$textColor: #fff;
+
+$boxQuantity: 6;
+$boxSize: 300px;
+
+$mainScreenSizes: ("899px": 2, "599px": 1);
+
 body {
   margin: 0;
+  font-family: $mainFontFamily;
+  color: $textColor;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($boxSize, 1fr));
+
+  @each $screenSize, $columnsNumber in $mainScreenSizes {
+    @media screen and (max-width: $screenSize) {
+      & {
+        grid-template-columns: repeat($columnsNumber, 1fr);
+      }
+    }
+  }
+
+  &__item {
+    text-align: center;
+    line-height: $boxSize;
+    font-size: $mainFontSize;
+
+    @for $i from 1 through $boxQuantity {
+      &:nth-of-type(#{$i}) {
+        background-color: hsl(0, 100%, (50% - ($i - 1) * 10));
+      }
+    }
+  }
 }
