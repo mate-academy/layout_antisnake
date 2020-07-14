@@ -1,3 +1,32 @@
+$block-size: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($block-size, 1fr));
+  
+  &__block {
+    height: $block-size;
+
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    line-height: $block-size;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(255 - (($i - 1) * 51), 0, 0);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .snake {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
