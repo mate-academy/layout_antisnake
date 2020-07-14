@@ -1,0 +1,32 @@
+.block {
+  display: grid;
+
+  &__item {
+    height: $itemSide;
+    min-width: $itemSide;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @each $color, $order in $orderColor {
+
+      &:nth-child(#{$order}) {
+        background-color: #{$color};
+      }
+
+      &:nth-child(#{$order})::before {
+        content: "#{$order}";
+      }
+    }
+  }
+  
+  @media screen and (min-width:600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width:900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
