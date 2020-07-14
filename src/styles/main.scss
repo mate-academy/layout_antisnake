@@ -10,17 +10,19 @@ $size: 300px;
 .blocks {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
-  max-width: $size  * 3.99;
   justify-content: center;
   align-content: center;
-}
 
-.blocks__block {
-  height: $size;
-  display: flex;
-  flex: 1 0 $size;
-  justify-content: center;
-  align-items: center;
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $size;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 $colors: (
