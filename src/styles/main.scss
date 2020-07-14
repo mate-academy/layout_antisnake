@@ -1,5 +1,11 @@
 $boxHeight: 300px;
 
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
 }
@@ -26,10 +32,6 @@ body {
 
       &:nth-child(#{$i}):after {
         content: "#{$i}";
-        display: grid;
-        font-family: Arial, sans-serif;
-        font-size: 100px;
-        color: #fff;
       }
     }
   }
