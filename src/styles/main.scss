@@ -3,44 +3,43 @@ $size: 300px;
 
 .snake {
   display: grid;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
   color: #fff;
   grid-template-rows: repeat(6, $size);
   text-align: center;
   line-height: $size;
 
-  &__first {
-    background-color: #f00;
-  }
+  &__box {
 
-  &__second {
-    background-color: #c00;
-  }
+    &-1 {
+      background-color: #f00;
+    }
 
-  &__third {
-    background-color: #900;
-  }
+    &-2 {
+      background-color: #c00;
+    }
 
-  &__fourth {
-    background-color: #600;
-  }
+    &-3 {
+      background-color: #900;
+    }
 
-  &__fifth {
-    background-color: #300;
-  }
+    &-4 {
+      background-color: #600;
+    }
 
-  &__sixth {
-    background-color: #000;
+    &-5 {
+      background-color: #300;
+    }
+
+    &-6 {
+      background-color: #000;
+    }
   }
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(3, $size);
   }
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(2, $size);
   }
 }
