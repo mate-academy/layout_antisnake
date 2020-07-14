@@ -1,67 +1,63 @@
-$sizeItem: 300px;
-$numbers:
-("first": 1, "second": 2, "third": 3, "fourth": 4, "fifth": 5, "sixth": 6);
-$fontSize: 100px;
+@import "vars";
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: $fontSize;
+  line-height: $sizeItem;
 }
 
-.container-items {
+.container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
 
-.item {
-  min-width: $sizeItem;
-  height: $sizeItem;
-  background-color: red;
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    min-width: $sizeItem;
+    height: $sizeItem;
+
+    &--first {
+      background-color: hsl(0, 100%, 50%);
+    }
+
+    &--second {
+      background-color: hsl(0, 100%, 40%);
+    }
+
+    &--third {
+      background-color: hsl(0, 100%, 30%);
+    }
+
+    &--fourth {
+      background-color: hsl(0, 100%, 20%);
+    }
+
+    &--fifth {
+      background-color: hsl(0, 100%, 10%);
+    }
+
+    &--sixth {
+      background-color: hsl(0, 100%, 0%);
+    }
+  }
 }
 
 @each $wordNum, $num in $numbers {
-  .#{$wordNum}-item:before {
-    display: block;
+  .container__item--#{$wordNum}:before {
+    display: grid;
+    justify-items: center;
     content: "#{$num}";
     color: #fff;
-    text-align: center;
-    line-height: $sizeItem;
-  }
-}
-
-.first-item {
-  background-color: hsl(0, 100%, 50%);
-}
-
-.second-item {
-  background-color: hsl(0, 100%, 40%);
-}
-
-.third-item {
-  background-color: hsl(0, 100%, 30%);
-}
-
-.fourth-item {
-  background-color: hsl(0, 100%, 20%);
-}
-
-.fifth-item {
-  background-color: hsl(0, 100%, 10%);
-}
-
-.sixth-item {
-  background-color: hsl(0, 100%, 0%);
-}
-
-@media (max-width: 899px) {
-  .container-items {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 599px) {
-  .container-items {
-    grid-template-columns: 1fr;
   }
 }
