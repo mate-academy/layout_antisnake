@@ -1,3 +1,40 @@
+$block-size: 300px;
+$color-step: 255/5;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 100px;
+}
+
+.container__block {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: $block-size;
+  min-width: $block-size;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@for $i from 1 through 6 {
+  .container__block:nth-child(#{$i}) {
+    background-color: rgb(255 - ($i - 1) * $color-step, 0, 0);
+  }
 }
