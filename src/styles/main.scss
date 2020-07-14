@@ -1,3 +1,42 @@
+$itemSize: 300px;
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+.block {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block__item {
+  color: white;
+  min-width: $itemSize;
+  height: $itemSize;
+  line-height: $itemSize;
+  text-align: center;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-color: hsl(0, 100%, (50% - ($i - 1 ) * 10));
+    }
+ 
+    &:nth-child(#{$i})::after {
+      content: "#{$i}";
+    }
+  }
 }
