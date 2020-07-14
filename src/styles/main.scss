@@ -13,13 +13,35 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 
   &__box {
-    box-sizing: border-box;
-    height: 300px;
-    min-width: 300px;
-    padding: 100px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    min-width: 300px;
+    height: 300px;
+
+    &_1 {
+      background-color: red;
+    }
+
+    &_2 {
+      background-color: #c00;
+    }
+
+    &_3 {
+      background-color: #900;
+    }
+
+    &_4 {
+      background-color: #600;
+    }
+
+    &_5 {
+      background-color: #300;
+    }
+
+    &_6 {
+      background-color: black;
+    }
   }
 
   @for $number from 1 through 6 {
@@ -34,29 +56,5 @@ body {
 
   @media screen and (max-width: 450px) {
     grid-template-columns: 1fr;
-  }
-
-  .box_1 {
-    background-color: red;
-  }
-
-  .box_2 {
-    background-color: #c00;
-  }
-
-  .box_3 {
-    background-color: #900;
-  }
-
-  .box_4 {
-    background-color: #600;
-  }
-
-  .box_5 {
-    background-color: #300;
-  }
-
-  .box_6 {
-    background-color: black;
   }
 }
