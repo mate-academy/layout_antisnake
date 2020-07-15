@@ -11,7 +11,7 @@
   height: $minwidth;
 
   @for $i from 1 to 7 {
-    &--box#{$i} {
+    &__box--#{$i} {
       background-color: rgb(calc((6 - #{$i}) * 51), 0, 0);
     }
   }
