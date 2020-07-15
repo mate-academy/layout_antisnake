@@ -16,7 +16,7 @@
 
   &__element {
     height: $blockHeight;
-    min-width: 300px;
+    min-width: $blockHeight;
     text-align: center;
     line-height: $blockHeight;
 
