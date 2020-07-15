@@ -1,3 +1,52 @@
+$minSizeBox: 300px;
+$maxSizeBox: 1fr;
+
+@mixin grid-template($numCol, $minCol, $maxCol, $numRow, $minRow, $maxRow) {
+  grid-template-columns: repeat($numCol, minmax($minCol, $maxCol));
+  grid-template-rows: repeat($numRow, minmax($minRow, $maxRow));
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  --num-columns: 3;
+  --num-rows: 2;
+  display: grid;
+  justify-content: center;
+
+  @include grid-template(
+    var(--num-columns), $minSizeBox, $maxSizeBox,
+    var(--num-rows), $minSizeBox, $maxSizeBox
+  );
+
+  @media (max-width: 899px) {
+    & {
+      --num-columns: 2;
+      --num-rows: 3;
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      --num-columns: 1;
+      --num-rows: 6;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &__item--#{$i} {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      background-color: rgb(calc(255 - 51 * (#{$i} - 1)), 0, 0);
+    }
+  }
 }
