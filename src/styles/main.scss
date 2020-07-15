@@ -1,3 +1,25 @@
+$cubeSide: 300px;
+$cubeCount: 6;
+$columnsCount: 3;
+$containerName: ".snake";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
 }
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  & > div {
+    min-width: $cubeSide;
+    text-align: center;
+    line-height: $cubeSide;
+    min-height: $cubeSide;
+  }
+}
+
+@import "cycles";
