@@ -1,64 +1,60 @@
-body {
-  margin: 0;
-}
+@import "variables";
 
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  margin: 0;
+  font-size: 100px;
+}
+
 .snake {
   display: grid;
-  grid-template-areas: "snake__box-1 snake__box-2 snake__box-3"
-    "snake__box-4 snake__box-5 snake__box-6";
-
-  &__box-1 {
+  grid-template-columns: 1fr;
+  justify-content: center;
+  .snake__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $minWidth;
+    height: $heightSnakeBox;
+    color: $snakeTextColor;
+  }
+  &__box:nth-child(1) {
     background-color: #ff0102;
   }
 
-  &__box-2 {
+  &__box:nth-child(2) {
     background-color: #cc0202;
   }
 
-  &__box-3 {
+  &__box:nth-child(3) {
     background-color: #9a0002;
   }
 
-  &__box-4 {
+  &__box:nth-child(4) {
     background-color: #670100;
+
   }
 
-  &__box-5 {
+  &__box:nth-child(5) {
     background-color: #340000;
   }
 
-  &__box-6 {
+  &__box:nth-child(6) {
     background-color: #000;
   }
+}
 
-  @for $i from 1 through 6 {
-    .snake__box-#{$i} {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffff;
-      font-size: 100px;
-      width: 100%;
-      min-width: 300px;
-      height: 300px;
+@media (min-width: 600px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    }
-  }
-  @media (max-width: 750px) {
-    grid-template-areas: "snake__box-1 snake__box-2 "
-      "snake__box-3 snake__box-4"
-      " snake__box-5 snake__box-6";
-  }
-  @media (max-width: 450px) {
-    grid-template-areas: "snake__box-1"
-      "snake__box-2"
-      "snake__box-3"
-      "snake__box-4"
-      "snake__box-5"
-      "snake__box-6";
+@media (min-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
