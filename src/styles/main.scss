@@ -1,3 +1,48 @@
+$containerColor: (
+  1: #f00,
+  2: #c00,
+  3: #900,
+  4: #600,
+  5: #300,
+  6: #000,
+);
+
+$fontSizeItem: 100px;
+$widthItem: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  font-size: $fontSizeItem;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: $widthItem;
+  }
+  
+  @media screen and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+@each $key, $color in $containerColor {
+  .container__item:nth-child(n + #{$key}) {
+    background-color: #{$color};
+  }
 }
