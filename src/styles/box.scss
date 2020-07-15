@@ -1,0 +1,19 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($minBoxWidth, 1fr));
+
+  font-size: 100px;
+  line-height: $boxHeight;
+  color: white;
+  text-align: center;
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(auto-fit, minmax($minBoxWidth, 1fr));
+  }
+
+  @each $numberOfBox, $backgroundBox in $boxColors {
+    &__item--#{$numberOfBox} {
+      background-color: $backgroundBox;
+    }
+  }
+}
