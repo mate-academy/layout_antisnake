@@ -1,0 +1,19 @@
+@for $i from 1 through $cubeCount {
+  #{$containerName} div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+@for $i from $cubeCount through 1 {
+  #{$containerName} div:nth-child(#{$i}) {
+    background-color: rgb((255/($cubeCount - 1)) * ($cubeCount - $i), 0, 0);
+  }
+}
+
+@for $i from 2 to $columnsCount + 1 {
+  @media (min-width: $cubeSide * $i) {
+    #{$containerName} {
+      grid-template-columns: repeat($i, $i * 1fr);
+    }
+  }
+}
