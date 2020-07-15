@@ -4,38 +4,16 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, $minwidth);
   font-size: 100px;
   color: white;
   line-height: $minwidth;
   text-align: center;
+  height: $minwidth;
 
-  &__box1 {
-    background-color: rgb(255, 0, 0);
-  }
-
-  &__box2 {
-    background-color: rgb(204, 0, 0);
-  }
-
-  &__box3 {
-    background-color: rgb(153, 0, 0);
-  }
-
-  &__box4 {
-    background-color: rgb(102, 0, 0);
-  }
-
-  &__box5 {
-    background-color: rgb(51, 0, 0);
-  }
-
-  &__box6 {
-    background-color: rgb(0, 0, 0);
-  }
-
-  &__box {
-    min-width: $minwidth;
+  @for $i from 1 to 7 {
+    &--box#{$i} {
+      background-color: rgb(calc((6 - #{$i}) * 51), 0, 0);
+    }
   }
 }
 
