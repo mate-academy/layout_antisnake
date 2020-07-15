@@ -8,7 +8,7 @@ $containerColor: (
 );
 
 $fontSizeItem: 100px;
-$widthItem: 300px;
+$heightItem: 300px;
 
 body {
   margin: 0;
@@ -25,7 +25,14 @@ body {
     display: grid;
     align-items: center;
     justify-content: center;
-    min-height: $widthItem;
+    min-width: $heightItem;
+    height: $heightItem;
+
+    @each $key, $color in $containerColor {
+      &:nth-child(n + #{$key}) {
+        background-color: #{$color};
+      }
+    }
   }
   
   @media screen and (max-width: 899px) {
@@ -38,11 +45,5 @@ body {
     & {
       grid-template-columns: repeat(1, 1fr);
     }
-  }
-}
-
-@each $key, $color in $containerColor {
-  .container__item:nth-child(n + #{$key}) {
-    background-color: #{$color};
   }
 }
