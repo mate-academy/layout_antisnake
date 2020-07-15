@@ -16,28 +16,32 @@ body {
 }
 
 .snake {
+  --num-columns: 3;
+  --num-rows: 2;
   display: grid;
   justify-content: center;
-  
-  @include grid-template(3, $minSizeBox, $maxSizeBox,
-  2, $minSizeBox, $maxSizeBox);
+
+  @include grid-template(
+    var(--num-columns), $minSizeBox, $maxSizeBox,
+    var(--num-rows), $minSizeBox, $maxSizeBox
+  );
 
   @media (max-width: 899px) {
     & {
-      @include grid-template(2, $minSizeBox, $maxSizeBox,
-      3, $minSizeBox, $maxSizeBox);
+      --num-columns: 2;
+      --num-rows: 3;
     }
   }
 
   @media (max-width: 599px) {
     & {
-      @include grid-template(1, $minSizeBox, $maxSizeBox,
-      6, $minSizeBox, $maxSizeBox);
+      --num-columns: 1;
+      --num-rows: 6;
     }
   }
 
   @for $i from 1 through 6 {
-    &--#{$i} {
+    &__item--#{$i} {
       display: flex;
       justify-content: center;
       align-items: center;
