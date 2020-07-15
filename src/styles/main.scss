@@ -1,3 +1,42 @@
+$fontFamily: arial, helvetica, sans-serif;
+$sizeBlock: 300px;
+$fontSize: 100px;
+
 body {
   margin: 0;
+}
+
+.container {
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    min-width: $sizeBlock;
+    height: $sizeBlock;
+    color: #fff;
+  }
+
+  @for $i from 1 through 6 {
+    &__block:nth-child(#{$i}) {
+      background-color: hsl(0, 100%, 60% - ($i * 10));
+    }
+
+    &__block:nth-child(#{$i})::before {
+      content: "#{$i}";
+      font-family: $fontFamily;
+      font-size: $fontSize;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 }
