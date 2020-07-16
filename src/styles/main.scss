@@ -1,9 +1,9 @@
-$fontFamily: arial, helvetica, sans-serif;
 $sizeBlock: 300px;
 $fontSize: 100px;
 
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -27,7 +27,6 @@ body {
 
     &__block:nth-child(#{$i})::before {
       content: "#{$i}";
-      font-family: $fontFamily;
       font-size: $fontSize;
     }
   }
