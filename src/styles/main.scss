@@ -1,3 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 890px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 590px) {
+    grid-template-columns: 1fr ;
+  }
+
+  &__block {
+    min-width: 300px;
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__block--1 {
+    background-color: rgb(255, 0, 0);
+  }
+
+  &__block--2 {
+    background-color: rgb(210, 0, 0);
+  }
+
+  &__block--3 {
+    background-color: rgb(165, 0, 0);
+  }
+
+  &__block--4 {
+    background-color: rgb(90, 0, 0);
+  }
+
+  &__block--5 {
+    background-color: rgb(45, 0, 0);
+  }
+
+  &__block--6 {
+    background-color: rgb(0, 0, 0);
+  }
 }
