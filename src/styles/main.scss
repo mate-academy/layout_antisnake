@@ -1,3 +1,34 @@
+html {
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-auto-rows: 300px;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.container__item {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@for $i from 1 to 7 {
+  .container__item--#{$i} {
+    background-color: rgb((255 - 51*($i - 1)), 000, 000);
+  }
 }
