@@ -1,3 +1,28 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__part {
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+  }
+
+  @for $i from 1 through 6 {
+    .antisnake__part:nth-of-type(#{$i}) {
+      background-color: rgb(100% - ($i - 1) * 20%, 0%, 0%);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
