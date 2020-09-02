@@ -1,3 +1,66 @@
+@import "variables";
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: 300px;
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  display: grid;
+  height: 600px;
+  grid-template-areas: "one two three"
+    "four five six";
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    grid-template-areas: "one two"
+      "three four"
+      "five six";
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    grid-template-areas: "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six";
+  }
+}
+
+.box-1 {
+  grid-area: one;
+  background-color: $color-1;
+}
+
+.box-2 {
+  grid-area: two;
+  background-color: $color-2;
+}
+
+.box-3 {
+  grid-area: three;
+  background-color: $color-3;
+}
+
+.box-4 {
+  grid-area: four;
+  background-color: $color-4;
+}
+
+.box-5 {
+  grid-area: five;
+  background-color: $color-5;
+}
+
+.box-6 {
+  grid-area: six;
+  background-color: $color-6;
 }
