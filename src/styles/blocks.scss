@@ -1,0 +1,22 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($blockSize, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: $blockSize;
+    color: white;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(($hue * (6 - $i) / 5), 0, 0);
+      }
+    }
+  }
+}
