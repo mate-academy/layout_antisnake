@@ -1,0 +1,24 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($blockSize, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+  }
+
+  &__block {
+    justify-content: center;
+    align-content: center;
+    display: grid;
+    height: $blockSize;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(($hue * (6 - $i) / 5), 0, 0);
+      }
+    }
+  }
+}
