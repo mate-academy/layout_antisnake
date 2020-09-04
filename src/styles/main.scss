@@ -1,3 +1,28 @@
-body {
-  margin: 0;
+@import "_reset";
+@import "vars";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    @include block-size;
+    color: white;
+    text-align: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+  }
 }
