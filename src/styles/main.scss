@@ -19,9 +19,12 @@ html {
     color: white;
     text-align: center;
 
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i})::before {
-        content: "#{$i}";
+    @each $index, $color in $squares {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+      &:nth-child(#{$index}) {
+        background-color: $color;
       }
     }
   }
