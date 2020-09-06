@@ -1,52 +1,8 @@
+@import "global-var";
 @import "reset";
+@import "grid-container";
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.antisnake {
-  display: grid;
-  grid-template-columns: repeat(3, 3fr);
-  gap: 0;
-
-  justify-content: center;
-  text-align: center;
-
-  color: white;
   font-size: 100px;
-  line-height: 300px;
-
-  &__block {
-    height: 300px;
-    min-width: 300px;
-    background-color: rgb(255, 0, 0);
-  }
-
-  &__block--2 {
-    background-color: rgb(204, 0, 0);
-  }
-
-  &__block--3 {
-    background-color: rgb(153, 0, 0);
-  }
-
-  &__block--4 {
-    background-color: rgb(102, 0, 0);
-  }
-
-  &__block--5 {
-    background-color: rgb(51, 0, 0);
-  }
-
-  &__block--6 {
-    background-color: rgb(0, 0, 0);
-  }
-
-  @media screen and (max-width: 899px) {
-    grid-template-columns: repeat(2, 2fr);
-  }
-  
-  @media screen and (max-width: 599px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }

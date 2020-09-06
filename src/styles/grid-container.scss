@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+
+  color: white;
+  line-height: 300px;
+
+  &__block {
+    min-width: $blockSize;
+    text-align: center;
+
+    @for $i from 0 through 5 {
+      &:nth-child(#{$i + 1}) {
+        background-color: rgb($redShade - ($shadeStep * $i), 0, 0);
+      }
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, 2fr);
+  }
+  
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+}
