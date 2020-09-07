@@ -11,28 +11,10 @@
     justify-content: center;
     align-items: center;
   
-    &--1 {
-      background-color: rgb(255, 0, 0);
-    }
-    
-    &--2 {
-      background-color: rgb(204, 0, 0);
-    }
-    
-    &--3 {
-      background-color: rgb(153, 0, 0);
-    }
-    
-    &--4 {
-      background-color: rgb(102, 0, 0);
-    }
-    
-    &--5 {
-      background-color: rgb(51, 0, 0);
-    }
-    
-    &--6 {
-      background-color: rgb(0, 0, 0);
+    @for $i from 0 through 5 {
+      &--#{$i} {
+        background-color: rgb(255 - ($i * 51), 0, 0);
+      }
     }
   }
 }
