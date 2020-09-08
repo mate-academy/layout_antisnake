@@ -1,0 +1,30 @@
+@import "./variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  color: #fff;
+
+  @media (max-width: ($block-size * 3) - 1) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: ($block-size * 2) - 1) {
+    grid-template-columns: 1fr;
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-width: $block-size;
+    height: $block-size;
+
+    @each $block, $color in $blocks {
+      &--#{$block} {
+        background-color: #{$color};
+      }
+    }
+  }
+}
