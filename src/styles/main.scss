@@ -1,3 +1,17 @@
+@import "antisnake";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
 body {
   margin: 0;
 }
