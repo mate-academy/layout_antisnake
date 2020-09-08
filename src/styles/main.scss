@@ -1,3 +1,39 @@
+$block-size: 300px;
+
 body {
   margin: 0;
+}
+
+html{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: rgb(255, 255, 255);
+
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+
+  @media  screen and  (max-width:  900px) {
+    grid-template-columns: repeat(auto-fit, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: $block-size;
+    height: $block-size;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+      &:nth-child(#{$i}) {
+        background-color: rgb(308.2 - (51.2 * $i), 0, 0);
+      }
+    }
+  }
 }
