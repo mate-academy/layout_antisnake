@@ -1,3 +1,8 @@
-body {
-  margin: 0;
+@import "_reset";
+@import "antisnake";
+
+html {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  color: white;
 }
