@@ -1,3 +1,31 @@
-body {
-  margin: 0;
+@import "general";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax($cellSize, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($cellSize, 1fr));
+  }
+
+  @media (min-width: 600px) and (max-width: 751px) {
+    grid-template-columns: repeat(2, minmax($cellSize, 1fr));
+  }
+
+  &__element {
+    height: $cellSize;
+    line-height: $cellSize;
+    text-align: center;
+    color: #fff;
+  }
+}
+
+@for $i from 1 through 6 {
+  .container > &:nth-child(#{$i}) {
+    background-color: rgb(100% - ($i - 1) * 20%, 0%, 0%);
+      
+    &::before {
+      content: "#{$i}";
+    }
+  }
 }
