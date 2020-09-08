@@ -1,3 +1,51 @@
-body {
-  margin: 0;
+@import "reset";
+
+@import "fonts";
+
+.container {
+  max-width: 1200px;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    line-height: 300px;
+    text-align: center;
+
+    &--color:nth-child(1) {
+      background-color: rgb(255, 0, 0);
+    }
+
+    &--color:nth-child(2) {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--color:nth-child(3) {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--color:nth-child(4) {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--color:nth-child(5) {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--color:nth-child(6) {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
