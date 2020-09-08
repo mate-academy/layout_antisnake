@@ -6,6 +6,14 @@
   
   color: #fff;
 
+  @media (max-width: ($block-size * 3) - 1) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: ($block-size * 2) - 1) {
+    grid-template-columns: 1fr;
+  }
+
   &__block {
     display: grid;
     justify-content: center;
@@ -13,40 +21,10 @@
     min-width: $block-size;
     height: $block-size;
 
-    &--1 {
-      background-color: #f00;
+    @each $block, $color in $blocks {
+      &--#{$block} {
+        background-color: #{$color};
+      }
     }
-
-    &--2 {
-      background-color: #c00;
-    }
-
-    &--3 {
-      background-color: #900;
-    }
-
-    &--4 {
-      background-color: #600;
-    }
-
-    &--5 {
-      background-color: #300;
-    }
-
-    &--6 {
-      background-color: #000;
-    }
-  }
-}
-
-@media (max-width: ($block-size * 3) - 1) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: ($block-size * 2) - 1) {
-  .container {
-    grid-template-columns: 1fr;
   }
 }
