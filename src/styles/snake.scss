@@ -1,0 +1,29 @@
+@import "variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  &__box {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 0 to 6 {
+      &:nth-child(#{$i+ 1} ) {
+        background-color: rgb(255 - ($changeColor * $i), 0, 0);
+
+        &::after {
+          content: "#{$i + 1}";
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .snake {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}

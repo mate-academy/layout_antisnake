@@ -1,3 +1,17 @@
+@import "snake";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
 }
