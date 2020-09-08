@@ -1,0 +1,46 @@
+$block-height: 300px;
+
+.antisnake {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    height: $block-height;
+    min-width: $block-height;
+
+    color: white;
+    text-align: center;
+    line-height: $block-height;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: #c00;
+    }
+
+    &--3 {
+      background-color: #900;
+    }
+
+    &--4 {
+      background-color: #600;
+    }
+
+    &--5 {
+      background-color: #300;
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+}
