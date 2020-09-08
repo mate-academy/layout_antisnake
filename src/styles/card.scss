@@ -1,0 +1,29 @@
+:root {
+  --blocks-in-line: 3;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(var(--blocks-in-line), minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+
+  @media (max-width: 899px) {
+    --blocks-in-line: 2;
+  }
+
+  @media (max-width: 599px) {
+    --blocks-in-line: 1;
+  }
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(305 - 50 * $i, 0, 0);
+      }
+    }
+  }
+}
