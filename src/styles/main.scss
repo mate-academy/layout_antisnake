@@ -1,3 +1,49 @@
+html {
+  font-family: Arial, serif;
+}
+
 body {
   margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 1199px;
+  
+  &__item {
+    height: 300px;
+    min-width: 300px;
+    text-align: center;
+    text-justify: center;
+    background-color: red;
+    color: #fff;
+    font-size: 100px;
+    line-height: 3em;
+
+    &:nth-child(1) {
+      background-color: #ff0100;
+    }
+
+    &:nth-child(2) {
+      background-color: #c00;
+    }
+
+    &:nth-child(3) {
+      background-color: #900;
+    }
+
+    &:nth-child(4) {
+      background-color: #670000;
+    }
+
+    &:nth-child(5) {
+      background-color: #330100;
+    }
+
+    &:nth-child(6) {
+      background-color: #000;
+    }
+  }
 }
