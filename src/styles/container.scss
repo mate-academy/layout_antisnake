@@ -1,0 +1,27 @@
+@import "variables";
+
+.container {
+  max-width: 1200px;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    line-height: 300px;
+    text-align: center;
+
+    @each $i, $color in $list {
+      &--color:nth-child(#{$i}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+}
