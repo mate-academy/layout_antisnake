@@ -19,3 +19,24 @@ $queries:
     }
   }
 }
+.outer__inner {
+  position: relative;
+}
+
+@for $i from 1 through 6 {
+  .outer__inner:nth-child(#{$i})::after {
+    content: "#{$i}";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+}
+
+$snake: (1: #f00, 2: #c00, 3: #900, 4: #600, 5: #300, 6: #000);
+@each $cell, $color in $snake {
+  .outer__inner:nth-child(#{$cell}) {
+    background-color: $color;
+  }
+}
