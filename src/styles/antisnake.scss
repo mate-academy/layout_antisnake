@@ -10,9 +10,8 @@
 
   @for $i from 1 through 6 {
     &__item:nth-child(#{$i}) {
-      font-size: 100px;
-      text-align: center;
       line-height: 300px;
+      text-align: center;
       color: white;
 
       height: 300px;
