@@ -1,3 +1,38 @@
+@import "variables";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+  font-size: 100px;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $minWidth;
+    height: $heightSnakeBox;
+    color: $snakeTextColor;
+  }
+
+  @for $i from 1 through $box-count {
+    &__box:nth-child(#{$i}) {
+      background-color: rgb($max-rgb-value - (($i - 1) * $one-step-rgb), 0, 0);
+    }
+  }
 }
