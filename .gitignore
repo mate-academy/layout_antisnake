@@ -12,3 +12,15 @@ node_modules
 backstop_data
 dist
 .cache
+
+.editorconfig
+.eslintignore
+.eslintrc.js
+.github/workflows/test.yml
+.gitignore
+.linthtmlrc.json
+.stylelintignore
+.stylelintrc.js
+LICENSE
+package-lock.json
+package.json
