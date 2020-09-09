@@ -1,0 +1,21 @@
+.outer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 400px));
+  grid-auto-rows: 300px;
+}
+
+$queries: 
+  "1050px" 3,
+  "900px" 3,
+  "1050px" 3,
+  "750px" 2,
+  "600px" 2,
+  "450px" 1;
+
+@each $screen, $number in $queries {
+  @media (max-width: $screen) {
+    .outer {
+      grid-template-columns: repeat($number, 1fr);
+    }
+  }
+}
