@@ -3,14 +3,12 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
   @media (min-width: 1200px) {
-    & {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 33.33%));
-    }
+    grid-template-columns: repeat(auto-fit, minmax(300px, 33.33%));
   }
 
   &__part {
     font-size: 100px;
-    line-height: 3;
+    line-height: 3em;
     text-align: center;
     color: white;
 
