@@ -1,0 +1,14 @@
+$color: hsl(0, 100%, 60%);
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-color: darken($color, $i * 10%);
+    }
+  }
+}
