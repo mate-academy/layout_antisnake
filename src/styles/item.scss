@@ -1,7 +1,7 @@
 $color: hsl(0, 100%, 60%);
 
-.item {
-  display: flex;
+.container__item {
+  display: grid;
   align-items: center;
   justify-content: center;
   height: 300px;
