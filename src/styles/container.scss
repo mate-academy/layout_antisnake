@@ -29,6 +29,6 @@
 
 @media (max-width: 599px) {
   .container {
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    grid-template-columns: minmax(300px, 1fr);
   }
 }
