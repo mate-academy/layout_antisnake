@@ -1,0 +1,26 @@
+@import "variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__block {
+    line-height: 300px;
+    text-align: center;
+    color: white;
+
+    @each $block, $color in $colorOfBlocks {
+      &--#{$block} {
+        background-color: #{$color};
+      }
+    }
+  }
+}
