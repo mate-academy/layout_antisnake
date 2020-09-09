@@ -1,17 +1,14 @@
 .container {
-  
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($item-size, 1fr));
 
   @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax($size, 1fr));
+    grid-template-columns: repeat(3, minmax($item-size, 1fr));
   }
 
   &__item {
-
-    min-width: $size;
-    height: $size;
-    line-height: $size;
+    height: $item-size;
+    line-height: $item-size;
     text-align: center;
 
     @for $i from 0 to 6 {
