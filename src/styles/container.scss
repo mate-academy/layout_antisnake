@@ -3,8 +3,8 @@
   grid-template-columns: repeat(3, 1fr);
 
   &__block {
-    height: 300px;
-    min-width: 300px;
+    height: $snake-size;
+    min-width: $snake-size;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -19,8 +19,8 @@
   }
 
   @for $i from 1 through 6 {
-    &__block--#{$i} {
-      background-color: rgb((255 * (6 - $i) / 5), 0, 0);
+    &__block:nth-child(#{$i}) {
+      background-color: rgb(($red-value * (6 - $i)/5) , 0, 0);
     }
   }
 }
