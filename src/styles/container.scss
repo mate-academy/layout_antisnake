@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  @for $i from 1 through 6 {
+    &__block--#{$i} {
+      background-color: rgb((255 * (6 - $i) / 5), 0, 0);
+    }
+  }
+}
