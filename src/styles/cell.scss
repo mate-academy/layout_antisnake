@@ -1,0 +1,16 @@
+.container__cell {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  height: 300px;
+
+  font-size: $numbers-size;
+  color: $numbers-color;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-color: rgb(255 - 51 * ($i - 1), 0, 0);
+    }
+  }
+}
