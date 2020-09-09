@@ -1,6 +1,4 @@
-* {
-  margin: 0;
-}
+$size-of-block: 300px;
 
 html {
   font-size: 100px;
@@ -15,7 +13,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 300px;
+  grid-auto-rows: $size-of-block;
 
   @media (max-width: 899px) {
     grid-template-columns: repeat(2, 1fr);
@@ -29,7 +27,7 @@ body {
     display: grid;
     align-items: center;
     justify-content: center;
-    min-width: 300px;
+    min-width: $size-of-block;
     
     @for $i from 0 to 6 {
       &:nth-child(#{$i + 1}) {
