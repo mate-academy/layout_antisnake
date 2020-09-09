@@ -1,23 +1,23 @@
-$block-height: 300px;
+$block-size: 300px;
 
 .antisnake {
   display: grid;
+  grid-auto-rows: $block-size;
 
-  @media (min-width: 600px) {
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: $block-size*2) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
   }
 
-  @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+  @media (min-width: $block-size*3) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
   }
 
   &__block {
-    height: $block-height;
-    min-width: $block-height;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 
     color: white;
-    text-align: center;
-    line-height: $block-height;
 
     @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
