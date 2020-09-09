@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    height: $snake-size;
+    min-width: $snake-size;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  @for $i from 1 through 6 {
+    &__block:nth-child(#{$i}) {
+      background-color: rgb(($red-value * (6 - $i)/5) , 0, 0);
+    }
+  }
+}
