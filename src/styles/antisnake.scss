@@ -1,0 +1,29 @@
+$block-size: 300px;
+$max-red: 255;
+$fifth-red: 5;
+
+.antisnake {
+  display: grid;
+  grid-auto-rows: $block-size;
+
+  @media (min-width: $block-size*2) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
+  }
+
+  @media (min-width: $block-size*3) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    line-height: $block-size;
+    text-align: center;
+
+    color: white;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(($max-red * (6 - $i) / $fifth-red), 0, 0);
+      }
+    }
+  }
+}
