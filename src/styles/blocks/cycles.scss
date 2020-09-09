@@ -1,0 +1,7 @@
+@import "./vars.scss";
+
+@for $i from 1 through 6 {
+  .snake__item:nth-child(#{$i}) {
+    background-color: rgb($value - ($i - 1) * $int, 0, 0);
+  }
+}

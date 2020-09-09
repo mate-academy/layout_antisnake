@@ -1,0 +1,26 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__item {
+    height: $size;
+    min-width: $size;
+    font-size: $size / 3;
+    color: white;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .snake {
+    grid-template-columns: 1fr;
+  }
+}
