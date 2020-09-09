@@ -1,16 +1,28 @@
+$colors: "1" red, "2" #c00, "3"#900, "4" #600, "5" #300, "6" #000;
+
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
 
-@media screen and (max-width: 750px) {
-  .row {
+  &__block {
+    height: 300px;
+    min-width: 300px;
+
+    text-align: center;
+    line-height: 300px;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media screen and (max-width: 450px) {
-  .row {
+  @media screen and (max-width: 450px) {
     grid-template-columns: 1fr;
   }
 }
