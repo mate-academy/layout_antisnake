@@ -1,8 +1,2 @@
 $size: 300px;
 $block-base-color: red;
-
-@for $i from 1 through 6 {
-  .block-#{$i} {
-    background-color: darken($block-base-color, ($i - 1) * 10%);
-  }
-}
