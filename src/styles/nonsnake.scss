@@ -1,0 +1,21 @@
+.nonsnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 33.33%));
+  }
+
+  &__part {
+    font-size: 100px;
+    line-height: 3em;
+    text-align: center;
+    color: white;
+
+    @each $part, $num in (1 255, 2 204, 3 153, 4 102, 5 51, 6 0) {
+      &:nth-child(#{$part}) {
+        background: rgb($num, 0, 0);
+      }
+    }
+  }
+}
