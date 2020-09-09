@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (max-width: 1199px) {
+    grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  }
+
+  &__block {
+    min-width: $size;
+    text-align: center;
+    line-height: $size;
+  
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: darken($block-base-color, ($i - 1) * 10%);
+      }
+    }
+  }
+}
