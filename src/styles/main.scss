@@ -1,3 +1,8 @@
-body {
-  margin: 0;
+@import "_reset.scss";
+@import "antisnake.scss";
+
+html {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
 }
