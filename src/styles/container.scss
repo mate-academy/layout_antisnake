@@ -1,0 +1,23 @@
+.container {
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($size, 1fr));
+  }
+
+  &__item {
+
+    min-width: $size;
+    height: $size;
+    line-height: $size;
+    text-align: center;
+
+    @for $i from 0 to 6 {
+      &:nth-child(#{$i + 1}) {
+        background-color: rgb($max-red - ($step-to-black * $i), 0, 0);
+      }
+    }
+  }
+}
