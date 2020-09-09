@@ -2,8 +2,11 @@
 
 .outer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, $columns-width);
   grid-auto-rows: $rows-height;
+  &&__inner {
+    position: relative;
+  }
 }
 
 $queries: 
@@ -16,14 +19,11 @@ $queries:
 @each $screen, $number in $queries {
   @media (max-width: $screen) {
     .outer {
-      grid-template-columns: repeat($number, 1fr);
+      grid-template-columns: repeat($number, $columns-width);
     }
   }
 }
 
-.outer__inner {
-  position: relative;
-}
 
 @for $i from 1 through 6 {
   .outer__inner:nth-child(#{$i})::after {
