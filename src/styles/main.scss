@@ -1,8 +1,10 @@
-@import "reset";
-@import "mixins";
-@import "antisnake";
-
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
 }
+
+@import "reset";
+@import "mixins";
+@import "var";
+@import "function";
+@import "antisnake";

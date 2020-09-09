@@ -1,0 +1,5 @@
+@for $i from 1 through 6 {
+  .antisnake > .antisnake__block:nth-child(#{$i}) {
+    background-color: rgb(255*( 6 - $i )/5, 0, 0);
+  }
+}
