@@ -13,7 +13,15 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
-  .snake__box {
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,40 +29,10 @@ body {
     height: $heightSnakeBox;
     color: $snakeTextColor;
   }
-  &__box:nth-child(1) {
-    background-color: #ff0102;
-  }
 
-  &__box:nth-child(2) {
-    background-color: #cc0202;
-  }
-
-  &__box:nth-child(3) {
-    background-color: #9a0002;
-  }
-
-  &__box:nth-child(4) {
-    background-color: #670100;
-
-  }
-
-  &__box:nth-child(5) {
-    background-color: #340000;
-  }
-
-  &__box:nth-child(6) {
-    background-color: #000;
-  }
-}
-
-@media (min-width: 600px) {
-  .snake {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .snake {
-    grid-template-columns: repeat(3, 1fr);
+  @for $i from 1 through $box-count {
+    &__box:nth-child(#{$i}) {
+      background-color: rgb($max-rgb-value - (($i - 1) * $one-step-rgb), 0, 0);
+    }
   }
 }
