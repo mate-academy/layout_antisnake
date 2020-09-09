@@ -5,7 +5,6 @@
   &__block {
     text-align: center;
     line-height: 300px;
-    height: $block_side;
     min-width: $block_side;
 
     @for $i from 0 through 5 {
