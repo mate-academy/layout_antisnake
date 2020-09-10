@@ -2,17 +2,14 @@
 
 .outer {
   display: grid;
-  grid-template-columns: repeat(3, $columns-width);
+  grid-template-columns: repeat(auto-fill,minmax(300px,$columns-width));
   grid-auto-rows: $rows-height;
   &__inner {
     position: relative;
   }
-}
-
-@each $screen, $number in $queries {
-  @media (max-width: $screen) {
-    .outer {
-      grid-template-columns: repeat($number, $columns-width);
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3,$columns-width);
     }
   }
 }
@@ -27,7 +24,6 @@
     color: #fff;
   }
 }
-
 
 @each $cell, $color in $snake {
   .outer__inner:nth-child(#{$cell}) {
