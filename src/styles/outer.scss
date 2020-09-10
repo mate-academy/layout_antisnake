@@ -4,17 +4,10 @@
   display: grid;
   grid-template-columns: repeat(3, $columns-width);
   grid-auto-rows: $rows-height;
-  &&__inner {
+  &__inner {
     position: relative;
   }
 }
-
-$queries: 
-  "1050px" 3,
-  "900px" 3,
-  "750px" 2,
-  "600px" 2,
-  "450px" 1;
 
 @each $screen, $number in $queries {
   @media (max-width: $screen) {
@@ -23,7 +16,6 @@ $queries:
     }
   }
 }
-
 
 @for $i from 1 through 6 {
   .outer__inner:nth-child(#{$i})::after {
@@ -36,7 +28,7 @@ $queries:
   }
 }
 
-$snake: (1: #f00, 2: #c00, 3: #900, 4: #600, 5: #300, 6: #000);
+
 @each $cell, $color in $snake {
   .outer__inner:nth-child(#{$cell}) {
     background-color: $color;
