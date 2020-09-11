@@ -1,0 +1,29 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+
+  &__block {
+    height: $block-height;
+    min-width: $block-width;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(255 - 51 * ($i - 1), 0, 0);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 899px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 599px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

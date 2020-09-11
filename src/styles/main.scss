@@ -1,3 +1,9 @@
-body {
-  margin: 0;
+@import "_reset";
+@import "variables";
+@import "antisnake";
+
+html {
+  color: $text-color;
+  font-family: $main-font;
+  font-size: $main-font-size;
 }
