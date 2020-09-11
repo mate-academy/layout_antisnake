@@ -1,8 +1,9 @@
-@import "_reset.scss";
-@import "antisnake.scss";
+@import "_reset";
+@import "variables";
+@import "antisnake";
 
 html {
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 100px;
+  color: $text-color;
+  font-family: $main-font;
+  font-size: $main-font-size;
 }
