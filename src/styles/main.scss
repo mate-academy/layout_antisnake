@@ -1,3 +1,10 @@
-body {
+@import "snake-box";
+
+* {
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
 }
