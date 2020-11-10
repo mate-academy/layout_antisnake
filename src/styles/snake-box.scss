@@ -1,0 +1,21 @@
+.snake-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+
+  &__block {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    flex-basis: 33.33%;
+  }
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
