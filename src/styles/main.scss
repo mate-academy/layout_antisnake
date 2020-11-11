@@ -4,6 +4,7 @@ $height:300px;
   .container :nth-child(#{$i}) {
     grid-area: "$i";
     height: $height;
+    width: $height;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: #fff;
@@ -20,11 +21,17 @@ body {
 
 .container {
   display: grid;
-  grid-template-areas: "1 2 3"
-    "4 5 6";
 }
 
-@media screen and (max-width:750px) {
+@media screen and (min-width:300px) {
+  @for $i from 1 through 6 {
+    .container :nth-child(#{$i}) {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width:600px) {
   .container {
     grid-template-areas: "1 2"
       "3 4"
@@ -32,21 +39,9 @@ body {
   }
 }
 
-@media screen and (max-width:450px) {
+@media screen and (min-width:900px) {
   .container {
-    grid-template-areas: "1"
-      "2"
-      "3"
-      "4"
-      "5"
-      "6";
-  }
-}
-
-@media screen and (max-width:300px) {
-  @for $i from 1 through 6 {
-    .container :nth-child(#{$i}) {
-      width: $height;
-    }
+    grid-template-areas: "1 2 3"
+      "4 5 6";
   }
 }
