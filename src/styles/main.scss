@@ -1,3 +1,14 @@
-body {
-  margin: 0;
+@import "base/reset";
+@import "components/block";
+@import "utils/functions";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(300px, auto));
+  }
 }
