@@ -1,3 +1,49 @@
+$height:300px;
+
+@for $i from 1 through 6 {
+  .container :nth-child(#{$i}) {
+    grid-area: "$i";
+    height: $height;
+    width: $height;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: $height;
+    $j: $i - 1;
+    background-color: rgb(255 - $j * 51,00,00);
+  }
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+}
+
+.container :nth-child(n) {
+  min-width: $height;
+}
+
+@media screen and (min-width:300px) {
+  .container :nth-child(n) {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:600px) {
+  .container {
+    grid-template-areas: "1 2"
+      "3 4"
+      "5 6";
+  }
+}
+
+@media screen and (min-width:900px) {
+  .container {
+    grid-template-areas: "1 2 3"
+      "4 5 6";
+  }
 }
