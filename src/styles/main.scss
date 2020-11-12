@@ -23,11 +23,13 @@ body {
   display: grid;
 }
 
+.container :nth-child(n) {
+  min-width: $height;
+}
+
 @media screen and (min-width:300px) {
-  @for $i from 1 through 6 {
-    .container :nth-child(#{$i}) {
-      width: 100%;
-    }
+  .container :nth-child(n) {
+    width: 100%;
   }
 }
 
