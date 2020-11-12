@@ -1,0 +1,11 @@
+@for $i from 1 through 6 {
+  .grid__block:nth-child(#{$i}) {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: hsl(0,100%, 60% - (10% * $i));
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+  }
+}
