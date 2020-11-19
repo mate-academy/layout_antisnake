@@ -1,0 +1,40 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__head {
+    background: #f00;
+  }
+
+  &__body--1 {
+    background: #c00;
+  }
+
+  &__body--2 {
+    background: #900;
+  }
+
+  &__body--3 {
+    background: #600;
+  }
+
+  &__body--4 {
+    background: #300;
+  }
+
+  &__tail {
+    background: #000;
+  }
+
+  @media screen and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}

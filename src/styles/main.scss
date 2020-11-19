@@ -1,3 +1,13 @@
+@import "snake";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  line-height: 300px;
+  color: #fff;
+}
+
+.block {
+  text-align: center;
 }
