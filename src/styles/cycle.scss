@@ -1,0 +1,16 @@
+@for $i from 1 through 6 {
+  .wrapper__block:nth-child(#{$i}) {
+    display: grid;
+    min-width: 300px;
+    height: 300px;
+    background-color: hsl(0,100%, 60% - (10% * $i));
+    position: relative;
+    &::after {
+      content: "#{$i}";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
