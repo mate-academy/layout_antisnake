@@ -1,0 +1,32 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__box {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  $boxes: (
+    1: #f00,
+    2: #c00,
+    3: #900,
+    4: #600,
+    5: #300,
+    6: #000
+  );
+
+  @each $box, $color in $boxes {
+    .snake__box:nth-child(#{$box}) {
+      background-color: #{$color};
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .snake {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
