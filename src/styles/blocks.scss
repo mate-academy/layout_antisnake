@@ -1,0 +1,31 @@
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  @for $i from 1 through 6 {
+    &__block--#{$i} {
+      height: 300px;
+      min-width: 300px;
+      font-size: 100px;
+      color: white;
+      text-align: center;
+      line-height: 300px;
+    }
+  }
+
+  @each $i, $var in $color {
+    &__block--#{$i} {
+      background-color: $var;
+    }
+  }
+
+}
