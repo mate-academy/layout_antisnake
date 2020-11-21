@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    height: 300px;
+    min-width: 300px;
+
+    &-number {
+      width: fit-content;
+      margin: 0 auto;
+      color: white;
+      font-size: 100px;
+      line-height: 300px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    @each $mod, $color in $block-colors {
+      &--#{$mod} {
+        background-color: $color;
+      }
+    }
+  }
+}
