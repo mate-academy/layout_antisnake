@@ -1,0 +1,34 @@
+$colors:(
+  1: #f00,
+  2: #c00,
+  3: #900,
+  4: #600,
+  5: #300,
+  6: #000
+);
+
+$size: 300px;
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+  grid-auto-rows: $size;
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  & div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @each $number, $color in $colors {
+    & div:nth-child(#{$number}) {
+      background-color: $color;
+    }
+  }
+}
