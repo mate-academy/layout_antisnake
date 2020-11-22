@@ -1,0 +1,5 @@
+@mixin parameters($height, $txt-color, $font-size) {
+  height: $height;
+  color: $txt-color;
+  font-size: $font-size;
+}
