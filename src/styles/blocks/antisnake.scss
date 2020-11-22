@@ -1,0 +1,31 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, auto));
+
+  @media (min-width:900px) {
+    grid-template-columns: repeat(3,auto);
+  }
+
+  &-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $cell-size;
+    transition: all 500ms;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb((51 * (6 - $i)), 0, 0);
+
+        &::after {
+          content: "#{$i}";
+        }
+
+        &:hover {
+          color: #0aa;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
