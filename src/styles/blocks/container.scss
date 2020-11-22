@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  &__item {
+    @include parameters(300px,#fff, 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    &--first {
+      background-color: $bgc-first;
+    }
+
+    &--second {
+      background-color: $bgc-second;
+    }
+
+    &--third {
+      background-color: $bgc-third;
+    }
+
+    &--fourth {
+      background-color: $bgc-fourth;
+    }
+
+    &--fifth {
+      background-color: $bgc-fifth;
+    }
+
+    &--last {
+      background-color: $bgc-last;
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+}

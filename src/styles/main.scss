@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "service/reset";
+@import "service/_variables";
+@import "service/mixin";
+@import "blocks/container";
