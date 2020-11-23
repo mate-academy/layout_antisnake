@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  &__item {
+    min-width: $width;
+    height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+
+    background-color: rgb(255, 0, 0);
+  }
+}
