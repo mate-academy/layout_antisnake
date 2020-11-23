@@ -1,3 +1,75 @@
+$size: 300px;
+$view-port: 100vw;
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.snakes {
+  display: grid;
+}
+
+@for $j from 1 through 6 {
+  .snakes__snake#{$j} {
+    min-width: 300px;
+    text-align: center;
+    line-height: $size;
+
+    color: #fff;
+
+    &::after {
+      content: "#{$j}";
+    }
+  }
+}
+
+/* #region media*/
+
+@media (max-width: 599px) {
+  .snakes {
+    grid-template: repeat(6, $size) / auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .snakes {
+    grid-template: repeat(3, $size) / repeat(2, auto);
+  }
+}
+
+@media (min-width: 900px) {
+  .snakes {
+    grid-template: repeat(2, $size) / repeat(3, auto);
+  }
+}
+
+/* #endregion*/
+
+$order: (
+  1: #f00,
+  2: #c00,
+  3: #900,
+  4: #600,
+  5: #300,
+  6: #000,
+);
+
+@each $box, $color in $order {
+  .snakes__snake#{$box} {
+    background-color: $color;
+  }
 }
