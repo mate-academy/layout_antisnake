@@ -1,3 +1,8 @@
+@import "variables.scss";
+@import "reset.scss";
+@import "container.scss";
+
 body {
-  margin: 0;
+  font-family: $font-stack;
+  font-size: 100px;
 }
