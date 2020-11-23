@@ -1,3 +1,36 @@
+@import "normalize";
+@import "variables";
+
 body {
-  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  @each $block, $color in $colors {
+    & div:nth-child(#{$block}) {
+      background-color: $color;
+    }
+  }
+
+  @for $j from 1 through 6 {
+    & div:nth-child(#{$j}) {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      height: 300px;
+      min-width: 300px;
+    }
+  }
 }
