@@ -1,0 +1,31 @@
+@import "variables";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+
+  &__block {
+
+    height: $block-size;
+    min-width: $block-size;
+    font: 100px Arial, sans-serif;
+    color: white;
+    text-align: center;
+    line-height: $block-size;
+    background-color: $baze-color;
+  }
+
+  @for $i from 2 through 6 {
+    &__block--#{$i} {
+      background-color: rgb(($color - ($step*$i) + $step), 0, 0);
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
