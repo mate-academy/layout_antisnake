@@ -12,18 +12,18 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
+
+  & > * {
+    display: grid;
+    height: 300px;
+    background-color: hsl(0, 100%, 50%);
+  }
 }
 
-.container > * {
-  display: grid;
-  height: 300px;
-  background-color: hsl(0, 100%, 50%);
-}
-
-@for $data from 1 through 6 {
-  .container *:nth-child(#{$data})::after {
-    content: "#{$data}";
-    background-color: hsl(0, 100%, 60% - 10% * $data);
+@for $boxNumber from 1 through 6 {
+  .container *:nth-child(#{$boxNumber})::after {
+    content: "#{$boxNumber}";
+    background-color: hsl(0, 100%, 60% - 10% * $boxNumber);
     width: 100%;
     line-height: 300px;
   }
