@@ -1,0 +1,20 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+  justify-content: center;
+
+  &__item {
+    text-align: center;
+    line-height: $height;
+  }
+
+  @for $i from 0 through 5 {
+    &__item:nth-child(#{$i+1}) {
+      background: rgb(255 - $i * 51 , 0, 0);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($width, 1fr));
+  }
+}
