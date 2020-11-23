@@ -1,3 +1,16 @@
-body {
-  margin: 0;
+@import "reset";
+@import "fonts";
+@import "block";
+@import "container";
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(1, auto);
+  }
 }
