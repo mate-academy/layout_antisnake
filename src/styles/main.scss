@@ -1,3 +1,31 @@
+@import "reset";
+@import "mixins";
+
 body {
-  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 100px;
+}
+
+.blocks {
+  @include Optimization(0, 100%);
+  @include Optimization(600px, 50%);
+  @include Optimization(900px, 33.33%);
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @for $i from 1 through 6 {
+    &__item:nth-child(#{$i}) {
+      background-color: darken(red, ($i - 1) * 10%);
+    }
+
+    &__item:nth-child(#{$i})::after {
+      content: "#{$i}";
+    }
+  }
 }

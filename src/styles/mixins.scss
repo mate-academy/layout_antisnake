@@ -1,0 +1,8 @@
+@mixin Optimization($minWidth, $percent) {
+  @media (min-width: $minWidth) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, $percent);
+    }
+  }
+}
