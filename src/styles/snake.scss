@@ -1,0 +1,33 @@
+@import "variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, auto));
+}
+
+@media screen and (max-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@for $i from 1 through 6 {
+  .snake :nth-child(#{$i}) {
+    height: $boxHeight;
+    min-width: $boxHeight;
+    position: relative;
+
+    background-color: rgb(calc(255 - (255 * 0.2 * (#{$i} - 1))), 0, 0);
+  }
+
+  .snake :nth-child(#{$i})::after {
+    content: "#{$i}";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+    font-family: $basicFont;
+  }
+}
