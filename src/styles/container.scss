@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  justify-content: stretch;
+  align-items: stretch;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $box-basis;
+    min-width: $box-basis;
+    font-family: inherit;
+    font-size: 100px;
+    color: #fff;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(255 - ($i - 1) * 51, 0, 0);
+      }
+    }
+  }
+}
