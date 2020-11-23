@@ -1,0 +1,34 @@
+@import "variables";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(300px, $columns-width) );
+  grid-auto-rows: $rows-height;
+  &__inner {
+    position: relative;
+  }
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, $columns-width);
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .grid__inner:nth-child(#{$i})::after {
+    content: "#{$i}";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    
+    color: #fff;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+@each $cell, $color in $colors {
+  .grid__inner:nth-child(#{$cell}) {
+    background-color: $color;
+  }
+}
