@@ -1,0 +1,15 @@
+.container__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 300px;
+
+  color: #fff;
+}
+
+@for $i from 1 through 6 {
+  .container__block:nth-child(#{$i}) {
+    background-color: rgb(306-$i*51,0, 0);
+  }
+}
