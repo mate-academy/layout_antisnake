@@ -3,7 +3,7 @@
 @import "./normalize.scss";
 
 @for $i from 1 to 7 {
-  .antisnake:nth-child(#{$i}) {
+  .box__item:nth-child(#{$i}):nth-child(#{$i}) {
     background-color: gray;
     height: 300px;
     display: flex;
@@ -15,7 +15,7 @@
 }
 
 @each $i, $color in $colors {
-  .antisnake:nth-child(#{$i}) {
+  .box__item:nth-child(#{$i}):nth-child(#{$i}) {
     background-color: #{$color};
   }
 }
