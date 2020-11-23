@@ -1,3 +1,59 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+}
+
+.snake {
+  height: 300px;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+.snake1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.snake2 {
+  background-color: rgb(204, 0, 0);
+}
+
+.snake3 {
+  background-color: rgb(153, 0, 0);
+}
+
+.snake4 {
+  background-color: rgb(102, 0, 0);
+}
+
+.snake5 {
+  background-color: rgb(51, 0, 0);
+}
+
+.snake6 {
+  background-color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(6, auto);
+  }
+}
