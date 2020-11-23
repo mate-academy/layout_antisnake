@@ -1,12 +1,4 @@
-$colors:(
-  1: #f00,
-  2: #c00,
-  3: #900,
-  4: #600,
-  5: #300,
-  6: #000
-);
-
+$color: #f00;
 $size: 300px;
 
 .snake {
@@ -24,11 +16,15 @@ $size: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:first-child {
+      background-color: $color;
+    }
   }
 
-  @each $number, $color in $colors {
-    & div:nth-child(#{$number}) {
-      background-color: $color;
+  @for $i from 1 through 5 {
+    & div:nth-child(#{$i + 1}) {
+      background-color: darken($color, 10% * $i);
     }
   }
 }
