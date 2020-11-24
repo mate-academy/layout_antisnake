@@ -1,0 +1,11 @@
+@for $i from 1 through 6 {
+  .container div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
+
+@for $i from 1 through 6 {
+  .container div:nth-child(#{$i}) {
+    background-color: darken(red, ($i - 1) * 10%);
+  }
+}
