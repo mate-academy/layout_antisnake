@@ -1,3 +1,30 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.catalog {
+  --column-count: auto-fill;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(300px, 1fr));
+  @media (min-width: 900px) {
+    --column-count: 3;
+  }
+}
+
+.card {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  font-size: 100px;
+  color: white;
+}
+
+@for $i from 1 through 6 {
+  .card:nth-child(#{$i}) {
+    background-color: darken(red, ($i - 1) * 10%);
+  }
 }
