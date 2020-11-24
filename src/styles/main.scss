@@ -1,10 +1,9 @@
-@import "./variables.scss";
+@import "./fonts.scss";
 @import "./box.scss";
 @import "./normalize.scss";
 
 @for $i from 1 to 7 {
-  .box__item:nth-child(#{$i}):nth-child(#{$i}) {
-    background-color: gray;
+  .box__item:nth-child(#{$i}) {
     height: 300px;
     display: flex;
     &::after {
@@ -14,14 +13,14 @@
   }
 }
 
-@each $i, $color in $colors {
-  .box__item:nth-child(#{$i}):nth-child(#{$i}) {
-    background-color: #{$color};
-  }
-}
-
 @media(min-width: 900px) {
   .box {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@for $c from 1 to 7 {
+  .box__item:nth-child(#{$c}) {
+    background-color: darken(red, ($c - 1) * 10%);
   }
 }
