@@ -1,0 +1,28 @@
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width:899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width:599px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  min-width: 300px;
+  font-size: 100px;
+  color: #fff;
+}
+
+@for $i from 1 through 6 {
+  .item:nth-child(#{$i}) {
+    background-color: darken(red, ($i - 1) * 10%);
+  }
+}
