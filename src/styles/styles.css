@@ -13,7 +13,7 @@ body {
 
 .block {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .block__item {
@@ -48,15 +48,9 @@ body {
   background-color: black;
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (min-width: 1200px) {
   .block {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .block {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
