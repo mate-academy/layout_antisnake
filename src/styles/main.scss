@@ -1,3 +1,29 @@
-body {
-  margin: 0;
+@import "variables";
+@import "reset";
+
+.container {
+  display: grid;
+  grid-template-columns: (repeat(auto-fill, minmax($height, 1fr)));
+}
+
+.container__general {
+  height: $height;
+  text-align: center;
+  line-height: $height;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+@for $i from 1 through 6 {
+  .container__general:nth-child(#{$i}) {
+    background-color: darken(red, ($i - 1)*10%);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    grid-template-columns: (repeat(3, minmax(300px, 1fr)));
+  }
+
 }
