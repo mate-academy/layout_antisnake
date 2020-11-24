@@ -1,9 +1,0 @@
-.snake {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
-  grid-auto-rows: $box-size;
-
-  &__box {
-    position: relative;
-  }
-}

@@ -1,8 +1,6 @@
 @import "./utils/reset";
-@import "./utils/variables";
+@import "./utils/vars";
 @import "./components/snake";
-@import "./components/snake-loop";
-@import "./components/responsive";
 
 body {
   font-family: Arial, Helvetica, sans-serif;
