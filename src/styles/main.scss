@@ -1,3 +1,20 @@
-body {
-  margin: 0;
+@import "reset";
+@import "mixin";
+@import "var";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($square-box, auto));
+  @include media;
+}
+
+@for $i from 1 through 6 {
+  div:nth-child(#{$i}) {
+  @include box-style; 
+  background-color: rgb($starting-color * ($amount-color - $i), 0, 0);
+
+ &::after {
+  content: "#{$i}";
+ }
+  }
 }

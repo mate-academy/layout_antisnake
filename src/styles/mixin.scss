@@ -1,0 +1,14 @@
+@mixin media {
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($square-box, auto));
+ }
+ @media screen and (max-width: 599px) {  
+    grid-template-columns: repeat(1, minmax($square-box, auto));
+ }
+}
+
+@mixin box-style {
+  height: $square-box;
+  text-align: center;
+  line-height: $square-box;
+}
