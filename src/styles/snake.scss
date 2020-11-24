@@ -1,0 +1,22 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @for $i from 1 through 6 {
+    &__body--#{$i} {
+      background: darken(#f00, ($i - 1) * 10%);
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
