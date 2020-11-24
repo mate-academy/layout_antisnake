@@ -1,4 +1,4 @@
-.block {
+.container__block {
   display: grid;
   height: 300px;
   justify-items: center;
@@ -7,7 +7,7 @@
 }
 
 @for $i from 1 to 7 {
-  .block:nth-child(#{$i}) {
+  .container__block:nth-child(#{$i}) {
     background-color: darken(#f00, 10%*($i - 1));
   }
 }
