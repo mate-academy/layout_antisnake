@@ -2,28 +2,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  &__head {
-    background: #f00;
-  }
-
-  &__body--1 {
-    background: #c00;
-  }
-
-  &__body--2 {
-    background: #900;
-  }
-
-  &__body--3 {
-    background: #600;
-  }
-
-  &__body--4 {
-    background: #300;
-  }
-
-  &__tail {
-    background: #000;
+  @for $i from 1 through 6 {
+    &__body--#{$i} {
+      background: darken(#f00, ($i - 1) * 10%);
+    }
   }
 
   @media screen and (max-width: 899px) {
