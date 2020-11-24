@@ -1,3 +1,33 @@
+$blockItemSize: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockItemSize, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr) ;
+  }
+
+  &__item {
+    min-width: $blockItemSize;
+    height: $blockItemSize;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 100px;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb((255 - (($i - 1) * 51)), 0, 0);
+      }
+    }
+  }
 }
