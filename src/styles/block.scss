@@ -1,0 +1,13 @@
+.container__block {
+  display: grid;
+  height: 300px;
+  justify-items: center;
+  align-items: center;
+  min-width: 300px;
+}
+
+@for $i from 1 to 7 {
+  .container__block:nth-child(#{$i}) {
+    background-color: darken(#f00, 10%*($i - 1));
+  }
+}
