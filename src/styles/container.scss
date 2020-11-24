@@ -1,0 +1,17 @@
+.container {
+  --countBox: auto-fill;
+  display: grid;
+  grid-template-columns: repeat(var(--countBox), minmax(300px, 1fr));
+
+  @media screen and (min-width: 900px) {
+    --countBox: 3;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 300px;
+  }
+}
