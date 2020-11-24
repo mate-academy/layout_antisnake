@@ -1,3 +1,26 @@
-body {
-  margin: 0;
+@import "./fonts.scss";
+@import "./box.scss";
+@import "./normalize.scss";
+
+@for $i from 1 to 7 {
+  .box__item:nth-child(#{$i}) {
+    height: 300px;
+    display: flex;
+    &::after {
+      content: "#{$i}";
+      margin: auto;
+    }
+  }
+}
+
+@media(min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@for $c from 1 to 7 {
+  .box__item:nth-child(#{$c}) {
+    background-color: darken(red, ($c - 1) * 10%);
+  }
 }
