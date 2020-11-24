@@ -1,30 +1,36 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 100px;
-  color: white;
-  text-align: center;
 }
+
+$fontFamilyForDigits: arial, sans-serif;
+$fontSizeForDigits: 100px;
+$colorForDigits: white;
+$heigthBlock: 300px;
+$maxWidthBlocks: 1199px;
 
 .container {
   width: 100%;
-  max-width: 1199px;
+  max-width: $maxWidthBlocks;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($heigthBlock, 1fr));
   justify-content: center;
 
-  & > * {
+  &__items {
     display: grid;
-    height: 300px;
+    height: $heigthBlock;
     background-color: hsl(0, 100%, 50%);
   }
 }
 
 @for $boxNumber from 1 through 6 {
-  .container *:nth-child(#{$boxNumber})::after {
+  .container .container__items:nth-child(#{$boxNumber})::after {
     content: "#{$boxNumber}";
+    font-family: $fontFamilyForDigits;
+    font-size: $fontSizeForDigits;
+    color: $colorForDigits;
     background-color: hsl(0, 100%, 60% - 10% * $boxNumber);
     width: 100%;
-    line-height: 300px;
+    text-align: center;
+    line-height: $heigthBlock;
   }
 }
