@@ -17,6 +17,18 @@ body {
   grid-auto-rows: 300px;
   justify-content: center;
 
+  @media screen and (max-width: 750px) {
+    & {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    & {
+      grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+  }
+
   &__body {
     text-align: center;
     color: white;
@@ -27,17 +39,5 @@ body {
 @for $i from 1 through 6 {
   .snake__body:nth-child(#{$i}) {
     background-color: darken(red, ($i - 1) * 10%);
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .snake {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .snake {
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
   }
 }
