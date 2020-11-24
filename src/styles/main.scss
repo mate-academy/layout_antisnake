@@ -17,13 +17,13 @@ body {
   grid-auto-rows: 300px;
   justify-content: center;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 899px) {
     & {
       grid-template-columns: repeat(2, minmax(300px, 1fr));
     }
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 599px) {
     & {
       grid-template-columns: repeat(1, minmax(300px, 1fr));
     }
