@@ -13,11 +13,6 @@ $maxWidthBlocks: 1199px;
   max-width: $maxWidthBlocks;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($heigthBlock, 1fr));
-  justify-content: center;
-
-  &__items {
-    display: grid;
-  }
 }
 
 @for $boxNumber from 1 through 6 {
@@ -27,8 +22,8 @@ $maxWidthBlocks: 1199px;
     font-size: $fontSizeForDigits;
     color: $colorForDigits;
     background-color: hsl(0, 100%, 60% - 10% * $boxNumber);
-    width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     line-height: $heigthBlock;
   }
 }
