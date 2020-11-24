@@ -17,13 +17,11 @@ $maxWidthBlocks: 1199px;
 
   &__items {
     display: grid;
-    height: $heigthBlock;
-    background-color: hsl(0, 100%, 50%);
   }
 }
 
 @for $boxNumber from 1 through 6 {
-  .container .container__items:nth-child(#{$boxNumber})::after {
+  .container *:nth-child(#{$boxNumber})::after {
     content: "#{$boxNumber}";
     font-family: $fontFamilyForDigits;
     font-size: $fontSizeForDigits;
