@@ -1,3 +1,13 @@
+@import "container";
+@import "snake";
+@import "media";
+
+html {
+  font-family: Arial, Algerian, serif;
+  color: white;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
 }

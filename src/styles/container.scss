@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-areas: "items_one items_two items_three"
+    "items_four items_five items_six";
+}
+
+.size_box {
+  display: grid;
+  height: 300px;
+  min-width: 300px;
+  font-family: inherit;
+  justify-content: center;
+  align-items: center;
+}
