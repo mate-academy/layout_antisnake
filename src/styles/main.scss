@@ -1,3 +1,38 @@
+$block_width: (100%/3);
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3,$block_width);
+
+  .block {
+    height: 300px;
+  
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+    
+    color: #fff;
+    background-color: red;
+  }
+
+  @media screen and (max-width: 750px) {
+    grid-template-columns: repeat(2,50%);
+  }
+  @media screen and (max-width:450px) {
+    grid-template-columns: 100%;
+  }
+
+  @for $i from 1 through 5 {
+    .block:nth-child(#{$i+1}) {
+      background-color: darken(red, $i*10%);
+    }
+  }
 }
