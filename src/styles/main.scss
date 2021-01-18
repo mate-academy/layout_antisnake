@@ -1,3 +1,43 @@
+$block-size: 300px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: auto;
+  }
+
+  &__item {
+    display: grid;
+    min-width: $block-size;
+    height: $block-size;
+    justify-items: center;
+    align-content: center;
+
+    @for $i from 1 through 6 {
+      $q: $i -1;
+      &:nth-child(#{$i}) {
+        background-color: darken(red, ($i - 1) * 10%);
+      }
+    }
+  }
 }
