@@ -32,29 +32,12 @@ body {
     height: $block-size;
     justify-items: center;
     align-content: center;
+
+    @for $i from 1 through 6 {
+      $q: $i -1;
+      &:nth-child(#{$i}) {
+        background-color: darken(red, ($i - 1) * 10%);
+      }
+    }
   }
-}
-
-.block__item:nth-child(1) {
-  background-color: rgb(100%, 0%, 0%);
-}
-
-.block__item:nth-child(2) {
-  background-color: rgb(80%, 0%, 0%);
-}
-
-.block__item:nth-child(3) {
-  background-color: rgb(60%, 0%, 0%);
-}
-
-.block__item:nth-child(4) {
-  background-color: rgb(40%, 0%, 0%);
-}
-
-.block__item:nth-child(5) {
-  background-color: rgb(20%, 0%, 0%);
-}
-
-.block__item:nth-child(6) {
-  background-color: rgb(0%, 0%, 0%);
 }
