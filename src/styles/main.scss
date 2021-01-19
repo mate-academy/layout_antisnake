@@ -1,3 +1,42 @@
+$font: arial, serif;
+
+html {
+  font-family: $font;
+}
+
 body {
   margin: 0;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.box {
+  height: 300px ;
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  line-height: 300px;
+  background-color: red ;
+  font-family: $font;
+}
+
+@media screen and (max-width:750px) {
+  .wrap {
+    grid-template-columns: repeat(2 , 2fr);
+  }
+}
+
+@media screen and (max-width:450px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@for $i from 1 through 5 {
+  .box:nth-child(#{$i+1}) {
+    background-color: darken(red , $i*10);
+  }
 }
