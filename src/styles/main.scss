@@ -11,6 +11,8 @@ body {
   color: #fff;
   font-size: 100px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  background-color: red;
 }
 
 .container {
@@ -20,35 +22,16 @@ body {
   &__box {
     @extend %containers;
   }
-
-  &__first {
-    background-color: rgb(100%, 0, 0);
-  }
-
-  &__second {
-    background-color: rgb(80%, 0, 0);
-  }
-
-  &__third {
-    background-color: rgb(60%, 0 , 0);
-  }
-
-  &__four {
-    background-color: rgb(40%, 0 , 0);
-
-  }
-
-  &__five {
-    background-color: rgb(20%, 0 , 0);
-  }
-
-  &__six {
-    background-color: black;
-  }
 }
 
 @media (min-width: 1200px) {
   .container {
     grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+@for $i from 1 through 5 {
+  .container__box:nth-child(#{$i+1}) {
+    background-color: darken(red, $i*10%);
   }
 }
