@@ -1,0 +1,21 @@
+@for $i from 1 through 6 {
+  $a: calc(#{$i * 10}% - 10%);
+  .box:nth-last-child(#{$i}) {
+    background-color: hsl(0, 100%, $a);
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
