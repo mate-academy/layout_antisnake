@@ -5,7 +5,10 @@
 
 @each $child, $color in $colors {
   .container__block:nth-child(#{$child}) {
-    @extend %block;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 300px;
     background-color: $color;
   }
 }
