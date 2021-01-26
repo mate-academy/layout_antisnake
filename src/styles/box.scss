@@ -1,6 +1,9 @@
+@import "variable";
+
 @for $i from 1 through 6 {
   $a: calc(#{$i * 10}% - 10%);
   .box:nth-last-child(#{$i}) {
+    @extend %minWidthBox;
     background-color: hsl(0, 100%, $a);
   }
 }
