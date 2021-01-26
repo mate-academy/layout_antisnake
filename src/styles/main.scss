@@ -1,3 +1,27 @@
+@import "block";
+@import "container";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+@for $color from 1 to 7 {
+  .block:nth-child(#{$color}) {
+    background-color: rgb(calc(255 - 51 * (#{$color} - 1)), 0, 0);
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+  }
 }
