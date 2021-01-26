@@ -1,48 +1,48 @@
 @import "./variables";
 @import "./reset";
 
-.container {
+.block {
   display: grid;
   grid-template-areas: "box box box"
     "box box box";
-}
 
-.box {
-  font-family: $main-font;
-  font-size: 100px;
-  min-width: 300px;
-  height: $standart-height;
-  color: #fff;
-  text-align: center;
-  line-height: $standart-height;
+  &__box {
+    font-family: $main-font;
+    font-size: 100px;
+    min-width: 300px;
+    height: $standart-height;
+    color: #fff;
+    text-align: center;
+    line-height: $standart-height;
 
-  &:nth-child(1) {
-    background-color: #fe0202;
-  }
+    &:nth-child(1) {
+      background-color: #fe0202;
+    }
 
-  &:nth-child(2) {
-    background-color: #cb0202;
-  }
+    &:nth-child(2) {
+      background-color: #cb0202;
+    }
 
-  &:nth-child(3) {
-    background-color: #990003;
-  }
+    &:nth-child(3) {
+      background-color: #990003;
+    }
 
-  &:nth-child(4) {
-    background-color: #660100;
-  }
+    &:nth-child(4) {
+      background-color: #660100;
+    }
 
-  &:nth-child(5) {
-    background-color: #340000;
-  }
+    &:nth-child(5) {
+      background-color: #340000;
+    }
 
-  &:nth-child(6) {
-    background-color: #000;
+    &:nth-child(6) {
+      background-color: #000;
+    }
   }
 }
 
 @media screen and (max-width: 750px) {
-  .container {
+  .block {
     grid-template-areas: "box box"
       "box box"
       "box box";
@@ -50,7 +50,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .container {
+  .block {
     grid-template-areas: "box"
       "box"
       "box"
