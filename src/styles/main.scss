@@ -1,3 +1,40 @@
+$item-size: 300px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($item-size, auto));
+
+  &__item {
+    height: $item-size;
+    line-height: $item-size;
+    text-align: center;
+    justify-items: center;
+
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+
+  @for $i from 6 through 0 {
+    &__item:nth-child(#{6 - $i}) {
+      background-color: rgb( $i*51, 0, 0);
+    }
+  }
 }
