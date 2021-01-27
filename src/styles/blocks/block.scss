@@ -1,0 +1,9 @@
+.block {
+  height: $block-height;
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  line-height: $block-height;
+  background-color: red;
+  font-family: $main-font;
+}
