@@ -1,0 +1,14 @@
+.block {
+  display: grid;
+  height: 300px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+@for $i from 1 through 6 {
+  $color: calc(#{$i * 10}% - 10%);
+  .block:nth-last-child(#{$i}) {
+    background-color: hsl(0, 100%, $color);
+  }
+}
