@@ -1,0 +1,28 @@
+@import "../utils";
+
+.box__items {
+  height: $h-main;
+  min-width: $h-main;
+
+  font-size: $h-main / 3;
+  line-height: $h-main;
+  color: $c-white;
+  text-align: center;
+}
+
+@for $i from 1 through 6 {
+  .box__items:nth-child(#{$i}) {
+    background-color: rgb(100% - (($i - 1) * 20%), 0, 0);
+  }
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, auto);
+  }
+}
