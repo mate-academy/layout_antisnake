@@ -1,23 +1,10 @@
 @import "./src/styles/variables";
 @import "./src/styles/reset";
+@import "./src/styles/blocks/block";
+@import "./src/styles/blocks/container";
 @import "./src/styles/loops";
 
 html {
-  font-family: $font;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat( 3, 1fr);
-}
-
-.block {
-  height: $h-300;
-  text-align: center;
-  color: white;
-  font-size: 100px;
-  line-height: $h-300;
-  background-color: red;
   font-family: $font;
 }
 
