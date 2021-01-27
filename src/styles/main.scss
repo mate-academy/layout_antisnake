@@ -1,3 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+
+  &__block {
+    position: relative;
+
+    &::after {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@for $i from 1 through 6 {
+  .page__block:nth-child(#{$i}) {
+    background-color: rgb(calc(255 - 51 * (#{$i} - 1)), 0, 0);
+
+    &::after {
+      content: "#{$i}";
+    }
+  }
 }
