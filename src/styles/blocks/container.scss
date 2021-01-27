@@ -1,0 +1,30 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+
+  &__block {
+    max-width: $heigth;
+    height: $heigth;
+    background-color: red;
+
+    @include numbers;
+    line-height: $heigth;
+  }
+}
+
+@for $number from 1 through 6 {
+  .container div:nth-child(#{$number}) {
+    &::after {
+      content: ("#{$number}");
+    }
+  }
+}
+
+@for $number from 2 through 6 {
+  .container div:nth-child(#{$number}) {
+    background-color: darken(rgb(100%, 0%, 0%), ($number - 1) * 20%);
+  }
+}
