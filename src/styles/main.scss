@@ -1,3 +1,13 @@
+@import "block";
+@import "container";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+@for $color from 1 to 7 {
+  .block:nth-child(#{$color}) {
+    background-color: rgb(calc(255 - 51 * (#{$color} - 1)), 0, 0);
+  }
 }
