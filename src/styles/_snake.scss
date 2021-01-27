@@ -1,0 +1,22 @@
+/* .snake {
+  height: 300px;
+  width: 300px;
+} */
+
+@for $i from 1 through 6 {
+  .snake:nth-child(#{$i}) {
+    background-color: rgb(120% - (20*$i), 0%, 0%);
+  }
+
+  .snake:nth-child(#{$i})::after {
+    content: "#{$i}";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+    line-height: 300px;
+    color: #fff;
+  }
+}
