@@ -1,6 +1,6 @@
 # Antisnake
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://vladimir-bibikov.rd.github.io/layout_antisnake/)
+    - [DEMO LINK](https://vladimir-bibikov.github.io/layout_antisnake/)
     - [TEST REPORT LINK](https://vladimir-bibikov.github.io/layout_antisnake/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
