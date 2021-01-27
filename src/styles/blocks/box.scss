@@ -16,11 +16,9 @@
   }
 }
 
-@media (min-width: 600px) {
-  .box {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-  }
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
 }
 
 @media (min-width: 900px) {
