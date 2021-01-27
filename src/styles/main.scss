@@ -15,28 +15,10 @@
     text-align: center;
     line-height: $standart-height;
 
-    &:nth-child(1) {
-      background-color: #fe0202;
-    }
-
-    &:nth-child(2) {
-      background-color: #cb0202;
-    }
-
-    &:nth-child(3) {
-      background-color: #990003;
-    }
-
-    &:nth-child(4) {
-      background-color: #660100;
-    }
-
-    &:nth-child(5) {
-      background-color: #340000;
-    }
-
-    &:nth-child(6) {
-      background-color: #000;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: darken(red, ($i - 1) * 10%);
+      }
     }
   }
 }
