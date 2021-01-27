@@ -1,0 +1,14 @@
+.block {
+  height: 300px;
+  min-width: 300px;
+  color: white;
+  line-height: 300px;
+  text-align: center;
+  font-family: inherit;
+
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      background-color: rgb(120% - $i*20, 0%, 0%);
+    }
+  }
+}
