@@ -1,6 +1,6 @@
 .box {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($box-size, auto));
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
 
   &__item {
     line-height: $box-size;
