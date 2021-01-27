@@ -1,3 +1,43 @@
-body {
-  margin: 0;
+@import "./variables";
+@import "./reset";
+
+.block {
+  display: grid;
+  grid-template-areas: "box box box"
+    "box box box";
+
+  &__box {
+    font-family: $main-font;
+    font-size: 100px;
+    min-width: 300px;
+    height: $standart-height;
+    color: #fff;
+    text-align: center;
+    line-height: $standart-height;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: darken(red, ($i - 1) * 10%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .block {
+    grid-template-areas: "box box"
+      "box box"
+      "box box";
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .block {
+    grid-template-areas: "box"
+      "box"
+      "box"
+      "box"
+      "box"
+      "box";
+  }
 }
