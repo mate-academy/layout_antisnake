@@ -1,3 +1,54 @@
+$blocks:
+  rgb(100%,0,0) "1",
+  rgb(80%,0,0) "2",
+  rgb(60%,0,0) "3",
+  rgb(40%,0,0) "4",
+  rgb(20%,0,0) "5",
+  rgb(0,0,0) "6";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+  }
+
+  @each $color,$index in $blocks {
+    & div:nth-child(#{$index}) {
+      background-color: $color;
+      &::after {
+        content: "#{$index}";
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 450px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
 }
