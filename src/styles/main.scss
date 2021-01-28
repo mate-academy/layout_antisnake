@@ -17,9 +17,10 @@ body {
 .snake {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  
+  grid-template-columns: repeat(3,1fr);
 
-  div {
+  &__box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,13 +43,7 @@ body {
 
   @media (max-width: 750px) {
     & {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 450px) {
-    & {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     }
   }
 }
