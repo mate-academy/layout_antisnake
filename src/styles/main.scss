@@ -19,11 +19,9 @@ body {
   grid-template-columns: repeat(3, auto);
 
   @media screen and (max-width: 899px) {
-    grid-template-columns: repeat(2, auto);
-  }
-
-  @media screen and (max-width: 599px) {
-    grid-template-columns: auto;
+    & {
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    }
   }
 
   &__item {
