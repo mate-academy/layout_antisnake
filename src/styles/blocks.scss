@@ -1,0 +1,55 @@
+html {
+  font-family: $main-font-family;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.block {
+  min-width: $block-size;
+  height: $block-size;
+  font-size: 100px;
+  color: white;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.block-1 {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.block-2 {
+  background: hsl(0, 100%, 40%);
+}
+
+.block-3 {
+  background: hsl(0, 100%, 30%);
+}
+
+.block-4 {
+  background: hsl(0, 100%, 20%);
+}
+
+.block-5 {
+  background: hsl(0, 100%, 10%);
+}
+
+.block-6 {
+  background: hsl(0, 0%, 0%);
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
