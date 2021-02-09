@@ -1,0 +1,5 @@
+@for $i from 1 through 6 {
+  .boxes > div:nth-child(#{$i}) {
+    background-color: darken(red, ($i - 1) * 10%);
+  }
+}
