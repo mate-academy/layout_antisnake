@@ -16,7 +16,9 @@
   }
 
   &__block {
-    @include gridHorizontalCenter;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     height: $blockSize;
   }
 }
