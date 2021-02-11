@@ -13,6 +13,6 @@
 
 @for $i from 1 through 6 {
   .container__item:nth-child(#{$i}) {
-    background-color: scale-color($color: $baseColor, $red: ($i - 1)* - 20%);
+    background-color: scale-color($baseColor, $red: ($i - 1)* - 20%);
   }
 }
