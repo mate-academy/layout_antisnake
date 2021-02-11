@@ -1,0 +1,85 @@
+.container :nth-child(1) {
+  grid-area: block__1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-color: red;
+}
+
+.container :nth-child(1)::after {
+  content: "1";
+}
+
+.container :nth-child(2) {
+  grid-area: block__2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-color: #c00;
+}
+
+.container :nth-child(2)::after {
+  content: "2";
+}
+
+.container :nth-child(3) {
+  grid-area: block__3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-color: #900;
+}
+
+.container :nth-child(3)::after {
+  content: "3";
+}
+
+.container :nth-child(4) {
+  grid-area: block__4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-color: #600;
+}
+
+.container :nth-child(4)::after {
+  content: "4";
+}
+
+.container :nth-child(5) {
+  grid-area: block__5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-color: #300;
+}
+
+.container :nth-child(5)::after {
+  content: "5";
+}
+
+.container :nth-child(6) {
+  grid-area: block__6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+  background-color: black;
+}
+
+.container :nth-child(6)::after {
+  content: "6";
+}
+
+/*# sourceMappingURL=block.css.map */

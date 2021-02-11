@@ -1,0 +1,19 @@
+$count: 0;
+
+@for $i from 1 through 6 {
+  .container :nth-child(#{$i}) {
+    grid-area: block__#{$i};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: white;
+    $red: 255 - $count;
+    $black: 1 + $count;
+    background-color: rgba($red, 0, 0, $black);
+  }
+  $count: $count+51;
+  .container :nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+}
