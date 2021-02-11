@@ -4,12 +4,12 @@
   font-size: $fontSize;
   color: $textColor;
 
-  @media (max-width: 750px) {
+  @media (max-width: 899px) {
     & {
       grid-template-columns: repeat(2, 50%);
     }
   }
-  @media (max-width: 450px) {
+  @media (max-width: 599px) {
     & {
       grid-template-columns: 1fr;
     }
