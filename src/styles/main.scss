@@ -1,3 +1,28 @@
-body {
-  margin: 0;
+@import "reset";
+@import "colors";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 899px) {
+    & {
+      grid-template-rows: repeat(3, 300px);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 599px) {
+    & {
+      grid-template-rows: repeat(6, 300px);
+      grid-template-columns: 1fr;
+    }
+  }
 }
