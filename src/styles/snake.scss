@@ -1,0 +1,25 @@
+.snake {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax($elementSize, 1fr));
+  grid-template-rows: repeat(auto-fill, 1fr);
+  max-width: $elementSize * 4 - 1;
+  
+  div {
+    display: grid;
+    width: 100%;
+    height: $elementSize;
+    align-items: center;
+    text-align: center;
+  }
+  
+}
+
+@for $i from 1 through 6 {
+  .snake > div:nth-child(#{$i})::before {
+    content: "#{$i}";
+  }
+  .snake > div:nth-child(#{$i}) {
+    background-color: hsl(0, 100%, 50% - 10% * ($i - 1));
+  }
+}
