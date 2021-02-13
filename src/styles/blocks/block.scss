@@ -1,0 +1,22 @@
+.block {
+  font-size: 100px;
+  color: #fff;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+$blocks: (
+  1: 5,
+  2: 4,
+  3: 3,
+  4: 2,
+  5: 1,
+  6: 0,
+);
+
+@each $numBlock, $numColor in $blocks {
+  .block--#{$numBlock} {
+    background-color: rgb(255 * $numColor / 5, 0, 0);
+  }
+}
