@@ -1,3 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+@mixin blockSize($size, $fontSize) {
+  min-width: $size;
+  height: $size;
+  font-size: $fontSize;
+}
+
+.conteiner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+
+  &__block {
+    @include blockSize(300px, 100px);
+    color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
 }
