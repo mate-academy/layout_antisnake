@@ -1,0 +1,39 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+
+  &__item {
+    text-align: center;
+    line-height: 300px;
+
+    $modificator_names: (
+      "one" : 1,
+      "two" : 2,
+      "three" : 3,
+      "four" : 4,
+      "five" : 5,
+      "six" : 6
+    );
+
+    $primary-color: hsl(0, 100%, 50%);
+
+    @each $name, $number in $modificator_names {
+      &--#{$name} {
+        background-color: darken($primary-color, ($number - 1) * 10%);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    & {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    & {
+      grid-template-columns: repeat(1, 300px);
+    }
+  }
+}
