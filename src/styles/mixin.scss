@@ -1,0 +1,9 @@
+@mixin boxs {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  min-width: 300px;
+  height: 300px;
+  font-size: 100px;
+  color: #fff;
+}
