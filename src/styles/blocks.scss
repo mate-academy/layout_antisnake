@@ -2,13 +2,13 @@ html {
   font-family: $main-font-family;
 }
 
-.container {
+.snake-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
 }
 
-.block {
+.snake-box__item {
   min-width: $block-size;
   height: $block-size;
   font-size: 100px;
@@ -18,38 +18,38 @@ html {
   align-items: center;
 }
 
-.block--1 {
+.snake-box__item--one {
   background-color: hsl(0, 100%, 50%);
 }
 
-.block--2 {
+.snake-box__item--two {
   background: hsl(0, 100%, 40%);
 }
 
-.block--3 {
+.snake-box__item--three {
   background: hsl(0, 100%, 30%);
 }
 
-.block--4 {
+.snake-box__item--four {
   background: hsl(0, 100%, 20%);
 }
 
-.block--5 {
+.snake-box__item--five {
   background: hsl(0, 100%, 10%);
 }
 
-.block--6 {
+.snake-box__item--six {
   background: hsl(0, 0%, 0%);
 }
 
 @media screen and (max-width: 899px) {
-  .container {
+  .snake-box {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 599px) {
-  .container {
+  .snake-box {
     grid-template-columns: 1fr;
   }
 }
