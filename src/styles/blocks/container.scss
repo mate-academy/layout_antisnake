@@ -4,6 +4,14 @@
   grid-template-rows: repeat(6, 300px);
   justify-content: center;
 
+  &__block {
+    font-size: 100px;
+    color: #fff;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
   @include onTablet {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 300px);
@@ -12,5 +20,20 @@
   @include onDesktop {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 300px);
+  }
+}
+
+$blocks: (
+  1: 5,
+  2: 4,
+  3: 3,
+  4: 2,
+  5: 1,
+  6: 0,
+);
+
+@each $numBlock, $numColor in $blocks {
+  .container__block--#{$numBlock} {
+    background-color: rgb(255 * $numColor / 5, 0, 0);
   }
 }
