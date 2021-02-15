@@ -7,7 +7,7 @@ const { basicScenario } = backstop;
 const basic = {
   ...basicScenario,
   label: 'Elementary test',
-  referenceUrl: basicScenario.referenceUrl + '/antisnake/',
+  referenceUrl: basicScenario.referenceUrl + '/antiblocks/',
 };
 
 const config = {

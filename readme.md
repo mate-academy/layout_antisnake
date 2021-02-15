@@ -1,7 +1,7 @@
-# Antisnake
+# Antiblocks
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://Alex-Levch.github.io/layout_antisnake/)
-    - [TEST REPORT LINK](https://Alex-Levch.github.io/layout_antisnake/report/html_report/)
+    - [DEMO LINK](https://Alex-Levch.github.io/layout_antiblocks/)
+    - [TEST REPORT LINK](https://Alex-Levch.github.io/layout_antiblocks/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
 
@@ -22,4 +22,4 @@ Display six colored blocks on the screen without any extra margins:
   See the screenshots [here](./reference).
 - Each row is to be read from left ro right.
 
---> [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md)
+--> [CHECKLIST](https://github.com/mate-academy/layout_antiblocks/blob/master/checklist.md)
