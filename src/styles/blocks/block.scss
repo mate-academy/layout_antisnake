@@ -1,13 +1,16 @@
 $count: 0;
 
+.container__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: white;
+}
+
 @for $i from 1 through 6 {
   .container :nth-child(#{$i}) {
-    grid-area: container__block#{$i};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    color: white;
+    // grid-area: container__block#{$i};
     $red: 255 - $count;
     $black: 1 + $count;
     background-color: rgba($red, 0, 0, $black);
