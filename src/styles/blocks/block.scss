@@ -2,7 +2,7 @@ $count: 0;
 
 @for $i from 1 through 6 {
   .container :nth-child(#{$i}) {
-    grid-area: block__#{$i};
+    grid-area: container__block#{$i};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ $count: 0;
     $black: 1 + $count;
     background-color: rgba($red, 0, 0, $black);
   }
-  $count: $count+51;
+  $count: $count + 51;
   .container :nth-child(#{$i})::after {
     content: "#{$i}";
   }
