@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($boxSize, 1fr));
+
+  @media (min-width: $boxSize * 4) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    height: $boxSize;
+    min-width: $boxSize;
+    font-size: 100px;
+    text-align: center;
+    line-height: $boxSize;
+    color: white;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: darken(red, ($i - 1) * 10%);
+      }
+    }
+  }
+}
