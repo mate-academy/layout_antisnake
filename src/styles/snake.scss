@@ -1,0 +1,30 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  font-size: $fontSize;
+  color: $textColor;
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $blockSize;
+  }
+}
+
+@for $i from 1 through 6 {
+  .snake__block:nth-child(#{$i}) {
+    background-color: darken($startBlockBGColor, 10% * $i - 10%);
+  }
+}
