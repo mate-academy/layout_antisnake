@@ -1,7 +1,10 @@
-body {
+html {
   font-family: $defaultFont;
   font-size: $defaultFontSize;
   color: $defaultTextColor;
+}
+
+body {
   height: 100%;
   margin: 0;
 }
