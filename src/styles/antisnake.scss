@@ -1,0 +1,30 @@
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 33.33%));
+
+  &__part {
+    height: 300px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@for $i from 1 through 6 {
+  .antisnake__part:nth-child(#{$i}) {
+    background-color: darken(#f00, 10% * $i - 10%);
+  }
+}
+
+@media (max-width: 899px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 50%));
+  }
+}
+
+@media (max-width: 599px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 100%));
+  }
+}
