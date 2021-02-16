@@ -10,3 +10,8 @@
     font-size: $text-size;
   }
 }
+
+.wrap-container {
+  margin: 0 auto;
+  max-width: $box-size * 4 - 1;
+}
