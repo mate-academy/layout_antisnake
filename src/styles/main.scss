@@ -1,9 +1,5 @@
 @import "reset";
 
-h1 {
-  text-align: center;
-}
-
 .container {
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
@@ -24,13 +20,13 @@ h1 {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .container {
     grid-template-columns: repeat(2, 50%);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .container {
     grid-template-columns: 1fr;
   }
