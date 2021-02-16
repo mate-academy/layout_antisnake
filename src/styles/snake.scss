@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  margin: 0 auto;
+  // grid-template-columns: repeat(3, minmax($elementSize, 1fr));
+  grid-template-columns: minmax($elementSize, 1fr);
+
+  &__element {
+    display: grid;
+    width: 100%;
+    height: $elementSize;
+    align-items: center;
+    text-align: center;
+  }
+  
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($elementSize, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($elementSize, 1fr));
+  }
+}
+
+@for $i from 1 through 6 {
+  .snake > div:nth-child(#{$i}) {
+    background-color: hsl(0, 100%, 50% - 10% * ($i - 1));
+  }
+}
