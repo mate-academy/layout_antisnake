@@ -15,33 +15,33 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
-}
 
-.antisnake__element {
-  background-color: #f00;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 100px;
-  text-align: center;
-  line-height: 300px;
-}
-
-.antisnake__element-2 {
-  background-color: #cb0000;
-}
-
-.antisnake__element-3 {
-  background-color: #900;
-}
-
-.antisnake__element-4 {
-  background-color: #600;
-}
-
-.antisnake__element-5 {
-  background-color: #300;
-}
-
-.antisnake__element-6 {
-  background-color: #000;
+  &__element {
+    background-color: #f00;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+  }
+  
+  &__element-2 {
+    background-color: #cb0000;
+  }
+  
+  &__element-3 {
+    background-color: #900;
+  }
+  
+  &__element-4 {
+    background-color: #600;
+  }
+  
+  &__element-5 {
+    background-color: #300;
+  }
+  
+  &__element-6 {
+    background-color: #000;
+  }
 }
