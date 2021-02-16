@@ -1,0 +1,55 @@
+html {
+  font-family: $font;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-width: $block;
+    height: $block;
+    font-size: 100px;
+    color: #fff;
+  }
+}
+
+.block-1 {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.block-2 {
+  background: hsl(0, 100%, 40%);
+}
+
+.block-3 {
+  background: hsl(0, 100%, 30%);
+}
+
+.block-4 {
+  background: hsl(0, 100%, 20%);
+}
+
+.block-5 {
+  background: hsl(0, 100%, 10%);
+}
+
+.block-6 {
+  background: hsl(0, 0%, 0%);
+}
+
+@media (max-width: 800px) {
+  .blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .blocks {
+    grid-template-columns: 1fr;
+  }
+}
