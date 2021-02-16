@@ -1,7 +1,7 @@
 # Antiblocks
 1. Replace `<your_account>` with your Github username in the links
-    - [DEMO LINK](https://Alex-Levch.github.io/layout_antiblocks/)
-    - [TEST REPORT LINK](https://Alex-Levch.github.io/layout_antiblocks/report/html_report/)
+    - [DEMO LINK](https://Alex-Levch.github.io/layout_antisnake/)
+    - [TEST REPORT LINK](https://Alex-Levch.github.io/layout_antisnake/report/html_report/)
 2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
 ___
 
