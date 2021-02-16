@@ -1,0 +1,14 @@
+
+@import "blocks";
+@import "reset";
+
+@media (max-width: 899px) {
+  .blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 599px) {
+  .blocks {
+    grid-template-columns: 1fr;
+  }
+}
