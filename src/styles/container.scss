@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+
+  &__item {
+    display: flex;
+    height: 300px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@for $i from 1 through 6 {
+  .container__item:nth-child(#{$i}) {
+    background-color: scale-color($baseColor, $red: ($i - 1)* - 20%);
+  }
+}
