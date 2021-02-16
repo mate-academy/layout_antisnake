@@ -1,0 +1,20 @@
+.wrap {
+  &__box-one {
+    background-color: $red;
+  }
+  &__box-two {
+    background-color: $red-80;
+  }
+  &__box-three {
+    background-color: $red-60;
+  }
+  &__box-four {
+    background-color: $red-40;
+  }
+  &__box-five {
+    background-color: $red-20;
+  }
+  &__box-six {
+    background-color: $black;
+  }
+}

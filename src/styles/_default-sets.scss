@@ -1,0 +1,14 @@
+@import"variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  max-width: $box-size * 4 - 1;
+}
