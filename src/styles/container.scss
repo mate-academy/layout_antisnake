@@ -2,29 +2,14 @@
   display: grid;
   justify-items: stretch;
   grid-template-columns: repeat(3, 1fr);
-  &__box1 {
-    background-color: rgb(255, 0, 0);
+  &__box {
     @include boxs;
   }
-  &__box2 {
-    background-color: rgb(192, 0, 0);
-    @include boxs;
-  }
-  &__box3 {
-    background-color: rgb(153, 0, 0);
-    @include boxs;
-  }
-  &__box4 {
-    background-color: rgb(102, 0, 0);
-    @include boxs;
-  }
-  &__box5 {
-    background-color: rgb(51, 0, 0);
-    @include boxs;
-  }
-  &__box6 {
-    background-color: rgb(0, 0, 0);
-    @include boxs;
+
+  @for $i from 1 through 6 {
+    &__box:nth-child(#{$i}) {
+      background-color: rgb(306-($i*51), 0, 0);
+    }
   }
 }
 
