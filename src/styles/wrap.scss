@@ -1,6 +1,13 @@
 .wrap {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
+
+  @media (min-width: $box-size * 4) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
   &__box {
     height: $box-size;
     min-width: $box-size;
@@ -9,9 +16,4 @@
     color: $text-color;
     font-size: $text-size;
   }
-}
-
-.wrap-container {
-  margin: 0 auto;
-  max-width: $box-size * 4 - 1;
 }
