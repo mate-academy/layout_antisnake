@@ -1,0 +1,32 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 300px);
+
+  &__element {
+    background-color: #f00;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+  }
+  
+  @each $index, $color in (2:#cb0000, 3: #900, 4: #600, 5: #300, 6: #000) {
+    &__element-#{$index} {
+      background-color: $color;
+    }
+  }
+
+  @media (max-width: 750px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 450px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
