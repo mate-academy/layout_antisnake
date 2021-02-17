@@ -3,7 +3,21 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 300px);
 
+  &__element {
+    background-color: #f00;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+  }
   
+  @each $index, $color in (2:#cb0000, 3: #900, 4: #600, 5: #300, 6: #000) {
+    &__element-#{$index} {
+      background-color: $color;
+    }
+  }
+
   @media (max-width: 750px) {
     & {
       grid-template-columns: repeat(2, 1fr);
@@ -14,34 +28,5 @@
     & {
       grid-template-columns: repeat(1, 1fr);
     }
-  }
-
-  &__element {
-    background-color: #f00;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 100px;
-    text-align: center;
-    line-height: 300px;
-  }
-  
-  &__element-2 {
-    background-color: #cb0000;
-  }
-  
-  &__element-3 {
-    background-color: #900;
-  }
-  
-  &__element-4 {
-    background-color: #600;
-  }
-  
-  &__element-5 {
-    background-color: #300;
-  }
-  
-  &__element-6 {
-    background-color: #000;
   }
 }
