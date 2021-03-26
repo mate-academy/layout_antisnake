@@ -24,3 +24,7 @@ Display six colored blocks on the screen without any extra margins:
 - Each row is to be read from left ro right.
 
 --> [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md)
+
+| 3 columns | 2 columns | 1 column |
+| --------- | --------- | -------- |
+| ![1 col](./references/1050.png) | ![1 col](./references/750.png) | ![1 col](./references/450.png) |
