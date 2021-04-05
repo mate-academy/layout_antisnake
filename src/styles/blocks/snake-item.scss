@@ -1,0 +1,19 @@
+.snake-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  $colors:
+    1 #f00,
+    2 #c00,
+    3 #900,
+    4 #600,
+    5 #300,
+    6 #000;
+
+  @each $index, $color in $colors {
+    &:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+}
