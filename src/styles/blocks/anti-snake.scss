@@ -1,0 +1,41 @@
+$colors:
+  1 #f00,
+  2 #c00,
+  3 #900,
+  4 #600,
+  5 #300,
+  6 #000;
+
+.anti-snake {
+  &__container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    @media (max-width: 599px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 899px) and (min-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+  }
+
+  &__box {
+    display: grid;
+    height: 300px;
+
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+
+    @each $index, $name in $colors {
+      &--#{$index} {
+        background-color: $name;
+      }
+    }
+  }
+}
