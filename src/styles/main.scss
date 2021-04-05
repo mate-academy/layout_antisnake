@@ -1,3 +1,6 @@
-body {
-  margin: 0;
-}
+@import "utils/reset";
+@import "utils/normalize";
+
+@import "blocks/wrapper.scss";
+@import "blocks/antisnake.scss";
+@import "blocks/snake-item.scss";
