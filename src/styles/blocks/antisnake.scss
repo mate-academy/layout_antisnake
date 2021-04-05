@@ -1,18 +1,12 @@
 .antisnake {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, 300px);
   grid-auto-rows: 300px;
 
-  @media (max-width: 899px) {
-    & {
-      grid-template-columns: repeat(2, minmax(300px, 1fr));
-    }
-  }
-
-  @media (max-width: 599px) {
-    & {
-      grid-template-columns: repeat(1, minmax(300px, 1fr));
+  @for $count from 1 to 4 {
+    @media (min-width: $count * $block-min-width) {
+      & {
+        grid-template-columns: repeat($count, minmax($block-min-width, 1fr));
+      }
     }
   }
 }
