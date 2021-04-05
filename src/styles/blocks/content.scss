@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(6, 300px);
+  color: #fff;
+  font-size: 100px;
+
+  @media all and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 0, 0);
+  }
+}
+
+@for $i from 1 through $numBlocks {
+  .block_#{$i} {
+    background-color: shadesOfRed(#{$i}, #{$numBlocks});
+  }
+}
