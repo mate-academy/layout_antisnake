@@ -1,0 +1,33 @@
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @for $box-num from 1 through 6 {
+    &__#{$box-num}:nth-child(#{$box-num})::after {
+      content: "#{$box-num}";
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  $color-list:
+    1 #f00,
+    2 #c00,
+    3 #900,
+    4 #600,
+    5 #300,
+    6 #000;
+
+  @each $name, $color in $color-list {
+    &__#{$name}:nth-child(#{$name}) {
+      height: 300px;
+      background-color: $color;
+    }
+  }
+}
