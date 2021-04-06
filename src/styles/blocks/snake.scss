@@ -15,30 +15,19 @@
     color: #fff;
     font-size: 100px;
     height: 300px;
-  }
 
-  &__block--red {
-    background-color: #ff0102;
+    $snakeColors:
+      1 #ff0102,
+      2 #cc0202,
+      3 #990002,
+      4 #670100,
+      5 #340000,
+      6 #000;
 
-  }
-  
-  &__block--red2 {
-    background-color: #cc0202;
-  }
-  
-  &__block--red3 {
-    background-color: #990002;
-  }
-  
-  &__block--red4 {
-    background-color: #670100;
-  }
-  
-  &__block--red5 {
-    background-color: #340000;
-  }
-  
-  &__block--black {
-    background-color: #000;
+    @each $name, $value in $snakeColors {
+      &--color--#{$name}:nth-child(#{$name}) {
+        background-color: $value;
+      }
+    }
   }
 }
