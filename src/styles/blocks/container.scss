@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($sizeBlocks, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($sizeBlocks, 1fr));
+  }
+
+  &__item {
+    position: relative;
+    height: $sizeBlocks;
+
+    @for $count from 1 through 6 {
+      &:nth-child(#{$count})::before {
+        content: "#{$count}";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+      }
+    }
+
+    @each $name, $color in $itemColors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
