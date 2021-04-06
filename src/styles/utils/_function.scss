@@ -1,4 +1,4 @@
 @function color-rate($step) {
-  $rezult: 255 - 255/$count-cell*($step - 1);
+  $rezult: 255 - 255/($count-cell - 1) * ($step - 1);
   @return $rezult;
 }
