@@ -1,3 +1,42 @@
 body {
   margin: 0;
 }
+
+$box_colors:
+  "1" 255,
+  "2" 204,
+  "3" 153,
+  "4" 102,
+  "5" 51,
+  "6" 0;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__box {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+
+    @for $var from 1 through 6 {
+      &:nth-child(#{$var})::after {
+        content: "#{$var}";
+      }
+    }
+
+    @each $number, $color in $box_colors {
+      &--#{$number} {
+        background-color: rgb($color, 0, 0);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
