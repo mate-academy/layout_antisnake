@@ -1,0 +1,44 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 100px;
+    height: 300px;
+  }
+
+  &__block--red {
+    background-color: #ff0102;
+
+  }
+  
+  &__block--red2 {
+    background-color: #cc0202;
+  }
+  
+  &__block--red3 {
+    background-color: #990002;
+  }
+  
+  &__block--red4 {
+    background-color: #670100;
+  }
+  
+  &__block--red5 {
+    background-color: #340000;
+  }
+  
+  &__block--black {
+    background-color: #000;
+  }
+}
