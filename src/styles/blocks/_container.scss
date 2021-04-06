@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(#{$boxSize}, 1fr));
+
+  &__box {
+    height: $boxSize;
+    line-height: $boxSize;
+
+    font-size: 100px;
+    text-align: center;
+
+    color: #fff;
+  }
+
+  @each $color, $i in $colors {
+    &__box:nth-child(#{$i}) {
+      background-color: $color;
+    }
+  }
+
+  @media (max-width: $boxSize*3 - 1px) {
+    grid-template-columns: repeat(auto-fill, minmax(#{$boxSize}, 1fr));
+  }
+}
