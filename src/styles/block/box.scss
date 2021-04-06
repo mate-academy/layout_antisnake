@@ -1,24 +1,15 @@
 .box {
   display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(1, minmax($min-width-cell, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 
-  @media (min-width: 600px) {
+  @media (max-width: 900px) {
     & {
-      grid-template-columns: repeat(2, minmax($min-width-cell, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax($min-width-cell, 1fr));
     }
   }
-
-  @media (min-width: 900px) {
-    & {
-      grid-template-columns: repeat(3, minmax($min-width-cell, 1fr));
-    }
-  }
-
-  @each $index,  $color in $cell-color {
-    & :nth-child(#{$index}) {
-      background-color: #{$color};
+  @for $step from 1 through $count-cell {
+    & :nth-child(#{$step}) {
+      background-color: rgb(color-rate($step), 0, 0);
     }
   }
 
@@ -27,7 +18,7 @@
     text-align: center;
     color: #fff;
 
-    @for $index from 1 through 6 {
+    @for $index from 1 through $count-cell {
       &:nth-child(#{$index})::before {
         content: "#{$index}";
       }
