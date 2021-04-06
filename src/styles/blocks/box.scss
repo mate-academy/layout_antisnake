@@ -1,0 +1,15 @@
+@import "../utils/variables";
+
+.box {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  @each $name, $color in $colors {
+    &--color-#{$name} {
+      background-color: $color;
+    }
+  }
+}
