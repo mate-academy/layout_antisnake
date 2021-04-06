@@ -1,0 +1,8 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+
+  @media (min-width: $blockSize * 3) {
+    grid-template-columns: repeat(3, minmax($blockSize, 1fr));
+  }
+}
