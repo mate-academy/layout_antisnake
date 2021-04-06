@@ -21,11 +21,8 @@ body {
 }
 
 .main__box {
-  display: flex;
+  display: grid;
   height: 300px;
-  flex-basis: 300px;
-  flex-grow: 1;
-  flex-shrink: 0;
   justify-content: center;
   align-items: center;
 }
