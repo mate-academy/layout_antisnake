@@ -1,3 +1,26 @@
-body {
-  margin: 0;
+@import "./reset.scss";
+@import "./variables";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: white;
+    font-size: 100px;
+
+    @each $j, $color in $colors {
+      &:nth-child(#{$j}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
