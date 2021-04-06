@@ -1,3 +1,30 @@
 body {
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1199px) {
+    grid-template-columns: repeat(3, 33.3%);
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+    color: white;
+    justify-content: center;
+
+    @for $colorMod from 1 through 6 {
+      &--#{$colorMod} {
+        background-color: rgb(100% - (20 * ($colorMod - 1)), 0, 0);
+      }
+    }
+  }
 }
