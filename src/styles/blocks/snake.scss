@@ -25,7 +25,7 @@
       6 #000;
 
     @each $name, $value in $snakeColors {
-      &--color--#{$name}:nth-child(#{$name}) {
+      &--color-#{$name}:nth-child(#{$name}) {
         background-color: $value;
       }
     }
