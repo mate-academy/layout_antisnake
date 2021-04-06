@@ -1,0 +1,22 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+
+  @each $number, $color in $bgColors {
+    & :nth-child(n + #{$number}) {
+      background-color: $color;
+      line-height: $blockSize;
+    }
+  }
+  
+  @for $index from 1 to 6 {
+    & :nth-child(n + #{$index}) {
+      height: $blockSize;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($blockSize, 1fr));
+  }
+}
