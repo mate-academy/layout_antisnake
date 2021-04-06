@@ -1,0 +1,13 @@
+.block {
+  height: $block-size;
+  font-size: 100px;
+  text-align: center;
+  line-height: $block-size;
+  color: white;
+
+  @each $number, $color in $colors {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
