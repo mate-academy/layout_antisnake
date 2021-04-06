@@ -1,0 +1,27 @@
+.anti-snake {
+  $block-color:255;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__block {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+
+  @for $block from 1 to 7 {
+    & :nth-child(#{$block}) {
+      background-color: rgb($block-color, 0, 0);
+      $block-color:$block-color - 51;
+    }
+  }
+}
