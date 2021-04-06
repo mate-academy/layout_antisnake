@@ -1,0 +1,21 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @for $i from 5 through 0 {
+    &__item:nth-child(#{6 - $i}) {
+      background-color: rgb( $i*20%, 0, 0);
+    }
+  }
+}
