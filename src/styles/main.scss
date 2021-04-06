@@ -1,31 +1,5 @@
-body {
-  margin: 0;
+@import "./utils/notmalise";
+@import "./utils/variables";
 
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  color: #fff;
-}
-
-$blockSize: 300px;
-$blockColors: 1 #f00, 2 #c00, 3 #900, 4 #600, 5 #300, 6 #000;
-
-.box {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
-
-  @media (min-width: $blockSize * 3) {
-    grid-template-columns: repeat(3, minmax($blockSize, 1fr));
-  }
-}
-
-.block {
-  display: grid;
-  place-items: center;
-  height: $blockSize;
-
-  @each $index, $colors in $blockColors {
-    &--#{$index} {
-      background-color: $colors;
-    }
-  }
-}
+@import "./blocks/box.scss";
+@import "./blocks/block.scss";

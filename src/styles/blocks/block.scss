@@ -1,0 +1,11 @@
+.block {
+  display: grid;
+  place-items: center;
+  height: $blockSize;
+
+  @each $index, $colors in $blockColors {
+    &--#{$index} {
+      background-color: $colors;
+    }
+  }
+}
