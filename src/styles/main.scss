@@ -1,3 +1,39 @@
 body {
   margin: 0;
+  font-size: 100px;
+  font-family: Roboto, sans-serif;
+}
+
+$colors: 
+  "1"255,
+  "2"204,
+  "3"153,
+  "4"102,
+  "5"51,
+  "6"0;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+  grid-auto-rows: 300px;
+
+  @media (max-width:750px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (max-width:450px) {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+}
+
+@each $name,
+  $color in $colors {
+  .container div:nth-child(#{$name}) {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgb($color, 0, 0);
+  }
 }
