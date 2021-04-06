@@ -4,7 +4,8 @@
   grid-template-columns: 1fr 1fr 1fr;
 
   &__block {
-    height: 300px;
+    min-height: 300px;
+    min-width: 300px;
     display: grid;
     justify-content: center;
     align-content: center;
