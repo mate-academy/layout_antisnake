@@ -1,0 +1,40 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+
+  &__square {
+    text-align: center;
+    line-height: 300px;
+    height: 300px;
+
+    &--one {
+      background-color: #f00;
+    }
+    
+    &--two {
+      background-color: #c00;
+    }
+
+    &--three {
+      background-color: #900;
+    }
+
+    &--four {
+      background-color: #600;
+    }
+
+    &--five {
+      background-color: #300;
+    }
+
+    &--six {
+      background-color: #000;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .snake {
+    grid-template-columns: repeat(3, minmax(300px,1fr));
+  }
+}
