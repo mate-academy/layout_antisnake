@@ -9,24 +9,17 @@ $colors:
 .anti-snake {
   &__container {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-
-    @media (max-width: 599px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(5, 1fr);
-    }
-
-    @media (min-width: 600px) and (max-width: 899px) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(3, minmax(300px,1fr));
     }
   }
 
   &__box {
     display: grid;
     height: 300px;
+    min-width: 300px;
 
     align-items: center;
     justify-content: center;
