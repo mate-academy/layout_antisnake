@@ -1,0 +1,20 @@
+.block {
+  /* text align */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* block design */
+  height: $blockMinSize;
+  @extend %cell-font;
+
+  @each $index, $color in $colors {
+    &:nth-child(#{$index}) {
+      background-color: $color;
+    }
+
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+      position: absolute;
+    }
+  }
+}
