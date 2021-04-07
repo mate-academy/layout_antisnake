@@ -9,20 +9,12 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  justify-content: center;
-  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-@media (max-width:899px) {
+@media (min-width: 900px) {
   .container {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-}
-
-@media (max-width:599px) {
-  .container {
-    grid-template-columns: minmax(300px, 1fr);
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
 
