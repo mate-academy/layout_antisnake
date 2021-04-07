@@ -3,9 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
 
   @media (max-width: 900px) {
-    & {
-      grid-template-columns: repeat(auto-fill, minmax($min-width-cell, 1fr));
-    }
+    grid-template-columns: repeat(auto-fill, minmax($min-width-cell, 1fr));
   }
   @for $step from 1 through $count-cell {
     & :nth-child(#{$step}) {
