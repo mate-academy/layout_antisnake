@@ -1,5 +1,0 @@
-@for $i from 1 through 6 {
-  .container__block:nth-child(#{$i}) {
-    background-color: darken(red, ($i - 1) * 10%);
-  }
-}
