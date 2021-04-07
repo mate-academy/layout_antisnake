@@ -1,0 +1,14 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #fff;
+  font-size: 100px;
+}
+
+@each $number, $color in $box-color {
+  .box--#{$number} {
+    background-color: #{$color};
+  }
+}
