@@ -1,0 +1,22 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($square-size, 1fr));
+  @each $name , $value in $colors {
+    &__square:nth-child(#{$name}) {
+      display: grid;
+      min-height: $square-size;
+      background-color: $value;
+      color: white;
+      &:before {
+        content: "#{$name}";
+        margin: auto;
+      }
+    }
+  }
+  @media (min-width:1200px) {
+    & {
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+}
+
