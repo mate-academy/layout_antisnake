@@ -3,19 +3,9 @@
   justify-content: center;
   align-items: center;
   height: 300px;
-  min-width: 300px;
-
   color: #fff;
   font-size: 100px;
 }
-
-$box-color:
-  "1" #f00,
-  "2" #c00,
-  "3" #900,
-  "4" #600,
-  "5" #300,
-  "6" #000;
 
 @each $number, $color in $box-color {
   .box--#{$number} {
