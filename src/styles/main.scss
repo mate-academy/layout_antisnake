@@ -1,3 +1,12 @@
+@import "./variables";
+@import "./blocks/anti-snake.scss";
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
 }

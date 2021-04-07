@@ -1,0 +1,25 @@
+
+.anti-snake {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(3, minmax(300px,1fr));
+    }
+  }
+
+  &__box {
+    display: grid;
+    height: 300px;
+
+    align-items: center;
+    justify-content: center;
+
+    @each $index, $name in $colors {
+      &--#{$index} {
+        background-color: $name;
+      }
+    }
+  }
+}
