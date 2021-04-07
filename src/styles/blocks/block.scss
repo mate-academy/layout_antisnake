@@ -6,7 +6,6 @@
   justify-content: center;
   height: $block-height;
   min-width: $block-height;
-  background-color: green;
 
   @for $index from 1 through 6 {
     &:nth-child(#{$index})::before {

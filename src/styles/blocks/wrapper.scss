@@ -5,18 +5,17 @@
   grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
   max-width: 1200px;
 
-  // @media (min-width: 300px) {
+  // @media (min-width: $block-height * 1 {
   //   grid-template-columns: 1fr;
   //   min-width: $block-height;
   // }
 
-  // @media (min-width: 600px) {
+  // @media (min-width: $block-height * 2 {
   //   grid-template-columns: 1fr 1fr;
   //   min-width: $block-height * 2;
   // }
 
-  @media (min-width: 900px) {
+  @media (min-width: $block-height * 3) {
     grid-template-columns: 1fr 1fr 1fr;
-    min-width: $block-height * 3;
   }
 }
