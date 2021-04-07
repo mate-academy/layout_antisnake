@@ -1,3 +1,30 @@
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+  &__bone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+  }
+  @for $num from 1 through 6 {
+    &__bone:nth-child(#{$num}) {
+      background-color: rgb(120% - 20 * $num, 0%, 0%);
+    }
+  }
 }
