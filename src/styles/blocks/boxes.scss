@@ -17,15 +17,15 @@
   }
 
   $color-list:
-    1 #f00,
-    2 #c00,
-    3 #900,
-    4 #600,
-    5 #300,
-    6 #000;
+    1 #f00 "red",
+    2 #c00 'red2',
+    3 #900 'red-black',
+    4 #600 'black-red',
+    5 #300 'black2',
+    6 #000 'black';
 
-  @each $name, $color in $color-list {
-    &__#{$name}:nth-child(#{$name}) {
+  @each $box-num, $color, $name in $color-list {
+    &__#{$box-num}--#{$name}:nth-child(#{$box-num}) {
       height: 300px;
       background-color: $color;
     }
