@@ -1,3 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
   margin: 0;
+}
+
+$heigthBlocks: 300px;
+
+.snake {
+  display: grid;
+  align-items: center;
+
+  grid-template-columns: repeat(auto-fill, minmax($heigthBlocks, 1fr));
+  
+  @media (min-width:$heigthBlocks*4) {
+    & {
+      grid-template-columns: repeat(3, minmax($heigthBlocks, 1fr));
+    }
+  }
+}
+
+$colors: "1" red, "2" #c00, "3" #900, "4" #600, "5" #300, "6" black;
+
+@each $index, $color in $colors {
+  .snake_box-#{$index} {
+    background-color: #{$color};
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "#{$index}";
+    }
+  }
 }
