@@ -1,0 +1,22 @@
+@import "../utils/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+  max-width: 1200px;
+
+  @media (min-width: 300px) {
+    grid-template-columns: 1fr;
+    min-width: $block-height;
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    min-width: $block-height * 2;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    min-width: $block-height * 3;
+  }
+}

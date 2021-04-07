@@ -1,0 +1,22 @@
+@import "../utils/variables";
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $block-height;
+  min-width: $block-height;
+  background-color: green;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $block, $color in $blocks-color {
+    &--#{$block} {
+      background-color: $color;
+    }
+  }
+}
