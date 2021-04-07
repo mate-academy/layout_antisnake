@@ -1,8 +1,19 @@
 .container {
   display: grid;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @each $i, $color in $colors {
+    &__block-#{$i} {
+      background-color: $color;
+      display: grid;
+      height: 300px;
+      color: white;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   @media(min-width:1200px) {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
