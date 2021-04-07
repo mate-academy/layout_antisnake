@@ -1,3 +1,41 @@
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.container__block {
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: white;
+}
+
+$colors:
+  "1" #f00,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" #000;
+
+@each $name, $color in $colors {
+  .block:nth-child(#{$name}) {
+    background-color: $color;
+  }
 }
