@@ -1,7 +1,8 @@
 .anti-snake {
   $block-color:255;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__block {
     min-height: 300px;
@@ -11,12 +12,8 @@
     align-content: center;
   }
   
-  @media (max-width: 750px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  @media (max-width: 450px) {
-    grid-template-columns: 1fr;
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @for $block from 1 to 7 {
