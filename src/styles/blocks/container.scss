@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($def-size, 1fr));
+
+  @for $i from 1 through $blocks-count {
+    &__block:nth-child(#{$i}):before {
+      content: "#{$i}";
+    }
+  }
+
+  @each $name, $color in $colors {
+    &__block:nth-child(#{$name}) {
+      background-color: #{$color};
+    }
+  }
+
+  &__block {
+    text-align: center;
+    line-height: $def-size;
+    height: $def-size;
+  }
+
+  @media (min-width: $def-size * 3) {
+    grid-template-columns: repeat(3, minmax($def-size, 1fr));
+  }
+}
