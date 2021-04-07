@@ -1,25 +1,23 @@
 .anti-snake {
-  $block-color:255;
   display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
+  
   &__block {
     min-height: 300px;
-    min-width: 300px;
     display: grid;
     justify-content: center;
     align-content: center;
   }
   
   @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, calc(100% / 3)));
+    background-color: yellow;
   }
 
   @for $block from 1 to 7 {
     & :nth-child(#{$block}) {
+      $block-color:$block-color - 51 * ($block - 1);
       background-color: rgb($block-color, 0, 0);
-      $block-color:$block-color - 51;
     }
   }
 }
