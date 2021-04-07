@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($cellHeight, 1fr));
+
+  @media (max-width: $cellHeight *3 - 1) {
+    grid-template-columns: repeat(auto-fill, minmax($cellHeight, 1fr));
+  }
+
+  @each $i, $color in $colors {
+    :nth-child(#{$i}) {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    :nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  &__cell {
+    height: $cellHeight;
+    text-align: center;
+    line-height: $cellHeight;
+  }
+}
