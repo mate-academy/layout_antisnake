@@ -1,0 +1,30 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  font-size: 100px;
+  color: white;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  &__box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @for $index from 1 through 6 {
+    &__box:nth-child(#{$index})::after {
+      content: "#{$index}";
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &__box:nth-child(#{$index}) {
+      background-color: rgb(255 - (($index - 1) * 51), 0, 0);
+    }
+  }
+}
