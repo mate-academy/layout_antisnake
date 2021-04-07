@@ -12,6 +12,12 @@
     }
   }
 
+  @for $index from 1 through 6 {
+    :nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
   &__cell {
     height: $cellHeight;
     text-align: center;
