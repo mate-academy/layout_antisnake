@@ -9,9 +9,7 @@ body {
 
 .grid-container {
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-flow: row;
   font-size: 100px;
 
   &__item {
