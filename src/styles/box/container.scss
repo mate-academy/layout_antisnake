@@ -4,7 +4,7 @@
 
   @media (min-width: 1200px) {
     & {
-      grid-template-columns: 33.33% 33.33% 33.33%;
+      grid-template-columns: repeat(3, 33.33%);
     }
   }
 
@@ -14,7 +14,6 @@
     align-items: center;
     height: 300px;
 
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 100px;
     color: #fff;
 
