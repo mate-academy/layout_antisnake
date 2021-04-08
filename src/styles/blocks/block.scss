@@ -1,9 +1,8 @@
 @import "../utils/variables";
 
 .block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 300px;
+  text-align: center;
   height: $block-height;
   min-width: $block-height;
 
