@@ -1,0 +1,19 @@
+@import "../utils/variables";
+
+.block {
+  line-height: $block-height;
+  text-align: center;
+  height: $block-height;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $block, $color in $blocks-color {
+    &--#{$block} {
+      background-color: $color;
+    }
+  }
+}
