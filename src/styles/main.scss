@@ -1,13 +1,4 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 100px;
-  color: #fff;
-}
-
-* {
-  box-sizing: border-box;
-}
+@import "reset";
 
 .main {
   display: grid;
@@ -24,26 +15,26 @@ body {
   align-items: center;
 }
 
-.block-1 {
+.main__block--1 {
   background-color: #f00;
 }
 
-.block-2 {
+.main__block--2 {
   background-color: #c00;
 }
 
-.block-3 {
+.main__block--3 {
   background-color: #900;
 }
 
-.block-4 {
+.main__block--4 {
   background-color: #600;
 }
 
-.block-5 {
+.main__block--5 {
   background-color: #300;
 }
 
-.block-6 {
+.main__block--6 {
   background-color: #000;
 }
