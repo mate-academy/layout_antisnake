@@ -1,3 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.main__box {
+  display: grid;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  
+  $block-color:
+    "1" #f00,
+    "2" #c00,
+    "3" #900,
+    "4" #600,
+    "5" #300,
+    "6" #000;
+
+  @each $num, $color in $block-color {
+    &--#{$num} {
+      background-color: $color;
+    }
+  }
 }
