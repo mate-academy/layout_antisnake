@@ -1,3 +1,40 @@
-body {
-  margin: 0;
+@import "reset";
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.main__block {
+  display: grid;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__block--1 {
+  background-color: #f00;
+}
+
+.main__block--2 {
+  background-color: #c00;
+}
+
+.main__block--3 {
+  background-color: #900;
+}
+
+.main__block--4 {
+  background-color: #600;
+}
+
+.main__block--5 {
+  background-color: #300;
+}
+
+.main__block--6 {
+  background-color: #000;
 }
