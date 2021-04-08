@@ -1,0 +1,13 @@
+$colors:
+  "1" rgb(255, 0, 0),
+  "2" rgb(204, 2, 2),
+  "3" rgb(139, 0, 0),
+  "4" rgb(103, 1, 0),
+  "5" rgb(52, 0, 0),
+  "6" rgb(0, 0, 0);
+
+@each $name, $color in $colors {
+  .container__box--#{$name} {
+    background-color: $color;
+  }
+}
