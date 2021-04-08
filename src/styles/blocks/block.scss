@@ -4,7 +4,6 @@
   line-height: 300px;
   text-align: center;
   height: $block-height;
-  min-width: $block-height;
 
   @for $index from 1 through 6 {
     &:nth-child(#{$index})::before {
