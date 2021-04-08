@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__block {
     display: flex;
@@ -9,35 +9,28 @@
     justify-content: center;
     align-items: center;
 
-    &--1 {
-      background-color: #f00;
-    }
-    &--2 {
-      background-color: #c00;
-    }
-    &--3 {
-      background-color: #900;
-    }
-    &--4 {
-      background-color: #600;
-    }
-    &--5 {
-      background-color: #300;
-    }
-    &--6 {
-      background-color: #000;
+    $colors:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+
+    @for $i from 1 through 6 {
+      @each $i, $color in $colors {
+        &:nth-child(#{$i}) {
+          background-color: $color;
+        }
+      }
+
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
     }
   }
 
-  @media (max-width: 750px) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 450px) {
-    & {
-      grid-template-columns: repeat(1, 1fr);
-    }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
