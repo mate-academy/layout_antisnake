@@ -1,4 +1,5 @@
-$divisor: 42.5;
+@import "_variables.scss";
+
 @for $num from 1 through 6 {
   .blocks__block:nth-child(#{$num}) {
     background-color: rgb(255 - ($divisor * $num),0,0);
