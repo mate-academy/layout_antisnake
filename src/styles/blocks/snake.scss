@@ -7,28 +7,10 @@
     line-height: 300px;
     height: 300px;
 
-    &--one {
-      background-color: #f00;
-    }
-    
-    &--two {
-      background-color: #c00;
-    }
-
-    &--three {
-      background-color: #900;
-    }
-
-    &--four {
-      background-color: #600;
-    }
-
-    &--five {
-      background-color: #300;
-    }
-
-    &--six {
-      background-color: #000;
+    @each $name, $color in $snake-colors {
+      &--#{$name} {
+        background-color: $color;
+      }
     }
   }
 }
