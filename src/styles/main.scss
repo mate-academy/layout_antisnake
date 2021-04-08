@@ -1,3 +1,26 @@
+@import "_loops.scss";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+}
+
+.blocks__block {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #fff;
 }
