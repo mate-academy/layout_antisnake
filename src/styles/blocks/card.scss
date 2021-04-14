@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @each $colorHex, $i in $cardsBackgroundColorsByIndex {
+    &:nth-of-type(#{$i}) {
+      background-color: $colorHex;
+      &::after {
+        content: "#{$i}";
+      }
+    }
+  }
+}
