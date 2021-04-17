@@ -1,3 +1,32 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+$size: 300px;
+$colors: (1: #f00, 2: #c00, 3: #900,
+4: #600, 5: #300, 6: #000);
+
+.boxes {
+  font-size: 100px;
+  height: $size;
+  display: grid;
+  text-align: center;
+  line-height: $size;
+  color: #fff;
+
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @each $number, $color in $colors {
+    &__box--#{$number} {
+      background-color: $color;
+  
+    }
+    &__box--#{$number}::before {
+      content: "#{$number}";
+    }
+  }
 }
