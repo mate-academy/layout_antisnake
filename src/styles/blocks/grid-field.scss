@@ -1,0 +1,36 @@
+@use "../utils/variables"as *;
+
+.grid-field {
+  background-color: rgb(199, 244, 255);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .block {
+    display: flex;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    min-width: 300px;
+  }
+
+  @each $num, $color in $block-colors {
+    .block--#{$num} {
+      background-color: $color;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .grid-field {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .grid-field {
+    grid-template-columns: 1fr;
+  }
+}
