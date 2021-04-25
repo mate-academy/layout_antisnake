@@ -1,0 +1,26 @@
+@use "../utils/variables" as *;
+
+.blocks {
+  display: grid;
+  height: $block-size;
+  font-size: 100px;
+  line-height: $block-size;
+  text-align: center;
+  color: #fff;
+
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @each $num, $block-color in $block-colors {
+    &__block--#{$num} {
+      background-color: $block-color;
+    }
+
+    &__block--#{$num}::before {
+      content: "#{$num}";
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
