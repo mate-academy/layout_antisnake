@@ -1,3 +1,48 @@
 body {
   margin: 0;
 }
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.blocks__block {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.blocks__block:first-child {
+  background-color: red;
+}
+
+.blocks__block:nth-child(2) {
+  background-color: rgb(204, 0, 0);
+}
+
+.blocks__block:nth-child(3) {
+  background-color: rgb(153, 0, 0);
+}
+
+.blocks__block:nth-child(4) {
+  background-color: rgb(102, 0, 0);
+}
+
+.blocks__block:nth-child(5) {
+  background-color: rgb(51, 0, 0);
+}
+
+.blocks__block:last-child {
+  background-color: black;
+}
+
+@media (min-width: 1200px) {
+  .blocks {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
