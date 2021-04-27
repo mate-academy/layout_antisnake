@@ -7,7 +7,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.blocks__block {
+@mixin block {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -17,28 +17,19 @@ body {
   color: white;
 }
 
-.blocks__block:first-child {
-  background-color: red;
-}
+$colors:
+  1 red,
+  2 rgb(204, 0, 0),
+  3 rgb(153, 0, 0),
+  4 rgb(102, 0, 0),
+  5 rgb(51, 0, 0),
+  6 black;
 
-.blocks__block:nth-child(2) {
-  background-color: rgb(204, 0, 0);
-}
-
-.blocks__block:nth-child(3) {
-  background-color: rgb(153, 0, 0);
-}
-
-.blocks__block:nth-child(4) {
-  background-color: rgb(102, 0, 0);
-}
-
-.blocks__block:nth-child(5) {
-  background-color: rgb(51, 0, 0);
-}
-
-.blocks__block:last-child {
-  background-color: black;
+@each $num, $color in $colors {
+  .blocks__block-#{$num} {
+    @include block;
+    background-color: $color;
+  }
 }
 
 @media (min-width: 1200px) {
