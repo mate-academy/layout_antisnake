@@ -43,6 +43,12 @@ body {
   }
 }
 
+@media (min-width: 300px) and (max-width:1199px) {
+  .box {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
 @media (min-width: 1200px) {
   .box {
     grid-template-columns: repeat(auto-fill, minmax(33.3%, 1fr));
