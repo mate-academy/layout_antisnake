@@ -1,3 +1,46 @@
+$box-min-width: 300px;
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $box-min-width;
+  height: 300px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+$colors:
+  "1" #f00,
+  "2" #cd0000,
+  "3" #9a0000,
+  "4" #600,
+  "5" #300000,
+  "6" #000;
+
+@each $index, $color in $colors {
+  .box:nth-child(#{$index}) {
+    background-color: $color;
+  }
+}
+
+@media (min-width: 2 * $box-min-width) {
+  .container {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 3 * $box-min-width) {
+  .container {
+    grid-template-columns: repeat(3, auto);
+  }
 }
