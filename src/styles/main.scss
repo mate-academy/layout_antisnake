@@ -1,3 +1,46 @@
+$block-size: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  background-color: #000;
+}
+
+@media (min-width: 901px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block {
+  height: $block-size;
+  text-align: center;
+  line-height: $block-size;
+  background-color: rgba(255, 0, 0, 1);
+}
+
+@function calcOpacity ($index) {
+
+  @return calc(1 - 0.2 * #{$index});
+}
+
+@for $block-number from 1 through 5 {
+
+  .block:nth-child(#{$block-number + 1}) {
+    background-color: rgba(255, 0, 0, calcOpacity(#{$block-number}));
+  }
+}
+
+@for $block-number from 1 through 6 {
+
+  .block:nth-child(#{$block-number})::after {
+    content: "#{$block-number}";
+  }
 }
