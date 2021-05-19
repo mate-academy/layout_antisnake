@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  background-color: #000;
+}
+
+@media (min-width: 901px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  background-color: red;
+}
+
+.block:nth-child(2) {
+  background-color: rgba(255, 0, 0, calc(1 - 0.2 * 1));
+}
+
+.block:nth-child(3) {
+  background-color: rgba(255, 0, 0, calc(1 - 0.2 * 2));
+}
+
+.block:nth-child(4) {
+  background-color: rgba(255, 0, 0, calc(1 - 0.2 * 3));
+}
+
+.block:nth-child(5) {
+  background-color: rgba(255, 0, 0, calc(1 - 0.2 * 4));
+}
+
+.block:nth-child(6) {
+  background-color: rgba(255, 0, 0, calc(1 - 0.2 * 5));
+}
+
+.block:nth-child(1)::after {
+  content: "1";
+}
+
+.block:nth-child(2)::after {
+  content: "2";
+}
+
+.block:nth-child(3)::after {
+  content: "3";
+}
+
+.block:nth-child(4)::after {
+  content: "4";
+}
+
+.block:nth-child(5)::after {
+  content: "5";
+}
+
+.block:nth-child(6)::after {
+  content: "6";
+}
+
+/*# sourceMappingURL=main.css.map */
