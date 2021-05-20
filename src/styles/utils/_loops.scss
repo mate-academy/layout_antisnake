@@ -1,0 +1,5 @@
+@each $block-number, $color in $block-colors {
+  .antisnake__block--#{$block-number} {
+    background-color: $color;
+  }
+}
