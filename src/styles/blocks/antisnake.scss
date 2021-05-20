@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(1, 300px);
+  grid-auto-rows: 300px;
+  justify-content: center;
+
+  &__block {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .antisnake {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 3fr);
+  }
+}
