@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($basic-element-height, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($basic-element-height, 1fr));
+  }
+
+  @for $idx from 0 to 6 {
+    & > :nth-child(#{$idx + 1}) {
+      background: rgb(255 - (51 * $idx), 0, 0);
+    }
+  }
+
+  &__square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: $basic-element-height;
+  }
+}
