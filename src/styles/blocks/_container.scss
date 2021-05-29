@@ -6,6 +6,12 @@
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 
+  @for $idx from 0 to 6 {
+    & > :nth-child(#{$idx + 1}) {
+      background: rgb(255 - (51 * $idx), 0, 0);
+    }
+  }
+
   &__square {
     display: flex;
     justify-content: center;
@@ -13,28 +19,4 @@
     text-align: center;
     height: 300px;
   }
-}
-
-.square-1 {
-  background-color: rgb(255, 0, 0);
-}
-
-.square-2 {
-  background-color: rgb(204, 0, 0);
-}
-
-.square-3 {
-  background-color: rgb(153, 0, 0);
-}
-
-.square-4 {
-  background-color: rgb(102, 0, 0);
-}
-
-.square-5 {
-  background-color: rgb(51, 0, 0);
-}
-
-.square-6 {
-  background-color: rgb(0, 0, 0);
 }
