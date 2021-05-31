@@ -6,7 +6,7 @@
   }
 }
 
-.block {
+.container__block {
   height: $height;
   color: white;
   font: 100px Arial, sans-serif;
@@ -15,7 +15,7 @@
 }
   
 @each $number, $color in $colors {
-  .block--#{$number} {
+  .container__block--#{$number} {
     background-color: $color;
   }
 }
