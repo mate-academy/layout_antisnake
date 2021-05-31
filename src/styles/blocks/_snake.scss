@@ -1,0 +1,44 @@
+.antisnake {
+  display: grid;
+
+  @media (min-width: 450px) {
+    & {
+      grid-template-columns: repeat(1, auto);
+    }
+  }
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+
+  &__box {
+    height: 300px;
+
+    @for $i from 1 through 6 {
+
+      @if $i == 1 {
+        &--#{$i} {
+          background-color: rgb( 255, 0, 0);
+        }
+      }
+      @else if $i <= 5 {
+        &--#{$i} {
+          background-color: rgb( 255 - (($i - 1) * 51) , 0, 0);
+        }
+      }
+      @else {
+        &--#{$i} {
+          background-color: rgb( 0 , 0, 0);
+        }
+      }
+    }
+  }
+}
