@@ -24,20 +24,8 @@
 
     @for $i from 1 through 6 {
 
-      @if $i == 1 {
-        &--#{$i} {
-          background-color: rgb( 255, 0, 0);
-        }
-      }
-      @else if $i <= 5 {
-        &--#{$i} {
-          background-color: rgb( 255 - (($i - 1) * 51) , 0, 0);
-        }
-      }
-      @else {
-        &--#{$i} {
-          background-color: rgb( 0 , 0, 0);
-        }
+      &--#{$i} {
+        background-color: rgb( 255 - (($i - 1) * 51) , 0, 0);
       }
     }
   }
