@@ -4,18 +4,17 @@
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-.container__block {
-  height: $height;
-  color: white;
-  font: 100px Arial, sans-serif;
-  text-align: center;
-  line-height: $height;
-}
-  
-@each $number, $color in $colors {
-  .container__block--#{$number} {
-    background-color: $color;
+  &__block {
+    height: $height;
+    color: white;
+    font: 100px Arial, sans-serif;
+    text-align: center;
+    line-height: $height;
+  }
+    
+  @each $number, $color in $colors {
+    &__block--#{$number} {
+      background-color: $color;
+    }
   }
 }
