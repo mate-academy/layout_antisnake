@@ -1,0 +1,31 @@
+@import "_variables.scss";
+
+.antisnake {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill);
+  
+  @for $index from 1 through $block-sum {
+    & > div:nth-child(#{$index}) {
+      min-height: 300px;
+      background-color: rgb(255 -(($index - 1) * 51), 0, 0);
+
+    }
+
+    & > div:nth-child(#{$index})::after {
+      content: "#{$index}";
+      display: grid;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+
+    }
+    
+  }
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(auto-fill, 33%);
+  }
+}
