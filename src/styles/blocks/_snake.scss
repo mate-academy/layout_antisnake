@@ -10,12 +10,11 @@
     color: white;
     justify-content: center;
     align-items: center;
-  }
-}
-
-@for $index from 1 through $amount-of-boxes {
-  .snake__block:nth-child(#{$index}) {
-    background-color: rgb(255 - ($color-step * ($index - 1)), 0, 0);
+    @for $index from 1 through $amount-of-boxes {
+      &:nth-child(#{$index}) {
+        background-color: rgb(255 - ($color-step * ($index - 1)), 0, 0);
+      }
+    }
   }
 }
 
