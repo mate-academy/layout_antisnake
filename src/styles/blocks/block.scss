@@ -1,0 +1,30 @@
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $block-size;
+
+  &--first {
+    background-color: $block-first-color;
+  }
+
+  &--second {
+    background-color: $block-second-color;
+  }
+
+  &--third {
+    background-color: $block-third-color;
+  }
+
+  &--fourth {
+    background-color: $block-fourth-color;
+  }
+
+  &--fifth {
+    background-color: $block-fifth-color;
+  }
+
+  &--sixth {
+    background-color: $block-sixth-color;
+  }
+}
