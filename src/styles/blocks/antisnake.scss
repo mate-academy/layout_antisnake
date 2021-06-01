@@ -1,24 +1,19 @@
 .antisnake {
   display: grid;
   height: 100%;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-rows: repeat(2, 300px);
-  grid-template-areas: "one two tree" "four five six";
+  grid-template-columns: repeat(3, minmax($min-width, 1fr));
 
   @media (max-width: 899px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-template-rows: repeat(3, 300px);
-    grid-template-areas: "one two" "tree four" "five six";
+    grid-template-columns: repeat(2, minmax($min-width, 1fr));
   }
   
-  @media (max-width: 450px) {
+  @media (max-width: 599px) {
     display: block;
   }
 
-  @each $number, $color, $grid-area in $property {
+  @each $number, $color in $property {
     &__item:nth-child(#{$number}) {
       height: 300px;
-      grid-area: $grid-area;
       background-color: $color;
       display: grid;
       justify-items: center;
