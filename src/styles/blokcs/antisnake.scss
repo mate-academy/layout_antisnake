@@ -1,7 +1,7 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(3, minmax($block-height, 1fr));
-  grid-template-rows: repeat(2, $block-height);
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+  grid-template-rows: repeat(auto-fill, $block-height);
 
   @each $index, $color in $block-bgc {
     & :nth-child(#{$index}) {
@@ -14,21 +14,10 @@
       @extend %block-number;
     }
   }
-  /* #region @media */
-  @media (max-width: 3 * $block-height - 1) {
-    & {
-      display: grid;
-      grid-template-columns: repeat(2, minmax($block-height, 1fr));
-      grid-template-rows: repeat(3, $block-height);
-    }
-  }
 
-  @media (max-width: 2 * $block-height - 1) {
-    & {
-      display: grid;
-      grid-template-columns: repeat(1, minmax($block-height, 1fr));
-      grid-template-rows: repeat(6, $block-height);
-    }
+  /* #region @media */
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
   }
   /* #endregion @media*/
 }
