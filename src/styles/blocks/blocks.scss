@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @for $count from 1 to 7 {
+    & > :nth-child(#{$count}) {
+      background: rgb(255 - (51 * ($count - 1)), 0, 0);
+      &::after {
+        content: "#{$count}";
+      }
+    }
+  }
+}
