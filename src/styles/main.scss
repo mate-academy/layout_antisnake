@@ -1,3 +1,42 @@
+@import "./utils/variables";
+
+html {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.box {
+  position: relative;
+  height: $box-height;
+  min-width: 300px;
+
+  @each $index, $color in $colors {
+    &--#{$index} {
+      background-color: #{$color};
+    }
+  }
+  @for $index from 1 through 6 {
+    &--#{$index}::before {
+      content: "#{$index}";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
