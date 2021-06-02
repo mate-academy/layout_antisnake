@@ -1,8 +1,9 @@
 $block-size: 300px;
-$block-first-color: rgb(255, 0, 0);
-$block-second-color: rgb(204, 0, 0);
-$block-third-color: rgb(153, 0, 0);
-$block-fourth-color: rgb(102, 0, 0);
-$block-fifth-color: rgb(51, 0, 0);
-$block-sixth-color: rgb(0, 0, 0);
 $font-color: white;
+$colors:
+  "first" rgb(255, 0, 0),
+  "second" rgb(204, 0, 0),
+  "third" rgb(153, 0, 0),
+  "fourth" rgb(102, 0, 0),
+  "fifth" rgb(51, 0, 0),
+  "sixth" rgb(0, 0, 0);
