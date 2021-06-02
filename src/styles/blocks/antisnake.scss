@@ -1,0 +1,4 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+}
