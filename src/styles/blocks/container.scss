@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @for $idx from 0 to 6 {
+    & > :nth-child(#{$idx + 1}) {
+      background: rgb(255 - (51 * $idx), 0, 0);
+      &::after {
+        content: "#{$idx + 1}";
+      }
+    }
+  }
+}
