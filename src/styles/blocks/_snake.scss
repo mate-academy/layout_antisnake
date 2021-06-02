@@ -1,0 +1,25 @@
+@use "../units/variables" as*;
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($boxes-min-weight, 1fr));
+  &__block {
+    display: flex;
+    height: $boxes-hight;
+    font-size: 100px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    @for $index from 1 through $amount-of-boxes {
+      &:nth-child(#{$index}) {
+        background-color: rgb(255 - ($color-step * ($index - 1)), 0, 0);
+      }
+    }
+  }
+}
+
+@media (min-width: $amount-of-boxes / 2 * $boxes-min-weight) {
+  .snake {
+    grid-template-columns: repeat(auto-fill, 33.33vw);
+  }
+}
