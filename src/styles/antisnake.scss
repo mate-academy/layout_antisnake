@@ -5,13 +5,13 @@
   width: 100%;
   height: 100vh;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill);
+  grid-template-rows: repeat(2, 300px);
   @for $index from 1 through $block-sum {
     & > div:nth-child(#{$index}) {
       min-height: 300px;
       background-color: rgb(255 -(($index - 1) * 51), 0, 0);
     }
-    & > div:nth-child(#{$index})::after {
+    & > div:nth-child(#{$index})::before {
       content: "#{$index}";
     }
   }
