@@ -5,10 +5,6 @@
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   @each $number, $color in $colors {
     &__box-#{$number} {
       background-color: $color;
