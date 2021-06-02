@@ -1,0 +1,23 @@
+.antisnake {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(3, minmax($min-width, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($min-width, 1fr));
+  }
+  
+  @media (max-width: 599px) {
+    display: block;
+  }
+
+  @each $number, $color in $property {
+    &__item:nth-child(#{$number}) {
+      height: 300px;
+      background-color: $color;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+}
