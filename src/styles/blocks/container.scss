@@ -11,10 +11,10 @@
     text-align: center;
     line-height: $height;
   }
-    
-  @each $number, $color in $colors {
+  
+  @for $number from 1 through 6 {
     &__block--#{$number} {
-      background-color: $color;
+      background-color: hsl(0, 100%, (50% - $number * 10% + 10%));
     }
   }
 }
