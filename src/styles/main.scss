@@ -1,4 +1,13 @@
 @import "./utils/var";
 @import "./utils/reset";
-
 @import "./blocks/antisnake";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
