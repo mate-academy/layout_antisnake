@@ -1,24 +1,19 @@
 .container {
   display: grid;
   
-  @media (min-width: 600px) and (max-width: 899px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
-
-  &__box {
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 @each $box, $color in $colors {
-  .box-#{$box} {
+  .container__box-#{$box} {
+    height: $box-height;
     background-color: $color;
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
 }
