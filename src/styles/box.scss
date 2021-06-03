@@ -15,7 +15,6 @@
     rgb(40%, 0, 0) "4",
     rgb(20%, 0, 0) "5",
     rgb(0, 0, 0) "6";
-
   @each $color, $index in $colors {
     &--#{$index} {
       background-color: $color;
