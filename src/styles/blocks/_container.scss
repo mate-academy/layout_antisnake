@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($square-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($square-size, 1fr));
+  }
+
+  &__box {
+    @extend %flex;
+    height: $square-size;
+  }
+
+  @for $index from 0 through 5 {
+    .box-#{$index} {
+      background-color: rgb(255 - (51 * $index), 0, 0);
+    }
+  }
+}
