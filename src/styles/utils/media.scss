@@ -1,0 +1,8 @@
+
+@media (min-width:1200px) {
+
+  .box {
+    grid-template-columns: repeat(auto-fill,minmax($size-box+1px , 1fr));
+  }
+
+}
