@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+.container__box {
+  height: $box-size;
+  min-width: $box-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  $colors:
+    rgb(100%, 0, 0) "1",
+    rgb(80%, 0, 0) "2",
+    rgb(60%, 0, 0) "3",
+    rgb(40%, 0, 0) "4",
+    rgb(20%, 0, 0) "5",
+    rgb(0, 0, 0) "6";
+  @each $color, $index in $colors {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+}
