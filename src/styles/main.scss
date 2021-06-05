@@ -1,3 +1,9 @@
+@import "./utils/variables";
+@import "./blocks/box.scss";
+
 body {
   margin: 0;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
 }
