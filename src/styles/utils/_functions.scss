@@ -1,0 +1,3 @@
+@function get-color ($idx) {
+  @return 51 * (6 - $idx);
+}
