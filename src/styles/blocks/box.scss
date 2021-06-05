@@ -1,0 +1,44 @@
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+  }
+
+  &__block--box-1 {
+    background-color: red;
+  }
+
+  &__block--box-2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__block--box-3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__block--box-4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__block--box-5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__block--box-6 {
+    background-color: black;
+  }
+}
