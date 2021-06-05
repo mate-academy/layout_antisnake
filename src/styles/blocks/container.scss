@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{$blockSize}, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    text-align: center;
+    line-height: $blockSize;
+
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb((255 - (51 * ($index - 1))), 0, 0);
+      }
+    }
+  }
+}
