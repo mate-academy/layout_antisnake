@@ -1,7 +1,6 @@
 .container {
   display: grid;
   flex-wrap: wrap;
-  // align-content: stretch;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
   grid-template-areas: "one"
