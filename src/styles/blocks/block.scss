@@ -1,0 +1,43 @@
+.block {
+  display: flex;
+  @include block($block-height);
+  // flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+
+  &__number {
+    font-size: $block-height / 3;
+    color: white;
+  }
+
+  &--1 {
+    background-color: $first-color;
+    grid-area: one;
+  }
+
+  &--2 {
+    background-color: $second-color;
+    grid-area: two;
+  }
+
+  &--3 {
+    background-color: $third-color;
+    grid-area: three;
+  }
+
+  &--4 {
+    background-color: $fourth-color;
+    grid-area: four;
+  }
+
+  &--5 {
+    background-color: $fifth-color;
+    grid-area: five;
+  }
+
+  &--6 {
+    background-color: $sixth-color;
+    grid-area: six;
+  }
+
+}
