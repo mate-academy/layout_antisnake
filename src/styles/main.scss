@@ -1,3 +1,26 @@
+@import "./blocks/utils.scss";
+@import "./blocks/box.scss";
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.main {
+  display: grid;
+}
+
+@media (min-width: 600px) {
+  .main {
+    grid-template-areas: "one two" "tree four" "five six";
+  }
+}
+
+@media (min-width: 900px) {
+  .main {
+    grid-template-areas: "one two tree" "four five six"
+    ;
+  }
 }
