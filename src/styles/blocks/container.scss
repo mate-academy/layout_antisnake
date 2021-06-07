@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
+ 
+  &__blocks {
+    height: $cell-size;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    &--block-1 {
+      background-color: red;
+    }
+    
+    &--block-2 {
+      background-color: rgb(204, 0, 0);
+    }
+    
+    &--block-3 {
+      background-color: rgb(153, 0, 0);
+    }
+    
+    &--block-4 {
+      background-color: rgb(102, 0, 0);
+    }
+    
+    &--block-5 {
+      background-color: rgb(51, 0, 0);
+    }
+    
+    &--block-6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
