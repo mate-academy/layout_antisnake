@@ -9,33 +9,9 @@
     color: white;
   }
 
-  &--1 {
-    background-color: $first-color;
-    grid-area: one;
-  }
-
-  &--2 {
-    background-color: $second-color;
-    grid-area: two;
-  }
-
-  &--3 {
-    background-color: $third-color;
-    grid-area: three;
-  }
-
-  &--4 {
-    background-color: $fourth-color;
-    grid-area: four;
-  }
-
-  &--5 {
-    background-color: $fifth-color;
-    grid-area: five;
-  }
-
-  &--6 {
-    background-color: $sixth-color;
-    grid-area: six;
+  @for $bgc from 1 to $max-block + 1 {
+    &--#{$bgc} {
+      background-color: rgb((($max-block - $bgc) * 51), 0, 0) ;
+    }
   }
 }
