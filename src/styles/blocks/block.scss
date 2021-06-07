@@ -1,0 +1,17 @@
+.block {
+  display: flex;
+  @include block($block-height);
+  justify-content: center;
+  align-items: center;
+
+  &__number {
+    font-size: $block-height / 3;
+    color: white;
+  }
+
+  @for $bgc from 1 to $max-block + 1 {
+    &--#{$bgc} {
+      background-color: rgb((($max-block - $bgc) * 51), 0, 0) ;
+    }
+  }
+}
