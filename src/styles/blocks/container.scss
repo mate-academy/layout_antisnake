@@ -1,0 +1,27 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  grid-template-rows: repeat(auto-fill,minmax(300px,1fr));
+
+  @for $index from 1 through 6 {
+    & div:nth-child(#{$index}) {
+      min-width: 300px;
+      position: relative;
+      height: 300px;
+      background-color: rgb(calc(306 - calc(#{$index} * 51)),0,0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::after {
+        position: absolute;
+        content: "#{$index}";
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+}

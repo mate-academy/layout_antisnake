@@ -43,5 +43,7 @@
   "mateAcademy": {
     "projectType": "layout"
   },
-  "dependencies": {}
+  "dependencies": {
+    "utils": "^0.3.1"
+  }
 }
