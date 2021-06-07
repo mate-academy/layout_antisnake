@@ -1,6 +1,6 @@
 
 @each $name, $color in $colors {
-  .icon__box--#{name} {
+  .icon__box--#{$name} {
     background-color: $color;
   }
 }
