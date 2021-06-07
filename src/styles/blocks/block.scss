@@ -17,28 +17,22 @@
     font-size: $font-size;
     color: $font-color;
 
+    $colors:
+      "1" rgb(100%, 0, 0),
+      "2" rgb(80%, 0, 0),
+      "3" rgb(60%, 0, 0),
+      "4" rgb(40%, 0, 0),
+      "5" rgb(20%, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color ;
+      }
+    }
+
     &:nth-child(1) {
       background-color: rgb(100%, 0, 0);
-    }
-
-    &:nth-child(2) {
-      background-color: rgb(80%, 0, 0);
-    }
-
-    &:nth-child(3) {
-      background-color: rgb(60%, 0, 0);
-    }
-
-    &:nth-child(4) {
-      background-color: rgb(40%, 0, 0);
-    }
-
-    &:nth-child(5) {
-      background-color: rgb(20%, 0, 0);
-    }
-
-    &:nth-child(6) {
-      background-color: rgb(0, 0, 0);
     }
   }
 }
