@@ -7,30 +7,12 @@
     min-height: $height;
     justify-content: center;
     align-content: center;
-  }
 
-  &__blocks--color--1 {
-    background-color: $rgb255;
-  }
-
-  &__blocks--color--2 {
-    background-color: $rgb204;
-  }
-
-  &__blocks--color--3 {
-    background-color: $rgb153;
-  }
-
-  &__blocks--color--4 {
-    background-color: $rgb102;
-  }
-
-  &__blocks--color--5 {
-    background-color: $rgb51;
-  }
-
-  &__blocks--color--6 {
-    background-color: $rgb0;
+    @each $color, $index in $colors {
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
+      }
+    }
   }
 }
 
