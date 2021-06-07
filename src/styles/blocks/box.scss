@@ -1,0 +1,30 @@
+@import "../utils/variables.scss";
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($side, 1fr));
+  grid-template-rows: repeat($numberOfBlocks, $side);
+
+  @media (min-width: ($side * $numberOfBlocks/3 + 1px)) {
+    grid-template-columns: repeat(auto-fill, minmax($side, 1fr));
+    grid-template-rows: repeat($numberOfBlocks/2, $side);
+  }
+
+  @media (min-width: ($side * $numberOfBlocks/2 + 1px)) {
+    grid-template-columns: repeat($numberOfBlocks/2, minmax($side, 1fr));
+    grid-template-rows: repeat($numberOfBlocks/3, $side);
+  }
+
+  &__block {
+    height: $side;
+    line-height: $side;
+    text-align: center;
+    box-sizing: border-box;
+
+    @for $index from 1 through 7 {
+      &--#{$index} {
+        background-color: rgb(306 - (51 * $index), 0, 0);
+      }
+    }
+  }
+}
