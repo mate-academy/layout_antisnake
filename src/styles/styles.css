@@ -3,7 +3,6 @@
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
@@ -31,7 +30,6 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
 }
 
 .container__block--number-1 {
@@ -39,7 +37,7 @@
 }
 
 .container__block--number-2 {
-  background: #c000;
+  background: #c00;
 }
 
 .container__block--number-3 {
