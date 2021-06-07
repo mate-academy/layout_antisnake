@@ -1,0 +1,13 @@
+.item {
+  color: #fff;
+  height: $item-size;
+  min-width: $item-size;
+  line-height: $item-size;
+  text-align: center;
+
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      background-color: rgb(calc(51 * (6 - #{$index})), 0, 0);
+    }
+  }
+}
