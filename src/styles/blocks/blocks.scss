@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, auto));
+  grid-template-rows: 1fr 1fr;
+}
+
+.container__block {
+  line-height: $block-line-height;
+  text-align: center;
+  color: $letter-color;
+}
+
+@each $name, $color in
+  "1" red,
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" rgb(0%, 0%, 0%) {
+  .block-#{$name} {
+    background-color: $color;
+  }
+}
+
+@media (max-width: 899px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, auto));
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 599px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, auto));
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
