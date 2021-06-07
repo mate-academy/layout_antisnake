@@ -1,3 +1,14 @@
+@import "utils/_variables";
+@import "blocks/container";
+
+html {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 300px;
+  color: $white;
+}
+
 body {
   margin: 0;
 }
