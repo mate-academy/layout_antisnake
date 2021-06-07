@@ -1,0 +1,13 @@
+.block {
+    display: flex;
+    height: $block-size;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+}
