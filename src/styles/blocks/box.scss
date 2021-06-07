@@ -6,12 +6,12 @@
   grid-template-rows: repeat($numberOfBlocks, $side);
 
   @media (min-width: ($side * $numberOfBlocks/3 + 1px)) {
-    grid-template-columns: repeat(auto-fill, minmax($side, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax($side, 1fr));
     grid-template-rows: repeat($numberOfBlocks/2, $side);
   }
 
   @media (min-width: ($side * $numberOfBlocks/2 + 1px)) {
-    grid-template-columns: repeat(auto-fill, minmax($side, 3fr));
+    grid-template-columns: repeat($numberOfBlocks/2, minmax($side, 1fr));
     grid-template-rows: repeat($numberOfBlocks/3, $side);
   }
 
