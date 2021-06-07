@@ -6,14 +6,8 @@
 
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3,1fr);
-  }
-  @media (max-width: 899) {
-    grid-template-columns: repeat(2,1fr);
-  }
-  @media (max-width: 599px) {
-    grid-template-columns: repeat(1,1fr);
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &__block {
