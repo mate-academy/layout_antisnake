@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, auto));
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "block-1 block-2 block-3"
-    "block-4 block-5 block-6";
 }
 
 .container__block {
@@ -12,34 +10,16 @@
   color: $letter-color;
 }
 
-.block-1 {
-  grid-area: block-1;
-  background-color: red;
-}
-
-.block-2 {
-  grid-area: block-2;
-  background-color: rgb(80%, 0%, 0%);
-}
-
-.block-3 {
-  grid-area: block-3;
-  background-color: rgb(60%, 0%, 0%);
-}
-
-.block-4 {
-  grid-area: block-4;
-  background-color: rgb(40%, 0%, 0%);
-}
-
-.block-5 {
-  grid-area: block-5;
-  background-color: rgb(20%, 0%, 0%);
-}
-
-.block-6 {
-  grid-area: block-6;
-  background-color: rgb(0%, 0%, 0%);
+@each $name, $color in
+  "1" red,
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" rgb(0%, 0%, 0%) {
+  .block-#{$name} {
+    background-color: $color;
+  }
 }
 
 @media (max-width: 899px) {
@@ -47,22 +27,6 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, auto));
     grid-template-rows: 1fr 1fr 1fr;
-
-    grid-template-areas: "block-1 block-2"
-      "block-3 block-4"
-      "block-5 block-6";
-  }
-
-  .block-4 {
-    order: 2;
-  }
-
-  .block-5 {
-    order: 1;
-  }
-
-  .block-6 {
-    order: 0;
   }
 }
 
@@ -71,28 +35,5 @@
     display: grid;
     grid-template-columns: repeat(1, minmax(300px, auto));
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-
-    grid-template-areas: "block-1"
-      "block-2"
-      "block-3"
-      "block-4"
-      "block-5"
-      "block-6";
-  }
-
-  .block-3 {
-    order: 1;
-  }
-
-  .block-4 {
-    order: 0;
-  }
-
-  .block-5 {
-    order: 1;
-  }
-
-  .block-6 {
-    order: 1;
   }
 }
