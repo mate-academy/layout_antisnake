@@ -1,0 +1,39 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  align-content: center;
+  justify-content: center;
+
+  &__element {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 300px;
+    box-sizing: border-box;
+    width: minmax(300px, 1fr);
+  }
+
+  &__element-1 {
+    background-color: red;
+  }
+
+  &__element-2 {
+    background-color: rgb(80%, 0, 0);
+  }
+
+  &__element-3 {
+    background-color: rgb(60%, 0, 0);
+  }
+
+  &__element-4 {
+    background-color: rgb(40%, 0, 0);
+  }
+
+  &__element-5 {
+    background-color: rgb(20%, 0, 0);
+  }
+
+  &__element-6 {
+    background-color: black;
+  }
+}
