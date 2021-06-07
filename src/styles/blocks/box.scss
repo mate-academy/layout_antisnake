@@ -1,0 +1,29 @@
+.box {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(6, 1fr);
+
+  &__block {
+    height: $block-height;
+    min-width: $block-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 2*$block-height) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 3*$block-height) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
