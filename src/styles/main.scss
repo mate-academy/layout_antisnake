@@ -1,4 +1,5 @@
-@import "./blocks.scss/box.scss";
+@import "./blocks/utils.scss";
+@import "./blocks/box.scss";
 
 body {
   margin: 0;
@@ -9,12 +10,17 @@ body {
 
 .main {
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
   .main {
-    width: 1199px;
+    grid-template-areas: "one two" "tree four" "five six";
+  }
+}
+
+@media (min-width: 900px) {
+  .main {
+    grid-template-areas: "one two tree" "four five six"
+    ;
   }
 }
