@@ -1,0 +1,5 @@
+@media (min-width: 3 * $box-width) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
