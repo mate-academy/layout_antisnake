@@ -1,12 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 1fr);
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
+  grid: auto-flow / repeat(auto-fit, minmax($block-height, 1fr));
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
