@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-width, 1fr));
+  grid-template-rows: repeat(auto-fill 1fr);
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+    background-color: #000;
+
+    @each $color, $number in $colors {
+      &:nth-child(#{$number}) {
+        background-color: #{$color};
+      }
+    }
+  }
+}
