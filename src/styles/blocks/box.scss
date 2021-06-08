@@ -1,0 +1,39 @@
+.box {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill);
+  justify-content: center;
+  align-content: center;
+
+  $colors:
+    "1" red,
+    "2" #c00,
+    "3" #900,
+    "4" #600,
+    "5" #300,
+    "6" black;
+
+  @each $name, $color in $colors {
+    &-#{$name} {
+      background-color: $color;
+      height: 300px;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &-#{$index}::after {
+      content: "#{$index}";
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
