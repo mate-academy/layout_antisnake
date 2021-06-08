@@ -2,17 +2,12 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(autofill, minmax($size, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
 
-  
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, minmax(#{$size}, 1fr));
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($size, 1fr));
   }
     
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax(#{$size}, 1fr));
-  }
-
   @for $index from 0 to 6 {
     & > :nth-child(#{$index + 1}) {
       background: rgb(255 - (51 * $index), 0, 0);
@@ -22,8 +17,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: #{$size};
-      min-width: #{$size};
+      height: $size;
+      min-width: $size;
       list-style: none;
   
     }
