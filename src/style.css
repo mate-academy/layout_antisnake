@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill);
+  justify-content: center;
+  align-content: center;
+}
+
+.box-1 {
+  background-color: red;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-2 {
+  background-color: #c00;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-3 {
+  background-color: #900;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-4 {
+  background-color: #600;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-5 {
+  background-color: #300;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-6 {
+  background-color: black;
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-1::after {
+  content: "1";
+  color: #fff;
+}
+
+.box-2::after {
+  content: "2";
+  color: #fff;
+}
+
+.box-3::after {
+  content: "3";
+  color: #fff;
+}
+
+.box-4::after {
+  content: "4";
+  color: #fff;
+}
+
+.box-5::after {
+  content: "5";
+  color: #fff;
+}
+
+.box-6::after {
+  content: "6";
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
