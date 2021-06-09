@@ -1,0 +1,41 @@
+.grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    font-size: 100px;
+    font-family: inherit;
+
+    background-color: red;
+    color: #fff;
+    $colors:
+      "2" #d00404,
+      "3" #a00404,
+      "4" #680404,
+      "5" #380404,
+      "6" #080404;
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+}
