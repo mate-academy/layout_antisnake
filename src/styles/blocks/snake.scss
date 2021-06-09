@@ -1,0 +1,36 @@
+@use "../utils/variables" as *;
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($side-of-square, 1fr));
+}
+
+.snake__blocks {
+  text-align: center;
+  line-height: $side-of-square;
+  font-size: 100px;
+  color: #fff;
+  height: $side-of-square;
+}
+
+$snake-bc:
+  "1"#f00,
+  "2"#c00,
+  "3"#900,
+  "4"#600,
+  "5"#300,
+  "6"#000;
+
+@each $number,
+  $bc in $snake-bc {
+  .snake__blocks:nth-child(#{$number}) {
+    background-color: $bc;
+  }
+}
+
+@media (min-width: #{$side-of-square * 3}) {
+  .snake {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
