@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["blocks/all-style.scss","blocks/snake.scss","utils/_variables.scss"],"names":[],"mappings":"AAAA;EACE;;;AAGF;EACE;EACA;;;ACJF;EACE;EACA;;;AAGF;EACE;EACA,aCTe;EDUf;EACA;EACA,QCZe;;;ADyBf;EACE,kBAVF;;;AASA;EACE,kBAVF;;;AASA;EACE,kBAVF;;;AASA;EACE,kBAVF;;;AASA;EACE,kBAVF;;;AASA;EACE,kBAVF;;;AAcF;EACE;IACE;IACA","file":"style.css"}
