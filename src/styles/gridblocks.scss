@@ -14,25 +14,16 @@
 
     background-color: red;
     color: #fff;
-
-    &--2 {
-      background-color: #d00404;
-    }
-
-    &--3 {
-      background-color: #a00404;
-    }
-
-    &--4 {
-      background-color: #680404;
-    }
-
-    &--5 {
-      background-color: #380404;
-    }
-
-    &--6 {
-      background-color: #080404;
+    $colors:
+      "2" #d00404,
+      "3" #a00404,
+      "4" #680404,
+      "5" #380404,
+      "6" #080404;
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: #{$color};
+      }
     }
   }
 
