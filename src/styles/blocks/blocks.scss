@@ -1,0 +1,29 @@
+.blocks {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  & :nth-child(n) {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    background-color: #f00;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+  }
+  & :nth-child(2) {
+    background-color: #c00;
+  }
+  & :nth-child(3) {
+    background-color: #900;
+  }
+  & :nth-child(4) {
+    background-color: #600;
+  }
+  & :nth-child(5) {
+    background-color: #300;
+  }
+  & :nth-child(6) {
+    background-color: #000;
+  }
+}
