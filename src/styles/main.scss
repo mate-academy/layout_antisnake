@@ -1,3 +1,48 @@
 body {
   margin: 0;
 }
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 300px);
+
+  &__cell {
+    height: 300px;
+    min-width: 300px;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    line-height: 300px;
+    text-align: center;
+  }
+  &__cell:first-child {
+    background-color: #f00;
+  }
+  
+  &__cell:nth-child(2) {
+    background-color: #c00;
+  }
+  
+  &__cell:nth-child(3) {
+    background-color: #900;
+  }
+  
+  &__cell:nth-child(4) {
+    background-color: #600;
+  }
+  
+  &__cell:nth-child(5) {
+    background-color: #300;
+  }
+  
+  &__cell:last-child {
+    background-color: #000;
+  }
+}
+
+@media(min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat( 3, minmax(300px, 1fr));
+  }
+}
