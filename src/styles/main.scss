@@ -1,3 +1,39 @@
+@function getRedColor($index) {
+  @return 100% - ($index * 20%);
+}
+
 body {
   margin: 0;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__item {
+    background-color: red;
+    height: 300px;
+    position: relative;
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index}) {
+      background-color: rgb(getRedColor($index - 1), 0, 0);
+
+      &::before {
+        content: "#{$index}";
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+    }
+  }
 }
