@@ -1,0 +1,41 @@
+.block {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &-boxies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: white;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  $colors:
+ '1' rgb(255, 0, 0),
+ '2' rgb(204, 0, 0),
+ '3' rgb(153, 0, 0),
+ '4' rgb(102, 0, 0),
+ '5' rgb(52, 0, 0),
+ '6' rgb(0, 0, 0);
+
+  @each $name, $color in $colors {
+    &-boxies:nth-child(#{$name}) {
+      background-color: $color;
+    }
+  }
+
+
+  @for $index from 1 through 6 {
+    &-boxies:nth-child(#{$index})::after {
+      content: "#{$index}";
+    }
+  }
+
+}
