@@ -1,3 +1,53 @@
 body {
   margin: 0;
 }
+
+.block-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 300px);
+  justify-content: center;
+}
+
+.box {
+  height: 300px;
+  color: white;
+  font-family: Arial, serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: 300px;
+}
+
+&:nth-child(1) {
+  background: rgb(255, 0, 0);
+}
+
+&:nth-child(2) {
+  background: rgb(204, 0, 0);
+}
+
+&:nth-child(3) {
+  background: rgb(153, 0, 0);
+  order: 3;
+}
+
+&:nth-child(4) {
+  background: rgb(102, 0, 0);
+  order: 4;
+}
+
+&:nth-child(5) {
+  background: rgb(51, 0, 0);
+  order: 5;
+}
+
+&:nth-child(6) {
+  background: rgb(0, 0, 0);
+  order: 6;
+}
+
+@media(min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat( 3, minmax(300px, 1fr));
+  }
+}
