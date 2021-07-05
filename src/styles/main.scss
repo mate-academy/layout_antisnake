@@ -3,43 +3,20 @@ body {
 }
 
 .block {
+  display: grid;
+  flex-wrap: wrap;
+
   @media (min-width: 751px) {
-    display: grid;
-    min-width: 751px;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas: "one two three" "four five six";
+    grid-template-columns: minmax(300px, auto)
+      minmax(300px, auto) minmax(300px, auto);
   }
 
   @media (min-width: 451px) and (max-width: 750px) {
-    display: grid;
-    max-width: 750px;
-    min-width: 451px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "one two" "three four" "five six";
+    grid-template-columns: minmax(300px, auto) minmax(300px, auto);
   }
 
   @media (max-width: 450px) {
-    display: grid;
-    max-width: 450px;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: "one" "two" "three" "four" "five" "six";
-  }
-
-  $positions:
-    "1" one,
-    "2" two,
-    "3" three,
-    "4" four,
-    "5" five,
-    "6" six;
-
-  @each $cell, $position in $positions {
-    & :nth-child(#{$cell}) {
-      grid-area: #{$position};
-    }
+    grid-template-columns: minmax(300px, auto);
   }
 
   & > * {
