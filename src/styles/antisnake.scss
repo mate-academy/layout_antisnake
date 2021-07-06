@@ -1,0 +1,19 @@
+.antisnake {
+  @include grid-centered;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    @include flex-centered;
+    @include antisnake__block-size;
+
+    color: $antisnake-text-color;
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2 , 1fr);
+  }
+  
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+}
