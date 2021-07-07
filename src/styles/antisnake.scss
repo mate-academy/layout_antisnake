@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    @include block-size;
+    color: white;
+    text-align: center;
+
+    @each $index, $color in $blocks {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  }
+}
