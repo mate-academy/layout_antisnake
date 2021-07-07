@@ -1,0 +1,32 @@
+@import "variables";
+
+.outer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,$columns-width));
+  grid-auto-rows: $rows-height;
+  &__inner {
+    position: relative;
+  }
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3,$columns-width);
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .outer__inner:nth-child(#{$i})::after {
+    content: "#{$i}";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+}
+
+@each $cell, $color in $snake {
+  .outer__inner:nth-child(#{$cell}) {
+    background-color: $color;
+  }
+}
