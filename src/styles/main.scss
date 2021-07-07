@@ -1,3 +1,41 @@
+:root {
+  --columns-amount: 3;
+}
+
+$color-change: 51.2;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-amount), minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+
+  @media (max-width: 899px) {
+    --columns-amount: auto-fit;
+  }
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 0 to 6 {
+      &:nth-child(#{$i + 1}) {
+        background-color: rgb(256 - ($color-change * $i), 0, 0);
+      }
+    }
+  }
 }
