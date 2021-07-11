@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__item {
+    @include ite-size($item-size);
+  }
+  
+  $background-color:
+    1 #f00,
+    2 #c00,
+    3 #900,
+    4 #600,
+    5 #300,
+    6 #000;
+
+  @each $index, $color in $background-color {
+    &__item:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 to 7 {
+    &__item:nth-child(#{$index}):before {
+      content: "#{$index}";
+      display: grid;
+      justify-items: center;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 100px;
+      line-height: $item-size;
+      color: #fff;
+    }
+  }
+}
