@@ -1,0 +1,4 @@
+@mixin ite-size ($size) {
+  height: $size;
+  flex-basis: $size;
+}
