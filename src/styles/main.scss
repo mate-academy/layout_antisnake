@@ -1,3 +1,135 @@
+$cell-size: 300px;
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.snake-container {
+  display: grid;
+  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  &__cell {
+    color: #fff;
+    text-align: center;
+    line-height: $cell-size;
+
+    &:first-child {
+      grid-row: 1;
+      grid-column: 1;
+      content: "1";
+      background-color: #f00;
+    }
+    
+    &:nth-child(2) {
+      grid-row: 1;
+      grid-column: 2;
+      background-color: #c00;
+    }
+
+    &:nth-child(3) {
+      grid-row: 1;
+      grid-column: 3;
+      background-color: #900;
+    }
+
+    &:nth-child(4) {
+      grid-row: 2;
+      grid-column: 1;
+      background-color: #600;
+    }
+
+    &:nth-child(5) {
+      grid-row: 2;
+      grid-column: 2;
+      background-color: #300;
+    }
+
+    &:last-child {
+      grid-row: 2;
+      grid-column: 3;
+      background-color: #000;
+    }
+  }
+}
+
+@media screen and (max-width:899px) {
+  .snake-container {
+    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    
+    &__cell {
+      &:first-child {
+        grid-row: 1;
+        grid-column: 1;
+      }
+      
+      &:nth-child(2) {
+        grid-row: 1;
+        grid-column: 2;
+      }
+  
+      &:nth-child(3) {
+        grid-row: 2;
+        grid-column: 1;
+      }
+  
+      &:nth-child(4) {
+        grid-row: 2;
+        grid-column: 2;
+      }
+  
+      &:nth-child(5) {
+        grid-row: 3;
+        grid-column: 1;
+      }
+  
+      &:last-child {
+        grid-row: 3;
+        grid-column: 2;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:599px) {
+  .snake-container {
+    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: minmax(300px, 1fr);
+    
+    &__cell {
+      &:nth-child(n) {
+        grid-column: 1;
+      }
+
+      &:first-child {
+        grid-row: 1;
+      }
+      
+      &:nth-child(2) {
+        grid-row: 2;
+      }
+  
+      &:nth-child(3) {
+        grid-row: 3;
+      }
+  
+      &:nth-child(4) {
+        grid-row: 4;
+      }
+  
+      &:nth-child(5) {
+        grid-row: 5;
+      }
+  
+      &:last-child {
+        grid-row: 6;
+      }
+    }
+  }
 }
