@@ -1,0 +1,25 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($block-height, 1fr));
+
+  &__block {
+    height: $block-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @each $index, $color in $colors {
+    & :nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($block-height, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: minmax($block-height, 1fr);
+  }
+}
