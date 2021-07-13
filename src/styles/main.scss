@@ -1,3 +1,42 @@
 body {
   margin: 0;
 }
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  min-width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+$colors: "100"rgb(100%, 0%, 0%),
+  "080"rgb(80%, 0%, 0%),
+  "060"rgb(60%, 0%, 0%),
+  "040"rgb(40%, 0%, 0%),
+  "020"rgb(20%, 0%, 0%),
+  "000"rgb(0%, 0%, 0%);
+
+@each $name,
+  $color in $colors {
+  .block--color#{$name} {
+    background-color: $color;
+  }
+}
+
+@media (min-width: 600px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
