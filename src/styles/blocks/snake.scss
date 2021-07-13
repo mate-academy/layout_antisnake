@@ -1,0 +1,24 @@
+.snake {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media(min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-size, 1fr));
+    }
+  }
+
+  &__elem {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: $block-size;
+
+    @for $child from 0 through 6 {
+      &:nth-child(#{$child}) {
+        background-color: rgb(255 - (($child - 1)* 51), 0, 0);
+      }
+    }
+  }
+}
