@@ -1,0 +1,4 @@
+@function calc-shade($block, $max-blocks) {
+  $change: 255 / ($max-blocks - 1) * ($max-blocks - $block);
+  @return adjust-color(#000, $red: $change);
+}
