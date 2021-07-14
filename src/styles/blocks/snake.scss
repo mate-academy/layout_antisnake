@@ -22,7 +22,7 @@
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: $block-height * $max-column) {
     grid-template-columns: repeat($max-column, minmax($block-height, 1fr));
   }
 }
