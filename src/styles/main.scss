@@ -1,3 +1,51 @@
+$cell-size: 300px;
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.snake-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+
+  &__cell {
+    color: #fff;
+    text-align: center;
+    line-height: $cell-size;
+
+    &:first-child {
+      background-color: #f00;
+    }
+    
+    &:nth-child(2) {
+      background-color: #c00;
+    }
+
+    &:nth-child(3) {
+      background-color: #900;
+    }
+
+    &:nth-child(4) {
+      background-color: #600;
+    }
+
+    &:nth-child(5) {
+      background-color: #300;
+    }
+
+    &:last-child {
+      background-color: #000;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .snake-container {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
 }
