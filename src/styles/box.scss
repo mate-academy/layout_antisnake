@@ -1,0 +1,41 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  justify-content: center;
+  
+  &__1 {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  &__2 {
+    background-color: rgb(204, 0, 0);
+  }
+  
+  &__3 {
+    background-color: rgb(153, 0, 0);
+  }
+  
+  &__4 {
+    background-color: rgb(102, 0, 0);
+  }
+  
+  &__5 {
+    background-color: rgb(51, 0, 0);
+  }
+  
+  &__6 {
+    background-color: rgb(0, 0, 0);
+  }
+  
+  @media (min-width:600px) and (max-width:899px) {
+    & {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+  }
+  
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+  }
+}
