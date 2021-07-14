@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $block-height;
+
+    @for $block from 1 through $block-count {
+      &:nth-child(#{$block})::after {
+        content: "#{$block}";
+      }
+    }
+
+    @for $block from 1 through $block-count {
+      &:nth-child(#{$block}) {
+        background-color: calc-shade($block, $block-count);
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat($max-column, minmax($block-height, 1fr));
+  }
+}
