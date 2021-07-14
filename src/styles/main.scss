@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.block {
+.antisnake__block {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,30 +13,31 @@ body {
   color: #fff;
 }
 
-$colors: "100"rgb(100%, 0%, 0%),
-  "080"rgb(80%, 0%, 0%),
-  "060"rgb(60%, 0%, 0%),
-  "040"rgb(40%, 0%, 0%),
-  "020"rgb(20%, 0%, 0%),
-  "000"rgb(0%, 0%, 0%);
+$colors: "1"rgb(100%, 0, 0),
+  "2"rgb(80%, 0, 0),
+  "3"rgb(60%, 0, 0),
+  "4"rgb(40%, 0, 0),
+  "5"rgb(20%, 0, 0),
+  "6"rgb(0, 0, 0);
 
-@each $name,
+@each $num,
   $color in $colors {
-  .block--color#{$name} {
+  &:nth-child(#{$num}) {
     background-color: $color;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width:600px) and (max-width:899px) {
   .antisnake {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
 }
 
 @media (min-width: 900px) {
   .antisnake {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(3, minmax(300px, 100%));
   }
 }
