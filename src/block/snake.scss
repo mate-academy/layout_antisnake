@@ -1,9 +1,6 @@
 .snake {
   display: grid;
-  width: 100vw;
-  height: 100vh;
   grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax($block-height, 1fr));
 
   &__block {
     display: grid;
@@ -14,10 +11,7 @@
   }
 
   @media (min-width: 1199px) {
-    & {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @each $num, $color in $block-color {
