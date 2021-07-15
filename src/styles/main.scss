@@ -1,3 +1,22 @@
-body {
-  margin: 0;
+@import "./_utiles";
+@import "./normalize";
+
+.boxes {
+  display: grid;
+  grid-template: repeat(6, $box-hight) / repeat(auto-fill, $box-minmax-width);
+  @include media-grid (1200px, 2, 3);
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb((255 - (($index - 1) * $color-step)), 0, 0);
+      }
+    }
+  }
 }
