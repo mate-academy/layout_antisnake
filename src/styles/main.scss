@@ -1,15 +1,6 @@
 @import "./_utiles";
+@import "./normalize";
 
-// normalize
-html {
-  font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-}
-
-// boxes
 .boxes {
   display: grid;
   grid-template: repeat(2, $box-hight) / repeat(3, $box-minmax-width);
@@ -25,9 +16,9 @@ body {
     font-size: 100px;
     color: #fff;
 
-    @each $number, $difference in $colors {
-      &--#{$number} {
-        background-color: rgb((255 - $difference), 0, 0);
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb((255 - (($index - 1) * $color-step)), 0, 0);
       }
     }
   }

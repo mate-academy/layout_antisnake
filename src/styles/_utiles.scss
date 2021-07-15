@@ -7,11 +7,3 @@ $box-minmax-width: minmax(300px, 450px);
     grid-template: repeat($rows, $box-hight) / repeat($cols, $box-minmax-width);
   }
 }
-
-$colors:
-  1 0,
-  2 $color-step,
-  3 $color-step*2,
-  4 $color-step*3,
-  5 $color-step*4,
-  6 $color-step*5;
