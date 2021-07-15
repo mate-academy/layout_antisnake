@@ -3,11 +3,8 @@
 
 .boxes {
   display: grid;
-  grid-template: repeat(2, $box-hight) / repeat(3, $box-minmax-width);
-
-  @include media-grid(899px, 3, 2);
-
-  @include media-grid(599px, 6, 1);
+  grid-template: repeat(6, $box-hight) / repeat(auto-fill, $box-minmax-width);
+  @include media-grid (1200px, 2, 3);
 
   &__box {
     display: flex;
