@@ -1,0 +1,17 @@
+$color-step: 51;
+$box-hight: 300px;
+$box-minmax-width: minmax(300px, 450px);
+
+@mixin media-grid($max-width, $rows, $cols) {
+  @media (max-width: $max-width) {
+    grid-template: repeat($rows, $box-hight) / repeat($cols, $box-minmax-width);
+  }
+}
+
+$colors:
+  1 0,
+  2 $color-step,
+  3 $color-step*2,
+  4 $color-step*3,
+  5 $color-step*4,
+  6 $color-step*5;
