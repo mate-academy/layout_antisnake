@@ -28,7 +28,7 @@ body {
     6 #000;
   
   @each $i, $color in $colors {
-    & :nth-child(#{$i}) {
+    :nth-child(#{$i}) {
       background-color: $color;
     }
   }
