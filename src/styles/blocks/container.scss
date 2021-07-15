@@ -8,6 +8,12 @@
     justify-items: center;
     height: 300px;
 
+    @for $num from 1 through 6 {
+      &:nth-child(#{$num})::after {
+        content: "#{$num}";
+      }
+    }
+
     @each $index, $color in $block-colors {
       &:nth-child(#{$index}) {
         background-color: $color;
