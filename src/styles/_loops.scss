@@ -1,0 +1,6 @@
+@for $index from 1 to 7 {
+  .box:nth-child(#{$index}) {
+    background-color: rgb(256 * (6 - $index) / 5, 0, 0);
+    @include boxCreate();
+  }
+}
