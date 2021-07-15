@@ -1,3 +1,40 @@
+$levelOfRed: 
+  "1" 255,
+  "2" 204,
+  "3" 153,
+  "4" 102,
+  "5" 51,
+  "6" 0;
+  
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #fff;
+  
+  @each $index, $amount in $levelOfRed {
+    &--#{$index} {
+      background-color: rgb($amount, 0, 0);
+    }
+  }
 }
