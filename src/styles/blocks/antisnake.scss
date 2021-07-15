@@ -13,7 +13,7 @@
 
     @for $index from 1 through 6 {
       &:nth-child(#{$index}) {
-        background-color: rgb(calc(#{6 - $index} * 20%), 0%, 0%);
+        background-color: rgb(255 * (6 - $index) / 5, 0, 0);
       }
     }
   }
