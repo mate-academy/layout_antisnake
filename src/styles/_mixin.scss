@@ -1,0 +1,7 @@
+@mixin boxCreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $block-hight;
+  min-width: $block-hight;
+}
