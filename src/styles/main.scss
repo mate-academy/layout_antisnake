@@ -1,3 +1,48 @@
 body {
   margin: 0;
 }
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  &__item {
+    display: grid;
+    height: 300px;
+    font-family: arial, sans-serif;
+    font-size: 100px;
+    color: white;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__item:first-child {
+    background-color: red;
+  }
+
+  &__item:nth-child(2) {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__item:nth-child(3) {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__item:nth-child(4) {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__item:nth-child(5) {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__item:nth-child(6) {
+    background-color: black;
+  }
+}
+
+@media(max-width: 750px) {
+  .block {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
