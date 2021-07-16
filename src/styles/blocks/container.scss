@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  @include columns(1);
+  @include rows(6);
+  width: 100%;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+
+    @for $number from 1 through 6 {
+      &:nth-child(#{$number})::before {
+        content: "#{$number}";
+      }
+    }
+
+    $colors:
+      1 100%,
+      2 80%,
+      3 60%,
+      4 40%,
+      5 20%,
+      6 0%;
+
+    @each $order, $percent in $colors {
+      &:nth-child(#{$order}) {
+        background-color: rgb($percent, 0%, 0%) ;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    @include columns(2);
+    @include rows(3);
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    @include columns(3);
+    @include rows(2);
+  }
+}
