@@ -1,3 +1,45 @@
+$size: 300px;
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #fff;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($size, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax($size, 1fr));
+  }
+}
+
+$colors: 
+  1 rgb(255, 0, 0),
+  2 rgb(204, 0, 0),
+  3 rgb(153, 0, 0),
+  4 rgb(102, 0, 0),
+  5 rgb(51, 0, 0),
+  6 rgb(0, 0, 0);
+
+@each $index, $color in $colors {
+  .antisnake__block-#{$index} {
+    background-color: $color;
+  }
 }
