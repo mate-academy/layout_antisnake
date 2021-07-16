@@ -1,0 +1,21 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-size, 1fr));
+  grid-auto-rows: $item-size;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @each $index, $color in $bg-colors {
+    &__item:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(33.33%, 1fr));
+  }
+}
