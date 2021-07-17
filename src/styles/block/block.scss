@@ -7,6 +7,12 @@
     text-align: center;
     line-height: $box-size;
   }
+  
+  @for $index from 1 through 6 {
+    &__box:nth-child(#{$index})::before {
+     content: "#{$index}";
+    }
+  }
 
   @each $number, $rgb in $colors {
     &__box--#{$number} {
