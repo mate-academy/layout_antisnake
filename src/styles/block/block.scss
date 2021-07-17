@@ -1,7 +1,6 @@
 .block {
   display: grid;
-  grid-template-rows: repeat(2, minmax($box-size, 1fr));
-  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+  grid-template-columns: repeat(3, minmax($box-size, 1fr));
 
   &__box {
     text-align: center;
@@ -21,8 +20,14 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 899px) {
   .block {
-    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+    grid-template-columns: repeat(2, minmax($box-size, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .block {
+    grid-template-columns: repeat(1,minmax($box-size,1fr));
   }
 }
