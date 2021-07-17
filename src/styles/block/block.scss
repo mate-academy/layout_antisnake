@@ -1,0 +1,33 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($box-size, 1fr));
+
+  &__box {
+    text-align: center;
+    line-height: $box-size;
+  }
+  
+  @for $index from 1 through 6 {
+    &__box:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $number, $rgb in $colors {
+    &__box--#{$number} {
+      background-color: #{$rgb};
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .block {
+    grid-template-columns: repeat(2, minmax($box-size, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .block {
+    grid-template-columns: repeat(1,minmax($box-size,1fr));
+  }
+}
