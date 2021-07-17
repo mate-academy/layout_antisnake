@@ -10,7 +10,7 @@
   
   @for $index from 1 through 6 {
     &__box:nth-child(#{$index})::before {
-     content: "#{$index}";
+      content: "#{$index}";
     }
   }
 
@@ -21,7 +21,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .block {
     grid-template-columns: repeat(3, minmax($box-size, 1fr));
   }
