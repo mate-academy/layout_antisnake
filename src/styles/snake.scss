@@ -23,11 +23,11 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 899px) {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 599px) {
     grid-template-columns: minmax(300px, 1fr);
   }
 }
