@@ -1,3 +1,36 @@
+@import "../utils/extends";
+@import "../utils/variables";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33.33%, 1fr));
+  grid-auto-rows: 300px;
+
+  &__box {
+    @extend %dispGrid;
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (max-width: 451px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
 }
