@@ -1,0 +1,22 @@
+.block {
+  display: grid;
+  grid-template-rows: repeat(2, minmax($box-size, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  &__box {
+    text-align: center;
+    line-height: $box-size;
+  }
+
+  @each $number, $rgb in $colors {
+    &__box--#{$number} {
+      background-color: #{$rgb};
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .block {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+}
