@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height-min-width, 1fr));
+
+  &__block {
+    height: $height-min-width;
+    min-width: $height-min-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  @each $number, $color in $colors {
+    & > :nth-child(#{$number}) {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($height-min-width, 1fr));
+  }
+}
