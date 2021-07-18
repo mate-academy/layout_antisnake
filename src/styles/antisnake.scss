@@ -1,0 +1,26 @@
+.antisnake {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  &__box {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
+    }
+  }
+}
