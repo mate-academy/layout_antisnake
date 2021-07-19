@@ -1,7 +1,5 @@
 .container {
   display: grid;
-  @include columns(1);
-  @include rows(6);
   width: 100%;
 
   &__item {
@@ -35,13 +33,11 @@
 @media (min-width: 600px) and (max-width: 899px) {
   .container {
     @include columns(2);
-    @include rows(3);
   }
 }
 
 @media (min-width: 900px) {
   .container {
     @include columns(3);
-    @include rows(2);
   }
 }
