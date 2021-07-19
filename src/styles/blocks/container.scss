@@ -32,12 +32,12 @@
 
 @media (min-width: 600px) and (max-width: 899px) {
   .container {
-    @include columns(2);
+    grid-template-columns: repeat(2, minmax($size, 1fr));
   }
 }
 
 @media (min-width: 900px) {
   .container {
-    @include columns(3);
+    grid-template-columns: repeat(3, minmax($size, 1fr));
   }
 }
