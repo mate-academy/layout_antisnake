@@ -1,0 +1,29 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size-cell, 1fr));
+
+  @media(max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($size-cell, 1fr));
+  }
+
+  @media(max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__box {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: $size-cell;
+    color: #fff;
+    font-size: 100px;
+
+ 
+ 
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
+      }
+    }
+  }
+}
