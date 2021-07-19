@@ -1,0 +1,26 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-h, 1fr));
+  @media (min-width: $cell-h * 3) {
+    grid-template-columns: repeat(3, minmax($cell-h, 1fr));
+  }
+
+  &__cell {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: $cell-h;
+
+    @for $num from 1 through 6 {
+      &:nth-child(#{$num})::after {
+        content: "#{$num}";
+      }
+    }
+
+    @each $idx, $color in $colors {
+      &:nth-child(#{$idx}) {
+        background-color: $color;
+      }
+    }
+  }
+}
