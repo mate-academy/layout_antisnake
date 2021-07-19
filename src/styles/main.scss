@@ -4,10 +4,14 @@ $block-size: 300px;
   box-sizing: border-box;
 }
 
-.page-root {
-  margin: 0;
+html {
   font-family: Arial, sans-serif;
   font-size: 100px;
+}
+
+.page-root {
+  margin: 0;
+
   color: rgb(255, 255, 255);
 
 }
