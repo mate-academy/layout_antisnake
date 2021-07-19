@@ -1,3 +1,13 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+  box-sizing: border-box;
 }
+
+@import "./blocks/block.scss";
+@import "./blocks/main.scss";
