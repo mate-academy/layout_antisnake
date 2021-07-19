@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, minmax($box-size, 1fr));
 
   &__item {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     height: $box-size;
