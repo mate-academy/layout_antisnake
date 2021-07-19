@@ -11,8 +11,8 @@
   }
 
   &__box {
-    display: flex;
-    align-items: center;
+    display: grid;
+    align-content: center;
     justify-content: center;
     height: $size-cell;
     color: #fff;
