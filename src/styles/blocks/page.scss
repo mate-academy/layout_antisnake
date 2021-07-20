@@ -1,7 +1,6 @@
 .page {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(fill-auto, 1fr);
 
   &__snake {
     height: 300px;
