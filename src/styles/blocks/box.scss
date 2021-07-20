@@ -1,8 +1,8 @@
 .box {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: center;
+  justify-content: center;
   line-height: 300px;
 
   color: #fff;
-  text-align: center;
 }
