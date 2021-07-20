@@ -1,3 +1,75 @@
+$colors:
+  1 red,
+  2 #cc0100,
+  3 #990001,
+  4 #600,
+  5 #300,
+  6 #000;
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  text-align: center;
+  line-height: 300px;
+
+  &__item {
+    height: 300px;
+    width: 100%;
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $color, $color-code in $colors {
+    &__item:nth-child(#{$color}) {
+      background-color: $color-code;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  
+    text-align: center;
+    line-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  
+    text-align: center;
+    line-height: 300px;
+  }
 }
