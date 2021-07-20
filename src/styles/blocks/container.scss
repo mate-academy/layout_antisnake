@@ -5,7 +5,7 @@
   &__block {
     height: $height-min-width;
     min-width: $height-min-width;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     color: #fff;
