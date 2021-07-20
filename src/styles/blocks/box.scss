@@ -1,0 +1,40 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__num1 {
+    background-color: red;
+  }
+
+  &__num2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__num3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__num4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__num5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__num6 {
+    background-color: black;
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: auto auto auto;
+    }
+  }
+}
+
+.boxes {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
