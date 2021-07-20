@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @for $num from 1 through 6 {
+    &__box:nth-child(#{$num}) {
+      &::before {
+        content: "#{$num}";
+      }
+    }
+  }
+
+  $colors:
+    "1" 100%,
+    "2" 80%,
+    "3" 60%,
+    "4" 40%,
+    "5" 20%,
+    "6" 0%;
+
+  @each $number, $color in $colors {
+    &__box:nth-child(#{$number}) {
+      background-color: rgb($color, 0%, 0%);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: auto auto auto;
+  }
+}
