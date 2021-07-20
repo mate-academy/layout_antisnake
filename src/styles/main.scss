@@ -1,3 +1,27 @@
 body {
   margin: 0;
 }
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cell {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 100px;
+    color: #fff;
+  }
+
+  @for $n from 0 through 5 {
+    &__cell:nth-child(#{$n + 1}) {
+      background-color: rgb(calc(#{$n} * 51),0,0);
+    }
+  }
+}
