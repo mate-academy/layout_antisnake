@@ -1,0 +1,29 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__part {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $antisnake-part-size;
+  }
+
+  @each $index, $color in $bg-colors {
+    &__part:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 599px) {
+    & {
+      grid-template-columns: repeat(2, minmax($antisnake-part-size, 1fr));
+    }
+  }
+  
+  @media (min-width: 899px) {
+    & {
+      grid-template-columns: repeat(3, minmax($antisnake-part-size, 1fr));
+    }
+  }
+}
