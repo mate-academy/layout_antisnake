@@ -1,0 +1,49 @@
+.page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__snake {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+  }
+
+  &__snake--1 {
+    background-color: #f00;
+  }
+
+  &__snake--2 {
+    background-color: #c00;
+  }
+
+  &__snake--3 {
+    background-color: #900;
+  }
+
+  &__snake--4 {
+    background-color: #600;
+  }
+
+  &__snake--5 {
+    background-color: #300;
+  }
+
+  &__snake--6 {
+    background-color: #000;
+  }
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
