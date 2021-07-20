@@ -1,16 +1,12 @@
-.container {
+.snake {
   display: grid;
 
-  @media (min-width: 451px) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   @media (min-width: 900px) {
-    & {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &__item {
