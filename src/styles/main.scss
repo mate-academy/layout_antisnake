@@ -10,7 +10,6 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  max-width: 1199px;
 }
 
 .block {
