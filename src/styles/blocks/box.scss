@@ -1,4 +1,4 @@
-.box {
+.container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
@@ -28,12 +28,12 @@
 
   @media (min-width: 1200px) {
     & {
-      grid-template-columns: auto auto auto;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
 
-.boxes {
+.box {
   height: 300px;
   text-align: center;
   line-height: 300px;
