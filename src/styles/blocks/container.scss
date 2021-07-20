@@ -1,14 +1,8 @@
 .container {
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(3, 300px);
-
-  justify-content: center;
-  align-content: center;
-
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, minmax(300px, 1fr));
 
   &__box-1 {
     background-color: $color-cont-1;
@@ -39,13 +33,7 @@
   .container {
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-template-rows: repeat(auto-fill, 300px);
-
-    justify-content: center;
-    align-content: center;
-
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
