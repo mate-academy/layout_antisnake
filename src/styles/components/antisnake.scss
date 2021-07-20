@@ -1,7 +1,7 @@
 .antisnake {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
-  grid-auto-rows: 300px;
+  grid-auto-rows: $block-size;
   justify-items: stretch;
 
 @media (min-width: 600px) and (max-width: 899px) {
