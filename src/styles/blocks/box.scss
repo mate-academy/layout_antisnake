@@ -1,0 +1,35 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 33.33%));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 50%));
+  }
+  
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 100%));
+  }
+
+  &__item {
+    color: #fff;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    
+    $colors:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+  
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  
+  }
+
+}
