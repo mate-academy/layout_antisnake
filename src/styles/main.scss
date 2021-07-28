@@ -1,3 +1,62 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+}
+
+.block {
+  box-sizing: border-box;
+  display: flex;
+  background-color: red;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 100px;
+}
+
+.block:nth-child(2) {
+  background-color: rgb(204, 0, 0);
+}
+
+.block:nth-child(3) {
+  background-color: rgb(153, 0, 0);
+}
+
+.block:nth-child(4) {
+  background-color: rgb(102, 0, 0);
+}
+
+.block:nth-child(5) {
+  background-color: rgb(51, 0, 0);
+}
+
+.block:nth-child(6) {
+  background-color: black;
+}
+
+@for $nth-num from 1 through 6 {
+  .block:nth-child(#{$nth-num})::before {
+    content: "#{$nth-num}";
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 300px);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    grid-template-rows: repeat(6, 300px);
+  }
 }
