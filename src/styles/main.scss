@@ -1,3 +1,66 @@
+$cell-size: 300px;
+$font-size: 100px;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $font-size;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: $cell-size;
+    min-width: $cell-size;
+
+    color: white;
+  }
+
+  &__box:first-child {
+    background-color: #f00;
+  }
+
+  &__box:nth-child(2) {
+    background-color: #c00;
+  }
+
+  &__box:nth-child(3) {
+    background-color: #900;
+  }
+
+  &__box:nth-child(4) {
+    background-color: #600;
+  }
+
+  &__box:nth-child(5) {
+    background-color: #300;
+  }
+
+  &__box:last-child {
+    background-color: #000;
+  }
 }
