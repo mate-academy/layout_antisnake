@@ -1,3 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.box {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 1199px;
+
+  @for $index from 0 through 5 {
+    &>:nth-child(#{$index+1}) {
+      background-color: rgb(calc( 100% - (20% * #{$index})) ,0%,0%);
+    }
+  }
+
+  &__item {
+    height: 300px;
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    line-height: 300px;
+  }
 }
