@@ -1,3 +1,46 @@
+@use "sass:math";
+
+$cell-size: 300px;
+$font-size: 100px;
+$text-color: #fff;
+$cell-color: 255;
+$cell-amount: 6;
+$max-column-amount: 3;
+
 body {
+  font-family: Arial, sans-serif;
+  font-size: $font-size;
+  color: $text-color;
   margin: 0;
+}
+
+.main_block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
+  grid-template-rows: auto;
+  justify-content: center;
+  align-content: center;
+
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
+}
+
+.block {
+  display: flex;
+  height: $cell-size;
+  justify-content: center;
+  align-items: center;
+
+  @for $index from 1 through $cell-amount {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @for $index from 1 through $cell-amount {
+    &:nth-child(#{$index}) {
+      background-color: rgb((255 * ($cell-amount - $index)) / 5, 0, 0);
+    }
+  }
 }
