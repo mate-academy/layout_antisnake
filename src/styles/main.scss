@@ -4,6 +4,15 @@ html {
   color: #fff;
 }
 
+$block-colors: (
+  1: red,
+  2: rgb(204, 0, 0),
+  3: rgb(153, 0, 0),
+  4: rgb(102, 0, 0),
+  5: rgb(51, 0, 0),
+  6: black,
+);
+
 body {
   margin: 0;
 }
@@ -17,29 +26,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    &--1 {
-      background-color: red;
-    }
-  
-    &--2 {
-      background-color: rgb(204, 0, 0);
-    }
-  
-    &--3 {
-      background-color: rgb(153, 0, 0),;
-    }
-  
-    &--4 {
-      background-color: rgb(102, 0, 0);
-    }
-  
-    &--5 {
-      background-color: rgb(51, 0, 0);
-    }
-  
-    &--6 {
-      background-color: black;
+
+    @each $num, $color in $block-colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
     }
   }
 }
