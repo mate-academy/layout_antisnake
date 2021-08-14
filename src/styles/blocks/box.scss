@@ -1,0 +1,22 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax($box-size, 1fr));
+}
+
+@media (min-width: 300px) {
+  .box {
+    grid-template-columns: repeat(1, minmax($box-size, 1fr));
+  }
+}
+
+@media (min-width: 600px) {
+  .box {
+    grid-template-columns: repeat(2, minmax($box-size, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+}

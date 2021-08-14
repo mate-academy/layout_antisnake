@@ -1,0 +1,18 @@
+.box__block {
+  display: grid;
+  height: $box-size;
+  justify-content: center;
+  align-items: center;
+}
+
+@each $num, $color in $colors {
+  .box__block:nth-child(#{$num}) {
+    background-color: #{$color};
+  }
+}
+
+@for $number from 1 through 6 {
+  .box__block:nth-child(#{$number})::after {
+    content: "#{$number}";
+  }
+}
