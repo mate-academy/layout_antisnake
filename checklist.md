@@ -7,7 +7,7 @@
 - use alternative font-family in case the main one doesn't work [like this](https://www.w3schools.com/cssref/pr_font_font-family.asp)
 - we preferably use classes for styling, not tags, ids, attributes or something else
 - don't increase specificity of selectors [about selectors specificity](https://www.w3schools.com/css/css_specificity.asp)
-- if you want `box-sizing: border-box` property, use it with `*`-selector because all elements need it so that you don't have to calculate `width - border`
+- if you want `boxes__box-sizing: border-boxes__box` property, use it with `*`-selector because all elements need it so that you don't have to calculate `width - border`
 - check the demo page with different screen sizes (including those bigger than 1700px)
 - do not use overcomplicated media conditions (try to follow desktop-driven or mobile-driven development)
 - are you sure you've polished your code? :)
