@@ -1,3 +1,49 @@
+$colors:
+  rgb(255, 0, 0) 1,
+  rgb(204, 0, 0) 2,
+  rgb(153, 0, 0) 3,
+  rgb(102, 0, 0) 4,
+  rgb(51, 0, 0) 5,
+  rgb(0, 0, 0) 6;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: 100%;
+  margin: 0 auto;
+
+  &__element {
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+
+    @each $color, $i in $colors {
+      &:nth-child(#{$i}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 50% 50%;
+  }
+
+  @media (min-width: 900px) {
+    max-width: 1200px;
+    grid-template-columns: repeat(3, 33.33%);
+  }
 }
