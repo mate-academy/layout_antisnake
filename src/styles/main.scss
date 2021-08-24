@@ -12,14 +12,14 @@ html {
   grid-template-columns: 100%;
   margin: auto;
   box-sizing: border-box;
-}
 
-.container__block {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  color: #fff;
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #fff;
+  }
 }
 
 .block-1 {
