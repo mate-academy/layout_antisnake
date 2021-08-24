@@ -1,3 +1,34 @@
+$colors: "1" #f00, "2" #c00, "3" #900, "4" #600, "5" #300, "6" #000;
+
+html {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, auto);
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, auto);
+  }
 }
