@@ -17,7 +17,6 @@ body {
 .box {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  max-width: 1199px;
 
   &__blocks {
     height: 300px;
@@ -30,5 +29,11 @@ body {
         background-color: #{$color};
       }
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .box {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
