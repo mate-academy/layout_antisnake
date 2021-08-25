@@ -1,9 +1,6 @@
+@import "setup";
 @import "reset";
 @import "vars";
-
-body {
-  font-family: Arial, sans-serif;
-}
 
 .container {
   display: grid;
@@ -28,9 +25,3 @@ body {
     grid-template-columns: repeat(3, minmax($item-size, 1fr));
   }
 }
-
-
-
-
-
-
