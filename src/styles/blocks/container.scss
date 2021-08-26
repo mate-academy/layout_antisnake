@@ -1,0 +1,15 @@
+.container {
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100%;
+
+  .box {
+    display: flex;
+    box-sizing: border-box;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+}
