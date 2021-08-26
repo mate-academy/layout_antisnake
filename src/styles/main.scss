@@ -1,3 +1,45 @@
 body {
   margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 300px;
+  color: white;
+}
+
+.container__first {
+  background-color: rgb(100%, 0, 0);
+}
+
+.ccontainer__second {
+  background-color: rgb(80%, 0, 0);
+}
+
+.container__third {
+  background-color: rgb(60%, 0, 0);
+}
+
+.container__fourth {
+  background-color: rgb(40%, 0, 0);
+}
+
+.container__fifth {
+  background-color: rgb(20%, 0, 0);
+}
+
+.container__sixth {
+  background-color: rgb(0, 0, 0);
 }
