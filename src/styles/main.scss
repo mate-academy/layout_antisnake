@@ -11,6 +11,14 @@ body {
 }
 
 .antisnake {
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, auto);
+  }
+  
   display: grid;
   grid-template-columns: repeat(auto-fill, auto);
 
@@ -38,17 +46,5 @@ body {
   }
   &__block--6 {
     background-color: #000;
-  }
-}
-
-@media (min-width: 600px) {
-  .antisnake {
-    grid-template-columns: repeat(2, auto);
-  }
-}
-
-@media (min-width: 900px) {
-  .antisnake {
-    grid-template-columns: repeat(3, auto);
   }
 }
