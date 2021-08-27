@@ -1,3 +1,41 @@
+$block-height: 300px;
+$blocks-color:
+  "1" rgb(100%, 0%, 0%),
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" #000;
+
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+  }
+
+  @each $blocks, $color in $blocks-color {
+    &__block:nth-child(#{$blocks}) {
+      background-color: $color;
+    }
+    &__block:nth-child(#{$blocks})::after {
+      content: "#{$blocks}";
+    }
+  }
+  
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, auto);
+  }
 }
