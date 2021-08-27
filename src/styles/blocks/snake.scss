@@ -1,0 +1,33 @@
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 2 *$min-width-of-slice-of-snake) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 3 * $min-width-of-slice-of-snake) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__slice {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $high-of-snake;
+    font-size: 100px;
+    color: #fff;
+
+    @for $number from 1 through 6 {
+      &:nth-child(#{$number}) {
+        background-color: rgb(100% - 20% * ($number - 1), 0, 0);
+
+        &::before {
+          position: absolute;
+          content: "#{$number}";
+        }
+      }
+    }
+  }
+}
