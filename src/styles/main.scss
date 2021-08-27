@@ -1,5 +1,4 @@
 $block-height: 300px;
-
 $blocks-color:
   "1" rgb(100%, 0%, 0%),
   "2" rgb(80%, 0%, 0%),
@@ -9,8 +8,8 @@ $blocks-color:
   "6" #000;
 
 body {
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .antisnake {
