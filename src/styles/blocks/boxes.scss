@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $box-size;
+
+    @each $number, $color in $box-colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: $box-size * ($max-cols + 1)) {
+    grid-template-columns: repeat($max-cols, minmax($box-size, 1fr));
+  }
+}
