@@ -4,12 +4,13 @@
 
   &__block {
     display: grid;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    color: #fff;
     height: 300px;
     text-align: center;
     align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
 
     $blocksColor:
       "1" rgb(100%, 0%, 0%),
