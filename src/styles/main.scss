@@ -1,3 +1,32 @@
-body {
-  margin: 0;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    display: grid;
+    height: 300px;
+    text-align: center;
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    $blocksColor:
+      "1" rgb(100%, 0%, 0%),
+      "2" rgb(80%, 0%, 0%),
+      "3" rgb(60%, 0%, 0%),
+      "4" rgb(40%, 0%, 0%),
+      "5" rgb(20%, 0%, 0%),
+      "6" rgb(0%, 0%, 0%);
+  
+    @each $block, $color in $blocksColor {
+      &--#{$block} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
