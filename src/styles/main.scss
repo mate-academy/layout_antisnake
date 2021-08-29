@@ -19,30 +19,30 @@ body {
     align-items: center;
     height: 300px;
     color: #fff;
+  }
 
-    &--snakes-1 {
-      background-color: red;
-    }
+  &__snakes--1 {
+    background-color: red;
+  }
 
-    &--snakes-2 {
-      background-color: rgb(80%, 0%, 0%);
-    }
+  &__snakes--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
 
-    &--snakes-3 {
-      background-color: rgb(60%, 0%, 0%);
-    }
+  &__snakes--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
 
-    &--snakes-4 {
-      background-color: rgb(40%, 0%, 0%);
-    }
+  &__snakes--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
 
-    &--snakes-5 {
-      background-color: rgb(20%, 0%, 0%);
-    }
+  &__snakes--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
 
-    &--snakes-6 {
-      background-color: #000;
-    }
+  &__snakes-6 {
+    background-color: #000;
   }
 }
 
