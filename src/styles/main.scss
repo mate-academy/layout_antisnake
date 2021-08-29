@@ -1,3 +1,17 @@
+@import "./src/styles/vars.scss";
+@import "./src/styles/blocks/container.scss";
+
+html {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+@media (min-width: 3 * $box-size) {
+  .container {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
 }
