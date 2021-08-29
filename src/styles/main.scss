@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "../fonts/_font";
+@import "./utils/_reset";
+@import "./utils/_variations";
+@import "./block/_snake";
