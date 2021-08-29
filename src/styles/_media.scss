@@ -1,0 +1,12 @@
+@media (min-width: 600px) {
+  .box {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    max-width: 1200px;
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}

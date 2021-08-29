@@ -1,0 +1,22 @@
+.box {
+  display: grid;
+  grid-template-columns: 100%;
+  margin: auto;
+
+  &__snake {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #fff;
+  }
+
+  @each $blocks, $color in $block-color {
+    &__snake:nth-child(#{$blocks}) {
+      background-color: $color;
+    }
+    &__block:nth-child(#{$blocks})::after {
+      content: "#{$blocks}";
+    }
+  }
+}
