@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($box-size, 1fr));
+
+  @media(min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, minmax($box-size, 1fr));
+    }
+  }
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($box-size, 1fr));
+    }
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $box-size;
+    color: #fff;
+  }
+
+  @each $number, $color in $box-colors {
+    &__box--#{$number} {
+      background-color: $color;
+    }
+  }
+}
