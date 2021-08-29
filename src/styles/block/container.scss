@@ -8,11 +8,11 @@
     display: grid;
     justify-content: center;
     align-items: center;
-  }
 
-  @each $color, $value in $colors {
-    &_box_#{$value} {
-      background: #{$color};
+    @each $color, $value in $colors {
+      &--#{$value} {
+        background: #{$color};
+      }
     }
   }
 
