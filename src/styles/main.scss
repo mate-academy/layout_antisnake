@@ -13,22 +13,22 @@ body {
     align-items: center;
     justify-content: center;
     height: 300px;
-    &-1 {
+    &--1 {
       background-color: #f00;
     }
-    &-2 {
+    &--2 {
       background-color: #c00;
     }
-    &-3 {
+    &--3 {
       background-color: #900;
     }
-    &-4 {
+    &--4 {
       background-color: #600;
     }
-    &-5 {
+    &--5 {
       background-color: #300;
     }
-    &-6 {
+    &--6 {
       background-color: #000;
     }
   }
