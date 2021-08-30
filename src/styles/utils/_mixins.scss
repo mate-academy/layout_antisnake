@@ -1,0 +1,4 @@
+@mixin box__block-size($size) {
+  min-width: $size;
+  height: $size;
+}
