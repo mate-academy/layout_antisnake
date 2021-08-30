@@ -1,0 +1,25 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($cell-size, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    height: $cell-size;
+  }
+
+  @media(min-width: 2 * $cell-size) {
+    & {
+      grid-template-columns: repeat(2, minmax($cell-size, 1fr));
+    }
+  }
+
+  @media(min-width: 3 * $cell-size) {
+    & {
+      grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+    }
+  }
+}
