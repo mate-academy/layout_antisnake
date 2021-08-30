@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-columns: minmax($box-hieght, 1fr);
+  grid-template-rows: repeat(6, $box-hieght);
+
+  @media (min-width: 600px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(2, minmax($box-hieght, 1fr));
+      grid-template-rows: repeat(3, $box-hieght);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(3, minmax($box-hieght, 1fr));
+      grid-template-rows: repeat(2, $box-hieght);
+    }
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
