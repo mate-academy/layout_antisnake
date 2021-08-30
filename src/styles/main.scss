@@ -1,9 +1,9 @@
 
-body {
+.body {
   margin: 0;
 }
 
-h1 {
+.main-title {
   position: absolute;
   visibility: hidden;
 }
@@ -19,7 +19,7 @@ h1 {
 
   @for $i from 1 through 6 {
     $redTone: 100% * (6 - $i) * 0.2;
-    &-#{$i} {
+    &__block-#{$i} {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 100px;
       height: 300px;
