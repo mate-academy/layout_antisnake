@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($squareSize, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $squareSize;
+  }
+
+  @media (min-width: 2 * $squareSize) {
+    & {
+      grid-template-columns: repeat(2, minmax($squareSize, 1fr));
+    }
+  }
+
+  @media (min-width: 3 * $squareSize) {
+    & {
+      grid-template-columns: repeat(3, minmax($squareSize, 1fr));
+    }
+  }
+}
