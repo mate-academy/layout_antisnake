@@ -1,3 +1,53 @@
+$colors:
+  "1" #f00,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" #000;
+  
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  color: #fff;
+
+  &__block {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+@for $i from 1 through 6 {
+  .block-#{$i}::before {
+    content: "#{$i}";
+  }
+}
+
+@each $color-index, $color in $colors {
+  .block-#{$color-index} {
+    background-color: #{$color};
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
