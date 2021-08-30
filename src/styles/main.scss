@@ -1,3 +1,11 @@
+$colors:
+  "1" #f00,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" #000;
+  
 html {
   font-family: Arial, sans-serif;
   font-size: 100px;
@@ -20,28 +28,16 @@ body {
   }
 }
 
-.block-1 {
-  background-color: #f00;
+@for $i from 1 through 6 {
+  .block-#{$i}::before {
+    content: "#{$i}";
+  }
 }
 
-.block-2 {
-  background-color: #c00;
-}
-
-.block-3 {
-  background-color: #900;
-}
-
-.block-4 {
-  background-color: #600;
-}
-
-.block-5 {
-  background-color: #300;
-}
-
-.block-6 {
-  background-color: #000;
+@each $color-index, $color in $colors {
+  .block-#{$color-index} {
+    background-color: #{$color};
+  }
 }
 
 @media (min-width: 600px) and (max-width: 899px) {
