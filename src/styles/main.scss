@@ -1,3 +1,40 @@
 body {
   margin: 0;
 }
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  align-content: center;
+
+  &__block {
+    height: 300px;
+    line-height: 300px;
+    color: #fff;
+    font-family: Arial, serif;
+    font-size: 100px;
+    text-align: center;
+    flex-basis: 100%;
+
+    $colors:
+      "1" red,
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $index, $color in $colors {
+      &--num_#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
