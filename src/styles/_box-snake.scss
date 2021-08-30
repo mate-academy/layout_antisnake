@@ -1,0 +1,27 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: auto;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  &__snake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #fff;
+    
+  }
+
+  @each $blocks, $color in $block-color {
+    &__snake:nth-child(#{$blocks}) {
+      background-color: $color;
+    }
+    &__block:nth-child(#{$blocks})::after {
+      content: "#{$blocks}";
+    }
+  }
+}
