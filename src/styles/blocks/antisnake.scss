@@ -27,7 +27,6 @@ $colors-list:
 
 @media (min-width: 900px) {
   .antisnake {
-    max-width: 1200px;
     grid-template-columns: repeat(3, 33.33%);
   }
 }
