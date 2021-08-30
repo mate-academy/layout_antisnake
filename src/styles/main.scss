@@ -1,3 +1,38 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size: 100px;
+  line-height: 300px;
+  color: #fff;
+}
+
+.container {
+  margin: 0;
+  display: grid;
+  max-width: 1200px;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  $colors:
+    "5-red" rgb(255, 0, 0),
+    "4-red" rgb(204, 0, 0),
+    "3-red" rgb(153, 0, 0),
+    "2-red" rgb(102, 0, 0),
+    "1-red" rgb(51, 0, 0),
+    "black" rgb(0, 0, 0);
+
+  @each $name, $color in $colors {
+    &__block_#{$name} {
+      background-color: $color;
+      height: 300px;
+      min-width: 300px;
+    }
+  }
 }
