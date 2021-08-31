@@ -1,6 +1,7 @@
 body {
   margin: 0;
 }
+
 $colors:
   1 rgb(100%, 0, 0),
   2 rgb(80%, 0, 0),
@@ -11,9 +12,10 @@ $colors:
 
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__block {
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +31,7 @@ $colors:
     }
   }
 
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, minmax(300px,1fr));
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
