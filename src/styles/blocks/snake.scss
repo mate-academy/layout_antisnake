@@ -1,0 +1,32 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__part {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+
+    @for $num from 0 through 5 {
+      &--#{$num} {
+        background-color: rgb(100% - $num * 20, 0, 0);
+      }
+  
+      &--#{$num}:before {
+        content: "#{$num + 1}";
+        color: #fff;
+      }
+    }
+  }
+}
