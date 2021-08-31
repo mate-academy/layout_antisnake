@@ -1,3 +1,37 @@
 body {
   margin: 0;
 }
+
+$colors:
+  1 rgb(100%, 0, 0),
+  2 rgb(80%, 0, 0),
+  3 rgb(60%, 0, 0),
+  4 rgb(40%, 0, 0),
+  5 rgb(20%, 0, 0),
+  6 rgb(0, 0, 0);
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 100px;
+    font-family: Arial, sans-serif, serif;
+  }
+
+  @each $index, $color in $colors {
+    &__block--#{$index} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
