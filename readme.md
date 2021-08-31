@@ -10,7 +10,7 @@ ___
 Display six colored blocks on the screen without any extra margins:
 
 - Use `grid`
-- Each block should be `300px` high.
+- Each block should be `300px` high
 - Each block should have its number (1 to 6) placed in its center in white Arial 100px font.
   - Block 1 must be `red`
   - Block 2 must be 4/5 `red` and 1/5 `black`
