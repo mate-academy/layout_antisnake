@@ -1,0 +1,42 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  grid-template-rows: repeat(2, $block-size);
+}
+
+.block {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: $block-size;
+}
+
+.block:first-child {
+  background-color: red;
+}
+
+.block:nth-child(2) {
+  background-color: rgb(80%, 0, 0);
+}
+
+.block:nth-child(3) {
+  background-color: rgb(60%, 0, 0);
+}
+
+.block:nth-child(4) {
+  background-color: rgb(40%, 0, 0);
+}
+
+.block:nth-child(5) {
+  background-color: rgb(20%, 0, 0);
+}
+
+.block:last-child {
+  background-color: black;
+}
+
+@media screen and (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
