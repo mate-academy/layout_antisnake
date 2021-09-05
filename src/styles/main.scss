@@ -1,3 +1,33 @@
 body {
   margin: 0;
 }
+
+.antisnake {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: 300px;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  $colors:
+    "1" rgb(255, 0, 0),
+    "2" rgb(204, 0, 0),
+    "3" rgb(153, 0, 0),
+    "4" rgb(102, 0, 0),
+    "5" rgb(51, 0, 0),
+    "6" rgb(0, 0, 0);
+
+  @each $name, $color in $colors {
+    & :nth-child(#{$name}) {
+      background-color: $color;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
