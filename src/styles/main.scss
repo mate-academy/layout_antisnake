@@ -1,3 +1,29 @@
 body {
   margin: 0;
 }
+
+$size: 300px;
+$colors: 
+  "1" rgb(100%, 0%, 0%),
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" rgb(0, 0, 0);
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  margin: 0 auto;
+  color: white;
+  font-size: 100px;
+  line-height: $size;
+  text-align: center;
+  max-width: 3*$size;
+ 
+  @each $number, $color in $colors {
+    & :nth-child(#{$number}) {
+      background-color: $color;
+    }
+  }
+}
