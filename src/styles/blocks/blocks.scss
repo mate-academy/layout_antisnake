@@ -8,6 +8,12 @@ body {
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 .block {
@@ -22,4 +28,5 @@ body {
       background-color: $color;
     }
   }
+
 }
