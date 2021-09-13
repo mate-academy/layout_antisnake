@@ -20,11 +20,16 @@ $colors:
   font-size: 100px;
   line-height: $size;
   text-align: center;
-  max-width: 3*$size;
- 
+   
   @each $number, $color in $colors {
     & :nth-child(#{$number}) {
       background-color: $color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
