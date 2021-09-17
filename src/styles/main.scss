@@ -1,3 +1,29 @@
+@import "./utils/variables";
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
+
+  @media (min-width: $min-num-of-col * $block-width) {
+    grid-template-columns: repeat($min-num-of-col, minmax($block-width, 1fr));
+  }
+
+  &__block {
+    height: $block-height;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    line-height: $block-height;
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  }
 }
