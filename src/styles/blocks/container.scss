@@ -7,7 +7,6 @@
     @extend %flex_center;
     height: $block_size;
     color: $text_color;
-    box-sizing: border-box;
     @include content_and_color;
   }
 }
