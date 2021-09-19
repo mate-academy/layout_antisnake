@@ -1,0 +1,11 @@
+@mixin content_and_color {
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index}) {
+      background-color: rgb(calc(255 - (#{$index} - 1) * 51), 0, 0);
+    }
+
+    &:nth-child(#{$index}):before {
+      content: "#{$index}";
+    }
+  }
+}

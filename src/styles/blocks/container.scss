@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+  #{"minmax(max((100% / 3), 300px), 1fr)"});
+
+  &__block {
+    @extend %flex_center;
+    height: $block_size;
+    color: $text_color;
+    @include content_and_color;
+  }
+}
