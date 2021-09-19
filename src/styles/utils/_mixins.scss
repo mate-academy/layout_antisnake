@@ -1,0 +1,4 @@
+@mixin size-box($size-box) {
+  min-width: $size-box;
+  min-height: $size-box;
+}

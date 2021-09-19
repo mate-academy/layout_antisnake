@@ -1,0 +1,23 @@
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-box, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template: repeat(2, $size-box) / repeat(3, minmax($size-box, 1fr));
+  }
+
+  &__box {
+    @extend %flex-center;
+    @include size-box($size-box);
+
+    @for $nth-child from 1 through 6 {
+      &:nth-child(#{$nth-child}) {
+        background-color: rgb(255 - ($nth-child - 1) * (255 / 5), 0, 0);
+
+        &::before {
+          content: "#{$nth-child}";
+        }
+      }
+    }
+  }
+}
