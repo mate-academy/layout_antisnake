@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @for $var from 0 through 5 {
+    & > :nth-child(#{$var + 1}) {
+      background-color: rgb(calc(255 - 51 * #{$var}), 0, 0);
+    }
+  }
+
+  &__ceil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $ceil-width;
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
