@@ -1,0 +1,18 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include screen(750px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include screen(450px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__skin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $snake-part;
+    @include background-color;
+  }
+}

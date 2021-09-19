@@ -1,0 +1,18 @@
+@mixin background-color {
+  @for $count from 0 through 5 {
+    &:nth-child(#{$count + 1}) {
+      background-color: getColor($count);
+    }
+  }
+}
+
+@mixin font-set($font, $fontSize) {
+  font-family: $font, Helvetica, sans-serif;
+  font-size: $fontSize;
+}
+
+@mixin screen($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
