@@ -1,0 +1,13 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $box-size;
+
+  @each $box-num, $color in $boxes-colors {
+    &--#{$box-num} {
+      background-color: #{$color};
+    }
+  }
+}

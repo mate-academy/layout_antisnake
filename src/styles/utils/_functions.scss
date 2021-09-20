@@ -1,0 +1,3 @@
+@function getSum($size, $boxes-number) {
+  @return $size * $boxes-number;
+}
