@@ -1,0 +1,30 @@
+.page {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,
+  #{"minmax(max(300px, (33.3%)), 1fr)"});
+}
+
+.container__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #fff;
+
+  @for $number from 1 through 6 {
+    &--#{$number}::before {
+      content: "#{$number}";
+    }
+  }
+
+  @each $number, $color in $color-box {
+    &--#{$number} {
+      background-color: #{$color};
+    }
+  }
+}
