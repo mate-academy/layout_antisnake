@@ -1,0 +1,11 @@
+@mixin mobile {
+  @media (max-width: $small) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
