@@ -1,0 +1,17 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $box-size;
+
+    @each $color, $perc in $color-percent {
+      &--#{$color} {
+        background-color: rgba($perc, 0%, 0%, 1);
+      }
+    }
+  }
+}
