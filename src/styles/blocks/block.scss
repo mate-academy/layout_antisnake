@@ -1,0 +1,32 @@
+.block {
+  flex-basis: $block-basis-size;
+  line-height: $block-basis-size;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
+
+  &--1 {
+    background-color: $red100;
+  }
+
+  &--2 {
+    background-color: $red80;
+  }
+
+  &--3 {
+    background-color: $red60;
+  }
+
+  &--4 {
+    background-color: $red40;
+  }
+
+  &--5 {
+    background-color: $red20;
+  }
+
+  &--6 {
+    background-color: $red0;
+  }
+}
