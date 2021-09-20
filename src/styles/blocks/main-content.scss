@@ -1,0 +1,22 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-of-block, 1fr));
+  grid-template-rows: repeat(6,$size-of-block);
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3, minmax($size-of-block, 1fr));
+  }
+
+  &__block {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    @each $name, $value in $blackout {
+      &--color--#{$name} {
+        background-color: rgb($value, 0, 0);
+      }
+    }
+  }
+}
