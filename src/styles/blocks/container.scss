@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  @include tablet;
+  @include mobile;
+
+  &__block {
+    @extend %flex-centering;
+    min-width: $block-min-width;
+    height: $block-height;
+    @extend %large-text;
+    color: $text-color;
+
+    @for $index from 1 through $block-count {
+      &--#{$index} {
+        background-color: getColor($red-color, $black-color, $index);
+      }
+    }
+  }
+}
