@@ -1,0 +1,31 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $ceil-size;
+
+    @for $index from 0 through 5 {
+      &:nth-child(#{$index + 1}) {
+        background-color: rgb(calc(255 - 51 * #{$index}), 0, 0);
+      }
+    }
+
+    @for $content from 1 through 6 {
+      &:nth-child(n + #{$content})::before {
+        content: "#{$content}";
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
