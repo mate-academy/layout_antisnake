@@ -1,17 +1,17 @@
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($size-of-block, 1fr));
-  grid-template-rows: repeat(6,$size-of-block);
+  grid-template-columns: repeat(auto-fill, minmax($width-of-block, 1fr));
+  grid-template-rows: repeat(2, $width-of-block);
 
   @media (min-width:1200px) {
-    grid-template-columns: repeat(3, minmax($size-of-block, 1fr));
+    grid-template-columns: repeat(3, minmax($width-of-block, 1fr));
   }
 
   &__block {
-
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: $height-of-block;
   
     @each $name, $value in $blackout {
       &--color--#{$name} {
