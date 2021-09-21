@@ -1,4 +1,8 @@
 .block {
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
 
@@ -9,7 +13,7 @@
     height: $box-size;
 
     @each $color, $perc in $color-percent {
-      &--#{$color} {
+      &:nth-child(#{$color}) {
         background-color: rgba($perc, 0%, 0%, 1);
       }
     }
