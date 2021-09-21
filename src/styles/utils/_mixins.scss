@@ -11,8 +11,8 @@
   font-size: $fontSize;
 }
 
-@mixin screen($max) {
-  @media screen and (max-width: $max) {
+@mixin MinWidth-screen($width) {
+  @media screen and (min-width: $width) {
     @content;
   }
 }

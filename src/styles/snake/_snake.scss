@@ -1,17 +1,15 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  @include screen(750px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @include screen(450px) {
-    grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax($snake-part, 1fr));
+  @include MinWidth-screen(1200px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &__skin {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 300px;
     height: $snake-part;
     @include background-color;
   }
