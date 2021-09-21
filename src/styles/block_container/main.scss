@@ -1,0 +1,34 @@
+@import "variables";
+@import "extend";
+@import "normalize";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__box {
+    @extend %text-center;
+    height: $size_block;
+    color: white;
+  }
+
+  @for $index from 1 through 6 {
+    & :nth-child(n + #{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $index, $color in $colors-block {
+    & :nth-child(n + #{$index}) {
+      background-color: #{$color};
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
