@@ -2,17 +2,17 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  @for $var from 0 through 5 {
-    & > :nth-child(#{$var + 1}) {
-      background-color: rgb(calc(255 - 51 * #{$var}), 0, 0);
-    }
-  }
-
-  &__ceil {
+  &__cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: $ceil-width;
+    height: $cell-width;
+
+    @for $var from 0 through 5 {
+      &--#{$var + 1} {
+        background-color: rgb(calc(255 - 51 * #{$var}), 0, 0);
+      }
+    }
   }
 
   @media (max-width: 899px) {
