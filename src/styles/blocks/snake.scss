@@ -1,0 +1,23 @@
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  &__part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $snake-part-size;
+
+    @each $num, $snake-color in $snake-part-colors {
+      &:nth-child(n + #{$num}) {
+        background-color: $snake-color;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
