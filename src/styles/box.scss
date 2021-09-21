@@ -1,0 +1,22 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+
+  @media (min-width:900px) {
+    grid-template-columns: repeat(3, minmax($min-width, 1fr));
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: $min-width;
+
+    @each $num-card, $bcc in $background-color {
+      &:nth-child(n + #{$num-card}) {
+        background-color: #{$bcc};
+      }
+    }
+  }
+}
