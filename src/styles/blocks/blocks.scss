@@ -5,26 +5,25 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill,
-  #{"minmax(max(300px, (33.3%)), 1fr)"});
-}
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 33.33%));
 
-.container__box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  color: #fff;
-
-  @for $number from 1 through 6 {
-    &--#{$number}::before {
-      content: "#{$number}";
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-size;
+    color: #fff;
+  
+    @for $number from 1 through 6 {
+      &--#{$number}::before {
+        content: "#{$number}";
+      }
     }
-  }
 
-  @each $number, $color in $color-box {
-    &--#{$number} {
-      background-color: #{$color};
+    @each $number, $color in $color-box {
+      &--#{$number} {
+        background-color: #{$color};
+      }
     }
   }
 }
