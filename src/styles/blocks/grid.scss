@@ -13,6 +13,12 @@
         background-color: rgb(calc(255 - 51 * #{$index}), 0, 0);
       }
     }
+
+    @for $content from 1 through 6 {
+      &:nth-child(n + #{$content})::before {
+        content: "#{$content}";
+      }
+    }
   }
 
   @media (max-width: 900px) {
