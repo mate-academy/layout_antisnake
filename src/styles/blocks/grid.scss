@@ -9,7 +9,7 @@
     height: $cell-width;
 
     @for $var from 0 through 5 {
-      &--#{$var + 1} {
+      &:nth-child(#{$var + 1}) {
         background-color: rgb(calc(255 - 51 * #{$var}), 0, 0);
       }
     }
