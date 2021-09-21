@@ -13,15 +13,15 @@
     align-items: center;
     height: $block-size;
     color: #fff;
-  
+
     @for $number from 1 through 6 {
-      &--#{$number}::before {
+      &:nth-child(#{$number})::before {
         content: "#{$number}";
       }
     }
 
     @each $number, $color in $color-box {
-      &--#{$number} {
+      &:nth-child(#{$number}) {
         background-color: #{$color};
       }
     }
