@@ -19,12 +19,12 @@
 
 @media (min-width: $block-size * 2) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: $block-size * 3) {
   .container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
