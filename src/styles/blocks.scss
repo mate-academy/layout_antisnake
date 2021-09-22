@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.block {
+  height: $block-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $block-size;
+
+  @each $num, $color in $block-color {
+    &:nth-child(n + #{$num}) {
+      background-color: #{$color};
+    }
+  }
+}
+
+@media (min-width: $block-size * 2) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: $block-size * 3) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
