@@ -8,4 +8,19 @@
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  &__box {
+    flex-basis: $block-basis-size;
+    line-height: $block-basis-size;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+  
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb((100% - ($index - 1) * 20), 0%, 0%);
+      }
+    }
+  }
 }
