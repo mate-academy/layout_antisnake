@@ -1,0 +1,14 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      background-color: $basic-color * $count;
+    }
+
+    $count: $count - 0.2;
+  }
+}
