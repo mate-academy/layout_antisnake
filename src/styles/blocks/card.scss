@@ -1,0 +1,27 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($min-siza-width, 1fr));
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($min-siza-width, 1fr));
+  }
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax($min-siza-width, 1fr));
+  }
+
+  &__item {
+    height: $min-siza-height;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @each $name, $color in $colors {
+      &#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
