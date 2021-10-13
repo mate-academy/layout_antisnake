@@ -1,0 +1,35 @@
+@use "../utils/variables" as *;
+
+.container {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, minmax($block-height, 1fr));
+
+  &__block {
+    height: $block-height;
+    min-width: $block-height;
+    text-align: center;
+    line-height: $block-height;
+    color: #fff;
+
+    @for $num from 1 through 6 {
+      &:nth-child(#{$num}):after {
+        content: "#{$num}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($block-height, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+}
