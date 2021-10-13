@@ -1,3 +1,54 @@
 body {
   margin: 0;
 }
+
+.container {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  display: grid;
+  background-color: #000;
+}
+
+.block {
+  color: white;
+  height: 300px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+@media  (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media  (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.block--1 {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.block--2 {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.block--3 {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+.block--4 {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+.block--5 {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.block--6 {
+  background-color: rgba(255, 0, 0, 0);
+}
