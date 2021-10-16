@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($base-size, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $base-size;
+    font-size: 100px;
+    color: white;
+  }
+
+  @for $index from 1 through $steps {
+    & :nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+    & :nth-child(#{$index}) {
+      background: mix($col-1, $col-2, percentage(($index - 1) / ($steps - 1)));
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($base-size, 1fr));
+    }
+  }
+}
