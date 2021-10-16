@@ -21,7 +21,7 @@ Display six colored blocks on the screen without any extra margins:
 - The width of each block should be not less than its height (`300px`)
 - Blocks must be put in 2 to 6 rows and stretched: each row must fit either 1, 2, or 3 blocks.
   See the screenshots [here](./reference).
-- Each row is to be read from left ro right.
+- Each row is to be read from left to right.
 
 --> [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md)
 
