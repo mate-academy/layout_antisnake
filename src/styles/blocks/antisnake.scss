@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{$block-height}, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(#{$block-height}, 1fr));
+  }
+
+  &__block {
+    height: #{$block-height};
+    text-align: center;
+    line-height: #{$block-height};
+
+    $color-list:
+      "1" 255,
+      "2" 204,
+      "3" 153,
+      "4" 102,
+      "5" 51,
+      "6" 6;
+
+    @each $number, $colors in $color-list {
+      &:nth-child(#{$number}) {
+        background-color: rgb($colors, 0 ,0);
+      }
+    }
+  }
+}
