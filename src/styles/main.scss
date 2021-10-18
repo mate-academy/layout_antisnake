@@ -1,3 +1,38 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.block {
+  height: 300px;
+  position: relative;
+  &::before {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  $percent: 255 / 100 * 20;
+  $red: 255;
+  @for $item from 1 through 6 {
+    &:nth-child(#{$item}) {
+      background-color: rgb($red, 0, 0);
+      &::before {
+        content: "#{$item}";
+      }
+    }
+    $red: $red - $percent;
+  }
 }
