@@ -1,6 +1,6 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__part {
     display: flex;
@@ -19,11 +19,7 @@
     }
   }
 
-  @include respond-to(medium) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include respond-to(small) {
-    grid-template-columns: 1fr;
+  @include respond-to(big) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
