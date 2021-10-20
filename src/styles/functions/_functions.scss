@@ -1,0 +1,3 @@
+@function breakpoint($size) {
+  @return map-get($breakpoints, $size);
+}

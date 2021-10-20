@@ -1,3 +1,8 @@
-body {
-  margin: 0;
-}
+@import "./generic/_reset";
+@import "./generic/elements";
+
+@import "./settings/variables";
+@import "./functions/functions";
+@import "./mixins/mixins";
+
+@import "./blocks/snake.scss";
