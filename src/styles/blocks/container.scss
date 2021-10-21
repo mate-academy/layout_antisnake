@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include screenSize(maxWidth($blockWidth, 3), 2);
+  @include screenSize(maxWidth($blockWidth, 2), 1);
+
+  &__block {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      height: 300px;
+    
+      @for $index from 1 through 6 {
+        &:nth-child(#{$index})::before {
+          content: "#{$index}";
+        }
+    
+        &:nth-child(#{$index}) {
+          background-color: GetColor((5 - $index + 1) / 5, 0 , 0);
+        }
+      }
+    }
+  }

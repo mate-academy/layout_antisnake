@@ -1,0 +1,7 @@
+@function maxWidth ($size, $amount) {
+  @return $size * $amount - 1;
+}
+
+@function GetColor ($red, $green, $blue) {
+  @return rgb(255 * $red, 255 * $green, 255 * $blue);
+}
