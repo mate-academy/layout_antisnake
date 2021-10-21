@@ -1,0 +1,25 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media(max-width: 900px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  &__cell {
+    height: $cell-height;
+    font-size: 100px;
+    text-align: center;
+    line-height: $cell-height;
+    color: #fff;
+  }
+
+  $redness: 100%;
+  
+  @for $index from 1 through 6 {
+    &__cell--#{$index} {
+      background-color: rgb($redness,0%,0%);
+    }
+    $redness: $redness - 20%;
+  }
+}
