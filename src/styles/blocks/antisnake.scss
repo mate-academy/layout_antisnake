@@ -1,15 +1,12 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  @media(max-width: 899px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media(max-width: 599px) {
-    grid-template-columns: 1fr;
-  }
+    grid-template-columns: repeat(3, 1fr);
+
+    @media(max-width: 900px) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
 
   &__cell {
-    min-width: $cell-heiht;
     height: $cell-heiht;
     color: #fff;
     font-size: 100px;
@@ -17,27 +14,12 @@
     line-height: $cell-heiht;
   }
 
-  &__cell--1 {
-    background-color: rgb(100%,0,0);
-  }
-
-  &__cell--2 {
-    background-color: rgb(80%,0,0);
-  }
-
-  &__cell--3 {
-    background-color: rgb(60%,0,0);
-  }
-
-  &__cell--4 {
-    background-color: rgb(40%,0,0);
-  }
-
-  &__cell--5 {
-    background-color: rgb(20%,0,0);
-  }
-
-  &__cell--6 {
-    background-color: rgb(0%,0,0);
+  $redness: 100%;
+  
+  @for $index from 1 through 6 {
+    &__cell--#{$index} {
+      background-color: rgb($redness,0%,0%);
+    }
+    $redness: $redness - 20%;
   }
 }
