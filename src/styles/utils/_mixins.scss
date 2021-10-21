@@ -1,0 +1,5 @@
+@mixin screenSize($size, $columns) {
+  @media screen and (max-width:$size) {
+    grid-template-columns: repeat($columns, minmax($blockWidth, 1fr));
+  }
+}
