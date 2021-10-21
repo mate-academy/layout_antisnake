@@ -1,3 +1,33 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.antisnake {
+  background-color: #f00;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: 300px;
+  }
+
+  @for $i from 1 through 6 {
+    &__block:nth-child(#{$i}) {
+      background-color: rgba(0, 0, 0, (0.2 * ($i - 1)));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        content: "#{$i}";
+        color: #fff;
+        font-size: 100px;
+      }
+    }
+  }
 }
