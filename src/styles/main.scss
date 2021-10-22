@@ -12,34 +12,24 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
-}
 
-.container__block {
-  min-height: 300px;
-  color: #fff;
-  font-size: 100px;
-  display: grid;
-  place-items: center;
+  &__block {
+    min-height: 300px;
+    color: #fff;
+    font-size: 100px;
+    display: grid;
+    place-items: center;
 
-  &:nth-child(1) {
-    background-color: rgb(100%, 0%, 0%);
-  }
-  &:nth-child(2) {
-    background-color: rgb(80%, 0%, 0%);
-  }
-  &:nth-child(3) {
-    background-color: rgb(60%, 0%, 0%);
-  }
-  &:nth-child(4) {
-    background-color: rgb(40%, 0%, 0%);
-  }
-  &:nth-child(5) {
-    background-color: rgb(20%, 0%, 0%);
-  }
-  &:nth-child(6) {
-    background-color: rgb(0%, 0%, 0%);
+    $percents: 100%;
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb($percents, 0, 0);
+        $percents: $percents - 20;
+      }
+    }
   }
 }
