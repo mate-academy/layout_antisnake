@@ -1,0 +1,4 @@
+@mixin rowsAndCols ($rows, $cols) {
+  grid-template-rows: repeat($rows, $snake-item-size);
+  grid-template-columns: repeat($cols, minmax($snake-item-size, 1fr));
+}

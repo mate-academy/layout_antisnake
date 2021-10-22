@@ -1,19 +1,16 @@
 .snake {
   display: grid;
-  grid-template-rows: repeat(2, $snake-item-size);
-  grid-template-columns: repeat(3, minmax($snake-item-size, 1fr));
+  @include rowsAndCols (2, 3);
 
   @media (max-width: 899px) {
     & {
-      grid-template-rows: repeat(3, $snake-item-size);
-      grid-template-columns: repeat(2, minmax($snake-item-size, 1fr));
+      @include rowsAndCols (3, 2);
     }
   }
 
   @media (max-width: 599px) {
     & {
-      grid-template-rows: repeat(6, $snake-item-size);
-      grid-template-columns: repeat(1, minmax($snake-item-size, 1fr));
+      @include rowsAndCols (6, 1);
     }
   }
 

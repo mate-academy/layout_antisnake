@@ -1,5 +1,6 @@
 @import "./reset.scss";
 @import "./blocks/font.scss";
 
-@import "./blocks/variables";
+@import "./utils/variables";
+@import "./utils/mixins";
 @import "./blocks/snake.scss";
