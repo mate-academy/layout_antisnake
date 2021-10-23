@@ -15,10 +15,11 @@
     text-align: center;
     line-height: $block-height;
 
-    @each $name, $color in $block-colors {
-      &--color--#{$name} {
-        background-color: $color;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb($block-color-percent, 0, 0);
       }
+      $block-color-percent: $block-color-percent - 20%;
     }
   }
 }
