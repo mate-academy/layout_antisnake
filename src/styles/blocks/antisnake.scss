@@ -1,0 +1,27 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    color: white;
+    font-size: 100px;
+  }
+
+  @for $index from 1 through 6 {
+    &__block:nth-child(#{$index}) {
+      background-color: rgb($percent-color, 0%, 0%);
+    }
+    $percent-color: $percent-color - 20%;
+  }
+}
+
+@media (max-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
