@@ -1,6 +1,5 @@
 .snake {
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat($columns, 1fr);
 
   @media (max-width: $height * $columns) {
@@ -11,10 +10,9 @@
     color: #fff;
     text-align: center;
     line-height: $height;
-    background-color: rgb($red, 0, 0);
 
     @for $index from 1 through 6 {
-      &--#{$index} {
+      &:nth-child(#{$index}) {
         background-color: rgb($red, 0, 0);
       }
       $red: $red - 20%;
