@@ -1,3 +1,8 @@
 body {
   margin: 0;
 }
+
+@import "./utils/font";
+@import "./utils/variables";
+
+@import "./Block/block.scss";
