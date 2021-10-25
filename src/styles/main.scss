@@ -24,7 +24,7 @@ html {
     height: $cell-size;
     min-width: $cell-size;
 
-    @for $i from 1 to 7 {
+    @for $i from 1 through 6   {
       &:nth-child(#{$i}) {
         background-color: rgb(255 - ($i - 1) * 51, 0, 0);
       }
