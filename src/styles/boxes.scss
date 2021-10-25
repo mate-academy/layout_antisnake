@@ -1,0 +1,32 @@
+@import "./utils/variables.scss";
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: $box-size;
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+
+    @each $index, $color in $items-colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+
+    @for $index from 1 through 6 {
+      &--#{$index}::before {
+        content: "#{$index}";
+      }
+    }
+  }
+}
