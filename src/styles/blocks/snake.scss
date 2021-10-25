@@ -21,6 +21,12 @@
     font-size: 100px;
     color: $text-color;
 
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
     @each $number, $color in $backgrond-snake-item {
       &:nth-child(#{$number}) {
         background-color: $color;
