@@ -3,10 +3,8 @@
   grid-template-columns: repeat(3, minmax(300px, 1fr));
 
   &__block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: grid;
+    place-items: center;
     height: 300px;
     color: white;
     font-size: 100px;
