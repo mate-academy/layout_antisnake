@@ -1,3 +1,5 @@
+@import "./variables";
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -5,7 +7,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
 
   &__block {
     display: grid;
