@@ -1,3 +1,29 @@
+@import "./blocks/main_block";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+}
+
+@media (min-width:600px) and (max-width:899px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (min-width:900px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+  }
 }
