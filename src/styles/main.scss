@@ -1,3 +1,10 @@
+@import "./until/var";
+@import "./block/snake.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
