@@ -1,16 +1,18 @@
+@import "./utils/variables";
+
 @import "./reset.scss";
 @import "./body.scss";
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($cell, 1fr));
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__block {
-    min-height: 300px;
+    min-height: $cell;
     color: #fff;
     font-size: 100px;
     display: grid;
