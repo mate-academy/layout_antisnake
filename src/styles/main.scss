@@ -12,11 +12,12 @@
   }
 
   &__block {
-    min-height: $cell;
-    color: #fff;
-    font-size: 100px;
     display: grid;
     place-items: center;
+    min-height: $cell;
+
+    color: #fff;
+    font-size: 100px;
 
     $percents: 100%;
     @for $index from 1 through 6 {
