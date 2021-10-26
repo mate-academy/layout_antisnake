@@ -1,0 +1,36 @@
+@import "./utils/variables.scss";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    min-width: $block-size;
+    height: $block-size;
+
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::after {
+        content: "#{$index}";
+      }
+
+      &:nth-child(#{$index}) {
+        background-color: darken(#f00, ($index - 1) * 10%);
+      }
+      
+    }
+  }
+}
+
+@media(max-width: 750px) {
+  .block {
+    grid-template-columns: repeat(auto-fill, minmax($block-size,1fr));
+  }
+}
