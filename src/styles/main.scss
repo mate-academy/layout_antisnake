@@ -1,3 +1,6 @@
-body {
-  margin: 0;
+@import "./reset.scss";
+@import "./boxes.scss";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
 }
