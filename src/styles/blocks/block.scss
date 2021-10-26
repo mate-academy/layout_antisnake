@@ -16,13 +16,13 @@
     line-height: 300px;
     height: 300px;
     
-    @for $num from 1 through 6 {
-      &:nth-child(#{$num})::before {
-        content: '#{$num}';
+    @each $index, $color in $colors {
+      &:nth-child(#{$index})::before {
+        content: '#{$index}';
       }
-
-      &:nth-child(#{$num}) {
-        background-color: color(1 - (($num - 1 ) / 5 ), 0 , 0);
+      
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
       }
     }
   }
