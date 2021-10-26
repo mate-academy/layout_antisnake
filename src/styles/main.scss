@@ -13,8 +13,7 @@ html {
 
 .snake {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(1, 1fr);
 
   color: #fff;
   text-align: center;
@@ -24,7 +23,7 @@ html {
     height: $cell-size;
     min-width: $cell-size;
 
-    @for $i from 1 through 6   {
+    @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
         background-color: rgb(255 - ($i - 1) * 51, 0, 0);
       }
@@ -36,10 +35,10 @@ html {
   }
 
   @media (min-width: 600px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
