@@ -1,0 +1,25 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+
+    $redness: 100%;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb($redness, 0%, 0%);
+      }
+      $redness: $redness - 20%;
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .blocks {
+    grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+  }
+}
