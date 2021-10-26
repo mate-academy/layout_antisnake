@@ -11,13 +11,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: $box-size;
     font-size: 100px;
     color: #fff;
 
-    @each $i, $color in $colors {
+    @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
-        background-color: #{$color};
+        background-color: rgb($block-color-percent, 0, 0);
+      }
+      
+      $block-color-percent: $block-color-percent - 20%;
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
       }
     }
   }
