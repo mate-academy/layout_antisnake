@@ -2,15 +2,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  &-block {
+  &__block {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: $size;
 
     $redness: 100%;
-    @for $i from 0 through 5 {
-      &--#{$i} {
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
         background-color: rgb($redness, 0%, 0%);
       }
       $redness: $redness - 20%;
@@ -20,6 +20,6 @@
 
 @media (max-width: 899px) {
   .blocks {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
   }
 }
