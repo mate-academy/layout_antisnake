@@ -21,9 +21,7 @@
       &--#{$index} {
         background-color: $color;
       }
-    }
 
-    @for $index from 1 through 6 {
       &--#{$index}::before {
         content: "#{$index}";
       }
