@@ -1,0 +1,31 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 300px);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    grid-template-rows: repeat(6, 300px);
+  }
+
+  &__block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    font-size: 100px;
+    color: white;
+    
+    @for $block-number from 1 to 6 + 1 {
+      &--#{$block-number} {
+        $red-num: 255 - (51 * ($block-number - 1));
+        background-color: rgb($red-num, 0, 0);
+      }
+    }
+  }
+}
