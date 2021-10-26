@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-block-size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $min-block-size;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    
+    @each $i, $c in $color {
+      &:nth-child(#{$i}) {
+        background-color: $c;
+      }
+    }
+  }
+}
