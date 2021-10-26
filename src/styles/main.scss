@@ -1,3 +1,59 @@
+@import './utils/variables';
+
+@mixin font {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  @include font;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+
+
+  &-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $cell-size;
+  }
+}
+
+@each $num, $color in $colors {
+  .grid-item-#{$num} {
+    background-color: #{$color};
+  }
+}
+
+@media (max-width:899px) {
+ .grid {
+   grid-template-columns: repeat(2, 1fr);
+ }
+ 
+  .grid-item-3 {
+    order: 2;
+  }
+  .grid-item-4 {
+    order: 1;
+  }
+  .grid-item-5 {
+    order: 3;
+  }
+  .grid-item-6 {
+    order: 3;
+  }
+}
+
+@media (max-width:599px) {
+  .grid {
+    order: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

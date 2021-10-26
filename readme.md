@@ -7,7 +7,7 @@ Replace `<your_account>` with your Github username and copy the links to Pull Re
 ___
 
 ## The task
-Display six colored blocks on the screen without any extra margins:
+Display six grid-item blocks on the screen without any extra margins:
 
 - Use `grid`
 - Each block should be `300px` high.
