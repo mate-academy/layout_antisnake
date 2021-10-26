@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+
+  &__block {
+    display: flex;
+    height: 300px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 100px;
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+  $redness: 100%;
+  @for $index from 1 through 6 {
+    &__block:nth-child(#{$index}) {
+      background-color: rgb($redness,0%,0%);
+      $redness: $redness - 20%;
+    }
+  }
+}
