@@ -1,15 +1,10 @@
 @import "./utils/variables";
+@import "./utils/mixins.scss";
 
 @for $index from 1 to 7 {
   .grid-item--#{$index}::before {
     content: "#{$index}";
   }
-}
-
-@mixin font {
-  font-size: 100px;
-  font-family: Arial, sans-serif;
-  color: white;
 }
 
 body {
