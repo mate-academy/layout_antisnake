@@ -1,5 +1,11 @@
 @import "./utils/variables";
 
+@for $index from 1 to 7 {
+  .grid-item--#{$index}::before {
+    content: "#{$index}";
+  }
+}
+
 @mixin font {
   font-size: 100px;
   font-family: Arial, sans-serif;
@@ -30,14 +36,14 @@ body {
   }
 }
 
-@media (max-width:599px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
 @media (max-width:899px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:599px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
