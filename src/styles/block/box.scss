@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  .box {
+  &__box {
     height: 300px;
     color: #fff;
     display: grid;
