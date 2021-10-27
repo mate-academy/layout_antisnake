@@ -3,15 +3,11 @@
   @include rowsAndCols (2, 3);
 
   @media (max-width: 899px) {
-    & {
-      @include rowsAndCols (3, 2);
-    }
+    @include rowsAndCols (3, 2);
   }
 
   @media (max-width: 599px) {
-    & {
-      @include rowsAndCols (6, 1);
-    }
+    @include rowsAndCols (6, 1);
   }
 
   &__item {
@@ -21,15 +17,13 @@
     font-size: 100px;
     color: $text-color;
 
-    @for $index from 1 through 6 {
-      &:nth-child(#{$index})::before {
-        content: "#{$index}";
-      }
-    }
-
     @each $number, $color in $backgrond-snake-item {
       &:nth-child(#{$number}) {
         background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+        }
       }
     }
   }
