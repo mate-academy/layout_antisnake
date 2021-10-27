@@ -1,0 +1,30 @@
+.snake {
+  display: grid;
+  @include rowsAndCols (2, 3);
+
+  @media (max-width: 899px) {
+    @include rowsAndCols (3, 2);
+  }
+
+  @media (max-width: 599px) {
+    @include rowsAndCols (6, 1);
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 100px;
+    color: $text-color;
+
+    @each $number, $color in $backgrond-snake-item {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
+}
