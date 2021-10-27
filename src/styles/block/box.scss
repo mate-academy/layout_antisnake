@@ -1,9 +1,9 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
 
   &__box {
-    height: 300px;
+    height: $block-size;
     color: #fff;
     display: grid;
     justify-content: center;
@@ -20,6 +20,10 @@
     @each $index, $color in $colors {
       &:nth-child(#{$index}) {
         background-color: #{$color};
+
+      &::before {
+        content: "#{$index}";
+      }
       }
     }
   }
@@ -27,6 +31,6 @@
 
 @media (min-width: 1200px) {
   .container {
-    grid-template-columns: repeat(auto-fill, minmax(300px, (100% / 3)));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
