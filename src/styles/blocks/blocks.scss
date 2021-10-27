@@ -1,22 +1,20 @@
 .blocks {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(3, minmax($square-side, 1fr));
 
   @media (max-width: 899px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2, minmax($square-side, 1fr));
   }
 
   @media (max-width: 599px) {
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
-    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: repeat(1, minmax($square-side, 1fr));
   }
 
   &__block {
     display: grid;
     justify-items: center;
     align-items: center;
+    min-height: $square-side;
 
     font-size: 100px;
     color: white;
@@ -25,6 +23,10 @@
       &--#{$block-number} {
         $red-num: 255 - (51 * ($block-number - 1));
         background-color: rgb($red-num, 0, 0);
+      }
+
+      &:nth-child(#{$block-number}):before {
+        content: "#{$block-number}";
       }
     }
   }
