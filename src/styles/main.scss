@@ -13,7 +13,7 @@ html {
 
 .snake {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
 
   color: #fff;
   text-align: center;
