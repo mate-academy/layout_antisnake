@@ -19,5 +19,11 @@
         $red: $red - 20%;
       }
     }
+
+    @for $num from 1 through 6 {
+      &--#{$num}::before {
+        content: "#{$num}";
+      }
+    }
   }
 }
