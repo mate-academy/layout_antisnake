@@ -3,14 +3,16 @@ body {
   padding: 0;
 }
 
+$grid-height: 300px;
+
 .wrapper {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, $grid-height);
 }
 
 .block {
-  height: 300px;
+  height: $grid-height;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-size: 100px;
@@ -18,7 +20,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
-  min-width: 300px;
+  min-width: $grid-height;
 
   &:nth-child(1) {
     background-color: #f00;
@@ -46,18 +48,18 @@ body {
   }
 }
 
-@media screen and (min-width: 600px) and (max-width:900px) {
+@media screen and (min-width: 599px) and (max-width:899px) {
 
   .wrapper {
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, $grid-height);
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:599px) {
 
   .wrapper {
-    grid-template-rows: 300px 300px 300px 300px 300px 300px;
-    grid-template-columns: 300px;
+    grid-template-rows: repeat(6, $grid-height);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
