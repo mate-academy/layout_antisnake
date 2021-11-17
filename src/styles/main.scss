@@ -1,3 +1,51 @@
+$base-size: 300px;
+$container-width: 1199px;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  max-width: $container-width;
+  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill, minmax($base-size, 1fr));
+  margin: auto;
+  justify-content: center;
+
+  &__block {
+    height: $base-size;
+    line-height: $base-size;
+    text-align: center;
+
+    &:nth-child(1) {
+      background-color: #f00;
+    }
+
+    &:nth-child(2) {
+      background-color: #c00;
+    }
+
+    &:nth-child(3) {
+      background-color: #900;
+    }
+
+    &:nth-child(4) {
+      background-color: #600;
+    }
+
+    &:nth-child(5) {
+      background-color: #300;
+    }
+
+    &:nth-child(6) {
+      background-color: #000;
+    }
+  }
 }
