@@ -1,0 +1,9 @@
+@for $i from 1 through 6 {
+  .block-#{$i} {
+    background-color: rgb(calc(306 - 51 * #{$i}), 0, 0);
+
+    &::before {
+      content: "#{$i}";
+    }
+  }
+}
