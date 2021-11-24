@@ -20,7 +20,7 @@
 
 @for $i from 1 through 6 {
   .color-#{$i} {
-    background-color: rgb(calc(255 - 42 * #{$i}), 0, 0);
+    background-color: rgb(calc(306 - 51 * #{$i}), 0, 0);
 
     &::before {
       content: "#{$i}";
