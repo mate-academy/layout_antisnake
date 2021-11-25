@@ -1,0 +1,18 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300, 1fr));
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    height: $box-size;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

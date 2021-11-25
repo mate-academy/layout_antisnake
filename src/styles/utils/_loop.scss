@@ -1,0 +1,9 @@
+@for $var from 1 through 6 {
+  .antisnake__item--#{$var} {
+    background-color: rgb(calc(255 - 42.5 * #{$var}),0,0);
+
+    &:before {
+      content: "#{$var}";
+    }
+  }
+}
