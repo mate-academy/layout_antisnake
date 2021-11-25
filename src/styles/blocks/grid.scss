@@ -12,7 +12,7 @@
 
         &::before {
           content: "#{$index}";
-          @extend %container__box--1;
+          @extend %container__box--all;
         }
       }
     }
@@ -25,7 +25,7 @@
   }
 }
 
-%container__box--1 {
+%container__box--all {
   justify-self: center;
   align-self: center;
   color: #fff;
