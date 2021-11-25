@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+
+    font-size: 100px;
+    color: white;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb($red, 0%, 0%);
+      }
+      $red: $red - 20%;
+    }
+  }
+}
