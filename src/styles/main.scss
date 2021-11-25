@@ -1,3 +1,33 @@
 body {
   margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+    color: #fff;
+    font-size: 100px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb((120% - 20 * $index) , 0 , 0);
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+
 }
