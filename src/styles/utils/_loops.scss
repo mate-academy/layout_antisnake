@@ -1,0 +1,16 @@
+$colors:
+  1 255,
+  2 204,
+  3 153,
+  4 102,
+  5 51,
+  6 0;
+@each $index, $red-in-rgb in $colors {
+  .container__box:nth-child(#{$index}) {
+    background-color: rgb($red-in-rgb, 0, 0);
+
+    &::after {
+      content: "#{$index}";
+    }
+  }
+}
