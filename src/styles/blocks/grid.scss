@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  &__box {
+    height: $box-size;
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        display: grid;
+        background-color: $color;
+
+        &::before {
+          content: "#{$index}";
+          @extend %container__box--all;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $min-width) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+%container__box--all {
+  justify-self: center;
+  align-self: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
