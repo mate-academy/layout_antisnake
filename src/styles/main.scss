@@ -1,3 +1,35 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    min-height: 300px;
+    color: #fff;
+    font-size: 100px;
+    display: grid;
+    place-items: center;
+
+    $percents: 100%;
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb($percents, 0, 0);
+        $percents: $percents - 20;
+      }
+    }
+  }
 }
