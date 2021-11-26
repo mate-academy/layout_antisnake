@@ -11,15 +11,13 @@
     #000 6;
 
   @each $color, $index in $colors {
-    &__box-#{$index} {
+    &__box:nth-child(#{$index}) {
       background-color: $color;
       height: $box-width;
       text-align: center;
     }
-  }
 
-  @for $index from 1 through 6 {
-    &__box-#{$index}::before {
+    &__box:nth-child(#{$index})::before {
       content: "#{$index}";
       font-family: Arial, Helvetica, sans-serif;
       font-size: 100px;
