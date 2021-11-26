@@ -1,0 +1,10 @@
+@for $i from 1 through 6 {
+  .container__block {
+    &:nth-child(#{$i}) {
+      background-color: rgb(calc(306 - 51 * #{$i}), 0, 0);
+      &::before {
+        content: "#{$i}";
+      }
+    }
+  }
+}
