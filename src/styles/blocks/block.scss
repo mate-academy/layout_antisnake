@@ -4,10 +4,4 @@
   font-size: 100px;
   align-items: center;
   justify-items: center;
-
-  @for $index from 0 through 5 {
-    &--#{$index + 1} {
-      @include bg-col($index);
-    }
-  }
 }
