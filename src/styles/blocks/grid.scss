@@ -6,7 +6,7 @@
     height: $box-size;
 
     @each $index, $color in $colors {
-      &--#{$index} {
+      &:nth-child(#{$index}) {
         display: grid;
         background-color: $color;
 
