@@ -1,0 +1,24 @@
+.grid-warp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-hight, 1fr));
+}
+
+@for $i from 1 through 6 {
+  .cell:nth-child(#{$i}) {
+    font-size: 100px;
+    min-height: $cell-hight;
+    line-height: $cell-hight;
+    text-align: center;
+    &::before {
+      content: ""+$i;
+    }
+    background-color: rgb(calc(255 - ((255 / 5) * (#{$i} - 1))), 0, 0);
+
+  }
+
+}
+@media (min-width: 1200px) {
+  .grid-warp {
+    grid-template-columns: repeat(auto-fill, minmax(300px, (100% / 3)));
+  }
+}
