@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-heigth, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-size: 100px;
+    height: $card-heigth;
+    color: white;
+  }
+}
