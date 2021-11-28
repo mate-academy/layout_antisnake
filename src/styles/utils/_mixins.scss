@@ -1,4 +1,0 @@
-@mixin bg-col($block-index) {
-  $sub: 255 - $block-index * 51;
-  background-color: rgb($sub,0,0);
-}
