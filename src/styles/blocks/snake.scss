@@ -1,0 +1,31 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  
+  &__block {
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    height: $block-size;
+
+    @for $index from 1 through $block-count {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        margin: auto;
+      }
+    }
+
+    @for $index from 1 through $block-count {
+      &:nth-child(#{$index}) {
+        background-color: rgb(calc(306 - #{$grad-diff} * #{$index}), 0, 0);
+      }
+    }
+
+  }
+}
