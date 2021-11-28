@@ -1,0 +1,31 @@
+.block {
+  display: grid;
+  color: white;
+  font-size: 100px;
+  align-items: center;
+  justify-items: center;
+}
+
+.block:nth-child(1) {
+  background-color: rgb(255, 0, 0);
+}
+
+.block:nth-child(2) {
+  background-color: rgb(204, 0, 0);
+}
+
+.block:nth-child(3) {
+  background-color: rgb(153, 0, 0);
+}
+
+.block:nth-child(4) {
+  background-color: rgb(102, 0, 0);
+}
+
+.block:nth-child(5) {
+  background-color: rgb(51, 0, 0);
+}
+
+.block:nth-child(6) {
+  background-color: rgb(0, 0, 0);
+}
