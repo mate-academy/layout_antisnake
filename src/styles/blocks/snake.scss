@@ -13,19 +13,5 @@
     font-size: 100px;
     color: rgb(255, 255, 255);
     height: $block-size;
-
-    @for $index from 1 through $block-count {
-      &:nth-child(#{$index})::before {
-        content: "#{$index}";
-        margin: auto;
-      }
-    }
-
-    @for $index from 1 through $block-count {
-      &:nth-child(#{$index}) {
-        background-color: rgb(calc(306 - #{$grad-diff} * #{$index}), 0, 0);
-      }
-    }
-
   }
 }
