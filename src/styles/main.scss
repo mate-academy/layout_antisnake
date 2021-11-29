@@ -16,30 +16,23 @@ body {
 
 .antisnake {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__block {
     height: 300px;
-    min-width: 300px;
     text-align: center;
     line-height: 300px;
     font-size: 100px;
 
     @each $name, $bgcolor in $colors {
-      &--#{$name} {
+      &:nth-child(#{$name}) {
         background-color: #{$bgcolor};
       }
     }
   }
 }
 
-@media (min-width: 600px) {
-  .antisnake {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .antisnake {
     grid-template-columns: repeat(3, 1fr);
   }
