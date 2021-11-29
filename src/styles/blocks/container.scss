@@ -15,13 +15,10 @@
   }
 
   &__block {
-    display: flex;
     height: $block-height;
     line-height: $block-height;
-    justify-content: center;
+    text-align: center;
     color: #fff;
-    font-size: 100px;
-    font-family: Arial, sans-serif;
   }
   
   &__block--1 {
