@@ -1,27 +1,5 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  color: white;
-  margin: 0;
-}
-
-.container {
-  display: grid;
-  text-align: center;
-  line-height: 300px;
-
-  @media (min-width: 600px) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 900px) {
-    & {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-}
+@import "./normalize";
+@import "./blocks/container.scss";
 
 .block--1 {
   background-color: #f00;
