@@ -1,0 +1,26 @@
+@import "./utils/variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__cell {
+    height: 300px;
+
+    line-height: 300px;
+    text-align: center;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+  }
+
+  @each $color, $num in $colors {
+    &__cell:nth-child(#{$num}) {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
