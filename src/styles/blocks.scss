@@ -1,0 +1,17 @@
+.container__block {
+  font-family: Arial, sans-serif;
+  height: 300px;
+  font-size: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 300px;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-color: rgb(calc(306 - 51 * #{$i}), 0, 0);
+      &::before {
+        content: "#{$i}";
+      }
+    }
+  }
+}
