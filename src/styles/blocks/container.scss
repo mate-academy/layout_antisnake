@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(1, minmax($box-height, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
   width: 100vw;
 
   &__box {
@@ -19,16 +19,8 @@
       }
     }
   }
-}
 
-@media (min-width: 600px) {
-  .container {
-    grid-template-columns: repeat(2, minmax($box-height, 1fr));
-  }
-}
-
-@media (min-width: 900px) {
-  .container {
-    grid-template-columns: repeat(3, minmax($box-height, 1fr));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
