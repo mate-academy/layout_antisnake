@@ -1,3 +1,48 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
   margin: 0;
+}
+
+.container {
+  display: grid;
+  text-align: center;
+  line-height: 300px;
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.block--1 {
+  background-color: #f00;
+}
+
+.block--2 {
+  background-color: #c00;
+}
+
+.block--3 {
+  background-color: #900;
+}
+
+.block--4 {
+  background-color: #600;
+}
+
+.block--5 {
+  background-color: #300;
+}
+
+.block--6 {
+  background-color: #000;
 }
