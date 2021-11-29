@@ -1,0 +1,9 @@
+.card {
+  display: grid;
+  min-width: $size-card;
+  height: $size-card;
+  font-size: 100px;
+  color: white;
+  justify-items: center;
+  align-items: center;
+}
