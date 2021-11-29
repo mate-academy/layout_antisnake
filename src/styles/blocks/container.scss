@@ -1,0 +1,27 @@
+.container {
+  background-color: #000;
+  min-width: 300px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, auto));
+
+  @media (min-width: $min-width) {
+    grid-template-columns: repeat(3, minmax($block-height, auto));
+  }
+
+  @for $index from 1 through 6 {
+    & :nth-child(#{$index}) {
+      background-color: rgba(255, 0, 0, calc((6 - #{$index}) / 5));
+    }
+  }
+
+  &__block {
+    display: grid;
+    height: $block-height;
+    justify-content: center;
+    align-content: center;
+
+    font-size: 100px;
+    color: white;
+  }
+}
