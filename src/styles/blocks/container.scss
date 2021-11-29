@@ -1,5 +1,6 @@
 .container {
   background-color: #000;
+  min-width: 300px;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($block-height, auto));
