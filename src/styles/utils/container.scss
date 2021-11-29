@@ -2,13 +2,12 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(1, minmax($container-size, 1fr));
   color: white;
 
   &__item {
     height: $container-size;
     line-height: $container-size;
-    min-width: $container-size;
     text-align: center;
   }
 
@@ -38,13 +37,13 @@
 
   @media (min-width: 600px) {
     & {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax($container-size, 1fr));
     }
   }
 
   @media (min-width: 900px) {
     & {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax($container-size, 1fr));
     }
   }
 }
