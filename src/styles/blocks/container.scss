@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-width, 1fr));
+
+  @each $color, $index in $colors {
+    &__box:nth-child(#{$index}) {
+      @extend %box-style;
+      background-color: $color;
+
+      &::before {
+        content: "#{$index}";
+        @extend %before-style;
+      }
+    }
+  }
+
+  @media (min-width: calc(#{$box-width} * 3)) {
+    & {
+      grid-template-columns: repeat(3, minmax($box-width, 1fr));
+    }
+  }
+}
+
+%before-style {
+  font-size: 100px;
+  color: #fff;
+  justify-self: center;
+  align-self: center;
+}
+
+%box-style {
+  display: grid;
+  height: $box-width;
+}
