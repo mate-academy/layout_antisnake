@@ -8,13 +8,12 @@
     justify-content: center;
     align-content: center;
     height: $box-height;
+  }
 
-    @for $i from 1 through 6 {
-      &--#{$i} {
-        background-color: rgb(calc(255 - (#{$i} - 1) * 51), 0, 0);
-      }
-
-      &--#{$i}::before {
+  @for $i from 1 through 6 {
+    & :nth-child(#{$i}) {
+      background-color: rgb(calc(255 - (#{$i} - 1) * 51), 0, 0);
+      &::before {
         content: "#{$i}";
       }
     }
