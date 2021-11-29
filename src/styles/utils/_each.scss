@@ -1,0 +1,5 @@
+@each $name, $red in $red-percent {
+  .wrapper__elem--#{$name} {
+    @include fifty-shades-of-red($red);
+  }
+}
