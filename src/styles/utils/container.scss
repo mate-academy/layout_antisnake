@@ -1,0 +1,29 @@
+@import "./variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($container-size, 1fr));
+  color: white;
+
+  &__item {
+    height: $container-size;
+    line-height: $container-size;
+    text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($container-size, 1fr));
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index}) {
+      background-color: rgb(calc(51 * (6 - #{$index})), 0, 0);
+    }
+  }
+}
