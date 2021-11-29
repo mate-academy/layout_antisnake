@@ -1,0 +1,35 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  &__block {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-size: 100px;
+    color: #fff;
+
+      @for $i from 0 through 5 {
+        &:nth-child(#{$i+1})::before {
+          content: "#{$i+1}";
+        }
+      }
+ }
+    @for $i from 0 through 5 {
+      &__block--color#{$i+1} {
+        background-color: darken($color-block, $i * 10%);
+      }
+    }
+    @media (max-width: 899px) {
+      & {
+        grid-template-columns: repeat(2, auto);
+      }
+    }
+    @media (max-width: 599px) {
+      & {
+        grid-template-columns: repeat(1, auto);
+      }
+    }
+  }
