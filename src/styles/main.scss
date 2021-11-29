@@ -1,38 +1,4 @@
 @import "./utils/variables";
 @import "./utils/reset";
 @import "./utils/normalize";
-
-.container {
-  display: grid;
-  grid-template-columns: minmax($box-height, 1fr);
-  width: 100vw;
-
-  &__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: $box-height;
-
-    @for $i from 1 through 6 {
-      &--#{$i} {
-        background-color: rgb(calc(255 - (#{$i} - 1) * 51), 0, 0);
-      }
-
-      &--#{$i}::before {
-        content: "#{$i}";
-      }
-    }
-  }
-}
-
-@media (min-width: 600px) {
-  .container {
-    grid-template-columns: repeat(2, minmax($box-height, 1fr));
-  }
-}
-
-@media (min-width: 900px) {
-  .container {
-    grid-template-columns: repeat(3, minmax($box-height, 1fr));
-  }
-}
+@import "./blocks/container.scss";
