@@ -2,48 +2,29 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(1, minmax($container-size, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($container-size, 1fr));
   color: white;
 
   &__item {
     height: $container-size;
     line-height: $container-size;
     text-align: center;
-  }
-
-  &__item--1 {
-    background-color: red;
-  }
-
-  &__item--2 {
-    background-color: rgb(189, 0, 0);
-  }
-
-  &__item--3 {
-    background-color: rgb(158, 0, 0);
-  }
-
-  &__item--4 {
-    background-color: rgb(110, 0, 0);
-  }
-
-  &__item--5 {
-    background-color: rgb(71, 0, 0);
-  }
-
-  &__item--6 {
-    background-color: rgb(0, 0, 0);
-  }
-
-  @media (min-width: 600px) {
-    & {
-      grid-template-columns: repeat(2, minmax($container-size, 1fr));
-    }
+    background-color: rgb(0, 255, 76);
   }
 
   @media (min-width: 900px) {
-    & {
-      grid-template-columns: repeat(3, minmax($container-size, 1fr));
+    grid-template-columns: repeat(3, minmax($container-size, 1fr));
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index}) {
+      background-color: rgb(calc(51 * (6 - #{$index})), 0, 0);
     }
   }
 }
