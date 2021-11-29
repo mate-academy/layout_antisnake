@@ -1,53 +1,25 @@
+@import "./utils/variables";
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(1, min-width 300px);
-  font-family: Arial, Helvetica, sans-serif;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
   font-size: 100px;
   color: white;
   text-align: center;
-  line-height: 300px;
-}
+  line-height: $block-size;
 
-@media (min-width: 600px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .container {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-// #region colors
-
-.block1 {
-  background-color: #f00;
+@each $color, $index in $colors {
+  .container__block:nth-child(#{$index}) {
+    background-color: $color;
+  }
 }
-
-.block2 {
-  background-color: #c00;
-}
-
-.block3 {
-  background-color: #900;
-}
-
-.block4 {
-  background-color: #600;
-}
-
-.block5 {
-  background-color: #300;
-}
-
-.block6 {
-  background-color: #000;
-}
-
-// #endregion
