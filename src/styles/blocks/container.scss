@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: minmax($box-height, 1fr);
+  grid-template-columns: repeat(1, minmax($box-height, 1fr));
   width: 100vw;
 
   &__box {
