@@ -1,11 +1,14 @@
+@import "./variables";
+
 .container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   color: white;
 
   &__item {
-    height: 300px;
-    line-height: 300px;
+    height: $container-size;
+    line-height: $container-size;
+    min-width: $container-size;
     text-align: center;
   }
 
