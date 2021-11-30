@@ -1,3 +1,42 @@
+@function darkreds($number) {
+  @return (51 * (6 - $number));
+}
+
 body {
   margin: 0;
+  background-color: #000;
+}
+
+h1 {
+  display: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+}
+
+@for $index from 1 through 6 {
+  .box-#{$index} {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+    height: 300px;
+    box-sizing: border-box;
+    background-color: rgb(darkreds($index),0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
