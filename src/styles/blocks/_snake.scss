@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__part-of-snake {
-    height: 300px;
+    height: $height;
     text-align: center;
     line-height: 300px;
     font-size: 100px;
@@ -13,6 +13,9 @@
       &:nth-child(#{$i}) {
         background-color: rgb(calc(306 - 51 * #{$i}), 0, 0);
       }
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
     }
   }
 
@@ -20,7 +23,3 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-
-
-
