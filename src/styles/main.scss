@@ -4,21 +4,15 @@
 
 .container {
   display: grid;
+  width: 100%;
 
   @for $index from 1 through 6 {
     &__box-#{$index} {
       background-color: rgb(dark-reds($index),0,0);
       @include box-property();
-
     }
   }
 
-  @media (min-width: 300px) {
-    grid-template-columns: repeat(1, minmax(300px, 1fr));
-  }
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
