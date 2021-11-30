@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    @extend %block;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb(calc(255 - #{$index - 1} * 51), 0, 0);
+      }
+    }
+  }
+}
