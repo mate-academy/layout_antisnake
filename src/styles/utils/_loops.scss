@@ -1,0 +1,5 @@
+@for $index from 1 through 6 {
+  .antisnake__cell:nth-child(#{$index}) {
+    background-color: rgb(calc(255 / 6 * #{$index}), 0, 0);
+  }
+}
