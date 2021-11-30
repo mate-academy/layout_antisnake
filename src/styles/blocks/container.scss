@@ -1,46 +1,25 @@
+@import "../utils/variables";
+
 .container {
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 
   &__block {
     height: 300px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     color: #fff;
     font-size: 100px;
 
-    &:nth-child(1) {
-      background-color: rgb(100%, 0, 0);
-    }
-
-    &:nth-child(2) {
-      background-color: rgb(80%, 0, 0);
-    }
-
-    &:nth-child(3) {
-      background-color: rgb(60%, 0, 0);
-    }
-
-    &:nth-child(4) {
-      background-color: rgb(40%, 0, 0);
-    }
-
-    &:nth-child(5) {
-      background-color: rgb(20%, 0, 0);
-    }
-
-    &:nth-child(6) {
-      background-color: rgb(0, 0, 0);
+    @each $color, $index in $block-colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
     }
   }
 }
