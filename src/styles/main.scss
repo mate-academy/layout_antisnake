@@ -1,15 +1,21 @@
 @import "./utils/__normalize.scss";
-@import "./utils/__mixins.scss";
 @import "./utils/__functions.scss";
 
 .container {
   display: grid;
   width: 100%;
 
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+  }
+
   @for $index from 1 through 6 {
-    &__box-#{$index} {
+    &__box:nth-child(#{$index}) {
       background-color: rgb(dark-reds($index),0,0);
-      @include box-property();
     }
   }
 
