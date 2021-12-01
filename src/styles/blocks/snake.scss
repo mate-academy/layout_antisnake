@@ -1,13 +1,12 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: 300px;
+  grid-template-columns: repeat(auto-fill, minmax($part-size, 1fr));
 
   &__part {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: $part-size;
   }
 
   @for $i from 0 through 6 {
