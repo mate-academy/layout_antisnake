@@ -1,0 +1,53 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(
+    3, 
+    minmax($block-min-width,
+    $block-max-width)
+  );
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(
+      2, 
+      minmax($block-min-width,
+      $block-max-width)
+    );
+  }
+  
+  @media (max-width: 599px) {
+    grid-template-columns: minmax($block-min-width, $block-max-width);
+  }
+
+  &__block {
+    height: $block-height;
+    line-height: $block-height;
+    text-align: center;
+    color: #fff;
+  }
+  
+  &__block--1 {
+    background-color: red;
+  }
+  
+  &__block--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+  
+  &__block--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+  
+  &__block--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+  
+  &__block--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+  
+  &__block--6 {
+    background-color: black;
+  }
+}
