@@ -3,14 +3,13 @@
 
 .container {
   display: grid;
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__box {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
-
   }
 
   @for $index from 1 through 6 {
