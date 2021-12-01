@@ -1,9 +1,9 @@
 .container {
   display: grid;
-  grid-template: 1fr 1fr/ 1fr 1fr 1fr;
+  grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
 
   @media (max-width: 899px) {
-    grid-template: 1fr 1fr 1fr/ 1fr 1fr;
+    grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
   }
 
   @media (max-width: 599px) {
