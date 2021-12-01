@@ -1,3 +1,24 @@
-body {
-  margin: 0;
+@import "./utils/__normalize.scss";
+@import "./utils/__functions.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @for $index from 1 through 6 {
+    &__box:nth-child(#{$index}) {
+      background-color: rgb(dark-reds($index),0,0);
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
