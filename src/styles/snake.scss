@@ -10,7 +10,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  &_case {
+  &__case {
     height: $height;
     min-width: $height;
     color: rgb(255, 255, 255);
@@ -21,27 +21,27 @@
     align-content: center;
   }
 
-  &_case--color-1 {
+  &__case--color-1 {
     background-color: rgb(255, 0, 0);
   }
 
-  &_case--color-2 {
+  &__case--color-2 {
     background-color: rgb(204, 0, 0);
   }
 
-  &_case--color-3 {
+  &__case--color-3 {
     background-color: rgb(153, 0, 0);
   }
 
-  &_case--color-4 {
+  &__case--color-4 {
     background-color: rgb(102, 0, 0);
   }
 
-  &_case--color-5 {
+  &__case--color-5 {
     background-color: rgb(51, 0, 0);
   }
 
-  &_case--color-6 {
+  &__case--color-6 {
     background-color: rgb(0, 0, 0);
   }
 }
