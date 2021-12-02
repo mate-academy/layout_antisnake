@@ -10,7 +10,7 @@ body {
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(6, 1fr);
 
-  .box {
+  &__box {
     height: 300px;
     min-width: 300px;
     text-align: center;
@@ -31,17 +31,17 @@ body {
     }
 
     @for $i from 1 through 6 {
-      &::before {
-        content: #{$i};
+      &:nth-child(#{$i})::before {
+        content: '#{$i}';
       }
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media screen and (min-width: 900px) {
+  @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
