@@ -32,7 +32,7 @@ body {
 
     @for $i from 1 through 6 {
       &:nth-child(#{$i})::before {
-        content: '#{$i}';
+        content: "#{$i}";
       }
     }
   }
