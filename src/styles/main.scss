@@ -1,3 +1,30 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.block {
+  display: flex;
+  height: 300px;
+  color: white;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
+
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      background-color: rgb(100% - ($index - 1) * 20%, 0%, 0%);
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
