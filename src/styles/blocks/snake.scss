@@ -1,0 +1,29 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+
+  @media (min-width: (4 * $cell-size)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cell {
+    max-width: 100%;
+    height: $cell-size;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: hsl(0, 100%, 60% - 10% * $i);
+        &::before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+}
