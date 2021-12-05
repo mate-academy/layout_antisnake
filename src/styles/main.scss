@@ -1,3 +1,33 @@
+@import "./utils/veribles";
+
 body {
   margin: 0;
+  font-family: $font;
+  color: $fontColor;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($boxSize, 1fr));
+
+  
+  &__item {
+    text-align: center;
+    line-height: $boxSize;
+    font-size: $fontSize;
+    
+    @for $i from 1 through $boxes {
+      &:nth-of-type(#{$i}) {
+        background-color: hsl(0, 100%, (50% - ($i - 1) * 10));
+      }
+    }
+  }
+
+  @each $screenSize, $columnsNumber in $mainScreen {
+    @media screen and (max-width: $screenSize) {
+      & {
+        grid-template-columns: repeat($columnsNumber, 1fr);
+      }
+    }
+  }
 }
