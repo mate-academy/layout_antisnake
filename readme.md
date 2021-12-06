@@ -1,10 +1,6 @@
 # Antisnake
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
 - [DEMO LINK](https://lanebx.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://lanebx.github.io/layout_antisnake/report/html_report/)
-
-> Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
-___
 
 ## The task
 Display six colored blocks on the screen without any extra margins:
@@ -23,7 +19,6 @@ Display six colored blocks on the screen without any extra margins:
   See the screenshots [here](./reference).
 - Each row is to be read from left ro right.
 
---> [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md)
 
 | 3 columns | 2 columns | 1 column |
 | --------- | --------- | -------- |
