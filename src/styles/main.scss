@@ -8,7 +8,6 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   font-size: 100px;
-  max-width: 1199px;
   height: 100%;
 
   &_block {
@@ -41,5 +40,11 @@ body {
   
   &_block:nth-child(6) {
     background-color: rgb(0%, 0%, 0%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
