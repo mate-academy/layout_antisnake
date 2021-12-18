@@ -1,0 +1,14 @@
+.snake-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__block {
+    height: $block-height;
+  }
+}
+
+@media (min-width: 900px) {
+  .snake-container {
+    grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+  }
+}
