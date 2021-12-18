@@ -1,0 +1,13 @@
+.snake-block {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: $block-height;
+}
+
+@for $i from 0 through 5 {
+  .snake-block:nth-child(#{$i + 1}) {
+    background-color: rgb(calc(255 - #{$i} * 51), 0, 0);
+  }
+}
