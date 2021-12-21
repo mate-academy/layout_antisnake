@@ -4,7 +4,7 @@ body {
 
 .blocks {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &-block {
     display: flex;
@@ -22,11 +22,15 @@ body {
       "4" rgb(102, 0, 0),
       "5" rgb(51, 0, 0),
       "6" black;
-  
+
     @each $number, $color in $colors {
-      &--#{$number} {
+      &:nth-child(#{$number}) {
         background-color: #{$color};
       }
     }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
