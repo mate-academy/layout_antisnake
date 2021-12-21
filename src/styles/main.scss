@@ -1,3 +1,32 @@
 body {
   margin: 0;
 }
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+
+  &-block {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+  
+    $colors:
+      "1" red,
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" black;
+  
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: #{$color};
+      }
+    }
+  }
+}
