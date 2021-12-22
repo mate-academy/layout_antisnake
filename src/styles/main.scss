@@ -1,3 +1,32 @@
 body {
   margin: 0;
 }
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+  grid-auto-rows: 300px;
+
+  @media(min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+      grid-template-rows: repeat(2, 300px);
+    }
+  }
+
+  &__box {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @for $i from 1 through 6 {
+    & :nth-child(#{$i}) {
+      background-color: rgb(306 - 51 * $i, 0, 0);
+    }
+  }
+}
