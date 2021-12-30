@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($block-size, 1fr));
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    height: $block-size;
+    line-height: $block-size;
+    color: white;
+    text-align: center;
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
+    }
+  }
+}
