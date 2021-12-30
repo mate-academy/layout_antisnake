@@ -1,0 +1,9 @@
+.container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax($blockWigth, 1fr));
+
+  @media (min-width: #{$blockWigth * 3}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
