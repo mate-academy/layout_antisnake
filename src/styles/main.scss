@@ -1,3 +1,37 @@
-body {
+$block-size: 300px;
+
+.page {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($block-size, 1fr));
+
+  @media screen and (min-width: 600px) and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, minmax($block-size, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-size, 1fr));
+    }
+  }
+}
+
+.block {
+  height: $block-size;
+  text-align: center;
+  line-height: $block-size;
+  font-size: 100px;
+  color: white;
+
+  @for $count from 1 through 6 {
+    &--#{$count} {
+      background-color: rgb( calc(100% - 20% * (#{$count} - 1)) , 0%, 0%);
+    }
+  }
 }
