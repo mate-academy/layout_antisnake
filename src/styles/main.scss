@@ -1,9 +1,8 @@
-$block-size: 300px;
-
 .page {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@import "./variables.scss";
 @import "./block.scss";
 @import "./container.scss";
