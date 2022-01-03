@@ -1,0 +1,4 @@
+@mixin aligment ($position) {
+  justify-content: $position;
+  align-content: $position;
+}
