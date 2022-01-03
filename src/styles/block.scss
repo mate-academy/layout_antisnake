@@ -10,10 +10,4 @@
       background-color: rgb(100% - 20% * ($count - 1), 0%, 0%);
     }
   }
-
-  // @each $number, $percent in $numbers {
-  //   &--#{$number} {
-  //     background-color: rgb($percent, 0%, 0%);
-  //   }
-  // }
 }
