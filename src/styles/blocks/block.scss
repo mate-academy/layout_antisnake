@@ -1,0 +1,17 @@
+.block {
+  display: grid;
+  height: $size-blocks;
+  min-width: $size-blocks;
+  @include aligment($position-content);
+  color: $color-font;
+
+  @each $num,$color in $block-colors {
+    &:nth-child(#{$num}) {
+      background-color: $color;
+
+      &::after {
+        content: "#{$num}";
+      }
+    }
+  }
+}
