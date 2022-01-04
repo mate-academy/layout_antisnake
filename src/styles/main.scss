@@ -26,13 +26,13 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .box {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 450px) {
   .box {
     grid-template-columns: 1fr;
   }
