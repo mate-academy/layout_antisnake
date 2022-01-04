@@ -6,15 +6,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
 
-  @media (min-width: 1200px) {
+  @media (min-width: ($blockSize * 4)) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__block {
-    @include square($blockSize);
-
     display: grid;
     place-items: center;
+    @include square($blockSize);
 
     @each $name, $color in $colors {
       &--#{$name} {
