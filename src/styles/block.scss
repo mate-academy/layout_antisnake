@@ -2,8 +2,6 @@
   height: $block-size;
   text-align: center;
   line-height: $block-size;
-  font-size: 100px;
-  color: white;
 
   @for $count from 1 through 6 {
     &--#{$count} {
