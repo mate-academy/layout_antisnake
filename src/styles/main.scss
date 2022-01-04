@@ -1,3 +1,25 @@
-body {
-  margin: 0;
+@import "normilize.scss";
+@import "utils/varialbles";
+@import "utils/mixin";
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    @include square($blockSize);
+
+    display: grid;
+    place-items: center;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
 }
