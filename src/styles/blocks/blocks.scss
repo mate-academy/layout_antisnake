@@ -1,0 +1,28 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
+
+  &__block {
+    height: $block-size;
+    position: relative;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb((255 / 5 * (6 - $index)), 0, 0);
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          content: "#{$index}";
+        }
+      }
+    }
+  }
+}
