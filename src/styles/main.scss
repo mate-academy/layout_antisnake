@@ -1,3 +1,49 @@
+$backgrounditems: (
+  "1": red,
+  "2": rgb(204, 0, 0),
+  "3": rgb(153, 0, 0),
+  "4": rgb(102, 0, 0),
+  "5": rgb(51, 0, 0),
+  "6": black
+);
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.box {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+@for $i from 1 through 6 {
+  .card:nth-child(#{$i}):before {
+    content: "#{$i}";
+  }
+}
+
+@each $backgrounditem, $value in $backgrounditems {
+  .card:nth-child(#{$backgrounditem}) {
+    background-color: $value;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .box {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
