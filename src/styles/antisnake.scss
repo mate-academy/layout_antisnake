@@ -1,0 +1,18 @@
+.antisnake {
+  max-width: 1199px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minSizeItem, 1fr));
+  justify-content: center;
+  &__block {
+    flex-grow: 1;
+    line-height: $highItem;
+    text-align: center;
+    color: $BGcolor;
+
+    @each $index, $color in $colorsNumbers {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
