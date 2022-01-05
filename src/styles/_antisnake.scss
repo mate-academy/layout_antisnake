@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cellSize, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $cellSize;
+
+    @each $word, $num in $numbers {
+      &:nth-child(n + #{$num})::before {
+        content: "#{$num}";
+      }
+    }
+
+    @each $color, $num in $colors {
+      &:nth-child(n + #{$num}) {
+        background-color: #{$color};
+      }
+    }
+  }
+}
