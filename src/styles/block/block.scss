@@ -1,0 +1,36 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+
+  color: $colorBlock;
+  line-height: $blockSize;
+  text-align: center;
+
+  &__1 {
+    background-color: $backGroundColorBlock1;
+  }
+
+  &__2 {
+    background-color: $backGroundColorBlock2;
+  }
+
+  &__3 {
+    background-color: $backGroundColorBlock3;
+  }
+
+  &__4 {
+    background-color: $backGroundColorBlock4;
+  }
+
+  &__5 {
+    background-color: $backGroundColorBlock5;
+  }
+
+  &__6 {
+    background-color: $backGroundColorBlock6;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
