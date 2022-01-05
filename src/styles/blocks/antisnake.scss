@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: black;
+  }
+}
+
+.block1 {
+  background-color: $block1-color;
+}
+
+.block2 {
+  background-color: $block2-color;
+}
+
+.block3 {
+  background-color: $block3-color;
+}
+
+.block4 {
+  background-color: $block4-color;
+}
+
+.block5 {
+  background-color: $block5-color;
+}
+
+.block6 {
+  background-color: $block6-color;
+}
