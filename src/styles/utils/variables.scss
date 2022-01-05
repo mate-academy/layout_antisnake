@@ -1,0 +1,22 @@
+$element-height: 300px;
+$color-white: #fff;
+$color-snake-1: #f00;
+$color-snake-2: #c00;
+$color-snake-3: #900;
+$color-snake-4: #600;
+$color-snake-5: #300;
+$color-snake-6: #000;
+
+$colors:
+  "1" $color-snake-1,
+  "2" $color-snake-2,
+  "3" $color-snake-3,
+  "4" $color-snake-4,
+  "5" $color-snake-5,
+  "6" $color-snake-6;
+
+@each $num, $color in $colors {
+  .element-#{$num} {
+    background-color: $color;
+  }
+}

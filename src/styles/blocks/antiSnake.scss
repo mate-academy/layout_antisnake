@@ -1,0 +1,17 @@
+.antiSnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($element-height, 1fr));
+
+  &__element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $element-height;
+  }
+}
+
+@media (min-width: 900px) {
+  .antiSnake {
+    grid-template-columns: repeat(3, minmax($element-height, 1fr));
+  }
+}
