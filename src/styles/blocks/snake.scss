@@ -1,0 +1,22 @@
+@import "../utils/variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+
+  &__block {
+    text-align: center;
+    min-width: $width;
+    height: $width;
+  }
+
+  @media (min-width: $width * 3) {
+    grid-template-columns: repeat(3, minmax($width, 1fr));
+  }
+}
+
+@each $index, $color in $colors {
+  .block-#{$index} {
+    background-color: $color;
+  }
+}
