@@ -1,11 +1,11 @@
 .antisnake {
-  max-width: 1199px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($minSizeItem, 1fr));
   justify-content: center;
+  max-width: 1199px;
   &__block {
     flex-grow: 1;
-    line-height: $highItem;
+    line-height: $heightItem;
     text-align: center;
     color: $BGcolor;
 
