@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($minSizeItem, 1fr));
   justify-content: center;
-  max-width: 1199px;
   &__block {
     flex-grow: 1;
     line-height: $heightItem;
@@ -14,5 +13,11 @@
         background-color: $color;
       }
     }
+  }
+}
+
+@media (min-width: 1199px) {
+  .antisnake {
+    grid-template-columns: repeat(3, minmax($minSizeItem, 1fr));
   }
 }
