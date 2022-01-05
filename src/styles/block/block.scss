@@ -1,0 +1,18 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+
+  color: $colorBlock;
+  line-height: $blockSize;
+  text-align: center;
+
+  @each $index, $color in $colors {
+    &__#{$index} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
