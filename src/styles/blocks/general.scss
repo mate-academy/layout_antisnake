@@ -1,0 +1,28 @@
+.general {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size, 1fr));
+
+  @media screen and (max-width: 899.5px) {
+    grid-template-columns: repeat(2, minmax($size, 1fr));
+  }
+
+  @media screen and (max-width: 899.5px) {
+    grid-template-columns: repeat(2, minmax($size, 1fr));
+  }
+
+  @media  screen and (max-width: 451px) {
+    grid-template-columns: repeat(1, minmax($size, 1fr));
+  }
+
+  &__block {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}
