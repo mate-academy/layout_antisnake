@@ -1,0 +1,31 @@
+@import "../utils/_variables.scss";
+
+.snake-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cube {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: $size;
+}
+
+@for $number from 1 through 6 {
+  .cube:nth-child(#{$number})::before {
+    content: "#{$number}";
+  }
+}
+
+@each $num, $color in $colors {
+  .cube:nth-child(#{$num}) {
+    background-color: $color;
+  }
+}
