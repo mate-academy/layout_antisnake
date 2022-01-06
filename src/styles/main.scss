@@ -10,34 +10,25 @@ body {
 .main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  max-width: 1199px;
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
 
 .box {
   height: 300px;
 
-  &--1 {
-    background-color: #f00;
-  }
+  $back-color:
+    "1"  #f00,
+    "2"  rgb(80%, 0%, 0%),
+    "3"  rgb(60%, 0%, 0%),
+    "4"  rgb(40%, 0%, 0%),
+    "5"  rgb(20%, 0%, 0%),
+    "6"  #000;
 
-  &--2 {
-    background-color: rgb(80%, 0%, 0%);
+  @each $item, $color in $back-color {
+    &--#{$item} {
+      background-color: #{$color};
+    }
   }
-
-  &--3 {
-    background-color: rgb(60%, 0%, 0%);
-  }
-
-  &--4 {
-    background-color: rgb(40%, 0%, 0%);
-  }
-
-  &--5 {
-    background-color: rgb(20%, 0%, 0%);
-  }
-
-  &--6 {
-    background-color: #000;
-  }
-
 }
