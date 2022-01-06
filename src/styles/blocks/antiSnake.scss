@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($element-height, 1fr));
 
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($element-height, 1fr));
+  }
+
   &__element {
     display: flex;
     justify-content: center;
@@ -13,12 +17,5 @@
         background-color: $color;
       }
     }
-  }
-
-}
-
-@media (min-width: 900px) {
-  .antiSnake {
-    grid-template-columns: repeat(3, minmax($element-height, 1fr));
   }
 }
