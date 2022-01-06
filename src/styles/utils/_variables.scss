@@ -1,4 +1,10 @@
 $size: 300px;
-$block-color: 100%;
-$frs3: 1fr 1fr 1fr;
-$frs2: 1fr 1fr;
+$text-color: #fff;
+$block-color: (
+  1: #f00,
+  2: #c00,
+  3: #900,
+  4: #600,
+  5: #300,
+  6: #000,
+);

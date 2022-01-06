@@ -1,7 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: $frs3;
-  grid-template-rows: $frs2;
+  grid-template-columns: repeat(3, minmax($size, 1fr));
 
   &-block {
     display: flex;
@@ -9,25 +8,22 @@
     align-items: center;
     height: $size;
 
-    @for $i from 1 through 6 {
-      &:nth-child(#{$i}) {
-        background-color: rgb($block-color, 0%, 0%);
+    @each $block, $color in $block-color {
+      &:nth-child(#{$block}) {
+        background-color: $color;
       }
-      $block-color: $block-color - 20%;
     }
   }
 
   @media (max-width: 899px) {
     & {
-      grid-template-columns: $frs2;
-      grid-template-rows: $frs3;
+      grid-template-columns: repeat(2, minmax($size, 1fr));
     }
   }
 
   @media (max-width: 599px) {
     & {
-      grid-template-columns: 1fr;
-      grid-template-rows: $frs2 $frs2;
+      grid-template-columns: repeat(1, minmax($size, 1fr));
     }
   }
 }
