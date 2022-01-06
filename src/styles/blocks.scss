@@ -1,0 +1,38 @@
+
+.blocks {
+  display: grid;
+  grid-template-rows: repeat(2,1fr);
+  grid-template-columns: repeat(3, minmax($height,1fr));
+
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $height;
+  min-width: $height;
+}
+
+@each $index,$color in $colors {
+  .block--#{$index} {
+    background-color: $color;
+  }
+}
+
+@media (max-width: 900px) {
+  .blocks {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,  $height);
+  }
+}
+
+@media (max-width: 600px) {
+  .blocks {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, $height);
+  }
+  .block {
+    min-width: $height;
+  }
+}
