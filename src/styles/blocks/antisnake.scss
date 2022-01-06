@@ -1,0 +1,47 @@
+.antisnake {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    height: 300px;
+    min-width: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+
+    &:nth-child(1) {
+      background-color: red;
+    }
+
+    &:nth-child(2) {
+      background-color: hsl(0,100%,40%);
+    }
+
+    &:nth-child(3) {
+      background-color: hsl(0,100%,30%);
+    }
+
+    &:nth-child(4) {
+      background-color: hsl(0,100%,20%);
+    }
+
+    &:nth-child(5) {
+      background-color: hsl(0,100%,10%);
+    }
+
+    &:nth-child(6) {
+      background-color: hsl(0,0,0);
+    }
+  }
+}
