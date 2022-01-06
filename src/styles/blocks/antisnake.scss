@@ -8,10 +8,22 @@
     align-items: center;
     height: 300px;
   }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+  }
 }
 
 @each $index, $color in $block-colors {
-  .block#{$index} {
+  .container__block--#{$index} {
     background-color: $color;
   }
 }
