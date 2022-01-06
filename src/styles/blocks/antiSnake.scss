@@ -10,6 +10,12 @@
   }
 }
 
+@each $num, $color in $colors {
+  .element-#{$num} {
+    background-color: $color;
+  }
+}
+
 @media (min-width: 900px) {
   .antiSnake {
     grid-template-columns: repeat(3, minmax($element-height, 1fr));
