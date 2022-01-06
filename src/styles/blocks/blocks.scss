@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: $frs3;
+  grid-template-rows: $frs2;
+
+  &-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb($block-color, 0%, 0%);
+      }
+      $block-color: $block-color - 20%;
+    }
+  }
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: $frs2;
+      grid-template-rows: $frs3;
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+      grid-template-rows: $frs2 $frs2;
+    }
+  }
+}
