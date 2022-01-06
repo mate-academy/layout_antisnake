@@ -7,13 +7,14 @@
     justify-content: center;
     align-items: center;
     height: $element-height;
-  }
-}
 
-@each $num, $color in $colors {
-  .element-#{$num} {
-    background-color: $color;
+    @each $num, $color in $colors {
+      &--#{$num} {
+        background-color: $color;
+      }
+    }
   }
+
 }
 
 @media (min-width: 900px) {
