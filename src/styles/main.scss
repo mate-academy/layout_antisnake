@@ -5,11 +5,16 @@ body {
 }
 
 .container {
-  max-width: 1199.99px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
 
 .block {
