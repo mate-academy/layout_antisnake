@@ -1,0 +1,26 @@
+@import "../utils/variables.scss";
+
+.box {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-height, 1fr));
+  justify-content: center;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($item-height, 1fr));
+  }
+
+  &__card {
+    display: flex;
+    height: $item-height;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}
