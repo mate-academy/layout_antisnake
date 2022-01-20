@@ -6,15 +6,18 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+
   &__number {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: white;
-    height: 300px;
-
-    display: flex;
-    justify-content: ceter;
-    align-items: center;
+    line-height: 300px;
+    text-align: center;
   }
 
   &__number:nth-child(1) {
