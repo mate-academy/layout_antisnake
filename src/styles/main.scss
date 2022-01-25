@@ -1,3 +1,52 @@
+$size: 300px;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+}
+
+@media (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(3, minmax($size, 1fr));
+  }
+}
+
+$colors:
+  "block1" rgb(255, 0, 0),
+  "block2" rgb(204, 0, 0),
+  "block3" rgb(153, 0, 0),
+  "block4" rgb(102, 0, 0),
+  "block5" rgb(51, 0, 0),
+  "block6" rgb(0, 0, 0);
+
+@each $name, $color in $colors {
+  .antisnake__#{$name} {
+    background-color: #{$color};
+  }
+}
+
+.block {
+  height: $size;
+
+  @for $numb from 1 to 7 {
+    &:nth-child(#{$numb}) {
+      &::before {
+        content: "#{$numb}";
+        color: #fff;
+        font-size: 100px;
+        justify-content: center;
+        line-height: $size;
+        display: flex;
+      }
+    }
+  }
 }
