@@ -1,0 +1,27 @@
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($rectangle-size, 1fr));
+
+  &__rectangle {
+    height: $rectangle-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 100px;
+  }
+
+  @for $index from 1 through 6 {
+    &__rectangle:nth-child(#{ $index }) {
+      background-color: rgb(100% - 20 * ($index - 1), 0%, 0%);
+
+      &::before {
+        content: "#{$index}";
+      }
+    }
+  }
+
+  @media screen and (min-width: $rectangle-size * 3) {
+    grid-template-columns: repeat(3, minmax($rectangle-size, 1fr));
+  }
+}
