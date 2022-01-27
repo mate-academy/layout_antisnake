@@ -1,0 +1,13 @@
+.block {
+  line-height: $block-size;
+  text-align: center;
+
+  @for $i from 0 through 5 {
+    &:nth-child(#{$i+1}) {
+      background-color: rgb(255 - $i * 51, 0, 0);
+      &::after {
+        content: "#{$i+1}";
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($block-size, 1fr));
+
+  @media (min-width:#{$block-size * 2}) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
+  }
+
+  @media (min-width: #{$block-size * 3}) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+
+  }
+}
