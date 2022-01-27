@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./utilities/__variabels";
+
+@import "./blocks/reset.scss";
+@import "./blocks/container.scss";
