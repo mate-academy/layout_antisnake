@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  align-items: center;
+
+  &__block {
+    display: grid;
+    align-items: center;
+    text-align: center;
+
+    min-width: 300px;
+    height: 300px;
+    color: white;
+
+    @for $i from 0 through 5 {
+      &--#{$i + 1} {
+        background-color: rgb(($i * 51), 0, 0);
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
