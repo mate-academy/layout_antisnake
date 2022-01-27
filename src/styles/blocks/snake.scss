@@ -1,0 +1,32 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
+  @media screen and (min-width: 1200px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+
+  &__element {
+    color: #000;
+    height: 300px;
+    min-width: 300px;
+    text-align: center;
+    line-height: 300px;
+
+    $colors:
+      "red1" rgb(100%, 0%, 0%),
+      "red2" rgb(80%, 0%, 0%),
+      "red3" rgb(60%, 0%, 0%),
+      "red4" rgb(40%, 0%, 0%),
+      "red5" rgb(20%, 0%, 0%),
+      "black" rgb(0%, 0%, 0%);
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
