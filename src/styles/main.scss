@@ -11,7 +11,7 @@ body {
 
   .container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr))
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
 
@@ -29,16 +29,15 @@ body {
 }
 
 $colors:
-"1" red,
-"2" #c00,
-"3" #900,
-"4" #600,
-"5" #300,
-"6" black;
+  "1" red,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" black;
 
 @each $number, $color in $colors {
-.block:nth-child(#{$number}) {
-  background-color: $color;
+  .block:nth-child(#{$number}) {
+    background-color: $color;
+  }
 }
-}
-
