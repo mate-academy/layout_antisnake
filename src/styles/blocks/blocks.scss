@@ -1,0 +1,26 @@
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 599px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 899px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .block {
+    display: grid;
+    place-items: center;
+    height: 300px;
+    font-size: 100px;
+    color: #fff;
+
+    @each $i, $background-color in $block-backgrounds {
+      &--#{$i} {
+        background-color: #{$background-color};
+      }
+    }
+  }
+}
