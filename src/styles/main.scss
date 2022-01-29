@@ -1,3 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+$min-width-and-height: 300px;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &__box {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    min-width: $min-width-and-height;
+    height: $min-width-and-height;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    $background-colors:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+
+    @each $index, $color in $background-colors {
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    & {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+  }
 }
