@@ -1,11 +1,7 @@
-html {
+body {
   color: white;
   font-size: 100px;
   font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0 auto;
 }
 
 * {
@@ -15,8 +11,7 @@ body {
 .wrapper {
   margin: 0 auto;
   border: 1px solid black;
-  max-width: 960px;
-  background-color: aqua;
+  //max-width: 960px;
   display: grid;
   grid-template-areas: "one two three" "four five six";
 }
