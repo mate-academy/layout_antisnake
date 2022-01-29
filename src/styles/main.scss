@@ -23,6 +23,7 @@ body {
 
 .part {
   height: 300px;
+  min-width: 300px;
 
   &__number {
     text-align: center;
