@@ -1,0 +1,36 @@
+$blok-size: 300px;
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($blok-size, 1fr));
+
+  @media (max-width:899px) {
+    grid-template-columns: repeat(2, minmax($blok-size, 1fr));
+  }
+
+  @media (max-width:599px) {
+    grid-template-columns: repeat(1, minmax($blok-size, 1fr));
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include square ($blok-size);
+
+    $colors:
+    1 #f00,
+    2 #c00,
+    3 #900,
+    4 #600,
+    5 #300,
+    6 #000;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}
