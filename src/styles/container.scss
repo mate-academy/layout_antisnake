@@ -1,0 +1,49 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(300px, 1fr);
+
+  @media (min-width: ($box-width * 2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ($box-width * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    box-sizing: border-box;
+    height: $box-width;
+    text-align: center;
+    line-height: $box-width;
+
+    &--01 {
+      background-color: #f00;
+      color: white;
+    }
+
+    &--02 {
+      background-color: #c00;
+      color: white;
+    }
+
+    &--03 {
+      background-color: #900;
+      color: white;
+    }
+
+    &--04 {
+      background-color: #600;
+      color: white;
+    }
+
+    &--05 {
+      background-color: #300;
+      color: white;
+    }
+
+    &--06 {
+      background-color: #000;
+      color: white;
+    }
+  }
+}
