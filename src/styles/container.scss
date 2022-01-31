@@ -1,6 +1,10 @@
+$box-width: 300px;
+
 .container {
   display: grid;
-  grid-template-columns: repeat(300px, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(1, 1fr);
 
   @media (min-width: ($box-width * 2)) {
     grid-template-columns: repeat(2, 1fr);
@@ -16,34 +20,18 @@
     text-align: center;
     line-height: $box-width;
 
-    &--01 {
-      background-color: #f00;
-      color: white;
-    }
+    $colors:
+      1 rgb(255, 0, 0),
+      2 rgb(204, 0, 0),
+      3 rgb(153, 0, 0),
+      4 rgb(102, 0, 0),
+      5 rgb(51, 0, 0),
+      6 rgb(0, 0, 0);
 
-    &--02 {
-      background-color: #c00;
-      color: white;
-    }
-
-    &--03 {
-      background-color: #900;
-      color: white;
-    }
-
-    &--04 {
-      background-color: #600;
-      color: white;
-    }
-
-    &--05 {
-      background-color: #300;
-      color: white;
-    }
-
-    &--06 {
-      background-color: #000;
-      color: white;
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
     }
   }
 }
