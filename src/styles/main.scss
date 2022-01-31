@@ -10,20 +10,19 @@ body {
   color: #fff;
 }
 
-$min-width-and-height: 300px;
+$box-height: 300px;
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax($box-height, 1fr));
 
   &__box {
     display: grid;
     justify-content: center;
     align-content: center;
 
-    min-width: $min-width-and-height;
-    height: $min-width-and-height;
+    min-width: $box-height;
+    height: $box-height;
 
     @for $index from 1 through 6 {
       &:nth-child(#{$index})::before {
@@ -49,15 +48,14 @@ $min-width-and-height: 300px;
   @media (max-width: 599px) {
     & {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
     }
   }
 
   @media (min-width: 600px) and (max-width: 899px) {
     & {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
     }
   }
 }
