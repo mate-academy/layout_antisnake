@@ -21,9 +21,9 @@ body {
   justify-content: center;
   align-items: center;
   grid-template-columns: 1fr;
-
+  
   &__box {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
