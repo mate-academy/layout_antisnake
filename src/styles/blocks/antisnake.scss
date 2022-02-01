@@ -1,5 +1,13 @@
 $size: 300px;
 
+$back-colors:
+  1 rgb(100%, 0%, 0%),
+  2 rgb(80%, 0%, 0%),
+  3 rgb(60%, 0%, 0%),
+  4 rgb(40%, 0%, 0%),
+  5 rgb(20%, 0%, 0%),
+  6 rgb(0%, 0%, 0%);
+
 .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -11,14 +19,6 @@ $size: 300px;
     text-align: center;
     line-height: $size;
 
-    $back-colors:
-      1 rgb(100%, 0%, 0%),
-      2 rgb(80%, 0%, 0%),
-      3 rgb(60%, 0%, 0%),
-      4 rgb(40%, 0%, 0%),
-      5 rgb(20%, 0%, 0%),
-      6 rgb(0%, 0%, 0%);
-
     @each $number, $color in $back-colors {
       &--#{$number} {
         background-color: #{$color};
@@ -27,10 +27,10 @@ $size: 300px;
   }
   
   @media (min-width: 600px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
