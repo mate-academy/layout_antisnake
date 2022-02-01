@@ -9,7 +9,7 @@ $blok-size: 300px;
   }
 
   @media (max-width:599px) {
-    grid-template-columns: repeat(1, minmax($blok-size, 1fr));
+    grid-template-columns: 1fr;
   }
 
   &__box {
@@ -18,14 +18,6 @@ $blok-size: 300px;
     align-items: center;
 
     @include square ($blok-size);
-
-    $colors:
-    1 #f00,
-    2 #c00,
-    3 #900,
-    4 #600,
-    5 #300,
-    6 #000;
 
     @each $number, $color in $colors {
       &:nth-child(#{$number}) {
