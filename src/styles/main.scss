@@ -1,3 +1,47 @@
 body {
+  color: white;
+  font-size: 100px;
+  font-family: Arial, sans-serif;
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "area-1 area-2 area-3" "area-4 area-5 area-6";
+}
+
+.part {
+  height: 300px;
+  min-width: 300px;
+
+  &__number {
+    text-align: center;
+    display: block;
+    line-height: 300px;
+    margin: auto;
+
+  }
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      grid-area: area-#{$index};
+      background-color: rgb(((6 - $index) * 20%), 0%, 0%);
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .wrapper {
+    grid-template-areas: "area-1 area-2" "area-3 area-4" "area-5 area-6";
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .wrapper {
+    grid-template-areas: "area-1" "area-2" "area-3" "area-4" "area-5" "area-6";
+  }
 }
