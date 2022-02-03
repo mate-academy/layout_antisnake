@@ -12,7 +12,7 @@ body {
 .wrapper {
   margin: 0 auto;
   display: grid;
-  grid-template-areas: "one two three" "four five six";
+  grid-template-areas: "area-1 area-2 area-3" "area-4 area-5 area-6";
 }
 
 .part {
@@ -24,47 +24,24 @@ body {
     display: block;
     line-height: 300px;
     margin: auto;
+
   }
-}
-
-.part--1 {
-  grid-area: one;
-  background-color: rgb(100%, 0%, 0%);
-}
-
-.part--2 {
-  grid-area: two;
-  background-color: rgb(80%, 0%, 0%);
-}
-
-.part--3 {
-  grid-area: three;
-  background-color: rgb(60%, 0%, 0%);
-}
-
-.part--4 {
-  grid-area: four;
-  background-color: rgb(40%, 0%, 0%);
-}
-
-.part--5 {
-  grid-area: five;
-  background-color: rgb(20%, 0%, 0%);
-}
-
-.part--6 {
-  grid-area: six;
-  background-color: rgb(0%, 0%, 0%);
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      grid-area: area-#{$index};
+      background-color: rgb(((6 - $index) * 20%), 0%, 0%);
+    }
+  }
 }
 
 @media screen and (max-width: 899px) {
   .wrapper {
-    grid-template-areas: "one two" "three four" "five six";
+    grid-template-areas: "area-1 area-2" "area-3 area-4" "area-5 area-6";
   }
 }
 
 @media screen and (max-width: 599px) {
   .wrapper {
-    grid-template-areas: "one" "two" "three" "four" "five" "six";
+    grid-template-areas: "area-1" "area-2" "area-3" "area-4" "area-5" "area-6";
   }
 }
