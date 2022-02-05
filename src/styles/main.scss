@@ -1,3 +1,50 @@
 body {
   margin: 0;
 }
+
+.box {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  height: 300px;
+  color: white;
+  text-align: center;
+  line-height: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__box1 {
+
+    background-color: rgb(255, 0, 0);
+
+  }
+
+  &__box2 {
+    background-color: rgb(204, 0, 0);
+
+  }
+
+  &__box3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__box4 {
+
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__box5 {
+    background-color: rgb(51, 0, 0);
+
+  }
+
+  &__box6 {
+    background-color: rgb(0, 0, 0);
+
+  }
+}
