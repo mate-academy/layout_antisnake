@@ -1,7 +1,7 @@
 # Antisnake
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
 - [DEMO LINK](https://popvsl2007.github.io/layout_antisnake/)
-- [TEST REPORT LINK](https://popval2007git commit -am 'some message'.github.io/layout_antisnake/report/html_report/)
+- [TEST REPORT LINK](https://popval2007.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
