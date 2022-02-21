@@ -17,7 +17,8 @@
     justify-content: center;
     align-items: center;
 
-    @each $number, $color in $colors {
+    @each $number,
+      $color in $colors {
       &:nth-child(#{$number}) {
         background-color: $color;
       }
