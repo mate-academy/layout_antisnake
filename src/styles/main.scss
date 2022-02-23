@@ -1,3 +1,47 @@
+$min-card-size: 300px;
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($min-card-size, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($min-card-size, 1fr));
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: $min-card-size;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+  }
+
+  @for $number from 1 to 7 {
+    &__card:nth-child(#{$number}):before {
+      content: "#{$number}";
+    }
+  }
+
+  $background-colors:
+    "1" 255,
+    "2" 204,
+    "3" 153,
+    "4" 102,
+    "5" 51,
+    "6" 0;
+
+  @each $id, $red-color in $background-colors {
+    &__card:nth-child(#{$id}) {
+      background-color: rgb($red-color, 0, 0);
+    }
+  }
 }
