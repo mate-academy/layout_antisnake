@@ -1,3 +1,39 @@
+$colors: (
+  "1": red,
+  "2": rgb(204, 0, 0),
+  "3": rgb(153, 0, 0),
+  "4": rgb(102, 0, 0),
+  "5": rgb(51, 0, 0),
+  "6": black,
+);
+
 body {
   margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    font-size: 100px;
+
+    @each $name, $bgcolor in $colors {
+      &:nth-child(#{$name}) {
+        background-color: #{$bgcolor};
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
