@@ -1,3 +1,12 @@
+$block-height: 300px;
+$colors:
+  1 #f30000,
+  2 #cc0001,
+  3 #990100,
+  4 #600,
+  5 #320000,
+  6 #000;
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -7,6 +16,7 @@ body {
 
 .container {
   display: grid;
+  grid-template-columns: minmax(300px, auto);
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, auto);
@@ -16,35 +26,15 @@ body {
   }
 }
 
-$block-height: 300px;
-
 .block {
-  height: $block-height;
-  min-width: $block-height;
   display: grid;
   place-content: center center;
 
-  &--1 {
-    background-color: #f30000;
-  }
+  height: $block-height;
 
-  &--2 {
-    background-color: #cc0001;
-  }
-
-  &--3 {
-    background-color: #990100;
-  }
-
-  &--4 {
-    background-color: #600;
-  }
-
-  &--5 {
-    background-color: #320000;
-  }
-
-  &--6 {
-    background-color: #000;
+  @each $num, $color in $colors {
+    &--#{$num} {
+      background-color: $color;
+    }
   }
 }
