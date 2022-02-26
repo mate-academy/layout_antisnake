@@ -4,120 +4,46 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-@media (max-width: 899px) {
+@media (min-width: 1200px) {
   .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 899px) and (max-width: 450px) {
-  .container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .container__block {
-  height: 300px;
-  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  height: 300px;
   font-size: 100px;
-  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.block-1 {
+.container__block--1 {
   background-color: red;
 }
-@media (max-width: 450px) {
-  .block-1 {
-    grid-column-start: 1;
-    grid-row-start: 1;
-  }
-}
 
-.block-2 {
+.container__block--2 {
   background-color: #c00;
 }
-@media (max-width: 450px) {
-  .block-2 {
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-}
 
-.block-3 {
+.container__block--3 {
   background-color: #900;
 }
-@media (max-width: 899px) {
-  .block-3 {
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-}
-@media (max-width: 899px) and (max-width: 450px) {
-  .block-3 {
-    grid-column-start: 1;
-    grid-row-start: 3;
-  }
-}
 
-.block-4 {
+.container__block--4 {
   background-color: #600;
-  grid-column-start: 1;
-  grid-row-start: 2;
-}
-@media (max-width: 899px) {
-  .block-4 {
-    grid-column-start: 2;
-    grid-row-start: 2;
-  }
-}
-@media (max-width: 899px) and (max-width: 450px) {
-  .block-4 {
-    grid-column-start: 1;
-    grid-row-start: 4;
-  }
 }
 
-.block-5 {
+.container__block--5 {
   background-color: #300;
-  grid-column-start: 2;
-  grid-row-start: 2;
-}
-@media (max-width: 899px) {
-  .block-5 {
-    grid-column-start: 1;
-    grid-row-start: 3;
-  }
-}
-@media (max-width: 899px) and (max-width: 450px) {
-  .block-5 {
-    grid-column-start: 1;
-    grid-row-start: 5;
-  }
 }
 
-.block-6 {
-  background-color: black;
-  grid-column-start: 3;
-  grid-row-start: 2;
-}
-@media (max-width: 899px) {
-  .block-6 {
-    grid-column-start: 2;
-    grid-row-start: 3;
-  }
-}
-@media (max-width: 899px) and (max-width: 450px) {
-  .block-6 {
-    grid-column-start: 1;
-    grid-row-start: 6;
-  }
+.container__block--6 {
+  background-color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
