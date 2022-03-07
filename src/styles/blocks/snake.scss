@@ -1,0 +1,25 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(#{$blockMinWidth}, 1fr));
+
+  @media (min-width: #{$blockInRow}) {
+    grid-template-columns: repeat(3, minmax(#{$blockMinWidth}, 1fr));
+  }
+
+  &__block {
+    display: grid;
+    place-items: center;
+
+    height: #{$blockHeight};
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @each $block, $color in $colors {
+      &:nth-child(#{$block}) {
+        background-color: $color;
+      }
+    }
+  }
+}
