@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($height-block, 1fr));
+
+  @media (min-width: $min-width) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    color: $font-color;
+    text-align: center;
+    height: $height-block;
+    line-height: $height-block;
+
+    $colors:
+      1 hsl(0, 100%, 50%),
+      2 hsl(0, 100%, 40%),
+      3 hsl(0, 100%, 30%),
+      4 hsl(0, 100%, 20%),
+      5 hsl(0, 100%, 10%),
+      6 hsl(0, 100%, 0%);
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  }
+}
