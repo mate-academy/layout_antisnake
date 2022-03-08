@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-$colors:
+$block_colors:
   "1" hsl(0, 100%, 50%),
   "2" hsl(0, 100%, 40%),
   "3" hsl(0, 100%, 30%),
@@ -27,8 +27,8 @@ $colors:
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 
-    @each $name,$color in $colors {
-      &--#{$name} {
+    @each $name,$color in $block_colors {
+      &:nth-child(#{$name}) {
         background-color: $color;
       }
     }
