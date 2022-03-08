@@ -1,0 +1,37 @@
+.blocks {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($cellSize, 1fr));
+
+  &__block {
+    height: $cellSize;
+    box-sizing: border-box;
+
+    font-size: 100px;
+    line-height: $cellSize;
+    color: #fff;
+    text-align: center;
+
+    $cellColors:
+      '1' rgb(255, 0, 0),
+      '2' rgb(204, 0, 0),
+      '3' rgb(153, 0, 0),
+      '4' rgb(102, 0, 0),
+      '5' rgb(51, 0, 0),
+      '6' rgb(0, 0, 0);
+
+    @each $name, $color in $cellColors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: #{$cellSize*2}) {
+    grid-template-columns: repeat(2, minmax($cellSize, 1fr));
+  }
+
+  @media (min-width: #{$cellSize*3}) {
+    grid-template-columns: repeat(3, minmax($cellSize, 1fr));
+  }
+}
