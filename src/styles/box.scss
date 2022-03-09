@@ -5,12 +5,10 @@
 
   @media (max-width: 899px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 599px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
   }
 
   &__card {
@@ -22,9 +20,9 @@
     align-items: center;
     justify-content: center;
 
-    @each $a, $b in $colors {
-      &:nth-child(#{$a}) {
-        background-color: $b;
+    @each $numer, $color in $colors {
+      &:nth-child(#{$numer}) {
+        background-color: $color;
       }
     }
   }
