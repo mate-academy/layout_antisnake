@@ -14,9 +14,9 @@
     text-align: center;
     height: 300px;
 
-    @each $number, $color in $colors {
-      &--#{$number} {
-        background-color: $color;
+    @each $number, $block-color in $block-colors {
+      &:nth-child(#{$number}) {
+        background-color: $block-color;
       }
     }
   }
