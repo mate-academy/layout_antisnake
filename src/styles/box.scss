@@ -1,0 +1,31 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size, 1fr));
+  height: 100vh;
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  &__card {
+    min-height: $size;
+    font-size: 100px;
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    @each $a, $b in $colors {
+      &:nth-child(#{$a}) {
+        background-color: $b;
+      }
+    }
+  }
+}

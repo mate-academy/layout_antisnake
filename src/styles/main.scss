@@ -1,53 +1,12 @@
+@import "./variables.scss";
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.box {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  height: 100vh;
-
-  @media (max-width: 750px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  @media (max-width: 450px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-
-  &__card {
-    min-height: 300px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    color: white;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__card--1 {
-    background: rgb(255,0,0);
-  }
-  &__card--2 {
-    background: rgb(204,0,0);
-  }
-  &__card--3 {
-    background: rgb(153,0,0);
-  }
-  &__card--4 {
-    background: rgb(102,0,0);
-  }
-  &__card--5 {
-    background: rgb(51,0,0);
-  }
-  &__card--6 {
-    background: rgb(0,0,0);
-  }
-}
+@import "./box.scss";
