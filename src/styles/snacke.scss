@@ -20,4 +20,16 @@
       background-color: rgb($color, 0, 0);
     }
   }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, minmax(300px, 1fr));
+    grid-template-areas: "one two" "three four" "five six";
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-rows: repeat(6, minmax(300px, 1fr));
+    grid-template-areas: "one" "two" "three" "four" "five" "six";
+  }
 }
