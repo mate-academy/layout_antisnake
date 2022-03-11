@@ -9,7 +9,7 @@ $element-height: 300px;
 
 .container {
   display: grid;
-  grid-template-columns: minmax($element-height, auto);
+  grid-template-columns: auto;
   grid-template-rows: repeat(6, $element-height);
 
   @media (min-width: ($element-height*2)) {
@@ -23,29 +23,29 @@ $element-height: 300px;
   &__element {
     display: grid;
     place-content: center center;
+
+    &:nth-child(1) {
+      background-color: red;
+    }
+
+    &:nth-child(2) {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &:nth-child(3) {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &:nth-child(4) {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &:nth-child(5) {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &:nth-child(6) {
+      background-color: rgb(0, 0, 0);
+    }
   }
-}
-
-.b1 {
-  background-color: red;
-}
-
-.b2 {
-  background-color: rgb(204, 0, 0);
-}
-
-.b3 {
-  background-color: rgb(153, 0, 0);
-}
-
-.b4 {
-  background-color: rgb(102, 0, 0);
-}
-
-.b5 {
-  background-color: rgb(51, 0, 0);
-}
-
-.b6 {
-  background-color: rgb(0, 0, 0);
 }
