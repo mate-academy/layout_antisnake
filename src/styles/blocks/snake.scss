@@ -1,0 +1,26 @@
+.snake {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    height: 300px;
+
+    @for $index from 1 to 7 {
+      &:nth-of-type(#{$index}) {
+        background-color: rgb(
+          calc(#{255 * (6 - $index ) / 5}), 0, 0);
+      }
+    }
+  }
+}
