@@ -5,43 +5,31 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
 
-.container__box {
-  height: 300px;
-  font-family: Arial, sans-serif;
-  font-size: 100px;
-  color: white;
-  line-height: 300px;
-  text-align: center;
-
-  &:first-child {
-    background-color: rgb(255, 0 , 0);
-  }
-  
-  &:nth-child(2) {
-    background-color: rgb(204, 0, 0);
-  }
-  
-  &:nth-child(3) {
-    background-color: rgb(153, 0, 0);
-  }
-  
-  &:nth-child(4) {
-    background-color: rgb(102, 0, 0);
-  }
-  
-  &:nth-child(5) {
-    background-color: rgb(51, 0, 0);
-  }
-  
-  &:last-child {
-    background-color: rgb(0, 0, 0);
-  }
-}
-
-@media (min-width: 899px) {
-  .container {
+  @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    height: 300px;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+    line-height: 300px;
+    text-align: center;
+
+    $colors:
+      "1" rgb(255, 0 , 0),
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
   }
 }
