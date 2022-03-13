@@ -1,56 +1,40 @@
+$blockSize: 300px;
+$colors: #f00, #c00, #900, #600, #300, #000;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .blocks {
   display: grid;
-}
 
-.block {
-  height: 300px;
-  min-width: 300px;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  color: white;
-}
+  &__block {
+    height: $blockSize;
+    min-width: $blockSize;
 
-.block--1 {
-  background-color: #f00;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.block--2 {
-  background-color: #c00;
-}
+    font-size: 100px;
+    color: #fff;
 
-.block--3 {
-  background-color: #900;
-}
-
-.block--4 {
-  background-color: #600;
-}
-
-.block--5 {
-  background-color: #300;
-}
-
-.block--6 {
-  background-color: #000;
-}
-
-@media (min-width: 600px) {
-  .blocks {
-    grid-template-columns: 1fr 1fr;
+    @for $index from 1 through 6 {
+      &:nth-of-type(#{$index}) {
+        background-color: rgb(
+          calc(#{255 * (6 - $index ) / 5}), 0, 0);
+      }
+    }
   }
 }
 
-@media (min-width: 900px) {
-  .blocks {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
+
