@@ -1,3 +1,37 @@
+$blockSize: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.blocks {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $blockSize;
+    min-width: $blockSize;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &:nth-of-type(#{$index}) {
+        background-color: rgb(
+          calc(#{255 * (6 - $index ) / 5}), 0, 0);
+      }
+    }
+  }
 }
