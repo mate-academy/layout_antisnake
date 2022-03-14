@@ -1,5 +1,6 @@
 .snake {
   display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
