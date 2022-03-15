@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+@import "./variables.scss";
+
+@import "./normalize.scss";
+
+.antisnake {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    height: 300px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
 }
