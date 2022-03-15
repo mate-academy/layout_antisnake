@@ -1,13 +1,13 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(#{$size}, 1fr));
 
-  @media (min-width: 900px) {
+  @media (min-width: #{$size * 3}) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__box {
-    height: 300px;
+    height: #{$size};
 
     @each $name, $color in $colors {
       &:nth-child(#{$name}) {
