@@ -10,7 +10,8 @@ $element-height: 300px;
 .container {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: repeat(6, $element-height);
+  // grid-template-rows: repeat(2, $element-height);
+  grid-auto-rows: $element-height;
 
   @media (min-width: ($element-height*2)) {
     grid-template-columns: repeat(2, auto);
