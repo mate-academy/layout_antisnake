@@ -1,0 +1,42 @@
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+
+    height: $height;
+    min-width: $width;
+
+    &:nth-child(2) {
+      background: rgb(204, 0, 0);
+    }
+
+    &:nth-child(3) {
+      background: rgb(153, 0, 0);
+    }
+
+    &:nth-child(4) {
+      background: rgb(102, 0, 0);
+    }
+
+    &:nth-child(5) {
+      background: rgb(51, 0, 0);
+    }
+
+    &:nth-child(6) {
+      background: rgb(0, 0, 0);
+    }
+  }
+}
