@@ -1,0 +1,29 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-size, 1fr));
+
+  &__item {
+    height: $item-size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    font-size: $font-size;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: ($item-size * 2)) {
+    grid-template-columns: repeat(2, minmax($item-size, 1fr));
+  }
+
+  @media (min-width: ($item-size * 3)) {
+    grid-template-columns: repeat(3, minmax($item-size, 1fr));
+  }
+}
