@@ -1,3 +1,41 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.snake-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+
+  &__cell {
+    height: 300px;
+    color: white;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    $colors:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
+    }
+  }
 }
