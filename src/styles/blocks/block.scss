@@ -1,0 +1,12 @@
+.block {
+  line-height: 300px;
+  min-width: 300px;
+  text-align: center;
+
+  @for $index from 1 to 7 {
+    &--#{$index} {
+      background-color: rgb(
+        calc(#{255 * (6 - $index) / 5 }), 0, 0);
+    }
+  }
+}
