@@ -11,13 +11,21 @@ body {
   height: 100%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($height-of-block, 1fr));
+  grid-template-columns: repeat(1, minmax($height-of-block, 1fr));
   grid-auto-rows: $height-of-block;
 
   justify-content: center;
 
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($height-of-block, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($height-of-block, 1fr));
+  }
+
   &__box {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 
@@ -30,11 +38,5 @@ body {
         }
       }
     }
-  }
-}
-
-@media (min-width: 1199px) {
-  .container {
-    padding-right: 1px;
   }
 }
