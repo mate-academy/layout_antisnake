@@ -1,3 +1,42 @@
+@import "./utils/variable";
+@import "./blocks/reset.scss";
+
 body {
-  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.container {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(1, minmax($height-of-block, 1fr));
+  grid-auto-rows: $height-of-block;
+
+  justify-content: center;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($height-of-block, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($height-of-block, 1fr));
+  }
+
+  &__box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb((51 * ($amount-of-cells - $index)), 0, 0);
+
+        &::before {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
 }
