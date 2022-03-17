@@ -1,3 +1,32 @@
+@import "../styles/utils/variables";
+
 body {
   margin: 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  height: 100vh;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    @each $i, $color in $background-colors {
+      &:nth-child(#{$i}) {
+        background-color: $color;
+      }
+    }
+  }
 }
