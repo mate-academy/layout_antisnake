@@ -1,3 +1,40 @@
+$block-size: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: #{$block-size * 2}) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
+  }
+
+  @media (min-width: #{$block-size * 3}) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    line-height: $block-size;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+
+    $block-color:
+      "1" rgb(255, 0, 0),
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $name, $color in $block-color {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+  }
 }
