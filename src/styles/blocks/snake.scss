@@ -13,15 +13,15 @@
     font-size: $font-size;
 
     @each $number, $color in $colors {
-      &--#{$number} {
+      &:nth-child(#{$number}) {
         background-color: $color;
       }
     }
   }
 
-  @media (min-width: ($item-size * 2)) {
-    grid-template-columns: repeat(2, minmax($item-size, 1fr));
-  }
+  // @media (min-width: ($item-size * 2)) {
+  //   grid-template-columns: repeat(2, minmax($item-size, 1fr));
+  // }
 
   @media (min-width: ($item-size * 3)) {
     grid-template-columns: repeat(3, minmax($item-size, 1fr));
