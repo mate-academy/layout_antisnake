@@ -1,0 +1,33 @@
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($make-qube-of, 1fr));
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    height: $make-qube-of;
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+  }
+
+  &__card:after {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @for $i from 1 through $numberOfCards {
+    &__card:nth-child(#{$i}) {
+      background-color: rgb(255 - (255/$numberOfCards) * $i, 0, 0);
+    }
+    &__card:nth-of-type(#{$i})::after {
+      content: "#{$i}";
+    }
+  }
+}
+//
