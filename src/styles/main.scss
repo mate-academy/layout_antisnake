@@ -1,3 +1,69 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+.blocks {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+}
+
+.all-blocks {
+  display: grid;
+  color: white;
+  grid-template-areas: "one two three"
+    "four five six";
+}
+
+.blocks--1 {
+  background-color: red;
+  grid-area: one;
+}
+
+.blocks--2 {
+  background-color: #c00;
+  grid-area: two;
+}
+
+.blocks--3 {
+  background-color: #900;
+  grid-area: three;
+}
+
+.blocks--4 {
+  background-color: #600;
+  grid-area: four;
+}
+
+.blocks--5 {
+  background-color: #300;
+  grid-area: five;
+}
+
+.blocks--6 {
+  background-color: #000;
+  grid-area: six;
+}
+
+@media (max-width: 899px) {
+  .all-blocks {
+    grid-template-areas: "one two"
+      "three four"
+      "five six";
+  }
+}
+
+@media (max-width: 499px) {
+  .all-blocks {
+    grid-template-areas: "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six";
+  }
 }
