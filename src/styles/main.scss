@@ -22,26 +22,26 @@ body {
   @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
 
-.block {
-  min-height: 300px;
+  &__block {
+    min-height: $snake-size;
 
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-  @for $index from 1 through $box-count {
-    &:nth-child(#{$index})::before {
-      content: "#{$index}";
-      color: white;
+    @for $index from 1 through $box-count {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        color: white;
+      }
     }
-  }
 
-  @each $index, $number in $colors {
-    &:nth-child(#{$index}) {
-      background-color: rgb($number, 0, 0);
+    @each $index, $number in $colors-of-blocks {
+      &:nth-child(#{$index}) {
+        background-color: rgb($number, 0, 0);
+      }
     }
   }
 }
