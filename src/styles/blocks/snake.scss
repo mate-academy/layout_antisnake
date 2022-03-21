@@ -2,13 +2,7 @@
 
 .snake {
   display: grid;
-  grid-template-columns: repeat(1, minmax($height-of-item, 1fr));
-
-  @media (min-width: 600px) {
-    & {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+  grid-template-columns: repeat(auto-fill, minmax($height-of-item, 1fr));
 
   @media (min-width: 900px) {
     & {
@@ -26,23 +20,10 @@
     justify-content: center;
     align-items: center;
 
-    &--1 {
-      background-color: hsl(0, 100%, 50%);
-    }
-    &--2 {
-      background-color: hsl(0, 100%, 40%);
-    }
-    &--3 {
-      background-color: hsl(0, 100%, 30%);
-    }
-    &--4 {
-      background-color: hsl(0, 100%, 20%);
-    }
-    &--5 {
-      background-color: hsl(0, 100%, 10%);
-    }
-    &--6 {
-      background-color: hsl(0, 100%, 0%);
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
     }
   }
 }
