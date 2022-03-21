@@ -1,0 +1,29 @@
+@import "../utils/variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height-of-item, 1fr));
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    height: $height-of-item;
+
+    color: white;
+    font-size: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}
