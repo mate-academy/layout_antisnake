@@ -1,3 +1,5 @@
+$snake-part-size: 300px;
+
 .snake-page {
   margin: 0;
   font-size: 100px;
@@ -9,37 +11,18 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($snake-part-size, 1fr));
 }
 
 .snake__part {
-  height: 300px;
+  height: $snake-part-size;
   display: grid;
   justify-items: center;
   align-items: center;
 }
 
-.snake__part--part_1 {
-  background-color: rgb(255, 0, 0);
-}
-
-.snake__part--part_2 {
-  background-color: rgb(204, 0, 0);
-}
-
-.snake__part--part_3 {
-  background-color: rgb(153, 0, 0);
-}
-
-.snake__part--part_4 {
-  background-color: rgb(102, 0, 0);
-}
-
-.snake__part--part_5 {
-  background-color: rgb(51, 0, 0);
-}
-
-.snake__part--part_6 {
-  background-color: rgb(0, 0, 0);
+@for $index from 1 through 6 {
+  .snake__part:nth-child(#{$index}) {
+    background-color: rgb((306 - 51 * $index), 0, 0);
+  }
 }
