@@ -1,3 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.snake {
+  display: grid;
+  grid-template-areas: "one two three" "four five six";
+
+  &__item {
+    font-size: 100px;
+    color: white;
+    height: 300px;
+    min-width: 300px;
+    background-color: rgb(250, 0, 0);
+    grid-area: one;
+    display: grid;
+    place-items: center;
+  }
+
+  $colors: 
+    "2" two rgb(200, 0, 0), 
+    "3" three rgb(150, 0, 0), 
+    "4" four rgb(100, 0, 0), 
+    "5" five rgb(50, 0, 0),
+    "6" six rgb(0, 0, 0);
+
+  @each $number, $name-of-arr, $color in $colors {
+    &__item:nth-child(#{$number}) {
+      background-color: #{$color};
+      grid-area: $name-of-arr;
+    }
+  }
+
+  @media (max-width: 899px) {
+    grid-template-areas: "one two" "three four" "five six";
+  }
+
+  @media (max-width: 599px) {
+    grid-template-areas: "one" "two" "three" "four" "five" "six";
+  }
 }
