@@ -7,11 +7,17 @@ $snake-part-size: 300px;
   color: #fff;
 }
 
-.snake-page__snake {
+.snake {
   display: grid;
   justify-content: center;
   align-content: center;
   grid-template-columns: repeat(auto-fill, minmax($snake-part-size, 1fr));
+}
+
+@media (min-width: 1200px) {
+  .snake {
+    grid-template-columns: repeat(3, minmax($snake-part-size, 1fr));
+  }
 }
 
 .snake__part {
