@@ -1,3 +1,35 @@
-body {
-  margin: 0;
+@import "./variables";
+@import "./normalize";
+@import "./mixins";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $color-name, $color in $colors {
+    &--#{$color-name} {
+      background-color: $color;
+    }
+  }
 }
