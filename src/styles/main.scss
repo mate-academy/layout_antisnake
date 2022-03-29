@@ -19,29 +19,19 @@ body {
 
     height: 300px;
     color: #fff;
+
+    $colors:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
   }
-}
-
-.box-1 {
-  background-color: #f00;
-}
-
-.box-2 {
-  background-color: #c00;
-}
-
-.box-3 {
-  background-color: #900;
-}
-
-.box-4 {
-  background-color: #600;
-}
-
-.box-5 {
-  background-color: #300;
-}
-
-.box-6 {
-  background-color: #000;
 }
