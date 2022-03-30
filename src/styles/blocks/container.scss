@@ -1,7 +1,10 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 1199px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__box {
     display: flex;
@@ -13,8 +16,12 @@
     color: #fff;
 
     @each $index, $color in $background-colors {
-      &--#{$index} {
+      &:nth-child(#{$index}) {
         background-color: $color;
+
+        &::before {
+          content: "#{$index}";
+        }
       }
     }
   }
