@@ -1,3 +1,33 @@
-body {
+@import "variables";
+
+@import "normalize";
+
+.container {
   margin: 0;
+
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax($block-size, 1fr));
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+}
+
+.block {
+  min-height: $block-size;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  @each $num, $color in $colors {
+    &--#{$num} {
+      background-color: $color;
+    }
+  }
 }
