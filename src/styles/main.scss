@@ -18,15 +18,13 @@
   justify-content: center;
   height: $sizeBlock;
 
-  @for $index from 1 through 6 {
-    &:nth-child(#{$index})::before {
-      content: "#{$index}";
-    }
-  }
-
-  @each $color-name, $color in $colors {
-    &--#{$color-name} {
+  @each $index, $color in $colors {
+    &:nth-child(#{$index}) {
       background-color: $color;
+
+      &::before {
+        content: "#{$index}";
+      }
     }
   }
 }
