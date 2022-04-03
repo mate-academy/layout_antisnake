@@ -1,3 +1,37 @@
+@import "utils/variables";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__card {
+    min-width: #{$card-size};
+    line-height: #{$card-size};
+    text-align: center;
+
+    @each $index, $color in $card {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
 }
