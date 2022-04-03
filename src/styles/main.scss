@@ -1,3 +1,11 @@
+@import "./utils/colors";
+@import "./blocks/container.scss";
+
 body {
   margin: 0;
+}
+
+html {
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
 }
