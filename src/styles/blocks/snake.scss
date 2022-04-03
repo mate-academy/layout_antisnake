@@ -1,0 +1,30 @@
+.snake {
+
+  &__items {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    height: 300px;
+    min-width: 300px;
+  }
+}
+
+.item {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+  line-height: 300px;
+  text-align: center;
+}
+
+@for $j from 1 through 6 {
+  .item:nth-child(#{$j}) {
+    background-color: rgb(255 - ((255 / 5) * ($j - 1)), 0, 0);
+  }
+}
+
+@media (min-width: 1200px) {
+  .snake__items {
+    grid-template-columns: repeat(auto-fill, minmax(300px, (100%/3)));
+  }
+}
