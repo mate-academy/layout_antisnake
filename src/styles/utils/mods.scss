@@ -1,23 +1,13 @@
-.box-1 {
-  background-color: red;
-}
+$colors:
+  "1" red,
+  "2" rgb(204, 0, 0),
+  "3" rgb(153, 0, 0),
+  "4" rgb(102, 0, 0),
+  "5" rgb(61, 0, 0),
+  "6" black;
 
-.box-2 {
-  background-color: rgb(204, 0, 0);
-}
-
-.box-3 {
-  background-color: rgb(153, 0, 0);
-}
-
-.box-4 {
-  background-color: rgb(102, 0, 0);
-}
-
-.box-5 {
-  background-color: rgb(61, 0, 0);
-}
-
-.box-6 {
-  background-color: black;
+@each $number, $color in $colors {
+  .box-#{$number} {
+    background-color: $color;
+  }
 }
