@@ -1,3 +1,38 @@
+$box-item-size: 300px;
+$max-col-num: 3;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-item-size, 1fr));
+
+  @media screen and (min-width: ($box-item-size * ($max-col-num +1) - 1) ) {
+    grid-template-columns: repeat($max-col-num, 1fr);
+  }
+
+  &__item {
+    height: $box-item-size;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: $box-item-size;
+    min-width: $box-item-size;
+    color: white;
+    font-size: 100px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+      &:nth-child(#{$index}) {
+        background-color: rgb(256*(6 - $index)/5, 0, 0);
+      }
+    }
+  }
 }
