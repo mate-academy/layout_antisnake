@@ -25,7 +25,7 @@
   align-items: center;
 
   @each $num, $color in $colors {
-    &--#{$num} {
+    &:nth-child(#{$num}) {
       background-color: $color;
     }
   }
