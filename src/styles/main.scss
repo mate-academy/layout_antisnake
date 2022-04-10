@@ -37,17 +37,19 @@ body {
     grid-template-rows: 2;
   }
 
-  .block {
+  &__block {
     display: flex;
     height: 300px;
     min-width: 300px;
     justify-content: center;
     align-items: center;
+  }
+}
 
-    @each $name, $color in $colors {
-      &--#{$name} {
-        background-color: $color;
-      }
+.block {
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
     }
   }
 }
