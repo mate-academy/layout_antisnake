@@ -1,0 +1,16 @@
+$days:
+  "1" 100%,
+  "2" 80%,
+  "3" 60%,
+  "4" 40%,
+  "5" 20%,
+  "6" 0%;
+
+@each $day, $color in $days {
+  .snake__cell:nth-child(#{$day}) {
+    &::before {
+      content: $day;
+    }
+    background-color: rgb($color, 0%, 0%);
+  }
+}
