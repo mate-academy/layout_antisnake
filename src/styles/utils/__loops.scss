@@ -14,9 +14,3 @@ $colors:
     }
   }
 }
-
-@media (min-width: 1200px) {
-  .snake {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-  }
-}
