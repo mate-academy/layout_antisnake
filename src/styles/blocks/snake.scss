@@ -1,0 +1,47 @@
+.snake {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__one {
+    @extend %position;
+    @include size(300px);
+    background-color: red;
+  }
+
+  &__two {
+    @extend %position;
+    @include size(300px);
+    background-color: #cc0200;
+  }
+
+  &__three {
+    @extend %position;
+    @include size(300px);
+    background-color: #990001;
+  }
+
+  &__four {
+    @extend %position;
+    @include size(300px);
+    background-color: #600;
+  }
+
+  &__five {
+    @extend %position;
+    @include size(300px);
+    background-color: #330100;
+  }
+
+  &__six {
+    @extend %position;
+    @include size(300px);
+    background-color: black;
+  }
+}
