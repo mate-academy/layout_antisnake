@@ -1,0 +1,12 @@
+.block {
+  height: 300px;
+  min-width: 300px;
+
+  font-family: inherit;
+  color: white;
+  font-size: 100px;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}

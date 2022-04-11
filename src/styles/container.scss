@@ -1,0 +1,24 @@
+$bcolor:
+  "1" red,
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" black;
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @each $num, $color in $bcolor {
+    &__block--#{$num} {
+      background-color: $color;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 33.3%));
+  }
+}
