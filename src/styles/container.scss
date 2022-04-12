@@ -10,6 +10,19 @@ $bcolor:
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
+  &__block {
+    height: 300px;
+    min-width: 300px;
+
+    font-family: inherit;
+    color: white;
+    font-size: 100px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
   @each $num, $color in $bcolor {
     &__block--#{$num} {
       background-color: $color;
