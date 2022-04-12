@@ -1,7 +1,7 @@
 .snake {
   display: grid;
 
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($cell-size-height, 1fr));
 
   @media (min-width: 1200px) {
     & {
@@ -9,39 +9,32 @@
     }
   }
 
-  &__one {
+  &__cell {
+    height: $cell-size-height;
     @extend %position;
-    @include size(300px);
-    background-color: red;
-  }
 
-  &__two {
-    @extend %position;
-    @include size(300px);
-    background-color: #cc0200;
-  }
+    &--one {
+      background-color: red;
+    }
 
-  &__three {
-    @extend %position;
-    @include size(300px);
-    background-color: #990001;
-  }
+    &--two {
+      background-color: #cc0200;
+    }
 
-  &__four {
-    @extend %position;
-    @include size(300px);
-    background-color: #600;
-  }
+    &--three {
+      background-color: #990001;
+    }
 
-  &__five {
-    @extend %position;
-    @include size(300px);
-    background-color: #330100;
-  }
+    &--four {
+      background-color: #600;
+    }
 
-  &__six {
-    @extend %position;
-    @include size(300px);
-    background-color: black;
+    &--five {
+      background-color: #330100;
+    }
+
+    &--six {
+      background-color: black;
+    }
   }
 }
