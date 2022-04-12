@@ -5,9 +5,13 @@
   grid-template-columns: repeat(1, 1fr);
 
   &__block {
-    color: white;
-    min-height: 300px;
+    display: flex;
     text-align: center;
+    justify-content: center;
+
+    color: white;
+
+    min-height: 300px;
     line-height: 300px;
   }
 }
