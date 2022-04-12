@@ -43,13 +43,13 @@ body {
   }
 }
 
-@media (min-width: (2 * $basic-height)) {
+@media (min-width: 600px) {
   .snake {
     grid-template-columns: repeat(2, minmax($basic-height, 1fr));
   }
 }
 
-@media (min-width: (3 * $basic-height)) {
+@media (min-width: 900px) {
   .snake {
     grid-template-columns: repeat(3, minmax($basic-height, 1fr));
   }
