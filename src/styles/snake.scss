@@ -1,28 +1,32 @@
 .snake {
-  text-align: center;
   line-height: 300px;
 
-  &__box1 {
+  &__box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__box--1 {
     background-color: rgb(255, 0, 0);
   }
 
-  &__box2 {
+  &__box--2 {
     background-color: rgb(204, 0, 0);
   }
 
-  &__box3 {
+  &__box--3 {
     background-color: rgb(153, 0, 0);
   }
 
-  &__box4 {
+  &__box--4 {
     background-color: rgb(102, 0, 0);
   }
 
-  &__box5 {
+  &__box--5 {
     background-color: rgb(51, 0, 0);
   }
 
-  &__box6 {
+  &__box--6 {
     background-color: rgb(0, 0, 0);
   }
 }
