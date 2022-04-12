@@ -1,0 +1,28 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  justify-content: center;
+  max-width: 1200px;
+  grid-template-columns: repeat(1, minmax($minSizeBlocks, 1fr));
+
+  &__item {
+    display: flex;
+    height: $minSizeBlocks;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, minmax($minSizeBlocks, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($minSizeBlocks, 1fr));
+  }
+}
