@@ -1,3 +1,48 @@
+$colors:
+  rgb(255, 0, 0) 1,
+  rgb(80%, 0, 0) 2,
+  rgb(60%, 0, 0) 3,
+  rgb(40%, 0, 0) 4,
+  rgb(20%, 0, 0) 5,
+  rgb(0, 0, 0) 6;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__block {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    min-height: 300px;
+    line-height: 300px;
+    color: #fff;
+  }
+}
+
+@media (min-width: 600px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@each $color, $index in $colors {
+  .block-#{$index} {
+    background-color: #{$color};
+  }
 }
