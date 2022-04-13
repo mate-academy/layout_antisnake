@@ -1,13 +1,16 @@
-.page__snake {
+
+* {
+  box-sizing: border-box;
+}
+
+html {
   font-family: Arial, sans-serif;
   font-size: 100px;
   color: #fff;
 }
 
-* {
-  padding: 0;
+.page__snake {
   margin: 0;
-  box-sizing: border-box;
 }
 
 $square-height: 300px;
