@@ -1,0 +1,30 @@
+.cotainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__block {
+    display: grid;
+    height: $blockHeight;
+    min-width: $blockHeight;
+    justify-items: center;
+    align-items: center;
+
+    @each $day, $color in $colors {
+      &--#{$day} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: ($blockHeight * 2)) {
+  .cotainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: ($blockHeight * 3)) {
+  .cotainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
