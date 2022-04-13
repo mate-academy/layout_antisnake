@@ -38,26 +38,15 @@
     background-color: #f000;
   }
 
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
   @media (min-width: 900px) {
     & {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-}
-
-@media (min-width: 600px) and (max-width: 900px) {
-  .container__block--3 {
-    grid-column: 2 / 3;
-    grid-row: 2/3;
-  }
-  .container__block--4 {
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-
-  .container__block--5 {
-    grid-column: 1/2 ;
-    grid-row: 3/4;
-  }
-
 }
