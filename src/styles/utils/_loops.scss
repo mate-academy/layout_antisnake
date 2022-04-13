@@ -1,0 +1,9 @@
+@import "./variables";
+
+@each $index, $color in $cellsColors {
+  .container {
+    &__cell--#{$index} {
+      background-color: $color;
+    }
+  }
+}
