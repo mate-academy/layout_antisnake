@@ -9,12 +9,19 @@ html {
 .container {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
+  justify-content: center;
+  align-content: center;
 
-  text-align: center;
-  line-height: 300px;
   font-family: inherit;
   font-size: 100px;
   color: white;
+
+  &__block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-height: 300px;
+  }
 
   &__block--1 {
     background-color: red;
