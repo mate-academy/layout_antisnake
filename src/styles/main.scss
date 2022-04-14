@@ -42,7 +42,7 @@ body {
 }
 
 @each $color, $index in $colors {
-  .block-#{$index} {
+  .snake__block--#{$index} {
     background-color: #{$color};
   }
 }
