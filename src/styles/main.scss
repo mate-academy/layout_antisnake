@@ -1,3 +1,60 @@
+html {
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.box {
+  color: white;
+
+  display: flex;
+
+  min-width: 300px;
+  height: 300px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.box--1 {
+  background-color: red;
+}
+
+.box--2 {
+  background-color: rgb(80%, 0%, 0%);
+}
+
+.box--3 {
+  background-color: rgb(60%, 0%, 0%);
+}
+
+.box--4 {
+  background-color: rgb(40%, 0%, 0%);
+}
+
+.box--5 {
+  background-color: rgb(20%, 0%, 0%);
+}
+
+.box--6 {
+  background-color: black;
+}
+
+@media (min-width: 600px) {
+  .main__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .main__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
