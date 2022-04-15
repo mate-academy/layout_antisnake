@@ -1,3 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    &--1 {
+      background-color: rgb(255,0,0);
+    }
+
+    &--2 {
+      background-color: rgb(204,0,0);
+    }
+
+    &--3 {
+      background-color: rgb(153,0,0);
+    }
+
+    &--4 {
+      background-color: rgb(102,0,0);
+    }
+
+    &--5 {
+      background-color: rgb(51,0,0);
+    }
+
+    &--6 {
+      background-color: rgb(0,0,0);
+    }
+
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
