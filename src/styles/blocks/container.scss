@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-high, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-high;
+
+    &:first-child {
+      background-color: #f00;
+    }
+
+    &:nth-child(2n) {
+      background-color: #c00;
+    }
+
+    &:nth-child(3n) {
+      background-color: #900;
+    }
+
+    &:nth-child(4n) {
+      background-color: #600;
+    }
+
+    &:nth-child(5n) {
+      background-color: #300;
+    }
+
+    &:nth-child(6n) {
+      background-color: #000;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($block-high, 1fr));
+  }
+}
