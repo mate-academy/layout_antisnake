@@ -1,3 +1,44 @@
 body {
   margin: 0;
 }
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  color: white;
+  font-size: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+}
+
+.box {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+$colors:
+  "1" red,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" black;
+
+@each $number, $color in $colors {
+  .container__block-#{$number} {
+    background-color: $color;
+  }
+}
+
+@media(min-width:1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
