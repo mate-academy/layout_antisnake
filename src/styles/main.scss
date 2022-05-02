@@ -1,3 +1,45 @@
+$box-size: 300px;
+$boxes:
+  "1" rgb(255, 0, 0),
+  "2" rgb(204, 0, 0),
+  "3" rgb(153, 0, 0),
+  "4" rgb(102, 0, 0),
+  "5" rgb(51, 0, 0),
+  "6" rgb(0, 0, 0);
+
 body {
   margin: 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+}
+
+.block {
+  height: $box-size;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+@for $index from 1 through 6 {
+  .block:nth-child(#{$index})::before {
+    content: "#{$index}";
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 100px;
+  }
+}
+
+@each $name, $color in $boxes {
+  .block:nth-child(#{$name}) {
+    background-color: $color;
+  }
+}
+
+@media(min-width:1200px) {
+  .blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
