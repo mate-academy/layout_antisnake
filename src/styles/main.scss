@@ -1,10 +1,10 @@
 $colors:
-  "item--1" rgb(100%, 0%, 0%),
-  "item--2" rgb(80%, 0%, 0%),
-  "item--3" rgb(60%, 0%, 0%),
-  "item--4" rgb(40%, 0%, 0%),
-  "item--5" rgb(20%, 0%, 0%),
-  "item--6" rgb(0%, 0%, 0%);
+  1 rgb(100%, 0%, 0%),
+  2 rgb(80%, 0%, 0%),
+  3 rgb(60%, 0%, 0%),
+  4 rgb(40%, 0%, 0%),
+  5 rgb(20%, 0%, 0%),
+  6 rgb(0%, 0%, 0%);
 
 body {
   margin: 0;
@@ -25,11 +25,11 @@ body {
     text-align: center;
     line-height: 300px;
     color: #fff;
-  }
-
-  @each $name, $color in $colors {
-    &__#{$name} {
-      background-color: $color;
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
     }
   }
+
 }
