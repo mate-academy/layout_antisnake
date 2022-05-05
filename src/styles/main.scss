@@ -6,20 +6,10 @@
 
 .box-container {
   display: grid;
-
-  @media (min-width: 300px) {
-    grid-template-columns: minmax(300px, 1fr);
-    grid-template-rows: repeat(6, 300px);
-  }
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-template-rows: repeat(3, 300px);
-  }
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
-    grid-template-rows: repeat(2, 300px);
   }
 }
 
@@ -27,6 +17,7 @@
   display: grid;
   justify-items: center;
   align-content: center;
+  height: 300px;
 
   $colors:
     1 rgb(255, 0, 0),
