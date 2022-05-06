@@ -11,7 +11,6 @@ body {
 }
 
 .blocks {
-  max-width: 1199px;
   margin: auto;
   display: grid;
   align-content: center;
@@ -32,4 +31,10 @@ body {
     }
   }
 
+}
+
+@media (min-width: 1200px) {
+  .blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
