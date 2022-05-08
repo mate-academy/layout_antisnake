@@ -1,0 +1,5 @@
+@each $number-block, $background-color in $colors {
+  .container__block:nth-child(#{$number-block}) {
+    background-color: #{$background-color};
+  }
+}
