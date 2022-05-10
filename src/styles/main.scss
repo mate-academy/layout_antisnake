@@ -5,13 +5,11 @@
 
 .antisnake {
   display: grid;
-  height: 100vh;
-  align-content: center;
-
   grid-template-columns: repeat(auto-fill, minmax($size-cell, 1fr));
+  grid-template-rows: auto;
 
   &__item {
-    height: $size-cell;
+    min-height: $size-cell;
     @include center;
 
     font-family: inherit;
