@@ -1,3 +1,43 @@
+$blocks-num: 6;
+
 body {
   margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+
+  &__block {
+    &::before {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+
+      height: 100%;
+    }
+
+    @for $i from 1 through $blocks-num {
+      &:nth-child(#{$i}) {
+        background-color: darken(red, (50% / ($blocks-num - 1) * ($i - 1)));
+
+        &::before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
 }
