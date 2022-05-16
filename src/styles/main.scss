@@ -1,3 +1,5 @@
+$property: 300px;
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
@@ -6,4 +8,50 @@ html {
 
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $property;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+    &--1 {
+      background-color: rgb(100%, 0%, 0%);
+    }
+
+    &--2 {
+      background-color: rgb(80%, 0%, 0%);
+    }
+
+    &--3 {
+      background-color: rgb(60%, 0%, 0%);
+    }
+
+    &--4 {
+      background-color: rgb(40%, 0%, 0%);
+    }
+
+    &--5 {
+      background-color: rgb(20%, 0%, 0%);
+    }
+
+    &--6 {
+      background-color: rgb(0%, 0%, 0%);
+    }
+  }
 }
