@@ -1,3 +1,39 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+@mixin columns ($width, $col, $row) {
+  @media (min-width: $width) {
+    grid-template-columns: repeat($col, minmax(300px, 1fr));
+    grid-template-rows: repeat($row, 300px);
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 300px);
+
+  @include columns(600px, 2, 3);
+
+  @include columns(900px, 3, 2);
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: white;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+
+      &:nth-child(#{$index}) {
+        background-color: rgb((calc(100% - 20% * (#{$index} - 1))), 0%, 0%);
+      }
+    }
+  }
 }
