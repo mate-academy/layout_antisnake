@@ -1,6 +1,6 @@
 .box {
   display: grid;
-  grid-template-columns: minmax($basis, 100vw);
+  grid-template-columns: minmax($basis, 1fr);
 
   @for $index from 1 through 6 {
 
