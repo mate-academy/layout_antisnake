@@ -1,38 +1,41 @@
+$colors:
+  "1" rgb(100%, 0%, 0%),
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" rgb(0%, 0%, 0%);
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
 }
 
-@mixin columns ($width, $col, $row) {
-  @media (min-width: $width) {
-    grid-template-columns: repeat($col, minmax(300px, 1fr));
-    grid-template-rows: repeat($row, 300px);
-  }
-}
-
 .container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(6, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @include columns(600px, 2, 3);
-
-  @include columns(900px, 3, 2);
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__block {
     display: grid;
     justify-content: center;
     align-content: center;
+    height: 300px;
     color: white;
 
     @for $index from 1 through 6 {
       &:nth-child(#{$index})::before {
         content: "#{$index}";
       }
+    }
 
-      &:nth-child(#{$index}) {
-        background-color: rgb((calc(100% - 20% * (#{$index} - 1))), 0%, 0%);
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
       }
     }
   }
