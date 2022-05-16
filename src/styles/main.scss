@@ -1,4 +1,4 @@
-$property: 300px;
+$base-size: 300px;
 
 html {
   font-family: Arial, Helvetica, sans-serif;
@@ -12,18 +12,18 @@ body {
 
 .container {
   display: grid;
-  grid-template: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template: repeat(auto-fill, minmax($base-size, 1fr));
 
-  @media (min-width: 600px) {
+  @media (min-width: #{$base-size * 2}) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: #{$base-size * 3}) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__block {
-    height: $property;
+    height: $base-size;
     display: flex;
     align-items: center;
     justify-content: center;
