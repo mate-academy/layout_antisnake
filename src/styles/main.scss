@@ -8,44 +8,5 @@ body {
   margin: 0;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-  &__block {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-
-    &--1 {
-      background-color: #f00;
-    }
-
-    &--2 {
-      background-color: #c80000;
-    }
-
-    &--3 {
-      background-color: #960000;
-    }
-
-    &--4 {
-      background-color: #640000;
-    }
-
-    &--5 {
-      background-color: #320000;
-    }
-
-    &--6 {
-      background-color: #000;
-    }
-  }
-
-  @media (min-width: 900px) {
-    & {
-      grid-template-columns: repeat(3, auto);
-    }
-  }
-}
+@import "./variables";
+@import "./container";
