@@ -1,0 +1,6 @@
+@media (min-width: 1200px) {
+  .snake {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, max(100%/3));
+  }
+}

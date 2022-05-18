@@ -1,0 +1,11 @@
+@for $index from 1 through 6 {
+  .snake__block:nth-child(#{$index})::before {
+    content: "#{$index}";
+  }
+}
+
+@each $block, $color in $colors {
+  .snake__block:nth-child(#{$block}) {
+    background-color: $color;
+  }
+}
