@@ -1,7 +1,7 @@
 # Antisnake
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_antisnake/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_antisnake/report/html_report/)
+Replace `DmitriiPirohov` with your Github username and copy the links to Pull Request description:
+- [DEMO LINK](https://DmitriiPirohov.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://DmitriiPirohov.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -22,7 +22,7 @@ Display six colored blocks on the screen without any extra margins:
   - Block 6 must be `black`.
 - The width of each block should be not less than its height (`300px`)
 - Blocks must be put in 2 to 6 rows and stretched: each row must fit either 1, 2, or 3 blocks.
-  See the screenshots [here](./reference).
+  See the screenshots [he re](./reference).
 - Each row is to be read from left ro right.
 
 --> [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md)
