@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) );
+
+  &__box {
+    color: white;
+    text-align: center;
+    line-height: 300px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: #{$color};
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr) );
+  }
+}
