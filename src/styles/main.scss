@@ -30,7 +30,7 @@ body {
     height: 300px;
 
     @each $index, $color in $colors {
-      &--#{$index} {
+      &:nth-child(#{$index}) {
         background-color: $color;
       }
     }
