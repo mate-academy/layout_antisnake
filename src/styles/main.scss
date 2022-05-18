@@ -1,3 +1,53 @@
+$heigth: 300px;
+$colors:
+  1 rgb(255, 0, 0),
+  2 rgb(204, 0, 0),
+  3 rgb(153, 0, 0),
+  4 rgb(102, 0, 0),
+  5 rgb(51, 0, 0),
+  6 rgb(0, 0, 0);
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1,minmax(300px,600px));
+  
+  &__block {
+    height: $heigth;
+    line-height: $heigth;
+    text-align: center;
+
+    @for $num from 1 through 6 {
+      &--#{$num}:nth-child(#{$num})::before {
+        content: "#{$num}";
+      }
+    }
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2,minmax(300px,600px));
+    }
+  }
+  
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3,minmax(300px,600px));
+    }
+  }
 }
