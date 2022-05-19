@@ -1,13 +1,6 @@
 @import "./utils/reset";
 @import "./utils/variables";
+@import "./utils/normalize";
 
+@import "./blocks/container.scss";
 @import "./blocks/block.scss";
-
-body:nth-child(n) {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($size-cell, 1fr));
-
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}

@@ -1,0 +1,8 @@
+.container:nth-child(n) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-cell, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
