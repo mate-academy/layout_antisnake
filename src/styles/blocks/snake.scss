@@ -1,0 +1,31 @@
+.snake {
+  display: grid;
+  grid-template-columns: $width-blok;
+  grid-template-rows: repeat(6, $height-block);
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $block {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+      
+      &:nth-child(#{$number}):before {
+        content: "#{$number}";
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2,$width-blok) ;
+    grid-template-rows: repeat(3, $height-block);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3,$width-blok) ;
+    grid-template-rows: repeat(2, $height-block);
+  }
+}
