@@ -1,3 +1,37 @@
+$box-item-size: 300px;
+$box-text-size: 100px;
+$box-count: 6;
+
 body {
   margin: 0;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-item-size, 1fr));
+
+  @media (min-width: $box-item-size * 3) {
+    grid-template-columns: repeat(3, minmax($box-item-size, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    place-items: center;
+
+    height: $box-item-size;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $box-text-size;
+    color: white;
+
+    @for $index from 1 to $box-count + 1 {
+      &--box-#{$index} {
+        background-color: rgb(255 - 51 * ($index - 1), 0, 0);
+
+        &::before {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
 }
