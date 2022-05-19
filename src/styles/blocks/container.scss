@@ -1,26 +1,24 @@
-
 .container {
   display: grid;
-  grid-template-columns: repeat(1, minmax($box-size, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
 
-  @media (min-width: getSum($box-size, 2)) {
-    grid-template-columns: repeat(2, minmax($box-size, 1fr));
-  }
-  
-  @media (min-width: getSum($box-size, 3)) {
-    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  @media (min-width: getMinScreenWidth($box-size, 3)) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+    display: grid;
+    place-items: center;
+
     height: $box-size;
-  
-    @each $box-num, $color in $boxes-colors {
-      &--#{$box-num} {
-        background-color: #{$color};
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: mix(
+          $red-color,
+          $black-color,
+          100% - 20% * ($index - 1)
+        );
       }
     }
   }
