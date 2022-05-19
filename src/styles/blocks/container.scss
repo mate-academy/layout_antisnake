@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3,  minmax(300px, 1fr));
+  }
+
+  .box {
+    line-height: 300px;
+    text-align: center;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: #{$color};
+      }
+  }
+  }
+}
