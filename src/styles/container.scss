@@ -1,0 +1,29 @@
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc(100% / 3);
+    height: $block-size;
+
+    @for $content from 1 through $blocks-count {
+      &:nth-child(#{$content})::before {
+        content: "#{$content}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background: rgb(100% - $color, 0%, 0%);
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 33%);
+  }
+}
