@@ -1,4 +1,4 @@
-.container:nth-child(n) {
+.container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($size-cell, 1fr));
 
