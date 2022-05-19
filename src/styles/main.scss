@@ -1,3 +1,51 @@
+$colors:
+  "1" rgb(100%, 0%, 0%),
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" rgb(0%, 0%, 0%);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-width: 300px;
+    height: 300px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
