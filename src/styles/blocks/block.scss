@@ -1,0 +1,27 @@
+.block {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: $height;
+  align-self: center;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, $height);
+    grid-template-rows: repeat(auto-fill, $height);
+  }
+
+  @each $index, $color in $bg-color {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+      font-size: 100px;
+      color: white;
+    }
+  }
+}
