@@ -17,7 +17,6 @@ $colors:
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fill, 300px);
-  grid-auto-flow: row;
 
   @media (min-width: 900px) {
     & {
@@ -32,17 +31,17 @@ $colors:
 
     height: 300px;
     min-width: 300px;
-  }
 
-  @each $color, $index in $colors {
-    &__ceil:nth-child(#{$index}) {
-      background-color: #{$color};
+    @each $color, $index in $colors {
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
+      }
     }
-  }
 
-  @for $number from 1 to 7 {
-    &__ceil:nth-child(#{$number})::before {
-      content: "#{$number}";
+    @for $number from 1 to 7 {
+      &:nth-child(#{$number})::before {
+        content: "#{$number}";
+      }
     }
   }
 }
