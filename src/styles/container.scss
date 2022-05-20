@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-rows: repeat(6, 300px);
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: start;
+  align-content: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    display: grid;
+    min-width: $blockHeight;
+    height: $blockHeight;
+    justify-content: center;
+    align-items: center;
+
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb(((6 - $index) / 5) * 100%, 0, 0);
+      }
+    }
+  }
+}
