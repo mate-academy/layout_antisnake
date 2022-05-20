@@ -12,28 +12,10 @@
     text-align: center;
     color: #fff;
 
-    &--1 {
-      background: rgb(255, 0, 0);
-    }
-
-    &--2 {
-      background: rgb(204, 0, 0);
-    }
-
-    &--3 {
-      background: rgb(153, 0, 0);
-    }
-
-    &--4 {
-      background: rgb(102, 0, 0);
-    }
-
-    &--5 {
-      background: rgb(51, 0, 0);
-    }
-
-    &--6 {
-      background: rgb(0, 0, 0);
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: #{$color};
+      }
     }
 
     @for $index from 1 through 6 {
