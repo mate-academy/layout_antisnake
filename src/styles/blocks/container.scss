@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+    color: hsl(0, 0%, 100%);
+
+    &--1 {
+      background-color: hsl(0, 100%, 50%);
+    }
+
+    &--2 {
+      background-color: hsl(0, 100%, 40%);
+    }
+
+    &--3 {
+      background-color: hsl(0, 100%, 30%);
+    }
+
+    &--4 {
+      background-color: hsl(0, 100%, 20%);
+    }
+
+    &--5 {
+      background-color: hsl(0, 100%, 10%);
+    }
+
+    &--6 {
+      background-color: hsl(0, 100%, 0%);
+    }
+  }
+}
