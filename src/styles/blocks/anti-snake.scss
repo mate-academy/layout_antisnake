@@ -1,0 +1,44 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill,
+    minmax($blockSize, 1fr));
+
+  @media (min-width: ($blockSize * 4)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @include square($blockSize);
+
+  }
+
+  &__snake1{
+    background-color: rgb(255, 0, 0) ;
+  }
+
+  &__snake2 {
+    background-color: rgb(80%, 0%, 0%) ;
+  }
+
+  &__snake3 {
+    background-color: rgb(60%, 0%, 0%) ;
+  }
+
+  &__snake4 {
+    background-color: rgb(40%, 0%, 0%) ;
+  }
+
+  &__snake5 {
+    background-color: rgb(20%, 0%, 0%) ;
+  }
+
+  &__snake6 {
+    background-color: rgb(0%, 0%, 0%) ;
+  }
+}
