@@ -24,6 +24,6 @@
   }
 
   @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
   }
 }
