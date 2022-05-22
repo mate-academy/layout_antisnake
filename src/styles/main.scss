@@ -1,3 +1,38 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
+}
+
+.box {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(3,minmax(300px,1fr));
+}
+
+.box * {
+  text-align: center;
+  align-content: center;
+  line-height: 300px;
+  height: 300px;
+}
+
+@for $i from 1 through 6 {
+  .block#{$i} {
+    background: rgb((255 * (1 - ($i - 1) * 0.2)),0,0);
+  }
+}
+
+@media (max-width: 899px) {
+  .box {
+    grid-template-columns: repeat(2,minmax(300px,1fr));
+  }
+}
+
+@media  (max-width: 599px) {
+  .box {
+    grid-template-columns: repeat(1,minmax(300px,1fr));
+  }
 }
