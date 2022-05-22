@@ -3,7 +3,7 @@ Replace `<your_account>` with your Github username and copy the links to Pull Re
 - [DEMO LINK](https://saperzp.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://saperzp.github.io/layout_antisnake/report/html_report/)
 
-> Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
+> Follow [this instructions](https://github.com/mate-academy/laynout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
 
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
