@@ -8,6 +8,7 @@
     align-content: center;
     min-width: $block-height;
     height: $block-height;
+    color: white;
 
     @for $index from 1 through 6 {
       &:nth-child(#{$index})::before {
