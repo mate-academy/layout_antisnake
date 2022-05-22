@@ -1,0 +1,5 @@
+@each $index, $color in $colors {
+  .container__box--#{$index} {
+    background-color: $color;
+  }
+}
