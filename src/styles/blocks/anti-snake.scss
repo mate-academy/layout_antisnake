@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill,
+  minmax($blockSize, 1fr));
+
+  @media (min-width: ($blockSize * 4)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @include square($blockSize);
+  }
+
+  @each $name,$color in $colors {
+    &__block_snake--#{$name} {
+      background-color: $color;
+    }
+  }
+}
