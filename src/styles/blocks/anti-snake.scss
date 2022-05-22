@@ -1,0 +1,34 @@
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+  grid-auto-rows: 300px;
+
+  @media (min-width: 1199px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.anti-snake__card {
+  background-color: aqua;
+  color: rgb(255,255,255);
+  font-size: 100px;
+
+  &::after {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-color: rgb(306 - (255/5) * $i, 0, 0);
+    }
+
+    &:nth-child(#{$i})::after {
+      content: "#{$i}";
+    }
+  }
+}
