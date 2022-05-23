@@ -1,45 +1,29 @@
-$block-height: 300px;
-$colors:
-  "1" rgb(100%, 0%, 0%),
-  "2" rgb(80%, 0%, 0%),
-  "3" rgb(60%, 0%, 0%),
-  "4" rgb(40%, 0%, 0%),
-  "5" rgb(20%, 0%, 0%),
-  "6" rgb(0%, 0%, 0%);
-
-html {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 100px;
-}
-
-body {
-  margin: 0;
-}
+@import "./utils/normalize";
+@import "./utils/reset";
+@import "./utils/variables";
 
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
   }
 
   &__block {
     display: grid;
     justify-content: center;
     align-content: center;
-    
-    height: $block-height;
+
+    height: $block-size;
     color: #fff;
 
-    @for $num from 1 through 6 {
-      &:nth-child(#{$num})::before {
-        content: "#{$num}";
-      }
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: #{$color};
 
-      @each $num, $color in $colors {
-        &--#{$num} {
-          background-color: #{$color};
+        &::before {
+          content: "#{$num}";
         }
       }
     }
