@@ -6,9 +6,10 @@ body {
 .snake {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
 
   @for $index from 1 through 6 {
-    &__block:nth-child(#{$index})::before{
+    &__block:nth-child(#{$index})::before {
       content: "#{$index}";
     }
   }
@@ -44,5 +45,9 @@ body {
   
   &__block:nth-child(6) {
     background-color: #000;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(301px, 1fr));
   }
 }
