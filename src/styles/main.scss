@@ -1,3 +1,51 @@
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.snake-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  justify-items: center;
+
+  @media (min-width: 1199px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+       
+  }
+
+  &_cell {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &_cell--1 {
+    background-color: red;
+  }
+
+  &_cell--2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &_cell--3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &_cell--4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &_cell--5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &_cell--6 {
+    background-color: black;
+  }
+
 }
