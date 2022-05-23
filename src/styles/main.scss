@@ -1,3 +1,48 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @for $index from 1 through 6 {
+    &__block:nth-child(#{$index})::before{
+      content: "#{$index}";
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 100px;
+    height: 300px;
+  }
+
+  &__block:nth-child(1) {
+    background-color: red;
+  }
+  
+  &__block:nth-child(2) {
+    background-color: #c00;
+  }
+  
+  &__block:nth-child(3) {
+    background-color: #900;
+  }
+  
+  &__block:nth-child(4) {
+    background-color: #600;
+  }
+  
+  &__block:nth-child(5) {
+    background-color: #300;
+  }
+  
+  &__block:nth-child(6) {
+    background-color: #000;
+  }
 }
