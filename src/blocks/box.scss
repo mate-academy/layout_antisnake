@@ -8,16 +8,16 @@
   font-size: 100px;
   color: white;
 
+  @media (min-width: ($block-width * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   &__block {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: $block-height;
     min-width: $block-width;
-  }
-
-  @media (min-width: ($block-width * 3)) {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   &__block:nth-child(1) {
