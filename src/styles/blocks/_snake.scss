@@ -1,0 +1,25 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  grid-auto-rows: $cell-size;
+
+  @media(max-width: ($cell-size * 3) ) {
+    grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @for $index from 1 through 6 {
+    &__block:nth-child(#{$index}) {
+      background-color: rgb(darker($red-color, $index, $color-decrement), 0, 0);
+    }
+
+    &__block:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+}
