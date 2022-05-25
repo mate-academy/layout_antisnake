@@ -1,0 +1,18 @@
+.box {
+  display: grid;
+  grid-template-columns: minmax($basis, 1fr);
+
+  @for $index from 1 through 6 {
+
+    &__item-#{$index} {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $basis;
+      background-color: hsl(0, 100%, 60% - $index * 10);
+    }
+
+    @include screens(600px, 2, $basis, 1fr);
+    @include screens(900px, 3, $basis, 3fr);
+  }
+}
