@@ -1,0 +1,43 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  grid-template-rows: repeat(2, minmax($block-height, 1fr));
+
+  @media (max-width:900px) {
+    grid-template-columns: repeat(auto-fit, minmax($block-height, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    height: $block-height;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: #c00;
+    }
+
+    &--3 {
+      background-color: #900;
+    }
+
+    &--4 {
+      background-color: #600;
+    }
+
+    &--5 {
+      background-color: #300;
+    }
+
+    &--6 {
+      background-color: #000;
+    }
+  }
+}
