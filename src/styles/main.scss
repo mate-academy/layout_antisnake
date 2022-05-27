@@ -1,3 +1,44 @@
+@import "./utils/variables";
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-height, 1fr));
+
+  @media (min-width: ($card-height * $max-columns)) {
+    grid-template-columns: repeat($max-columns, minmax($card-height, 1fr));
+  }
+
+  &__item {
+    height: $card-height;
+    position: relative;
+
+    $colors:
+      "1" rgb(100%, 0, 0),
+      "2" rgba(80%, 0, 0, 1.2),
+      "3" rgba(60%, 0, 0, 1.4),
+      "4" rgba(40%, 0, 0, 1.6),
+      "5" rgba(20%, 0, 0, 1.8),
+      "6" rgb(0, 0, 0);
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+
+        &::after {
+          content: $number;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
 }
