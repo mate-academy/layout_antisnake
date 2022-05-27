@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: ($block-size * 3)) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-size;
+    color: white;
+    font: 100px Arial, serif;
+
+    @each $number, $color in $properties-of-blocks {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+  
+        &::before {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
+}
