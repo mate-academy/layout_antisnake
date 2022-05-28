@@ -16,10 +16,10 @@
     color: #fff;
     font-size: 100px;
   }
+}
 
-  @each $number, $color in $colors {
-    &__item--#{$number} {
-      background-color: #{$color};
-    }
+@each $number, $color in $colors {
+  .container :nth-child(#{$number}) {
+    background-color: #{$color};
   }
 }
