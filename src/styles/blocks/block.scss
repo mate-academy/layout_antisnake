@@ -1,21 +1,22 @@
 .block {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax($height, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
 
   @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax($height, 1fr));
+    grid-template-columns: repeat(3, minmax($width, 1fr));
   }
-  
+
   &__item {
     display: grid;
     justify-content: center;
     align-content: center;
-    height: $height;
+    height: 300px;
     align-self: center;
+    font-size: 100px;
+    color: white;
 
     @each $index, $color in $bg-color {
-      &--color--#{$index} {
+      &:nth-child(#{$index}) {
         background-color: $color;
       }
     }
@@ -23,8 +24,6 @@
     @for $index from 1 through 6 {
       &:nth-child(#{$index})::before {
         content: "#{$index}";
-        font-size: 100px;
-        color: white;
       }
     }
   }
