@@ -15,28 +15,24 @@
     font-size: 100px;
     color: #fff;
     height: $block-height;
+    min-width: $block-height;
 
-    &--1 {
+    &:first-child {
       background-color: red;
     }
-
-    &--2 {
+    &:nth-child(2) {
       background-color: #c00;
     }
-
-    &--3 {
+    &:nth-child(3) {
       background-color: #900;
     }
-
-    &--4 {
+    &:nth-child(4) {
       background-color: #600;
     }
-
-    &--5 {
+    &:nth-child(5) {
       background-color: #300;
     }
-
-    &--6 {
+    &:last-child {
       background-color: #000;
     }
   }
