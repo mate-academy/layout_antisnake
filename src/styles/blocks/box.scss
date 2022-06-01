@@ -1,0 +1,34 @@
+.box {
+  max-width: 3 * $box-size;
+  background-color: red;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    height: 300px;
+    color: #fff;
+
+    $colors:
+      "one" rgba(0,0,0,0),
+      "two" rgba(0,0,0,0.2),
+      "three" rgba(0,0,0,0.4),
+      "four" rgba(0,0,0,0.6),
+      "five" rgba(0,0,0,0.8),
+      "six" rgba(0,0,0,1);
+
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
