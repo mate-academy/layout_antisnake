@@ -1,0 +1,31 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    display: block;
+  }
+
+  &__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sectionSize;
+
+    @each $name, $color in $colors {
+      $i: index(($colors), ($name $color));
+
+      &:nth-child(#{$i}) {
+        background-color: $color;
+      }
+    }
+  }
+  
+}
