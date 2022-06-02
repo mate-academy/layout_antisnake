@@ -1,14 +1,12 @@
 .blocks {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @media (min-width:900px) {
+  @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__block {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +19,7 @@
     }
 
     @each $name, $color in $colors {
-      &__color--#{$name} {
+      &--#{$name} {
         background-color: $color;
       }
     }
