@@ -11,14 +11,20 @@ html {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .block {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
+  display: grid;
   align-items: center;
+  justify-items: center;
   height: 300px;
   background: red;
 }
