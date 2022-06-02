@@ -1,0 +1,33 @@
+.box {
+  background-color: red;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    height: 300px;
+    color: #fff;
+
+    $colors:
+      1 rgba(0,0,0,0),
+      2 rgba(0,0,0,0.2),
+      3 rgba(0,0,0,0.4),
+      4 rgba(0,0,0,0.6),
+      5 rgba(0,0,0,0.8),
+      6 rgba(0,0,0,1);
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  }
+}
