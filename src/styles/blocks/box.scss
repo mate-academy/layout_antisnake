@@ -1,5 +1,4 @@
 .box {
-  max-width: 3 * $box-size;
   background-color: red;
 
   display: grid;
@@ -18,15 +17,15 @@
     color: #fff;
 
     $colors:
-      "one" rgba(0,0,0,0),
-      "two" rgba(0,0,0,0.2),
-      "three" rgba(0,0,0,0.4),
-      "four" rgba(0,0,0,0.6),
-      "five" rgba(0,0,0,0.8),
-      "six" rgba(0,0,0,1);
+      1 rgba(0,0,0,0),
+      2 rgba(0,0,0,0.2),
+      3 rgba(0,0,0,0.4),
+      4 rgba(0,0,0,0.6),
+      5 rgba(0,0,0,0.8),
+      6 rgba(0,0,0,1);
 
-    @each $name, $color in $colors {
-      &--color--#{$name} {
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
         background-color: $color;
       }
     }
