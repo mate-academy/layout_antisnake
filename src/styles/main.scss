@@ -1,3 +1,50 @@
+$cell-size: 300px;
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  grid-template-rows: repeat(2, $cell-size);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  
+  &__cell {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    
+    $colors:
+      "1" hsl(360, 100%, 50%),
+      "2" hsl(360, 100%, 40%),
+      "3" hsl(360, 100%, 30%),
+      "4" hsl(360, 100%, 20%),
+      "5" hsl(360, 100%, 10%),
+      "6" hsl(360, 100%, 0%);
+  
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .antisnake {
+    grid-template-columns: repeat(2, minmax($cell-size, 1fr));
+    grid-template-rows: repeat(3, $cell-size);
+
+  }
+}
+
+@media (max-width: 450px) {
+  .antisnake {
+    grid-template-columns: repeat(1, minmax($cell-size, 1fr));
+    grid-template-rows: repeat(6, $cell-size);
+
+  }
 }
