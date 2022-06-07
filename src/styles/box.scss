@@ -1,0 +1,20 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($baseCell, 1fr));
+  justify-content: center;
+  &__block {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    height: $baseCell;
+    @each $name, $color in $colors {
+      &--color-#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+  @media only screen and (min-width: 1201px) {
+    grid-template-columns: repeat(3, minmax($baseCell, 1fr));
+  }
+}
