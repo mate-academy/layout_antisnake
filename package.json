@@ -44,5 +44,7 @@
   "mateAcademy": {
     "projectType": "layout"
   },
-  "dependencies": {}
+  "dependencies": {
+    "reset.scss": "^1.0.0"
+  }
 }
