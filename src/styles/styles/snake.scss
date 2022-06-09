@@ -1,0 +1,58 @@
+//local variables
+$width: 300px;
+$numberOfelement: 6;
+$dimansions: 
+  "min-width" 751px 3 ,
+  "max-width" 751px 2 , 
+  "max-width" 451px 1;
+//styles
+
+.snake {
+  display: grid;
+
+  @each $key1 , $key2 , $value in $dimansions {
+    @media screen and (#{$key1}:#{$key2}) {
+      & {
+        grid-template-columns: repeat(#{$value} , minmax($width,1fr));
+        grid-template-rows: repeat($numberOfelement / #{$value} , $width);
+      }
+  
+    }
+    
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
+
+  &__block--1 {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  &__block--2 {
+    background-color: rgb(204, 0, 0);
+  }
+  
+  &__block--3 {
+    background-color: rgb(153, 0, 0);
+  }
+  
+  &__block--4 {
+    background-color: rgb(102, 0, 0);
+  }
+  
+  &__block--5 {
+    background-color: rgb(51, 0, 0);
+  }
+  
+  &__block--6 {
+    background-color: black;
+  }
+
+}
