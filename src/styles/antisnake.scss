@@ -1,0 +1,27 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  @media (min-width: ($block-height * 4)) {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+
+  &__block {
+    height: $block-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    @for $i from 1 to 7 {
+      &:nth-child(#{$i}) {
+        background-color: rgb((6 - $i) * 20%, 0%, 0%);
+
+        &::after {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+}
