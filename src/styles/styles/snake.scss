@@ -1,27 +1,24 @@
 //local variables
 $width: 300px;
 $numberOfelement: 6;
+$dimansions: 
+  "min-width" 751px 3 ,
+  "max-width" 751px 2 , 
+  "max-width" 451px 1;
 //styles
 
 .snake {
   display: grid;
-  grid-template-columns: repeat(3 , 1fr);
-  grid-template-rows: repeat($numberOfelement / 3 , $width);
 
-  @media screen and (max-width:751px) {
-    & {
-      grid-template-columns: repeat(2 , 1fr);
-      grid-template-rows: repeat($numberOfelement / 2 , $width);
+  @each $key1 , $key2 , $value in $dimansions {
+    @media screen and (#{$key1}:#{$key2}) {
+      & {
+        grid-template-columns: repeat(#{$value} , minmax($width,1fr));
+        grid-template-rows: repeat($numberOfelement / #{$value} , $width);
+      }
+  
     }
-
-  }
-
-  @media screen and (max-width:451px) {
-    & {
-      grid-template-columns: 100%;
-      grid-template-rows: repeat($numberOfelement , $width);
-    }
-
+    
   }
 
   &__block {
