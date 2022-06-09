@@ -1,0 +1,30 @@
+.bloc {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    font-family: "Arial", sans-serif;
+    font-size: 100px;
+    color: #fff;
+    box-sizing: border-box;
+
+    @each $color, $index in $colorsNumbers {
+      &--color-#{$index} {
+        background-color: $color;
+
+        &::before {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
+}
