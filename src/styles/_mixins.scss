@@ -1,0 +1,4 @@
+@mixin grid-template($columns, $rows) {
+  grid-template-columns: repeat($columns, minmax(300px, 1fr));
+  grid-template-rows: repeat($rows, 300px);
+}
