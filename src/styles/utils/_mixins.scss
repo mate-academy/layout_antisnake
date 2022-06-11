@@ -1,0 +1,3 @@
+@mixin color($hue) {
+  background-color: rgb($hue, 0%, 0%);
+}
