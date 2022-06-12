@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+  grid-auto-rows: $height;
+
+  @media (min-width: ($height * 4)) {
+    grid-template-columns: repeat(3, minmax($height, 1fr));
+  }
+
+}
+
+.container__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 100px;
+
+  @for $i from 1 through 6 {
+    &:nth-of-type(#{$i}):before {
+      content: "#{$i}"
+
+    }
+  }
+
+  @each $number, $color in $colors {
+    &:nth-of-type(#{$number}) {
+      background-color: #{$color};
+    }
+  }
+}
