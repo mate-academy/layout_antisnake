@@ -1,3 +1,49 @@
 body {
   margin: 0;
 }
+
+.antisnake {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2 , 1fr);
+  }
+  
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  &__box {
+    display: flex;
+    height: 300px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+   
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 100px;
+      }
+    }
+    
+    $colors:
+      "1" rgb(100%, 0, 0),
+      "2" rgb(80%, 0, 0),
+      "3" rgb(60%, 0, 0),
+      "4" rgb(40%, 0, 0),
+      "5" rgb(20%, 0, 0),
+      "6" rgb(0, 0, 0);
+    
+    @each $box, $color in $colors {
+      &:nth-child(#{$box}) {
+        background-color: $color;
+      }
+    }
+  }
+}
