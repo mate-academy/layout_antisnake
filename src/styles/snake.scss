@@ -1,13 +1,9 @@
 .snake {
   display: grid;
-  @include grid-template(1, 6);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @media (min-width: 600px) {
-    @include grid-template(2, 3);
-  }
-
-  @media (min-width: 900px) {
-    @include grid-template(3, 2);
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   &__box {
