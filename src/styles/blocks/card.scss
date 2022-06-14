@@ -6,24 +6,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.card:nth-child(2) {
-  background-color: rgb(204, 0, 0);
-}
-
-.card:nth-child(3) {
-  background-color: rgb(153, 0, 0);
-}
-
-.card:nth-child(4) {
-  background-color: rgb(102, 0, 0);
-}
-
-.card:nth-child(5) {
-  background-color: rgb(51, 0, 0);
-}
-
-.card:nth-child(6) {
-  background-color: rgb(0, 0, 0);
+  @for $number from 6 through 2 {
+    &:nth-child(#{$number}) {
+      background-color: rgba(255-($number - 1)*51 , 0, 0, 1);
+    }
+  }
 }
