@@ -1,3 +1,49 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2 , 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    min-width: 300px;
+    height: 300px;
+
+    $colors:
+      "1" red,
+      "2" hsl(0, 100%, 40%),
+      "3" hsl(0, 100%, 30%),
+      "4" hsl(0, 100%, 20%),
+      "5" hsl(0, 100%, 10%),
+      "6" black;
+
+    @each $box, $color in $colors {
+      &:nth-child(#{$box}) {
+        background-color: $color;
+      }
+    }
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        font-family: Arial, sans-serif;
+        font-size: 100px;
+        color: white;
+      }
+    }
+  }
+}
