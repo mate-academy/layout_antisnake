@@ -1,7 +1,7 @@
 .antisnake {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(301px, 1fr));
+  grid-template-columns: repeat(1, minmax(max-content, 1fr));
 
   &__box {
     display: grid;
@@ -38,4 +38,11 @@
 
   }
 
+  @media(min-width: 451px) {
+    grid-template-columns: repeat(2, minmax(max-content, 1fr));
+  }
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
+  }
 }
