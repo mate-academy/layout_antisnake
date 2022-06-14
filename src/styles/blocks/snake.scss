@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block_height, 1fr));
+
+  @media (min-width: #{$block_height * $max_columns}) {
+    grid-template-columns: repeat($max_columns, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: $block_height;
+
+    @for $order from 1 through 6 {
+      &--#{$order} {
+        background-color: rgb(51 * (6 - $order), 0, 0);
+      }
+
+      &--#{$order}::before {
+        content: "#{$order}";
+
+        font: 100px Arial, sans-serif;
+        color: white;
+      }
+    }
+  }
+}

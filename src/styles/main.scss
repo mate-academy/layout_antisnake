@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./utilities/_reset";
+@import "./utilities/_variables";
+
+@import "./blocks/snake";
