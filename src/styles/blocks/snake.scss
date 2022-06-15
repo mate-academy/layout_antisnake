@@ -1,0 +1,26 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax($blockHeight, 1fr));
+
+  @media (min-width: ($blockHeight * 3)) {
+    grid-template-columns: repeat(3 ,minmax($blockHeight, 1fr));
+  }
+
+  &__tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $blockHeight;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  }
+
+}
