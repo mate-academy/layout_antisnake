@@ -1,6 +1,9 @@
 .block {
-  max-width: 1199px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-rows: 300px;
+
+  @media (min-width:1199px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
