@@ -1,0 +1,23 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($side, 1fr));
+
+  @extend %mainFont;
+
+  &__block {
+    display: flex;
+    min-height: $side;
+    justify-content: center;
+    align-items: center;
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: ($side * 4)) {
+    grid-template-columns: repeat(3, minmax($side, 1fr));
+  }
+}
