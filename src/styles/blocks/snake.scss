@@ -1,0 +1,26 @@
+$cell-size: 300px;
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    place-items: center;
+
+    height: $cell-size;
+
+    font-size: 100px;
+    color: #fff;
+
+    @each $item, $color in $red-colors {
+      &--#{$item} {
+        background-color: $color;
+      }
+    }
+  }
+}
