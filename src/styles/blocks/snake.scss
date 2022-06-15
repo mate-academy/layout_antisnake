@@ -1,9 +1,9 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax($blockHeight, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($blockHeight, 1fr));
 
   @media (min-width: ($blockHeight * 3)) {
-    grid-template-columns: repeat(3 ,minmax($blockHeight, 1fr));
+    grid-template-columns: repeat(3, minmax($blockHeight, 1fr));
   }
 
   &__tile {
@@ -22,5 +22,4 @@
       }
     }
   }
-
 }
