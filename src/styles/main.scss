@@ -1,3 +1,58 @@
-body {
+$number: 6;
+$width: 300px;
+$dimansions:
+  "min-width" 751px 3 ,
+  "max-width" 751px 2 ,
+  "max-width" 451px 1;
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: grid;
+
+  @each $num1, $num2 , $velu  in $dimansions {
+    @media screen and (#{$num1}:#{$num2}) {
+      & {
+        grid-template-columns: repeat(#{$velu} , minmax($width,1fr));
+        grid-template-rows: repeat($number / #{$velu} , $width);
+      }
+    }
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &__block--1 {
+    background-color: rgb(255, 0, 0);
+  }
+
+  &__block--2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__block--3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__block--4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__block--5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__block--6 {
+    background-color: black;
+  }
 }
