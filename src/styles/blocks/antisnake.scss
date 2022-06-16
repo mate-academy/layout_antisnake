@@ -1,13 +1,13 @@
 .antisnake {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: ($block-size * 3)) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__block {
-    height: 300px;
+    height: $block-size;
     display: flex;
     align-items: center;
     justify-content: center;
