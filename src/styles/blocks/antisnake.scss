@@ -1,0 +1,33 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($min-cell-width, 1fr));
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fill, minmax($min-cell-width, 1fr));
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $min-cell-width;
+
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+
+    $colors:
+      "1" rgb(255, 0, 0),
+      "2" rgb(80%, 0, 0),
+      "3" rgb(60%, 0, 0),
+      "4" rgb(40%, 0, 0),
+      "5" rgb(20%, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
