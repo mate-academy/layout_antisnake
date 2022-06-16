@@ -1,9 +1,9 @@
 .block {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
 
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  @media (min-width: (3 * $block-height)) {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
   }
 
   &__item {
