@@ -1,11 +1,11 @@
 .snake {
   display: grid;
-  grid-auto-rows: 300px;
+  grid-auto-rows: $snake-size;
 
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax($snake-size, 1fr));
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @media (max-width: #{3 * $snake-size}) {
+    grid-template-columns: repeat(auto-fill, minmax($snake-size, 1fr));
   }
 
   &__part {
