@@ -4,7 +4,7 @@ $cell-size: 300px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
 
-  @media (min-width: 900px) {
+  @media (min-width: #{$cell-size * 3}) {
     grid-template-columns: repeat(3, minmax($cell-size, 1fr));
   }
 
