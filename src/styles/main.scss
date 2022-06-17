@@ -51,26 +51,20 @@ body {
   
 }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media  (min-width: 600px) {
   .blocks {
-    display: grid;
-    grid-template-rows: repeat(3, 300px);
     grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
 }
 
-@media (min-width: 900px) and (max-width: 1200px) {
+@media (min-width: 900px) {
   .blocks {
-    display: grid;
-    grid-template-rows: repeat(auto-fill, 300px);
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
 
-@media (min-width: 1750px) {
+@media (min-width: 1201px) {
   .blocks {
-    display: grid;
-    grid-template-rows: repeat(auto-fill, 300px);
     grid-template-columns: repeat(6, minmax(300px, 1fr));
   }
 }
