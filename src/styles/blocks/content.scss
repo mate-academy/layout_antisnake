@@ -2,16 +2,16 @@
 
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: auto;
+  grid-template-rows: repeat(6,$box-height);
 
   @media (min-width: 600px) {
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(3,$box-height);
   }
 
   @media (min-width: 900px) {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2,$box-height);
   }
 
   @each $index, $col in $c-red {
@@ -40,6 +40,5 @@
   &__box {
     position: relative;
     min-width: $box-height;
-    height: $box-height;
   }
 }
