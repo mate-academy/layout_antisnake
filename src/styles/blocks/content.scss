@@ -1,0 +1,32 @@
+.content {
+
+  @each $index, $col in $c-red {
+    & > :nth-child(#{$index})::after {
+      background-color: #{$col};
+    }
+  }
+
+  @for $i from 1 through 6 {
+    & > :nth-child(#{$i})::after {
+      content: "#{$i}";
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      justify-content: center;
+      align-items: center;
+
+      height: $box-height;
+    }
+  }
+
+  &__box {
+    position: relative;
+    min-width: $box-height;
+    height: $box-height;
+  }
+}
