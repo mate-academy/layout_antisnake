@@ -1,5 +1,19 @@
 .content {
 
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
   @each $index, $col in $c-red {
     & > :nth-child(#{$index})::after {
       background-color: #{$col};
@@ -10,6 +24,7 @@
     & > :nth-child(#{$i})::after {
       content: "#{$i}";
       position: absolute;
+      height: $box-height;
       display: flex;
       top: 0;
       left: 0;
@@ -19,8 +34,6 @@
       font-size: 100px;
       justify-content: center;
       align-items: center;
-
-      height: $box-height;
     }
   }
 
