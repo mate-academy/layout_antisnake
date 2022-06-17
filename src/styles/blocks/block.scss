@@ -1,0 +1,31 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  grid-auto-rows: $block-size;
+
+  &__element {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    $colors:
+      "1" red,
+      "2" rgb(80%, 0%, 00%),
+      "3" rgb(60%, 0%, 00%),
+      "4" rgb(40%, 0%, 00%),
+      "5" rgb(20%, 0%, 00%),
+      "6" black;
+
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-size, 1fr));
+    }
+  }
+}
