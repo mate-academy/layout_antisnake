@@ -1,3 +1,62 @@
 body {
   margin: 0;
 }
+
+.snake {
+  display: grid;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .snake {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3 auto);
+  }
+}
+
+@media (min-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+.snake__cell {
+  height: 300px;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @for $number from 1 through 6 {
+    &:nth-child(#{$number})::before {
+      content: "#{$number}";
+    }
+  }
+
+  &:nth-child(1) {
+    background-color: #f00;
+  }
+
+  &:nth-child(2) {
+    background-color: #c00;
+  }
+
+  &:nth-child(3) {
+    background-color: #900;
+  }
+
+  &:nth-child(4) {
+    background-color: #600;
+  }
+
+  &:nth-child(5) {
+    background-color: #300;
+  }
+
+  &:nth-child(6) {
+    background-color: #000;
+  }
+}
