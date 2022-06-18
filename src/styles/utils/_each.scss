@@ -1,0 +1,9 @@
+@each $index, $red in $colors {
+  .container__block:nth-child(#{$index}) {
+    background-color: rgb($red, 0, 0);
+
+    &::after {
+      content: "#{$index}";
+    }
+  }
+}
