@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+  grid-auto-rows: $height;
+  justify-content: center;
+
+  @media (min-width: ($height * 4)) {
+    grid-template-columns: repeat(3, minmax($height, 1fr));
+  }
+
+  & :nth-child(n) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @each $n-of-child, $red-gardient in $red-gardients {
+    & :nth-child(#{$n-of-child})::before {
+      content: "#{$n-of-child}";
+    }
+
+    & :nth-child(#{$n-of-child}) {
+      background-color: $red-gardient;
+    }
+  }
+}
