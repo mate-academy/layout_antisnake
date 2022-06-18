@@ -14,13 +14,13 @@
     align-items: center;
   }
 
-  @each $n-of-child, $red-gardient in $red-gardients {
+  @each $n-of-child, $red-gradient in $red-gradients {
     & :nth-child(#{$n-of-child})::before {
       content: "#{$n-of-child}";
     }
 
     & :nth-child(#{$n-of-child}) {
-      background-color: $red-gardient;
+      background-color: $red-gradient;
     }
   }
 }
