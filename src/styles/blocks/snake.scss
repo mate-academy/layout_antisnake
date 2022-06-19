@@ -1,0 +1,42 @@
+$box-height: 300px;
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
+
+  @media (min-width: (3 * $box-height)) {
+    grid-template-columns: repeat(3, minmax($box-height, 1fr));
+  }
+
+  &__box {
+    height: $box-height;
+    min-width: $box-height;
+    line-height: $box-height;
+    color: white;
+    text-align: center;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: rgb(80%, 0%, 0%);
+    }
+
+    &--3 {
+      background-color: rgb(60%, 0%, 0%);
+    }
+
+    &--4 {
+      background-color: rgb(40%, 0%, 0%);
+    }
+
+    &--5 {
+      background-color: rgb(20%, 0%, 0%);
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+}
