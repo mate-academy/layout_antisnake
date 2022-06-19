@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./utils/normolaze";
+
+@import "./blocks/block.scss";
+@import "./blocks/snake.scss";
