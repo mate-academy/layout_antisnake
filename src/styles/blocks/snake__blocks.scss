@@ -6,14 +6,12 @@
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 100px;
   color: #fff;
-  @for $i from 1 through 6 {
+  @each $i, $value in $color {
     &:nth-child(#{$i})::before {
       content: "#{$i}";
     }
-  }
-  @each $name, $value, $i in $color {
-    &--color--#{$name} {
-      background-color: $value;
+    &:nth-child(#{$i}) {
+      background-color: #{$value};
     }
   }
 }
