@@ -1,0 +1,24 @@
+.antisnake {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height-block, 1fr));
+
+  @media (min-width: ($height-block * 4)) {
+    grid-template-columns: repeat(3, minmax($height-block, 1fr));
+  }
+
+  &__block {
+    color: #fff;
+    text-align: center;
+    line-height: $height-block;
+    height: $height-block;
+
+    @for $index from 1 through $amount-blocks {
+      &:nth-child(#{$index}) {
+        background-color: rgb(
+          ($amount-blocks - $index) * 255/($amount-blocks - 1), 0, 0);
+      }
+    }
+  }
+}
