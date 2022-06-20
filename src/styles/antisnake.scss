@@ -1,6 +1,6 @@
 .antisnake {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 3fr);
 
   &__block {
     display: flex;
@@ -20,39 +20,20 @@
     "4" rgb(102, 0, 0),
     "5" rgb(51, 0, 0),
     "6" rgb(0, 0, 0);
-  @each $color, $value in $color-list {
-    &__block--block-#{$color} {
+  @each $number, $value in $color-list {
+    &__block:nth-child(n + #{$number})::before {
+      content: $number;
+    }
+
+    &__block:nth-child(n + #{$number}) {
       background-color: $value;
     }
   }
-  // &__block--block-1 {
-  //   background-color: rgb(255, 0, 0);
-  // }
-  
-  // &__block--block-2 {
-  //   background-color: rgb(204, 0, 0);
-  // }
-  
-  // &__block--block-3 {
-  //   background-color: rgb(153, 0, 0);
-  // }
-  
-  // &__block--block-4 {
-  //   background-color: rgb(102, 0, 0);
-  // }
-  
-  // &__block--block-5 {
-  //   background-color: rgb(51, 0, 0);
-  // }
-  
-  // &__block--block-6 {
-  //   background-color: rgb(0, 0, 0);
-  // }
 }
 
 @media (max-width: 899px) {
   .antisnake {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 2fr);
   }
 }
 
