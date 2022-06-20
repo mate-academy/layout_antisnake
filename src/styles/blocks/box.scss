@@ -2,22 +2,21 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
-
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .box {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
 
 .box__item {
-  height: 300px;
-  font-size: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 300px;
+  font-size: 100px;
 }
 
 // $BoxColors:
