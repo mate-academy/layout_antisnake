@@ -1,0 +1,71 @@
+
+.snake {
+  display: grid;
+  grid-area: 1/1/6/6;
+
+ &__block {
+    height: 300px;
+    min-width: 300px;
+
+    flex-basis: calc(100% / 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+       content: "#{$index}";
+      }
+    }
+
+    &--1 {
+      background-color: rgb(255,2,0);
+    }
+
+    &--2 {
+      background-color: rgb(204,2,0);
+    }
+
+    &--3 {
+      background-color: rgb(153,0,1);
+    }
+
+    &--4 {
+      background-color: rgb(102,0,0);
+    }
+
+    &--5 {
+      background-color: rgb(51,1,0);
+    }
+
+    &--6 {
+      background-color: rgb(0,0,0);
+    }
+  }
+    @media (min-width: 300px) and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 600px) and (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media (min-width:900px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+
+
+
+
+  }
+
+
+
+
