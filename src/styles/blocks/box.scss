@@ -2,57 +2,26 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
-}
 
-@media (min-width: 1024px) {
-  .box {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
   }
-}
 
-.box__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 300px;
-  font-size: 100px;
-}
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    font-size: 100px;
 
-// $BoxColors:
-//   '1' red,
-//   '2' rgb(204, 0, 0),
-//   '3' rgb(153, 0, 0),
-//   '4' rgb(102, 0, 0),
-//   '5' rgb(51, 0, 0),
-//   '6' rgb(0, 0, 0);
+    @each $ind, $clr in $BoxColors {
+      &--color--#{$ind} {
+        background-color: $clr;
+      }
+    }
 
-// @each $ind, $clr in $BoxColors {
-//   box__item--color--#{$ind} {
-//     background-color: $clr;
-//   }
-// }
-
-.box__item:nth-child(1) {
-  background-color: red;
-}
-
-.box__item:nth-child(2) {
-  background-color: rgb(204, 0, 0);
-}
-
-.box__item:nth-child(3) {
-  background-color: rgb(153, 0, 0);
-}
-
-.box__item:nth-child(4) {
-  background-color: rgb(102, 0, 0);
-}
-
-.box__item:nth-child(5) {
-  background-color: rgb(51, 0, 0);
-}
-
-.box__item:nth-child(6) {
-  background-color: black;
+  }
 }
