@@ -15,7 +15,7 @@
 
     @for $idx from 1 through 6 {
       &:nth-child(#{$idx}) {
-        background-color: rgb(306 - 51 * $idx, 0, 0);
+        background-color: rgb(306 - $color-step * $idx, 0, 0);
       }
     }
   }
