@@ -2,12 +2,6 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
-  // grid-template-rows: repeat(6,$box-height);
-
-  @media (min-width: 600px) {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(3,$box-height);
-  }
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
@@ -39,6 +33,8 @@
 
   &__box {
     position: relative;
+    height: $box-height;
+
     // min-width: $box-height;
   }
 }
