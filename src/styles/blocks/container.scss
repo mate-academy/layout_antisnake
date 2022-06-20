@@ -6,10 +6,8 @@
   font-size: 100px;
 
   @media (min-width: #{$min-block-width * $max-columns}) {
-    & {
-      grid-template-columns: repeat(#{$max-columns},
-      minmax(#{$min-block-width}, 1fr));
-    }
+    grid-template-columns: repeat(#{$max-columns},
+    minmax(#{$min-block-width}, 1fr));
   }
 
   &__block {
@@ -19,15 +17,13 @@
     justify-content: center;
     color: white;
 
-    @for $index from 1 through 6 {
-      &:nth-child(#{$index})::before {
-        content: "#{$index}";
-      }
-    }
-
     @each $index, $color in $colors {
       &:nth-child(#{$index}) {
         background-color: #{$color};
+      }
+
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
       }
     }
   }
