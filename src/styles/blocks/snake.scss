@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  @media (min-width: (3 * $box-size)) {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+
+  &__box {
+    height: $box-size;
+    line-height: $box-size;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+
+    @for $index from 1 through 6 {
+      &--#{$index}::after {
+        content: "#{$index}";
+      }
+    }
+
+    @each $number, $color in $bcc-block {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
