@@ -1,0 +1,48 @@
+.block {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, minmax(max-content, 1fr));
+
+  &__box {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: rgb(80%, 0, 0);
+    }
+
+    &--3 {
+      background-color: rgb(60%, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(40%, 0, 0);
+    }
+
+    &--5 {
+      background-color: rgb(20%, 0, 0);
+    }
+
+    &--6 {
+      background-color: black;
+    }
+
+  }
+
+  @media(min-width: 451px) {
+    grid-template-columns: repeat(2, minmax(max-content, 1fr));
+  }
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
+  }
+}
