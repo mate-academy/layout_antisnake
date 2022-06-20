@@ -5,7 +5,7 @@
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2,$box-height);
+    grid-auto-rows: $box-height;
   }
 
   @each $index, $col in $c-red {
@@ -17,9 +17,8 @@
   @for $i from 1 through 6 {
     &__box:nth-child(#{$i})::after {
       content: "#{$i}";
-      position: absolute;
+      display: flex;
       height: $box-height;
-      display: grid;
       top: 0;
       left: 0;
       right: 0;
@@ -32,7 +31,6 @@
   }
 
   &__box {
-    position: relative;
     height: $box-height;
   }
 }
