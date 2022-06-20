@@ -1,4 +1,7 @@
 $snake-width: 300px;
+$screen-medium: 600px;
+$screen-large: 900px;
+
 
 .container {
   display: grid;
@@ -44,13 +47,13 @@ $snake-width: 300px;
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: $screen-medium) {
   .container {
     grid-template-columns: repeat(2, minmax($snake-width, 1fr));
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: $screen-large) {
   .container {
     grid-template-columns: repeat(3, minmax($snake-width, 1fr));
   }
