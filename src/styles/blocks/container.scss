@@ -4,7 +4,7 @@
   grid-auto-rows: $height;
   justify-content: center;
 
-  @media (min-width: ($height * 4)) {
+  @media (min-width: ($height * $number-of-boxes)) {
     grid-template-columns: repeat(3, minmax($height, 1fr));
   }
 
