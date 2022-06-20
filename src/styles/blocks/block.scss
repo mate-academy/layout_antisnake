@@ -1,6 +1,6 @@
 .block {
   position: relative;
-  height: 300px;
+  height: $block-size;
 
   $colors: "1" rgb(255, 0, 0),
     "2" rgb(204, 0, 0),
@@ -27,9 +27,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: 100px;
+    font-size: $font-size;
     color: #fff;
     text-align: center;
-    line-height: 100px;
+    line-height: $font-size;
   }
 }
