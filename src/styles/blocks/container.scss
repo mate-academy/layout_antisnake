@@ -14,28 +14,10 @@
     text-align: center;
     line-height: $block-hight;
 
-    &--1 {
-      background-color: rgb(100%, 0%, 0%);
-    }
-
-    &--2 {
-      background-color: rgb(80%, 0%, 0%);
-    }
-
-    &--3 {
-      background-color: rgb(60%, 0%, 0%);
-    }
-
-    &--4 {
-      background-color: rgb(40%, 0%, 0%);
-    }
-
-    &--5 {
-      background-color: rgb(20%, 0%, 0%);
-    }
-
-    &--6 {
-      background-color: black;
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
     }
   }
 }
