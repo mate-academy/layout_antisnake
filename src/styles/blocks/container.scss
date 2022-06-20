@@ -4,19 +4,17 @@
 
   &__block {
     @for $num from 1 through 6 {
-      &:nth-child(#{$num})::before {
-        content: "#{$num}";
-      }
-    }
+      &:nth-child(#{$num}) {
+        background-color: rgb((6 - $num) * 20%, 0%, 0%);
 
-    @each $number, $color in $colors {
-      &:nth-child(#{$number}) {
-        background-color: $color;
+        &::after {
+          content: "#{$num}";
+        }
       }
     }
-  }
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
   }
 }
