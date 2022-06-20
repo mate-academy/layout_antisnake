@@ -24,19 +24,12 @@
     }
 
   }
-    @media (min-width: 300px) and (max-width: 600px) {
-      grid-template-columns: $block-width;
-    }
 
-    @media (min-width: 600px) and (max-width: 900px) {
+    @media (min-width:$medium) {
       grid-template-columns: repeat(2, $block-width);
     }
 
-    @media (min-width:900px) {
+    @media (min-width:$large) {
       grid-template-columns: repeat(3, $block-width);
     }
   }
-
-
-
-
