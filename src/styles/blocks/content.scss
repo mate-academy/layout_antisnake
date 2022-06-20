@@ -9,13 +9,13 @@
   }
 
   @each $index, $col in $c-red {
-    & > :nth-child(#{$index})::after {
+    &__box:nth-child(#{$index})::after {
       background-color: #{$col};
     }
   }
 
   @for $i from 1 through 6 {
-    & > :nth-child(#{$i})::after {
+    &__box:nth-child(#{$i})::after {
       content: "#{$i}";
       position: absolute;
       height: $box-height;
