@@ -1,7 +1,24 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax($snake-block-size, 1fr));
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $snake-block-size;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    @each $i, $value in $color {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+      &:nth-child(#{$i}) {
+        background-color: #{$value};
+      }
+    }
+  }
+  @media (min-width: #{$number-of-snake-block-in-row * $snake-block-size}) {
+    grid-template-columns: repeat($number-of-snake-block-in-row, 1fr);
   }
 }
