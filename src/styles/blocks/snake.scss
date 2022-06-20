@@ -1,0 +1,28 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    @each $color, $index in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+
+        &::after {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
+}
