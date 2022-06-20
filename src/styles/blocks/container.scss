@@ -20,10 +20,10 @@
     @each $index, $color in $colors {
       &:nth-child(#{$index}) {
         background-color: #{$color};
-      }
-
-      &:nth-child(#{$index})::before {
-        content: "#{$index}";
+        
+        &::before {
+          content: "#{$index}";
+        }
       }
     }
   }
