@@ -5,3 +5,7 @@ $colors:
   "4" rgb(102, 0, 0),
   "5" rgb(51, 0, 0),
   "6" rgb(0, 0, 0);
+
+$block-height: 300px;
+$min-block-width: $block-height;
+$max-columns: 3;
