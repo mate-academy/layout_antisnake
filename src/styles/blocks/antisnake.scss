@@ -1,6 +1,6 @@
 .antisnake {
   display: grid;
-  justify-content: center;
+  // justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
   grid-auto-rows: $block-size;
 
