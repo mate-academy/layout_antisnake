@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-hight, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($block-hight, 1fr));
+  }
+
+  &__blocks {
+    height: $block-hight;
+    min-width: $block-hight;
+    color: #fff;
+    font-size: 100px;
+    text-align: center;
+    line-height: $block-hight;
+
+    &--1 {
+      background-color: rgb(100%, 0%, 0%);
+    }
+
+    &--2 {
+      background-color: rgb(80%, 0%, 0%);
+    }
+
+    &--3 {
+      background-color: rgb(60%, 0%, 0%);
+    }
+
+    &--4 {
+      background-color: rgb(40%, 0%, 0%);
+    }
+
+    &--5 {
+      background-color: rgb(20%, 0%, 0%);
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+}
