@@ -14,29 +14,19 @@
     text-align: center;
     line-height: $block-height;
     color: white;
-  }
 
-  &__block:nth-child(1) {
-    background-color: #f00;
-  }
+    $colors:
+      "1" #f00,
+      "2" #c00,
+      "3" #900,
+      "4" #600,
+      "5" #300,
+      "6" #000;
 
-  &__block:nth-child(2) {
-    background-color: #c00;
-  }
-
-  &__block:nth-child(3) {
-    background-color: #900;
-  }
-
-  &__block:nth-child(4) {
-    background-color: #600;
-  }
-
-  &__block:nth-child(5) {
-    background-color: #300;
-  }
-
-  &__block:nth-child(6) {
-    background-color: #000;
+    @each $index, $color in $colors {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
   }
 }
