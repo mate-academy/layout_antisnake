@@ -2,11 +2,16 @@ $snake-width: 300px;
 $screen-medium: 600px;
 $screen-large: 900px;
 
+:root {
+  --block-count: 1;
+}
+
+
 .container {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(1, minmax($snake-width, 1fr));
+  grid-template-columns: repeat(var(--block-count), minmax($snake-width, 1fr));
 
   &__block {
     display: flex;
@@ -26,16 +31,18 @@ $screen-large: 900px;
       }
     }
   }
-}
 
-@media (min-width: $screen-medium) {
-  .container {
-    grid-template-columns: repeat(2, minmax($snake-width, 1fr));
+  @media (min-width: $screen-medium) {
+    & {
+      --block-count: 2;
+    }
+  }
+
+  @media (min-width: $screen-large) {
+    & {
+      --block-count: 3;
+    }
   }
 }
 
-@media (min-width: $screen-large) {
-  .container {
-    grid-template-columns: repeat(3, minmax($snake-width, 1fr));
-  }
-}
+
