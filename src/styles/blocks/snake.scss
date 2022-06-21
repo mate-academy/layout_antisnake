@@ -1,6 +1,6 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, 1fr);
   font-size: 100px;
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
@@ -13,15 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: $box_height;
 
-    @each $index, $color in $colors {
-      &:nth-child(#{$index}) {
+    @each $i, $color in $colors {
+      &:nth-child(#{$i}) {
         background-color: $color;
       }
-    }
-
-    @for $i from 1 through 6 {
       &:nth-child(#{$i})::before {
         content: "#{$i}";
       }
