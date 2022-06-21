@@ -2,7 +2,6 @@ $snake-width: 300px;
 $screen-medium: 600px;
 $screen-large: 900px;
 
-
 .container {
   display: grid;
   justify-content: center;
@@ -21,28 +20,10 @@ $screen-large: 900px;
 
     color: rgb(255, 255, 255);
 
-    &--1 {
-      background-color: #f00;
-    }
-
-    &--2 {
-      background-color: rgb(204, 0, 0);
-    }
-
-    &--3 {
-      background-color: rgb(153, 0, 0);
-    }
-
-    &--4 {
-      background-color: rgb(102, 0, 0);
-    }
-
-    &--5 {
-      background-color: rgb(51, 0, 0);
-    }
-
-    &--6 {
-      background-color: rgb(0, 0, 0);
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
     }
   }
 }
