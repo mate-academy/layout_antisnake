@@ -9,7 +9,7 @@ $screen-large: 900px;
   grid-template-columns: repeat(1, minmax($snake-width, 1fr));
 
   &__block {
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
