@@ -1,0 +1,48 @@
+$snake-width: 300px;
+$screen-medium: 600px;
+$screen-large: 900px;
+
+:root {
+  --block-count: 1;
+}
+
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(var(--block-count), minmax($snake-width, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: $snake-width;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+
+    color: rgb(255, 255, 255);
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: $screen-medium) {
+    & {
+      --block-count: 2;
+    }
+  }
+
+  @media (min-width: $screen-large) {
+    & {
+      --block-count: 3;
+    }
+  }
+}
+
+
