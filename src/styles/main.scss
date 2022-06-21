@@ -4,39 +4,32 @@ body {
 
 .blocks {
   display: grid;
-  grid-template-rows: repeat(2, 300px);
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
   align-content: center;
 
   & :nth-child(1) {
     background-color: red;
-    order: 1;
   }
 
   & :nth-child(2) {
     background-color: rgb(204, 0, 0);
-    order: 2;
   }
 
   & :nth-child(3) {
     background-color: rgb(153, 0, 0);
-    order: 3;
   }
 
   & :nth-child(4) {
     background-color: rgb(102, 0, 0);
-    order: 4;
   }
 
   & :nth-child(5) {
     background-color: rgb(51, 0, 0);
-    order: 5;
   }
 
   & :nth-child(6) {
     background-color: black;
-    order: 6;
   }
 
   &__item {
@@ -65,6 +58,6 @@ body {
 
 @media (min-width: 1201px) {
   .blocks {
-    grid-template-columns: repeat(6, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
