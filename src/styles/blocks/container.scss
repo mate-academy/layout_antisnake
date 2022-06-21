@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  justify-content: center;
+  background-color: $main-background-color;
+  --columns-count: 1;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  @media (min-width: 900px) {
+    --columns-count: 3;
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    height: $block-height;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    @each $num, $color in $tone-colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
+    }
+  }
+}
