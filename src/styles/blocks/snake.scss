@@ -1,12 +1,12 @@
 .snake {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: $block-width;
 
-  @media (min-width: ($block-height * 2)) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: ($block-height * $columns-two)) {
+    grid-template-columns: repeat($columns-two, $block-width);
   }
 
-  @media (min-width: ($block-height * 3)) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: ($block-height * $columns-three)) {
+    grid-template-columns: repeat($columns-three, $block-width);
   }
 }
