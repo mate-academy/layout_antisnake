@@ -4,23 +4,23 @@
 
   &__item {
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: $font-size;
     height: $size;
     min-width: $size;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size;
     color: white;
-  }
 
-  @each $name, $color in $colors {
-    &__item--#{$name} {
-      background-color: $color;
+    @each $i, $value in $colors {
+      &:nth-child(#{$i}) {
+        content: "#{$i}";
+        background-color: #{$value};
+      }
     }
   }
 
-  @media (min-width: ($size * 4)) {
+  @media (min-width: ($size * 3)) {
     grid-template-columns: repeat(3, minmax($size, 1fr));
   }
-
 }
