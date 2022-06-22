@@ -1,3 +1,8 @@
 @mixin color($hue) {
   background-color: rgb($hue, 0, 0);
 }
+
+@mixin grid ($rows, $columns) {
+  grid-template-rows: repeat($rows, 1fr);
+  grid-template-columns: repeat($columns, minmax($size, 1fr));
+}
