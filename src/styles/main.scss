@@ -55,9 +55,3 @@ body {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
-
-@media (min-width: 1201px) {
-  .blocks {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-}
