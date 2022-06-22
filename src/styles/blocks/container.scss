@@ -24,27 +24,9 @@
     align-items: center;
   }
 
-  &__block:first-child {
-    @include color(100%);
-  }
-
-  &__block:nth-child(2) {
-    @include color(80%);
-  }
-
-  &__block:nth-child(3) {
-    @include color(60%);
-  }
-
-  &__block:nth-child(4) {
-    @include color(40%);
-  }
-
-  &__block:nth-child(5) {
-    @include color(20%);
-  }
-
-  &__block:last-child {
-    @include color(0%);
+  @for $index from 0 through 5 {
+    &__block:nth-child(#{getIndex($index)}) {
+      @include color (getColor($index));
+    }
   }
 }
