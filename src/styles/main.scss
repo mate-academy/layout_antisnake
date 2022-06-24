@@ -1,3 +1,39 @@
-body {
+$col-size: 300px;
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($col-size, 1fr));
+}
+
+.box {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  min-height: $col-size;
+}
+
+@for $i from 1 through 6 {
+  .box:nth-child(#{$i}) {
+    background-color: rgb(calc(255 * ((6 - #{$i}) / 5)), 0, 0);
+    position: relative;
+    &::after {
+      content: "#{$i}";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($col-size, 1fr));
+  }
 }
