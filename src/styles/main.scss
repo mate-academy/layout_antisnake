@@ -9,6 +9,9 @@ $col-size: 300px;
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($col-size, 1fr));
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($col-size, 1fr));
+  }
 }
 
 .box {
@@ -29,11 +32,5 @@ $col-size: 300px;
       top: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .container {
-    grid-template-columns: repeat(3, minmax($col-size, 1fr));
   }
 }
