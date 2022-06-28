@@ -1,3 +1,62 @@
-body {
+$squere: 300px;
+
+.body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  justify-content: center;
+
+  &__block {
+    height: $squere;
+    width: $squere;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    line-height: $squere;
+    font-size: $squere / 3;
+  
+    &:first-child {
+      background-color: red;
+      grid-area: block1;
+    }
+  
+    &:nth-child(2) {
+      background-color: hsl(0, 100%, 40%);
+      grid-area: block2;
+    }
+  
+    &:nth-child(3) {
+      background-color: hsl(0, 100%, 30%);
+      grid-area: block3;
+    }
+  
+    &:nth-child(4) {
+      background-color: hsl(0, 100%, 20%);
+      grid-area: block4;
+    }
+  
+    &:nth-child(5) {
+      background-color: hsl(0, 100%, 10%);
+      grid-area: block5;
+    }
+  
+    &:last-child {
+      background-color: black;
+      grid-area: block6;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .snake {
+    grid-template-areas: "block1 block2" "block4 block3" "block5 block6";
+  }
+}
+
+@media (min-width: 900px) {
+  .snake {
+    grid-template-areas: "block1 block2 block3" "block6 block5 block4";
+  }
 }
