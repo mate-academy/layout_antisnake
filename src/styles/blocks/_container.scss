@@ -1,0 +1,7 @@
+.container {
+  display: grid;
+  justify-content: center;
+  justify-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: calc((#{$block-size} * 4) - 1px);
+}
