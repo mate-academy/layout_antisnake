@@ -7,10 +7,11 @@ $squere: 300px;
 .snake {
   display: grid;
   justify-content: center;
+  grid-template-areas: "block1" "block2" "block3" "block4" "block5" "block6";
+  grid-template-columns: 1fr;
+  grid-template-rows: $squere $squere $squere $squere $squere $squere;
 
   &__block {
-    height: $squere;
-    width: $squere;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
@@ -52,11 +53,15 @@ $squere: 300px;
 @media (min-width: 600px) {
   .snake {
     grid-template-areas: "block1 block2" "block4 block3" "block5 block6";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: $squere $squere $squere;
   }
 }
 
 @media (min-width: 900px) {
   .snake {
     grid-template-areas: "block1 block2 block3" "block6 block5 block4";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: $squere $squere;
   }
 }
