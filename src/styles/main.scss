@@ -5,8 +5,13 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
 }
 
 .container__block {
@@ -14,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 300px;
-  min-width: 300px;
+
   font-family: "Arial, Helvetica, sans-serif";
   font-size: 100px;
   color: white;
