@@ -8,7 +8,7 @@ $squere: 300px;
   display: grid;
   justify-content: center;
   grid-template-areas: "block1" "block2" "block3" "block4" "block5" "block6";
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: $squere $squere $squere $squere $squere $squere;
 
   &__block {
