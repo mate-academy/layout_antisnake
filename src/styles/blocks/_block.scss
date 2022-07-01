@@ -1,0 +1,15 @@
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $block-size;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @each $number, $color in $numbers-and-colors {
+    &:nth-child(#{$number}) {
+      background-color: hsl(0, 100%, $color);
+    }
+  }
+}
