@@ -1,0 +1,46 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-hight, 1fr));
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($cell-hight, 1fr));
+    }
+  }
+}
+
+.box {
+  box-sizing: border-box;
+  color: white;
+  font-family: Arial, serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: $cell-hight;
+  background-color: red;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: rgb(80%, 0%, 0%);
+  }
+    
+  &:nth-child(3) {
+    background-color: rgb(60%, 0%, 0%);
+  }
+    
+  &:nth-child(4) {
+    background-color: rgb(40%, 0%, 0%);
+  }
+    
+  &:nth-child(5) {
+    background-color: rgb(20%, 0%, 0%);
+  }
+    
+  &:nth-child(6) {
+    background-color: black;
+  }
+}
