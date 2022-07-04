@@ -1,3 +1,28 @@
-body {
-  margin: 0;
+@import "./utils/reset";
+@import "./utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+  grid-auto-rows: 1fr;
+
+  .block {
+    height: $blockSize;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: $blockSize;
+    color: white;
+  }
+
+  // colors
+  @each $i, $color in $colors {
+    &__block--#{$i} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
