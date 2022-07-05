@@ -9,19 +9,9 @@
   justify-content: center;
   align-content: center;
 
-  &--2{
-    background-color: hsl(0, 100%, 40%);
-  }
-  &--3{
-    background-color: hsl(0, 100%, 30%);
-  }
-  &--4{
-    background-color: hsl(0, 100%, 20%);
-  }
-  &--5{
-    background-color: hsl(0, 100%, 10%);
-  }
-  &--6{
-    background-color: black;
+  @for $index from 2 through 6 {
+    &--#{$index} {
+      background-color: hsl(0, 100%, 50 - 10 * ($index - 1));
+    }
   }
 }
