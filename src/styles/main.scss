@@ -1,3 +1,37 @@
+@import "./utils/variables";
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 33.33%));
+  justify-content: center;
+  align-content: center;
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @each $color, $num_color in $colors {
+    &__block--num-#{$num_color} {
+      background-color: #{$color};
+    }
+  }
+
+  @media (max-width: 900px) {
+    & {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+
 }
