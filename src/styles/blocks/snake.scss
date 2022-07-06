@@ -1,6 +1,34 @@
 .snake {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__segment-1 {
+    background-color: rgb(255,0,0);
+  }
+
+  &__segment-2 {
+    background-color: rgb(204,0,0);
+  }
+  
+  &__segment-3 {
+    background-color: rgb(153,0,0);
+  }
+  
+  &__segment-4 {
+    background-color: rgb(102,0,0);
+  }
+  
+  &__segment-5 {
+    background-color: rgb(51,0,0);
+  }
+  
+  &__segment-6 {
+    background-color: rgb(0,0,0);
+  }
+  
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
 
 @for $i  from 1 through 6 {
@@ -17,35 +45,5 @@
     top: 30%;
     display: flex;
     justify-content: center;
-  }
-}
-
-.snake__segment-1 {
-  background-color: rgb(255,0,0);
-}
-
-.snake__segment-2 {
-  background-color: rgb(204,0,0);
-}
-
-.snake__segment-3 {
-  background-color: rgb(153,0,0);
-}
-
-.snake__segment-4 {
-  background-color: rgb(102,0,0);
-}
-
-.snake__segment-5 {
-  background-color: rgb(51,0,0);
-}
-
-.snake__segment-6 {
-  background-color: rgb(0,0,0);
-}
-
-@media (min-width: 900px) {
-  .snake {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
