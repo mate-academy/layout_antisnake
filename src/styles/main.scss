@@ -56,15 +56,9 @@ body {
     align-items: center;
   }
 
-  .block--3 {
-    order: 1;
-  }
-  .block--4 {
-    order: 1;
-  }
-  .block--5 {
-    order: 1;
-  }
+  .block--3,
+  .block--4 ,
+  .block--5,
   .block--6 {
     order: 1;
   }
@@ -77,16 +71,11 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .block--3 {
-    order: 2;
-  }
+
+  .block--3,
+  .block--4,
+  .block--5,
   .block--6 {
-    order: 2;
-  }
-  .block--5 {
-    order: 2;
-  }
-  .block--4 {
     order: 2;
   }
 }
