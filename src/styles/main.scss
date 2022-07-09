@@ -19,18 +19,19 @@ $col-size: 300px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
   min-height: $col-size;
+  position: relative;
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
-
 @for $i from 1 through 6 {
   .box:nth-child(#{$i}) {
     background-color: rgb(calc(255 * ((6 - #{$i}) / 5)), 0, 0);
-    position: relative;
     &::after {
       content: "#{$i}";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
     }
   }
 }
