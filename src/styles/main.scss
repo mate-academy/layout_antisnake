@@ -1,3 +1,20 @@
+@import "./utils/loops";
+@import "./utils/_variables";
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($block-high,1fr));
+  max-width: 1199px;
+}
+
+.container__block {
+  height: $block-high;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

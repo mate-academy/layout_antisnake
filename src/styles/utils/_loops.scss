@@ -1,0 +1,23 @@
+$cont:
+  "1" #f00,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" #000;
+
+.container__block {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+  
+  @each $num,$col in $cont {
+    &--#{$num} {
+      content: "#{$num}";
+      background-color: #{$col};
+    }
+    &--#{$num}::before {
+      content: "#{$num}";
+    }
+  }
+}
