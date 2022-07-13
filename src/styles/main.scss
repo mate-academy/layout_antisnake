@@ -15,6 +15,8 @@ body {
   display: grid;
   height: 300px;
   min-width: 300px;
+  justify-content: center;
+  align-items: center;
 }
 
 .block:nth-child(1) {
