@@ -1,15 +1,12 @@
 .snake {
   display: grid;
+  color: white;
+
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)) ;
 
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  color: white;
 
   &__block {
     display: flex;
@@ -17,19 +14,5 @@
     align-items: center;
     height: 300px;
     min-width: 300px;
-
-    $colors: 
-      "1" rgb(255, 0, 0),
-      "2" rgb(199, 0, 0),
-      "3" rgb(148, 0, 0),
-      "4" rgb(97, 0, 0),
-      "5" rgb(46, 0, 0),
-      "6" black;
-
-    @each $number, $color in $colors {
-      &--#{$number} {
-        background-color: $color;
-      }
-    }
   }
 }

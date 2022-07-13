@@ -1,5 +1,11 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+@import "./blocks/snake.scss";
+@import "./utils/extends";
+
 body {
   margin: 0;
 }
- 
-@import "./blocks/snake.scss";
