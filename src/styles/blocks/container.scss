@@ -1,0 +1,7 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+  minmax(calc(
+    max(#{$grid-item-min-width},
+    #{$grid-item-max-width})), 1fr));
+}
