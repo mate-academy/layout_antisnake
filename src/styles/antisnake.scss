@@ -1,0 +1,47 @@
+$block-size: 300px;
+
+.antisnake {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: #{$block-size * 4}) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-size, 1fr));
+    }
+  }
+
+  &__block {
+    display: grid;
+    height: $block-size;
+    background-color: black;
+    color: white;
+    font-style: arial, sans-serif;
+    font-size: $block-size / 3;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+    @for $number from 1 through 6 {
+      &--#{$number}::after {
+        content: "#{$number}";
+        color: white;
+      }
+    }
+
+    $colors:
+      "1" rgb(100%, 0%, 0%),
+      "2" rgb(80%, 0%, 0%),
+      "3" rgb(60%, 0%, 0%),
+      "4" rgb(40%, 0%, 0%),
+      "5" rgb(20%, 0%, 0%),
+      "6" rgb(0%, 0%, 0%);
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
