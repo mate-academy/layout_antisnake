@@ -1,3 +1,76 @@
 body {
   margin: 0;
 }
+
+.main {
+  display: grid;
+}
+
+.main-block {
+  display: grid;
+  min-height: 300px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  min-width: 300px;
+  align-items: center;
+  justify-items: center;
+}
+
+.main-block--color1 {
+  background-color: red;
+  grid-area: first;
+}
+
+.main-block--color2 {
+  background-color: rgb(204, 0, 0);
+  grid-area: second;
+}
+
+.main-block--color3 {
+  background-color: rgb(153, 0, 0);
+  grid-area: third;
+
+}
+
+.main-block--color4 {
+  background-color: rgb(102, 0, 0);
+  grid-area: forth;
+}
+
+.main-block--color5 {
+  background-color: rgb(51, 0, 0);
+  grid-area: fifth;
+}
+
+.main-block--color6 {
+  background-color: black;
+  grid-area: sixth;
+
+}
+
+@media(min-width:300px) {
+  .main {
+    grid-template-areas: "first"
+      "second"
+      "third"
+      "forth"
+      "fifth"
+      "sixth";
+  }
+}
+
+@media(min-width:600px) {
+  .main {
+    grid-template-areas: "first second"
+      "third forth"
+      "fifth sixth";
+  }
+}
+
+@media(min-width:900px) {
+  .main {
+    grid-template-areas: "first second third"
+      "forth fifth sixth";
+  }
+}
