@@ -1,0 +1,30 @@
+.snake-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size-snake-block, 1fr));
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, minmax($size-snake-block, 1fr));
+  }
+
+  @media (min-width: 451px) and (max-width: 750px) {
+    grid-template-columns: repeat(2, minmax($size-snake-block, 1fr));
+  }
+}
+
+.snake-block {
+  height: $size-snake-block;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  font-family: Arial, serif;
+  font-size: 100px;
+
+  @each $index, $color in $colors {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+}
