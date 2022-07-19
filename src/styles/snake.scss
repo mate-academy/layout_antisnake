@@ -1,0 +1,26 @@
+$colors:
+  ( 1: rgb(204, 0, 0),
+  2: rgb(153, 0, 0),
+  3: rgb(102, 0, 0),
+  4: rgb(51, 0, 0),
+  5: rgb(0, 0, 0));
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1199px;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: rgb(255, 0, 0);
+  }
+}
+
+@each $name, $color in $colors {
+  .snake__item--#{$name} {
+    background-color: $color;
+  }
+}
