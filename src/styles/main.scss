@@ -1,3 +1,70 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: aqua;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 300px);
+  grid-template-areas: "first" "second" "three" "four" "five" "six"
+  ;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 300px);
+    grid-template-areas: "first second" "three four" "five six"
+    ;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 300px);
+    grid-template-areas: "first second three" "four five six"
+    ;
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+
+  &_block {
+
+    &_first {
+      grid-area: first;
+      background-color: rgb(255, 0, 0);
+    }
+
+    &_second {
+      grid-area: second;
+      background-color: rgb(204, 0, 0);
+    }
+
+    &_three {
+      grid-area: three;
+      background-color: rgb(153, 0, 0);
+    }
+
+    &_four {
+      grid-area: four;
+      background-color: rgb(102, 0, 0);
+    }
+
+    &_five {
+      grid-area: five;
+      background-color: rgb(51, 0, 0);
+    }
+
+    &_six {
+      grid-area: six;
+      background-color: rgb(0, 0, 0);
+    }
+  }
 }
