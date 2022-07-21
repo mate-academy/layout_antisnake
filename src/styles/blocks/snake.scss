@@ -1,0 +1,24 @@
+.cells-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__cell {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @each $key, $value in $colors {
+    &__cell:nth-child(#{$key}) {
+      background-color: #{$value};
+    }
+  }
+}
