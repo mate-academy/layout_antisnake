@@ -1,0 +1,30 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  @include onDesktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__part {
+    height: $block-height;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: $block-height / 3;
+    text-align: center;
+    align-content: center;
+    line-height: $block-height;
+
+    @for $i from 1 through 6 {
+      &:nth-child(n+#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+
+    @each $i, $color in $colors {
+      &:nth-child(n + #{$i}) {
+        background-color: $color;
+      }
+    }
+  }
+}
