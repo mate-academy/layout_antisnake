@@ -1,0 +1,23 @@
+.box {
+  padding: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill,minmax($boxside,1fr));
+  max-width: 1199px;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $boxside;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
