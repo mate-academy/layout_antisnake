@@ -11,7 +11,7 @@
     height: 300px;
     text-align: center;
     line-height: 300px;
-    @for $index from 1 through 6{
+    @for $index from 1 through 6 {
       &:nth-child(#{$index}) {
         background-color: rgba(0, 0, 0, 0.2 * ($index - 1));
       }
