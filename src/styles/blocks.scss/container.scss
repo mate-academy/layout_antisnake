@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+
+  @media (width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+    min-width: $size;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
