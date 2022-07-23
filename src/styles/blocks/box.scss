@@ -1,0 +1,25 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 300px;
+
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+
+  $colors:
+    'color-1'#FF0000,
+    'color-2' #CC0000,
+    'color-3' #990000,
+    'color-4' #660000,
+    'color-5' #330000,
+    'color-6' #000;
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+}
