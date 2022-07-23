@@ -1,0 +1,42 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
+  grid-template-rows: repeat(2, $box-size);
+  grid-auto-rows: 300px;
+
+  @include first-media-point {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include second-media-point {
+    grid-template-columns: repeat(2, minmax($box-size, 1fr));
+  }
+
+  @include third-media-point {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        &::after {
+          content: "#{$index}";
+        }
+      }
+    }
+
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+  }
+
+}
