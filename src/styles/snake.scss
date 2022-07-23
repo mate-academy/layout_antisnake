@@ -1,0 +1,28 @@
+.wraper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+  grid-auto-rows: $cell-size;
+
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+
+  @media (min-width: ($cell-size * 3)) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
