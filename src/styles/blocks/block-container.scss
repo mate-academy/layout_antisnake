@@ -1,0 +1,26 @@
+$block-height: 300px;
+
+.block-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  background-color: red;
+
+  @media (min-width: ($block-height * 3)) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    height: $block-height;
+
+    text-align: center;
+
+    line-height: $block-height;
+
+    @for $index from 1 through 6 {
+      &--opasity:nth-child(#{$index}) {
+        background-color: rgba(0, 0, 0, 0.2 * ($index - 1));
+      }
+    }
+  }
+}
