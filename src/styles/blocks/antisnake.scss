@@ -1,0 +1,25 @@
+.antisnake {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($item-size, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax($item-size, 1fr));
+  grid-auto-rows: $item-size;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @extend %antisnake-font-style;
+
+    @each $item, $color in $colors {
+      &--#{$item} {
+        background-color: $color;
+      }
+    }
+  }
+}
