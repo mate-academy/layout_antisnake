@@ -1,0 +1,13 @@
+.container__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: $blocksize;
+}
+
+@each $index, $color in $colors {
+  &:nth-child(#{$index}) {
+    background-color: rgb($color, 0%, 0%);
+  };
+}
