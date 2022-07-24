@@ -1,0 +1,41 @@
+.anti-snake {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+
+  &__item {
+    min-height: $block-height;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $index from 1 through 6 {
+
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    $snake-backgrounds:
+      "1" red,
+      "2" #c00,
+      "3" #900,
+      "4" #600,
+      "5" #300,
+      "6" black;
+
+    @each $name, $background-color in $snake-backgrounds {
+      &:nth-child(#{$name}) {
+        background-color: $background-color;
+      }
+    }
+  }
+
+}
