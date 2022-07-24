@@ -10,7 +10,7 @@ body {
 
   @media (max-width: 599px) {
     & {
-      grid-template-columns: repeat(auro-fill, 300px);
+      grid-template-columns: repeat(auto, 300px);
     }
   }
 
