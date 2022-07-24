@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media(min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    min-height: $item--size;
+
+    height: $item--size;
+    text-align: center;
+    line-height: 300px;
+    @for $numbers from 1 through $numbers--item {
+      &--colors--#{$numbers}::after {
+        content: "#{$numbers}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &--colors--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
