@@ -1,3 +1,9 @@
 body {
   margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
 }
+
+@import "./blocks/antisnake.scss";

@@ -1,0 +1,29 @@
+.antisnake {
+  --columns-number: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns-number), minmax(300px, 1fr));
+
+  @media (min-width: 600px){
+    --columns-number: 2;
+  }
+
+  @media (min-width: 900px){
+    --columns-number: 3;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(255 * (6 - $i) / 5, 0, 0);
+      }
+    }
+  }
+}
+
+
