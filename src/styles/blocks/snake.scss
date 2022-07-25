@@ -1,16 +1,10 @@
 .snake {
   display: grid;
-  grid-template-columns: auto;
-
-  @media (min-width: ($cell-cize * 2)) {
-    & {
-      grid-template-columns: auto auto;
-    }
-  }
+  grid-template-columns: repeat(auto-fill, minmax($cell-cize, 1fr));
 
   @media (min-width: ($cell-cize * 3)) {
     & {
-      grid-template-columns: auto auto auto;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -21,13 +15,13 @@
     min-width: $cell-cize;
     height: $cell-cize;
 
-    @for $index from 1 to 7 {
+    @for $index from 1 through 6 {
       &:nth-child(#{$index})::after {
         content: "#{$index}";
       }
     }
 
-    @for $index from 1 to 7 {
+    @for $index from 1 through 6 {
       &:nth-child(#{$index}) {
         background-color: rgb(calc(255 - (#{$index} - 1) * 51), 0, 0);
       }
