@@ -1,0 +1,23 @@
+.mainbox {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+
+    @each $name,  $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
