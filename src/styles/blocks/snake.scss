@@ -1,0 +1,36 @@
+.snake {
+  display: grid;
+  grid-template-columns: auto;
+
+  @media (min-width: ($cell-cize * 2)) {
+    & {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media (min-width: ($cell-cize * 3)) {
+    & {
+      grid-template-columns: auto auto auto;
+    }
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $cell-cize;
+    height: $cell-cize;
+
+    @for $index from 1 to 7 {
+      &:nth-child(#{$index})::after {
+        content: "#{$index}";
+      }
+    }
+
+    @for $index from 1 to 7 {
+      &:nth-child(#{$index}) {
+        background-color: rgb(calc(255 - (#{$index} - 1) * 51), 0, 0);
+      }
+    }
+  }
+}
