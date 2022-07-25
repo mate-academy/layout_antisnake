@@ -1,3 +1,49 @@
-body {
-  margin: 0;
+@import "./utils/normalize";
+@import "./utils/variables";
+
+.blockContainer {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockHeight, 1fr));
+  justify-content: center;
+
+  &__coloredBlock {
+    height: $blockHeight;
+    min-width: $blockHeight;
+    text-align: center;
+    line-height: $blockHeight;
+    color: white;
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+  }
+  
+  &__coloredBlock:nth-child(1) {
+    background-color: rgba(255, 0, 0, 1);
+  }
+  
+  &__coloredBlock:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+  
+  &__coloredBlock:nth-child(3) {
+    background-color: rgba(255, 0, 0, 0.6);
+  }
+  
+  &__coloredBlock:nth-child(4) {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
+  
+  &__coloredBlock:nth-child(5) {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  
+  &__coloredBlock:nth-child(6) {
+    background-color: rgba(255, 0, 0, 0);
+  }
+}
+
+@media (min-width: #{$blockHeight * 3}) {
+  .blockContainer {
+    grid-template-columns: repeat(3, minmax($blockHeight, 1fr));
+  }
 }
