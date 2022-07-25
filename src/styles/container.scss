@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    display: flex;
+    height: 300px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+  }
+}
+
+@each $name,
+  $color in $colors {
+  .color-#{$name} {
+    background-color: $color;
+  }
+}
