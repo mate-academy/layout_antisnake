@@ -33,27 +33,17 @@ body {
     justify-content: center;
   }
 
-  &__block--1 {
-    background-color: rgb(255, 0, 0);
-  }
+  $colors:
+    rgb(255, 0, 0) 1,
+    rgb(204, 0, 0) 2,
+    rgb(153, 0, 0) 3,
+    rgb(102, 0, 0) 4,
+    rgb(51, 0, 0) 5,
+    rgb(0, 0, 0) 6;
 
-  &__block--2 {
-    background-color: rgb(204, 0, 0);
-  }
-
-  &__block--3 {
-    background-color: rgb(153, 0, 0);
-  }
-
-  &__block--4 {
-    background-color: rgb(102, 0, 0);
-  }
-
-  &__block--5 {
-    background-color: rgb(51, 0, 0);
-  }
-
-  &__block--6 {
-    background-color: rgb(0, 0, 0);
+  @each $color, $order in $colors {
+    :nth-child(#{$order}) {
+      background-color: $color;
+    }
   }
 }
