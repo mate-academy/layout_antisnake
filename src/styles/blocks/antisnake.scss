@@ -3,9 +3,9 @@
   grid-template-columns: repeat(1, minmax($block-height, 1fr));
 
   &__block {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     height: $block-height;
     font-size: 100px;
     color: #fff;
