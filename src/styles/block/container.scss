@@ -1,0 +1,9 @@
+.conteiner {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  @media (min-width: $size-window) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
