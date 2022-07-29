@@ -1,7 +1,10 @@
 .snake {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  max-width: 1199px;
+
+  @media (min-width: 1199px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   &__box {
     box-sizing: border-box;
@@ -17,17 +20,18 @@
       font-size: 100px;
     }
 
-    $box: 
-      "1" rgb(255, 0, 0),
+    $box: "1" rgb(255, 0, 0),
       "2" rgb(204, 0, 0),
       "3" rgb(153, 0, 0),
       "4" rgb(102, 0, 0),
       "5" rgb(51, 0, 0),
       "6" rgb(0, 0, 0);
 
-    @each $num, $color in $box {
+    @each $num,
+      $color in $box {
       &:nth-child(#{$num}) {
         background-color: $color;
+
         &::before {
           content: $num;
         }
