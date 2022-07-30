@@ -1,3 +1,12 @@
+html {
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
 }
+
+@import "./utils/vars";
+
+@import "./blocks/snake";
