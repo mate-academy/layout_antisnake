@@ -16,11 +16,11 @@
     min-width: 300px;
     justify-content: center;
     align-items: center;
-  }
 
-  @for $i from 0 to 6 {
-    &:nth-child(#{$i + 1}) {
-      background-color: rgb(255 - (51 * $i), 0, 0);
+    @for $i from 0 to 6 {
+      &:nth-child(#{$i + 1}) {
+        background-color: rgb(255 - (51 * $i), 0, 0);
+      }
     }
   }
 }
