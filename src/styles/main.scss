@@ -1,3 +1,47 @@
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  
+  color: rgb(255,255,255);
+}
+
 body {
   margin: 0;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media(min-width: 1200px) {
+  .boxes {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.color-1,
+.color-2,
+.color-3,
+.color-4,
+.color-5,
+.color-6 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+$colors: 
+  "1" rgb(100%, 0%, 0%),
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" rgb(0%, 0%, 0%);
+
+@each $name, $color in $colors {
+  .color-#{$name} {
+    background-color: $color;
+  }
 }
