@@ -1,3 +1,46 @@
+$size: 300px;
+$colors: (
+  1: red,
+  2: #c00,
+  3: #900,
+  4: #600,
+  5: #300,
+  6: black
+);
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, minmax($size, 1fr));
+  align-items: stretch;
+}
+
+.block {
+  height: $size;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+  line-height: $size;
+
+  @each $number, $color in $colors {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
+
+@media (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, minmax($size, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(1, minmax($size, 1fr));
+  }
 }
