@@ -1,0 +1,10 @@
+$card-size: 300px;
+$min-width: $card-size * 3;
+$cards: (
+  1: red,
+  2: rgb(80%, 0%, 0%),
+  3: rgb(60%, 0%, 0%),
+  4: rgb(40%, 0%, 0%),
+  5: rgb(20%, 0%, 0%),
+  6: black,
+);
