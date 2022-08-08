@@ -6,4 +6,41 @@
   @media (min-width: $size-window) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  &__box {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    height: $size;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    &--1 {
+      background-color: #f00;
+    }
+
+    &--2 {
+      background-color: #c00;
+    }
+
+    &--3 {
+      background-color: #900;
+    }
+
+    &--4 {
+      background-color: #600;
+    }
+
+    &--5 {
+      background-color: #300;
+    }
+
+    &--6 {
+      background-color: #000;
+    }
+  }
 }
