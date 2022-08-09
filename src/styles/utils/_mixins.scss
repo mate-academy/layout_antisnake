@@ -1,0 +1,5 @@
+@mixin media ($block-amount) {
+  @media (min-width: getMinWidth($block-amount)) {
+    grid-template-columns: repeat($block-amount, minmax($block-size, 1fr));
+  }
+}

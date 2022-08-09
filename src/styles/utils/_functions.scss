@@ -1,0 +1,9 @@
+@function getMinWidth ($blocks-amount) {
+  @return $block-size * $blocks-amount;
+}
+
+@function getColor ($index) {
+  $scale-part: $index - 1;
+  $scale: (20% * $scale-part) * -1;
+  @return scale-color($color: $base-color, $red: $scale);  
+}
