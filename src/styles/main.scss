@@ -1,3 +1,37 @@
+@import "./utils/variables.scss";
+
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $height);
+
+  &__cell {
+    display: grid;
+    box-sizing: border-box;
+    height: $height;
+    width: $height;
+    
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  
+    color: #fff;
+    font-size: 100px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &--color--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
 }
