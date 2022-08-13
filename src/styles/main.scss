@@ -8,14 +8,14 @@ body {
 .container {
   
   display: grid;
-  grid-template-columns: repeat(auto-fill, $height);
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+  max-width: (3 * $height) + ($height - 1px);
 
   &__cell {
     display: grid;
     box-sizing: border-box;
     height: $height;
-    width: $height;
-    
+        
     place-items: center;
     font-family: Arial, Helvetica, sans-serif;
     justify-content: stretch;
