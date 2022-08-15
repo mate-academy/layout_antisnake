@@ -1,0 +1,9 @@
+@function get-background-color($block-num) {
+  $scale-factor: -20% * ($block-num - 1);
+
+  @return scale-color(#f00, $lightness: $scale-factor);
+}
+
+@function get-total-size($blocks-amount) {
+  @return $blocks-amount * $blocks-size;
+}

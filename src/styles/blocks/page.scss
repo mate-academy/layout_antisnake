@@ -1,0 +1,10 @@
+.page {
+  font: 100px Arial, sans-serif;
+  line-height: $blocks-size;
+  text-align: center;
+  color: #fff;
+
+  &__content {
+    margin: 0;
+  }
+}
