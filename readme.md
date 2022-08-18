@@ -1,7 +1,7 @@
 # Antisnake
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_antisnake/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_antisnake/report/html_report/)
+- [DEMO LINK](https://yevhenii-stanchenko.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://yevhenii-stanchenko.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -30,3 +30,20 @@ Display six colored blocks on the screen without any extra margins:
 | 3 columns | 2 columns | 1 column |
 | --------- | --------- | -------- |
 | ![1 col](./reference/900.png) | ![1 col](./reference/750.png) | ![1 col](./reference/450.png) |
+
+
+Отобразить шесть цветных блоков на экране без лишних полей:
+
+- Используйте `сетку`
+- Каждый блок должен быть высотой 300px.
+- Каждый блок должен иметь свой номер (от 1 до 6), размещенный в центре белым шрифтом Arial 100px.
+  - Блок 1 должен быть "красным"
+  - Блок 2 должен быть 4/5 «красным» и 1/5 «черным».
+  - Блок 3 должен быть на 3/5 «красным» и на 2/5 «черным».
+  - Блок 4 должен быть на 2/5 «красным» и на 3/5 «черным».
+  - Блок 5 должен быть на 1/5 «красным» и на 4/5 «черным».
+  - Блок 6 должен быть «черным».
+- Ширина каждого блока должна быть не меньше его высоты (`300px`)
+- Блоки нужно ставить от 2 до 6 рядов и растягивать: в каждом ряду должно быть 1, 2 или 3 блока.
+  Смотрите скриншоты [здесь](./reference).
+- Каждая строка должна читаться слева направо.
