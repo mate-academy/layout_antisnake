@@ -49,6 +49,11 @@ const config = {
       width: 1200,
       height: 200,
     },
+    {
+      name: '4096',
+      width: 4096,
+      height: 3112,
+    },
   ],
   scenarios: [
     {
