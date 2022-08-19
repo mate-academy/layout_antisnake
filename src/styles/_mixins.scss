@@ -1,0 +1,4 @@
+@mixin block($hight) {
+  min-width: $hight;
+  height: $hight;
+}
