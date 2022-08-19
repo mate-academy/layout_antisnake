@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-size, 1fr));
+
+  @media (min-width: $min-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__element {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: $card-size;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+  }
+}

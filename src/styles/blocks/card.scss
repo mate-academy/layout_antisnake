@@ -1,0 +1,5 @@
+@each $number, $color in $cards {
+  .card-#{$number} {
+    background-color: $color;
+  }
+}
