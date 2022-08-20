@@ -1,3 +1,41 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 300px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+
+  $datas:
+    1 #f00,
+    2 #cd0000,
+    3 #900,
+    4 #600,
+    5 #300,
+    6 #000;
+
+  @each $data, $color in $datas {
+    .container__data--#{$data} {
+      background-color: $color;
+    }
+  }
+
+  &__data {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+  }
+}
