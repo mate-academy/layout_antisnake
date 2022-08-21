@@ -1,0 +1,39 @@
+@import "_variables.scss";
+
+.antisnake {
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+
+    @media (max-width: 899px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 599px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
+
+  &__item {
+    display: grid;
+    place-content: center;
+    height: 300px;
+    min-width: 300px;
+  }
+
+  @each $block, $color in $block-colors {
+    &__item:nth-child(#{$block}) {
+      background: $color;
+    }
+  }
+}
