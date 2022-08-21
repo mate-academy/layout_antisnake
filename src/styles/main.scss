@@ -1,3 +1,11 @@
+@import "./utils/variables";
+@import "./blocks/container";
+@import "./utils/medias";
+
+html {
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
 }
