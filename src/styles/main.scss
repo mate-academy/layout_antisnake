@@ -1,3 +1,47 @@
 body {
   margin: 0;
 }
+
+.antisnake {
+  @media(min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+  }
+
+  &__item:nth-child(1) {
+    background-color: #f00;
+  }
+  
+  &__item:nth-child(2) {
+    background-color: #c00;
+  }
+  
+  &__item:nth-child(3) {
+    background-color: #900;
+  }
+  
+  &__item:nth-child(4) {
+    background-color: #600;
+  }
+  
+  &__item:nth-child(5) {
+    background-color: #300;
+  }
+  
+  &__item:nth-child(6) {
+    background-color: #000;
+  }
+}
