@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: $block-width;
+  justify-content: center;
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: repeat(2 , $block-width);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: repeat(3 , $block-width);
+    }
+  }
+
+  &__block {
+
+    @each $number, $color in$snakes-color {
+      &--number-#{$number} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color;
+        height: $block-height;
+        color: white;
+      }
+    }
+  }
+}
