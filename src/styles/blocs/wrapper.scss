@@ -1,0 +1,31 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($base-value, 1fr));
+  grid-auto-rows: $base-value;
+
+  @media (max-width: 899.98px) {
+    grid-template-columns: repeat(2, minmax($base-value, 1fr));
+  }
+
+  @media (max-width: 599.98px) {
+    grid-template-columns: repeat(1, minmax($base-value, 1fr));
+  }
+
+  &__item {
+    height: $base-value;
+    min-width: $base-value;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    @for $num from 1 through 6 {
+      &--iteration--#{$num}::after {
+        content: "#{$num}";
+      }
+      &--iteration--#{$num} {
+        background-color: rgb(100% - 20% * ($num - 1), 0, 0);
+      }
+    }
+  }
+}
