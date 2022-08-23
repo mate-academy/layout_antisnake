@@ -1,0 +1,11 @@
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @for $idx from 0 through 5 {
+    &--color--red-#{$idx} {
+      background-color: rgb(255 - (51 * $idx), 0, 0);
+    }
+  }
+}
