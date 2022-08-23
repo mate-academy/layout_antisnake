@@ -1,3 +1,38 @@
 body {
   margin: 0;
 }
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 100px;
+  font-size: 100px;
+  color: #fff;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__particle {
+    min-width: 300px;
+    height: 300px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &--#{$i} {
+        $color: 255 - 51 * ($i - 1);
+        background-color: rgb($color, 0, 0);
+      }
+    }
+  }
+}
