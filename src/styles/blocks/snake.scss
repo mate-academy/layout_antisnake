@@ -1,0 +1,22 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($block-height, 1fr));
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+  }
+
+  &__block {
+    height: $block-height;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $block-color {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}
