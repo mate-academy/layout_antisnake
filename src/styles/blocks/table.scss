@@ -1,0 +1,39 @@
+.table {
+  display: grid;
+
+  // grid-template-columns: repeat(auto-fill,
+  // minmax($block-size, calc(100% / 3)));
+
+  grid-auto-rows: $block-size;
+  grid-template-columns: 1fr;
+
+  @media (min-width: calc(#{$block-size} * 2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: calc(#{$block-size}*3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(120% - 20% * $i, 0%, 0%);
+
+        &::before {
+          position: absolute;
+          content: "#{$i}";
+          font-size: $block-size / 3;
+          font-family: Arial, sans-serif;
+          color: white;
+        }
+      }
+    }
+  }
+}
