@@ -1,3 +1,15 @@
 body {
   margin: 0;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
+
+.layots-name {
+  display: none;
+}
+
+@import "./utils/variables";
+@import "./utils/color-map";
+
+@import "./blocks/box.scss";
