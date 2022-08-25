@@ -1,0 +1,17 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($block-size, 1fr));
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $block-size;
+
+    @each $digit, $color in $digit-colors {
+      &:nth-child(#{$digit}) {
+        background-color: $color;
+      }
+    }
+  }
+}
