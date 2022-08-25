@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 100px;
+
+    $countOfItems: 6;
+
+    @for $redIndex from 1 through $countOfItems {
+      &--color--#{$redIndex} {
+        background-color: rgb(($countOfItems - $redIndex) * 20%, 0%, 0%);
+      }
+    }
+  }
+}
