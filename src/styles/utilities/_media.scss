@@ -1,0 +1,5 @@
+@media (max-width: ($block-size * 3)) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  }
+}
