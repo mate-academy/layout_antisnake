@@ -1,0 +1,9 @@
+.block {
+  line-height: 300px;
+
+  @each $index, $color in $colors {
+    &--color--#{$index} {
+      background-color: #{$color};
+    }
+  }
+}
