@@ -1,0 +1,29 @@
+@import "../utils/variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 300px;
+    min-height: 300px;
+  }
+
+  @each $var, $color in $colors {
+    &__item--#{$var} {
+      background-color: $color;
+    }
+  }
+}
