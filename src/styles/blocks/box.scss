@@ -1,0 +1,47 @@
+.box {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($blockWidth, 1fr));
+
+  &__block1 {
+    background-color: red;
+  }
+  
+  &__block2 {
+    background-color: rgb(204, 0, 0);
+  }
+  
+  &__block3 {
+    background-color: rgb(154, 0, 0);
+  }
+  
+  &__block4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__block5 {
+    background-color: rgb(51, 0, 0);
+  }
+  
+  &__block6 {
+    background-color: rgb(0, 0, 0);
+  }
+
+  &__block1,
+  &__block2,
+  &__block3,
+  &__block4,
+  &__block5,
+  &__block6 {
+    height: $blockHeight;
+    text-align: center;
+    line-height: $blockHeight;
+  }
+}
+
+@media (min-width: 1200px) {
+  .box {
+    grid-template-columns: repeat(3, minmax($blockWidth, 1fr));
+  }
+}
