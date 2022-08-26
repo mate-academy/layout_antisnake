@@ -1,9 +1,12 @@
 .container {
   display: grid;
-
   grid-template-columns: minmax(1fr, 300px);
 
   &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     @each $color, $i in $colors {
       &--#{$i} {
         background-color: $color;
