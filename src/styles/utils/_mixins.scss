@@ -1,0 +1,3 @@
+@mixin grid-template-min300px-column($columns) {
+  grid-template-columns: repeat($columns, minmax(300px, 1fr));
+}

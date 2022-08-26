@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  @include grid-template-min300px-column(3);
+
+  text-align: center;
+
+  @media (max-width: 900px) {
+    @include grid-template-min300px-column(auto-fill);
+  }
+}

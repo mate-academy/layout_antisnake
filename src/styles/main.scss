@@ -1,3 +1,9 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./blocks/container.scss";
+@import "./blocks/block.scss";
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
@@ -6,43 +12,4 @@ html {
 
 body {
   margin: 0;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-
-  text-align: center;
-
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
-}
-
-.block {
-  line-height: 300px;
-
-  &--color--1 {
-    background-color: #f00;
-  }
-
-  &--color--2 {
-    background-color: #c00;
-  }
-
-  &--color--3 {
-    background-color: #900;
-  }
-
-  &--color--4 {
-    background-color: #600;
-  }
-
-  &--color--5 {
-    background-color: #300;
-  }
-
-  &--color--6 {
-    background-color: #000;
-  }
 }
