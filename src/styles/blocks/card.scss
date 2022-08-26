@@ -1,0 +1,20 @@
+.card {
+  color: $text-colour;
+  height: $basic-size;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@for $i from 1 through 6 {
+  .card:nth-child(#{$i}):after {
+    content: "#{$i}";
+  }
+}
+
+@each $card, $colour in $colours {
+  .card:nth-child(#{$card}) {
+    background-color: $colour;
+  }
+}
