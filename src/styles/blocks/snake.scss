@@ -1,0 +1,25 @@
+.snake {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: (3 * $block-size)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $block-size;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    @for $number from 1 through 6 {
+      &--#{$number} {
+        background-color: rgb((6 - $number) * 20%, 0, 0);
+      }
+    }
+  }
+}
