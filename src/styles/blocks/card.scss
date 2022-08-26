@@ -1,0 +1,15 @@
+.card {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @for $number from 6 through 2 {
+    &:nth-child(#{$number}) {
+      background-color: rgba(255-($number - 1)*51 , 0, 0, 1);
+    }
+  }
+}
