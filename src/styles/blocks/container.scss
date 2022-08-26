@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($box-heigth, 1fr));
+
+  @media (min-width: $min-size) {
+    grid-template-columns: repeat(3, minmax($box-heigth, 1fr));
+  }
+
+  &__box {
+    height: $box-heigth;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+        color: $number-color;
+      }
+    }
+  }
+}
