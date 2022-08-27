@@ -1,0 +1,36 @@
+@import "../utils/variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($min-width, 1fr));
+
+  &__item {
+    height: $min-width;
+
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    line-height: $min-width;
+    text-align: center;
+    color: #fff;
+    
+    @for $i from 1 through 6 {
+      &--number--#{$i} {
+        background-color: rgb($red - 20% * $i, 0, 0);
+        &::before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, minmax($min-width, 1fr));
+    }
+  }
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, minmax($min-width, 1fr));
+    }
+  }
+}
