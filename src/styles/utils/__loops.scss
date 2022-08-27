@@ -1,0 +1,5 @@
+@each $name, $color in $c-spectrum-of-red {
+  .box__container--#{$name} {
+    background-color: $color;
+  }
+}
