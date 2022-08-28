@@ -1,0 +1,48 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__card {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    height: 300px;
+
+    background-color: rgb(100%, 0%, 0%);
+
+    color: #fff;
+  }
+
+  &__card--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+
+  &__card--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+
+  &__card--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+
+  &__card--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+
+  &__card--6 {
+    background-color: rgb(0%, 0%, 0%);
+  }
+}
+
+@media (min-width: 600px) {
+  .box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
