@@ -1,0 +1,39 @@
+.snake {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(
+    auto-fill, #{"minmax(max(300px, 100%/3), 1fr)"}
+  );
+
+  $colors:
+    "1" red ,
+    "2" rgb(204, 0, 0) ,
+    "3" rgb(153, 0, 0) ,
+    "4" rgb(102, 0, 0) ,
+    "5" rgb(51, 0, 0),
+    "6" black;
+
+  &__elem {
+    height: 300px;
+    min-width: 300px;
+
+    @each $i , $color in $colors {
+      &:nth-child(#{$i}) {
+        background-color: #{$color};
+      }
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 100px;
+        color: white;
+      }
+    }
+  }
+}
