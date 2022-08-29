@@ -1,3 +1,44 @@
+@import "./variables.scss";
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.blocks {
+  display: grid;
+  grid-template-areas: "1 2 3" "4 5 6";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+    min-width: 300px;
+
+    @each $n, $color, $i in $colors {
+      &--color--#{$n} {
+        background-color: $color;
+        grid-area: $i;
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    grid-template-areas: "1" "2" "3" "4" "5" "6";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-areas: "1 2" "3 4" "5 6";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 }
