@@ -30,3 +30,5 @@ Display six colored blocks on the screen without any extra margins:
 | 3 columns | 2 columns | 1 column |
 | --------- | --------- | -------- |
 | ![1 col](./reference/900.png) | ![1 col](./reference/750.png) | ![1 col](./reference/450.png) |
+
+test
