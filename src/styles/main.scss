@@ -1,3 +1,48 @@
 body {
   margin: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+$colors:
+  "1" red,
+  "2" rgb(204, 0, 0),
+  "3" rgb(153, 0, 0),
+  "4" rgb(102, 0, 0),
+  "5" rgb(51, 0, 0),
+  "6" black;
+  
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  justify-content: center;
+
+  @media screen and (max-width: 899px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__block {
+    min-width: 300px;
+    height: 300px;
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+        text-align: center;
+      }
+      &--#{$index}::after {
+        content: "#{$index}";
+        font-size: 100px;
+        line-height: 300px;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+    }
+  }
+}
