@@ -1,0 +1,37 @@
+.block__child {
+  height: 300px;
+  min-width: 300px;
+
+  font-size: 100px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// blocks color
+.block-1 {
+  background-color: red;
+}
+
+.block-2 {
+  background-color: rgba(80%, 0%, 0%, 1);
+}
+
+.block-3 {
+  background-color: rgba(60%, 0%, 0%, 1);
+}
+
+.block-4 {
+  background-color: rgba(40%, 0%, 0%, 1);
+}
+
+.block-5 {
+  background-color: rgba(20%, 0%, 0%, 1);
+}
+
+.block-6 {
+  background-color: black;
+}
