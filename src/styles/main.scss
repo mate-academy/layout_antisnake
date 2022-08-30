@@ -1,3 +1,59 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+.page {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+$bg-colors: (
+  1 rgb(255, 0, 0),
+  2 rgb(204, 0, 0),
+  3 rgb(153, 0, 0),
+  4 rgb(102, 0, 0),
+  5 rgb(51, 0, 0),
+  6 rgb(0, 0, 0)
+);
+
+@mixin unit {
+  height: 300px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-column($times, $unit) {
+  grid-template-columns: repeat($times, $unit);
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  &__unit {
+    @include unit;
+
+    @for $i from 1 through 6 {
+      @each $i, $color in $bg-colors {
+        &--#{$i} {
+          background-color: $color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    @include grid-column(1, 1fr);
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    @include grid-column(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    @include grid-column(3, 1fr);
+  }
 }
