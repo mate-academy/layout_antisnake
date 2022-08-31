@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    flex-grow: 1;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-basis: 100%;
+    min-width: 300px;
+
+    @for $i from 1 through 6 {
+      &--number-#{$i} {
+        $color: 255 - 51 * ($i - 1);
+        background-color: rgb($color, 0, 0);
+      }
+    }
+
+  }
+}
