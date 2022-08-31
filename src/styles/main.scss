@@ -1,3 +1,40 @@
 body {
   margin: 0;
+  font-size: 100px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+
+  &__item {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+
+    $colors:
+      "1" #f00,
+      "2" #c00,
+      "3" #900,
+      "4" #600,
+      "5" #300,
+      "6" #000;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: minmax(300px, 1fr);
+  }
 }
