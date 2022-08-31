@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
+    min-width: 300px;
+
+    @for $index from 1 through 6 {
+      &--#{$index}::before {
+        content: ""+$index;
+      }
+    }
+
+    @each $index, $lightness in $hsla-lightness {
+      &--#{$index} {
+        background-color: hsla(0, 100%, $lightness, 1);
+      }
+    }
+  }
+}
