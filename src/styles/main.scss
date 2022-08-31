@@ -1,3 +1,56 @@
 body {
   margin: 0;
 }
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+$box-height: 300px;
+$box-numbers:
+  1 #f00,
+  2 #c00,
+  3 #900,
+  4 #600,
+  5 #300,
+  6 #000;
+
+.container {
+  display: grid;
+  height: 1000px;
+  color: #fff;
+  @each $box, $color in $box-numbers {
+    &__#{$box} {
+      height: $box-height;
+      background-color: $color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 4096px) and (min-width: 900px) {
+    height: 2 * $box-height;
+    grid-template-areas: "container__1 container__2 container__3"
+      "container__4 container__5 container__6";
+  }
+
+  @media (max-width: 899px) and (min-width: 600px) {
+    height: 3 * $box-height;
+    grid-template-areas: "container__1 container__2"
+      "container__3 container__4"
+      "container__5 container__6";
+  }
+
+  @media (max-width: 599px) and (min-width: 300px) {
+    height: 6 * $box-height;
+    grid-template-areas: "container__1"
+      "container__2"
+      "container__3"
+      "container__4"
+      "container__5"
+      "container__6";
+  }
+
+}
