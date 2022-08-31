@@ -1,0 +1,37 @@
+.blocks {
+  display: grid;
+  grid: auto-flow / repeat(auto-fit, minmax(300px, 1fr));
+  
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    min-width: 300px;
+    height: 300px;
+    text-align: center;
+    font-size: 100px;
+    line-height: 300px;
+    color:#fff;
+
+    @each $count, $color in $colors {
+      &--#{$count} {
+        background-color: $color;
+
+      }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+  }
+
+
+}
+}
+
