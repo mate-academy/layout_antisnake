@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+}
+
+.block {
+  height: $cell-size;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  line-height: $cell-size;
+  text-align: center;
+  color: #fff;
+  
+  @for $i from 0 through 5 {
+    &--#{$i + 1} {
+      background-color: rgb(percentOfHundred($i), 0%, 0%);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

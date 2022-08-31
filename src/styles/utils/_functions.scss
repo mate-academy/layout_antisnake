@@ -1,0 +1,4 @@
+@function percentOfHundred($i) {
+  $result: 100% - $i * 20%;
+  @return $result;
+}
