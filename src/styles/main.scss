@@ -1,3 +1,11 @@
+@import "./utils/variables.scss";
+@import "./utils/blocks__layout.scss";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+  box-sizing: border-box;
 }
