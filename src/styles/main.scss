@@ -1,3 +1,9 @@
 body {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
   margin: 0;
 }
+
+@import "./utils/variables";
+@import "./blocks/cards.scss";

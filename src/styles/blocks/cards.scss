@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $box-size;
+  }
+
+  &__box--1 {
+    background-color: #f00;
+  }
+
+  &__box--2 {
+    background-color: #c00;
+  }
+
+  &__box--3 {
+    background-color: #900;
+  }
+
+  &__box--4 {
+    background-color: #600;
+  }
+
+  &__box--5 {
+    background-color: #300;
+  }
+
+  &__box--6 {
+    background-color: #000;
+  }
+}
