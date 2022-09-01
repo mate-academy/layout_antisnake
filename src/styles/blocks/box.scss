@@ -1,0 +1,36 @@
+$palette:
+  1 rgb(255, 0, 0),
+  2 rgb(204, 0, 0),
+  3 rgb(153, 0, 0),
+  4 rgb(102, 0, 0),
+  5 rgb(51, 0, 0),
+  6 rgb(0, 0, 0);
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.box {
+  @include boxSize($box-size);
+
+  line-height: $box-size;
+  text-align: center;
+  font-family: $font-family;
+  color: $color-font;
+  font-size: $font-size;
+
+  @each $i, $color in $palette {
+    &--#{$i} {
+      background-color: $color;
+
+      &::before {
+        content: "#{$i}";
+      }
+    }
+  }
+}
