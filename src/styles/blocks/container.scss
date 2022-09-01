@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: grid;
+    height: 300px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 100px;
+    color: white;
+
+    @each $index, $color in $color-decrement {
+      &--box_#{$index} {
+        &::before {
+          content: "#{$index}";
+        }
+        background-color: $color;
+      }
+    }
+  }
+
+}
