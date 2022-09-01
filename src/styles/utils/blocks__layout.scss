@@ -1,0 +1,27 @@
+.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+
+  &__child {
+    display: flex;
+    min-width: $block--height;
+    height: $block--height;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    @each $block--child--color, $number in $block--child--color {
+      &--#{$number} {
+        background: $block--child--color;
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
