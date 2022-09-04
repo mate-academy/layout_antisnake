@@ -1,0 +1,29 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-sq, 1fr));
+  width: 100%;
+  
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  
+  &__item {
+    height: $box-sq;
+    color: white;
+    text-align: center;
+    line-height: $box-sq;
+  
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+  
+      &:nth-child(#{$index}) {
+        background-color: rgb(100% - ($index - 1) * 20%, 0%, 0%);
+      }
+    }
+  }
+}

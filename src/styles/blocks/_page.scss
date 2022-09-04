@@ -1,0 +1,9 @@
+.page {
+  font-size: $txt-size;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__content {
+    margin: 0;
+    padding: 0;
+  }
+}
