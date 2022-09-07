@@ -1,0 +1,26 @@
+.snake {
+  display: grid;
+
+  @include grid-template-columns(auto-fill);
+
+  @media (min-width: 1200px) {
+    @include grid-template-columns(3);
+  }
+
+  &__box {
+    height: $size;
+    min-width: $size;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    line-height: $size;
+    text-align: center;
+
+    @each $number-box, $color-procent in $color-box {
+      &:nth-child(#{$number-box}) {
+        background-color: rgb($color-procent, 0, 0);
+      }
+    }
+  }
+}
