@@ -1,3 +1,10 @@
-body {
-  margin: 0;
+@import "../styles/utils/variables";
+@import "../styles/utils/reset";
+@import "../styles/blocks/container.scss";
+@import "../styles/blocks/block.scss";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
 }
