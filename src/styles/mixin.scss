@@ -1,0 +1,9 @@
+@mixin size($size) {
+  height: $size;
+  min-width: $size;
+}
+
+@mixin font-family {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
