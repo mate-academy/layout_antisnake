@@ -1,3 +1,39 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  background-color: red;
+}
+
+.container__box {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 300px;
+}
+
+.container__box--2 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container__box--3 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container__box--4 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container__box--5 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.container__box--6 {
+  background-color: rgba(0, 0, 0, 1);
 }
