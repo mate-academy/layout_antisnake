@@ -1,3 +1,37 @@
 body {
   margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
+}
+
+.box {
+  display: grid;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    height: 300px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+  }
+
+  $colors:
+    1 100%,
+    2 80%,
+    3 60%,
+    4 40%,
+    5 20%,
+    6 0%;
+
+  @each $num, $precent in $colors {
+    & :nth-child(#{$num}) {
+      background: rgb($precent, 0, 0);
+    }
+  }
 }
