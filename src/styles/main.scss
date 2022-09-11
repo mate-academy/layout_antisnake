@@ -1,3 +1,68 @@
-body {
+.body {
   margin: 0;
+}
+
+.conteiner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 33.33%));
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 917px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 50%));
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 617px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 100%));
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.block {
+  display: grid;
+  height: 300px;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  @for $index from 1 to 7 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  &--1 {
+    background-color: #f00;
+  }
+  
+  &--2 {
+    background-color: #c00;
+  }
+  
+  &--3 {
+    background-color: #900;
+  }
+  
+  &--4 {
+    background-color: #600;
+  }
+  
+  &--5 {
+    background-color: #300;
+  }
+  
+  &--6 {
+    background-color: #000;
+  }
 }
