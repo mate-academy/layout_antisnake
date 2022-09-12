@@ -1,3 +1,70 @@
 body {
   margin: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+%numFont {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.block {
+  @extend %numFont;
+  height: 300px;
+
+  @for $index from 1 through 6 {
+    &--#{$index}::after {
+      content: "#{$index}";
+    }
+  }
+
+  $colors:
+    "1" rgb(255, 0, 0),
+    "2" rgb(204, 0, 0),
+    "3" rgb(153, 0, 0),
+    "4" rgb(102, 0, 0),
+    "5" rgb(51, 0, 0),
+    "6" rgb(0, 0, 0);
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: #{$color};
+    }
+  }
+}
+
+@media (min-width: 599px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    // grid-template-rows: 300px;
+    // justify-content: stretch;
+    
+  }
+
+  .block {
+    min-width: 300px;
+  }
+}
+
+@media (min-width: 899px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    // grid-template-rows: auto auto auto;
+  }
+}
