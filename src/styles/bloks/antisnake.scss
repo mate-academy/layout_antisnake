@@ -1,0 +1,51 @@
+.antisnake {
+  display: grid;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: rgb(255, 255, 255);
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(6, 300px);
+
+  &__block--1,
+  &__block--2,
+  &__block--3,
+  &__block--4,
+  &__block--5,
+  &__block--6 {
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__block--1 {
+    background-color: red;
+  }
+
+  &__block--2 {
+    background-color: rgb(203, 0, 0);
+  }
+
+  &__block--3 {
+    background-color: rgb(152, 0, 0);
+  }
+
+  &__block--4 {
+    background-color: rgb(103, 0, 0);
+  }
+
+  &__block--5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__block--6 {
+    background-color: black;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
