@@ -1,3 +1,51 @@
+$cell-height:300px;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax($cell-height, 1fr) );
+  background-color: red;
+  @media (min-width: 4 * $cell-height) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__item {
+    height: $cell-height;
+    width: 100%;
+    line-height: $cell-height;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+  }
+  @for $var from 1 to 7 {
+    &__item--#{$var}::after {
+      content: "#{$var}";
+    }
+  }
+  &__item--1 {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  &__item--2 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &__item--3 {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  &__item--4 {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &__item--5 {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  &__item--6 {
+    background-color: rgba(0, 0, 0, 1);
+  }
 }
