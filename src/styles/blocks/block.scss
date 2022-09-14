@@ -1,0 +1,16 @@
+$size: 300px;
+
+.block {
+  height: $size;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $size / 3;
+  color: white;
+  text-align: center;
+  line-height: $size;
+
+  @for $n from 1 through 6 {
+    &:nth-child(#{7 - $n}) {
+      background-color: rgb(($n - 1) * 51, 0, 0);
+    }
+  }
+}
