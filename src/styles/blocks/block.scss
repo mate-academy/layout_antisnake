@@ -1,31 +1,27 @@
-.block {
+.blocks {
   display: grid;
+  grid-template-columns: 1fr;
 
-  height: $block-size;
+  &__block {
+    display: grid;
 
-  place-items: center;
+    height: $block-size;
 
-  &--1 {
-    background-color: red;
+    place-items: center;
   }
 
-  &--2 {
-    background-color: rgb(204,0,0);
+  @for $index from 1 through 6 {
+    &__block:nth-child(#{$index}) {
+      background-color: rgb($percent-color, 0, 0);
+    }
+    $percent-color: $percent-color - 20%;
   }
 
-  &--3 {
-    background-color: rgb(153,0,0);
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
   }
 
-  &--4 {
-    background-color: rgb(102,0,0);
-  }
-
-  &--5 {
-    background-color: rgb(51,0,0);
-  }
-
-  &--6 {
-    background-color: rgb(0,0,0);
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
   }
 }
