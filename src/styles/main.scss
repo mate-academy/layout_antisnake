@@ -1,3 +1,32 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (min-width: 1199px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.box {
+  min-width: 300px;
+  height: 300px;
+
+  text-align: center;
+  color: #fff;
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  line-height: 300px;
+
+  
+  @for $i from 1 to 7 {
+    &--#{$i} {
+      background-color: rgb(100% - 20% * ($i - 1), 0, 0);
+    }
+  }
+}
