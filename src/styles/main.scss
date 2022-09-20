@@ -1,3 +1,53 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+}
+
+@media (min-width: 599px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.block--1 {
+  background-color: #f00;
+}
+
+.block--2 {
+  background-color: #c00;
+}
+
+.block--3 {
+  background-color: #900;
+}
+
+.block--4 {
+  background-color: #600;
+}
+
+.block--5 {
+  background-color: #300;
+}
+
+.block--6 {
+  background-color: #000;
 }
