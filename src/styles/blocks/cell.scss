@@ -1,0 +1,19 @@
+.cell {
+  height: 300px;
+  min-width: 300px;
+  line-height: 300px;
+  text-align: center;
+  color: white;
+ 
+  @for $index from 1 to 7 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $index, $color in $colors {
+    &__item--#{$index} {
+      background-color: $color;
+    }
+  }
+}
