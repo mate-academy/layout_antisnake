@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -11,7 +12,6 @@ body {
       grid-template-columns: repeat(3, minmax(300px, 1fr));
     }
   }
-
 }
 
 .box {
@@ -46,4 +46,3 @@ body {
 .box--6 {
   background: #000;
 }
-
