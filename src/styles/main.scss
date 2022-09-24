@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./utils/variables";
+@import "./utils/maps";
+@import "./reset";
+@import "./blocks/antisnake.scss";
