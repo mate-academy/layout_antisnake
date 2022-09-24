@@ -1,0 +1,27 @@
+.antisnake {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: #fff;
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__box {
+    height: $antisnake-box-height;
+    min-width: $antisnake-box-height;
+    text-align: center;
+    line-height: $antisnake-box-height;
+
+    @each $number, $color in $black-color-depth {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}
