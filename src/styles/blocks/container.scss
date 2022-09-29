@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax($item-width, 1fr));
+
+  &__item {
+    line-height: $item-height;
+    height: $item-height;
+    text-align: center;
+
+    color: #fff;
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($item-width, 1fr));
+  }
+}
