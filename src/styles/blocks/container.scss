@@ -2,13 +2,12 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax($item-width, 1fr));
 
   &__item {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    line-height: $item-height;
     height: $item-height;
-    width: $item-width;
+    text-align: center;
 
     color: #fff;
     @each $number, $color in $colors {
@@ -18,15 +17,7 @@
     }
   }
 
-  @media (min-width: 450px) {
-    grid-template-columns: repeat(1, $item-width);
-  }
-
-  @media (min-width: 750px) {
-    grid-template-columns: repeat(2, $item-width);
-  }
-
-  @media (min-width: 900px) {
-    grid-template-columns: repeat(3, $item-width);
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($item-width, 1fr));
   }
 }
