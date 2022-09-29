@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: $item-height;
+    width: $item-width;
+
+    color: #fff;
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 450px) {
+    grid-template-columns: repeat(1, $item-width);
+  }
+
+  @media (min-width: 750px) {
+    grid-template-columns: repeat(2, $item-width);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, $item-width);
+  }
+}
