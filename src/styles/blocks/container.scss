@@ -1,13 +1,15 @@
+@import "./utils/variables";
+
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($side-size, 1fr));
 
   &__block {
-    height: 300px;
+    height: $side-size;
     font: 100px Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
-    line-height: 300px;
+    line-height: $side-size;
 
     &--order--1 {
       background-color: #f00;
