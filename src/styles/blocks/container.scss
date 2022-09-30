@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    height: 300px;
+    font: 100px Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    line-height: 300px;
+
+    &--order--1 {
+      background-color: #f00;
+    }
+
+    &--order--2 {
+      background-color: #c00;
+    }
+
+    &--order--3 {
+      background-color: #900;
+    }
+
+    &--order--4 {
+      background-color: #600;
+    }
+
+    &--order--5 {
+      background-color: #300;
+    }
+
+    &--order--6 {
+      background-color: #000;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
