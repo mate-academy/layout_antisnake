@@ -1,0 +1,52 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  //I would use variable $block-heigth in media
+  //if only lint didn't swear about max line length -_-*
+
+  &__block {
+    height: $block-heigth;
+    min-width: $block-heigth;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    font-size: $block-heigth / 3;
+    color: #fff;
+
+    &:nth-child(1) {
+      background-color: #f00;
+    }
+
+    &:nth-child(2) {
+      background-color: #c00;
+    }
+
+    &:nth-child(3) {
+      background-color: #900;
+    }
+
+    &:nth-child(4) {
+      background-color: #600;
+    }
+
+    &:nth-child(5) {
+      background-color: #300;
+    }
+
+    &:nth-child(6) {
+      background-color: #000;
+    }
+  }
+}

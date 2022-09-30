@@ -1,3 +1,7 @@
+@import "./utils/_variables.scss";
+
 body {
   margin: 0;
 }
+
+@import "./blocks/_snake.scss";
