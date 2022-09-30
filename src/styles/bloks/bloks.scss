@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   grid-template-rows: 1fr 1fr;
+  font-size: 100px;
+  line-height: 300px;
+  text-align: center;
 
   @media (max-width: 899px) {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
@@ -18,5 +21,4 @@
       background-color: $color;
     }
   }
-
 }
