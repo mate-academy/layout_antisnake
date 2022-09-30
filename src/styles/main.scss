@@ -1,3 +1,55 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    height: 300px;
+    min-width: 300px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+  }
+}
+
+.block-red {
+  background-color: rgb(100%, 0%, 0%);
+}
+
+.block-80per-red {
+  background-color: rgb(80%, 0%, 0%);
+}
+
+.block-60per-red {
+  background-color: rgb(60%, 0%, 0%);
+}
+
+.block-40per-red {
+  background-color: rgb(40%, 0%, 0%);
+}
+
+.block-20per-red {
+  background-color: rgb(20%, 0%, 0%);
+}
+
+.block-black {
+  background-color: rgb(0%, 0%, 0%);
+}
