@@ -1,0 +1,40 @@
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(6, 300px);
+
+  &__box {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 899px) {
+  .block {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .block {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+}
+
+$colors:
+  "1" #f00,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" #000;
+
+@each $name, $color in $colors {
+  .box-#{$name} {
+    background-color: #{$color};
+  }
+}
