@@ -1,0 +1,8 @@
+.item {
+  color: #fff;
+  @for $index from 1 to 7 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+}
