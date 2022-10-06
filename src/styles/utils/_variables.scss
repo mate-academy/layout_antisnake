@@ -2,10 +2,3 @@ $cell-size: 300px;
 $all-size: 3 * $cell-size;
 $text-color: white;
 $text-size: $cell-size / 3;
-
-@media(min-width: $all-size) {
-  .container {
-    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
-    grid-template-rows: repeat(2, $cell-size);
-  }
-}
