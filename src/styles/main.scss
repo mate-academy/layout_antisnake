@@ -1,3 +1,10 @@
-body {
+@import "./utils/variables";
+
+.page__content {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
 }
+
+@import "./blocks/antisnake";
