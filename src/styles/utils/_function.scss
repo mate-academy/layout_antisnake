@@ -1,0 +1,5 @@
+@for $var from 1 through 6 {
+  .block:nth-child(#{$var}) {
+    background-color: rgb(120% - (20% * $var), 0, 0);
+  }
+}
