@@ -1,3 +1,79 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+.snake__block {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  color: white;
+
+  &--block--1 {
+    background-color: rgb( 100%, 0%, 0%);
+  }
+
+  &--block--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+
+  &--block--3 {
+    background-color: rgb( 60%, 0%, 0%);
+  }
+
+  &--block--6 {
+    background-color: rgb( 0%, 0%, 0%);
+  }
+
+  &--block--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+
+  &--block--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, 33.3%);
+}
+
+.block--1 {
+  background-color: rgb( 100%, 0%, 0%);
+}
+
+.block-2 {
+  background-color: rgb(80%, 0%, 0%);
+}
+
+.block-3 {
+  background-color: rgb( 60%, 0%, 0%);
+}
+
+.block-6 {
+  background-color: rgb( 0%, 0%, 0%);
+}
+
+.block-4 {
+  background-color: rgb(40%, 0%, 0%);
+}
+
+.block-5 {
+  background-color: rgb(20%, 0%, 0%);
+}
+
+@media (max-width: 908px) {
+  .snake {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 300px, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .snake {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( 300px, 1fr));
+  }
 }
