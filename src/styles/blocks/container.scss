@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 33.3%);
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 100%);
+    order: initial;
+  }
+}
