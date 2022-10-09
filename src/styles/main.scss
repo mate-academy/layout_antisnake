@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "src/styles/utils/variables.scss";
+@import "src/styles/utils/normalize.scss";
+@import "src/styles/utils/mixins.scss";
+@import "src/styles/blocks/container.scss";
