@@ -1,0 +1,30 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($bos-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $bos-size;
+
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100px;
+
+    color: white;
+
+    @for $i from 1 through $amount-of-boxes {
+      &:nth-child(#{$i}) {
+        background-color: rgb(calcColor($Persent-of-color-cange, $i), 0, 0);
+
+        &::before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+}
