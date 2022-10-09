@@ -1,0 +1,5 @@
+@for $i from 1 through 6 {
+  .antisnake__block:nth-child(#{$i}n) {
+    background-color: $base-color * ((6 - $i) / 5);
+  }
+}
