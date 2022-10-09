@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  &__item {
+    height: $block-size;
+    color: #fff;
+    text-align: center;
+    line-height: $block-size;
+
+    &:nth-child(1) {
+      background-color: #f00;
+    }
+
+    &:nth-child(2) {
+      background-color: #c00;
+    }
+
+    &:nth-child(3) {
+      background-color: #900;
+    }
+
+    &:nth-child(4) {
+      background-color: #600;
+    }
+
+    &:nth-child(5) {
+      background-color: #300;
+    }
+
+    &:nth-child(6) {
+      background-color: #000;
+    }
+  }
+}
