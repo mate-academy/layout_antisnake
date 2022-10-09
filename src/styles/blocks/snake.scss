@@ -1,0 +1,33 @@
+.snake {
+  font-size: 100px;
+  color: white;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    height: 300px;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .snake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .snake {
+    grid-template-columns: 1fr;
+  }
+}
