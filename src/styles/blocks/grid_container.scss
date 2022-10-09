@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__box {
+    position: relative;
+
+    min-width: 300px;
+    height: 300px;
+
+    @each $i, $color in $colors {
+      &--#{$i} {
+        background: $color;
+        &::before {
+          content: "#{$i}";
+        }
+      }
+    }
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+}
