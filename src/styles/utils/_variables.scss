@@ -1,0 +1,11 @@
+$blockHeight: 300px;
+$blockWidth: 300px;
+$full: 100%;
+
+$colors:
+  1 hsl(0, $full, $full * 0.5),
+  2 hsl(0, $full, $full * 0.4),
+  3 hsl(0, $full, $full * 0.3),
+  4 hsl(0, $full, $full * 0.2),
+  5 hsl(0, $full, $full * 0.1),
+  6 hsl(0, $full, $full * 0);
