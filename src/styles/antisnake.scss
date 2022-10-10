@@ -1,15 +1,11 @@
 .antisnake {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
 
   &__block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // I don't want to set line-height instead flex because
-    // if more text will be added all snake will be ruined
+    display: grid;
+    place-items: center;
     height: $blockSize;
-    min-width: $blockSize;
 
     font-family: Arial, sans-serif;
     font-size: 100px;
@@ -17,15 +13,7 @@
     color: hsl(0, 0%, 100%);
   }
 
-  @media (max-width: 899px) {
-    & {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 599px) {
-    & {
-      grid-template-columns: 1fr;
-    }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($blockSize, 1fr));
   }
 }
