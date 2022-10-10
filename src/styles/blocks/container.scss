@@ -1,0 +1,9 @@
+.container {
+  &__block {
+    height: $block-size;
+    min-width: $block-size;
+    color: white;
+    text-align: center;
+    line-height: $block-size;
+  }
+}
