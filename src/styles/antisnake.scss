@@ -1,0 +1,29 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // I don't want to set line-height because
+    // if some text will be added all snake will be ruined
+    height: $blockSize;
+    min-width: $blockSize;
+    font-family: Arial, sans-serif;
+    color: hsl(0, 0%, 100%);
+    font-size: 100px;
+  }
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
