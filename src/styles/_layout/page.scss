@@ -3,11 +3,11 @@
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 6;
 
-  @media (min-width: 600px) and (max-width: 899px) {
+  @media (min-width: #{$blockSize * 2}) and (max-width: #{$blockSize * 3}) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: #{$blockSize * 3}) {
     grid-template-columns: repeat(3, 1fr);
   }
 
