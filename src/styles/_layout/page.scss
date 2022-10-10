@@ -3,7 +3,7 @@
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 6;
 
-  @media (min-width: #{$blockSize * 2}) and (max-width: #{$blockSize * 3}) {
+  @media (min-width: #{$blockSize * 2}) and (max-width: #{$blockSize * 3 - 1}) {
     grid-template-columns: repeat(2, 1fr);
   }
 
