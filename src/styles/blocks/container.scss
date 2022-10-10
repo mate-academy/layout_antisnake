@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  justify-content: center;
+  
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 6;
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
