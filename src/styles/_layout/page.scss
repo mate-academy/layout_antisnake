@@ -1,0 +1,32 @@
+.page {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 6;
+
+  @media (min-width: #{$blockSize * 2}) and (max-width: #{$blockSize * 3 - 1}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: #{$blockSize * 3}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $blockSize;
+    min-width: $blockSize;
+
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @each $order, $color in $block-colors {
+      &:nth-child(#{$order}) {
+        background-color: $color;
+      }
+    }
+  }
+}
