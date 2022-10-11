@@ -1,0 +1,15 @@
+.block {
+  height: 300px;
+
+  @each $number, $color in $colors {
+    &--#{$number} {
+      background-color: #{$color};
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &--#{$index}:before {
+      content: "#{$index}";
+    }
+  }
+}
