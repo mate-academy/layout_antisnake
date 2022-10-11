@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  .block {
+    height: 300px;
+    min-width: 300px;
+    color: white;
+    text-align: center;
+    line-height: 300px;
+    &--1 {
+      background-color: #fe0000;
+    }
+    &--2 {
+      background-color: #cc0001;
+    }
+    &--3 {
+      background-color: #9a0000;
+    }
+    
+    &--4 {
+      background-color: #600;
+    }
+    
+    &--5 {
+      background-color: #300;
+    }
+    
+    &--6 {
+      background-color: #000;
+    }
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
