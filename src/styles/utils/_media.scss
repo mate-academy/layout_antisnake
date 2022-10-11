@@ -1,11 +1,11 @@
-@media (min-width: 600px) and (max-width: 899px) {
-  .anti-snake {
+@media (max-width: 899px) {
+  .snake {
     grid-template-columns: repeat(2, 50%);
   }
 }
 
 @media (max-width: 599px) {
-  .anti-snake {
+  .snake {
     grid-template-columns: repeat(1, 1fr);
   }
 }
