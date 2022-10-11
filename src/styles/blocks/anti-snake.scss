@@ -1,0 +1,22 @@
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 33.33%));
+  @include font;
+
+  &__block {
+    height: $block-height;
+    @include centering;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
