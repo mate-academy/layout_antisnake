@@ -1,3 +1,39 @@
+$size-block: 300px;
+$max-count-block: 3;
+
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-block, 1fr));
+
+  &__block {
+    height: $size-block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+    line-height: $size-block;
+    text-align: center;
+  }
+
+  $colors:
+    1 #f00,
+    2 #c00, 
+    3 #900,
+    4 #600,
+    5 #300,
+    6 #000;
+
+  @each $index, $color in $colors {
+    &__block:nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat($max-count-block, minmax($size-block, 1fr));
+  }
 }
