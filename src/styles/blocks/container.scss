@@ -1,0 +1,36 @@
+$block-colors:
+  "1"#f00,
+  "2"#c00,
+  "3"#900,
+  "4"#600,
+  "5"#370000,
+  "6"#000;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  height: 300px;
+  color: white;
+  font-size: 100px;
+  @each $number, $color in $block-colors {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
