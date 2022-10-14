@@ -1,3 +1,33 @@
-body {
+.page {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: 300px;
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial", serif;
+    font-size: 100px;
+    color: #fff;
+    height: 300px;
+  }
+
+  @for $dig from 1 through 6 {
+    &__block:nth-child(#{$dig}) {
+      background-color: rgb(calc(51 * (6 - #{$dig})), 0, 0);
+    }
+  
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
 }
