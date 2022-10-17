@@ -1,0 +1,27 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $item-size);
+  justify-content: center;
+  text-align: center;
+  line-height: $item-size;
+
+  &__item {
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}):before {
+        content: "#{$index}";
+      }
+    }
+  }
+}
+
+@media(min-width: 900px) {
+  .snake {
+    grid-template-columns: repeat(3, minmax($item-size, 1fr));
+  }
+}
