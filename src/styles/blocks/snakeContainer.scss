@@ -1,0 +1,18 @@
+.snakeContainer {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+
+  &__block {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-size;
+    font-size: 32px;
+    @each $number, $color in $block-color {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
