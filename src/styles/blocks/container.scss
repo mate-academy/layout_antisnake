@@ -1,0 +1,43 @@
+@import "./../utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
+
+  [class*="box"] {
+    height: $box-height;
+    display: grid;
+    place-content: center;
+  }
+
+  &__box-1 {
+    background-color: #f00;
+  }
+
+  &__box-2 {
+    background-color: #c00;
+  }
+  
+  &__box-3 {
+    background-color: #900;
+  }
+
+  &__box-4 {
+    background-color: #600;
+  }
+
+  &__box-5 {
+    background-color: #300;
+  }
+
+  &__box-6 {
+    background-color: #000;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($box-height, 1fr));
+    grid-template-rows: repeat(2, $box-height);
+  }
+}
