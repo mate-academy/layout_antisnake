@@ -1,3 +1,48 @@
+@import "utils/variables";
+@import "utils/extends";
+@import "utils/mixins";
+
 body {
   margin: 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  &__block {
+    @extend .block-text;
+    @include size;
+  }
+}
+
+@media (min-width: 1200px) {
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+}
+
+.block-1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.block-2 {
+  background-color: rgb(204, 0, 0);
+}
+
+.block-3 {
+  background-color: rgb(153, 0, 0);
+}
+
+.block-4 {
+  background-color: rgb(102, 0, 0);
+}
+
+.block-5 {
+  background-color: rgb(51, 0, 6);
+}
+
+.block-6 {
+  background-color: rgb(0, 0, 0);
 }
