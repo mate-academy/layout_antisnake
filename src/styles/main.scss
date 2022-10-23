@@ -1,3 +1,40 @@
-body {
-  margin: 0;
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.body {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: auto auto auto;
+  }
+
+  &--position {
+    margin: 0;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    height: 300px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb(((255 + 51) - ($index * 51)), 0, 0);
+
+        &::after {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
 }
