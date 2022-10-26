@@ -1,0 +1,13 @@
+$colors:
+  "red1" #f00,
+  "red2" #c00,
+  "red3" #900,
+  "red4" #600,
+  "red5" #300,
+  "black" #000;
+      
+@each $name, $color in $colors {
+  .block--color--#{$name} {
+    background-color: $color;
+  }
+}
