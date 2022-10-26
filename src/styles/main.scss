@@ -7,7 +7,11 @@ $font-size-day: 100px;
 $color-basic: #fff;
 
 .box {
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 900px;
   display: grid;
+  align-content: center;
   grid-template-columns: repeat(auto-fill, minmax($height-basic, 1fr));
 
   &__card {
