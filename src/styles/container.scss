@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #fff;
+
+    @each $index, $percent in $colors {
+      &--#{$index} {
+        background-color: rgb($percent, 0%, 0%);
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+}
