@@ -1,0 +1,35 @@
+.snake {
+  display: grid;
+
+ &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+       content: "#{$index}";
+      }
+    }
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+
+  }
+
+    @media (min-width:$medium) {
+      grid-template-columns: repeat(2, $block-width);
+    }
+
+    @media (min-width:$large) {
+      grid-template-columns: repeat(3, $block-width);
+    }
+  }
