@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 33vw));
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  &__block {
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @for $clr from 1 through 6 {
+      &:nth-child(#{$clr}) {
+        background-color: rgb((255 - (51 * ($clr - 1))), 0, 0);
+      }
+    }
+  }
+}
