@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+
+  @for $i from 1 through 3 {
+    @include media($i);
+  }
+
+  &__block {
+    height: $block-size;
+
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: getColor($i);
+
+        &::after {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+}
