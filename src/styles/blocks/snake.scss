@@ -1,0 +1,56 @@
+.block {
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill,minmax($box-width, 1fr));
+
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $box-width;
+    // width: $box-width;
+    gap: 0;
+  }
+
+  @for $index from 1 through $card-count {
+    &__item--#{$index}:nth-child(#{$index}):before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $index,
+    $color in $colors {
+    &__item--#{$index} {
+      background-color: $color;
+    }
+  }
+}
+
+// .block--1 {
+//   background-color: rgb(255, 0, 0);
+// }
+
+// .block--2 {
+//   background-color: rgb(204, 0, 0);
+// }
+
+// .block--3 {
+//   background-color: rgb(153, 0, 0);
+// }
+
+// .block--4 {
+//   background-color: rgb(102, 0, 0);
+// }
+
+// .block--5 {
+//   background-color: rgb(51, 0, 0);
+// }
+
+// .block--6 {
+//   background-color: rgb(0, 0, 0);
+// }
