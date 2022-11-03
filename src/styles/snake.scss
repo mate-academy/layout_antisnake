@@ -1,0 +1,42 @@
+$min-width: 300px;
+
+@function scale-red($index) {
+  @return rgb(255 - 51 * ($index - 1), 0, 0);
+}
+
+.snake {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, $min-width);
+
+  &__tail {
+    min-width: $min-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @for $i from 1 to 7 {
+    &-#{$i} {
+      background-color: scale-red($i);
+      &::before {
+        content: "#{$i}";
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .snake {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, $min-width);
+  }
+}
+
+@media (min-width: 900px) {
+  .snake {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, $min-width);
+  }
+}
