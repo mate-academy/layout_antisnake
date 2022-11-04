@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.container-element {
+  text-align: center;
+  line-height: $size-box;
+}
+
+@each $key, $value in $colors {
+  .container-element--#{$key} {
+    background-color: $value;
+  }
+}
