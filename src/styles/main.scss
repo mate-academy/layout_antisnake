@@ -1,3 +1,57 @@
-body {
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(3, $max-size);
+  grid-template-rows: repeat(2, $max-size);
+
+  @include on600 {
+    grid-template-columns: repeat(2, $max-size);
+    grid-template-rows: repeat(3, $max-size);
+  }
+
+  @include on300 {
+    grid-template-columns: repeat(1, $max-size);
+    grid-template-rows: repeat(6, $max-size);
+  }
+
+  &__item {
+    min-width: $size;
+    height: $size;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    line-height: $size;
+
+    &--one {
+      background-color: rgb(255,0,0);
+    }
+
+    &--two {
+      background-color: rgb(204,0,0);
+    }
+
+    &--there {
+      background-color: rgb(153,0,0);
+    }
+
+    &--four {
+      background-color: rgb(102,0,0);
+    }
+
+    &--five {
+      background-color: rgb(51,0,0);
+    }
+
+    &--six {
+      background-color: black;
+    }
+  }
 }
