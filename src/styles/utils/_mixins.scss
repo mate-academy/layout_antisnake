@@ -1,0 +1,11 @@
+@mixin on300 {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin on600 {
+  @media (max-width: 899px) {
+    @content;
+  }
+}
