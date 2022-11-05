@@ -1,0 +1,38 @@
+$color-list:
+  "1" rgb(255, 0, 0),
+  "2" rgb(204, 0, 0),
+  "3" rgb(153, 0, 0),
+  "4" rgb(102, 0, 0),
+  "5" rgb(51, 0, 0),
+  "6" rgb(0, 0, 0);
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @each $number, $color in $color-list {
+    &__box--#{$number} {
+      background-color: $color;
+    }
+
+    @for $index from 1 through 6 {
+      &__box--#{$index}::before {
+        content: "#{$index}";
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
