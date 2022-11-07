@@ -1,0 +1,3 @@
+@function getColor($itemNum) {
+  @return 255 * (6 - $itemNum) / 5;
+}
