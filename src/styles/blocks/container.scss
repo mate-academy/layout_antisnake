@@ -1,0 +1,49 @@
+.container {
+  display: grid;
+  
+  @include width--600 {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @include width--900 {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
+  }
+
+  &__block--1 {
+    background-color: red;
+    order: 1;
+  }
+
+  &__block--2 {
+    background-color: rgb(204, 0, 0);
+    order: 2;
+  }
+
+  &__block--3 {
+    background-color: rgb(153, 0, 0);
+    order: 3;
+  }
+
+  &__block--4 {
+    background-color: rgb(102, 0, 0);
+    order: 4;
+  }
+
+  &__block--5 {
+    background-color: rgb(51, 0, 0);
+    order: 5;
+  }
+
+  &__block--6 {
+    background-color: #000;
+    order: 6;
+  }
+}
