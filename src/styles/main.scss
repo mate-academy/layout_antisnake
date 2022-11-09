@@ -20,11 +20,11 @@ body {
   @for $index from 1 through 6 {
     :nth-child(#{$index})::before {
       content: "#{$index}";
-      height: 100%;
-      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100%;
+      width: 100%;
     }
   }
 
