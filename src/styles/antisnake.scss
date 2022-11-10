@@ -1,0 +1,30 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto)) ;
+  grid-template-rows: repeat(auto-fill, 300px);
+  grid-auto-rows: minmax(300px, auto);
+  grid-auto-columns: minmax(300px, auto);
+
+  @for $i from 1 through length($colors) {
+    & :nth-child(#{$i}) {
+      background-color: nth($colors, $i);
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+  }
+
+  @media screen and (min-width: 900px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(2, minmax(300px, auto));
+    }
+  }
+}
