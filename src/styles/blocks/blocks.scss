@@ -3,9 +3,7 @@
   grid: auto-flow / repeat(auto-fit, minmax(300px, 1fr));
 
   @media (min-width: 900px) {
-  & {
     grid: none / repeat(3, 1fr);
-    }
   }
 
   &__box {
