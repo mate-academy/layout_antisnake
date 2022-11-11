@@ -1,0 +1,28 @@
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($boxSizer, 1fr));
+
+  @media(min-width: (3 * $boxSizer)) {
+    grid-template-columns: repeat(3, minmax($boxSizer, 1fr));
+  }
+
+  &__box {
+    display: flex;
+    height: $boxSizer;
+    min-width: $boxSizer;
+    color: white;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $numbers {
+      &:nth-child(#{$number}) {
+        &::before {
+          content: "#{$number}";
+        }
+        background-color: #{$color};
+      }
+    }
+  }
+
+}
