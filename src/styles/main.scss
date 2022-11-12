@@ -1,3 +1,10 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/normalize";
+
+@import "./blocks/snake.scss";
+
+@media (min-width: 1200px) {
+  .snake {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
