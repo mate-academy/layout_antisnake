@@ -1,0 +1,23 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-height, 33.3%));
+
+  &__item {
+    height: $item-height;
+    text-align: center;
+    color: #fff;
+    font-size: 100px;
+    line-height: $item-height;
+
+    @for $i from 0 to 6 {
+      &:nth-child(#{$i + 1}) {
+        background-color: darken($color: $color-red, $amount: $i * 10%);
+
+        &::before {
+          content: "#{$i + 1}";
+        }
+      }
+
+    }
+  }
+}
