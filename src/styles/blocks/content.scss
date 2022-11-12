@@ -1,0 +1,34 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-heigth, 1fr));
+  justify-content: center;
+
+  @media (min-width: ($block-heigth * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $block-heigth;
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        display: block;
+      }
+    }
+  
+    @for $bgc-red from 1 through 6 {
+      $i: 100% - (20% * ($bgc-red - 1));
+    
+      &:nth-child(#{$bgc-red}) {
+        background-color: rgb($i, 0, 0);
+      }
+    }
+  }
+}
+
