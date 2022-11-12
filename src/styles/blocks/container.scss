@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  &__block {
+    height: $size;
+    text-align: center;
+    line-height: $size;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($size, 1fr));
+    }
+  }
+}
+
+
+
+
+
+
+
