@@ -1,3 +1,48 @@
-body {
-  margin: 0;
+@import "./blocks/reset.scss";
+@import "./blocks/variables.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-height, 1fr));
+}
+
+.block {
+  min-width: $card-min-width;
+  height: $card-height;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: $card-height;
+}
+
+.block:nth-child(1) {
+  background-color: rgb(255, 0, 0);
+}
+
+.block:nth-child(2) {
+  background-color: rgb(200, 4, 4);
+}
+
+.block:nth-child(3) {
+  background-color: rgb(150, 4, 4);
+}
+
+.block:nth-child(4) {
+  background-color: rgb(100, 4, 4);
+}
+
+.block:nth-child(5) {
+  background-color: rgb(50, 4, 4);
+}
+
+.block:nth-child(6) {
+  background-color: #000;
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
