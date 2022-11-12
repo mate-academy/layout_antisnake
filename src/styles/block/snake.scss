@@ -1,0 +1,25 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($main-square 1fr));
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    height: $main-square;
+    text-align: center;
+    line-height: $main-square;
+
+  }
+
+  @each $number,$color in $colors {
+    &__block--#{$number} {
+      background-color: $color;
+    }
+  }
+}
