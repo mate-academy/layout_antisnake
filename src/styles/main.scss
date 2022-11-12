@@ -1,3 +1,42 @@
+@import "./variables.scss";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  @media (min-width:451px) and (max-width: 900px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+
+.cell {
+  line-height: 300px;
+  text-align: center;
+
+  @each $number, $color in $color {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &--#{$index}::after {
+      content: "#{$index}";
+    }
+  }
 }
