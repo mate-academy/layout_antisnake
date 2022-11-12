@@ -1,0 +1,28 @@
+.wrapper {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax($box-z, 1fr));
+
+@media (min-width: 1200px) {
+  grid-template-columns: repeat(3, minmax($box-z, 1fr));
+}
+
+  &__box {
+    min-height: $box-z;
+    min-width: $box-z;
+
+    text-align: center;
+    line-height:$box-z;
+
+    @for $num from 1 through 6 {
+      &:nth-child(#{$num})::before {
+        content: "#{$num}";
+      }
+    }
+  }
+
+    @each $box-num,$color in $colors {
+      &__box--#{$box-num} {
+        background-color: $color;
+      }
+    }
+}
