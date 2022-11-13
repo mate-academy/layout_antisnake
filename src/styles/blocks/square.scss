@@ -1,0 +1,14 @@
+.square {
+  display: grid;
+  place-items: center;
+  font-size: 100px;
+  height: 300px;
+  color: white;
+
+  @for $i from 0 through 5 {
+    &--#{$i} {
+      $color: rgb(calc(255 - (#{$increment} * #{$i})), 0 ,0);
+      background-color: $color;
+    }
+  }
+}
