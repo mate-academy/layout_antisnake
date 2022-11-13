@@ -1,3 +1,52 @@
 body {
   margin: 0;
 }
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  text-align: center;
+  line-height: 300px;
+
+  &__box1 {
+    background-color: red;
+    order: 1;
+  }
+
+  &__box2 {
+    background-color: rgb(204, 0, 0);
+    order: 2;
+  }
+
+  &__box3 {
+    background-color: rgb(153, 0, 0);
+    order: 3;
+  }
+
+  &__box4 {
+    background-color: rgb(102, 0, 0);
+    order: 4;
+  }
+
+  &__box5 {
+    background-color: rgb(51, 0, 0);
+    order: 5;
+  }
+
+  &__box6 {
+    background-color: black;
+    order: 6;
+  }
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
