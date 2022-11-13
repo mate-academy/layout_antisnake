@@ -1,0 +1,28 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($box-size, 1fr));
+
+  &__item {
+    display: grid;
+    place-items: center;
+
+    color: white;
+    font-size: 100px;
+    font-family: "Arial", Helvetica, sans-serif;
+
+    height: $box-size;
+    min-width: $box-size;
+
+    @each $num, $color in $box-colors {
+      &--#{$num} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($box-size, 1fr));
+    }
+  }
+}
