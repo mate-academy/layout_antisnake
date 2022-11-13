@@ -1,3 +1,7 @@
-body {
-  margin: 0;
-}
+@import "./utils.scss/reset.scss";
+@import "./utils.scss/normalize.scss";
+@import "./utils.scss/variable.scss";
+@import "./utils.scss/mixin.scss";
+
+@import "./style.scss/page.scss";
+@import "./style.scss/snake.scss";
