@@ -1,0 +1,26 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax($block-size, 1fr));
+
+  &__block {
+    height: $block-size;
+    min-width: $block-size;
+
+    text-align: center;
+    line-height: $block-size;
+  }
+
+  @each $num, $color in $colors {
+    &__block--#{$num} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
