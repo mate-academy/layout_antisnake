@@ -1,0 +1,37 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  text-align: center;
+  line-height: $box-size;
+
+  &__box1 {
+    background-color: red;
+  }
+
+  &__box2 {
+    background-color: hsl(0, 100%, 40%);
+  }
+
+  &__box3 {
+    background-color: hsl(0, 100%, 30%);
+  }
+
+  &__box4 {
+    background-color: hsl(0, 100%, 20%);
+  }
+
+  &__box5 {
+    background-color: hsl(0, 100%, 10%);
+  }
+
+  &__box6 {
+    background-color: black;
+  }
+}
+
+@media (min-width:1200px) {
+  .snake {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
