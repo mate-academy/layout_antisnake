@@ -1,0 +1,53 @@
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: $snake-block-width;
+    min-width: $snake-block-width;
+    line-height: $snake-block-width;
+
+    // color: white;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
