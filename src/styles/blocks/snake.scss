@@ -1,0 +1,44 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $box-size);
+  justify-content: center;
+  align-content: center;
+
+  &__box {
+    display: flex;
+    height: $box-size;
+    min-width: $box-size;
+    align-items: center;
+    justify-content: center;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: hsl(0, 100%, 40%);
+    }
+
+    &--3 {
+      background-color: hsl(0, 100%, 30%);
+    }
+
+    &--4 {
+      background-color: hsl(0, 100%, 20%);
+    }
+
+    &--5 {
+      background-color: hsl(0, 100%, 10%);
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .snake {
+    grid-template-columns: repeat($max-col-number , $box-size);
+  }
+}
