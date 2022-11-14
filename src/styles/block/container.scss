@@ -1,0 +1,15 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+
+  @media (min-width: 1px) {
+    grid-template-columns: repeat(1,minmax($blockWidth,1fr));
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2,minmax($blockWidth,1fr));
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3,minmax($blockWidth,1fr));
+  }
+}
