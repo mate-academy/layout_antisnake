@@ -1,0 +1,36 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  font-size: 100px;
+  color: #fff;
+
+  @media (min-width: 1200px) {
+  grid-template-columns: repeat(3,minmax(300px,1fr));
+  }
+
+  &-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    &--1 {
+      background: red;
+    }
+    &--2 {
+      background: #c00;
+    }
+    &--3 {
+      background: #900;
+    }
+    &--4 {
+      background: #600;
+    }
+    &--5 {
+      background: #300;
+    }
+    &--6 {
+      background: #000;
+    }
+  }
+}
