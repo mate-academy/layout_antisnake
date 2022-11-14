@@ -1,0 +1,13 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3,minmax($blockWidth,1fr));
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2,minmax($blockWidth,1fr));
+  }
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1,minmax($blockWidth,1fr));
+  }
+}
