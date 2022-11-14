@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &__block {
+    height: 300px;
+    flex-basis: 300px;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: rgb(212, 0, 0);
+    }
+
+    &--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    }
+}
