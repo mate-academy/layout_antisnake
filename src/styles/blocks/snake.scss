@@ -1,0 +1,45 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+
+  @media only screen and (max-width: 5000px) {
+      grid-template-columns: repeat(auto-fill, 33.33%);
+  }
+
+  @media only screen and (max-width: 899px) {
+      grid-template-columns:  repeat(auto-fill, 50%);
+  }
+
+  @media only screen and (max-width: 599px) {
+        grid-template-columns:  repeat(auto-fill, 100%);
+  }
+}
+
+.blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+@for $index from 0 through 6 {
+  .blocks:nth-child(#{$index}):before {
+     content: '#{$index}';
+}
+.blocks:nth-child(#{$index}) {
+  background-color: rgb(calc(255 - (51 * ($index - 1))), 0, 0 );
+}
+}
+
+
