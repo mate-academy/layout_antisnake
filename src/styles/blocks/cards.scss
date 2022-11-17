@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) ;
+
+  &__block {
+    height: 300px;
+  }
+
+  @for $index from 1 through 6 {
+    :nth-child(#{$index})::before {
+      content: "#{$index}";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @each $number, $color in $background-colors {
+    :nth-child(#{$number}) {
+      background-color: $color;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
