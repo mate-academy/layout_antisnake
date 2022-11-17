@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+}
+
+.box {
+  height: 300px;
+  text-align: center;
+  font-size: 100px;
+  line-height: 300px;
+  font-family: Arial, serif;
+  color: white;
+}
+
+.box:first-child {
+  background: red;
+}
+
+.box:nth-child(2) {
+  background: #cc0000;
+}
+
+.box:nth-child(3) {
+  background: #990000;
+}
+
+.box:nth-child(4) {
+  background: #660000;
+}
+
+.box:nth-child(5) {
+  background: #330000;
+}
+
+.box:nth-child(6) {
+  background: black;
+}
+
+@media (max-width: 899px) {
+  .container {
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    -ms-grid-columns: (auto)[1];
+        grid-template-columns: repeat(1, auto);
+  }
+}
+/*# sourceMappingURL=main.css.map */
