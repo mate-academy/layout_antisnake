@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./block/color.scss";
+@import "./block/reset.scss";
+@import "./block/conteiner.scss";
+@import "./block/media.scss";
