@@ -1,0 +1,53 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax(301px, 1fr));
+    }
+  }
+  
+  &__block {
+    position: relative;
+    height: 300px;
+  }
+  
+  & :nth-child(1) {
+    background-color: #f00;
+  }
+   
+  & :nth-child(2) {
+    background-color: #c00;
+  }
+   
+  & :nth-child(3) {
+    background-color: #900;
+  }
+   
+  & :nth-child(4) {
+    background-color: #600;
+  }
+   
+  & :nth-child(5) {
+    background-color: #300;
+  }
+   
+  & :nth-child(6) {
+    background-color: #000;
+  }
+
+  @for $i from 1 through 6 {
+    & :nth-child(#{$i})::before {
+      content: "#{$i}";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      color: white;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
