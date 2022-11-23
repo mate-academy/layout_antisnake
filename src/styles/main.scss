@@ -1,3 +1,15 @@
+@use "container.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
 }
