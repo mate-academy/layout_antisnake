@@ -1,3 +1,44 @@
 body {
   margin: 0;
+  color: white;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  background-color: red;
+}
+
+.box {
+  height: 300px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @for $index from 2 to 7 {
+    &--#{$index} {
+      background-color: rgba(0, 0, 0, ($index - 1) * 0.2);
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
