@@ -1,5 +1,5 @@
-@media (min-width: 950px) {
+@media (min-width: 900px) {
 	.conteiner {
-		grid-template-columns: repeat(3, min-max(300px, 1fr));
+		grid-template-columns: repeat(3, minmax(300px, 1fr));
 	}
 }
