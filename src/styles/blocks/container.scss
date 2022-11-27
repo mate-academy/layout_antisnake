@@ -1,0 +1,27 @@
+@import "../utils/global";
+@import "../blocks/blocks.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+
+  @media (max-width: 751px) {
+    & {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    min-width: 300px;
+  }
+}
