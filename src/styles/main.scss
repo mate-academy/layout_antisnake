@@ -1,3 +1,29 @@
-body {
-  margin: 0;
+@import "./utils/font.scss";
+@import "./utils/reset.scss";
+@import "./utils/variables.scss";
+
+.antisnake {
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax($size-element, 1fr));
+
+  @each $number, $color in $elements {
+    & :nth-child(#{$number})::before {
+      content: "#{$number}";
+      display: flex;
+      justify-content: center;
+      line-height: $size-element;
+      height: $size-element;
+      font-size: 100px;
+      color: white;
+      background-color: rgb($color, 0%, 0%);
+    }
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  @media (min-width: 4096px) {
+    grid-template-columns: repeat(auto-fill, minmax(1300px, 1fr));
+  }
 }
