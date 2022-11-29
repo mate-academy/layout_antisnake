@@ -1,0 +1,9 @@
+@each $number, $color in $colors {
+  .antisnake__item--#{$number} {
+    background-color: $color;
+
+    &::after {
+      content: $number;
+    }
+  }
+}
