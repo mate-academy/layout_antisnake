@@ -1,0 +1,3 @@
+@mixin background-color($lightness) {
+  background-color: hsl(0, 100%, $lightness);
+}
