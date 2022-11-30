@@ -1,0 +1,17 @@
+.blocks-container {
+  display: grid;
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 550px) and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+}
