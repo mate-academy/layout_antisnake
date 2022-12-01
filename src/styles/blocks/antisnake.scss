@@ -1,0 +1,24 @@
+.antisnake {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: row;
+  flex-wrap: wrap;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+  @each $number, $red-percent in $block-content-color {
+    &__block--#{$number} {
+      height: 300px;
+      text-align: center;
+      line-height: 300px;
+      background-color: rgb($red-percent, 0, 0);
+      &::before {
+        content: "#{$number}";
+      }
+    }
+  }
+}
