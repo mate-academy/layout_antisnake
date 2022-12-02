@@ -1,0 +1,40 @@
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width:600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width:900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    $colors:
+      "1" #f00,
+      "2" #c00,
+      "3" #900,
+      "4" #600,
+      "5" #300,
+      "6" #000;
+
+    @each $name,
+      $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
