@@ -1,0 +1,24 @@
+@import "../utils/_variables";
+
+.block {
+  display: grid;
+  height: $blocks-height;
+  place-items: center;
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through $blocks-count {
+    &--#{$index}:after {
+      content: "#{$index}";
+    }
+  }
+
+  &::after {
+    line-height: $blocks-height;
+    font-size: 100px;
+  }
+}
