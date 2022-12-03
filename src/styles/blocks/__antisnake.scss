@@ -1,0 +1,7 @@
+@import "../utils/_variables";
+@import "../blocks/_block";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-min-width, 1fr));
+}
