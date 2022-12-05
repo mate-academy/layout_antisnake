@@ -1,0 +1,8 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-min-width, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($card-min-width, 1fr));
+  }
+}

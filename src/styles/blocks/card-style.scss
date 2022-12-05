@@ -1,0 +1,31 @@
+.card {
+  height: $card-height;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box__item1 {
+  background-color: $color-first-card;
+}
+
+.box__item2 {
+  background-color: $color-second-card;
+}
+
+.box__item3 {
+  background-color: $color-third-card;
+}
+
+.box__item4 {
+  background-color: $color-fourth-card;
+}
+
+.box__item5 {
+  background-color: $color-fifth-card;
+}
+
+.box__item6 {
+  background-color: $color-six-card;
+}
