@@ -1,5 +1,7 @@
 # Antisnake
+
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
+
 - [DEMO LINK](https://andrijdudar.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://andrijdudar.github.io/layout_antisnake/report/html_report/)
 
@@ -9,6 +11,7 @@ ___
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
 ## The task
+
 Display six colored blocks on the screen without any extra margins:
 
 - Use `grid`
