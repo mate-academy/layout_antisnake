@@ -1,0 +1,20 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $box-size;
+
+  color: white;
+
+  // add bg-color to all boxes
+  @each $ind, $clr in $colors {
+    &:nth-child(#{$ind}) {
+      background-color: $clr;
+    }
+
+    // add numbers to all boxes
+    &:nth-child(#{$ind})::after {
+      content: "#{$ind}";
+    }
+  }
+}
