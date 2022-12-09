@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: $box-size;
 
   color: white;
-  min-height: $box-size;
 
   // add bg-color to all boxes
   @each $ind, $clr in $colors {
