@@ -1,3 +1,3 @@
-body {
-  margin: 0;
-}
+@import "./normilize.scss";
+@import "./utils/variables";
+@import "./blocks/blocks.scss"
