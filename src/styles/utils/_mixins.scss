@@ -1,0 +1,5 @@
+@mixin onDesktop($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}
