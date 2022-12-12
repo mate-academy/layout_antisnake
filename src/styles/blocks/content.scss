@@ -1,0 +1,36 @@
+.content {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-height, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: $box-height;
+  }
+
+  @each $index, $col in $c-red {
+    &__box:nth-child(#{$index})::after {
+      background-color: #{$col};
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &__box:nth-child(#{$i})::after {
+      content: "#{$i}";
+      display: flex;
+      height: $box-height;
+      top: 0;
+      left: 0;
+      right: 0;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__box {
+    height: $box-height;
+  }
+}
