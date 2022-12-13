@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
+
+  &__card {
+    height: 300px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    @for $number from 1 through 6 {
+      &--#{$number} {
+        background-color: rgb(calc(255 - #{($number - 1) * 51}), 0, 0);
+      }
+    }
+  }
+}
