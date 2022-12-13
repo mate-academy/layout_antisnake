@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  justify-content: stretch;
 
   @media (max-width: 899px) {
     grid-template-columns: repeat(2, 1fr);
