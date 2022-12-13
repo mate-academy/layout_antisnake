@@ -1,23 +1,18 @@
 .antisnake {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
 
-  @media (max-width: 899px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-  @media (max-width: 599px) {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   &__element {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    min-width: 300px;
+    height: $box-size;
+    min-width: $box-size;
 
     @each $number, $color in $c-antisnake {
       &--#{$number} {
