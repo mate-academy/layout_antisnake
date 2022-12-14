@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  min-width: 300px;
+
+  &__block {
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    line-height: 3em;
+    color: #fff;
+
+    @each $number, $color in $colors {
+      &--color--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
