@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    display: flex;
+    height: 300px;
+    min-width: 300px;
+    background-color: gray;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @for $index from 1 through $cells-count {
+    & :nth-child(#{$index}) {
+      background-color: getRed($index, $cells-count);
+    }
+
+    & :nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+}
