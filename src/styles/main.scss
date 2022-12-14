@@ -44,6 +44,6 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    grid-template-columns: repeat(3, 33.33%);
+    grid-template-columns: repeat(auto-fit, 33.33%);
   }
 }
