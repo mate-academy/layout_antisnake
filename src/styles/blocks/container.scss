@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  @media screen and (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    min-width: 300px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+
+    @each $i, $color in $colors {
+      &:nth-child(#{$i}) {
+        background-color: $color;
+      }
+    }
+  }
+}
