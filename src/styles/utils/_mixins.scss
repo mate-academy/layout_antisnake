@@ -1,4 +1,4 @@
-@mixin onDesktop($size) {
+@mixin responsive($size) {
   @media (max-width: #{$size}) {
     @content;
   }

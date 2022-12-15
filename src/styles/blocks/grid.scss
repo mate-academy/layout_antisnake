@@ -4,35 +4,26 @@
   grid-template-rows: 300px;
   grid-auto-rows: 300px;
 
-  @include onDesktop(750px) {
+  @include responsive(750px) {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
 
-  @include onDesktop(450px) {
+  @include responsive(450px) {
     grid-template-columns: minmax(300px, 1fr);
   }
 
   &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: #fff;
-
-    position: relative;
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
   }
 
   @each $color, $num in $colorsNum {
     &__item--#{$num} {
       background-color: #{$color};
-
-      &::before {
-        content: "#{$num}";
-      }
     }
   }
 }
