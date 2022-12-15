@@ -1,0 +1,4 @@
+@mixin snake($size) {
+  height: $size;
+  min-width: $size;
+}
