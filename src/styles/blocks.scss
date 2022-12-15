@@ -1,0 +1,27 @@
+.blocks {
+  display: grid;
+  
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    min-width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+
+    @each $elem, $color in $colors {
+      &:nth-child(#{$elem}) {
+        background-color: $color;
+      }
+    }
+  }
+}
