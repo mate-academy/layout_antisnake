@@ -1,3 +1,50 @@
+$block-size: 300px;
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media screen and (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-size, 1fr));
+    }
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+    height: $block-size;
+  }
+
+  &__block--1 {
+    background-color: red;
+  }
+
+  &__block--2 {
+    background: rgb(204, 0, 0);
+  }
+
+  &__block--3 {
+    background: rgb(153, 0, 0);
+  }
+
+  &__block--4 {
+    background: rgb(102, 0, 0);
+  }
+
+  &__block--5 {
+    background: rgb(51, 0, 0);
+  }
+
+  &__block--6 {
+    background: rgb(0, 0, 0);
+  }
 }
