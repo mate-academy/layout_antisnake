@@ -1,0 +1,48 @@
+.boxes {
+  display: grid;
+  grid-template-columns: 100%;
+
+  &__box {
+    height: 300px;
+    min-width: 300px;
+    color: #fff;
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+    line-height: 300px;
+    font-size: 100px;
+
+    &--color-2 {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--color-3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--color-4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--color-5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--color-6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .boxes {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 300px 300px 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  .boxes {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-rows: 300px 300px;
+  }
+}
