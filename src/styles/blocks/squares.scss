@@ -1,0 +1,18 @@
+.container__block {
+  display: flex;
+  justify-content: center;
+  height: $height;
+  min-width: $height;
+  color: white;
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  align-items: center
+}
+
+@each $number, $color in $bg-colors {
+  .container__block--#{$number} {
+    background-color: $color;
+  }
+}
+
