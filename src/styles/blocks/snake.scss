@@ -1,0 +1,40 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($snake-size, 1fr));
+  position: relative;
+
+  &__snake {
+    text-align: center;
+    height: $snake-size;
+  }
+
+  &__snake--1 {
+    background-color: $color--1;
+  }
+  
+  &__snake--2 {
+    background-color: $color--2;
+  }
+  
+  &__snake--3 {
+    background-color: $color--3;
+  }
+  
+  &__snake--4 {
+    background-color: $color--4;
+  }
+  
+  &__snake--5 {
+    background-color: $color--5;
+  }
+  
+  &__snake--6 {
+    background-color: $color--6;
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($snake-size, 1fr));
+    }
+  }
+}
