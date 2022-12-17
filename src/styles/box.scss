@@ -1,0 +1,37 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &_card {
+    display: flex;
+    height: 300px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+
+    $colors:
+      "red1" red,
+      "red2" rgb(204, 0, 0),
+      "red3" rgb(153, 0, 0),
+      "red4" rgb(102, 0, 0),
+      "red5" rgb(51, 0, 0),
+      "black" black;
+
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+      }
+    }
+
+    @for $number from 1 through 6 {
+      &:nth-child(#{$number})::before {
+        content: "#{$number}";
+      }
+    }
+  }
+}
