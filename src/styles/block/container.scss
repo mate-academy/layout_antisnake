@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    height: $block-size;
+    line-height: $block-size;
+    text-align: center;
+
+    @each $block-num, $color in $block-color {
+      &--#{$block-num} {
+        background-color: $color;
+      }
+    }
+
+  }
+}
