@@ -1,0 +1,16 @@
+.block {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+
+  @each $index, $color in $colors {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+}
