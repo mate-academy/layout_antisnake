@@ -1,7 +1,6 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-rows: 300px;
   grid-auto-rows: 300px;
 
   @include responsive(750px) {
@@ -16,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: #fff;
   }
