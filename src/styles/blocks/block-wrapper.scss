@@ -1,0 +1,26 @@
+.block-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $block-height;
+    height: $block-height;
+
+    @each $block-number, $color in $block-color-set {
+      &--number-#{$block-number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 451px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 751px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
