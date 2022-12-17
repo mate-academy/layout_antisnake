@@ -1,0 +1,11 @@
+$block-width-minmax: minmax(300px, 600px);
+$block-width-minmax-large: minmax(300px, auto);
+
+$blocks: (
+  "1" #f00,
+  "2" #c00,
+  "3" #900,
+  "4" #600,
+  "5" #300,
+  "6" #000
+);

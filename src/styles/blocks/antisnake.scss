@@ -1,0 +1,31 @@
+.antisnake {
+  display: grid;
+
+  grid-template-columns: $block-width-minmax;
+
+  &__block {
+    display: grid;
+    place-items: center;
+    height: 300px;
+  }
+
+  @media (min-width: 600px) {
+    & {
+      display: grid;
+      grid-template-columns: $block-width-minmax $block-width-minmax;
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      display: grid;
+      grid-template-columns: $block-width-minmax-large $block-width-minmax-large $block-width-minmax-large;
+    }
+  }
+}
+
+@each $name, $color in $blocks {
+  .block-#{$name} {
+    background-color: $color;
+  }
+}
