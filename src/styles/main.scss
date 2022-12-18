@@ -1,3 +1,6 @@
-body {
-  margin: 0;
-}
+@import "reset";
+@import "normalize";
+
+@import "utils/functions";
+@import "blocks/box.scss";
+@import "blocks/items.scss";
