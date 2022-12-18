@@ -1,0 +1,17 @@
+.box__item {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 300px;
+
+  @for $index from 1 through 6 {
+    &--color--#{$index}::before {
+      content: "#{$index}";
+    };
+    &:nth-child(#{$index}) {
+      background-color: rgb(getColor($index), 0, 0);
+    }
+  }
+}

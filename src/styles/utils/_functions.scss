@@ -1,0 +1,4 @@
+@function getColor($cell-count) {
+  @return 255 / 5 * (6 - $cell-count);
+
+}
