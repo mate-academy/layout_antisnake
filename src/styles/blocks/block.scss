@@ -1,0 +1,32 @@
+.blocks__block {
+  display: flex;
+  height: 300px;
+  min-width: 300px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  &--1 {
+    background-color: red;
+  }
+
+  &--2 {
+    background-color: #c00;
+  }
+
+  &--3 {
+    background-color: #900;
+  }
+
+  &--4 {
+    background-color: #600;
+  }
+
+  &--5 {
+    background-color: #300;
+  }
+
+  &--6 {
+    background-color: #000;
+  }
+}
