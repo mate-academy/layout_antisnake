@@ -1,0 +1,33 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    font-size: 100px;
+
+    @each $number, $color in $colors {
+      &--color-#{$number} {
+        background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
+}
