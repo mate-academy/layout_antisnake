@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+
+  @include responsive(750px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @include responsive(450px) {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+  }
+
+  @each $color, $num in $colorsNum {
+    &__item--#{$num} {
+      background-color: #{$color};
+    }
+  }
+}
