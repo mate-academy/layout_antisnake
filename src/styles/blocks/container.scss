@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height-block, 1fr));
+
+  @media (min-width: 900px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(3, minmax($height-block, 1fr));
+    }
+  }
+}
