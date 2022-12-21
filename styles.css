@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+}
+@media only screen and (max-width: 5000px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, 33.33%);
+  }
+}
+@media only screen and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, 50%);
+  }
+}
+@media only screen and (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+}
+
+.blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.blocks:nth-child(0):before {
+  content: "0";
+}
+
+.blocks:nth-child(0) {
+  background-color: rgb(255, 0, 0);
+}
+
+.blocks:nth-child(1):before {
+  content: "1";
+}
+
+.blocks:nth-child(1) {
+  background-color: rgb(255, 0, 0);
+}
+
+.blocks:nth-child(2):before {
+  content: "2";
+}
+
+.blocks:nth-child(2) {
+  background-color: rgb(204, 0, 0);
+}
+
+.blocks:nth-child(3):before {
+  content: "3";
+}
+
+.blocks:nth-child(3) {
+  background-color: rgb(153, 0, 0);
+}
+
+.blocks:nth-child(4):before {
+  content: "4";
+}
+
+.blocks:nth-child(4) {
+  background-color: rgb(102, 0, 0);
+}
+
+.blocks:nth-child(5):before {
+  content: "5";
+}
+
+.blocks:nth-child(5) {
+  background-color: rgb(51, 0, 0);
+}
+
+.blocks:nth-child(6):before {
+  content: "6";
+}
+
+.blocks:nth-child(6) {
+  background-color: rgb(0, 0, 0);
+}
+
+/*# sourceMappingURL=styles.css.map */
