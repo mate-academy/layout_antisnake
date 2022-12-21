@@ -1,0 +1,23 @@
+.block {
+  height: $size;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  font-family: "Arial", sans-serif;
+  font-size: 100px;
+
+  $val:
+    "1" 100%,
+    "2" 80%,
+    "3" 60%,
+    "4" 40%,
+    "5" 20%,
+    "6" 0%;
+
+  @each $i, $val in $val {
+    &--#{$i} {
+      background-color: rgb($val, 0%, 0%);
+    }
+  }
+}
