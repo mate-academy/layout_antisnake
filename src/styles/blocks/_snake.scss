@@ -1,0 +1,22 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($snake-block-size, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax($snake-block-size, 1fr));
+  grid-auto-rows: $snake-block-size;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    color: #fff;
+    display: grid;
+    place-content: center;
+
+    @each $i, $color in $snake-block-color {
+      &--#{$i} {
+        background-color: $color;
+      }
+    }
+  }
+}
