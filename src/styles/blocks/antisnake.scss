@@ -1,0 +1,22 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: 
+          scale-color($snake-main-color, $red: 20% * ($i - 1) * -1);
+      }
+    }
+  }
+}
