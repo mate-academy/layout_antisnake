@@ -1,0 +1,5 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-min-width, 1fr));
+  min-width: $block-min-width * 2;
+}
