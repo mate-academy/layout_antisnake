@@ -1,0 +1,47 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  &__box {
+    height: $box-size;
+
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+    line-height: $box-size;
+    text-align: center;
+
+    &--color--1 {
+      background-color: #f00;
+    }
+
+    &--color--2 {
+      background-color: #c00;
+    }
+
+    &--color--3 {
+      background-color: #900;
+    }
+
+    &--color--4 {
+      background-color: #600;
+    }
+
+    &--color--5 {
+      background-color: #300;
+    }
+
+    &--color--6 {
+      background-color: #000;
+    }
+  }
+
+  @media (min-width: #{$box-size * 3}) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
