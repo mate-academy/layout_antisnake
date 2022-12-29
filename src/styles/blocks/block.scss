@@ -1,0 +1,10 @@
+.block {
+  height: 300px;
+  min-width: 300px;
+
+  @each $number, $color in $colors {
+    &:nth-child(#{$number}) {
+      background-color: $color;
+    }
+  }
+}
