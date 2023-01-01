@@ -1,0 +1,35 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+
+  &__item {
+    display: grid;
+    background-color: red;
+    font-size: 100px;
+    line-height: 300px;
+    text-align: center;
+    color: #fff;
+  }
+
+  $colors:
+    "1" #f00,
+    "2" #c00,
+    "3" #900,
+    "4" #600,
+    "5" #300,
+    "6" #000;
+
+  @each $number, $color in $colors {
+    .snake__item--#{$number} {
+      background-color: $color;
+    }
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+}
