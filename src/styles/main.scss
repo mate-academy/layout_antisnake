@@ -1,3 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  
+  &__cell {
+    height: 300px;
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: 300px;
+  }
+  
+  @for $index from 1 through 6 {
+    &__cell--#{$index} {
+      background-color: rgb(100% - (20 * ($index - 1)), 0%, 0%);
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
