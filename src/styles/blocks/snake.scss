@@ -1,0 +1,31 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($block-height, 1fr));
+
+  &__block {
+    height: $block-height;
+  
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    line-height: $block-height;
+  
+    @for $count from 1 through $block-count {
+      &:nth-child(#{$count}) {
+        background-color: rgb(
+          255 - (($count - 1) * 255 / ($block-count - 1)), 0, 0
+        );
+      }
+      &:nth-child(#{$count}):before {
+        content: "#{$count}";
+      }
+    }
+  }
+}
+
+@media (min-width:1200px) {
+  .snake__block:nth-child(3n + 1) {
+    grid-column: 1;
+  }
+}
