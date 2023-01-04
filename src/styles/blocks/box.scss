@@ -1,0 +1,21 @@
+.box {
+  display: grid;
+  place-items: center;
+  list-style: none;
+  height: $box-size;
+  min-width: $box-size;
+
+  $colors: 
+    "1" 100%,
+    "2" 80%,
+    "3" 60%,
+    "4" 40%,
+    "5" 20%,
+    "6" 0%;
+
+  @each $number, $color in $colors {
+    &--#{$number} {
+      background-color: rgb($color, 0%, 0%);
+    }
+  }
+}

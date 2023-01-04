@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
