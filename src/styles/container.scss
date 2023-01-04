@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($box-size, 33.33%));
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
   justify-content: center;
   align-content: center;
 
@@ -15,5 +15,9 @@
         background-color: $color;
       }
     }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
