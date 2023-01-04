@@ -1,0 +1,38 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-size, 1fr));
+  
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($card-size, 1fr));
+    }
+  }
+  &__card {
+    display: flex;
+    height: $card-size;
+    justify-content: center;
+    align-items: center;
+
+    $colors:
+      "1" rgb(255, 0, 0),
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $index, $color in $colors {
+      &:nth-child(n + #{$index}) {
+        background-color: $color;
+      }
+    }
+    @for $number from 1 through 100 {
+      &:nth-child(#{$number})::before {
+        content: "#{$number}";
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 100px;
+        color: white;
+      }
+    }
+  }
+}
