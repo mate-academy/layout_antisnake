@@ -50,14 +50,14 @@ body {
   background-color: black;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .container {
     grid-template-columns: repeat(2, minmax($size-width, 1fr));
     grid-template-rows: repeat(3, $size-height);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, $size-height);
