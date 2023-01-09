@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  background-color: red;
+
+  &__block {
+    min-width: $block-width;
+    height: $block-heigth;
+
+    @extend %number-style;
+
+    /* #region loop (for) */
+    // @for $i from 1 through $snake-length {
+    //   &:nth-child(#{$i}) {
+    //     background-color: rgba(0,0,0, calc(#{$i - 1} / #{$snake-length - 1}));
+    //   }
+    // }
+    /* #endregion */
+  }
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@each $name, $color in $block-colors {
+  .block-#{$name} {
+    background-color: $color;
+  }
+}
+
