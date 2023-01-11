@@ -1,7 +1,7 @@
 .blocks {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($size, 33.3%));
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
   justify-content: center;
 
   .block {
@@ -25,3 +25,5 @@
     }
   }
 }
+
+  
