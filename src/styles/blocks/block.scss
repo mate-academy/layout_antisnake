@@ -1,0 +1,11 @@
+.block {
+  text-align: center;
+  line-height: $size;
+  min-width: $size;
+
+  @each $shade, $number in $shades {
+    &--#{$number} {
+      background-color: rgb($shade, 0, 0);
+    }
+  }
+}
