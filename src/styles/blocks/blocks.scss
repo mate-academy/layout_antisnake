@@ -1,0 +1,32 @@
+.blocks {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  & > :nth-child(n) {
+    height: 300px;
+    min-width: 300px;
+  
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+  }
+
+  &__block {
+    @each $num, $color in $colors {
+      &-#{$num} {
+        background-color: $color;
+      }
+    }
+  }
+}
