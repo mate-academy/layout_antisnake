@@ -1,3 +1,52 @@
 body {
   margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.block {
+  display: grid;
+  color: white;
+  font-size: 100px;
+
+  @media (min-width: 600px) {
+    grid-template-areas: "1 2"
+      "3 4"
+      "5 6";
+  }
+
+  @media (min-width: 900px) {
+    grid-template-areas: "1 2 3"
+      "4 5 6";
+  }
+
+  & > :nth-child(n) {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item--1 {
+    background-color: #f00;
+  }
+
+  &__item--2 {
+    background-color: #c00;
+  }
+
+  &__item--3 {
+    background-color: #900;
+  }
+
+  &__item--4 {
+    background-color: #600;
+  }
+
+  &__item--5 {
+    background-color: #300;
+  }
+
+  &__item--6 {
+    background-color: #000;
+  }
 }
