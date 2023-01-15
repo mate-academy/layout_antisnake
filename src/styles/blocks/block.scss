@@ -1,0 +1,47 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: $block-font-size;
+    line-height: 300px;
+
+    &--num_1 {
+      background-color: #f00;
+    }
+
+    &--num_2 {
+      background-color: #c00;
+    }
+
+    &--num_3 {
+      background-color: #900;
+    }
+
+    &--num_4 {
+      background-color: #600;
+    }
+
+    &--num_5 {
+      background-color: #300;
+    }
+
+    &--num_6 {
+      background-color: #000;
+    }
+  }
+
+  @for $num-block from 1 through 6 {
+    &__item:nth-child(#{$num-block})::before {
+      content: "#{$num-block}";
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
