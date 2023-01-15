@@ -1,0 +1,22 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+
+  &__cell {
+    height: $cell-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  @each $name, $color in $cell-colors {
+    &__cell--#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
+}
