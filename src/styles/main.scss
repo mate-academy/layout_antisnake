@@ -15,11 +15,11 @@ $colors:
   5 rgb(20%, 0, 0),
   6 rgb(0, 0, 0);
 $cell-height: 300px;
-$cell-min-width: 300px;
+$cell-width: 300px;
 
 .snake {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax($cell-min-width, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax($cell-width, 1fr));
 
   &__color {
     height: $cell-height;
@@ -42,6 +42,6 @@ $cell-min-width: 300px;
   }
 
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, minmax($cell-min-width, 1fr));
+    grid-template-columns: repeat(3, minmax($cell-width, 1fr));
   }
 }
