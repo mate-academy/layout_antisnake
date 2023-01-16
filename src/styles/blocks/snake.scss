@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-min-width, 1fr));
+
+  &__color {
+    height: $cell-height;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $n, $color in $colors {
+      &--#{$n} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($cell-min-width, 1fr));
+  }
+}
