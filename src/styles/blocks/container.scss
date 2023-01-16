@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($size-box, 1fr));
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    height: $size-box;
+    font-size: $font-size-number;
+    color: $color-numbers;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+      &--#{$number}::before {
+        content: "#{$number}";
+      }
+    }
+  }
+}
