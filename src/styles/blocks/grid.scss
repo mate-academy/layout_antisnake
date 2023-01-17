@@ -1,0 +1,40 @@
+@import "./units/_variables";
+
+.grid {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax($length, 1fr));
+  grid-template-rows: $length;
+  grid-auto-rows: $length;
+
+  @media(min-width:1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @each $number, $color in $backgroung-colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @for $i from 1 through 7 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+  }
+}
