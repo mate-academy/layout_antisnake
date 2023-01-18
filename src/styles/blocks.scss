@@ -1,16 +1,12 @@
 .blocks {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  // grid-template-rows: 300px 300px 300px;
-  // grid-template-rows: repeat(auto-fill, 300px 300px 300px 300px 300px 300px);
   grid-template-rows: repeat(6, 300px);
-  // height: 100%;
 
   &__block {
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: 300px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: white;
@@ -40,4 +36,10 @@
     }
   }
   
+}
+
+@media (min-width: 1200px) {
+  .blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
