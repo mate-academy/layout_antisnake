@@ -1,0 +1,24 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cell {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+  }
+
+  @for $i from 1 through 6 {
+    &__cell--block-#{$i} {
+      background-color: rgb((255 - 51*($i - 1)), 0, 0);
+    }
+  }
+}
