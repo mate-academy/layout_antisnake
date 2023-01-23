@@ -1,0 +1,5 @@
+@mixin viewport($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}
