@@ -1,0 +1,34 @@
+@import "../utils/variables";
+@import "../utils/reset";
+
+.box {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr;
+
+  &__item {
+    display: grid;
+    place-items: center;
+    height: $cell-size;
+  }
+
+  @each $name, $color in $cell-collor {
+    &-#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &__item:nth-child(#{$index})::after {
+      content: "#{$index}";
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
