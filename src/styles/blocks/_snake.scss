@@ -1,0 +1,44 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  }
+
+  &__cell {
+    display: grid;
+    height: 300px;
+    place-items: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+
+    &--1 {
+      background-color: #f00;
+    }
+
+    &--2 {
+      background-color: #c00;
+    }
+
+    &--3 {
+      background-color: #900;
+    }
+
+    &--4 {
+      background-color: #600;
+    }
+
+    &--5 {
+      background-color: #300;
+    }
+
+    &--6 {
+      background-color: #000;
+    }
+  }
+}
