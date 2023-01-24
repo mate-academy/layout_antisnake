@@ -1,0 +1,11 @@
+@media (min-width: 599px) {
+  .container {
+    grid-template-columns: repeat(2, minmax($block-width, 1fr));
+  }
+}
+
+@media (min-width: 899px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($block-width, 1fr));
+  }
+}
