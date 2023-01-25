@@ -1,0 +1,23 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minPartSize, 1fr));
+
+  @media (min-width: ($minPartSize * 3)) {
+    grid-template-columns: repeat(3, minmax($minPartSize, 1fr));
+  }
+
+  &__part {
+    height: $minPartSize;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    color: #fff;
+
+    @for $itemNumber from 1 through 6 {
+      &--#{$itemNumber} {
+        background: rgb(calcRedValue($itemNumber), 0, 0);
+      }
+    }
+  }
+}

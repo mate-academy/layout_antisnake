@@ -1,0 +1,3 @@
+@function calcRedValue($itemNumber) {
+  @return 255 * (6 - $itemNumber) / 5;
+}
