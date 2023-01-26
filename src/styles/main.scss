@@ -6,9 +6,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-  @media (min-width: 1200px){
+  @media (min-width: 1200px) {
     & {
-        grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
@@ -20,10 +20,9 @@ body {
   text-align: center;
   line-height: 300px;
 
-  @for $index from 1 through 6{
+  @for $index from 1 through 6 {
     &:nth-of-type(#{$index}) {
       background-color: rgb((6 - $index) * 51, 0, 0);
     }
   }
 }
-
