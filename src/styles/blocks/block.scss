@@ -1,0 +1,20 @@
+.block {
+  height: $block-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::after {
+      content: "#{$index}";
+      color: white;
+      font-size: 100px;
+    }
+  }
+
+  @each $number, $color in $colors {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
