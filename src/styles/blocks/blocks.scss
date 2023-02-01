@@ -1,0 +1,30 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+    min-width: $block-height;
+
+    color: #fff;
+
+    @each $count, $color in $blocks-settings {
+      &--#{$count} {
+        background-color: $color;
+      }
+    }
+
+    @for $blockCount from 1 through 6 {
+      &--#{$blockCount}::before {
+        content: "#{$blockCount}";
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+}
