@@ -1,0 +1,21 @@
+.block {
+  @extend %size;
+
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: $block-height;
+  color: #fff;
+
+  @for $index from 1 through $blocks-amount {
+    &--#{$index}:before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $index, $color in $colors {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+}
