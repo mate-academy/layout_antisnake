@@ -1,0 +1,69 @@
+.antisnake {
+  display: grid;
+
+  &__1 {
+    background-color: rgb(255, 0, 0);
+  }
+
+  &__2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__3 {
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__4 {
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__6 {
+    background-color: #000;
+  }
+}
+
+@media (min-width:450px) {
+  .antisnake {
+    grid-template: 1fr / 1fr;
+  }
+}
+
+@media (min-width: 600px) {
+  .antisnake {
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .antisnake {
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
+}
+
+@media (min-width:900px) {
+  .antisnake {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width:1050px) {
+  .antisnake {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width:1200px) {
+  .antisnake {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width:4096px) {
+  .antisnake {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  }
+}
