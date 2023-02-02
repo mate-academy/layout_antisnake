@@ -1,9 +1,12 @@
 @import "../utils/utils.scss";
 @import "../snake.scss";
 
-body {
+html {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
   font-size: 100px;
-  color: white;
+  color: #fff;
+}
+
+body {
+  margin: 0;
 }
