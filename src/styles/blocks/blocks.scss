@@ -1,0 +1,26 @@
+.blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-size: 100px;
+  }
+  @for $index from 1 through 6 {
+    $calc-color: 255-51 * ($index - 1);
+    &__block--#{$index} {
+      background-color: rgb($calc-color, 0, 0);
+    }
+  }
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+}
