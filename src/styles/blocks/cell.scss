@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size-cell, 1fr));
+
+  @each $cellNum, $color in $colors {
+    &__cell:nth-child(n + #{$cellNum}) {
+      background-color: $color;
+    }
+  }
+
+  @for $num from 1 through 6 {
+    :nth-child(#{$num})::before {
+      content: "#{$num}";
+    }
+  }
+
+  &__cell {
+    height: $size-cell;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: $two-col-media) {
+    grid-template-columns: repeat(2, minmax($size-cell, 1fr));
+  }
+
+  @media (max-width: $one-col-media) {
+    grid-template-columns: repeat(1, minmax($size-cell, 1fr));
+  }
+}
