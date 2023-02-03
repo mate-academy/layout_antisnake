@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.block {
+  line-height: 300px;
+  text-align: center;
+
+  @each $index, $color in $colors {
+    &--#{$index} {
+      background-color: $color ;
+    }
+  }
+}
