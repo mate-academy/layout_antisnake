@@ -1,0 +1,8 @@
+
+@function calc-color($fraction) {
+  @return hsl(0, 100%, 50% - 50% * $fraction);
+}
+
+@function max-columns($number) {
+  @return 100% / $number;
+}
