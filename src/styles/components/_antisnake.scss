@@ -1,0 +1,25 @@
+.blocks {
+  display: grid;
+  @include grid-templates-columns (auto-fill);
+
+  @media (min-width: 1200px) {
+    @include grid-templates-columns (3);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: $height;
+    height: $height;
+
+    color: #fff;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
