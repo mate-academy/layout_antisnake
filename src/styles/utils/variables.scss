@@ -1,0 +1,19 @@
+$size-cell: 300px;
+$main-height: 100%;
+$two-col-media: ($size-cell * 3) - 1;
+$one-col-media: ($size-cell * 2) - 1;
+
+$first: rgb(255, 0, 0);
+$second: rgb(204, 0, 0);
+$third: rgb(153, 0, 0);
+$fourth: rgb(102, 0, 0);
+$fifth: rgb(51, 0, 0);
+$sixth: rgb(0, 0, 0);
+
+$colors:
+  "1" $first,
+  "2" $second,
+  "3" $third,
+  "4" $fourth,
+  "5" $fifth,
+  "6" $sixth;
