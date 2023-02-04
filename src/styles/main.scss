@@ -1,3 +1,6 @@
-body {
-  margin: 0;
-}
+@import "./utils/variable";
+@import "./utils/for";
+@import "./utils/each";
+@import "./blocks/reset.scss";
+@import "./blocks/container.scss";
+@import "./utils/media";
