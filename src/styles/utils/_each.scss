@@ -1,0 +1,13 @@
+$colors:
+  "red" red,
+  "1" rgb( 80%, 0%, 0% ),
+  "2" rgb( 60%, 0%, 0% ),
+  "3" rgb( 40%, 0%, 0% ),
+  "4" rgb( 20%, 0%, 0% ),
+  "black" black;
+
+@each $name, $color in $colors {
+  .container__color-#{$name} {
+    background-color: $color;
+  }
+}
