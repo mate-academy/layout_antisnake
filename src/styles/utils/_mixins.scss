@@ -1,0 +1,5 @@
+@mixin getGrid ($columns, $rows) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax($cell-size, 1fr));
+  grid-template-rows: repeat($rows, minmax($cell-size, 1fr));
+}

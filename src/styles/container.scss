@@ -1,0 +1,15 @@
+.container {
+  @include getGrid (3, 2);
+}
+
+@media (max-width: 899px) {
+  .container {
+    @include getGrid (2, 3);
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    @include getGrid (1, 6);
+  }
+}
