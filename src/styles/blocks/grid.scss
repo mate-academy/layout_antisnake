@@ -1,0 +1,32 @@
+$CellHeight: 300px;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($CellHeight, auto));
+  grid-template-rows: repeat(auto-fill, $CellHeight);
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($CellHeight, auto));
+  }
+
+  &__element {
+    height: $CellHeight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    $colors:
+      '1' rgb(100%, 0%, 0%),
+      '2' rgb(80%, 0%, 0%),
+      '3' rgb(60%, 0%, 0%),
+      '4' rgb(40%, 0%, 0%),
+      '5' rgb(20%, 0%, 0%),
+      '6' rgb(0%, 0%, 0%);
+
+    @each $colorNumber, $colorValue in $colors {
+      &--#{$colorNumber} {
+        background-color: $colorValue;
+      }
+    }
+  }
+}
