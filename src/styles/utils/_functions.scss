@@ -1,3 +1,0 @@
-@function getContainerWidth($column-size,$max-column-count) {
-  @return $column-size * $max-column-count;
-}

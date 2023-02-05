@@ -1,7 +1,6 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax($card-height,1fr));
-  // max-width: getContainerWidth($card-height, 3);
   @media(min-width:1200px) {
     grid-template-columns: repeat(3,minmax($card-height,1fr));
   }
