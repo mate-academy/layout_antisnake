@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+
+  @media (min-width: 300px) {
+    grid-template-columns: auto;
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: auto auto;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: auto auto auto;
+  }
+
+  &_block {
+    min-width: $block-size;
+    height: $block-size;
+    font-size: 100px;
+    text-align: center;
+    line-height: $block-size;
+    color: white;
+  }
+}
+
+.container_block--1 {
+  background-color: red;
+}
+
+.container_block--2 {
+  background-color: rgba(80%, 0%, 0%, 1);
+}
+
+.container_block--3 {
+  background-color: rgba(60%, 0%, 0%, 1);
+}
+
+.container_block--4 {
+  background-color: rgba(40%, 0%, 0%, 1);
+}
+
+.container_block--5 {
+  background-color: rgba(20%, 0%, 0%, 1);
+}
+
+.container_block--6 {
+  background-color: black;
+}
