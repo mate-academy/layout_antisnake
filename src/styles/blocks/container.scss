@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($basic-size, 1fr));
+
+  @media (min-width: #{$basic-size * 3}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $basic-size;
+    min-width: $basic-size;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: $basic-size;
+
+    @for $index from 1 through $blocks-amount {
+      &--#{$index}:before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
