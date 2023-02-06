@@ -1,0 +1,22 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
+  background-color: red;
+
+  @media (min-width: (900px)) {
+    grid-template-columns: repeat(3, minmax($block-width, 1fr));
+  }
+}
+
+.grid-item {
+  display: grid;
+  height: 300px;
+  align-content: center;
+  justify-content: center;
+
+  @for $index from 2 through 6 {
+    &--#{$index} {
+      background-color: rgb(51*(6 - $index), 0, 0);
+    }
+  }
+}
