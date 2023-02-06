@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 450px));
+  grid-template-rows: repeat(6, 300px);
+  justify-content: center;
+  align-content: center;
+
+  @media (min-width: 451px) {
+    grid-template-columns: repeat(2, minmax(300px, 450px));
+    grid-template-rows: repeat(3, 300px);
+    justify-content: center;
+  }
+
+  @media (min-width: 751px) {
+    grid-template-columns: repeat(3, minmax(300px, 450px));
+    grid-template-rows: repeat(2, 300px);
+    justify-content: center;
+  }
+
+  @media (min-width: 1051px) {
+    grid-template-columns: repeat(3, minmax(300px, 1366px));
+    grid-template-rows: repeat(2, 300px);
+    justify-content: center;
+  }
+}
