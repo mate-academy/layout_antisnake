@@ -3,6 +3,7 @@
   align-items: center;
   justify-items: center;
   height: 300px;
+  text-align: center;
   
   @each $name, $color in $colors {
     &--color-#{$name} {
