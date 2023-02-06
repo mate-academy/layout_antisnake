@@ -1,3 +1,41 @@
+$cell-height: 300px;
+
 body {
   margin: 0;
+}
+
+.grid {
+  display: grid;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+
+  &__cell {
+    height: $cell-height;
+
+    @for $cell from 1 through 6 {
+      &:nth-child(#{$cell}) {
+        background: hsl(0, 100%, calc(50% * ( (6 - #{$cell} ) / 5)) );
+        // order: #{$cell};
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::after {
+          content: "#{$cell}";
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    grid-template: repeat(6, 1fr) / minmax($cell-height, 1fr);
+  }
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template: repeat(3, 1fr) / repeat(2, minmax($cell-height, 1fr));
+  }
+  @media (min-width: 900px) {
+    grid-template: repeat(2, 1fr) / repeat(3, minmax($cell-height, 1fr)) ;
+  }
 }
