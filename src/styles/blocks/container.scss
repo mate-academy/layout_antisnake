@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minBlockWidth, 1fr));
+
+  @media (min-width: ($minBlockWidth * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    height: 300px;
+
+    @for $numOfDay from 1 through 6 {
+      &:nth-child(#{$numOfDay})::before {
+        content: "#{$numOfDay}";
+      }
+    }
+
+    @each $prop, $value in $c-backgrounds {
+      &--#{$prop} {
+        background-color: $value;
+      }
+    }
+  }
+}
