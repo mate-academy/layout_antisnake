@@ -1,3 +1,60 @@
+@import url(./variables.scss);
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  height: 300px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.container__card {
+  display: flex;
+  height: 300px;
+  min-width: 300px;
+  font-size: 100px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-1 {
+  background-color: rgb(255, 0, 0);
+}
+
+.card-2 {
+  background-color: rgb(204, 0, 0);
+}
+
+.card-3 {
+  background-color: rgb(153, 0, 0);
+}
+
+.card-4 {
+  background-color: rgb(102, 0, 0);
+}
+
+.card-5 {
+  background-color: rgb(51, 0, 0);
+}
+
+.card-6 {
+  background-color: rgb(10, 0, 0);
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
 }
