@@ -1,3 +1,34 @@
+$colors: #000 6, #300 5, #600 4, #900 3, #c00 2, #f00 1;
+$size: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+
+  &__element {
+    display: grid;
+    place-items: center;
+    height: $size;
+    font-size: 100px;
+    color: #fff;
+
+    @each $color, $item in $colors {
+      &--#{$item} {
+        background-color: $color;
+
+        &::after {
+          content: "#{$item}";
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
