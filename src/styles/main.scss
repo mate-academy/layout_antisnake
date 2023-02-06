@@ -1,3 +1,10 @@
+@import "./blocks/container.scss";
+@import "./blocks/cell.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
