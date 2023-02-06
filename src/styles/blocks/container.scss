@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: (901px)) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  align-items: center;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 100px;
+
+
+  &__cell {
+    display: grid;
+    height: 300px;
+    align-content: center;
+    justify-content: center;
+    color: white;
+  }
+}
