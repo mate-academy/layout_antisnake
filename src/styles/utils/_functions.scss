@@ -1,0 +1,11 @@
+@for $number from 1 through 6 {
+  .blocks__item:nth-child(#{$number})::before {
+    content: "#{$number}";
+  }
+}
+
+@each $name, $value in $colors {
+  .blocks__item--color--#{$name} {
+    background-color: $value;
+  }
+}
