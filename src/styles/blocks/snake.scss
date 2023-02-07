@@ -1,0 +1,31 @@
+.snake__block {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  height: $snake-size;
+  min-width: $snake-size;
+
+  font-size: 100px;
+  background-color: red;
+  color: white;
+
+  &--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+
+  &--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+
+  &--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+
+  &--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+
+  &--6 {
+    background-color: black;
+  }
+}
