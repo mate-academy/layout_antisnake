@@ -1,0 +1,12 @@
+@each $content, $color in $colors {
+  .box-field:nth-child(#{$content}) {
+    content: $content;
+    background-color: $color;
+  }
+}
+
+@each $content, $color in $colors {
+  .box-field:nth-child(#{$content})::after {
+    content: $content;
+  }
+}

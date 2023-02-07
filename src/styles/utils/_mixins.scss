@@ -1,0 +1,9 @@
+@mixin params {
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  height: $blockParam;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
