@@ -1,0 +1,41 @@
+.row {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
+  &__box {
+    display: flex;
+    height: 300px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  &__box--1 {
+    background-color: red;
+  }
+  
+  &__box--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+  
+  &__box--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+  
+  &__box--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+  
+  &__box--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+  
+  &__box--6 {
+    background-color: black;
+  }
+}
