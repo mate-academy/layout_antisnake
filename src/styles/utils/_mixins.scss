@@ -1,0 +1,11 @@
+@mixin block-decoration ($height, $color, $min-fz) {
+  height: $height;
+  color: $color;
+  font-size: $min-fz;
+}
+
+@mixin grid-decoration ($grid, $center, $center) {
+  display: $grid;
+  justify-items: $center;
+  align-items: $center;
+}
