@@ -1,0 +1,47 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(6, 300px);
+  grid-template-areas: "block--1"
+    "block--2"
+    "block--3"
+    "block--4"
+    "block--5"
+    "block--6";
+
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+
+    @each $col, $num in $colors {
+
+      &--block-#{$num} {
+        background-color: $col;
+      }
+
+    }
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(3, 300px);
+      grid-template-areas: "block--1 block--2"
+        "block--3 block--4"
+        "block--5 block--6";
+    }
+  }
+
+  @media screen and (min-width: 900px) and (max-width: 4096px) {
+    & {
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(2, 300px);
+      grid-template-areas: "block-1 block-2 block-3"
+        "block-4 block-5 block-6";
+    }
+  }
+}
