@@ -1,14 +1,14 @@
 .blocks {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(3, minmax(300px, 100%));
+  grid-template-rows: repeat(2, minmax(300px, 100%));
 
   &__item {
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     &--rb1 {
       background-color: rgb(100%, 0%, 0%);
     }
@@ -37,14 +37,14 @@
 
 @media (max-width: 750px) {
   .blocks {
-    grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2, minmax(300px, 100%));
+    grid-template-rows: repeat(3, minmax(300px, 100%));
   }
 }
 
 @media (max-width: 450px) {
   .blocks {
-    grid-template-columns: repeat(1, 300px);
-    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: repeat(1, minmax(300px, 100%));
+    grid-template-rows: repeat(6, minmax(300px, 100%));
   }
 }
