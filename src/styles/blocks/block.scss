@@ -1,0 +1,23 @@
+.block {
+  width: 100%;
+  height: $block-size;
+  background-color: black;
+
+  &::before{
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
+  @for $index from 1 through 6 {
+    &--#{$index}::before {
+      content:'#{$index}';
+      background-color: red * (6 - $index) / 5;
+    }
+  }
+}
