@@ -1,0 +1,11 @@
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      calc(
+        max(300px, 100vw / 3 )),
+        1fr
+      ));
+}
