@@ -1,3 +1,12 @@
+@import "./blocks/block";
+@import "./blocks/container";
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 100px;
 }
