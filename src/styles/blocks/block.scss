@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
+
+  @media (min-width: (900px)) {
+    grid-template-columns: repeat(3, minmax($block-width, 1fr));
+  }
+
+  &__block {
+    height: 300px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    $colors: (
+      1: #f00,
+      2: #c00,
+      3: #900,
+      4: #600,
+      5: #300,
+      6: #000
+    );
+
+    @each $block, $color in $colors {
+      &--#{$block} {
+        background-color: $color;
+      }
+    }
+  }
+}
