@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  $colors:
+    "one" #f00,
+    "two" #c00,
+    "three" #900,
+    "four" #600,
+    "five" #300,
+    "six" #000;
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+}
