@@ -1,0 +1,107 @@
+$base: 300px;
+
+.container {
+  display: grid;
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(1) {
+      background-color: #f00;
+    }
+    &:nth-child(2) {
+      background-color: #c00;
+    }
+    &:nth-child(3) {
+      background-color: #900;
+    }
+    &:nth-child(4) {
+      background-color: #600;
+    }
+    &:nth-child(5) {
+      background-color: #300;
+    }
+    &:nth-child(6) {
+      background-color: #000;
+    }
+  }
+  @media (max-width: 599px) {
+    grid-template-rows: repeat(6, $base);
+    grid-template-columns: repeat(1, minmax($base, 1fr));
+
+    &__box {
+      &:nth-child(1) {
+        grid-area: 1 / 1;
+      }
+      &:nth-child(2) {
+        grid-area: 2 / 1;
+      }
+      &:nth-child(3) {
+        grid-area: 3 / 1;
+      }
+      &:nth-child(4) {
+        grid-area: 4 / 1;
+      }
+      &:nth-child(5) {
+        grid-area: 5 / 1;
+      }
+      &:nth-child(6) {
+        grid-area: 6 / 1;
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-rows: repeat(3, $base);
+    grid-template-columns: repeat(2, minmax($base, 1fr));
+
+    &__box {
+      &:nth-child(1) {
+        grid-area: 1 / 1;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 2;
+      }
+      &:nth-child(3) {
+        grid-area: 2 / 1;
+      }
+      &:nth-child(4) {
+        grid-area: 2 / 2;
+      }
+      &:nth-child(5) {
+        grid-area: 3 / 1;
+      }
+      &:nth-child(6) {
+        grid-area: 3 / 2;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-rows: repeat(2, $base);
+    grid-template-columns: repeat(3, minmax($base, 1fr));
+
+    &__box {
+      &:nth-child(1) {
+        grid-area: 1 / 1;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 2;
+      }
+      &:nth-child(3) {
+        grid-area: 1 / 3;
+      }
+      &:nth-child(4) {
+        grid-area: 2 / 1;
+      }
+      &:nth-child(5) {
+        grid-area: 2 / 2;
+      }
+      &:nth-child(6) {
+        grid-area: 2 / 3;
+      }
+    }
+  }
+}
