@@ -1,0 +1,49 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+
+  @media (min-width: 950px) {
+    & {
+      grid-template-columns: repeat(auto-fill, minmax($height, calc(100% / 3)));
+    }
+  }
+
+  &_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: $height;
+
+    @for $num from 1 through 6 {
+      &:nth-child(#{$num})::before {
+        content: "#{$num}";
+      }
+    }
+
+    &--1 {
+      background-color: rgb(255, 0, 0);
+    }
+
+    &--2 {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--6 {
+      background-color: rgb(0, 0, 0);
+    }
+
+  }
+}
