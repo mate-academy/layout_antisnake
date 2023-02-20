@@ -6,7 +6,7 @@ $base: 300px;
   &__box {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
     &:nth-child(1) {
       background-color: #f00;
