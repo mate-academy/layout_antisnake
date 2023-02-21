@@ -1,7 +1,7 @@
 # Antisnake
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_antisnake/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_antisnake/report/html_report/)
+- [DEMO LINK](https://Soi4An.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://Soi4An.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -29,4 +29,4 @@ Display six colored blocks on the screen without any extra margins:
 
 | 3 columns | 2 columns | 1 column |
 | --------- | --------- | -------- |
-| ![1 col](./reference/900.png) | ![1 col](./reference/750.png) | ![1 col](./reference/450.png) |
+| ![3 col](./reference/900.png) | ![2 col](./reference/750.png) | ![1 col](./reference/450.png) |
