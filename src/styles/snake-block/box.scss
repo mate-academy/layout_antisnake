@@ -1,0 +1,35 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, $min-max);
+
+  @media (min-width: ($cell-size * 2)) and (max-width:899px) {
+
+    grid-template-columns: repeat(2, $min-max);
+  }
+
+  @media (min-width: $cell-size) and (max-width:599px) {
+    grid-template-columns: repeat(1, $min-max);
+  }
+
+  &__block {
+    min-width: $cell-size;
+    height: $cell-size;
+    box-sizing: border-box;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: $text-color;
+
+    @for $block-num from 1 through 6 {
+      &:nth-child(#{$block-num})::before {
+        content: "#{$block-num}";
+      }
+    }
+
+    @each $color, $index in $bg-colors {
+      &:nth-child(#{$index}) {
+        background: $color;
+      }
+    }
+  }
+}
