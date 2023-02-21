@@ -1,0 +1,65 @@
+.container {
+  display: grid;
+
+  @media (min-width: 0) and (max-width: 600px) {
+    & {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 300px 300px 300px 300px 300px 300px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    & {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 300px 300px 300px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 300px 300px;
+    }
+  }
+
+  &__box {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 94px 0;
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+  }
+
+  &__box:nth-child(1n) {
+    background-color: rgb(100%, 0%, 0%);
+  }
+
+  &__box:nth-child(2n) {
+    background-color: rgb(80%, 0%, 0%);
+  }
+
+  &__box:nth-child(3n) {
+    background-color: rgb(60%, 0%, 0%);
+  }
+
+  &__box:nth-child(4n) {
+    background-color: rgb(40%, 0%, 0%);
+  }
+
+  &__box:nth-child(5n) {
+    background-color: rgb(20%, 0%, 0%);
+  }
+
+  &__box:nth-child(6n) {
+    background-color: rgb(0%, 0%, 0%);
+  }
+}
