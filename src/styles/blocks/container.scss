@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($heightCell, 1fr));
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $heightCell;
+
+    @for $cell-numder from 1 through $numberOfCells {
+      &:nth-child(#{$cell-numder}) {
+        background-color: rgb(getFractionRed($cell-numder), 0, 0);
+
+        &::before {
+          content: "#{$cell-numder}";
+        }
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($heightCell, 1fr));
+    }
+  }
+}
