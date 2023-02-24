@@ -1,0 +1,30 @@
+.snake {
+  display: grid;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height-block;
+
+    @each $num, $color in $color-block {
+      &--#{$num} {
+        background-color: $color;
+      }
+    }
+
+    @for $num from 1 through 6 {
+      &:nth-child(#{$num})::before {
+        content: "#{$num}";
+      }
+    }
+  }
+
+  @media (min-width: 600px ) {
+    grid-template-columns: repeat(2, minmax($height-block, 1fr));
+  }
+
+  @media (min-width: 900px ) {
+    grid-template-columns: repeat(3, minmax($height-block, 1fr));
+  }
+}
