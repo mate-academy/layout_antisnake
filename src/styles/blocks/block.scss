@@ -1,0 +1,29 @@
+@import "../utils/variables";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat($column-amount-max, minmax($cell-size, 1fr));
+  }
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $cell-size;
+    font-family: Arial, serif;
+    font-size: $font-size;
+    color: $font-color;
+    
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb((255 * (6 - $index) / 5),0,0);
+        
+        &::before {
+          content: "#{$index}";
+        }
+      }
+    }
+  }
+}
