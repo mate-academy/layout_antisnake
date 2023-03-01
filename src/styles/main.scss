@@ -1,3 +1,48 @@
+$amountOfRed: 100%;
+$blockSize: 300px;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+@mixin square ($size) {
+  height: $size;
+}
+
+.block-container {
+  display: grid;
+  grid-template-columns: minmax($blockSize,1fr);
+
+  @media (min-width: (2 * $blockSize)) {
+    grid-template-columns: repeat(2, minmax($blockSize,1fr));
+  }
+
+  @media (min-width: (3 * $blockSize)) {
+    grid-template-columns: repeat(3, minmax($blockSize,1fr));
+  }
+
+  &__block {
+    @include square($blockSize);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $block_index from 1 through 6 {
+      &--#{$block_index} {
+        background-color: rgb($amountOfRed - 20% * ($block_index - 1), 0, 0);
+
+        &::after {
+          content: "#{$block_index}";
+        }
+      }
+    }
+
+  }
 }
