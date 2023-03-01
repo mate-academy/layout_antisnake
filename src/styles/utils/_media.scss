@@ -1,0 +1,5 @@
+@media screen and (min-width: 1200px) {
+  .a-snake-container {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+}
