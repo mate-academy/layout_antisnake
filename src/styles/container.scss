@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: $block-size;
+
+  &__block {
+    text-align: center;
+    align-items: center;
+    line-height: $block-size;
+    // background-color: rgb(100, 0, 0);
+    font-family: Arial, sans-serif;
+    min-width: $block-size;
+    font-size: 100px;
+    color: #fff;
+
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb((100 - 20% * ($index - 1)), 0, 0);
+      }
+    }
+  }
+}
