@@ -1,3 +1,13 @@
+$block-size: 300px;
+
+@import "./container.scss";
+@import "./utils/breakpoints";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
 }
