@@ -1,35 +1,4 @@
-$block-height: 300px;
-
-$brigtness:
-  2 40%,
-  3 30%,
-  4 20%,
-  5 10%,
-  6 0%;
-
-.body {
-  margin: 0;
-}
-
-.a-snake-container {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
-}
-
-.a-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: $block-height;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  color: #fff;
-  background-color: hsl(0, 100%, 50%);
-
-  @each $index, $percent in $brigtness {
-    &--#{$index} {
-      background-color: hsl(0, 100%, $percent);
-    }
-  }
-}
+@import "./utils/variables";
+@import "./blocks/body";
+@import "./blocks/a-snake";
+@import "./utils/media";
