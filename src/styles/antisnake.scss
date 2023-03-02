@@ -1,7 +1,9 @@
+$blockSize: 300px;
+$c-white: #fff;
+
 .antisnake {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
 
   @media (max-width: 899px) {
     grid-template-columns: 1fr 1fr ;
@@ -15,8 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 300px;
-    height: 300px;
+    min-width: $blockSize;
+    height: $blockSize;
 
     @for $index from 0 through 5 {
       &:nth-child(#{$index + 1}) {
@@ -26,7 +28,7 @@
 
       &:nth-child(#{$index + 1})::before {
         content: "#{$index + 1}";
-        color: #fff;
+        color: $c-white;
       }
     }
   }
