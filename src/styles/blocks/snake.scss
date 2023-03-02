@@ -1,0 +1,36 @@
+.snake {
+  display: grid;
+  grid-template-columns: auto;
+
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 100px;
+
+  &__cell {
+    display: flex;
+    height: 300px;
+    
+    justify-content: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &--#{$i} {
+        $red-amount: (6 - $i) * 0.2 * 255;
+
+        background-color: rgb($red-amount, 0, 0);
+
+        &::before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
