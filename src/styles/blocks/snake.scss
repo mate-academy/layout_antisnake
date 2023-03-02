@@ -1,0 +1,40 @@
+@import "./colorsCollection.scss";
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &__part {
+    height: 300px;
+
+    display: grid;
+    text-align: center;
+    align-items: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
