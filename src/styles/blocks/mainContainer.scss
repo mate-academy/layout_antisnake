@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($blockSize, 33.33%));
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(auto-fill, minmax($blockSize, 1fr));
+    }
+  }
+
+  &__block {
+    height: $blockSize;
+    min-width: $blockSize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: stretch;
+
+    $iterator: 1;
+    $color: 255;
+    @while $color >= 0 {
+      &:nth-child(#{$iterator}) {
+        background-color: rgb($color, 0, 0);
+      }
+      $iterator: $iterator + 1;
+      $color: $color - 51;
+    }
+  }
+}
