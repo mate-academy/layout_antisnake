@@ -1,0 +1,22 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  grid-auto-flow: row;
+  grid-column-end: auto;
+
+  &__item {
+    text-align: center;
+    line-height: $block-size;
+
+    @for $element from 0 through 5 {
+      &:nth-child(#{$element + 1}) {
+        $color: 255 - 51 * $element;
+        background-color: rgb($color, 0, 0);
+      }
+    }
+  }
+
+  @media (min-width: ($block-size * 3)) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+}
