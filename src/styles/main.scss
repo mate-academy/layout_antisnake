@@ -1,3 +1,36 @@
 body {
   margin: 0;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__card {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 300px;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+        position: absolute;
+        color: #fff;
+      }
+
+      &:nth-child(#{$i}) {
+        $redColor: ((100% / 5) * (6 - $i));
+        background-color: rgb($redColor, 0, 0);
+      }
+    }
+
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
