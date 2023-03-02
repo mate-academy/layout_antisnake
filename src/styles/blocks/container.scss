@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(auto-fill, minmax($boxSize, 1fr));
+
+  &__box {
+    position: relative;
+    height: $boxSize;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    $box-color:
+      "1" 100%,
+      "2" 80%,
+      "3" 60%,
+      "4" 40%,
+      "5" 20%,
+      "6" 0;
+
+    @each $box, $percent in $box-color {
+      &--#{$box} {
+        background-color: rgb($percent, 0%, 0%);
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($boxSize, 1fr));
+  }
+}
