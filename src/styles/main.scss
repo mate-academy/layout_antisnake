@@ -1,3 +1,33 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+
+  @for $index from 1 through 3 {
+    @media (min-width: 300px * $index) {
+      grid-template-columns: repeat($index,1fr);
+    }
+  }
+
+  &__block {
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb(120% - (20% * $index), 0%, 0%);
+      }
+    }
+  }
 }
