@@ -1,0 +1,35 @@
+$blockSize: 300px;
+$c-white: #fff;
+
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 899px) {
+    grid-template-columns: 1fr 1fr ;
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $blockSize;
+    height: $blockSize;
+
+    @for $index from 0 through 5 {
+      &:nth-child(#{$index + 1}) {
+        $cell-color: 255 - 51 * $index;
+        background: rgb($cell-color, 0, 0);
+      }
+
+      &:nth-child(#{$index + 1})::before {
+        content: "#{$index + 1}";
+        color: $c-white;
+      }
+    }
+  }
+}
