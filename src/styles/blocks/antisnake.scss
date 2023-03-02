@@ -1,0 +1,35 @@
+$cell-min-width: 300px;
+$colors:
+   "1" rgb(255, 0, 0),
+   "2" rgb(204, 0, 0),
+   "3" rgb(153, 0, 0),
+   "4" rgb(102, 0, 0),
+   "5" rgb(51, 0, 0),
+   "6" rgb(0, 0, 0);
+
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-min-width, 1fr));
+
+  @media (min-width: ($cell-min-width * 3)) {
+    grid-template-columns: repeat(3, minmax($cell-min-width, 1fr));
+  }
+
+  &__cell {
+    @each $num, $color in $colors {
+      &--color--#{$num} {
+        background-color: #{$color};
+
+        &::before {
+          content: "#{$num}";
+        }
+      }
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+}
