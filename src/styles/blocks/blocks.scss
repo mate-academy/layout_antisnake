@@ -1,0 +1,28 @@
+.blocks {
+  display: grid;
+
+  @media (min-width: (2 * $blockSize)) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: (3 * $blockSize)) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    height: $blockSize;
+    min-width: $blockSize;
+    text-align: center;
+    line-height: $blockSize;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    @for $index from 0 through 5 {
+      &:nth-child(#{$index + 1}) {
+        $cellColor: 255 - 51 * $index;
+        background: rgb($cellColor, 0, 0);
+      }
+    }
+  }
+}
