@@ -1,4 +1,4 @@
-@import "../utils.scss/variables.scss";
+@import "../utils/variables";
 
 .container {
   display: grid;
@@ -35,7 +35,7 @@
     }
   }
 
-  @media (min-width: 1200px ) {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(3, minmax($block-size, 1fr));
   }
 }
