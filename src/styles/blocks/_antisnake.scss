@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+}
+
+html {
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+$block-size: 300px;
+
+.block-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  &__block {
+    display: grid;
+    align-content: center;
+    min-height: $block-size;
+    
+    color: #fff;
+    text-align: center;
+  
+    &--1 {
+      background-color: rgb(255, 0, 0);
+    }
+    
+    &--2 {
+      background-color: rgb(204, 0, 0);
+    }
+    
+    &--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+    }
+    
+    &--5 {
+      background-color: rgb(51, 0, 0);
+    }
+    
+    &--6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+  
+  @media (min-width: (2 * $block-size)) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
+  }
+  
+  @media (min-width: (3 * $block-size)) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+}
+
+@for $index from 1 through 6 {
+  .block-container__block:nth-child(#{$index}):before {
+    content: "#{$index}";
+  }
+}
