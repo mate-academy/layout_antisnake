@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  font-size: 100px;
+  color: #fff;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  body {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
