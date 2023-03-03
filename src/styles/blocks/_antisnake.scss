@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+   
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+  
+  &__card {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    
+
+    &--1 {
+      background-color: $red1;
+    }
+
+    &--2 {
+      background-color: $red2;
+    }
+
+    &--3 {
+      background-color: $red3;
+    }
+
+    &--4 {
+      background-color: $red4;
+    }
+
+    &--5 {
+      background-color: $red5;
+    }
+
+    &--6 {
+      background-color: $red6;
+    }
+  }
+}
