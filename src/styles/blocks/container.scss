@@ -1,38 +1,24 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 33%));
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
   place-content: center;
 
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   &__box {
-    height: 300px;
+    height: $size;
     background-color: red;
     color: white;
     font-size: 100px;
     text-align: center;
-    line-height: 300px;
+    line-height: $size;
 
-    &--1 {
-      background-color: #ff0100;
-    }
-
-    &--2 {
-      background-color: #cc0200;
-    }
-
-    &--3 {
-      background-color: #990001;
-    }
-
-    &--4 {
-      background-color: #670000;
-    }
-
-    &--5 {
-      background-color: #330100;
-    }
-
-    &--6 {
-      background-color: #000;
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
     }
   }
 }
