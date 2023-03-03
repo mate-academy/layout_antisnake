@@ -1,0 +1,27 @@
+$min-block: 300px;
+
+.main {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.main__block {
+  @for $index from 0 through 5 {
+    &:nth-child(#{$index + 1}) {
+      $cell-color: 255 - 51 * $index;
+      background-color: rgb($cell-color, 0, 0);
+    }
+  }
+
+  text-align: center;
+  height: $min-block;
+  min-width: $min-block;
+  line-height: $min-block;
+}
