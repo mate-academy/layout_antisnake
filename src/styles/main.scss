@@ -1,3 +1,35 @@
+$cell-size: 300px;
+
 body {
   margin: 0;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
+  &__item {
+    display: grid;
+    place-items: center;
+    min-height: $cell-size;
+    @for $i from 0 through 6 {
+      &--#{$i} {
+        background-color: rgb(255 - ($i - 1) * 51, 0, 0);
+      }
+      &--#{$i}::before {
+        content: "#{$i}";
+      }
+    }
+  }
+}
+
+@media (min-width: ($cell-size * 3)) {
+  .grid {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
 }
