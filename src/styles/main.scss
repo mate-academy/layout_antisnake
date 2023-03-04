@@ -1,3 +1,38 @@
+html {
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__cell {
+    height: 300px;
+
+    color: #fff;
+    font-size: 100px;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    @for $index from 0 through 5 {
+      &:nth-child(#{$index + 1}) {
+        $cell-color: 255 - 51 * $index;
+        background-color: rgb($cell-color, 0, 0);
+      }
+
+      &:nth-child(#{$index + 1})::before {
+        content: "#{$index + 1}";
+      }
+    }
+  }
 }
