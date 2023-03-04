@@ -1,3 +1,22 @@
-body {
-  margin: 0;
+@import "../styles/normalize.scss";
+@import "../styles/variables.scss";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @media(min-width:900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+  &__item {
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    line-height: 300px;
+
+    @each $number, $color in $backgroundColor {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
 }
