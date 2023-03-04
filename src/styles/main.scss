@@ -1,3 +1,44 @@
 body {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
   margin: 0;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  .grid {
+    display: grid;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    &--number_1 {
+      background-color: rgb(255, 0, 0);
+    }
+    &--number_2 {
+      background-color: rgb(204, 0, 0);
+    }
+    &--number_3 {
+      background-color: rgb(153, 0, 0);
+    }
+    &--number_4 {
+      background-color: rgb(102, 0, 0);
+    }
+    &--number_5 {
+      background-color: rgb(51, 0, 0);
+    }
+    &--number_6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
