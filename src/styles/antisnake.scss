@@ -1,0 +1,25 @@
+@import "./utils/loops";
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  &__item {
+    min-width: $size-snake-item;
+    height: $size-snake-item;
+    line-height: $size-snake-item;
+    text-align: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .snake {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .snake {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
