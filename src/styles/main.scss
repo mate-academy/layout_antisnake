@@ -15,7 +15,7 @@
     }
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 599px) {
     & {
       grid-template-columns: repeat(1, $grid-item-size);
     }
