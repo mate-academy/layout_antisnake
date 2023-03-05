@@ -1,40 +1,38 @@
+$cellWidth: 300px;
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
 }
 
+$colors:
+  "1" rgb(255, 0, 0),
+  "2" rgb(204, 0, 0),
+  "3" rgb(153, 0, 0),
+  "4" rgb(102, 0, 0),
+  "5" rgb(51, 0, 0),
+  "6" rgb(0, 0, 0);
+
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fill, minmax($cellWidth, 1fr));
   
-  &__box1 {
-    height: 300px;
-    background-color: red;
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax($cellWidth, 1fr));
+    }
   }
-  
-  &__box2 {
-    height: 300px;
-    background-color: rgb(80, 0, 20);
-  }
-  
-  &__box3 {
-    height: 300px;
-    background-color: rgb(60, 0, 40);
-  }
-  
-  &__box4 {
-    height: 300px;
-    background-color: rgb(40, 0, 60);
-  }
-  
-  &__box5 {
-    height: 300px;
-    background-color: rgb(20, 0, 80);
-  }
-  
-  &__box6 {
-    height: 300px;
-    background-color: black;
+
+  @each $num, $col in $colors {
+    &__box#{$num} {
+      height: 300px;
+      background-color: #{$col};
+    }
   }
 
   @for $n from 1 through 6 {
