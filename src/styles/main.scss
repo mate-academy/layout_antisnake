@@ -1,3 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Arial, sans-serif;
+  src: url(../fonts/Arial-BoldMT.ttf);
+  font-weight: normal;
+}
+
 body {
+  font-family: Arial, serif;
+  font-weight: 700;
   margin: 0;
+  color: white;
+}
+
+$block-width: 300px;
+$bgc-color-block: #f00;
+
+.antisnake {
+  min-width: $block-width * 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #000;
+
+  @media (max-width: (($block-width * 3) - 0.02px)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: (($block-width * 2) - 0.02px)) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__block {
+    min-width: $block-width;
+    min-height: $block-width;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 100px;
+
+    &--1 {
+      background-color: $bgc-color-block;
+    }
+
+    &--2 {
+      background-color: $bgc-color-block * (4 / 5);
+    }
+
+    &--3 {
+      background-color: $bgc-color-block * (3 / 5);
+    }
+
+    &--4 {
+      background-color: $bgc-color-block * (2 / 5);
+    }
+
+    &--5 {
+      background-color: $bgc-color-block * (1 / 5);
+    }
+  }
+
 }
