@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr);
+  justify-content: center;
+
+  &__box {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @each $name,
+      $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width:600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (min-width:900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
