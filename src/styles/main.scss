@@ -26,10 +26,12 @@ $bgc-color-block: #f00;
 
   @media (max-width: (($block-width * 3) - 0.02px)) {
     grid-template-columns: repeat(2, 1fr);
+    min-width: $block-width * 2;
   }
 
   @media (max-width: (($block-width * 2) - 0.02px)) {
     grid-template-columns: repeat(1, 1fr);
+    min-width: $block-width;
   }
 
   &__block {
