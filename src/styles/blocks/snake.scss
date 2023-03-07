@@ -1,0 +1,33 @@
+.snake {
+
+  display: grid;
+  margin: 0 auto;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  &__box {
+    display: grid;
+    height: 300px;
+    min-width: 300px;
+    font-size: 100px;
+    justify-content: center;
+    align-content: center;
+
+    @each $number, $color in $box-colors {
+      &--box--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (max-width: 899px) and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 599.9px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
