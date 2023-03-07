@@ -1,0 +1,7 @@
+@function maxWidth1 ($size) {
+  @return (($size * 2) - 1) * 1px;
+}
+
+@function maxWidth2 ($size) {
+  @return (($size * 3) - 1) * 1px;
+}
