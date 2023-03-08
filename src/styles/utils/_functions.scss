@@ -1,0 +1,3 @@
+@function breakpoint($colums) {
+  @return ($snake-size * $colums) - 1px;
+}

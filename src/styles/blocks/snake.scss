@@ -1,0 +1,31 @@
+.cage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($snake-size, 1fr));
+
+  @media (max-width: breakpoint(3)) {
+    grid-template-columns: repeat(2, minmax($snake-size, 1fr));
+  }
+
+  @media (max-width: breakpoint(2)) {
+    grid-template-columns: repeat(1, minmax($snake-size, 1fr));
+  }
+  
+  &__snake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $snake-size;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}):before {
+        content: "#{$i}";
+      }
+    }
+
+    @each $snake, $bgc in $snake-bgcs {
+      &:nth-child(#{$snake}) {
+        background-color: $bgc;
+      }
+    }
+  }
+}
