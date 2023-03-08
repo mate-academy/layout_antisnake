@@ -1,0 +1,41 @@
+@import "../utils/reset.scss";
+@import "../utils/normalize";
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-with, auto));
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-with, auto));
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+
+    @for $index from 1 through $block-lenght {
+      &:nth-child(n + #{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    $colors: 
+      "1" 255,
+      "2" 204,
+      "3" 153,
+      "4" 99,
+      "5" 48,
+      "6" 0;
+
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background: rgb($color, 0, 0);
+      }
+    }
+  }
+}
