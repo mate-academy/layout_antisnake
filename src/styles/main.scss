@@ -1,3 +1,60 @@
+$count-column: 3;
+$width-1200: 1200px;
+$width-4096: 4096px;
+$colors:
+  "red" #f00,
+  "red4-black1" rgb(80%, 0, 0),
+  "red3-black2" rgb(60%, 0, 0),
+  "red2-black3" rgb(40%, 0, 0),
+  "red1-black4" rgb(20%, 0, 0),
+  "black" #000;
+
+%display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function minmax-column ($width, $count-column) {
+  @return $width / $count-column;
+}
+
 body {
+  @extend %display-center;
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+
+  @media (min-width: $width-1200) {
+    grid-template-columns: repeat(auto-fill,
+    minmax(minmax-column($width-1200, $count-column), 1fr));
+  }
+
+  @media (min-width: $width-4096) {
+    grid-template-columns: repeat(auto-fill,
+    minmax(minmax-column($width-4096, $count-column), 1fr));
+  }
+
+  &__box {
+    @extend %display-center;
+    height: 300px;
+    font: 100px  Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}):before {
+        content: "#{$i}";
+      }
+    }
+
+    @each $name, $i in $colors {
+      &--#{$name} {
+        background-color: #{$i};
+      }
+    }
+  }
 }
