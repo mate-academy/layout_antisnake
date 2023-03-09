@@ -1,0 +1,26 @@
+$cell-height: 300px;
+$max: #{"min(100%, max("+$cell-height+",100%/3))"};
+// The #{""} - is because npm has problem with 'px' and '%'
+// about checkpoint - 6 I know this variable is used only once
+// but it makes line - 10 to be less then 80 length
+// (that was Volodymyr idea) so I think is fine
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($max, 1fr));
+  &__cell {
+    height: $cell-height;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @for $i from 0 through 5 {
+      &:nth-child(#{6 -$i}) {
+        background-color: rgb($i * 51, 0, 0);
+      }
+    }
+  }
+}
