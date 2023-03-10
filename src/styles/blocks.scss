@@ -1,0 +1,17 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($max, 1fr));
+
+  &__item {
+    height: $height;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @for $color from 0 through 5 {
+      &:nth-child(#{6 - $color}) {
+        background-color: rgb($color * 51, 0, 0);
+      }
+    }
+  }
+}
