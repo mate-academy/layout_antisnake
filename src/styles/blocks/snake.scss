@@ -1,0 +1,37 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .snake__item {
+    height: $item-height;
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: $item-height;
+
+    $colors:
+      "1" #f00,
+      "2" #c00,
+      "3" #900,
+      "4" #600,
+      "5" #300,
+      "6" #000;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: #{$color};
+      }
+    }
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+  }
+}
