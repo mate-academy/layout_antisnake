@@ -1,3 +1,54 @@
+$snake-size: 300px;
+$max: #{"min(100%, max(" + $snake-size + ",100%/3))"};
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($max, 1fr));
+  justify-content: center;
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($max, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax($max, 1fr));
+  }
+
+  &__Element {
+    height: $snake-size;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__Element--1 {
+    background-color: rgb(100%, 0%, 0%);
+  }
+
+  &__Element--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+
+  &__Element--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+
+  &__Element--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+
+  &__Element--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+
+  &__Element--6 {
+    background-color: rgb(0%, 0%, 0%);
+  }
 }
