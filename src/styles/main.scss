@@ -1,3 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.snake__content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.snake__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #fff;
+
+  @for $i from 0 through 5 {
+    &:nth-child(#{$i +1}) {
+      background-color: rgb(100% - $i * 20%, 0, 0);
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .snake__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .snake__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
