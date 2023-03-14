@@ -1,0 +1,12 @@
+.grid-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: $block-size;
+
+  @each $number, $color in $block-color {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
