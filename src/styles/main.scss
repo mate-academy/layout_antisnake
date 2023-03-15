@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+@import "./normalize.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  @for $index from 0 through 6 {
+    &__block:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @for $index from 0 through 6 {
+    &__block:nth-child(#{$index +1}) {
+      $cell-color: 100% - 20% * $index;
+      background-color: rgb($cell-color, 0%, 0%);
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
