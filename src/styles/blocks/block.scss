@@ -1,0 +1,15 @@
+.block {
+  height: $block-height;
+  line-height: $block-height;
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 100px;
+
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      background-color: rgb(100% - ($i - 1) * 20%, 0%, 0%);
+    }
+  }
+}
