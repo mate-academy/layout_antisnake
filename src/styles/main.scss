@@ -32,7 +32,7 @@ body {
   }
 }
 
-@media (max-width: 899px) and (min-width: 600px) {
+@media (max-width: 900px) and (min-width: 600px) {
   .snake {
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(3, fr);
