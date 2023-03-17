@@ -1,0 +1,37 @@
+$box-width: 300px;
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: ($box-width * 2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ($box-width * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    box-sizing: border-box;
+    height: $box-width;
+    text-align: center;
+    line-height: $box-width;
+
+    $colors:
+      1 rgb(255, 0, 0),
+      2 rgb(204, 0, 0),
+      3 rgb(153, 0, 0),
+      4 rgb(102, 0, 0),
+      5 rgb(51, 0, 0),
+      6 rgb(0, 0, 0);
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: $color;
+      }
+    }
+  }
+}
