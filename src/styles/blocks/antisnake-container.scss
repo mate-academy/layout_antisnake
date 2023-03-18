@@ -1,0 +1,45 @@
+@import "./utils/_variables.scss";
+
+.antisnake-container {
+  display: grid;
+  justify-content: start;
+  grid-template-columns: repeat(auto-fill, minmax($min-cell-width, 1fr));
+
+  &__block {
+    line-height: $cell-height;
+    text-align: center;
+    height: $cell-height;
+    font-size: 100px;
+    color: white;
+  }
+  
+  &__block--1 {
+    background-color: red;
+  }
+  
+  &__block--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+  
+  &__block--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+  
+  &__block--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+  
+  &__block--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+  
+  &__block--6 {
+    background-color: black;
+  }
+  
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
