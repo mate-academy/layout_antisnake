@@ -1,0 +1,18 @@
+.box {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.box__item {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+@media (min-width:900px) {
+  .box {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
