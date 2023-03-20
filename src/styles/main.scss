@@ -1,3 +1,11 @@
-body {
-  margin: 0;
+@import"./utils/reset";
+@import"./utils/normalize";
+@import"./utils/variables";
+
+@import"./blocks/block.scss";
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 33%));
 }
