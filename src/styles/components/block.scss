@@ -1,0 +1,31 @@
+.block {
+  height: 300px;
+  width: auto;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+.block--1 {
+  background-color: red;
+}
+
+.block--2 {
+  background-color: rgb(80%, 0%, 0%);
+}
+
+.block--3 {
+  background-color: rgb(60%, 0%, 0%);
+}
+
+.block--4 {
+  background-color: rgb(40%, 0%, 0%);
+}
+
+.block--5 {
+  background-color: rgb(20%, 0%, 0%);
+}
+
+.block--6 {
+  background-color: black;
+}
