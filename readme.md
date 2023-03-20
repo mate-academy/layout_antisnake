@@ -1,5 +1,3 @@
-# Antisnake
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
 - [DEMO LINK](https://Lazarend.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://Lazarend.github.io/layout_antisnake/report/html_report/)
 
