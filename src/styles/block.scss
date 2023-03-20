@@ -1,6 +1,7 @@
 .block {
   display: grid;
   grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  align-items: center;
 
   @media (min-width: 600px) and (max-width: 899px) {
     & {
@@ -21,7 +22,7 @@
     font-size: 100px;
     color: #fff;
     text-align: center;
-    padding: 100px;
+    padding: 90px;
 
     &--number {
       &--1 {
