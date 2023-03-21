@@ -1,0 +1,49 @@
+.box {
+  display: grid;
+
+  %boxes_size {
+    line-height: $height;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $font-size;
+    text-align: center;
+    color: white;
+  }
+
+  &__1 {
+    @extend %boxes_size;
+    background-color: #f00;
+  }
+
+  &__2 {
+    @extend %boxes_size;
+    background-color: rgb(204, 00, 00);
+  }
+
+  &__3 {
+    @extend %boxes_size;
+    background-color: rgb(153, 00, 00);
+  }
+  
+  &__4 {
+    @extend %boxes_size;
+    background-color: rgb(102, 00, 00);
+  }
+  
+  &__5 {
+    @extend %boxes_size;
+    background-color: rgb(51, 00, 00);
+  }
+  
+  &__6 {
+    @extend %boxes_size;
+    background-color: #000;
+  }
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, auto);
+  }
+}
