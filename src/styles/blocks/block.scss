@@ -1,0 +1,26 @@
+.block {
+  color: white;
+  text-align: center;
+  line-height: 300px;
+  font-size: 100px;
+
+  $bg-color:
+    "1" rgb(250,0,0),
+    "2" rgb(200,0,0),
+    "3" rgb(150,0,0),
+    "4" rgb(100,0,0),
+    "5" rgb(50,0,0),
+    "6" rgb(0,0,0);
+
+  @each $number, $color in $bg-color {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+  @for $cell-number from 1 through 6 {
+    &--#{$cell-number}::after {
+      content: "#{$cell-number}";
+      display: block;
+    }
+  }
+}
