@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+
+  @each $containerWidth, $columns in $boxWidthColumns {
+    @media (min-width: $containerWidth) {
+      grid-template-columns: repeat($columns, 1fr);
+    }
+  }
+
+  &__box {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $boxNumber, $colors in $boxColors {
+      &--#{$boxNumber} {
+        background-color: $colors;
+      }
+    }
+  }
+}
