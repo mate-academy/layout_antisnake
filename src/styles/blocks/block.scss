@@ -1,0 +1,16 @@
+.block {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: rgb(255, 255, 255);
+  min-height: $block-height;
+  min-width: $block-height;
+  line-height: $block-height;
+  text-align: center;
+
+  @each $number,
+    $num in $block-number {
+    &--#{$number} {
+      background-color: rgb($num, 0, 0);
+    }
+  }
+}
