@@ -1,0 +1,9 @@
+@each $block, $color in $blocks {
+  &__cell:nth-child(#{$block}) {
+    background-color: $color;
+  }
+
+  &__cell:nth-child(#{$block})::before {
+    content: "#{$block}";
+  }
+}
