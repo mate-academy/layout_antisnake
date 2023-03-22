@@ -7,7 +7,7 @@
     line-height: $height-block;
     height: $height-block;
     min-width: $width-block;
-    color: #ff0;
+    color: #fff;
 
     @each $number, $color in $colors {
       &--#{$number} {
