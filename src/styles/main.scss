@@ -1,3 +1,75 @@
+:root {
+  --columns: 1;
+}
+
+$size: 300px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), calc(100% / var(--columns)));
+
+  @media(min-width: 600px) {
+    --columns: 2;
+  }
+
+  @media(min-width: 900px) {
+    --columns: 3;
+  }
+}
+
+.snakeBlock {
+  height: $size;
+  min-width: $size;
+  display: flex;
+
+  &--1 {
+    background-color: red;
+  }
+
+  &--2 {
+    background-color: #c00;
+  }
+
+  &--3 {
+    background-color: #900;
+  }
+
+  &--4 {
+    background-color: #600;
+  }
+
+  &--5 {
+    background-color: #300;
+  }
+
+  &--6 {
+    background-color: #000;
+  }
+}
+
+.textObject {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  line-height: $size;
+  text-align: center;
 }
