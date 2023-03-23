@@ -1,10 +1,11 @@
 .block {
   height: 300px;
   min-width: 300px;
-}
 
-@each $n, $bg-color in $snek-colors {
-  .block--#{$n} {
-    background-color: #{$bg-color};
+  @each $n, $bg-color in $snek-colors {
+    &--#{$n} {
+      background-color: #{$bg-color};
+    }
   }
+
 }
