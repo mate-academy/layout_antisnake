@@ -1,58 +1,8 @@
+@import "./utils/variables";
+@import "./blocks/container.scss";
+@import "./blocks/block.scss";
+
 body {
   margin: 0;
   padding: 0;
-}
-
-.container {
-  width: 100%;
-  display: grid;
-  justify-content: stretch;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 100px;
-  color: white;
-  text-align: center;
-  line-height: 300px;
-}
-
-.block {
-  height: 300px;
-  min-width: 300px;
-}
-
-.block--1 {
-  background-color: red;
-}
-
-.block--2 {
-  background-color: rgb(80%, 0%, 0%);
-}
-
-.block--3 {
-  background-color: rgb(60%, 0%, 0%);
-}
-
-.block--4 {
-  background-color: rgb(40%, 0%, 0%);
-}
-
-.block--5 {
-  background-color: rgb(20%, 0%, 0%);
-}
-
-.block--6 {
-  background-color: black;
-}
-
-@media (max-width: 899px) {
-  .container {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
-}
-
-@media (max-width: 599px) {
-  .container {
-    grid-template-columns: minmax(300px, 1fr);
-  }
 }
