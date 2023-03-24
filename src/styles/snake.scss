@@ -1,0 +1,44 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__items {
+    height: 300px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+
+    &--first-color {
+      background-color: red;
+    }
+
+    &--second-color {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--third-color {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--fourth-color {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--fifth-color {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--sixth-color {
+      background-color: black;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
