@@ -1,0 +1,10 @@
+.block {
+  @extend %display-grid;
+  @include text-in-center($center-element);
+  
+  @each $index, $color in $colors-blocks {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+}
