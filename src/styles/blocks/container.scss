@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media (min-width: $media-width) {
+    grid-template-columns: repeat($max-row-blocks, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    height: $block-size;
+    min-width: $block-size;
+    justify-content: center;
+
+    @each $number, $color in $block-properties {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+          align-self: center;
+        }
+      }
+    }
+  }
+}
