@@ -1,0 +1,45 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, $size);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, $size);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, $size);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(1) {
+      background-color: hsl(0, 100%, 50%);
+    }
+
+    &:nth-child(2) {
+      background-color: hsl(0, 100%, 40%);
+    }
+
+    &:nth-child(3) {
+      background-color: hsl(0, 100%, 30%);
+    }
+
+    &:nth-child(4) {
+      background-color: hsl(0, 100%, 20%);
+    }
+
+    &:nth-child(5) {
+      background-color: hsl(0, 100%, 10%);
+    }
+
+    &:nth-child(6) {
+      background-color: hsl(0, 100%, 0%);
+    }
+  }
+}
