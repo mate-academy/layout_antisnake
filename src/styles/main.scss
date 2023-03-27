@@ -1,3 +1,43 @@
-body {
+@import "./variables.scss";
+
+.body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width:600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width:900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.box {
+  display: flex;
+  height: 300px;
+  font-size: 100px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $number,$color in $colors {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
 }
