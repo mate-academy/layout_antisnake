@@ -1,0 +1,30 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+  height: 300px;
+  
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i})::before {
+      content: "#{$i}";
+    }
+  }
+
+  $colors:
+    "1" hsl(0, 100%, 50%),
+    "2" hsl(0, 90%, 40%),
+    "3" hsl(0, 80%, 30%),
+    "4" hsl(0, 70%, 20%),
+    "5" hsl(0, 60%, 10%),
+    "6" hsl(0, 100%, 0%);
+
+  @each $i,
+    $color in $colors {
+    &:nth-child(#{$i}) {
+      background-color: $color;
+    }
+  }
+}
