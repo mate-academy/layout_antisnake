@@ -1,0 +1,31 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    position: relative;
+    height: 300px;
+    justify-content: center;
+    align-content: center;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}):after {
+        content: "#{$index}";
+        display: block;
+        color: #fff;
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      &:nth-child(#{$index}) {
+        $k: calc((6 - #{$index}) * 0.2 * 255);
+        background-color: rgb($k, 0, 0);
+      }
+    }
+  }
+}
