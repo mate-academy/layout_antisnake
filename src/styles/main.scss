@@ -9,62 +9,63 @@ body {
 
 .squares {
   display: grid;
-  max-width: 900px;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(2, 300px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   justify-content: center;
+  width: 100%;
+  height: 600px;
   margin: auto;
-
 }
 
 .square {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 300px;
   text-align: center;
   font-size: 100px;
   color: white;
 }
 
-.square_1 {
+.square--1 {
   background-color: red;
 
 }
 
-.square_2 {
+.square--2 {
   background-color: #c00 ;
 }
 
-.square_3 {
+.square--3 {
   background-color: #900;
 }
 
-.square_6 {
+.square--6 {
   background-color: #000;
 
 }
 
-.square_5 {
+.square--5 {
   background-color: #300000;
 
 }
 
-.square_4 {
+.square--4 {
   background-color: #600000;
 }
 
 @media (max-width: 899px) {
   .squares {
-    grid-template-columns: repeat(2 , 300px);
-    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: repeat(2 , 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 900px;
   }
 }
 
 @media (max-width: 599px) {
   .squares {
-    grid-template-columns: repeat(1 , 300px);
-    grid-template-rows: repeat(6, 300px);
+    grid-template-columns: repeat(1 , 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 1200px;
   }
 }
-
-
