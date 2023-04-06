@@ -1,0 +1,19 @@
+.row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 300px);
+
+  @media(min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    color: $text-color;
+  }
+}
