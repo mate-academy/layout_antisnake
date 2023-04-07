@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-size, 1fr));
+  grid-auto-rows: $cell-size;
+
+  @media (min-width: ($max-cols * $cell-size)) {
+    grid-template-columns: repeat($max-cols, 1fr);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f00;
+
+    $colors:
+      #c00 80,
+      #900 60,
+      #600 40,
+      #300 20,
+      #000 0;
+
+    @each $color, $percent in $colors {
+      &--red-percent--#{$percent} {
+        background-color: $color;
+      }
+    }
+  }
+}
