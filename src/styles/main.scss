@@ -1,3 +1,19 @@
+@import "./variables/variables";
+@import "./variables/functions";
+@import "./antisnake/antisnake.scss";
+
 body {
   margin: 0;
+}
+
+@media (max-width: 899px) {
+  .antisnake {
+    grid-template-columns: repeat(2, minmax($size, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .antisnake {
+    grid-template-columns: 1fr;
+  }
 }

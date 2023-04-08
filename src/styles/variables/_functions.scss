@@ -1,0 +1,8 @@
+@for $i from 1 through 6 {
+  .antisnake__item:nth-child(#{$i}) {
+    background-color: map-get($colors , $i) ;
+    &:before {
+      content: "#{$i}";
+    }
+  }
+}
