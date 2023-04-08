@@ -1,0 +1,33 @@
+.snakes {
+  display: grid;
+  grid-template-columns: repeat(auto, minmax(300px, 1fr));
+  justify-content: center;
+
+  &-snake {
+    height: 300px;
+    background-color: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__snake2 {
+    background-color: #c00 ;
+  }
+
+  &__snake3 {
+    background-color: #900 ;
+  }
+
+  &__snake4 {
+    background-color: #600 ;
+  }
+
+  &__snake5 {
+    background-color: #300 ;
+  }
+
+  &__snake6 {
+    background-color: #000 ;
+  }
+}

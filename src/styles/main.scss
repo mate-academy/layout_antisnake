@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./utiles/function.scss";
+@import "./utiles/normalize.scss";
+
+@import "./blocks/snake.scss";
