@@ -1,3 +1,44 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($grid-item--min-width, 1fr));
+  color: #fff;
+  font-size: 100px;
+
+  @media (min-width:900px) {
+    grid-template-columns: repeat(
+      $grid-column-quantity,
+      minmax($grid-item--min-width, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    height: $block-height;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+  }
+
+  @for $index from 1 through 6 {
+    &__block:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+
+    &__block:nth-child(#{$index}) {
+      background-color: #{mix(#000,#f00, ($index - 1) * 20%)};
+    }
+  }
 }
