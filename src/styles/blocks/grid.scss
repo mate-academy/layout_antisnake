@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($default-height, 1fr));
+  justify-items: center;
+  align-items: center;
+  &__item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    height: $default-height;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background: rgb(calc(255 - #{$i - 1} * 51), 0, 0);
+      }
+    }
+  }
+  @media (max-width: calc(#{$default-height} * 3 - 1px)) {
+    grid-template-columns: repeat(2, minmax($default-height, 1fr));
+  }
+  @media (max-width: calc(#{$default-height} * 2 - 1px)) {
+    grid-template-columns: repeat(1, minmax($default-height, 1fr));
+  }
+}
