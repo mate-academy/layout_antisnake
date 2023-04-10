@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+
+    @for $index from 1 through 6 {
+      &--#{$index}::before {
+        content: "#{$index}";
+        font-size: 100px;
+        color: #fff;
+        align-self: center;
+      }
+
+      &--#{$index} {
+        background-color: rgb(calc(255 - #{$index - 1} * 51), 0, 0);
+      }
+    }
+  }
+}
