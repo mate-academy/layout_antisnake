@@ -1,0 +1,22 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: row;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: 300px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb(255 - ($index - 1) * 51, 0, 0);
+      }
+    }
+  }
+}
