@@ -1,3 +1,47 @@
+$colors:
+  "1" "#ff0000",
+  "2" "#cc0000",
+  "3" "#990000",
+  "4" "#660000",
+  "5" "#330000",
+  "6" "#000000";
+
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 300px 300px 300px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  align-content: center;
+
+  @media (min-width: 1050px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__item {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @each $color, $value in $colors {
+    &__item--#{$color} {
+      background-color: #{$value};
+    }
+  }
+
+  @for $index from 1 to 7 {
+    &__item:nth-child(n+#{$index})::before {
+      content: "#{$index}";
+      position: absolute;
+    }
+  }
 }
