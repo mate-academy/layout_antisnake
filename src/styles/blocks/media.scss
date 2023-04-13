@@ -1,0 +1,6 @@
+@media (min-width: 900px) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(3, minmax($min-height-width, 1fr));
+  }
+}
