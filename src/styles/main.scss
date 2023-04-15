@@ -1,3 +1,42 @@
+$colors:
+  red 1,
+  #c00 2,
+  #900 3,
+  #600 4,
+  #300 5,
+  #000 6;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.block {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  @each $color, $index in $colors {
+    &--#{$index} {
+      background-color: $color;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 33.33%));
+  }
 }
