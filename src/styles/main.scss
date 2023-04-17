@@ -6,43 +6,54 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-flow: row;
+
+  @media (min-width:600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (min-width:900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
 }
 
 .block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: red;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
-  justify-content: center;
-  align-items: center;
+  height: 300px;
   color: white;
-}
 
-.block--1 {
-  background-color: red;
-  order: 1;
-}
+  &--1 {
+    background-color: red;
+    order: 1;
+  }
 
-.block--2 {
-  background-color: rgb(204, 0, 0);
-  order: 2;
-}
+  &--2 {
+    background-color: rgb(204, 0, 0);
+    order: 2;
+  }
 
-.block--3 {
-  background-color: rgb(153, 0, 0);
-  order: 3;
-}
+  &--3 {
+    background-color: rgb(153, 0, 0);
+    order: 3;
+  }
 
-.block--4 {
-  background-color: rgb(102, 0, 0);
-  order: 4;
-}
+  &--4 {
+    background-color: rgb(102, 0, 0);
+    order: 4;
+  }
 
-.block--5 {
-  background-color: rgb(51, 0, 0);
-  order: 5;
-}
+  &--5 {
+    background-color: rgb(51, 0, 0);
+    order: 5;
+  }
 
-.block--6 {
-  background-color: black;
-  order: 6;
+  &--6 {
+    background-color: black;
+    order: 6;
+  }
 }
