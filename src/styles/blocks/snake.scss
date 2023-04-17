@@ -1,0 +1,19 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+  max-width: 900px;
+
+  @media (min-width: 901px) {
+    grid-template-columns: repeat(auto-fill, minmax(33.33%, 1fr));
+    max-width: none;
+  }
+}
+
+.snake__cell {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: $cell-size;
+  height: $cell-size;
+  min-width: $cell-size;
+  color: $color-white;
+}
