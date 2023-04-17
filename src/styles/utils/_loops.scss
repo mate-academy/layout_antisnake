@@ -1,0 +1,13 @@
+@for $i from 1 through 6 {
+  .snake__cell:nth-child(#{$i})::before {
+    content: "#{$i}";
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+  }
+}
+
+@each $color, $number in $colors {
+  .snake__cell--#{$number} {
+    background-color: #{$color};
+  }
+}
