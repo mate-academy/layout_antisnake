@@ -1,3 +1,39 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+
+  &__block {
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+    min-width: 300px;
+  }
+
+  @for $i from 1 through 6 {
+    &__block--#{$i} {
+      background-color: rgb((100% - (($i - 1) * 20%)), 0%, 0%);
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
