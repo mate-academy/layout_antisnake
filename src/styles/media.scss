@@ -1,0 +1,31 @@
+@media screen and (max-width: 899px) {
+  .snake {
+    grid-template-columns: 1fr 1fr;
+
+    &__block--3 {
+      order: 1;
+    }
+
+    &__block--4 {
+      order: 2;
+    }
+
+    &__block--5 {
+      order: 3;
+    }
+
+    &__block--6 {
+      order: 4;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .snake {
+    grid-template-columns: 1fr;
+
+    &__block--4 {
+      order: 3;
+    }
+  }
+}
