@@ -1,0 +1,44 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: minmax($item-height, 1fr);
+
+  @media (min-width: ($item-height * 2)) {
+    grid-template-columns: repeat(2, minmax($item-height, 1fr));
+  }
+
+  @media (min-width: ($item-height * 3)) {
+    grid-template-columns: repeat(3, minmax($item-height, 1fr));
+  }
+
+  &__item {
+    height: $item-height;
+
+    &::before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      color: #fff;
+    }
+
+    $items:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+
+    @each $item, $color in $items {
+      &:nth-child(#{$item}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$item}";
+        }
+      }
+    }
+  }
+}
