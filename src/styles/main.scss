@@ -1,3 +1,30 @@
+$min-width: 300px;
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.container {
+  display: grid;
+  grid: auto-flow / repeat(auto-fit, minmax($min-width, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @for $child from 1 through 6 {
+    &__box:nth-child(#{$child}) {
+      background-color: rgb(255 * (6 - $child) / 5, 0, 0);
+    }
+  }
 }
