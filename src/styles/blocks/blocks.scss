@@ -1,0 +1,55 @@
+@import "../utils/variables";
+
+.blocks {
+  display: grid;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $full-width;
+    min-width: $block-size;
+    height: $block-size;
+
+    background-color: red;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    &--2 {
+      background-color: #c00;
+    }
+
+    &--3 {
+      background-color: #900;
+    }
+
+    &--4 {
+      background-color: #600;
+    }
+
+    &--5 {
+      background-color: #300;
+    }
+
+    &--6 {
+      background-color: black;
+    }
+
+    @media (min-width: $two-columns-min-width) {
+      width: $half-width;
+    }
+
+    @media (min-width: $three-columns-min-width) {
+      width: $one-from-three-width;
+    }
+  }
+
+  @media (min-width: $two-columns-min-width) {
+    grid-template-columns: repeat(2, $half-width);
+  }
+
+  @media (min-width: $three-columns-min-width) {
+    grid-template-columns: repeat(3, $one-from-three-width);
+  }
+}
