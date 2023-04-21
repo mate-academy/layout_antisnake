@@ -1,3 +1,32 @@
+@import "utils/_variables.scss";
+
 body {
   margin: 0;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-width: 300px;
+
+  &__box {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 300px;
+    font-family: "Aerial", sans-serif;
+    font-size: 100px;
+    color: #fff;
+  
+    @each $i, $color in $colors {
+      &--#{$i} {
+        background-color: $color;
+      }
+    }
+  }
+}
+@media (min-width: 900px) {
+  .boxes {
+    grid-template-columns: repeat(3,minmax(300px,1fr));
+  }
 }
