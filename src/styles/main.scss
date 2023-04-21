@@ -24,7 +24,7 @@ body {
   grid-auto-flow: row;
 
   &__block {
-    grid-auto-rows: 300px;
+    height: 300px;
 
     @each $color, $value in $colors {
       &--#{$color} {
@@ -35,11 +35,9 @@ body {
         line-height: 300px;
       }
     }
-    @media (min-width: 900px) {
-      &--4 {
-        grid-column: 1;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      }
-    }
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+
   }
 }
