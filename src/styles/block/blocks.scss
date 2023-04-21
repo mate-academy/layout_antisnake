@@ -1,0 +1,30 @@
+.blocks {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+
+  @media (min-width: ($height * 4)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    height: $height;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+
+      &:nth-child(#{$number})::after {
+        content: "#{$number}";
+        color: white;
+      }
+    }
+  }
+}
