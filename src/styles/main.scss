@@ -13,7 +13,7 @@ $block-count: 6;
 .container {
   display: grid;
   justify-content: center;
-  grid: minmax(300px, max-content) / repeat(auto-fill, minmax(300px, 1fr));
+  grid: max-content / repeat(auto-fill, minmax(300px, 1fr));
 
   @media (min-width: 900px) {
     grid-template-columns: repeat(3, 1fr);
