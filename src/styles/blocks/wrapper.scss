@@ -1,0 +1,15 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax($min-width-grid,$max-width-grid);
+
+  @media (min-width: $two-columns) and (max-width: #{$three-columns - 1}) {
+    grid-template-columns: minmax($min-width-grid,$max-width-grid)
+      minmax($min-width-grid,$max-width-grid);
+  }
+
+  @media (min-width: $three-columns) {
+    grid-template-columns: minmax($min-width-grid,auto)
+      minmax($min-width-grid,auto)
+      minmax($min-width-grid,auto);
+  }
+}
