@@ -1,3 +1,6 @@
-body {
-  margin: 0;
-}
+@import "./utils/variables";
+@import "./utils/function";
+@import "./utils/normalize";
+
+@import "./block/page.scss";
+@import "./block/cards.scss";

@@ -1,0 +1,23 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit, minmax(#{"max(300px, 100% / 3)"} ,1fr)
+  );
+
+  grid-auto-rows: 300px;
+
+  font-size: $card-font-size;
+  color: white;
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: calculateColor($index, 6);
+      }
+    }
+  }
+}
