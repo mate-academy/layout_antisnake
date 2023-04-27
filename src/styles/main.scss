@@ -1,3 +1,53 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+.box {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-width: 300px;
+
+  &__card-1 {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  &__card-2 {
+    background-color: rgb(204, 0, 0);
+  }
+  
+  &__card-3 {
+    background-color: rgb(153, 0, 0);
+  }
+  
+  &__card-4 {
+    background-color: rgb(102, 0, 0);
+  }
+  
+  &__card-5 {
+    background-color: rgb(51, 0, 0);
+  }
+  
+  &__card-6 {
+    background-color: rgb(0, 0, 0);
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.card {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 300px;
+  box-sizing: border-box;
 }
