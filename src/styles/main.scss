@@ -7,7 +7,8 @@ body {
 .box {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill , 300px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-width: 300px;
 
   &__card-1 {
     background-color: rgb(255, 0, 0);
@@ -32,10 +33,18 @@ body {
   &__card-6 {
     background-color: rgb(0, 0, 0);
   }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
 
 .card {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   color: white;
