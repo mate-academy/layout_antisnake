@@ -6,7 +6,7 @@
 
   grid-template-areas: "block1 block2 block3" "block4 block5 block6";
 
-  @media (min-width: 600px) and (max-width: 899px) {
+  @media (max-width: 899px) {
     & {
       grid-template-columns: 50%  50%;
       grid-template-rows: $row-height $row-height $row-height;
