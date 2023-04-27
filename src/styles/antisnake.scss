@@ -1,0 +1,32 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: ($block-height * 2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ($block-height * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $block-height;
+    text-align: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    line-height: $block-height;
+    color: #fff;
+
+    @each $number, $color in $block-color {
+      &--#{$number} {
+        background-color: $color;
+
+        &::after {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
+}
