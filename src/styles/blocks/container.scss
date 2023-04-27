@@ -1,0 +1,51 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($heigth-block, 1fr));
+
+  &__block-1 {
+    height: $heigth-block;
+    background-color: red;
+  }
+
+  &__block-2 {
+    height: $heigth-block;
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__block-3 {
+    height: $heigth-block;
+    background-color: rgb(153, 0, 0);
+  }
+
+  &__block-4 {
+    height: $heigth-block;
+    background-color: rgb(102, 0, 0);
+  }
+
+  &__block-5 {
+    height: $heigth-block;
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__block-6 {
+    height: $heigth-block;
+    background-color: black;
+  }
+
+  @for $index from 1 through 6 {
+    &__block-#{$index} {
+      font-family: Arial, sans-serif;
+      font-size: 100px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
