@@ -1,0 +1,12 @@
+.block {
+  height: $min-width-grid;
+  text-align: center;
+  line-height: $min-width-grid;
+  background-color: red;
+
+  @for $index from 2 through 6 {
+    &--#{$index} {
+      background-color: rgb(300 - $index * 50, 0, 0);
+    }
+  }
+}
