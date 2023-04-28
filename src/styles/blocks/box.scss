@@ -1,0 +1,21 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+
+    @for $index from 0 through 5 {
+      &--#{$index + 1} {
+        background-color: rgb(255 - $index * 51, 0, 0);
+      }
+    }
+  }
+}
