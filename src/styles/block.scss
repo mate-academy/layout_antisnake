@@ -1,0 +1,26 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-size, 1fr));
+  grid-template-rows: repeat(auto-fill, $card-size);
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $card-size;
+
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+    @each $index, $color in $colors {
+      &--color-#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
