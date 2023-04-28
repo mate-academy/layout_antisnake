@@ -1,0 +1,27 @@
+.page {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax($block-width, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: 300px;
+    min-width: $block-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    @for $i from 1 through 6 {
+      &--color-#{$i} {
+        background-color: rgb(calc(306 - (51 * #{$i})), 0, 0);
+        &::after {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
+}
