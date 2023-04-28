@@ -3,11 +3,11 @@
   justify-content: center;
   grid-template-columns: 1fr;
 
-  @media (min-width: 600px) {
+  @media (min-width: (2 * $block-height)) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: (3 * $block-height)) {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -26,11 +26,10 @@
       }
     }
 
-    @each $i, $color in $colors {
+    @for $i from 1 through 6 {
       &:nth-child(#{$i}) {
-        background-color: $color;
+        background-color: rgb(300 - $i * 51, 0, 0);
       }
     }
   }
-
 }
