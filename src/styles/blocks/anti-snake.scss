@@ -1,0 +1,26 @@
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,
+  minmax($block-side-size, $block-max-width) );
+  grid-auto-rows: $block-side-size;
+
+  &__block {
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+    color: #fff;
+
+    @for $count from 1 through 6 {
+      &:nth-child(#{$count})::before {
+        content: "#{$count}";
+      }
+    }
+
+    @each $name, $color in $mix-colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+  }
+}
