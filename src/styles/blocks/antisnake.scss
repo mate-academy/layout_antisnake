@@ -1,0 +1,53 @@
+@import "../utils/variables.scss";
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+
+  &_box {
+    height: 300px;
+    display: block;
+    text-align: center;
+    line-height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    // @each $number, $color in $colors {
+    //   &--#{$number} {
+    //     background-color: $color;
+    //   }
+    // }
+
+    &--1 {
+      background-color: red;
+    }
+    &--2 {
+      background-color: #c00;
+    }
+    &--3 {
+      background-color: #900;
+    }
+    &--4 {
+      background-color: #600;
+    }
+    &--5 {
+      background-color: #300;
+    }
+    &--6 {
+      background-color: #000;
+    }
+
+  }
+}
+
+@media  (min-width: 600px) {
+  .antisnake {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media  (min-width: 900px) {
+  .antisnake {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
