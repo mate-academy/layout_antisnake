@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  @media(min-width: #{$block-size * 3}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-size;
+
+    $colors:
+      1 #f00,
+      2 #c00,
+      3 #900,
+      4 #600,
+      5 #300,
+      6 #000;
+
+    @each $day, $color in $colors {
+      &--#{$day} {
+        background-color: $color;
+
+        &::before {
+          content: "#{$day}";
+        }
+      }
+    }
+  }
+}
