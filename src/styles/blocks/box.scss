@@ -1,0 +1,44 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  @extend %typography;
+}
+
+.block {
+  height: 300px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+      grid-template-rows: repeat(2);
+  }
+
+  &__item-1 {
+    background-color: red;
+  }
+
+  &__item-2 {
+    background-color: #c00;
+  }
+
+  &__item-3 {
+    background-color: #900;
+  }
+
+  &__item-4 {
+    background-color: #600;
+  }
+
+  &__item-5 {
+    background-color: #300;
+  }
+
+  &__item-6 {
+    background-color: black;
+  }
+}
