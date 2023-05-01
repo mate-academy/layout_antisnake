@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: repeat(1, minmax($block-min-width, $block-max-width));
 
-  @media (min-width: 450px) and (max-width: 750px) {
+  @media (min-width: 451px) and (max-width: 751px) {
     grid-template-columns: repeat(
       2,
       minmax($block-min-width, $block-max-width)
     );
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 751px) {
     grid-template-columns: repeat(
       3,
       minmax($block-min-width, $block-max-width)
