@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+  grid-template-rows: repeat(auto-fill, $block-height);
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    @each $i, $color in $colors {
+      &--color-#{$i} {
+        background-color: $color;
+      }
+    }
+  }
+}
