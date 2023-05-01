@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($height-block, 1fr));
+
+  @media (max-width: 899.2px) {
+    grid-template-columns: repeat(2, minmax($height-block, 1fr));
+  }
+
+  @media (max-width: 599.2px) {
+    grid-template-columns: repeat(1, minmax($height-block, 1fr));
+  }
+}
