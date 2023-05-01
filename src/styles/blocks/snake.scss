@@ -1,0 +1,24 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($box-min-width, $box-max-width));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($box-min-width, $box-max-width));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax($box-min-width, $box-max-width));
+  }
+
+  &__box {
+    display: grid;
+    place-items: center;
+    height: $box-height;
+
+    @each $box-number, $color in $box-colors {
+      &--#{$box-number} {
+        background-color: $color;
+      }
+    }
+  }
+}
