@@ -1,7 +1,7 @@
 # Antisnake
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_antisnake/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_antisnake/report/html_report/)
+Replace `RoksolanaTylipska` with your Github username and copy the links to Pull Request description:
+- [DEMO LINK](https://RoksolanaTylipska.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://RoksolanaTylipska.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
