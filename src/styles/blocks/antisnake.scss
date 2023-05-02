@@ -1,0 +1,34 @@
+
+.antisnake {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__elem {
+    height: $elem-height;
+
+    font-size: 100px;
+    text-align: center;
+    line-height: $elem-height;
+    font-family: Arial, sans-serif;
+
+    color: #fff;
+    @each $num, $color in $elem-colors {
+      &--#{$num} {
+        background-color: $color;
+      }
+    }
+  }
+}
