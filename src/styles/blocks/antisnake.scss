@@ -1,0 +1,35 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(minmax($box-size, 1fr));
+
+  &__item {
+    display: grid;
+    height: $box-size;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb((100% - 20% * ($index - 1)), 0, 0);
+      }
+    }
+
+    @for $index from 1 through $elements-quantity {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 100px;
+    color: white;
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($box-size, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+}
