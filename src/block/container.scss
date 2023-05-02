@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill,minmax($box-width,1fr));
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+.container__box {
+  height: $box-height;
+  min-width: $box-width;
+  text-align: center;
+  line-height: $box-height;
+  color: white;
+
+  @for $i from 0 through 6 {
+    &--#{$i} {
+      background-color: rgb(calc(306 - #{$i * 51}), 0, 0);
+      &::after {
+        content: "#{$i}";
+      }
+    }
+  }
+}
