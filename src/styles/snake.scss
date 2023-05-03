@@ -1,15 +1,15 @@
 .snake {
   display: grid;
-  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  grid-template-columns: repeat(1, minmax($snake-cell-width, 1fr));
   justify-content: center;
 
   &__block {
     display: grid;
     align-items: center;
     justify-content: center;
-    list-style: none;
+    height: $snake-cell-width;
     color: #fff;
-    height: 300px;
+    list-style: none;
 
     &--color--1 {
       background-color: #f00;
@@ -39,12 +39,12 @@
 
 @media (min-width: 600px) {
   .snake {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax($snake-cell-width, 1fr));
   }
 }
 
 @media (min-width: 900px) {
   .snake {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax($snake-cell-width, 1fr));
   }
 }
