@@ -1,3 +1,41 @@
+$blockSize: 300px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(minmax($blockSize, 1fr));
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($blockSize, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($blockSize, 1fr));
+  }
+
+  &__block {
+    height: $blockSize;
+    color: #fff;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb((100% - 20% * ($i - 1)), 0, 0);
+      }
+    }
+  }
 }
