@@ -1,3 +1,50 @@
+$height: 300px;
+@function getColor($index) {
+  @return 255 / $index;
+}
+
 body {
   margin: 0;
+  font-family: Arial, serif;
+  font-size: 100px;
+}
+
+.block-container {
+  display: grid;
+  min-width: $height;
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.block {
+  color: white;
+
+  $eachBlockColor :
+    1 rgb(255, 0, 0),
+    2 rgb(204, 0, 0),
+    3 rgb(153, 0, 0),
+    4 rgb(102, 0, 0),
+    5 rgb(51, 0, 0),
+    6 rgb(0, 0, 0);
+
+  @for $i from 1 through 6 {
+    &:nth-of-type(#{$i}):after {
+      content: "#{$i}";
+    }
+  }
+
+  @each $number, $bgc in $eachBlockColor {
+    &:nth-of-type(#{$number}):after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: $height;
+      background-color: #{$bgc};
+    }
+  }
 }
