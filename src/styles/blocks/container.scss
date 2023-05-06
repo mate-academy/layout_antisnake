@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+  
+  @media all and (min-width: 1199px) {
+    grid-template-columns: repeat(3, minmax($cell-size, 1fr));
+  }
+  
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $cell-size;
+    
+    &::before {
+      content: "1";
+      color: $cell-content-color;
+    }
+    
+    @for $i from 1 through 6 {
+      &:nth-child(1n + #{$i})::before {
+        content: "#{$i}";
+      }
+    }
+  
+    @for $i from 1 through 6 {
+      $base-color: rgb(255 - (($i - 1) * 51), 0, 0);
+      &:nth-child(#{$i}) {
+        background-color: $base-color;
+      }
+    }
+  }
+}
