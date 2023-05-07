@@ -1,0 +1,19 @@
+.block {
+  height: $antisnake-side;
+  display: flex;
+  justify-content: center;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index}) {
+      background-color: rgb((100% - (20% * ($index - 1))), 0%, 0%);
+    }
+
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      line-height: $antisnake-side;
+      color: white;
+    }
+  }
+}
