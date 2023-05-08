@@ -1,0 +1,56 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media (max-width: 899px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 599px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+}
+
+.antisnake__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 300px;
+  font-size: 100px;
+}
+
+.first {
+  background-color: #f00;
+}
+
+.second {
+  background-color: rgb(80%, 0, 0);
+}
+
+.third {
+  background-color: rgb(60%, 0, 0);
+}
+
+.fours {
+  background-color: rgb(40%, 0, 0);
+}
+
+.fifth {
+  background-color: rgb(20%, 0, 0);
+}
+
+.six {
+  background-color: rgb(0, 0, 0);
+}
