@@ -1,0 +1,18 @@
+.antisnake {
+  &_item {
+    height: 300px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @each $number, $precent_colors in $colors {
+      &--color_#{$number} {
+        background-color: rgb(255 * ($precent_colors/5), 0, 0);
+      }
+    }
+  }
+}
