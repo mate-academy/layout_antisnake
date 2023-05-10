@@ -1,5 +1,5 @@
 # Antisnake
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
+Replace `your_account>` with your Github username and copy the links to Pull Request description:
 - [DEMO LINK](https://valeraviachalo.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://valeraviachalo.github.io/layout_antisnake/report/html_report/)
 
