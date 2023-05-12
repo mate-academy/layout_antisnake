@@ -1,6 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
 
   &__block-1 {
     height: $height-block;
@@ -33,9 +34,19 @@
   }
 
   &__block-number {
-    text-align: center;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-size: 100px;
     color: #fff;
+  }
+  
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
