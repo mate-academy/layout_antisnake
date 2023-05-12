@@ -1,3 +1,28 @@
 body {
   margin: 0;
 }
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @for $i from 1 through 6 {
+      &:nth-last-child(#{$i}) {
+        background-color: hsl(0, 100%, ($i - 1) / 5 * 50);
+      }
+    }
+  }
+}
