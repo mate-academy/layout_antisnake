@@ -1,0 +1,14 @@
+.block {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+}
