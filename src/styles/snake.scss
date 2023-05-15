@@ -1,0 +1,42 @@
+.main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat($blocks-in-row, minmax($block-width, 1fr));
+  }
+}
+
+.block {
+  display: grid;
+  align-items: center;
+  height: $block-height;
+  text-align: center;
+  font-size: 100px;
+  color: #fff;
+}
+
+.block--1 {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.block--2 {
+  background-color: hsl(0, 90%, 40%);
+}
+
+.block--3 {
+  background-color: hsl(0, 80%, 30%);
+}
+
+.block--4 {
+  background-color: hsl(0, 70%, 20%);
+}
+
+.block--5 {
+  background-color: hsl(0, 90%, 10%);
+}
+
+.block--6 {
+  background-color: hsl(0, 100%, 0%);
+}
