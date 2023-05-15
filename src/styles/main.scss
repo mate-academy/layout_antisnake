@@ -1,3 +1,30 @@
+@import "./utils/variables";
+
 body {
   margin: 0;
+  font-size: 100px;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  line-height: 300px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid: auto-flow / repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    height: $box-height;
+    min-width: $box-height;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb(calc(255 - (51 * (#{$index} - 1))), 0, 0);
+      }
+    }
+  }
 }
