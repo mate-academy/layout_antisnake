@@ -1,20 +1,19 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &__item {
     height: $grid-item-height;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: $grid-item-height;
+    color: $text-color-white;
+  }
 
-    @for $grid-item-count from 1 through 6 {
-      &:nth-child(#{$grid-item-count})::before {
-        display: block;
-        content: "#{$grid-item-count}";
-        font-family: Arial, sans-serif;
-        font-size: 100px;
-        text-align: center;
-        line-height: $grid-item-height;
-        color: $text-color-white;
-      }
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
