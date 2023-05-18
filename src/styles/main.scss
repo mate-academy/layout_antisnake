@@ -1,3 +1,41 @@
+$baseSquareSize: 300px;
+
+@function colors($color) {
+  @return 255 - 51 * ($color - 1);
+}
+
 body {
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($baseSquareSize, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $baseSquareSize;
+    position: relative;
+  }
+
+  @for $n from 1 through 6 {
+    &__block--#{$n}::before {
+      position: absolute;
+      content: "#{$n}";
+      width: 100%;
+      text-align: center;
+      line-height: $baseSquareSize;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      color: #fff;
+      background-color: rgb(colors($n), 0, 0);
+    }
+  }
 }
