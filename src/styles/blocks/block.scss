@@ -1,12 +1,21 @@
 .container {
+  display: grid;
   width: 100%;
+  grid-template-columns: repeat(auto-fill,300px);
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr;
+  grid-template-areas: "block-1"
+    "block-2"
+    "block-3"
+    "block-4"
+    "block-5"
+    "block-6";
 
   &__block {
     display: grid;
     grid-auto-flow: row;
     justify-content: center;
     align-content: center;
-
     color: white;
     height: 300px;
   }
@@ -42,9 +51,14 @@
   background-color: #000;
 }
 
+@media (min-width:300px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (min-width:600px) {
   .container {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "block-1 block-2" "block-3 block-4" "block-5 block-6";
