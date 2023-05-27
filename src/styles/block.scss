@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-height, 1fr));
+
+  &__block {
+    height: $block-height;
+    text-align: center;
+    line-height: $block-height;
+    color: #fff;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @each $color-name, $color-code in $block-color {
+    &__block--#{$color-name} {
+      background-color: $color-code;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($block-height, 1fr));
+  }
+}
