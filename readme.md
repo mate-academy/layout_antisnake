@@ -6,7 +6,7 @@ Replace `<your_account>` with your Github username and copy the links to Pull Re
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
 
-## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
+## ❗️❗️❗️ This task does not require an approval of mentor and is automatically approved on the platform when the tests are passed❗️❗️❗️
 
 ## The task
 Display six colored blocks on the screen without any extra margins:
