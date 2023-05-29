@@ -1,0 +1,24 @@
+@import "../styles/utils/variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  font-size: $text-size;
+  color: $text-color;
+  text-align: center;
+  line-height: $block-size;
+
+  @import "../styles/utils/loops";
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, minmax($block-size, 1fr));
+    }
+  }
+  
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, minmax($block-size, 1fr));
+    }
+  }
+}
