@@ -1,3 +1,31 @@
-body {
-  margin: 0;
+@import "./utils/reset.scss";
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+
+  @media (min-width: 1190px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    line-height: 300px;
+    text-align: center;
+
+    $colors:
+      1 red,
+      2 rgb(204, 0, 0),
+      3 rgb(153, 0, 0),
+      4 rgb(102, 0, 0),
+      5 rgb(51, 0, 0),
+      6 black;
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
 }
