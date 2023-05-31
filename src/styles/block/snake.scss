@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
+.anti-snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size-block, 1fr));
+  grid-template-rows: repeat(2, $size-block);
+  justify-content: center;
+
+  &__item {
+    text-align: center;
+    line-height: $size-block;
+
+    @for $numBlock from 1 through $squares-num {
+      &:nth-child(#{$numBlock})::before {
+        content: "#{$numBlock}";
+      }
+    }
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+}

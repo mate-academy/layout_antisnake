@@ -1,0 +1,13 @@
+@media (max-width: 899px) {
+  .anti-snake {
+    grid-template-columns: repeat(2, minmax($size-block, 1fr));
+    grid-template-rows: repeat(3, $size-block);
+  }
+}
+
+@media (max-width: 599px) {
+  .anti-snake {
+    grid-template-columns: repeat(1, minmax($size-block, 1fr));
+    grid-template-rows: repeat(6, $size-block);
+  }
+}
