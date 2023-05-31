@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax($min-block-width, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($min-block-width, 1fr));
+  }
+
+  @each $index, $color in $colors {
+    &__block--color_#{$index} {
+      background: $color;
+    }
+  }
+}
