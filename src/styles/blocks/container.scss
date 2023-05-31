@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__box-1 {
+    background-color: $box-1-color;
+  }
+  
+  &__box-2 {
+    background-color: $box-2-color;
+  }
+  
+  &__box-3 {
+    background-color: $box-3-color;
+  }
+  
+  &__box-4 {
+    background-color: $box-4-color;
+  }
+  
+  &__box-5 {
+    background-color: $box-5-color;
+  }
+  
+  &__box-6 {
+    background-color: $box-6-color;
+  }
+}

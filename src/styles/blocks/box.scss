@@ -1,0 +1,10 @@
+.box {
+  display: grid;
+  height: $box-size;
+  min-width: $box-size;
+  text-align: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: $number-color;
+}
