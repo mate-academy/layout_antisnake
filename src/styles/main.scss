@@ -1,3 +1,45 @@
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(1, minmax (300px, 1fr));
+  background-color: black;
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    color: white;
+
+    &--color_1 {
+      background-color: red;
+    }
+
+    &--color_2 {
+      background-color: rgba(255, 0, 0, 0.8);
+    }
+
+    &--color_3 {
+      background-color: rgba(255, 0, 0, 0.6);
+    }
+
+    &--color_4 {
+      background-color: rgba(255, 0, 0, 0.4);
+    }
+
+    &--color_5 {
+      background-color: rgba(255, 0, 0, 0.2);
+    }
+  }
 }
