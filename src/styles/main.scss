@@ -1,3 +1,52 @@
+* {
+  box-sizing: border-box;
+
+}
+
 body {
   margin: 0;
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blocks {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.blocks--1 {
+  background-color: red;
+}
+
+.blocks--2 {
+  background-color: rgb(204,0,0);
+}
+
+.blocks--3 {
+  background-color: rgb(153,0,0);
+}
+
+.blocks--4 {
+  background-color: rgb(102,0,0);
+}
+
+.blocks--5 {
+  background-color: rgb(51,0,0);
+}
+
+.blocks--6 {
+  background-color: black;
 }
