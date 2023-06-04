@@ -1,0 +1,47 @@
+/* Container Start */
+.container {
+  display: grid;
+
+  &__item {
+    height: 300px;
+    display: grid;
+    place-items: center;
+  }
+
+  &__item--color--1 {
+    background-color: rgba(100%, 0%, 0%, 1);
+  }
+
+  &__item--color--2 {
+    background-color: rgba(80%, 0%, 0%, 1);
+  }
+
+  &__item--color--3 {
+    background-color: rgba(60%, 0%, 0%, 1);
+  }
+
+  &__item--color--4 {
+    background-color: rgba(40%, 0%, 0%, 1);
+  }
+
+  &__item--color--5 {
+    background-color: rgba(20%, 0%, 0%, 1);
+  }
+
+  &__item--color--6 {
+    background-color: rgba(0%, 0%, 0%, 1);
+  }
+
+  @media all and (min-width: 300px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media all and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media all and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Container End */
