@@ -1,0 +1,8 @@
+$block_colors: ("1":5, "2":4, "3":3, "4":2, "5":1, "6":0);
+
+@mixin antisnake_block {
+  height: 300px;
+  min-width: 300px;
+  font-size: 100px;
+  color: white;
+}
