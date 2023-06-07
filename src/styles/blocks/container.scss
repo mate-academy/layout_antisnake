@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  min-width: 300px;
+
+  &__box {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+    @for $i from 1 through 6 {
+      &--#{$i}::before {
+        content: "#{$i}";
+      }
+    }
+
+    @each $i, $color in $colors {
+      &--#{$i} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+}
