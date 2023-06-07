@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+
+  @media (min-width: 300px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__box {
+    display: grid;
+    place-items: center;
+    height: 300px;
+    width: 100%;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+  }
+
+  &__box--1 {
+    background-color: red;
+  }
+
+  &__box--2 {
+    background-color: rgb(204, 0, 0);
+  }
+
+  &__box--3 {
+    background-color: rgb(153,0 ,0);
+  }
+
+  &__box--4 {
+    background-color: rgb(102,0 ,0);
+  }
+
+  &__box--5 {
+    background-color: rgb(51, 0, 0);
+  }
+
+  &__box--6 {
+    background-color: black;
+  }
+}
