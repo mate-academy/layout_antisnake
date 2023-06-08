@@ -1,3 +1,10 @@
+@import "utils/variables";
+@import "blocks/container.scss";
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
 }
