@@ -1,0 +1,21 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($card-size, 1fr));
+
+  @media (min-width:$limit-width) {
+    grid-template-columns: repeat($limit-of-columns, 1fr);
+  }
+
+  &__card {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: $card-size;
+
+    @each $number, $color in $card-colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
