@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, minmax(300px, 500px));
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px, 500px));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    box-sizing: border-box;
+    height: $height;
+    color: white;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: $height;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
