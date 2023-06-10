@@ -1,3 +1,50 @@
 body {
   margin: 0;
 }
+
+.blocks {
+  display: grid;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  grid: auto-flow / repeat(auto-fit, minmax(300px, 3fr));
+  justify-content: center;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+    height: 300px;
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.block-1 {
+  background-color: red;
+}
+
+.block-2 {
+  background: rgb(204, 0, 0);
+}
+
+.block-3 {
+  background: rgb(153, 0, 0);
+}
+
+.block-4 {
+  background: rgb(102, 0, 0);
+}
+
+.block-5 {
+  background: rgb(51, 0, 0);
+}
+
+.block-6 {
+  background-color: black;
+}
