@@ -1,0 +1,33 @@
+.blocks {
+  &__wrapper {
+    @media (min-width: 600px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, $grid-cell-width);
+    }
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, $grid-cell-width);
+    }
+
+  }
+
+  &__item {
+    min-width: $min-block-size;
+    height: $min-block-size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @each $index, $color in $blocksColors {
+      &--#{$index} {
+        background-color: #{$color};
+      }
+    }
+  }
+}

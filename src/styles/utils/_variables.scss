@@ -1,0 +1,9 @@
+$min-block-size: 300px;
+$grid-cell-width: minmax($min-block-size, 1fr);
+$blocksColors:
+  1 "#f00",
+  2 "#c00",
+  3 "#900",
+  4 "#600",
+  5 "#300",
+  6 "#000";
