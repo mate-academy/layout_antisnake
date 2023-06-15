@@ -1,3 +1,58 @@
 body {
   margin: 0;
+  font: 100px Arial, sans-serif;
+  color: #fff;
+}
+
+@mixin grid-setup($col: 1, $row: 6) {
+  $square-size: 300px;
+  $value: minmax($square-size, 1fr);
+  grid-template-columns: repeat($col, $value);
+  grid-template-rows: repeat($row, $value);
+}
+
+.anti-snake {
+  display: grid;
+  grid-gap: 0;
+
+  @media (max-width: 599px) {
+    grid-template-areas: "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+    ;
+    @include grid-setup();
+  }
+
+  @media (min-width: 600px) {
+    grid-template-areas: "one two"
+      "three four"
+      "five six"
+    ;
+    @include grid-setup(2, 3);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-areas: "one two three"
+      "four five six"
+    ;
+    @include grid-setup(3, 2);
+  }
+
+  &__block {
+    display: grid;
+    place-items: center;
+
+    $red: (100%, 80%, 60%, 40%, 20%, 0%);
+    $area: (one, two, three, four, five, six);
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(nth($red, $i), 0%, 0%);
+        grid-area: nth($area, $i);
+      }
+    }
+  }
 }
