@@ -10,7 +10,7 @@ body {
   grid-template-areas: "box--1 box--2 box--3" "box--4 box--5 box--6";
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .container {
     grid-template-rows: repeat(3, 300px);
     grid-template-columns: 1fr, 1fr;
@@ -18,7 +18,7 @@ body {
     grid-template-areas: "box--1 box--2" "box--3 box--4" "box--5 box--6";
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .container {
     grid-template-rows: repeat(6, 300px);
     grid-template-columns: 1fr;
@@ -29,12 +29,12 @@ body {
 
 .box {
   height: 300px;
-  min-width: 300px;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100px;
-  text-align: center;
-  line-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box--1 {
