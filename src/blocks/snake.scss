@@ -1,0 +1,37 @@
+.snake {
+  display: grid;
+  grid-template-rows: repeat(6, 300px);
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__anti {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    height: 300px;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+  
+    @for $snakeNum from 1 through 6 {
+      &:nth-child(#{$snakeNum})::before {
+        content: "#{$snakeNum}";
+      }
+    }
+  
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background-color: #{$color};
+      }
+    }
+  }
+}
