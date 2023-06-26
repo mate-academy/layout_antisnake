@@ -1,0 +1,31 @@
+
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6,$row-widths);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,$row-widths);
+  
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,$row-widths);
+  }
+
+  &__block {
+    line-height: $row-widths;
+    font-size: $font-size;
+    color: $color-font;
+    text-align: center;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+
+  }
+
+}
