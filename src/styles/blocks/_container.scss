@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: minmax($block-size, 1fr);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($block-size, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    height: $block-size;
+    font-size: $font-size;
+    line-height: $block-size;
+    text-align: center;
+    color: #fff;
+
+    @each $name, $color in $bg-colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
