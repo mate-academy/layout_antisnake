@@ -1,0 +1,49 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(6, 300px);
+  box-sizing: border-box;
+  color: $color-fonts;
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (min-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+  }
+
+  &__snake {
+    line-height: 300px;
+    text-align: center;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      background-color: $color-snake-1;
+    }
+
+    &:nth-child(2) {
+      background-color: $color-snake-2;
+    }
+
+    &:nth-child(3) {
+      background-color: $color-snake-3;
+    }
+
+    &:nth-child(4) {
+      background-color: $color-snake-4;
+    }
+
+    &:nth-child(5) {
+      background-color: $color-snake-5;
+    }
+
+    &:nth-child(6) {
+      background-color: $color-snake-6;
+    }
+  }
+}
