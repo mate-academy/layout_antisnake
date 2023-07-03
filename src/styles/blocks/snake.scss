@@ -1,0 +1,35 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(6, 300px);
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+
+  &__item {
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+
+    @each $num, $color in $block-colors {
+      &--block--#{$num} {
+        background-color: #{$color};
+        color: white;
+      }
+    }
+
+    @for $index from 1 through 6 {
+      &--block--#{$index} {
+        &::before {
+          content: "#{$index}";
+          @include positionCenter();
+        }
+      }
+    }
+  }
+}
