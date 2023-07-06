@@ -1,0 +1,29 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  grid-auto-flow: row;
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($size, 1fr));
+    }
+  }
+
+  &__item {
+    height: $size;
+    text-align: center;
+    line-height: $size;
+
+    @for $cont from 1 through 6 {
+      &:nth-child(#{$cont})::before {
+        content: "#{$cont}";
+      }
+    }
+
+    @for $bgc from 1 through 6 {
+      &:nth-child(#{7 - $bgc}) {
+        background-color: rgb(($bgc - 1) * 51, 0, 0);
+      }
+    }
+  }
+}
