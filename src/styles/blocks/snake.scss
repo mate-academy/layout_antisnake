@@ -1,0 +1,28 @@
+.snake {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+  }
+
+  &__snippet {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @for $index from 0 through 5 {
+    &__snippet--#{$index + 1} {
+      background-color: rgb(255 - (51 * $index), 0, 0);
+
+      &::after {
+        content: "#{$index + 1}";
+      }
+    }
+  }
+}
