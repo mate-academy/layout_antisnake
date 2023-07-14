@@ -1,0 +1,78 @@
+html {
+  font-size: 100px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+}
+
+.snake-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .snake-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cube {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.cube:nth-child(1)::before {
+  content: "1";
+}
+
+.cube:nth-child(2)::before {
+  content: "2";
+}
+
+.cube:nth-child(3)::before {
+  content: "3";
+}
+
+.cube:nth-child(4)::before {
+  content: "4";
+}
+
+.cube:nth-child(5)::before {
+  content: "5";
+}
+
+.cube:nth-child(6)::before {
+  content: "6";
+}
+
+.cube:nth-child(1) {
+  background-color: #f00;
+}
+
+.cube:nth-child(2) {
+  background-color: #c00;
+}
+
+.cube:nth-child(3) {
+  background-color: #900;
+}
+
+.cube:nth-child(4) {
+  background-color: #600;
+}
+
+.cube:nth-child(5) {
+  background-color: #300;
+}
+
+.cube:nth-child(6) {
+  background-color: #000;
+}
+
+/*# sourceMappingURL=main.css.map */
