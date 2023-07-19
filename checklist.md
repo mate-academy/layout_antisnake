@@ -2,9 +2,9 @@
 2. [BEM] - Check your BEM structure using BEM-linter (`npm run lint`) and
 [this list](https://mate-academy.github.io/fe-program/css/typical-bem-mistakes)
 3. [BEM] - Make sure to follow BEM naming convention for complex modifiers:
-`block-name--modifier-name--modifier-value`;
-4. [BEM] - Create a separate file per each BEM block styles that have the same
-   name as the block
+`snake__block-name--modifier-name--modifier-value`;
+4. [BEM] - Create a separate file per each BEM snake__block styles that have the same
+   name as the snake__block
 5. [SASS] - Make use of SASS nesting - write pseudo-class, pseudo-element
 selectors inside general selector. As well as media queries.
 
