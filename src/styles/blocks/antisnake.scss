@@ -1,0 +1,30 @@
+.antisnake {
+  display: grid;
+  grid-template-rows: repeat(6, $block-height);
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, minmax($block-height, 1fr));
+      grid-template-rows: repeat(3, $block-height);
+      justify-content: stretch;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($block-height, 1fr));
+      grid-template-rows: repeat(2, $block-height);
+    }
+  }
+
+  &__block {
+    display: grid;
+    place-content: center;
+
+    @each $number, $color in $block-colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
