@@ -1,3 +1,5 @@
+$height: 300px;
+
 body {
   margin: 0;
 }
@@ -5,10 +7,14 @@ body {
 .box {
   height: 100%;
   display: grid;
-  grid-template-areas: "redbox cherrybox darkcherrybox"
-    "brownbox darkbrownbox blackbox";
+  grid-template-columns: repeat(3, 1fr);
 
   .box__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: $height;
+    min-width: $height;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     color: aliceblue;
@@ -16,52 +22,39 @@ body {
   }
      
   .box__item--red {
-    grid-area: redbox;
     border: 1px rgb(255, 0, 0);
     background-color: rgb(255, 0, 0);
   }
 
   .box__item--cherry {
-    grid-area: cherrybox;
     border: 1px rgb(187, 4, 4);
     background-color: rgb(187, 4, 4);
   }
   
   .box__item--darkcherry {
-    grid-area: darkcherrybox;
     border: 1px rgb(132, 2, 2);
     background-color: rgb(132, 2, 2);
   }
 
   .box__item--brown {
-    grid-area: brownbox;
     border: 1px rgb(93, 2, 2);
     background-color: rgb(93, 2, 2);
   }
   .box__item--darkbrown {
-    grid-area: darkbrownbox;
     border: 1px rgbrgb(46, 1, 1);
     background-color: rgb(46, 1, 1);
   }
 
   .box__item--black {
-    grid-area: blackbox;
     border: 1px rgb(0, 0, 0);
     background-color: rgb(0, 0, 0);
   }
 
-  @media (max-width: 900px) {
-    grid-template-areas: "redbox cherrybox"
-      "darkcherrybox brownbox"
-      "darkbrownbox blackbox";
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 600px) {
-    grid-template-areas: "redbox"
-      "cherrybox"
-      "darkcherrybox"
-      "brownbox"
-      "darkbrownbox"
-      "blackbox";
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
