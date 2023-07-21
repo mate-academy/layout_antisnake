@@ -1,3 +1,40 @@
+$gradient-color-black-red:
+  100% 0 1, 80% 20% 2, 60% 40% 3,
+  40% 60% 4, 20% 80% 5, 0 100% 6;
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: 300px;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+    height: 300px;
+
+    @each $red, $black, $num in $gradient-color-black-red {
+      &:nth-child(#{$num}) {
+        background-color: rgba($red, 0, 0, 100%);
+        &::before {
+          content: "#{$num}";
+        }
+      }
+    }
+  }
 }
