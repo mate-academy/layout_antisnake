@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+
+  @media screen and (min-width: $box-size) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    min-width: $box-size;
+    height: $box-size;
+    justify-items: center;
+    align-items: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+
+    @for $i from 0 through 5 {
+      $red-factor: 100% - (20% * $i);
+      $color: rgb($red-factor, 0%, 0%);
+
+      &--box#{$i + 1} {
+        background-color: $color;
+      }
+    }
+  }
+}
