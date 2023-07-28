@@ -1,3 +1,46 @@
 body {
   margin: 0;
 }
+
+@function maxW($maxWidth) {
+  @return repeat(auto-fill, minmax(300px, $maxWidth));
+
+}
+
+.antiSnake {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: maxW(33.33%);
+
+  @media (min-width: 300px) and (max-width: 599px) {
+    grid-template-columns: maxW(100%);
+  }
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: maxW(50%);
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    min-width: 300px;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+
+    $colors: #f00 "1",
+      #cf0000 "2",
+      #9f0000 "3",
+      #6f0000 "4",
+      #3f0000 "5",
+      #000 "6";
+
+    @each $color, $number in $colors {
+      &:nth-child(#{$number}) {
+        background-color: #{$color};
+      }
+    }
+  }
+}
