@@ -1,3 +1,54 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  max-width: 1199px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
+.container__block {
+  height: 300px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+  color: #fff;
+}
+
+.block-1 {
+  background-color: #f00;
+}
+
+.block-2 {
+  background-color: rgb(204, 0, 0);
+}
+
+.block-3 {
+  background-color: rgb(153, 0, 0);
+}
+
+.block-4 {
+  background-color: rgb(102, 0, 0);
+}
+
+.block-5 {
+  background-color: rgb(51, 0, 0);
+}
+
+.block-6 {
+  background-color: #000;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    min-width: 1200px;
+    max-width: 5000px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
