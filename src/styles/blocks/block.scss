@@ -1,0 +1,18 @@
+.block {
+  height: 100%;
+  min-width: $block-width;
+  font-size: 100px;
+  color: #fff;
+  line-height: $block-width;
+  text-align: center;
+
+  @for $block-index from 0 through 5 {
+    &:nth-child(#{$block-index + 1}) {
+      background-color: darken($block-color, $block-index * 10%);
+
+      &::after {
+        content: "#{$block-index + 1}";
+      }
+    }
+  }
+}
