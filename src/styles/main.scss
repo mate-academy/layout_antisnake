@@ -1,3 +1,45 @@
+$base-color: #f00;
+$colums: 1;
+
+@mixin screenMobile {
+  @media (min-width: 600px) and (max-width: 750px) {
+    grid-template-columns: repeat($colums + 1, min(1fr));
+  }
+}
+
+@mixin screenPad {
+  @media (min-width: 751px) {
+    grid-template-columns: repeat($colums + 2, min(1fr));
+  }
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat($colums, min(1fr));
+
+  @include screenMobile;
+  @include screenPad;
+
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+  background-color: $base-color;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+
+  @for $i from 1 through 6 {
+    &--#{$i + 1} {
+      background-color: hsl(0, 100%, 50% - 10% * $i);
+    }
+  }
 }
