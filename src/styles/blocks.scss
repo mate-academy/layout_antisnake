@@ -1,0 +1,39 @@
+.blocks {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+  $colors:
+    "1" #ff0100,
+    "2" #cc0200,
+    "3" #990001,
+    "4" #670000,
+    "5" #330100,
+    "6" #000;
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index}):before {
+      content: "#{$index}";
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .blocks {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
