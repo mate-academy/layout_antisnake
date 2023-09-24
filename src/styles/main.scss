@@ -1,3 +1,37 @@
 body {
   margin: 0;
 }
+
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+
+  &__block {
+    height: 300px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 100px;
+    background-color: rgb(100%, 0%, 0%);
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+    
+    @for $n from 1 through 5 {
+      &:nth-child(#{$n + 1}) {
+        background-color: rgb(calc(100% - (#{$n} * 20%)), 0%, 0%);
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3,minmax(300px, 1fr));
+  }
+}
