@@ -1,0 +1,22 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width-square, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: $min-width-square;
+
+    @for $var from 1 through 6 {
+      &--#{$var} {
+        background: mix(#f00, #000, 100 - 20 * ($var - 1));
+      }
+    }
+  }
+}
