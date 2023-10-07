@@ -1,0 +1,32 @@
+@import "../utils/variables";
+
+.container {
+  display: grid;
+  grid: auto-flow / repeat(auto-fit, minmax(300px, 1fr));
+  
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    
+    @for $six from 1 through 6 {
+      $red-to-black: $color-red - ($reduce-red * $six);
+
+      &:nth-child(#{$six}) {
+        background-color: rgb($red-to-black, 0, 0);
+
+        &::before {
+          content: "#{$six}";
+          font-size: 100px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
