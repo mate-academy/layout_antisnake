@@ -1,3 +1,38 @@
-body {
+$col-size: 300px;
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($col-size, 1fr));
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax($col-size, 1fr));
+  }
+}
+
+.box {
+  position: relative;
+  min-height: $col-size;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  &::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@for $i from 1 through 6 {
+  .box:nth-child(#{$i}) {
+    background-color: rgb(calc(255 * ((6 - #{$i}) / 5)), 0, 0);
+    &::after {
+      content: "#{$i}";
+    }
+  }
 }
