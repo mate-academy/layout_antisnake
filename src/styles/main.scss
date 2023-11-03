@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./utilites/reset";
+@import "./utilites/variables";
+@import "./block/antisnake.scss";
+@import "./utilites/media";

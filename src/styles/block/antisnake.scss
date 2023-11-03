@@ -1,0 +1,17 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($card-width, 1fr));
+
+  &__item {
+    height: $card-width;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+}
