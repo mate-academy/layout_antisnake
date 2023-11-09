@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block--min-size, 1fr));
+
+  @media (min-width: #{$block--min-size * 3}) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
