@@ -1,0 +1,9 @@
+.block {
+  height: $mainSize;
+
+  @each $number, $color in $colors {
+    &--#{$number} {
+      background-color: #{$color};
+    }
+  }
+}
