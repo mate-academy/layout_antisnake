@@ -1,0 +1,24 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+
+  @media (min-width: $size-window) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: $size;
+
+    @for $index from 0 through 5 {
+      &--#{$index + 1} {
+        background-color: rgb(calc(255 - 255 * #{$index} / 5), 0, 0);
+      }
+    }
+  }
+}
