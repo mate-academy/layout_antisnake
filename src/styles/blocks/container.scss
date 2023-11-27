@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @each $item, $color in $colors {
+    :nth-child(#{$item}) {
+      background-color: $color;
+    }
+  }
+
+  &__item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+
+    color: #fff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 100px;
+
+  }
+}
