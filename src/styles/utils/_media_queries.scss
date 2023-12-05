@@ -1,0 +1,23 @@
+@media (max-width: 450px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 899px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+  }
+}
