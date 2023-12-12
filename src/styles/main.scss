@@ -1,3 +1,41 @@
-body {
-  margin: 0;
+@import "../styles/utils/_resets.scss";
+@import "../styles/utils/_variables.scss";
+
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  
+  @media (min-width: #{2 * $block-height}) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @media (min-width: #{3 * $block-height}) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &__block {
+    display: grid;
+    place-items: center;
+    height: $block-height;
+    min-width: $block-height;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+    
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}):after {
+        content: "#{$index}";
+      }
+    }
+  }
 }
