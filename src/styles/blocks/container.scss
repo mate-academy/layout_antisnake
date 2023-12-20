@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3 , minmax($grid-cell-width, 1fr));
+    grid-template-rows: repeat(2 , minmax($grid-cell-height, 1fr));
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2 , minmax($grid-cell-width, 1fr));
+    grid-template-rows: repeat(3 , minmax($grid-cell-height, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, minmax($grid-cell-height, 1fr));
+  }
+}
