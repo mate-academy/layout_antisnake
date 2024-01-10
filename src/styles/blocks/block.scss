@@ -1,0 +1,22 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__item {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background: $color;
+      }
+    }
+  }
+}
