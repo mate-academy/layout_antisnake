@@ -1,3 +1,47 @@
 body {
   margin: 0;
 }
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  $colors:
+    "1" #f00,
+    "2" #c00,
+    "3" #900,
+    "4" #600,
+    "5" #300,
+    "6" #000;
+
+  &__item {
+    position: relative;
+    height: 300px;
+
+    &:before {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      color: white;
+    }
+
+    @each $name, $color in $colors {
+      &--color--#{$name} {
+        background-color: $color;
+      }
+    }
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}):before {
+        content: "#{$i}";
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
