@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable rule-empty-line-before */
 .catalog_hero {
   background-image: url(../images/heroCatalog.png);
   height: 750px;

@@ -48,7 +48,7 @@
 }
 
 @media screen and (max-width: 1860px) {
-  .allGoods-catalog  {
+  .allGoods-catalog {
     width: 500px;
   }
 
@@ -59,13 +59,13 @@
 }
 
 @media screen and (max-width: 1560px) {
-  .allGoods-catalog  {
+  .allGoods-catalog {
     width: 400px;
   }
 }
 
 @media screen and (max-width: 1335px) {
-  .allGoods-catalog  {
+  .allGoods-catalog {
     width: 300px;
     height: 350px;
   }

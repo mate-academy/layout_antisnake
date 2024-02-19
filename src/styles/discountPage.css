@@ -23,6 +23,7 @@
   justify-content: space-between;
 }
 
+/* stylelint-disable-next-line no-duplicate-selectors */
 .videoBlock--discount {
   display: block;
 }
@@ -103,7 +104,6 @@
   color: #06739a;
   cursor: pointer;
 }
-
 
 .productsListBlock__head_title {
   color: #06739a;

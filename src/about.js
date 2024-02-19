@@ -1,3 +1,5 @@
+'use strict';
+
 // const feedbackCard = document.querySelector(".feedback__body_card--last");
 const navbar = document.querySelector('.header__navbar');
 const testButton = document.querySelector('.header__button_test');
