@@ -1,20 +1,1013 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Antisnake</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com"
+    crossorigin="undefined">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    >
+    <title>Ортофіт</title>
   </head>
   <body>
-    <div class="container">
-      <div class="container__cell container__cell--1"></div>
-      <div class="container__cell container__cell--2"></div>
-      <div class="container__cell container__cell--3"></div>
-      <div class="container__cell container__cell--4"></div>
-      <div class="container__cell container__cell--5"></div>
-      <div class="container__cell container__cell--6"></div>
-    </div>
+    <header class="header">
+      <a href="/">
+        <img src="/src/images/logo.png" alt="Logo"
+        class="header__logo">
+      </a>
+      <div class="header__navbar">
+        <a href="/src/pages/aboutPage.html" class="header__navbar_link">Про компанію</a>
+        <a href="/src/pages/servicesCatalog.html" class="header__navbar_link">Послуги</a>
+        <a href="/src/pages/catalog.html" class="header__navbar_link">Кадалог товарів</a>
+        <a href="/src/pages/discountPage.html" class="header__navbar_link">Акції</a>
+        <a href="/src/pages/contacts.html" class="header__navbar_link">Контакти</a>
+      </div>
+
+      <div class="header__info">
+        <img src="/src/images/search.svg" alt="search"
+        class="header__info_search">
+
+        <div class="header__info_langSwitcher">
+          <button class="header__info_langSwitcher_button">UA</button>
+          <button class="header__info_langSwitcher_button">RU</button>
+        </div>
+
+        <div class="header__info_adress">
+          <a target="_blank" href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0,+6,+2%D0%B1,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+49000/data=!4m2!3m1!1s0x40dbe2dd602611c3:0xa435da45904f0c1a?sa=X&ved=2ahUKEwiZqebQl7CEAxWCQvEDHR4OD7YQ8gF6BAgcEAA"
+          class="header__info_adress_link">
+            <img src="/src/images/map.svg" alt="map">
+          </a>
+
+          <a target="_blank" href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0,+6,+2%D0%B1,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+49000/data=!4m2!3m1!1s0x40dbe2dd602611c3:0xa435da45904f0c1a?sa=X&ved=2ahUKEwiZqebQl7CEAxWCQvEDHR4OD7YQ8gF6BAgcEAA"
+          class="header__info_adress_wrapper_links">
+            <div class="header__info_adress_wrapper">
+              <span class="header__info_adress_link">м.Дніпро</span>
+              <span class="header__info_adress_link">вул.Центральна 6-2б</span>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="header__info_number">
+          <div class="header__info_number_wrapper">
+            <img src="/src/images/phone.svg" alt="phone">
+            <a href="tel:+380960042533" target="_blank"
+            class="header__info_number_link">
+              +38 (096) 004 25 33
+            </a>
+          </div>
+
+          <div class="header__info_number_wrapper">
+            <img src="/src/images/phone.svg" alt="phone">
+            <a href="tel:+380505058199" target="_blank"
+            class="header__info_number_link">
+              +38 (050) 505 81 99
+            </a>
+          </div>
+        </div>
+
+        <button class="header__button_test button">
+          Пройти тест стопи
+        </button>
+
+        <button class="header__button">
+          <img src="/src/images/leg.svg" alt="button"
+          class="header__buttonImage">
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__title">
+          <h1 class="hero__titleName">Лідер №1 зі здорової ходьби</h1>
+
+          <p class="hero__title_remark">
+            Єдиний медичний центр з персональних устілок та здорової ходьби у м. Дніпро
+          </p>
+
+          <div class="hero__buttons">
+            <button class="hero__buttons_register">
+              <span>Записатися на прийом</span>
+              <img src="/src/images/go.svg" alt="go"
+              class="hero__buttons_register_arrow">
+            </button>
+            <a href="./pages/aboutPage.html" class="hero__buttons_lernmore_link">
+              <button class="hero__buttons_lernmore">Дізнатися більше</button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="statistic">
+        <div class="statistic__callToAction">
+          <p class="statistic__callToAction_title">Найкращі персональні устілки для будь-яких подій</p>
+          <button class="statistic__callToAction_button">Проконсультуватися</button>
+        </div>
+
+        <div class="statistic__wrapper">
+          <div class="statistic__block statistic__block--first">
+            <span class="statistic__block_year">18</span>
+            <p class="statistic__block_text">років на ринку</p>
+          </div>
+
+          <div class="statistic__block statistic__block--second">
+            <span class="statistic__block_year">12000</span>
+            <p class="statistic__block_text">устілок на рiк</p>
+          </div>
+
+          <div class="statistic__block statistic__block--third">
+            <span class="statistic__block_year">100%</span>
+            <p class="statistic__block_text">здорові стопи</p>
+          </div>
+
+          <div class="statistic__block statistic__block--last">
+            <span class="statistic__block_year">46000</span>
+            <p class="statistic__block_text">задоволених клієнтів</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mainProd">
+        <div class="mainProd__leftBlock">
+          <p class="mainProd__leftBlock_remark">
+            <span>Ексклюзивні устілки</span>
+            <img src="/src/images/legemoji.png" alt="insoles"
+            class="mainProd__leftBlock_remark_emoji">
+            <br>
+            <img src="/src/images/french.png" alt="french"
+            class="mainProd__leftBlock_remark_emoji">
+            <span>вiд французькіх виробників</span>
+          </p>
+
+          <div class="mainProd__leftBlock_textBlock">
+            <img src="/src/images/podiatech.png" alt="podiatech">
+
+            <div class="mainProd__leftBlock_textBlock_text">
+              <p class="mainProd__leftBlock_title">Podiatech</p>
+              <p class="mainProd__leftBlock_subTitle">
+                Дозвольте своїм ногам зануритися в безмежний комфорт
+              </p>
+              <p class="mainProd__leftBlock_text">
+                Передові технології для створення устілок, які виходять за межі звичайних стандартів і надають нові можливості для спортсменів
+              </p>
+              <p class="mainProd__leftBlock_lastText">
+                Миссия Sidas - способствовать достижению этой цели вместе со специалистами по стопе
+              </p>
+            </div>
+          </div>
+
+          <div class="mainProd__circle">
+            <span>Та</span>
+          </div>
+
+          <div class="mainProd__transparentCircle"></div>
+        </div>
+
+        <div class="mainProd__rightBlock">
+          <img src="/src/images/mainprodHead.png" alt="podiatech"
+          class="mainProd__rightBlock_head">
+
+          <div class="mainProd__rightBlock_content">
+            <div class="mainProd__rightBlock_contentText">
+              <p class="mainProd__leftBlock_title mainProd__leftBlock_title--rightBlock">Sidas</p>
+              <p class="mainProd__leftBlock_subTitle">
+                Дозвольте своїм ногам зануритися в безмежний комфорт
+              </p>
+              <p class="mainProd__leftBlock_text">
+                Передові технології для створення устілок, які виходять за межі звичайних стандартів і надають нові можливості для спортсменів
+              </p>
+              <p class="mainProd__leftBlock_lastText">
+                Миссия Sidas - способствовать достижению этой цели вместе со специалистами по стопе
+              </p>
+            </div>
+
+            <img src="/src/images/insoles.png" alt="insoles"
+            class="mainProd__rightBlock_contentImg">
+          </div>
+        </div>
+      </section>
+
+      <section class="advantages">
+        <div class="advantages__videoLink">
+          <p class="advantages__videoLink_title">Переваги</p>
+          <p class="advantages__videoLink_text">
+            Чому ми вважаємося <strong>№1</strong> у Дніпрі та Україні за персональними устілками
+          </p>
+
+          <button class="advantages__videoLink_link">
+            <strong>Дивитися відео</strong>
+            <div class="advantages__videoLink_link_go">
+              <img src="./images/buttonArrow.svg" alt="watch video">
+            </div>
+          </button>
+        </div>
+
+        <div class="advantages__list">
+          <div class="advantages__list_main">
+            <div class="advantages__list_main_content">
+              <p class="advantages__list_count">01</p>
+              <p class="advantages__list_text">Індивідуальний підхід до клієнтів</p>
+            </div>
+          </div>
+
+          <div class="advantages__list_wrapper">
+            <div class="advantages__list_topWrapper">
+              <div class="advantages__list_item">
+                <p class="advantages__list_count">02</p>
+                <p class="advantages__list_text itemText">Найкращі лікарі</p>
+              </div>
+              <div class="advantages__list_item">
+                <p class="advantages__list_count">03</p>
+                <p class="advantages__list_text itemText">Інноваційні технології</p>
+              </div>
+              <div class="advantages__list_item advantages__list_item--last">
+                <p class="advantages__list_count">04</p>
+                <p class="advantages__list_text itemText">Висока якість та довговічність</p>
+              </div>
+            </div>
+
+            <div class="advantages__list_last">
+              <p class="advantages__list_count">05</p>
+              <p class="advantages__list_text itemText advantages__list_text--lastElement">
+                Продукція високої якості, виготовлена з екологічно чистих матеріалів, поєднуючи комфорт, міцність і підтримку для ніг
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="services__headWrapper">
+          <p class="services__title">Послуги</p>
+          <p class="services__headTitle">Що ми робимо Що ми робимо</p>
+          <a href="./pages/servicesCatalog.html" class="insideLink buttonLink">
+            <button class="services__allButton">Усі послуги</button>
+          </a>
+        </div>
+
+        <div class="services__sliderWrapper">
+          <div class="services__slider">
+            <div class="services__slider_card">
+              <img src="./images/closeuporthopedic.png" alt="Кінезіотейпування"
+              class="services__slider_card_img">
+              <p class="services__slider_card_title">Кінезіотейпування</p>
+              <p class="services__slider_card_text">
+                Наша клініка обладнана передовими технологіями для надання сучасних і ефективних медичних послуг
+              </p>
+              <a href="./pages/kinesiotapingService.html">
+                <button class="services__slider_card_button">Дізнатися більше</button>
+              </a>
+            </div>
+            <div class="services__slider_card">
+              <img src="./images/babyfoot.png" alt="Дитячий ортопед"
+              class="services__slider_card_img">
+              <p class="services__slider_card_title">Дитячий ортопед</p>
+              <p class="services__slider_card_text">
+                Основою лікування є розвиток дитини, треба створити умови для правильного формування його опорно-рухового апарату
+              </p>
+              <a href="./pages/kidsCategory.html">
+                <button class="services__slider_card_button">Дізнатися більше</button>
+              </a>
+            </div>
+            <div class="services__slider_card services__slider_card--last">
+              <img src="./images/footwoman.png" alt="Лікування плоскостопості"
+              class="services__slider_card_img">
+              <p class="services__slider_card_title">Лікування плоскостопості</p>
+              <p class="services__slider_card_text">
+                Плоскостопію сприяють зміни в організмі під час перехідного віку, вагітності чи старінні
+              </p>
+              <button class="services__slider_card_button">Дізнатися більше</button>
+            </div>
+
+            <div class="services__slider_buttons">
+              <button class="services__slider_buttons_button">
+                <img src="./images/arrowLeft.svg" alt="left">
+              </button>
+
+              <button class="services__slider_buttons_button">
+                <img src="./images/arrowRight.svg" alt="right">
+              </button>
+            </div>
+          </div>
+
+          <img src="./images/Rectangle.png" alt="podiatech"
+          class="services__sideImg">
+        </div>
+
+        <button class="services__register">
+          <span class="services__register_text">Записатися на прийом</span>
+          <img src="./images/go.svg" alt="register">
+        </button>
+      </section>
+
+      <section class="about">
+        <div class="about__wrapper">
+          <div class="about__textBlock">
+            <div class="about__textBlock_titleBlock">
+              <p class="about__textBlock_title">Про компанію</p>
+              <p class="about__textBlock_text">
+                З більш ніж 10-річним досвідом у Дніпрi ми є лідерами у сфері ортопедичної допомоги. За цей час ми вже впевнили в успішності наших рішень понад 15 000 пацієнтів
+              </p>
+            </div>
+
+            <div class="about__infoBlock">
+              <div class="about__infoBlock_card">
+                <p class="about__infoBlock_card_num">98%</p>
+                <p class="about__infoBlock_card_info">
+                  Наші індивідуальні ортопедичні устілки допомагають пацієнтам відчути помітне полегшення.
+                </p>
+              </div>
+              <div class="about__infoBlock_card">
+                <p class="about__infoBlock_card_num">30<span class="about__infoBlock_card_num_name">хвилин</span>
+                </p>
+                <p class="about__infoBlock_card_info">
+                  "Ортопедичний плантовізор" дозволяє провести комплексну діагностику за 30 хвилин, що вдвічі швидше за традиційні методи, з точністю виявлення проблем стоп на рівні 97%
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__cardBlock">
+            <div class="about__cardBlock_card">
+              <img src="./images/doctor.svg" alt="doctor"
+              class="about__cardBlock_card_img">
+              <p class="about__cardBlock_card_text">Досвідчені лікарі зі стажем 10 років</p>
+            </div>
+            <div class="about__cardBlock_card">
+              <img src="./images/equioment.svg" alt="equipment"
+              class="about__cardBlock_card_img">
+              <p class="about__cardBlock_card_text">Сучасне медичне обладнання</p>
+            </div>
+            <div class="about__cardBlock_card">
+              <img src="./images/point.svg" alt="point"
+              class="about__cardBlock_card_img">
+              <p class="about__cardBlock_card_text">Працюємо віддалено та по всій країні</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <button class="services__register button_register">
+          <span class="services__register_text">Записатися на прийом</span>
+          <img src="./images/go.svg" alt="register">
+        </button>
+      </section>
+
+      <section class="videoBlock container">
+        <div class="videoBlock__textBlock">
+          <div class="videoBlock__textBlock_top">
+            <p class="videoBlock__textBlock_top_title">Сучасне обладнання</p>
+            <p class="videoBlock__textBlock_top_text">
+              Наша клініка обладнана передовими технологіями для надання сучасних і ефективних медичних послуг
+            </p>
+
+            <a href="./pages/aboutPage.html">
+              <button class="learnMoreButton learnMoreButton--videoBlock">Дізнатися більше</button>
+            </a>
+          </div>
+          <div class="videoBlock__textBlock_bottom">
+            <p class="videoBlock__textBlock_bottom_title">
+              Літо з Комфортом: Знижки на <br> Відпочинкову Колекцію!
+            </p>
+            <p class="videoBlock__textBlock_top_text">
+              Унікальні персоналізовані стельки для вашого комфорту
+            </p>
+
+            <div class="videoBlock__textBlock_bottom_buttonWrapper">
+              <a href="./pages/aboutPage.html">
+                <button class="learnMoreButton">Дізнатися більше</button>
+              </a>
+              <button class="button videoBlock__textBlock_bottom_buttonWrapper_button">
+                Проконсультуватися
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="videoBlock__video">
+          <img src="./images/video.png" alt="vid"
+          class="videoBlock__video_link">
+        </div>
+      </section>
+
+      <section class="stages container">
+        <div class="stages__leftBlock">
+          <div>
+            <div class="stages__leftBlock_head">
+              <p class="stages__leftBlock_head_title">
+                Ми також працюємо <br> віддалено по всій країні
+              </p>
+
+              <p class="stages__leftBlock_head_remark">Що необхідно?</p>
+
+              <img
+                src="./images/littleTransparentCircle.svg"
+                alt="circle"
+                class="stages__leftBlock_head_img"
+              >
+            </div>
+
+            <div class="stages__leftBlock_body">
+              <div class="stages__leftBlock_body_listOfStages">
+                <div class="stages__leftBlock_body_listOfStages_wrapper">
+                  <div class="stages__leftBlock_body_listOfStages_stageWrapper">
+                    <div class="stages__leftBlock_body_listOfStages_card">
+                      <p class="stages__leftBlock_body_listOfStages_card_num">01</p>
+                      <p class="stages__leftBlock_body_listOfStages_card_text">
+                        Зв'язуєтсь з нами
+                      </p>
+                    </div>
+                    <div class="stages__leftBlock_body_listOfStages_card">
+                      <p class="stages__leftBlock_body_listOfStages_card_num">02</p>
+                      <p class="stages__leftBlock_body_listOfStages_card_text">
+                        Ми надсилаємо вам спеціальну піну
+                      </p>
+                    </div>
+                  </div>
+                  <div class="stages__leftBlock_body_listOfStages_card">
+                    <p class="stages__leftBlock_body_listOfStages_card_num">03</p>
+                    <p class="stages__leftBlock_body_listOfStages_card_text">
+                      Ви робите зліпок стопи і <br> відправляєте його назад
+                    </p>
+                  </div>
+                  <div class="stages__leftBlock_body_listOfStages_card">
+                    <p class="stages__leftBlock_body_listOfStages_card_num">04</p>
+                    <p class="stages__leftBlock_body_listOfStages_card_text">
+                      Ми виготовляємо персонально під і відправляємо назад вам готові <br> устілки
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="stages__leftBlock_body_videoblock">
+                <p class="stages__leftBlock_body_videoblock_text">
+                  Як у домашніх умовах зробити зліпок стопи
+                </p>
+                <div class="stages__leftBlock_body_videoblock_video">
+                  <img src="./images/videoSmall.png" alt="video"
+                  class="stages__leftBlock_body_videoblock_video_img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stages__rightBlock">
+          <div class="stages__rightBlock_wrapper">
+            <p class="stages__rightBlock_title">Етапи роботи</p>
+
+            <div class="stages__rightBlock_cardList">
+              <div class="stages__rightBlock_cardList_card">
+                <div class="stages__rightBlock_cardList_card_circle">
+                  <img src="./images/circPhone.svg" alt="call">
+                </div>
+                <p class="stages__rightBlock_cardList_card_text">
+                  Залишіть заявку на сайті — середній час обробки заявки — 20 хвилин
+                </p>
+              </div>
+              <div class="stages__rightBlock_cardList_card">
+                <div class="stages__rightBlock_cardList_card_circle">
+                  <img src="./images/circFile.svg" alt="file">
+                </div>
+                <p class="stages__rightBlock_cardList_card_text">
+                  Записуємо вас на прийом до офісу або віддалено
+                </p>
+              </div>
+              <div class="stages__rightBlock_cardList_card">
+                <div class="stages__rightBlock_cardList_card_circle">
+                  <img src="./images/circFoot.svg" alt="foot">
+                </div>
+                <p class="stages__rightBlock_cardList_card_text">
+                  Оплату після виготовлення, готові устілки забрати можна в офісі або надсилання поштою
+                </p>
+              </div>
+              <div class="stages__rightBlock_cardList_card">
+                <div class="stages__rightBlock_cardList_card_circle">
+                  <img src="./images/circCar.svg" alt="car">
+                </div>
+                <p class="stages__rightBlock_cardList_card_text">
+                  Виявляємо проблему та підбираємо устілки та лікування, заміряємо стопи
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insolesTypes container">
+        <div class="insolesTypes__block">
+          <p class="insolesTypes__title">
+            3 основні рішення <br> при виборі устілок
+          </p>
+        </div>
+
+        <div class="insolesTypes__cardList insolesTypes__block">
+          <div class="insolesTypes__cardList_card">
+            <div class="insolesTypes__cardList_card_wrapper">
+              <div class="insolesTypes__cardList_card_content">
+                <p class="insolesTypes__cardList_card_content_title">
+                  Індивідуальні (лікарські) рішення
+                </p>
+                <p class="insolesTypes__cardList_card_content_text">
+                  Достосовані до вашого здоров'я: Наші устилки розроблені з урахуванням порад лікарів та медичних вимог, гарантуючи персоналізовану підтримку вашої стопи
+                </p>
+
+                <div class="insolesTypes__cardList_card_content_buttons">
+                  <button class="insolesTypes__cardList_card_content_buttons_button">
+                    <span>Записатися на прийом</span>
+                    <img src="./images/go.svg" alt="go"
+                    class="button_arrow">
+                  </button>
+                  <a class="insideLink" href="./pages/individualServicePage.html">
+                    <button class="learnMoreButton">Дізнатися більше</button>
+                  </a>
+                </div>
+              </div>
+              <img src="./images/card1.png" alt="card1">
+            </div>
+          </div>
+
+          <div class="insolesTypes__cardList_card">
+            <div class="insolesTypes__cardList_card_wrapper">
+              <div class="insolesTypes__cardList_card_content">
+                <p class="insolesTypes__cardList_card_content_title">
+                  Готові з індивідуалізацією
+                </p>
+                <p class="insolesTypes__cardList_card_content_text">
+                  Вибір індивідуального комфорту: Виберіть з різноманітних стандартних устелок, які можна адаптувати під ваші потреби – простий і зручний шлях до комфорту
+                </p>
+
+                <div class="insolesTypes__cardList_card_content_buttons">
+                  <button class="insolesTypes__cardList_card_content_buttons_button">
+                    <span>Записатися на прийом</span>
+                    <img src="./images/go.svg" alt="go"
+                    class="button_arrow">
+                  </button>
+                  <a class="insideLink" href="./pages/personalizationService.html">
+                    <button class="learnMoreButton">Дізнатися більше</button>
+                  </a>
+                </div>
+              </div>
+              <img src="./images/card2.png" alt="card2">
+            </div>
+          </div>
+
+          <div class="insolesTypes__cardList_card">
+            <div class="insolesTypes__cardList_card_wrapper">
+              <div class="insolesTypes__cardList_card_content">
+                <p class="insolesTypes__cardList_card_content_title">
+                  Готові рішення
+                </p>
+                <p class="insolesTypes__cardList_card_content_text">
+                  Достосовані до вашого здоров'я: Наші устилки розроблені з урахуванням порад лікарів та медичних вимог, гарантуючи персоналізовану підтримку вашої стопи
+                </p>
+
+                <div class="insolesTypes__cardList_card_content_buttons">
+                  <button class="insolesTypes__cardList_card_content_buttons_button">
+                    <span>Записатися на прийом</span>
+                    <img src="./images/go.svg" alt="go"
+                    class="button_arrow">
+                  </button>
+                  <a class="insideLink" href="./pages/serviceReady.html">
+                    <button class="learnMoreButton">Дізнатися більше</button>
+                  </a>
+                </div>
+              </div>
+              <img src="./images/card3.png" alt="card3">
+            </div>
+          </div>
+
+          <a href="./pages/catalog.html" class="link_catalog">
+            <button class="button insolesTypes__cardList_button">
+              Перейти в каталог товарів
+              <img src="./images/go.svg" alt="go">
+            </button>
+          </a>
+        </div>
+      </section>
+
+      <section class="appointment container">
+        <div class="appointment__wrapper">
+          <div class="appointment__card">
+            <div class="appointment__card_wrapper">
+              <p class="appointment__card_title">Для кого <br> підійде?</p>
+              <p class="appointment__card_text">
+                Устілки створюються індивідуально для кожної особи та допомагають поліпшити комфорт, підтримуючи правильне положення стопи та зменшуючи навантаження на суглоби під час ходьби
+              </p>
+            </div>
+          </div>
+          <div class="appointment__card secondCard">
+            <div class="appointment__card_wrapper">
+              <p class="appointment__card_title appointment__card_title--second">
+                Залишіть свої дані і ми <br> зв'яжемося з вами <br> через 20 хвилин
+              </p>
+            </div>
+          </div>
+          <div class="appointment__card thirdCard">
+            <p class="appointment__card_thirdCard_content">
+              Персональні устілки призначені для людей із <span class="appointment__card_thirdCard_content_bold">особливостями стопи</span> або ніг, такими як <span class="appointment__card_thirdCard_content_bold">плоскостопість</span>, високий свод, біль під час ходьби або проблеми з суглобами
+            </p>
+          </div>
+          <div class="appointment__card">
+            <div class="appointment__card_wrapper">
+              <form action="post" class="form">
+                <input type="text" placeholder="Ім'я"
+                class="appointment__card_input">
+                <input type="text" placeholder="Телефон"
+                class="appointment__card_input">
+                <label for="1" class="form_checkbox">
+                  <input type="checkbox">
+                  Підтверджуючи, ви погоджуєтесь з політикою конфіденсальності
+                </label>
+                <button class="button">Замовити зворотній зв’язок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="license container">
+        <p class="license__title">Ліцензії</p>
+        <div class="license__slider">
+          <div class="license__slider_slideList">
+            <div class="license__slider_slideList_wrapper">
+              <img src="./images/license1.png" alt="license">
+              <img src="./images/license2.png" alt="license">
+            </div>
+          </div>
+
+          <div class="services__slider_buttons">
+            <button class="services__slider_buttons_button">
+              <img src="./images/arrowLeft.svg" alt="left">
+            </button>
+
+            <button class="services__slider_buttons_button">
+              <img src="./images/arrowRight.svg" alt="right">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="promotion container">
+        <div class="promotion_wrapper">
+          <div class="promotion__all promotion__card">
+            <div class="promotion__all_wrapper">
+              <p class="title promotion__all_title">Акції</p>
+              <p class="promotion__all_text">безкоштовна діагностика та <br> консультація ваших стоп</p>
+              <button class="promotion__all_button">Усі акції</button>
+            </div>
+          </div>
+          <div class="promotion__register promotion__card">
+            <div class="promotion__register_wrapper">
+              <form action="post" class="form promotion__form">
+                <input type="text" placeholder="Ім'я"
+                class="appointment__card_input">
+                <input type="text" placeholder="Телефон"
+                class="appointment__card_input">
+                <label for="1" class="form_checkbox">
+                  <input type="checkbox">
+                  Підтверджуючи, ви погоджуєтесь з політикою конфіденсальності
+                </label>
+                <button class="button">Замовити зворотній зв’язок</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feedback container">
+        <div class="feedback__head">
+          <p class="feedback__head_title title">Відгуки клієнтів</p>
+          <button class="feedback__head_button">Більше відгуків</button>
+        </div>
+
+        <div class="feedback__body">
+          <div class="feedback__body_slider">
+            <div class="feedback__body_card">
+              <div class="feedback__body_card_content">
+                <div class="feedback__body_card_rate">
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star emptyStar"></div>
+                </div>
+                <p class="feedback__body_card_text">
+                  Не очікував неймовірної різниці від персональних устілець, і не подумав, що це допоможе так швидко. Маю плоскостопість, і після консультації з лікарем-ортопедом та використання відповідних устілець, відчуваю помітне полегшення і зменшення болю. Рекомендую!
+                </p>
+                <div class="feedback__body_card_person">
+                  <img src="./images/maxfeedback.png" alt="customer"
+                  class="feedback__body_card_person_photo">
+                  <p class="feedback__body_card_person_name">Максим Клімов, 32р</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feedback__body_card">
+              <div class="feedback__body_card_content">
+                <div class="feedback__body_card_rate">
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                </div>
+                <p class="feedback__body_card_text">
+                  Була тривога через постійний дискомфорт у ногах після робочого дня. Вирішила випробувати персональні стілець, і результат вражає. Біль зменшився, а комфорт під час ходьби повернувся. Тепер це невід'ємна частина моєї повсякденності!
+                </p>
+                <div class="feedback__body_card_person">
+                  <img src="./images/olenafeedback.png" alt="customer"
+                  class="feedback__body_card_person_photo">
+                  <p class="feedback__body_card_person_name">Олена Корж, 28р</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feedback__body_card feedback__body_card--last">
+              <div class="feedback__body_card_content">
+                <div class="feedback__body_card_rate">
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                  <div class="feedback__body_card_star"></div>
+                </div>
+                <p class="feedback__body_card_text">
+                  Ортопедичне взуття та стельки допомогли мені подолати проблему архів стопи. Відчуття після короткого періоду використання стілець - неймовірні. Знову можу насолоджуватися активним способом життя без болісних відчуттів у ногах. Дуже задоволений результатом
+                </p>
+                <div class="feedback__body_card_person">
+                  <img src="./images/ihorfeedback.png" alt="customer"
+                  class="feedback__body_card_person_photo">
+                  <p class="feedback__body_card_person_name">Ігор Степаненко, 44р</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="learnMoreButton feedback__button">Залишити відгук</button>
+
+        <div class="services__slider_buttons">
+          <button class="services__slider_buttons_button">
+            <img src="./images/arrowLeft.svg" alt="left">
+          </button>
+
+          <button class="services__slider_buttons_button">
+            <img src="./images/arrowRight.svg" alt="right">
+          </button>
+        </div>
+      </section>
+
+      <section class="questions container">
+        <p class="questions__title title">Часті питання</p>
+
+        <div class="questions__list">
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Які причини можуть вказувати на необхідність візиту до лікаря-ортопеда чи вибору персональних устілок?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Скільки часу в день рекомендується використовувати персональні стілець, і як вони можуть полегшити дискомфорт у ногах?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Як розпізнати ознаки плоскостопості та чи є ефективні методи її попередження?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Чи може невірне взуття впливати на стан моїх ніг, і як йому запобігти?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Чи є відмінності між стандартними стелями та персональними стілець, і чому останні часто вважаються ефективнішими?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Як зменшити втомленість ніг під час тривалого стояння чи ходьби, окрім використання стілців?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Як визначити, коли вам необхідно звернутися до лікаря-ортопеда, а не вирішувати проблеми самостійно?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+          <div class="questions__list_card">
+            <p class="questions__list_card_text">
+              Як дбати про свої ноги щоденно, щоб уникнути проблем з архами стопи та іншими неприємностями?
+            </p>
+            <button class="questions__list_card_button">
+              <img src="./images/plus.svg" alt="answer">
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="contacts container">
+        <div class="contacts__wrapper">
+          <div class="contacts__contactBlock">
+            <div class="contacts__contactBlock_top">
+              <div class="contacts__contactBlock_wrapper">
+                <p class="contacts__contactBlock_top_title title">Контакти</p>
+                <p class="contacts__contactBlock_top_text">
+                  Ми завжди вам раді та із задоволенням готові <br> допомогти, щоб покращити ваш стан стоп
+                </p>
+
+                <div class="contacts__contactBlock_top_adress">
+                  <div class="contacts__contactBlock_top_adress_wrapper">
+                    <div class="contacts__contactBlock_top_adress_street">
+                      <img
+                        src="./images/contPoint.svg"
+                        alt="Dnipro, vul.Tsentralna 6-2b"
+                        class="contacts__contactBlock_top_adress_street_img"
+                      >
+                      <p class="contacts__contactBlock_top_adress_street_text">м.Дніпро, <br> вул.Центральна, 6-2б</p>
+                    </div>
+                    <a target="_blank" href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0,+6,+2%D0%B1,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+49000/data=!4m2!3m1!1s0x40dbe2dd602611c3:0xa435da45904f0c1a?sa=X&ved=2ahUKEwiZqebQl7CEAxWCQvEDHR4OD7YQ8gF6BAgcEAA"
+                    class="insideLink">
+                      <button class="contacts__contactBlock_top_adress_street_button">Показати на мапі</button>
+                    </a>
+                  </div>
+
+                  <div class="contacts__contactBlock_top_adress_time">
+                    <div class="contacts__contactBlock_top_adress_time_head">
+                      <img
+                        src="./images/contTime.svg"
+                        alt="time"
+                        class="contacts__contactBlock_top_adress_time_head_img"
+                      >
+                      <p class="contacts__contactBlock_top_adress_time_text_head">Час роботи</p>
+                    </div>
+
+                    <p class="contacts__contactBlock_top_adress_time_text">Пн-Пт:
+                      <span class="contacts__contactBlock_top_adress_time_text_high">10:00-19:00</span>
+                    </p>
+                    <p class="contacts__contactBlock_top_adress_time_text">Сб:
+                      <span class="contacts__contactBlock_top_adress_time_text_high">9:00-18:00</span>
+                    </p>
+                    <p class="contacts__contactBlock_top_adress_time_text">Нд:
+                      <span class="contacts__contactBlock_top_adress_time_text_high">9:00-15:00</span>
+                    </p>
+                  </div>
+
+                  <div class="contacts__contactBlock_top_adress_number">
+                    <div class="contacts__contactBlock_top_adress_number_phone">
+                      <img
+                        src="./images/Phone.png"
+                        alt="phone"
+                        class="contacts__contactBlock_top_adress_number_phone_img"
+                      >
+                      <p class="contacts__contactBlock_top_adress_number_phone_text">
+                        <a href="tel:+38 (096) 004 25 33" class="contacts__link">+38 (096) 004 25 33</a>
+                      </p>
+                    </div>
+                    <div class="contacts__contactBlock_top_adress_number_phone">
+                      <img
+                        src="./images/Phone.png"
+                        alt="phone"
+                        class="contacts__contactBlock_top_adress_number_phone_img"
+                      >
+                      <p class="contacts__contactBlock_top_adress_number_phone_text">
+                        <a href="tel:+38 (050) 505 81 99" class="contacts__link">+38 (050) 505 81 99</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacts__contactBlock_bottom">
+              <div class="contacts__contactBlock_bottom_wrapper">
+                <form action="post" class="form contactForm">
+                  <input type="text" placeholder="Ім'я"
+                  class="appointment__card_input">
+                  <input type="text" placeholder="Телефон"
+                  class="appointment__card_input">
+                  <label for="2" class="form_checkbox">
+                    <input type="checkbox">
+                    Підтверджуючи, ви погоджуєтесь з політикою конфіденсальності
+                  </label>
+                  <button class="button">Замовити зворотній зв’язок</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <img src="./images/contactsBg.png" alt="contacts"
+          class="contacts_img">
+          <!-- <img src="./images" alt="contacts" class="contacts_img--1200"> -->
+        </div>
+      </section>
+
+      <div class="fixedButtons">
+        <div class="fixedButtons__button">
+          <img src="./images/phoneButton.svg" alt="call-button">
+        </div>
+
+        <div class="fixedButtons__button">
+          <img src="./images/chat.svg" alt="chat-button">
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer container">
+      <div class="footer__main">
+        <div class="footer__main_titles">
+          <p class="footer__main_titles_title">
+            <strong>«Ортофіт»</strong> — Лідер №1 в Україні серед кваліфікованої без операційної ортопедії стоп!
+          </p>
+          <p class="footer__main_titles_text">
+            Єдиний медичний центр з персональних устілок та здорової ходьби у м. Дніпро
+          </p>
+        </div>
+
+        <div class="footer__main_links">
+          <div class="footer__main_links_link_wrapper">
+            <p class="footer__main_links_title">Компанія</p>
+            <a href="/" class="footer__main_links_link">Пройти тест стопи</a>
+            <a href="./pages/aboutPage.html" class="footer__main_links_link">Про компанію</a>
+            <a href="/" class="footer__main_links_link">Відео</a>
+            <a href="/" class="footer__main_links_link">Відгуки</a>
+            <a href="/" class="footer__main_links_link">Акції</a>
+            <a href="/" class="footer__main_links_link">Журнал</a>
+            <a href="/" class="footer__main_links_link">Ліцензії</a>
+            <a href="/" class="footer__main_links_link">Для партнерiр</a>
+            <a target="_blank" href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0,+6,+2%D0%B1,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE,+%D0%94%D0%BD%D1%96%D0%BF%D1%80%D0%BE%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+49000/data=!4m2!3m1!1s0x40dbe2dd602611c3:0xa435da45904f0c1a?sa=X&ved=2ahUKEwiZqebQl7CEAxWCQvEDHR4OD7YQ8gF6BAgcEAA"
+            class="footer__main_links_link">Як нас знайти</a>
+          </div>
+
+          <div class="footer__main_links_link_wrapper">
+            <p class="footer__main_links_title">Послуги</p>
+            <a href="./pages/kinesiotapingService.html" class="footer__main_links_link">Кінезіотейпування</a>
+            <a href="./pages/kidsCategory.html" class="footer__main_links_link">Дитячий ортопед</a>
+            <a href="/" class="footer__main_links_link">Лікування плоскостопості</a>
+            <a href="/" class="footer__main_links_link">Вальгус (Valgus)</a>
+            <a href="/" class="footer__main_links_link">Лікування сколіозу</a>
+            <a href="/" class="footer__main_links_link">Лікування остеохондрозу</a>
+            <a href="/" class="footer__main_links_link">Лікування артрозу</a>
+            <a href="/" class="footer__main_links_link">Кісточки на ногах</a>
+            <a href="./pages/servicesCatalog.html" class="footer__main_links_link">Усі послуги</a>
+          </div>
+
+          <div class="footer__main_links_link_wrapper">
+            <p class="footer__main_links_title">Устілки</p>
+            <a href="./pages/individualServicePage.html" class="footer__main_links_link">Індивідуальні (лікарські) рішення</a>
+            <a href="./pages/personalizationService.html" class="footer__main_links_link">Готові з персоналізацією</a>
+            <a href="./pages/serviceReady.html" class="footer__main_links_link">Готові рішення</a>
+            <a href="./pages/allGoods.html" class="footer__main_links_link">Усi товари</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__bottom_text">Політика конфіденційності <br> © 2007-теперішній час «Ортофіт», <br> Усі права захищено</p>
+        <div class="footer__bottom_designer">
+          <p class="footer__bottom_designer_remark">Дизайн та розробка:</p>
+          <img src="./images/kruglovDesign.png" alt="Kruglov Design"
+          class="footer__bottom_designer_img">
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
   </body>
 </html>

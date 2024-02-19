@@ -1,0 +1,49 @@
+.categories {
+  color: #00719b;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(6, 115, 154, 0.3);
+}
+
+.categories__head {
+  margin-left: 36px;
+  margin-bottom: 50px;
+}
+
+.categories__head_text {
+  width: 520px;
+}
+
+.categories__body {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.categories__body_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 283px;
+  height: 320px;
+}
+
+.categories__body_card_link {
+  text-decoration: none;
+}
+
+.categories__body_card_img {
+  margin-bottom: 20px;
+}
+
+.categories__body_card_name {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #06739a;
+  text-align: center;
+
+  margin: 0;
+  width: 190px;
+}

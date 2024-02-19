@@ -1,0 +1,178 @@
+.catalog_hero {
+  background-image: url(../images/heroCatalog.png);
+  height: 750px;
+}
+
+/* catalogSection */
+
+.catalogSection {
+  color: #00719b;
+}
+
+.catalogSection__titleBlock {
+  margin-bottom: 40px;
+}
+
+.catalogSection__titleBlock_title {
+  margin: 0;
+}
+
+.catalogSection__titleBlock_text {
+  width: 500px;
+}
+
+.catalogSection__catalogList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.catalogSection__catalogList_card {
+  border-radius: 40px;
+}
+
+.catalogSection__catalogList_topRow {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.catalogSection__catalogList_midRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.catalogSection__catalogList_bottomRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.catalog-topCard {
+  width: 586px;
+  height: 600px;
+}
+
+.catalog-midCard {
+  width: 436px;
+  height: 320px;
+}
+
+.catalog-bottomCard {
+  width: 591px;
+  height: 320px;
+}
+
+@media screen and (max-width: 1815px) {
+  .catalog-topCard {
+    width: 500px;
+  }
+
+  .catalog-midCard {
+    width: 350px;
+  }
+
+  .catalog-bottomCard {
+    width: 480px;
+  }
+}
+
+@media screen and (max-width: 1580px) {
+  .catalog-topCard {
+    width: 380px;
+    height: 500px;
+  }
+
+  .catalog-midCard {
+    width: 250px;
+    height: 280px;
+  }
+
+  .catalog-bottomCard {
+    width: 380px;
+    height: 280px;
+  }
+}
+
+.catalog-firstCard {
+  background-image: url(../images/catalogIndividual.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-secondCard {
+  background-image: url(../images/catalogReady.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-thirdCard {
+  background-image: url(../images/catalogReady2.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-fourthCard {
+  background-image: url(../images/catalogsocks.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-fifthtCard {
+  background-image: url(../images/catalogStretch.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-sixCard {
+  background-image: url(../images/catalogEveryday.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-sevenCard {
+  background-image: url(../images/catalogKids.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-eightCard {
+  background-image: url(../images/catalogModel.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-nineCard {
+  background-image: url(../images/catalogSport.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.catalog-tenCard {
+  background-image: url(../images/catalogAll.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.catalogSection__catalogList_card {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.catalogSection__catalogList_card_title {
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.link {
+  text-decoration: none;
+}

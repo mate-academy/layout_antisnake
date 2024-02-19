@@ -1,0 +1,168 @@
+.services_hero {
+  background-image: url(../images/serviceHero.png);
+  height: 750px;
+}
+
+.services_hero_titlename {
+  width: 562px;
+}
+
+.servicesSection {
+  color: #00719b;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(6, 115, 154, 0.3);
+}
+
+.servicesSection__titleBlock {
+  margin-bottom: 30px;
+}
+
+.servicesSection__titleBlock_title {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.servicesSection__titleBlock_text {
+  font-size: 17px;
+  width: 450px;
+}
+
+.servicesSection__listOfServices {
+  margin-bottom: 25px;
+}
+
+.servicesSection__listOfServices_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1830px) {
+  .servicesSection__listOfServices_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.servicesSection__listOfServices_register {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 6;
+
+  align-self: start;
+
+  width: 1199px;
+  height: 607px;
+
+  box-shadow: 0 0 20px 0 rgba(0, 113, 155, 0.1);
+  background: #00719b;
+  border-radius: 40px;
+}
+
+@media screen and (max-width: 1830px) {
+  .servicesSection__listOfServices_register {
+    display: none;
+  }
+}
+
+.servicesSection__listOfServices_register_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  background-color: #fff;
+  border-radius: 40px;
+
+  width: 1119px;
+  height: 354px;
+
+  margin-bottom: 40px;
+}
+
+.servicesSection__listOfServices_form {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.servicesSection__listOfServices_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 586px;
+  height: 607px;
+}
+
+.servicesSection__listOfServices_card_img {
+  margin-bottom: 40px;
+}
+
+.servicesSection__listOfServices_card_title {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.servicesSection__listOfServices_card_text {
+  font-size: 17px;
+  line-height: 1.2;
+  width: 450px;
+  margin-bottom: 30px;
+}
+
+.servicesSection__listOfServices_card_content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 530px;
+}
+
+.servicesSection__listOfServices_card_buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 530px;
+}
+
+.registerButton {
+  border: 1px solid #00719b;
+  border-radius: 45px;
+  width: 317px;
+  height: 60px;
+  color: #00719b;
+  cursor: pointer;
+}
+
+.servicesSection__listOfServices_register_titleBlock {
+  color: #fff;
+  width: 1120px;
+}
+
+.servicesSection__listOfServices_register_titleBlock_text {
+  font-size: 46px;
+  line-height: 1;
+  margin-top: 0;
+}
+
+.servicesSection__listOfServices_register_titleBlock_question {
+  font-size: 24px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.servicesSection__button {
+  border: 1px solid #06739a;
+  border-radius: 51px;
+  height: 60px;
+  width: 100%;
+  color: #00719b;
+}

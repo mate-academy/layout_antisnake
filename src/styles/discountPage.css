@@ -1,0 +1,115 @@
+.videoBlock--discount {
+  padding: 30px;
+  border-bottom: 1px solid rgb(6, 115, 154, 0.3);
+}
+
+.videoBlock_head_title {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.videoBlock_head {
+  margin-bottom: 40px;
+}
+
+.videoBlock_head_text {
+  font-size: 17px;
+  font-weight: 1.2;
+  width: 550px;
+}
+
+.videoBlock_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.videoBlock--discount {
+  display: block;
+}
+
+.videoBlock__textBlock_bottom_title--discount {
+  margin-bottom: 15px;
+}
+
+.videoBlock__textBlock_top_text--discount {
+  margin-bottom: 30px;
+}
+
+.videoBlock__textBlock--discount {
+  margin-top: 37px;
+}
+
+.videoBlock__video_discountPh {
+  margin-bottom: 20px;
+}
+
+.videoBlock_discountsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+
+  margin-bottom: 60px;
+}
+
+.videoBlock_discountsList_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.videoBlock_discountsList_card_img {
+  margin-bottom: 20px;
+}
+
+.videoBlock_discountsList_card_title {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  width: 350px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.videoBlock_discountsList_card_text {
+  font-size: 17px;
+  line-height: 1.2;
+  width: 350px;
+  margin: 0;
+  margin-bottom: 22px;
+}
+
+.videoBlock_discountsList_card_buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.videoBlock_discountsList_card_buttonsWrapper_button {
+  width: 375px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.videoBlock_learnMoreButton {
+  display: block;
+}
+
+.videoBlock_discountsListBlock_button {
+  border: 1px solid #06739a;
+  border-radius: 51px;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  color: #06739a;
+  cursor: pointer;
+}
+
+
+.productsListBlock__head_title {
+  color: #06739a;
+  margin-bottom: 30px;
+}
+
+.videoBlock_discountsListBlock {
+  color: #06739a;
+}

@@ -1,0 +1,260 @@
+.presentation {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(6, 115, 154, 0.3);
+
+  color: #fff;
+}
+
+.presentation_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 40px;
+  width: 1860px;
+  height: 685px;
+
+  background-image: url(../images/presentationBg.png);
+}
+
+.presentation_wrapper {
+  width: 1720px;
+  height: 525px;
+}
+
+.presentation_head {
+  margin-bottom: 80px;
+}
+
+.presentation_head_remark {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.presentation_head_title {
+  font-size: 86px;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.presentation_body {
+  width: 700px;
+}
+
+.presentation_body_title {
+  font-size: 46px;
+}
+
+.presentation_body_text {
+  font-size: 17px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.8);
+
+  margin-bottom: 40px;
+}
+
+.presentation_body_button {
+  width: 472px;
+  height: 50px;
+  border-radius: 45px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* serviceInfo */
+
+.serviceInfo {
+  color: #00719b;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(6, 115, 154, 0.3);
+}
+
+.serviceInfo_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.serviceInfo__titleBlock {
+  width: 455px;
+}
+
+.serviceInfo__titleBlock_title {
+  margin: 0;
+  margin-bottom: 32px;
+
+  font-size: 30px;
+  letter-spacing: -0.01em;
+}
+
+.serviceInfo__titleBlock_text {
+  font-size: 17px;
+  line-height: 1.2;
+
+  margin-bottom: 116px;
+}
+
+.serviceInfo__titleBlock_img {
+  width: 433px;
+  height: 433px;
+}
+
+.serviceInfo__information {
+  width: 700px;
+}
+
+.serviceInfo__information_phBlock_text {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.serviceInfo__information_textBlock {
+  font-size: 17px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.serviceInfo__information_phBlock {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  border-bottom: 1px solid rgb(0, 113, 155, 0.45);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.serviceInfo__information_title {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.serviceInfo__information_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  row-gap: 20px;
+}
+
+.serviceInfo__information_cards_card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(0, 113, 155, 0.45);
+}
+
+.serviceInfo__information_cards_card_text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.serviceInfo__historyBlock_text {
+  width: 470px;
+}
+
+/* historyBlock */
+
+.historyBlock {
+  display: flex;
+  gap: 80px;
+
+  color: #00719b;
+}
+
+.historyBlock__leftBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 880px;
+  height: 1291px;
+  margin-left: 60px;
+}
+
+.historyBlock__leftBlock_title {
+  margin: 0;
+}
+
+.historyBlock__leftBlock_banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 880px;
+  height: 417px;
+  border-radius: 40px;
+
+  color: #fff;
+  box-shadow: 0 0 15px 0 rgba(0, 113, 155, 0.07);
+  background-color: #00719b;
+}
+
+.historyBlock__leftBlock_banner_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 760px;
+  height: 297px;
+}
+
+.historyBlock__leftBlock_banner_text {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.historyBlock__leftBlock_banner_button {
+  border: none;
+  border-radius: 45px;
+  width: 300px;
+  height: 50px;
+
+  background: #fff;
+}
+
+.historyBlock__rightBlock_card {
+  margin-bottom: 80px;
+}
+
+.historyBlock__rightBlock_card_head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.historyBlock__rightBlock_card_head_title {
+  font-size: 30px;
+  line-height: 1.2;
+  width: 400px;
+}
+
+.historyBlock__rightBlock_card_head_number {
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  color: #388fae;
+  opacity: 0.3;
+}
+
+.historyBlock__rightBlock_card_body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 22px;
+}
+
+.historyBlock__rightBlock_card_body_smallCard {
+  border-bottom: 1px solid rgba(0, 113, 155, 0.3);
+  padding-bottom: 22px;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
