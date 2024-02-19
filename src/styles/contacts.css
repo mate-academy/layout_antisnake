@@ -1,0 +1,16 @@
+.map {
+  height: 754px;
+}
+
+.map_wrapper {
+  height: 100%;
+}
+
+.contacts_hero {
+  background-image: url(../images/contactsHero.png);
+  height: 750px;
+}
+
+.contacts_hero_title {
+  width: 510px;
+}
