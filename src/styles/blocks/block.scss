@@ -1,0 +1,17 @@
+.block {
+  height: $height-block;
+  text-align: center;
+  line-height: $height-block;
+
+  @for $index from 1 through $count-blocks {
+    &:nth-child(#{$index}):before {
+      content: "#{$index}";
+    }
+  }
+
+  @each $block, $color in $colors {
+    &--#{$block} {
+      background-color: $color;
+    }
+  }
+}
