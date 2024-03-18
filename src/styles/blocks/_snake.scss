@@ -1,0 +1,25 @@
+.snake {
+  $max-columns: 3;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-size, 1fr));
+
+  @media (min-width: ($item-size * $max-columns)) {
+    grid-template-columns: repeat($max-columns, minmax($item-size, 1fr));
+  }
+
+  &__item {
+    height: $item-size;
+
+    text-align: center;
+    font-size: 100px;
+    line-height: $item-size;
+    color: #fff;
+
+    @for $itemNum from 1 through 6 {
+      &--#{$itemNum} {
+        background: rgb(getColor($itemNum), 0, 0);
+      }
+    }
+  }
+}
