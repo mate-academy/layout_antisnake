@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cellSize, 1fr));
+
+  @media(min-width: $cellSize * 3) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    display: flex;
+
+    min-width: $cellSize;
+    height: $cellSize;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        background-color: rgb(100% - ($i - 1)*20%, 0, 0);
+      }
+    }
+  }
+}
