@@ -1,0 +1,34 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+
+  &__block {
+    display: block;
+    height: 300px;
+
+    @for $day from 1 through 6 {
+      &:nth-child(#{$day})::before {
+        content: "#{$day}";
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 300px;
+      }
+    }
+
+    @each $name,
+    $value in $colors {
+      &--#{$name} {
+        background-color: $value;
+      }
+    }
+  }
+
+@media (min-width:900px) {
+      & {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+}
