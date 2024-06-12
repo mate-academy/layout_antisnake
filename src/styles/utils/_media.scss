@@ -1,0 +1,11 @@
+@media screen and (max-width: 899px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fill, minmax($item-height, 50%));
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fill, minmax($item-height, 1fr));
+  }
+}
