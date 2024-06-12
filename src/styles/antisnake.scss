@@ -1,0 +1,44 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+body {
+  margin: 0;
+}
+
+.block-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__first {
+    background-color: #f00;
+    @extend %numbers-and-height;
+  }
+
+  &__second {
+    background-color: #c00;
+    @extend %numbers-and-height;
+  }
+
+  &__third {
+    background-color: #900;
+    @extend %numbers-and-height;
+  }
+
+  &__forth {
+    background-color: #600;
+    @extend %numbers-and-height;
+  }
+
+  &__fivth {
+    background-color: #300;
+    @extend %numbers-and-height;
+  }
+
+  &__sixth {
+    background-color: #000;
+    @extend %numbers-and-height;
+  }
+}
