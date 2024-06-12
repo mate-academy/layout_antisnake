@@ -1,0 +1,20 @@
+@use "sass:map";
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: 300px;
+
+    @each $i, $color in $colors-blocks {
+      &--#{$i} {
+        background-color: $color;
+      }
+    }
+  }
+}
