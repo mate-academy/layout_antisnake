@@ -1,3 +1,33 @@
+$item-height: 300px;
+$color-step: 255 / 5;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($item-height, 1fr));
+
+  &__item {
+    height: $item-height;
+    color: white;
+    line-height: $item-height;
+    text-align: center;
+    font-size: 100px;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index}) {
+        background-color: rgb(255 - ($color-step * ($index - 1)), 0, 0);
+      }
+    }
+  }
+
+  @media screen and (min-width: #{$item-height * 4}) {
+    grid-template-columns: repeat(3, minmax($item-height, 1fr));
+  }
 }
