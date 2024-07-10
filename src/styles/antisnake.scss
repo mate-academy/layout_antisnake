@@ -1,0 +1,23 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minSizeItem, 1fr));
+  justify-content: center;
+  &__block {
+    flex-grow: 1;
+    line-height: $heightItem;
+    text-align: center;
+    color: $BGcolor;
+
+    @each $index, $color in $colorsNumbers {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: 1199px) {
+  .antisnake {
+    grid-template-columns: repeat(3, minmax($minSizeItem, 1fr));
+  }
+}
