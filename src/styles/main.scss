@@ -1,3 +1,52 @@
-body {
+$element-height: 300px;
+
+.body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  // grid-template-rows: repeat(2, $element-height);
+  grid-auto-rows: $element-height;
+
+  @media (min-width: ($element-height*2)) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (min-width: ($element-height*3)) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  &__element {
+    display: grid;
+    place-content: center center;
+
+    &:nth-child(1) {
+      background-color: red;
+    }
+
+    &:nth-child(2) {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &:nth-child(3) {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &:nth-child(4) {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &:nth-child(5) {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &:nth-child(6) {
+      background-color: rgb(0, 0, 0);
+    }
+  }
 }
