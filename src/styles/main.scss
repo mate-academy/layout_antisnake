@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "./extends/_variables.scss";
+
+@import "./blocks/page.scss";
+@import "./blocks/anti-snake.scss";
