@@ -1,0 +1,21 @@
+.antisnake {
+  display: grid;
+  grid-template-rows: $blocks-size;
+  grid-auto-rows: $blocks-size;
+
+  &__block {
+    @for $block from 1 through 6 {
+      &:nth-child(#{$block}) {
+        background-color: get-background-color($block);
+
+        &::before {
+          content: "#{$block}";
+        }
+      }
+    }
+  }
+
+  @for $blocks-amount from 1 through 3 {
+    @include media-breakpoint($blocks-amount);
+  }
+}

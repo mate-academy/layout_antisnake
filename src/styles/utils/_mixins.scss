@@ -1,0 +1,5 @@
+@mixin media-breakpoint($blocks-amount) {
+  @media (min-width: get-total-size($blocks-amount)) {
+    grid-template-columns: repeat($blocks-amount, minmax($blocks-size, 1fr));
+  }
+}
