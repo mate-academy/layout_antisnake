@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-width: 33.3%;
+
+  &__block {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 300px;
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .antisnake {
+    grid-template-columns: repeat(3,minmax(300px,1fr));
+  }
+}
