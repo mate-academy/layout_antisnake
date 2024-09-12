@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-width, 1fr));
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+}
