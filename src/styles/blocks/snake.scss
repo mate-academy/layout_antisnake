@@ -1,0 +1,25 @@
+.snake-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.snake-box {
+  font-size: 100px;
+  color: #fff;
+  height: 300px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-color: var(--box-color#{$i});
+    }
+  }
+}
