@@ -1,3 +1,7 @@
-body {
-  margin: 0;
-}
+@import "./normalize.scss";
+
+@import "./utils/_mixins";
+@import "./utils/variables";
+
+@import "./blocks.scss";
+@import "./container.scss";
