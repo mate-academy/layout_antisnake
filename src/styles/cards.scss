@@ -1,0 +1,41 @@
+.cards {
+  display: grid;
+  align-items: start;
+  justify-items: stretch;
+  grid-template-columns: repeat(3, minmax($card-height, 1fr));
+  width: 100%;
+
+  @media screen and (max-width: $adaptive-size) {
+    grid-template-columns: repeat(auto-fill, minmax($card-height, 1fr));
+  }
+
+  &__item {
+    height: $card-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @for $num from 1 through 6 {
+      &--#{$num}::before {
+        content: "#{$num}";
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: $card-font-size;
+        color: $card-num-color;
+      }
+    }
+
+    $colors:
+      "1" rgb(255, 0, 0),
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $num, $color in $colors {
+      &--#{$num} {
+        background-color: $color;
+      }
+    }
+  }
+}
