@@ -1,3 +1,49 @@
+html {
+  color: #fff;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px,1fr));
+
+  .block {
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    $colors:
+      "one" #f00,
+      "two" #c00,
+      "three" #900,
+      "four" #600,
+      "five" #300,
+      "six" #000;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
 }
