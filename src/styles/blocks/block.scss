@@ -1,0 +1,33 @@
+.container__block {
+  display: grid;
+  place-items: center;
+  height: $size;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+
+  &--1 {
+    background-color: red;
+  }
+  
+  &--2 {
+    background-color: #c00;
+  }
+  
+  &--3 {
+    background-color: #900;
+  }
+  
+  &--4 {
+    background-color: #600;
+  }
+  
+  &--5 {
+    background-color: #300;
+  }
+  
+  &--6 {
+    background-color: black;
+  }  
+}
