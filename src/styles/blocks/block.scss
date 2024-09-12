@@ -1,0 +1,19 @@
+.block {
+  height: 300px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+
+  @each $name, $color in $colors {
+    &--color--#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @for $index from 1 through 6 {
+    &:nth-child(#{$index}):before {
+      content: "#{$index}";
+    }
+  }
+}
