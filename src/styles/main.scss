@@ -1,3 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+@import "./utils/variables.scss";
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    min-height: $snake-size;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @for $index from 1 through $box-count {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        color: white;
+      }
+    }
+
+    @each $index, $number in $colors-of-blocks {
+      &:nth-child(#{$index}) {
+        background-color: rgb($number, 0, 0);
+      }
+    }
+  }
 }
