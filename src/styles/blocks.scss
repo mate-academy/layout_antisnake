@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+}
+
+.block {
+  height: $block-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $block-size;
+
+  @each $num, $color in $block-color {
+    &:nth-child(n + #{$num}) {
+      background-color: #{$color};
+    }
+  }
+}
