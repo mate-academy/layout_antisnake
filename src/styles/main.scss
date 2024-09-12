@@ -1,3 +1,31 @@
-body {
-  margin: 0;
+@import "./utils/normalize";
+@import "./utils/reset";
+@import "./utils/variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    height: $block-size;
+    color: #fff;
+
+    @each $num, $color in $colors {
+      &:nth-child(#{$num}) {
+        background-color: #{$color};
+
+        &::before {
+          content: "#{$num}";
+        }
+      }
+    }
+  }
 }
