@@ -1,0 +1,50 @@
+.container {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    color: #fff;
+
+    &--1 {
+      background-color: red;
+      order: 1;
+    }
+
+    &--2 {
+      background-color: rgb(204, 0, 0);
+      order: 2;
+    }
+
+    &--3 {
+      background-color: rgb(153, 0, 0);
+      order: 3;
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+      order: 4;
+    }
+
+    &--5 {
+      background-color: rgb(51, 0, 0);
+      order: 5;
+    }
+
+    &--6 {
+      background-color: #000;
+      order: 6;
+    }
+  }
+}
