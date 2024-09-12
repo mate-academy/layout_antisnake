@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  justify-content: center;
+
+  @include columsNumber(3);
+
+  &__block {
+    height: 300px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+        color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    @include columsNumber(2);
+  }
+
+  @media (max-width: 599px) {
+    @include columsNumber(1);
+  }
+}
