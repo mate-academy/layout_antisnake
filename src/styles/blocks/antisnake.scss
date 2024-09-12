@@ -1,0 +1,58 @@
+.antisnake {
+  &_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include antisnake_block;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+    @each $modifier_number, $color_saturation in $block_colors {
+      &--color--#{$modifier_number} {
+        background-color: rgb($rgb_red*($color_saturation/5), 0, 0);
+      }
+    }
+  }
+}
+
+@media (max-width:300px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: none;
+  }
+}
+
+@media (min-width:300px) and (max-width:450px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: none;
+  }
+}
+
+@media (min-width:451px) and (max-width:600px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (min-width:600px) and (max-width:750px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (min-width:751px) and (max-width:4096px) {
+  .antisnake {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+  }
+}
