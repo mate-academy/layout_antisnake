@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-size, 1fr));
+
+  @media (min-width: 4 * $box-size) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__box {
+    height: $box-size;
+    text-align: center;
+    line-height: $box-size;
+
+    @for $idx from 1 through 6 {
+      &:nth-of-type(#{$idx}) {
+        background-color: rgb(get-color($idx) , 0, 0);
+      }
+    }
+  }
+}
