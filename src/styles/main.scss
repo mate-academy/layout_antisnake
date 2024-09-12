@@ -1,3 +1,10 @@
-body {
+.page {
   margin: 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
 }
+
+@import "_variables.scss";
+@import "_snake-container.scss";
+@import "_snake-block.scss";
