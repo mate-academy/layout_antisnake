@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  
+  justify-content: center;
+  align-content: center;
+
+  &__cell {
+    display: flex;
+    min-width: $size-cell;
+    height: $size-cell;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  @for $var from 0 to 6 {
+    & :nth-child(#{$var + 1}) {
+      background-color: hsl(
+        0, calc(100% - #{$var} * 10%), calc(50% - #{$var} * 10%)
+      );
+    }
+  }
+}
