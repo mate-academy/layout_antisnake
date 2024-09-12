@@ -1,0 +1,108 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  &__content {
+    width: 100%;
+    height: $content-height;
+    line-height: $content-height;
+    text-align: center;
+
+    &--1 {
+      background-color: red;
+      grid-row: 1 / 2;
+    }
+    &--2 {
+      background-color: #c00;
+      grid-row: 2 / 3;
+    }
+    &--3 {
+      background-color: #900;
+      grid-row: 3 / 4;
+    }
+    &--4 {
+      background-color: #600;
+      grid-row: 4 / 5;
+    }
+    &--5 {
+      background-color: #300;
+      grid-row: 5 / 6;
+    }
+    &--6 {
+      background-color: #000;
+      grid-row: 6 / 7;
+    }
+
+    @for $startCount from 1 through 6 {
+      &--#{$startCount}::before {
+        content: "#{$startCount}";
+        color: white;
+      }
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    &__content {
+      &--1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      &--2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      &--3 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      &--4 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      &--5 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+      }
+      &--6 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    &__content {
+      &--1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      &--2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      &--3 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+      }
+      &--4 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      &--5 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      &--6 {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+}
