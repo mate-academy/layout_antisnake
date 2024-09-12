@@ -1,0 +1,11 @@
+@each $count-item, $color-of-bg in $bg-color {
+  .snake__item:nth-child(#{$count-item}) {
+    background-color: #{$color-of-bg};
+  }
+}
+
+@for $snake-count from 1 through 6 {
+  .snake__item:nth-child(#{$snake-count})::after {
+    content: "#{$snake-count}";
+  }
+}
