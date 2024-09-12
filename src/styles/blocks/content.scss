@@ -1,0 +1,41 @@
+$colors:
+  "red_1" red,
+  "red_2" #cd0000,
+  "red_3" #9a0000,
+  "red_4" #600,
+  "red_5" #300000,
+  "black_6" black;
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+
+  &__box {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: white;
+  }
+
+  @for $number from 1 through 6 {
+    &__box:nth-child(#{$number})::before {
+      content: "#{$number}";
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @each $name, $colors in $colors {
+    &__box--#{$name} {
+      background-color: $colors;
+    }
+  }
+}
