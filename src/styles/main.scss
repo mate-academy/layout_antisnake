@@ -1,3 +1,47 @@
-body {
-  margin: 0;
-}
+@import "./utils/variables";
+
+@import "./blocks/box";
+@import "./blocks/page"
+
+// $box-sq: 300px;
+// $txt-size: 100px;
+
+// .page {
+//   font-size: $txt-size;
+//   font-family: Arial, Helvetica, sans-serif;
+// }
+
+// .page__content {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .box {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax($box-sq, 1fr));
+
+//   width: 100%;
+
+//   @media (min-width: 1200px) {
+//     & {
+//       grid-template-columns: repeat(3, 1fr);
+//     }
+//   }
+
+//   &__item {
+//     height: $box-sq;
+//     color: white;
+//     text-align: center;
+//     line-height: $box-sq;
+
+//     @for $index from 1 through 6 {
+//       &:nth-child(#{$index})::before {
+//         content: "#{$index}";
+//       }
+      
+//       &:nth-child(#{$index}) {
+//         background-color: rgb(100% - ($index - 1) * 20%, 0%, 0%);
+//       }
+//     }
+//   }
+// }
