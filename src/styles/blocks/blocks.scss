@@ -1,0 +1,12 @@
+.blocks {
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, minmax($block-size, 1fr));
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+  }
+}
