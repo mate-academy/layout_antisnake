@@ -1,0 +1,41 @@
+.snake {
+  display: grid;
+  grid-auto-columns: repeat(auto-fit, minmax($block-size, auto));
+
+  background-color: #f00;
+
+  grid-template-areas: "first" "second" "third" "fourth" "fifth" "sixth";
+
+  @media screen and (min-width: 600px) {
+    grid-template-areas: "first second" "third fourth" "fifth sixth";
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-areas: "first second third" "fourth fifth sixth";
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $block-size;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: $block-size / 3;
+    text-align: center;
+    line-height: $block-size;
+
+    @for $block from 1 through 6 {
+      &:nth-child(#{$block})::before {
+        content: "#{$block}";
+      }
+
+      &:nth-child(#{$block}) {
+        grid-area: nth($blocks, $block);
+        background-color: hsla(0, 0%, 0%, get-color($block));
+      }
+    }
+  }
+}
