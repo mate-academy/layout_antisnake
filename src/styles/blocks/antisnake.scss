@@ -1,0 +1,43 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($block-min-width, $block-max-width));
+
+  @media (min-width: 451px) and (max-width: 751px) {
+    grid-template-columns: repeat(
+      2,
+      minmax($block-min-width, $block-max-width)
+    );
+  }
+
+  @media (min-width: 751px) {
+    grid-template-columns: repeat(
+      3,
+      minmax($block-min-width, $block-max-width)
+    );
+  }
+
+  &__block {
+    @include flex-center;
+    @include main-font-format;
+    position: relative;
+    height: 300px;
+    background-color: $primary-color;
+
+    &::before {
+      @include overlay;
+    }
+    &::after {
+      z-index: 1;
+    }
+
+    $opacity-coef: 0.2;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        opacity: $opacity-coef * ($i - 1);
+      }
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+    }
+  }
+}
