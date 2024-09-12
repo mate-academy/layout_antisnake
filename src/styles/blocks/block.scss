@@ -1,0 +1,13 @@
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $block-size;
+  color: #fff;
+
+  @each $number, $color in $blocks-colors {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
