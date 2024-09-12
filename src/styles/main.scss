@@ -1,3 +1,33 @@
+@import "./variables";
+
 body {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($block-height, 1fr));
+
+  @media (min-width: ($block-height * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $block-height;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @for $number from 1 through $number-of-blocks {
+      &--#{$number} {
+        background-color: rgb(($number-of-blocks - $number) * 20%, 0, 0);
+      }
+    }
+  }
 }
