@@ -1,0 +1,24 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($block-height, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $block-height;
+
+    font-size: 100px;
+    color: #fff;
+
+    @each $i, $color in $colors {
+      &--color-#{$i} {
+        background-color: $color;
+      }
+    }
+  }
+}
