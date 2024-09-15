@@ -1,0 +1,43 @@
+@import "../variables/variables.scss";
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($section-size, 1fr));
+
+  &__section {
+    display: grid;
+    align-content: center;
+
+    min-height: $section-size;
+    background-color: red;
+    text-align: center;
+
+    &--block--1 {
+      background-color: rgb(255, 0, 0);
+    }
+
+    &--block--2 {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--block--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--block--4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--block--5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--block--6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($section-size, 1fr));
+  }
+}
