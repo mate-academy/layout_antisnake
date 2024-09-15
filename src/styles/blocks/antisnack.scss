@@ -1,0 +1,38 @@
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px , 1fr));
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax(300px , 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px , 1fr));
+  }
+
+  &__item {
+    height: $size-item;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    $colors:
+      "1" #f00,
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" #000;
+
+    @each $index, $color in $colors {
+      &--color--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
