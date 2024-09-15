@@ -1,0 +1,31 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($height, 1fr));
+  grid-auto-rows: $height;
+
+  @media (min-width: ($height * 4)) {
+    grid-template-columns: repeat(3, minmax($height, 1fr));
+  }
+  
+  &__block {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #fff;
+
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}):before {
+        content: "#{$i}"
+      }
+    }
+
+    @each $number, $color in $colors {
+      &:nth-of-type(#{$number}) {
+        background-color: #{$color};
+      }
+    }
+  }
+}
