@@ -1,0 +1,5 @@
+@function darker($color, $index, $decrement) {
+  $result: $color - (($index - 1) * $decrement);
+
+  @return $result;
+}
