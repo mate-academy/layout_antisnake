@@ -1,0 +1,32 @@
+.snake {
+  display: grid;
+
+  @for $index from 1 through 6 {
+    & :nth-child(#{$index}) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      min-width: 300px;
+    }
+
+    & :nth-child(#{$index})::before {
+      color: white;
+      content: "#{$index}";
+    }
+  }
+
+  @each $index, $color in $colors {
+    & :nth-child(#{$index}) {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 50% 50%;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
