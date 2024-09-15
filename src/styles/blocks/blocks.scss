@@ -1,0 +1,37 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-blocks, auto));
+  & * {
+    height: $size-blocks;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, minmax($size-blocks, 33.33%));
+  }
+  &__block-1 {
+    background-color: $color-1;
+  }
+
+  &__block-2 {
+    background-color: $color-2;
+  }
+
+  &__block-3 {
+    background-color: $color-3;
+  }
+
+  &__block-4 {
+    background-color: $color-4;
+  }
+
+  &__block-5 {
+    background-color: $color-5;
+  }
+
+  &__block-6 {
+    background-color: $color-6;
+  }
+}
