@@ -1,0 +1,35 @@
+.block {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 300px;
+  min-width: 300px;
+  
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: rgb(255, 255, 255);
+
+  &--1 {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  &--2 {
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+  
+  &--3 {
+    background-color: rgba(255, 0, 0, 0.6);
+  }
+  
+  &--4 {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
+  
+  &--5 {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  
+  &--6 {
+    background-color: black;
+  }
+}
