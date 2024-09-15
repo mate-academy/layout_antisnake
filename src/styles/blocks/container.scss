@@ -1,0 +1,32 @@
+.container {
+  display: $grid;
+
+  @media (min-width: 300px) and (max-width: 599px) {
+    grid-template-columns: repeat(auto-fill);
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(auto-fill, 50%);
+  }
+
+  @media (min-width: 900px) and (max-width: 4096px) {
+    grid-template-columns: repeat(auto-fill, 33.3%);
+  }
+
+  &__block {
+    @include block-decoration ($bloch-height, $bloch-color, $text-size);
+    @include grid-decoration ($grid, $center);
+
+    @for $i from 1 through 6 {
+      &--#{$i}::after {
+        content: "#{$i}";
+      }
+    }
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
