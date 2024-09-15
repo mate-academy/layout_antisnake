@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($cell-height, 1fr));
+
+  @media (min-width: ($cell-height * 3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    height: $cell-height;
+    display: grid;
+    place-content: center;
+
+    @for $index from 1 through 6 {
+      &--#{$index} {
+        background-color: rgb((6 -$index) * 20%, 0, 0);
+      }
+
+      &--#{$index}::before {
+        content: "#{$index}";
+        color: #fff;
+      }
+    }
+  }
+}
