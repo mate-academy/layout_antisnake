@@ -1,0 +1,20 @@
+.box {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      &::before {
+        content: "#{$index}";
+      }
+    }
+  }
+
+  @each $number, $color in $box-color-list {
+    &--#{$number} {
+      background-color: $color;
+    }
+  }
+}
