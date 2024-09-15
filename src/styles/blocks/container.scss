@@ -1,0 +1,31 @@
+.container {
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__box {
+    height: $size;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::before {
+        content: "#{$index}";
+      }
+    }
+
+    @each $index, $color in $backgroundColors {
+      &--color--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
