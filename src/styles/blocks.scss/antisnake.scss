@@ -1,0 +1,37 @@
+$antisnake-size: 300px;
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($antisnake-size, 1fr));
+
+  @media (min-width: ($antisnake-size * 3)) {
+    grid-template-columns: repeat(3, minmax($antisnake-size, 1fr));
+  }
+
+  @for $index from 1 through 6 {
+    & :nth-child(#{$index})::before {
+      content: "#{$index}";
+    }
+  }
+
+  &__box {
+    display: grid;
+    height: $antisnake-size;
+    align-items: center;
+    justify-content: center;
+
+    $colors:
+      "1" rgb(255, 0, 0),
+      "2" rgb(204, 0, 0),
+      "3" rgb(153, 0, 0),
+      "4" rgb(102, 0, 0),
+      "5" rgb(51, 0, 0),
+      "6" rgb(0, 0, 0);
+
+    @each $index, $color in $colors {
+      &--#{$index} {
+        background-color: $color;
+      }
+    }
+  }
+}
