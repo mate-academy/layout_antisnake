@@ -1,0 +1,30 @@
+.snake-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: $grid-tmp-col;
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__snake-part {
+    display: grid;
+    place-items: center;
+    height: 300px;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i})::before {
+        content: "#{$i}";
+      }
+    }
+
+    @each $i, $color in $colors {
+      &:nth-child(#{$i}) {
+        background-color: $color;
+      }
+    }
+  }
+}
