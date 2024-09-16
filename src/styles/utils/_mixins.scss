@@ -1,0 +1,3 @@
+@mixin red-tone($tone) {
+  background-color: rgb($tone, 0%, 0%);
+}
