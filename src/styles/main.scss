@@ -1,3 +1,28 @@
+@import "variables.scss";
+
 body {
   margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  &__block {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 300px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+  }
+
+  @each $index, $color in $red-and-black {
+    &__block--#{$index} {
+      background-color: $color;
+    }
+  }
 }
