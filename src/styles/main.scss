@@ -1,3 +1,45 @@
 body {
   margin: 0;
+  font-family: arial, sans-serif;
+  font-size: 100px;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    height: 300px;
+    min-width: 300px;
+    color: white;
+    text-align: center;
+    line-height: 300px;
+  }
+
+  &__item--1 {
+    background: rgb(255, 0, 0);
+  }
+
+  &__item--2 {
+    background: rgb(204, 0, 0);
+  }
+
+  &__item--3 {
+    background: rgb(153, 0, 0);
+  }
+
+  &__item--4 {
+    background: rgb(102, 0, 0);
+  }
+
+  &__item--5 {
+    background: rgb(51, 0, 0);
+  }
+
+  &__item--6 {
+    background: rgb(0, 0, 0);
+  }
 }
