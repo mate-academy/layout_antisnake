@@ -1,0 +1,7 @@
+@function getColor($num) {
+  @return 2.55 * (100 - $num * 20);
+}
+
+@function getIndex($ind) {
+  @return $ind + 1;
+}
