@@ -1,3 +1,30 @@
-body {
-  margin: 0;
+@import "./variables";
+@import "./normalize";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($sizeBlock, 1fr));
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax($sizeBlock, 1fr));
+  }
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $sizeBlock;
+
+  @each $index, $color in $colors {
+    &:nth-child(#{$index}) {
+      background-color: $color;
+
+      &::before {
+        content: "#{$index}";
+      }
+    }
+  }
 }
