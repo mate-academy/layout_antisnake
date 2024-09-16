@@ -1,3 +1,36 @@
-body {
-  margin: 0;
+@import "./utils/normalise";
+
+@import "./utils/mixins";
+@import "./utils/variables";
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-cell, 1fr));
+  grid-template-rows: auto;
+
+  &__item {
+    min-height: $size-cell;
+    @include center;
+
+    font-family: inherit;
+    color: white;
+
+    @for $number from 1 through 6 {
+      &:nth-child(n + #{$number})::before {
+        content: "#{$number}";
+      }
+    }
+
+    @each $name, $color in $colors {
+      &--color-#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, minmax($size-cell, 1fr));
+    }
+  }
 }
