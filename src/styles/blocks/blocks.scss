@@ -1,0 +1,33 @@
+@import "../utils/variables";
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  list-style: none;
+
+  &__block {
+    height: 300px;
+    background-color: #f00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  @for $index from 1 through $block {
+    & > :nth-child(#{$index})::after {
+      content: "#{$index}";
+      @extend %block-text;
+    }
+
+    & > :nth-last-child(#{$index}) {
+      background-color: rgb(51 * ($index - 1) , 0, 0);
+    }
+  }
+
+  @media (min-width:1200px) {
+    & {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 33.3%));
+    }
+  }
+}
