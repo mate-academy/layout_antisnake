@@ -1,3 +1,33 @@
+$cell__size: 300px;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+}
+
 body {
   margin: 0;
+}
+
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell__size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @for $index from 1 through 6 {
+    &__cell-#{$index} {
+      line-height: $cell__size;
+      height: $cell__size;
+      background: rgb((255 - ($index - 1) * 51), 0, 0);
+      text-align: center;
+      color: #fff;
+
+      &::before {
+        content: "#{$index}";
+      }
+    }
+  }
 }
