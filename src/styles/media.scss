@@ -1,0 +1,18 @@
+@media screen and (max-width: 899px) {
+  .antisnake {
+    grid-template-areas: "antisnake__box--1 antisnake__box--2"
+      "antisnake__box--3 antisnake__box--4"
+      "antisnake__box--5 antisnake__box--6";
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .antisnake {
+    grid-template-areas: "antisnake__box--1"
+      "antisnake__box--2"
+      "antisnake__box--3"
+      "antisnake__box--4"
+      "antisnake__box--5"
+      "antisnake__box--6";
+  }
+}
