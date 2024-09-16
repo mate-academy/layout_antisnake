@@ -1,0 +1,24 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__cell {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+
+    @for $i from 0 through 5 {
+      &--#{$i} {
+        background-color: darken($color: red, $amount: $i / 10 * 2 * 50);
+      }
+    }
+  }
+}
