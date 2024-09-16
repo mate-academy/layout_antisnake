@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax($snake-height, 1fr));
+  justify-content: center;
+  grid-auto-flow: row;
+
+  &__block {
+    height: $snake-height;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
