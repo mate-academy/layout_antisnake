@@ -1,0 +1,5 @@
+@media (min-width: 1200px) {
+  .snake {
+    grid-template-columns: repeat($numColumns, minmax($caseHeight, 1fr));
+  }
+}

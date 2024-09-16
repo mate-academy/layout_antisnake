@@ -1,0 +1,13 @@
+$colors:
+  "1" #f00,
+  "2" rgb(80%, 0%, 0%),
+  "3" rgb(60%, 0%, 0%),
+  "4" rgb(40%, 0%, 0%),
+  "5" rgb(20%, 0%, 0%),
+  "6" #000;
+
+@each $name, $color in $colors {
+  .case-#{$name} {
+    background-color: $color;
+  }
+}
