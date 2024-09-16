@@ -1,0 +1,24 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+
+  &__block {
+    height: $min-width;
+    text-align: center;
+    line-height: $min-width;
+    color: #fff;
+    font-size: $min-width / 3;
+  }
+}
+
+@each $color, $color_number in $colors {
+  .antisnake__block--number-#{$color_number} {
+    background-color: $color;
+  }
+}
+
+@media (min-width: 1200px) {
+  .antisnake {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 33.33%));
+  }
+}
