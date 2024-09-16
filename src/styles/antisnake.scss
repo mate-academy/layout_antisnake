@@ -1,0 +1,28 @@
+.antisnake {
+  display: grid;
+  min-width: 300px;
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 100px;
+    line-height: 300px;
+    text-align: center;
+
+    @each $number, $color in $colors {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 50% 50%;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+  }
+}
