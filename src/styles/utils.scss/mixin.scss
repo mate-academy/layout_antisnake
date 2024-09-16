@@ -1,0 +1,4 @@
+@mixin square($square-side) {
+  height: $square-side;
+  width: $square-side;
+}
