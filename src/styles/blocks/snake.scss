@@ -1,0 +1,37 @@
+.container {
+  font-family: inherit;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__box {
+    color: #fff;
+    font-size: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @for $number from 1 through 6 {
+    &__box:nth-child(#{$number}n) {
+      &::after {
+        content: "#{$number}";
+      }
+    }
+
+  }
+  
+  @each $color, $num in $colors {
+    &__box:nth-child(#{$num}) {
+      background-color: $color;
+    }
+  }
+}
