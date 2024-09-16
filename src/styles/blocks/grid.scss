@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__item {
+    height: $grid-item-height;
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: $grid-item-height;
+    color: $text-color-white;
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+$background-colors:
+  "1" $color-red,
+  "2" rgb(189, 0, 0),
+  "3" rgb(167, 0, 0),
+  "4" rgb(102, 0, 0),
+  "5" rgb(51, 4, 4),
+  "6" $color-black;
+
+@each $number, $background-color in $background-colors {
+  .block-#{$number} {
+    background-color: $background-color;
+  }
+}
