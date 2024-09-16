@@ -1,3 +1,9 @@
+@import "./blocks/container.scss";
+@import "./media/media.scss";
+
 body {
   margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 100px;
 }
