@@ -1,0 +1,23 @@
+@import "../utils/_variables";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($block-size, 1fr));
+
+  &__block {
+    height: $block-size;
+    display: grid;
+    text-align: center;
+    align-items: center;
+  }
+
+  @each $name, $color in $colors {
+    &__block--color-#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($block-size, 1fr));
+  }
+}
