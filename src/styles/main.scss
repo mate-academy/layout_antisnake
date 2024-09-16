@@ -1,3 +1,48 @@
+$fixed-size: 300px;
+
+$colors:
+  "color--1" red,
+  "color--2" rgb(204, 0, 0),
+  "color--3" rgb(153, 0, 0),
+  "color--4" rgb(102, 0, 0),
+  "color--5" rgb(51, 0, 0),
+  "color--6" black;
+
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($fixed-size, 1fr));
+  margin: 0;
+  gap: 0;
+
+  &__block {
+    height: $fixed-size;
+
+    @for $i from 1 to 7 {
+      &:nth-of-type(#{$i})::after {
+        content: "#{$i}";
+        display: flex;
+        justify-content: center;
+        line-height: $fixed-size;
+      }
+    }
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax($fixed-size, 33.33%));
+  }
 }
