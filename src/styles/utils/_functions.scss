@@ -1,0 +1,3 @@
+@function calcColor($per, $part) {
+  @return 100% - $per * ($part - 1);
+}
