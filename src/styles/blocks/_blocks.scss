@@ -1,0 +1,44 @@
+.blocks {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+
+  &__block {
+    height: 300px;
+    flex-basis: 300px;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    &--b1 {
+      background-color: rgb(255, 0, 0);
+    }
+
+    &--b2 {
+      background-color: rgb(212.5, 0, 0);
+    }
+
+    &--b3 {
+      background-color: rgb(153, 0, 0);
+    }
+    
+    &--b4 {
+      background-color: rgb(102, 0, 0);
+    }
+    &--b5 {
+      background-color: rgb(51, 0, 0);
+    }
+    &--b6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, auto);
+  }
+}
