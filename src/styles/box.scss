@@ -1,0 +1,15 @@
+.box {
+  display: grid;
+  height: $width;
+  min-width: $width;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+@each $index, $color in $colors {
+  &:nth-child(#{$index}) {
+    background-color: rgb($color, 0%, 0%);;
+  }
+}
