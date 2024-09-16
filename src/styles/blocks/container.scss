@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+
+  &__block {
+
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $number, $color in $block-colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+  grid-template-columns: 100%;
+
+  @each $width, $number in $block-width-amount {
+    @media (min-width: $width) {
+      grid-template-columns: repeat($number, 1fr);
+    }
+  }
+}
