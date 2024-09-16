@@ -1,3 +1,49 @@
 body {
   margin: 0;
 }
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+
+  &__item {
+    display: grid;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+    place-content: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block-item-1 {
+  background-color: rgb(100%, 0%, 0%);
+}
+
+.block-item-2 {
+  background-color: rgb(80%, 0%, 0%);
+}
+
+.block-item-3 {
+  background-color: rgb(60%, 0%, 0%);
+}
+
+.block-item-4 {
+  background-color: rgb(40%, 0%, 0%);
+}
+
+.block-item-5 {
+  background-color: rgb(20%, 0%, 0%);
+}
+
+.block-item-6 {
+  background-color: rgb(0%, 0%, 0%);
+}
