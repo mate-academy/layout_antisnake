@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size, 1fr));
+
+  &__columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $size;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+  }
+
+  @for $cells from 1 through 6 {
+    &__columns:nth-child(#{$cells})::after {
+      content: "#{$cells}";
+    }
+    &__columns:nth-child(#{$cells}) {
+      background-color: rgb(100% - 20% * ($cells - 1), 0, 0);;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
