@@ -1,0 +1,48 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    line-height: 300px;
+    font-size: 100px;
+    color: #fff;
+
+    &--1 {
+      background-color: red;
+    }
+
+    &--2 {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+
+  @for $num-block from 1 through 6 {
+    &__item:nth-child(#{$num-block})::before {
+      content: "#{$num-block}";
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+}
