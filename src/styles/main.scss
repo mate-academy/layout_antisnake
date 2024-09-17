@@ -1,3 +1,4 @@
-body {
-  margin: 0;
-}
+@import "../styles/utils/variables";
+@import "../styles/blocks/reset.scss";
+@import "../styles/blocks/base.scss";
+@import "../styles/blocks/box.scss";
