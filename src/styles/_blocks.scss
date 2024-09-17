@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($cell-width, 1fr));
+  grid-template-rows: repeat(2, $cell-height);
+}
+
+@for $number from 1 through 6 {
+  .block--#{$number} {
+    background-color: rgb(255 * (6 - $number) / 5, 0, 0);
+  }
+}
+
+.block {
+  display: grid;
+  place-items: center;
+  color: $color-white;
+}
+
+@media (max-width: 899px) {
+  .container {
+    grid-template-columns: repeat(2, minmax($cell-width, 1fr));
+    grid-template-rows: repeat(3, $cell-height);
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, $cell-height);
+  }
+}
