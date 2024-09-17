@@ -1,0 +1,29 @@
+.block {
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax(300px, 1fr));
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__element {
+    height: $blocks-size;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    @each $name, $value in $blocks {
+      &--#{$name} {
+        background: #{$value};
+      }
+    }
+  }
+}
