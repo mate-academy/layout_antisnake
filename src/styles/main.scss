@@ -1,3 +1,19 @@
-body {
-  margin: 0;
+@import "utils/_variables";
+@import "utils/_reset";
+@import "blocks/block";
+
+.block-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+
+  justify-content: center;
+  align-content: center;
+
+  @media (min-width: $layout-breakpoint-medium) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  
+  @media (min-width: $layout-breakpoint-large) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 }
