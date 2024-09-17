@@ -1,3 +1,50 @@
+$minSize: 300px;
+
+$backgroundColor:
+  1 rgb(251, 0, 0),
+  2 rgb(200.8, 0, 0),
+  3 rgb(150.6, 0, 0),
+  4 rgb(100.4, 0, 0),
+  5 rgb(50.2, 0, 0),
+  6 rgb(0, 0, 0);
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: #fff;
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minSize, 1fr));
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $minSize;
+
+  color: #fff;
+
+  @each $number, $color in $backgroundColor {
+    &:nth-child(#{$number}) {
+      background-color: $color;
+    }
+
+    &:nth-child(#{$number})::before {
+      content: "#{$number}";
+    }
+  }
+}
+
+@media(min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax($minSize, calc(100% / 3)));
+  }
 }
