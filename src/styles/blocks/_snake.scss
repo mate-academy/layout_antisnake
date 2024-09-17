@@ -1,0 +1,34 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+  }
+}
+
+$bg-colors:
+  1 red,
+  2 #c00,
+  3 #900,
+  4 #600,
+  5 #300,
+  6 black;
+
+@each $number, $color in $bg-colors {
+  .snake__item--#{$number} {
+    background-color: $color;
+  }
+}
