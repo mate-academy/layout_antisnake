@@ -1,0 +1,15 @@
+.snake {
+  display: grid;
+  justify-content: center;
+  @include media (33.33%);
+  @media (max-width: 1199px) {
+    @include media(1fr);
+  }
+  
+  @each $name, $color in $block-colors {
+    &__cell-#{$name} {
+      background-color: $color;
+      @extend %cell-settings;
+    }
+  }
+}
