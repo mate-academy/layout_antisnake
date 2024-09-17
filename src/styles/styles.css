@@ -1,0 +1,82 @@
+@media (min-width: 599px) {
+  .snake {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 899px) {
+  .snake {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.snake {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.snake__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  min-width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+}
+
+.snake__cell:nth-child(1)::before {
+  content: "1";
+}
+
+.snake__cell:nth-child(2)::before {
+  content: "2";
+}
+
+.snake__cell:nth-child(3)::before {
+  content: "3";
+}
+
+.snake__cell:nth-child(4)::before {
+  content: "4";
+}
+
+.snake__cell:nth-child(5)::before {
+  content: "5";
+}
+
+.snake__cell:nth-child(6)::before {
+  content: "6";
+}
+
+.snake__cell--1--color {
+  background-color: rgb(255, 0, 0);
+}
+
+.snake__cell--2--color {
+  background-color: rgb(204, 0, 0);
+}
+
+.snake__cell--3--color {
+  background-color: rgb(153, 0, 0);
+}
+
+.snake__cell--4--color {
+  background-color: rgb(102, 0, 0);
+}
+
+.snake__cell--5--color {
+  background-color: rgb(51, 0, 0);
+}
+
+.snake__cell--6--color {
+  background-color: rgb(0, 0, 0);
+}
+
+/*# sourceMappingURL=styles.css.map */

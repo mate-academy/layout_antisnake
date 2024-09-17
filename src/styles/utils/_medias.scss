@@ -1,0 +1,12 @@
+@media (min-width: 599px) {
+  .snake {
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (min-width:899px) {
+  .snake {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
