@@ -1,7 +1,9 @@
 # Antisnake
+
 Replace `<your_account>` with your Github username and copy the links to Pull Request description:
-- [DEMO LINK](https://<your_account>.github.io/layout_antisnake/)
-- [TEST REPORT LINK](https://<your_account>.github.io/layout_antisnake/report/html_report/)
+
+- [DEMO LINK](https://Pa1eOrc.github.io/layout_antisnake/)
+- [TEST REPORT LINK](https://Pa1eOrc.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
@@ -9,6 +11,7 @@ ___
 ## ❗️❗️❗️ This task does not require an approval of mentor and is automatically approved on the platform when the tests are passed❗️❗️❗️
 
 ## The task
+
 Display six colored blocks on the screen without any extra margins:
 
 - Use `grid`

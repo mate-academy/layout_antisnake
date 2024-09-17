@@ -1,0 +1,16 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($box-min-width, 1fr));
+
+  &__item {
+    text-align: center;
+    line-height: 300px;
+
+    @each $box,
+      $color in $colors {
+      &--#{$box} {
+        background-color: $color;
+      }
+    }
+  }
+}
