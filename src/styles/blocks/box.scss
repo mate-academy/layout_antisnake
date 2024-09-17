@@ -1,0 +1,23 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(#{$box-size}, 1fr));
+
+  @media (min-width: #{$box-size * $box-row-length}) {
+    grid-template-columns: repeat(#{$box-row-length}, 
+    minmax(#{$box-size}, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: $box-size;
+    @extend %box-item-text;
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+  }
+}
