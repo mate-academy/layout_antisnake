@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($block-height, 1fr));
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax($block-height, 1fr));
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(1, minmax($block-height, 1fr));
+  }
+}
+
+.block {
+  height: $block-height;
+  min-width: $block-height;
+  
+
+  @for $i from 0 through 5 {
+    &:nth-child(#{$i + 1}) {
+      background-color: mix(#000, #f00, $i * 20%);
+    }
+  }
+}
