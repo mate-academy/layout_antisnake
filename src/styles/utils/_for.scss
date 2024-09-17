@@ -1,0 +1,10 @@
+@for $index from 1 through 6 {
+  .square:nth-child(#{$index})::before {
+    content: "#{$index}";
+    display: grid;
+    place-items: center;
+    height: $size;
+
+    color: white;
+  }
+}
