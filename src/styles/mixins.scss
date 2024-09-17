@@ -1,0 +1,16 @@
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-centered {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin antisnake__block-size {
+  min-width: 300px;
+  height: 300px;
+}
