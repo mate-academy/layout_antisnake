@@ -1,0 +1,6 @@
+@function getColor($iteration) {
+  $redDec: calc(255 - 51 * #{$iteration});
+  $result: rgb($redDec, 0, 0);
+
+  @return $result;
+}
