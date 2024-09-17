@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
+  @media (max-width: 599px) {
+    grid-template: 1fr / 1fr;
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $block-size;
+    height: $block-size;
+    font-size: $block-font-size;
+    color: $white-color;
+
+    @each $id, $color in $colors {
+      &--#{$id} {
+        background-color: $color;
+      }
+    }
+  }
+}
