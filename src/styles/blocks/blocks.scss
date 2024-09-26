@@ -1,0 +1,35 @@
+.container {
+  display: grid;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: calc(100% / 3);
+    min-width: $blockHeight;
+    height: $blockHeight;
+    font-size: 100px;
+    color: white;
+
+    @each $n, $color in $colors {
+      &:nth-child(#{$n}) {
+        background-color: #{$color};
+      }
+    }
+  }
+
+  @media (min-width: 600px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+}
