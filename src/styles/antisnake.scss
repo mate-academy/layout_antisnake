@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(300px, auto));
+
+  .antisnake {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 100px;
+
+    @for $i from 1 through length($colors) {
+      &:nth-child(#{$i}) {
+        background-color: nth($colors, $i);
+      }
+    }
+  }
+}
