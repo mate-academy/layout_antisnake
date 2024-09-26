@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{$standartWidth},1fr));
+
+  @media (min-width: (3 * $standartWidth)) {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  &__block {
+    height: $standartWidth;
+    min-width: $standartWidth;
+    line-height: $standartWidth;
+    display: block;
+    text-align: center;
+    color: white;
+  }
+}
