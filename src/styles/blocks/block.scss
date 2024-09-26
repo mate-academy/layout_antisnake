@@ -1,0 +1,15 @@
+.block {
+  height: 300px;
+
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  line-height: 300px;
+  text-align: center;
+  color: #fff;
+
+  @each $index, $color-percent in $red-black-colors {
+    &--#{$index} {
+      background-color: rgb($color-percent, 0%, 0%);
+    }
+  }
+}
