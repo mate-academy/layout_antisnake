@@ -1,0 +1,13 @@
+@media (max-width: 899px) {
+  .container {
+    grid-template-columns: auto auto;
+    grid-template-rows: $block-size;
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: $block-size;
+  }
+}
