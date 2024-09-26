@@ -1,0 +1,10 @@
+.block {
+  line-height: 300px;
+  text-align: center;
+
+  @each $index, $color in $colors {
+    &--#{$index} {
+      background-color: $color ;
+    }
+  }
+}
