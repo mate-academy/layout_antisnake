@@ -1,0 +1,25 @@
+.box {
+  display: grid;
+  @include column (1);
+
+  @each $number, $color in $colors {
+    &__item--#{$number} {
+      background-color: $color;
+    }
+  }
+
+  &__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+
+  @media (min-width: 600px) {
+    @include column (2);
+  }
+
+  @media (min-width: 900px) {
+    @include column (3);
+  }
+}
