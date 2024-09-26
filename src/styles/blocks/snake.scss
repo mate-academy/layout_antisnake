@@ -1,0 +1,31 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__item {
+    height: 300px;
+
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: white;
+
+    text-align: center;
+    line-height: 300px;
+
+    @for $i from 1 through 6 {
+      &:nth-child(n + #{$i})::before {
+        content: "#{$i}";
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @each $colorNum, $colorVal in $snake-colors {
+    &__item-color--#{$colorNum} {
+      background-color: $colorVal;
+    }
+  }
+}
