@@ -1,3 +1,29 @@
 body {
   margin: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  min-width: 300px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.block {
+  height: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
+  text-align: center;
+  line-height: 300px;
+
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      background-color: rgb(255 - ($index - 1) * 51, 0, 0);
+    }
+  }
+}
