@@ -1,0 +1,33 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  &__cell {
+    height: 300px;
+    min-width: 300px;
+
+    font-family: inherit;
+    font-size: 100px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+
+    @each $index, $color in $cell-color {
+      &:nth-child(#{$index}) {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .antisnake {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .antisnake {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
