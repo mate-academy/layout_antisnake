@@ -1,0 +1,52 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+
+  &__block-1 {
+    height: $height-block;
+    background-color: red;
+  }
+
+  &__block-2 {
+    height: $height-block;
+    background-color: mix($color-red, $color-black, 80%);
+  }
+
+  &__block-3 {
+    height: $height-block;
+    background-color: mix($color-red, $color-black, 60%);
+  }
+
+  &__block-4 {
+    height: $height-block;
+    background-color: mix($color-red, $color-black, 40%);
+  }
+
+  &__block-5 {
+    height: $height-block;
+    background-color: mix($color-red, $color-black, 20%);
+  }
+
+  &__block-6 {
+    height: $height-block;
+    background-color: black;
+  }
+
+  &__block-number {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 100px;
+    color: #fff;
+  }
+  
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
