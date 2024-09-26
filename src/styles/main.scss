@@ -1,3 +1,10 @@
+@import "../styles/utils/variables";
+@import "../styles/blocks/antisnake.scss";
+
+html {
+  font-family: arial, sans-serif;
+}
+
 body {
   margin: 0;
 }
