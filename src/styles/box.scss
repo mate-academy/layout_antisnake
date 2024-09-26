@@ -1,0 +1,41 @@
+.box {
+  display: grid;
+  background-color: #000;
+
+  &__cell {
+    height: 300px;
+    min-width: 300px;
+    font-size: 100px;
+    color: white;
+    line-height: 300px;
+    text-align: center;
+
+    $percents:
+      "full" rgb(255, 0, 0),
+      "eighty" rgba(255, 0, 0, 0.8),
+      "sixty" rgba(255, 0, 0, 0.6),
+      "forty" rgba(255, 0, 0, 0.4),
+      "twenty" rgba(255, 0, 0, 0.2),
+      "zero" rgba(255, 0, 0, 0);
+
+    @each $name, $percent in $percents {
+      &--opacity--#{$name} {
+        background-color: $percent;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .box {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
