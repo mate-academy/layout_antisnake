@@ -1,0 +1,35 @@
+@import "variables";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 300px);
+  grid-template-areas: "one two three" "four five six";
+
+  &__box {
+    min-width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    vertical-align: auto;
+  }
+
+  @each $color, $position, $nth in $position-color {
+    & :nth-child(#{$nth}) {
+      grid-area: $position;
+      background-color: rgb($color, 0, 0);
+    }
+  }
+
+  @media (max-width: 899px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, minmax(300px, 1fr));
+    grid-template-areas: "one two" "three four" "five six";
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-rows: repeat(6, minmax(300px, 1fr));
+    grid-template-areas: "one" "two" "three" "four" "five" "six";
+  }
+}
