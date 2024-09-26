@@ -1,0 +1,13 @@
+@each $i, $value in $boxes-colors {
+  .container__box:nth-child(#{$i}) {
+    background-color: #{$value};
+  }
+}
+
+@for $number from 1 through 6 {
+  .container__box:nth-child(#{$number}) {
+    &::before {
+      content: "#{$number}";
+    }
+  }
+}
