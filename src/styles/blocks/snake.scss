@@ -1,0 +1,30 @@
+ $size: 300px;
+
+
+.container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.block {
+  height: $size;
+  min-width: $size;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: $size / 3;
+  text-align: center;
+  line-height: $size;
+
+  @for $n from 1 through 6 {
+    &:nth-child(#{7 - $n}) {
+      background-color: rgb(($n - 1) * 51, 0, 0);
+    }
+  }
+}
