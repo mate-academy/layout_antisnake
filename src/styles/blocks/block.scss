@@ -1,0 +1,13 @@
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: $block-size;
+  height: $block-size;
+
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      background-color: rgb(100% - 20% * ($i - 1) , 0%, 0%);
+    }
+  }
+}
