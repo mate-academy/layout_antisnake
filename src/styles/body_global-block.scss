@@ -1,0 +1,25 @@
+@import "./mixin.scss";
+@import "./variables.scss";
+
+.global-block {
+  @include font-family;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-box, 1fr));
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__block {
+    @include size ($size-box);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    color: white;
+  }
+}
+
+@each $namber, $color in $colors {
+  .global-block__block--#{$namber} {
+    background: $color;
+  }
+}
