@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax($height-box, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @for $i from 0 through 5 {
+    & :nth-child(#{$i + 1})::after {
+      content: "#{$i + 1}";
+    }
+
+    & :nth-last-child(#{$i + 1}) {
+      background-color: rgb($i*20%, 0, 0);
+    }
+  }
+
+  &__box {
+    height: $height-box;
+    text-align: center;
+    line-height: $height-box;
+  }
+}
