@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minPartSize, 1fr));
+  grid-auto-rows: $minPartSize;
+
+  background-color: red;
+
+  &__part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: 100px "Arial", sans-serif;
+    color: #fff;
+
+    @for $i from 1 through $snakeLength {
+      &:nth-child(#{$i}) {
+        background-color: rgba(0, 0, 0, calc(#{$i - 1} / #{$snakeLength - 1}));
+      }
+    }
+  }
+
+  @media (min-width: #{$minPartSize * $maxColumns}) {
+    & {
+      grid-template-columns: repeat($maxColumns, 1fr);
+    }
+  }
+}
