@@ -1,0 +1,22 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @media (min-width: (300px * 3)) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+  
+  &__block {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 300px;
+    @extend %block-fonts;
+
+    @each $name, $color in $colors {
+      &:nth-child(#{$name}) {
+        background-color: $color;
+      }
+    }
+  }
+}
