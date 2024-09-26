@@ -1,0 +1,26 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__elem {
+    @for $i from 1 through 6 {
+      &:nth-child(#{0 + $i})::before {
+        content: "#{$i}";
+
+        @extend %numberStyle;
+      }
+    }
+
+    @each $name, $color in $colors {
+      &--#{$name} {
+        background-color: $color;
+      }
+    }
+
+    text-align: center;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
