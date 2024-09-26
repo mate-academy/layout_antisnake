@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    font-size: 100px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+
+    &--1 {
+      background: #f00;
+    }
+
+    &--2 {
+      background: #c00;
+    }
+
+    &--3 {
+      background: #900;
+    }
+
+    &--4 {
+      background: #600;
+    }
+
+    &--5 {
+      background: #300;
+    }
+
+    &--6 {
+      background: #000;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
