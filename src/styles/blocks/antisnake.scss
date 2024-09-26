@@ -1,0 +1,30 @@
+.antisnake {
+  display: grid;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__block {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 100px;
+
+    @each $number, $color in $colors {
+      &--color-#{$number} {
+        background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
+}
