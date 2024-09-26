@@ -1,3 +1,27 @@
-body {
-  margin: 0;
+@import "./utils/variables";
+@import "./utils/reset";
+
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-block-size, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    line-height: $min-block-size;
+    min-width: $min-block-size;
+    text-align: center;
+
+    @each $number, $color in $blocks {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
 }
