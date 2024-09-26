@@ -1,0 +1,24 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{$size-cell},1fr));
+  font-size: 100px;
+
+  @media (min-width: ($max-amount-colums * $size-cell)) {
+    grid-template-columns: repeat($max-amount-colums,1fr);
+  }
+
+  &__cell {
+    height: $size-cell;
+    min-width: $size-cell;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @each $cell, $color in $background-cell {
+      &--#{$cell} {
+        background-color: #{$color};
+      }
+    }
+  }
+}
