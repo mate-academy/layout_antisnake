@@ -1,0 +1,21 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($size-of-block, 1fr));
+
+  @media (min-width:1200px) {
+    grid-template-columns: repeat(3, minmax($size-of-block, 1fr));
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: $size-of-block;
+  
+    @each $name, $value in $blackout {
+      &:nth-child(#{$name}) {
+        background-color: rgb($value, 0, 0);
+      }
+    }
+  }
+}
