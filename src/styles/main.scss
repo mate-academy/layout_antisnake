@@ -1,3 +1,30 @@
+@import "./variables.scss";
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-size, 1fr));
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat($column-max, minmax($cell-size, 1fr));
+  }
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, serif;
+  color: white;
+  font-size: 100px;
+  height: 300px;
+
+  @for $index from 1 through 6 {
+    &--#{$index} {
+      background-color: rgb((5 + (6 - $index) * 50), 0, 0);
+    }
+  }
 }
