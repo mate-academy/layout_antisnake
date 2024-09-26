@@ -1,0 +1,52 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, auto);
+
+  &__block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    @include block(300px);
+    
+    color: $c-white;
+
+    &--1 {
+      background-color: $c-first;
+    }
+
+    &--2 {
+      background-color: $c-second;
+    }
+
+    &--3 {
+      background-color: $c-third;
+    }
+
+    &--4 {
+      background-color: $c-fourth;
+    }
+
+    &--5 {
+      background-color: $c-fifth;
+    }
+
+    &--6 {
+      background-color: $c-sixth;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media (min-width: 900px) {
+  .box {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+  }
+}
