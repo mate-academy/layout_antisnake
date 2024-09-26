@@ -1,0 +1,45 @@
+.block__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, 300px);
+}
+
+.block__item {
+  @include block-size;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  color: white;
+}
+
+.block__item--1 {
+  background-color: #f00;
+}
+
+.block__item--2 {
+  background-color: #c00;
+}
+
+.block__item--3 {
+  background-color: #900;
+}
+
+.block__item--4 {
+  background-color: #600;
+}
+
+.block__item--5 {
+  background-color: #300;
+}
+
+.block__item--6 {
+  background-color: #000;
+}
+
+@media (min-width: 899px) {
+  .block__container {
+    grid-template-columns: repeat(auto-fill, minmax(33.3%, 1fr));
+  }
+}
