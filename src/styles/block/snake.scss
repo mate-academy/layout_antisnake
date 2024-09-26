@@ -1,0 +1,27 @@
+.snake {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  &__box {
+    @include cell($box-size);
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  @each $name, $color in $colors {
+    & > div:nth-child(#{$name}) {
+      background: $color;
+    }
+  }
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (min-width: 751px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
