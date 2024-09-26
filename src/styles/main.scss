@@ -1,3 +1,27 @@
+@import "../styles/media.scss";
+@import "../styles/variables.scss";
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+
+  @each $number, $color in $colors {
+    &__card--color--#{$number} {
+      background-color: $color;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100px;
+  color: white;
 }
