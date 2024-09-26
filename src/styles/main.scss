@@ -1,3 +1,57 @@
+$position: center;
+$boxSize: 300px;
+
 body {
   margin: 0;
+}
+
+@mixin grid($count, $size) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat($count, $size);
+    justify-content: $position;
+  }
+}
+
+@media (min-width: 600px) {
+  @include grid(2, 50%);
+}
+
+@media (min-width: 900px) {
+  @include grid(3, 33.33%);
+}
+
+.container__blok {
+  display: flex;
+  align-items: $position;
+  justify-content: $position;
+  min-width: $boxSize;
+  height: $boxSize;
+  font-family: Arial, sans-serif;
+  font-size: 100px;
+  color: white;
+
+  &--1 {
+    background-color: rgb(100%, 0%, 0%);
+  }
+
+  &--2 {
+    background-color: rgb(80%, 0%, 0%);
+  }
+
+  &--3 {
+    background-color: rgb(60%, 0%, 0%);
+  }
+
+  &--4 {
+    background-color: rgb(40%, 0%, 0%);
+  }
+
+  &--5 {
+    background-color: rgb(20%, 0%, 0%);
+  }
+
+  &--6 {
+    background-color: rgb(0%, 0%, 0%);
+  }
 }
