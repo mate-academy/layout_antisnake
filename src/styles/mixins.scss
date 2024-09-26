@@ -1,0 +1,24 @@
+@mixin first-media-point {
+  @media(max-width: 1200px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin second-media-point {
+  @media(max-width: 899px) {
+    & {
+      @content;
+    }
+  }
+}
+
+@mixin third-media-point {
+  @media (max-width: 599px) {
+    & {
+      @content;
+    }
+
+  }
+}
