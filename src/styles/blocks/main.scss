@@ -1,0 +1,45 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    text-align: center;
+    line-height: 300px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+.snake {
+  &-part1 {
+    background-color: #f00;
+  }
+
+  &-part2 {
+    background-color: #c00;
+  }
+
+  &-part3 {
+    background-color: #900;
+  }
+
+  &-part4 {
+    background-color: #600;
+  }
+
+  &-part5 {
+    background-color: #300;
+  }
+
+  &-part6 {
+    background-color: #000;
+  }
+}

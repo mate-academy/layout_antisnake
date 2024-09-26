@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+  display: grid;
+}
+
+.main__block {
+  height: 300px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 300px;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+}
+
+.snake-part1 {
+  background-color: #f00;
+}
+
+.snake-part2 {
+  background-color: #c00;
+}
+
+.snake-part3 {
+  background-color: #900;
+}
+
+.snake-part4 {
+  background-color: #600;
+}
+
+.snake-part5 {
+  background-color: #300;
+}
+
+.snake-part6 {
+  background-color: #000;
+}
