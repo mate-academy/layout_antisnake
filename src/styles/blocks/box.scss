@@ -1,0 +1,12 @@
+.box {
+  height: 300px;
+  min-width: 300px;
+  line-height: 300px;
+  text-align: center;
+
+  @each $num, $color in $background-color {
+    &--#{$num} {
+      background-color: $color;
+    }
+  }
+}
