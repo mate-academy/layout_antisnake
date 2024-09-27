@@ -1,3 +1,33 @@
+$colors : 
+  1 #f00,
+  2 #c00,
+  3 #900,
+  4 #600,
+  5 #300,
+  6 #000;
+
 body {
   margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @media (min-width: 751px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.box {
+  height: 300px;
+  color: white;
+  font-family: Arial, serif;
+  font-size: 100px;
+  text-align: center;
+  line-height: 300px;
+  @each $number, $color in $colors {
+    &:nth-child(#{$number}) {
+      background-color: $color;
+    }
+  }
 }
