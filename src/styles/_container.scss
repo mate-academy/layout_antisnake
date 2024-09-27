@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: $box-size;
+
+  @media (min-width: 450px) {
+    grid-template-columns: repeat(1, minmax($box-size, 1fr));
+  }
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, minmax($box-size, 1fr));
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, minmax($box-size, 1fr));
+  }
+
+  &__block {
+    display: grid;
+    height: 300px;
+
+    justify-items: center;
+    align-items: center;
+  }
+
+  @for $number from 1 to 7 {
+    &__block-num_#{$number}::before {
+      content: "#{$number}";
+      color: #fff;
+    }
+  }
+
+  @each $color, $name in $colors {
+    &__block-#{$name} {
+      background-color: $color;
+    }
+  }
+}
