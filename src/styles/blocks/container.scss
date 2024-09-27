@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  justify-content: center;
+  max-width: 100vw;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  &__item {
+    height: 300px;
+    min-width: 300px;
+    line-height: 300px;
+    text-align: center;
+
+    @for $number from 1 through 6 {
+      &--#{$number}::before {
+        content: "#{$number}";
+      }
+    }
+
+    $colors: 1 rgb(255, 0, 0),
+      2 rgb(204, 0, 0),
+      3 rgb(153, 0, 0),
+      4 rgb(102, 0, 0),
+      5 rgb(51, 0, 0),
+      6 rgb(0, 0, 0);
+
+    @each $number, $color in $colors {
+      &--#{$number} {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
