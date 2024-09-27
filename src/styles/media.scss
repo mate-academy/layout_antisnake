@@ -1,0 +1,11 @@
+@media screen and (min-width: 600px) {
+  .block {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .block {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
