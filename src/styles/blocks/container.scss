@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+
+  &__block {
+    height: 300px;
+    min-width: 300px;
+    text-align: center;
+    line-height: 300px;
+
+    @each $number, $color in $bg-colors {
+      &:nth-child(#{$number}) {
+        background: $color;
+      }
+    }
+  }
+
+  @media (min-width: 599px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  @media (min-width: 899px) {
+    grid-template-columns: repeat(3, 33.3%);
+  }
+}
