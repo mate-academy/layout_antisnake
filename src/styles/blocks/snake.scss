@@ -1,0 +1,28 @@
+.snake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($cell-cize, 1fr));
+
+  @media (min-width: ($cell-cize * 3)) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $cell-cize;
+    height: $cell-cize;
+
+    @for $index from 1 through 6 {
+      &:nth-child(#{$index})::after {
+        content: "#{$index}";
+      }
+
+      &:nth-child(#{$index}) {
+        background-color: rgb(calc(255 - (#{$index} - 1) * 51), 0, 0);
+      }
+    }
+  }
+}
