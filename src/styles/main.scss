@@ -1,3 +1,27 @@
-body {
-  margin: 0;
+@import "./utils/variable.scss";
+@import "./utils/resets.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minBlocksize, 1fr));
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+    line-height: $minBlocksize;
+    min-width: $minBlocksize;
+    text-align: center;
+
+    @each $number, $color in $blocks {
+      &:nth-child(#{$number}) {
+        background-color: $color;
+
+        &::before {
+          content: "#{$number}";
+        }
+      }
+    }
+  }
 }
