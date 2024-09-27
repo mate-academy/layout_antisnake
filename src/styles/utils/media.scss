@@ -1,0 +1,11 @@
+@media (min-width: 600px) {
+  .snakeContainer {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .snakeContainer {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
