@@ -1,0 +1,49 @@
+.snake {
+  display: grid;
+
+  @media (min-width: 451px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__block {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $height;
+    min-width: $height;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+
+    &--1 {
+      background-color: rgb(255,0,0);
+    }
+
+    &--2 {
+      background-color: rgb(204,0,0);
+    }
+
+    &--3 {
+      background-color: rgb(153,0,0);
+    }
+
+    &--4 {
+      background-color: rgb(102,0,0);
+    }
+
+    &--5 {
+      background-color: rgb(51,0,0);
+    }
+
+    &--6 {
+      background-color: black;
+    }
+  }
+}
