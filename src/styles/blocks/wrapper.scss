@@ -1,0 +1,25 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: $width-wrapper) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  & > div {
+    height: 300px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 100px;
+
+    @for $i from 0 through 5 {
+      &:nth-child(#{$i + 1}) {
+        background-color: rgb(calc(255 - 255 * #{$i} / 5), 0, 0);
+      }
+    }
+  }
+}
