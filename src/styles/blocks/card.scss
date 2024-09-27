@@ -1,0 +1,11 @@
+.card {
+  height: 300px;
+  color: white;
+  @extend %center;
+  
+  @each $number, $color in $colors {
+    &--number-#{$number} {
+      background-color: $color;
+    }
+  }
+}
