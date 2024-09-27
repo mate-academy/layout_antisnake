@@ -1,0 +1,10 @@
+.antisnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($antisnake-side, 1fr));
+
+  @media (min-width: calc(#{$antisnake-side} * 3)) {
+    & {
+      grid-template-columns: repeat(auto-fill, minmax($antisnake-side, 33.3%));
+    }
+  }
+}
