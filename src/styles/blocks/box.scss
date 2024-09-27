@@ -1,0 +1,40 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 33.33%));
+
+  &__block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 300px;
+
+    color: $color_text;
+
+    &--1 {
+      background-color: $color_1;
+    }
+    &--2 {
+      background-color: $color_2;
+    }
+    &--3 {
+      background-color: $color_3;
+    }
+    &--4 {
+      background-color: $color_4;
+    }
+    &--5 {
+      background-color: $color_5;
+    }
+    &--6 {
+      background-color: $color_6;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 300px) and (max-width: 599px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
