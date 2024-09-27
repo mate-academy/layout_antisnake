@@ -1,3 +1,9 @@
+@import "./variables";
+
 body {
   margin: 0;
 }
+
+@import "./body.scss";
+
+@import "./container.scss";
