@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($itemHight, 1fr));
+
+  @media (min-width: ($itemHight * 3)) {
+    grid-template-columns: repeat(3, minmax($itemHight, 1fr));
+  }
+
+  &__item {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: $itemHight;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 100px;
+  }
+}
+
+@each $number, $color in $colors {
+  .container :nth-child(#{$number}) {
+    background-color: #{$color};
+  }
+}
