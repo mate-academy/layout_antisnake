@@ -1,0 +1,7 @@
+@mixin content {
+  justify-content: center;
+  align-items: center;
+  color: $number-color;
+  font-family: $number-font-family;
+  font-size: $number-font-size;
+}
