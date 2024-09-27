@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  
+  &__block {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-width: 300px;
+    height: 300px;
+    font-size: 100px;
+    color: #fff;
+  
+    &:nth-child(1) {
+      background-color: hsl(0, 100%, 50%);
+    }
+  
+    &:nth-child(2) {
+      background-color: hsl(0, 100%, 40%);
+    }
+  
+    &:nth-child(3) {
+      background-color: hsl(0, 100%, 30%);
+    }
+  
+    &:nth-child(4) {
+      background-color: hsl(0, 100%, 20%);
+    }
+  
+    &:nth-child(5) {
+      background-color: hsl(0, 100%, 10%);
+    }
+  
+    &:nth-child(6) {
+      background-color: hsl(0, 100%, 0%);
+    }
+  }
+}
