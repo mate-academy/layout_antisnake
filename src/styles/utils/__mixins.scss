@@ -1,0 +1,5 @@
+@mixin screens ($screen-size, $col-cont, $basis, $fractions) {
+  @media (min-width: $screen-size) {
+    grid-template-columns: repeat($col-cont, minmax($basis, $fractions));
+  }
+}
