@@ -1,0 +1,10 @@
+@function getColor ($var) {
+  @return (6 - $var) * 255 / 5;
+}
+
+body {
+  margin: 0;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+}
