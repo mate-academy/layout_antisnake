@@ -1,3 +1,45 @@
 body {
   margin: 0;
 }
+
+.cells {
+  max-width: 1199px;
+  display: grid;
+  justify-content: center;
+  // grid-template-rows: repeat(auto-fill, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+
+  &__cell {
+    height: 300px;
+    min-width: 300px;
+    font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align: center;
+    line-height: 300px;
+
+    &--1 {
+      background-color: rgb(255, 0, 0);
+    }
+
+    &--2 {
+      background-color: rgb(204, 0, 0);
+    }
+
+    &--3 {
+      background-color: rgb(153, 0, 0);
+    }
+
+    &--4 {
+      background-color: rgb(102, 0, 0);
+    }
+
+    &--5 {
+      background-color: rgb(51, 0, 0);
+    }
+
+    &--6 {
+      background-color: rgb(0, 0, 0);
+    }
+  }
+}
