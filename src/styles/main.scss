@@ -1,3 +1,7 @@
-body {
-  margin: 0;
-}
+@import "../styles/utils/variables";
+@import "../styles/utils/loops";
+@import "../styles/utils/media";
+
+@import "../styles/normalized.scss";
+
+@import "../styles/blocks/container.scss";

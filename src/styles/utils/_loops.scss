@@ -1,0 +1,5 @@
+@each $name, $color in $colors {
+  .container__block--#{$name} {
+    background-color: $color;
+  }
+}
