@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($size, 1fr));
+
+  &-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $size;
+
+    @each $block, $color in $block-color {
+      &:nth-child(#{$block}) {
+        background-color: $color;
+      }
+    }
+  }
+
+  @media (max-width: 899px) {
+    & {
+      grid-template-columns: repeat(2, minmax($size, 1fr));
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      grid-template-columns: repeat(1, minmax($size, 1fr));
+    }
+  }
+}
