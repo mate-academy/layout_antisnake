@@ -1,3 +1,35 @@
+@import "./mixins";
+@import "./var";
+@import "./extends";
+
 body {
   margin: 0;
+}
+
+.antysnake {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__1,
+  &__2,
+  &__3,
+  &__4,
+  &__5,
+  &__6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include block($hight);
+    @extend %text;
+  }
+
+  @each $name, $color in $colors {
+    &__#{$name} {
+      background-color: $color;
+    }
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr)  ;
+  }
 }
