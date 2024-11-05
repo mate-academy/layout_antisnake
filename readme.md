@@ -1,12 +1,12 @@
 # Antisnake
-Replace `<your_account>` with your Github username and copy the links to Pull Request description:
+Replace `<your_account>` with your GitHub username and copy the links to the Pull Request description:
 - [DEMO LINK](https://<your_account>.github.io/layout_antisnake/)
 - [TEST REPORT LINK](https://<your_account>.github.io/layout_antisnake/report/html_report/)
 
 > Follow [this instructions](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
 ___
 
-## ❗️❗️❗️ This task does not require an approval of mentor and is automatically approved on the platform when the tests are passed❗️❗️❗️
+## ❗️❗️❗️ This task does not require the approval of a mentor and is automatically approved on the platform when the tests are passed❗️❗️❗️
 
 ## The task
 Display six colored blocks on the screen without any extra margins:
@@ -23,7 +23,10 @@ Display six colored blocks on the screen without any extra margins:
 - The width of each block should be not less than its height (`300px`)
 - Blocks must be put in 2 to 6 rows and stretched: each row must fit either 1, 2, or 3 blocks.
   See the screenshots [here](./reference).
-- Each row is to be read from left ro right.
+- Each row is to be read from left to right.
+
+*Important note*: In this task, you are allowed to link `*.scss` files directly in HTML `<link>` tags using `href` attribute.
+This is possible because [we use the Parcel library](https://en.parceljs.org/scss.html) to bundle your solution's source code.
 
 --> [CHECKLIST](https://github.com/mate-academy/layout_antisnake/blob/master/checklist.md)
 
